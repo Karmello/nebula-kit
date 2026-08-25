@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SCALE_OVERVIEW: Overview = {
+export const SCALE_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Motion component for animating visual scale transitions.',
   description:

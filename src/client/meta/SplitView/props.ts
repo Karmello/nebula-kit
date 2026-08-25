@@ -1,11 +1,11 @@
 import { SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/SplitView/constants'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { SplitViewProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, Prop> = {
+export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

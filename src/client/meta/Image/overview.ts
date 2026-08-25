@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const IMAGE_OVERVIEW: Overview = {
+export const IMAGE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Foundational component for rendering and styling images consistently across the system.',
   features: [

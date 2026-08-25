@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const VIRTUAL_LIST_OVERVIEW: Overview = {
+export const VIRTUAL_LIST_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title:
     'High-performance, fixed-height virtualized list for rendering large datasets efficiently.',

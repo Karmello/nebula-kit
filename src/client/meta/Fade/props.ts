@@ -1,10 +1,10 @@
 import { DEFAULT_FADE_DURATION, DEFAULT_FADE_EASING } from 'lib/components/pro/Fade/fade'
 import { FadeProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const FADE_PROPS: Record<keyof FadeProps, Prop> = {
+export const FADE_PROPS: Record<keyof FadeProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

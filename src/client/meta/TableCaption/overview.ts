@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_CAPTION_OVERVIEW: Overview = {
+export const TABLE_CAPTION_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Table.Caption?',
   title: 'Provides a descriptive title for the table.',

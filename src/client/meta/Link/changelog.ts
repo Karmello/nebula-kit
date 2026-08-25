@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const LINK_CHANGELOG: Changelog = {
+export const LINK_CHANGELOG: DocChangelog = {
   '0.4.0': [
     'changed behavior to wrap content by default and only clone when required to ensure valid HTML',
   ],

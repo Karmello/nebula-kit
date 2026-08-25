@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABS_OVERVIEW: Overview = {
+export const TABS_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Control for switching between related content sections.',
   features: [

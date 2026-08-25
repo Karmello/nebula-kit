@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SIDE_NAV_CATEGORY_OVERVIEW: Overview = {
+export const SIDE_NAV_CATEGORY_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'SideNav.Category?',
   title: 'Defines an expandable parent section that groups related navigation items.',

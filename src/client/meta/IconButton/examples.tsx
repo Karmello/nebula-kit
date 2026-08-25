@@ -1,9 +1,9 @@
 import { Activity } from 'lucide-react'
 
 import { IconButton } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const ICON_BUTTON_EXAMPLES: Example[] = [
+export const ICON_BUTTON_EXAMPLES: DocExample[] = [
   {
     description: 'Send icon.',
     jsx: <IconButton iconName="send" />,

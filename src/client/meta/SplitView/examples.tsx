@@ -1,8 +1,8 @@
 import { Box, Text } from 'lib/index.core'
 import { SplitView } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SPLIT_VIEW_EXAMPLES: Example[] = [
+export const SPLIT_VIEW_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for SplitView.',
     jsx: (

@@ -1,11 +1,11 @@
 import { SLIDE_FROM } from 'lib/components/core/Slide/constants'
 import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from 'lib/components/core/Slide/slide'
 import { SlideProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SLIDE_PROPS: Record<keyof SlideProps, Prop> = {
+export const SLIDE_PROPS: Record<keyof SlideProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

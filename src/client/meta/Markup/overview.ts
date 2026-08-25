@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const MARKUP_OVERVIEW: Overview = {
+export const MARKUP_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title:
     'Lightweight inline markup interpreter for rendering formatted textual content through Text components.',

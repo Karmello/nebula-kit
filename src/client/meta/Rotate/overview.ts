@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const ROTATE_OVERVIEW: Overview = {
+export const ROTATE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Motion component for animating rotation.',
   description:

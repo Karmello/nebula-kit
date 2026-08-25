@@ -1,8 +1,8 @@
 import { Box } from 'lib/components/core/Box'
 import { Reveal } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const REVEAL_EXAMPLES: Example[] = [
+export const REVEAL_EXAMPLES: DocExample[] = [
   {
     description: 'Default reveal with a label and content provided.',
     jsx: (

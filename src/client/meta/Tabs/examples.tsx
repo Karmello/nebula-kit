@@ -1,7 +1,7 @@
 import { Tabs } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const TABS_EXAMPLES: Example[] = [
+export const TABS_EXAMPLES: DocExample[] = [
   {
     skip: true,
     jsx: (

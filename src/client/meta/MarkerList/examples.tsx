@@ -1,7 +1,7 @@
 import { MarkerList } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const MARKER_LIST_EXAMPLES: Example[] = [
+export const MARKER_LIST_EXAMPLES: DocExample[] = [
   {
     description: 'Basic MarkerList with two list items.',
     jsx: (

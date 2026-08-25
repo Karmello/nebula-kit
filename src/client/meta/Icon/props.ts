@@ -1,10 +1,10 @@
 import { DEFAULT_ICON_SIZE } from 'lib/components/core/Icon/constants'
 import type { IconProps } from 'lib/components/core/Icon/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const ICON_PROPS: Record<keyof IconProps, Prop> = {
+export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     description: 'Custom SVG icon rendered when not using name prop.',

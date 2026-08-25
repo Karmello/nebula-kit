@@ -1,9 +1,9 @@
 import type { TableCellProps } from 'lib/components/core/Table/slots/TableCell/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABLE_CELL_PROPS: Record<keyof TableCellProps, Prop> = {
+export const TABLE_CELL_PROPS: Record<keyof TableCellProps, DocProp> = {
   blockSize: BOX_META.props.blockSize,
   children: {
     ...BOX_META.props.children,

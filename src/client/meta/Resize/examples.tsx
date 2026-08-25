@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { Resize, ResizeProps, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -29,7 +29,7 @@ const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   )
 }
 
-export const RESIZE_EXAMPLES: Example[] = [
+export const RESIZE_EXAMPLES: DocExample[] = [
   {
     description: 'Animating the inlineSize property.',
     jsx: <ResizeWrapper property="inlineSize" />,

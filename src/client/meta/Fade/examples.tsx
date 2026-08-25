@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 
 import { Box } from 'lib/index.core'
 import { Fade, FadeProps } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const FadeWrapper = ({ children }: Partial<FadeProps>) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -28,7 +28,7 @@ const FadeWrapper = ({ children }: Partial<FadeProps>) => {
   )
 }
 
-export const FADE_EXAMPLES: Example[] = [
+export const FADE_EXAMPLES: DocExample[] = [
   {
     description: 'Fade transition controlled by `visible` prop.',
     jsx: (

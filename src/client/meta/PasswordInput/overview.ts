@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const PASSWORD_OVERVIEW: Overview = {
+export const PASSWORD_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Secure text input with built-in password visibility toggle.',
   description:

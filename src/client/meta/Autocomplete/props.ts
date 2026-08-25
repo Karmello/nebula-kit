@@ -13,11 +13,11 @@ import {
 } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { AutocompleteProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, Prop> = {
+export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
   children: {
     options: ['Autocomplete.Option'],
     isRequired: true,

@@ -1,7 +1,7 @@
 import { AppFrame } from 'lib/components/core/AppFrame'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const APP_FRAME_EXAMPLES: Example[] = [
+export const APP_FRAME_EXAMPLES: DocExample[] = [
   {
     description: 'Application view composed of header, main area and footer.',
     jsx: (

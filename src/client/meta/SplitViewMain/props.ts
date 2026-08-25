@@ -1,9 +1,9 @@
 import type { SplitViewMainProps } from 'lib/components/pro/SplitView/slots/SplitViewMain/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SPLIT_VIEW_MAIN_PROPS: Record<keyof SplitViewMainProps, Prop> = {
+export const SPLIT_VIEW_MAIN_PROPS: Record<keyof SplitViewMainProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['ReactNode', 'SplitView.MainBar'],

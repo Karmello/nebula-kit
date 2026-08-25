@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_ROW_OVERVIEW: Overview = {
+export const TABLE_ROW_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Table.Row',
   title: 'Represents a single row within the table structure.',

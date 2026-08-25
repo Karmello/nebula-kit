@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const FADE_OVERVIEW: Overview = {
+export const FADE_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Motion component for animating opacity transitions.',
   description:

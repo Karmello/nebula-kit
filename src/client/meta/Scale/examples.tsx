@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Box, Button } from 'lib/index.core'
 import { Scale } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const Example1 = () => {
   const [visible, setVisible] = useState(false)
@@ -19,7 +19,7 @@ const Example1 = () => {
   )
 }
 
-export const SCALE_EXAMPLES: Example[] = [
+export const SCALE_EXAMPLES: DocExample[] = [
   {
     description: 'Scale transition controlled by `visible` prop.',
     jsx: <Example1 />,

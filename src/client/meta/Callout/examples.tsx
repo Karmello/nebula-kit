@@ -1,7 +1,7 @@
 import { Callout, Spacer } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const CALLOUT_EXAMPLES: Example[] = [
+export const CALLOUT_EXAMPLES: DocExample[] = [
   {
     jsx: <Callout status="info" content="Callout text content" />,
     skip: true,

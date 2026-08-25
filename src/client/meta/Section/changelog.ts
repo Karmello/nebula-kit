@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const SECTION_CHANGELOG: Changelog = {
+export const SECTION_CHANGELOG: DocChangelog = {
   '0.10.0': [
     'refined size presets for better layout balance and spacing consistency',
     'added `headingIntent` prop',

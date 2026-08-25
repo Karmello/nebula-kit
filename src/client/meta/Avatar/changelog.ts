@@ -1,5 +1,5 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const AVATAR_CHANGELOG: Changelog = {
+export const AVATAR_CHANGELOG: DocChangelog = {
   '0.4.0': ['released'],
 }

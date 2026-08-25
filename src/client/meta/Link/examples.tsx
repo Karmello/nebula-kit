@@ -1,7 +1,7 @@
 import { Button, IconButton, Image, Link, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const LINK_EXAMPLES: Example[] = [
+export const LINK_EXAMPLES: DocExample[] = [
   {
     jsx: (
       <Link href="https://google.com">

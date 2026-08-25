@@ -8,11 +8,11 @@ import {
 import { DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { SelectProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SELECT_PROPS: Record<keyof SelectProps, Prop> = {
+export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
   children: {
     options: ['Select.Option'],
     isRequired: true,

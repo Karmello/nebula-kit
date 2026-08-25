@@ -1,9 +1,9 @@
 import { MarkupProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const MARKUP_PROPS: Record<keyof MarkupProps, Prop> = {
+export const MARKUP_PROPS: Record<keyof MarkupProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

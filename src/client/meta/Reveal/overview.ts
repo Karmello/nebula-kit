@@ -1,7 +1,7 @@
 import { REVEAL_TAGS } from 'lib/components/core/Reveal/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const REVEAL_OVERVIEW: Overview = {
+export const REVEAL_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Disclosure component for toggling expandable content.',
   features: [

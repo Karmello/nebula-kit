@@ -6,11 +6,11 @@ import {
   TABLE_LAYOUTS,
 } from 'lib/components/core/Table/constants'
 import { TableProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABLE_PROPS: Record<keyof TableProps, Prop> = {
+export const TABLE_PROPS: Record<keyof TableProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],

@@ -6,12 +6,12 @@ import {
   SIDE_NAV_VARIANTS,
 } from 'lib/components/pro/SideNav/constants'
 import { SideNavProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { BUTTON_META } from '../Button'
 
-export const SIDE_NAV_PROPS: Record<keyof SideNavProps, Prop> = {
+export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['SideNav.Category', 'SideNav.Item'],

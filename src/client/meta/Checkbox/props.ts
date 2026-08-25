@@ -6,11 +6,11 @@ import {
 } from 'lib/components/core/Checkbox/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { CheckboxProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const CHECKBOX_PROPS: Record<keyof CheckboxProps, Prop> = {
+export const CHECKBOX_PROPS: Record<keyof CheckboxProps, DocProp> = {
   checked: {
     options: ['boolean'],
     description: 'Controls the checked state in controlled mode.',

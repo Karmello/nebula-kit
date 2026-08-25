@@ -8,11 +8,11 @@ import {
   DEFAULT_SCALE_TO,
 } from 'lib/components/pro/Scale/scale'
 import { ScaleProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SCALE_PROPS: Record<keyof ScaleProps, Prop> = {
+export const SCALE_PROPS: Record<keyof ScaleProps, DocProp> = {
   axis: {
     options: SCALE_AXIS,
     defaultValue: DEFAULT_SCALE_AXIS,

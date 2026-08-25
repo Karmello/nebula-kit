@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const APP_FRAME_HEADER_OVERVIEW: Overview = {
+export const APP_FRAME_HEADER_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'AppFrame.Header',
   title: 'Defines the top region of AppFrame.',

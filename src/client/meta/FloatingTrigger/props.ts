@@ -3,11 +3,11 @@ import {
   FLOATING_TRIGGER_DISPLAY,
 } from 'lib/components/pro/Floating/slots/FloatingTrigger/constants'
 import type { FloatingTriggerProps } from 'lib/components/pro/Floating/slots/FloatingTrigger/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const FLOATING_TRIGGER_PROPS: Record<keyof FloatingTriggerProps, Prop> = {
+export const FLOATING_TRIGGER_PROPS: Record<keyof FloatingTriggerProps, DocProp> = {
   children: {
     options: ['ReactNode'],
     isRequired: true,

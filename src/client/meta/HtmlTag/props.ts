@@ -1,9 +1,9 @@
 import { ElementType } from 'react'
 
 import { HtmlTagProps } from 'lib/components'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
-export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, Prop> = {
+export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = {
   children: {
     options: ['ReactNode'],
     description: 'Content rendered.',

@@ -1,10 +1,10 @@
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
 import { ToolbarProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TOOLBAR_PROPS: Record<keyof ToolbarProps, Prop> = {
+export const TOOLBAR_PROPS: Record<keyof ToolbarProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

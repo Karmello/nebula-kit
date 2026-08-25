@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_BODY_OVERVIEW: Overview = {
+export const TABLE_BODY_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Table.Body',
   title: 'Main data rows of the table.',

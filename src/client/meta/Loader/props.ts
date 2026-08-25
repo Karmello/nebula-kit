@@ -1,10 +1,10 @@
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from 'lib/components/core/Loader/constants'
 import { LoaderProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const LOADER_PROPS: Record<keyof LoaderProps, Prop> = {
+export const LOADER_PROPS: Record<keyof LoaderProps, DocProp> = {
   active: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_LOADER_ACTIVE),

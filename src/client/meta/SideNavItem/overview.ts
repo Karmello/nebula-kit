@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SIDE_NAV_ITEM_OVERVIEW: Overview = {
+export const SIDE_NAV_ITEM_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'SideNav.Item',
   title: 'Defines a single navigational entry within SideNav.',

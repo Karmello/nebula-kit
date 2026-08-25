@@ -1,6 +1,6 @@
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const NEBKIT_PROVIDER_EXAMPLES: Example[] = [
+export const NEBKIT_PROVIDER_EXAMPLES: DocExample[] = [
   {
     description: 'Use it as a wrapper around your entire app.',
     code: `<NebkitProvider>

@@ -1,11 +1,11 @@
 import { PORTAL_PLACEMENTS } from 'lib/components/pro/Portal/constants'
 import { DEFAULT_PORTAL_PLACEMENT } from 'lib/components/pro/Portal/portal'
 import type { PortalProps } from 'lib/components/pro/Portal/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { HTML_TAG_META } from '../HtmlTag'
 
-export const PORTAL_PROPS: Record<keyof PortalProps, Prop> = {
+export const PORTAL_PROPS: Record<keyof PortalProps, DocProp> = {
   anchorRef: {
     options: ['RefObject'],
     description:

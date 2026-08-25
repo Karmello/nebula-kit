@@ -2,11 +2,11 @@ import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from 'lib/components/pro/Breadcrumb/constants'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { BreadcrumbProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, Prop> = {
+export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
   color: {
     options: BOX_COLORS,
     description: 'Color applied to the component.',

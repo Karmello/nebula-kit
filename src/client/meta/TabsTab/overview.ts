@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABS_TAB_OVERVIEW: Overview = {
+export const TABS_TAB_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Tabs.Tab',
   title: 'Selectable tab item within a Tabs component.',

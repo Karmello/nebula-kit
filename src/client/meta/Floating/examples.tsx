@@ -1,8 +1,8 @@
 import { Box } from 'lib/components'
 import { Floating } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const FLOATING_EXAMPLES: Example[] = [
+export const FLOATING_EXAMPLES: DocExample[] = [
   {
     jsx: (
       <Floating offset={10}>

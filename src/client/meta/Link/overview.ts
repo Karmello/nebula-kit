@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const LINK_OVERVIEW: Overview = {
+export const LINK_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Wrapper that makes components navigable.',
   description:

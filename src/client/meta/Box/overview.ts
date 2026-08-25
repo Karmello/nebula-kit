@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const BOX_OVERVIEW: Overview = {
+export const BOX_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Foundational visual surface component that exposes a curated set of core CSS properties.',
   description:

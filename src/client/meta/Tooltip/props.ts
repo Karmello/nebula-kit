@@ -10,11 +10,11 @@ import {
   TOOLTIP_VARIANTS,
 } from 'lib/components/pro/Tooltip/constants'
 import { TooltipProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TOOLTIP_PROPS: Record<keyof TooltipProps, Prop> = {
+export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

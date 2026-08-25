@@ -7,12 +7,12 @@ import {
 } from 'lib/components/core/IconButton/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { IconButtonProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { ICON_META } from '../Icon'
 
-export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, Prop> = {
+export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
   color: BOX_META.props.color,
   customSvgIcon: {
     ...ICON_META.props.children,

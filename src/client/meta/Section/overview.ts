@@ -1,7 +1,7 @@
 import { SECTION_TAGS } from 'lib/components/core/Section/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SECTION_OVERVIEW: Overview = {
+export const SECTION_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Semantic container for grouping content under a titled section.',
   features: [

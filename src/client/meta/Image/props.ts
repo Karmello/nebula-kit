@@ -7,11 +7,11 @@ import {
   IMAGE_REFERRER_POLICY,
 } from 'lib/components/core/Image/constants'
 import { ImageProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const IMAGE_PROPS: Record<keyof ImageProps, Prop> = {
+export const IMAGE_PROPS: Record<keyof ImageProps, DocProp> = {
   alt: {
     options: ['string'],
     description: 'Alternative text describing the image for accessibility.',

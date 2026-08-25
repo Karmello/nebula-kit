@@ -5,11 +5,11 @@ import {
   TEXT_WORD_BREAK,
 } from 'lib/components/core/Text/constants'
 import { TextProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TEXT_PROPS: Record<keyof TextProps, Prop> = {
+export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
   bold: {
     options: ['boolean'],
     description: 'Toggles bold styling.',

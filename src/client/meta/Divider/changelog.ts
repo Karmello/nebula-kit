@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const DIVIDER_CHANGELOG: Changelog = {
+export const DIVIDER_CHANGELOG: DocChangelog = {
   '0.11.0': ['removed `surface` prop'],
   '0.9.0': [
     'added support for predefined size scale values on margin-related props',

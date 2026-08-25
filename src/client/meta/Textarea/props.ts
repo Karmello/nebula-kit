@@ -6,11 +6,11 @@ import {
   TEXTAREA_RESIZE,
 } from 'lib/components/core/Textarea/constants'
 import { TextareaProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TEXTAREA_PROPS: Record<keyof TextareaProps, Prop> = {
+export const TEXTAREA_PROPS: Record<keyof TextareaProps, DocProp> = {
   color: BOX_META.props.color,
   defaultValue: {
     options: ['string'],

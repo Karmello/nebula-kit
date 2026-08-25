@@ -1,8 +1,8 @@
 import { Box, Button, Select } from 'lib/index.core'
 import { Toolbar } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const TOOLBAR_EXAMPLES: Example[] = [
+export const TOOLBAR_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for Toolbar.',
     jsx: (

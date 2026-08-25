@@ -1,7 +1,7 @@
 import { Switch } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SWITCH_EXAMPLES: Example[] = [
+export const SWITCH_EXAMPLES: DocExample[] = [
   {
     jsx: <Switch />,
     skip: true,

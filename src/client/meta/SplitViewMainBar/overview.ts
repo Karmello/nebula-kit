@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SPLIT_VIEW_MAIN_BAR_OVERVIEW: Overview = {
+export const SPLIT_VIEW_MAIN_BAR_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'SplitView.MainBar?',
   title: 'Defines the horizontal region displayed above the main content',

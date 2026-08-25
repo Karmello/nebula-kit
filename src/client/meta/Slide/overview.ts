@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SLIDE_OVERVIEW: Overview = {
+export const SLIDE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Motion component for animating directional slide transitions.',
   description:

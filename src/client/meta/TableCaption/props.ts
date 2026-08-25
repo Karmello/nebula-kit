@@ -1,10 +1,10 @@
 import { DEFAULT_TABLE_CAPTION_INTENT } from 'lib/components/core/Table/slots/TableCaption/constants'
 import type { TableCaptionProps } from 'lib/components/core/Table/slots/TableCaption/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABLE_CAPTION_PROPS: Record<keyof TableCaptionProps, Prop> = {
+export const TABLE_CAPTION_PROPS: Record<keyof TableCaptionProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

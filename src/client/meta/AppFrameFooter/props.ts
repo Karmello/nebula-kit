@@ -1,11 +1,11 @@
 import { DEFAULT_APP_FRAME_FOOTER_INTENT } from 'lib/components/core/AppFrame/slots/AppFrameFooter/constants'
 import type { AppFrameFooterProps } from 'lib/components/core/AppFrame/slots/AppFrameFooter/types'
 import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const APP_FRAME_FOOTER_PROPS: Record<keyof AppFrameFooterProps, Prop> = {
+export const APP_FRAME_FOOTER_PROPS: Record<keyof AppFrameFooterProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

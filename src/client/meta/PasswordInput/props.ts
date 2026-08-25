@@ -3,11 +3,11 @@ import {
   DEFAULT_PASSWORD_INPUT_SCALE,
 } from 'lib/components/pro/PasswordInput/constants'
 import { PasswordInputProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { INPUT_META } from '../Input'
 
-export const PASSWORD_PROPS: Record<keyof PasswordInputProps, Prop> = {
+export const PASSWORD_PROPS: Record<keyof PasswordInputProps, DocProp> = {
   autoComplete: {
     ...INPUT_META.props.autoComplete,
     defaultValue: DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,

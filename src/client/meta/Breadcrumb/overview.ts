@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const BREADCRUMB_OVERVIEW: Overview = {
+export const BREADCRUMB_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title:
     'Interactive hierarchical navigation control for selecting and modifying a position within a structured path.',

@@ -1,7 +1,7 @@
 import { ICON_BUTTON_TAGS } from 'lib/components/core/IconButton/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const ICON_BUTTON_OVERVIEW: Overview = {
+export const ICON_BUTTON_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Interactive icon-only control for compact actions and utility triggers.',
   description:

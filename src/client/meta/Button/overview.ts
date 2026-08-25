@@ -1,7 +1,7 @@
 import { BUTTON_TAGS } from 'lib/components/core/Button/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const BUTTON_OVERVIEW: Overview = {
+export const BUTTON_OVERVIEW: DocOverview = {
   bundle: 'core',
   title:
     'Interactive control for triggering actions with consistent semantics, layout and visual states.',

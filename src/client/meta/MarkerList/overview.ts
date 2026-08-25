@@ -1,7 +1,7 @@
 import { MARKER_LIST_TAGS } from 'lib/components/core/MarkerList/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const MARKER_LIST_OVERVIEW: Overview = {
+export const MARKER_LIST_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'List component that displays items with native markers.',
   features: ['presents short text collections with bullets or numbers'],

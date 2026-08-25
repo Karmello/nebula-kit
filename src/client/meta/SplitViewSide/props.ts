@@ -4,11 +4,11 @@ import {
   DEFAULT_SPLIT_VIEW_SIDE_INTENT,
 } from 'lib/components/pro/SplitView/slots/SplitViewSide/constants'
 import type { SplitViewSideProps } from 'lib/components/pro/SplitView/slots/SplitViewSide/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SPLIT_VIEW_SIDE_PROPS: Record<keyof SplitViewSideProps, Prop> = {
+export const SPLIT_VIEW_SIDE_PROPS: Record<keyof SplitViewSideProps, DocProp> = {
   blockSize: {
     ...BOX_META.props.blockSize,
     defaultValue: String(DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE),

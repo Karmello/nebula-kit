@@ -1,11 +1,11 @@
 import { DEFAULT_TABLE_BODY_INTENT } from 'lib/components/core/Table/slots/TableBody/constants'
 import type { TableBodyProps } from 'lib/components/core/Table/slots/TableBody/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { TABLE_META } from '../Table'
 
-export const TABLE_BODY_PROPS: Record<keyof TableBodyProps, Prop> = {
+export const TABLE_BODY_PROPS: Record<keyof TableBodyProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Table.Row'],

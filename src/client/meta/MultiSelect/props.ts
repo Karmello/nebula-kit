@@ -9,11 +9,11 @@ import {
 } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { MultiSelectProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, Prop> = {
+export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
   children: {
     options: ['MultiSelect.Option'],
     isRequired: true,

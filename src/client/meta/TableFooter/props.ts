@@ -1,11 +1,11 @@
 import { DEFAULT_TABLE_FOOTER_INTENT } from 'lib/components/core/Table/slots/TableFooter/constants'
 import type { TableFooterProps } from 'lib/components/core/Table/slots/TableFooter/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { TABLE_META } from '../Table'
 
-export const TABLE_FOOTER_PROPS: Record<keyof TableFooterProps, Prop> = {
+export const TABLE_FOOTER_PROPS: Record<keyof TableFooterProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Table.Row'],

@@ -1,7 +1,7 @@
 import { Box } from 'lib/components/core/Box/box'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const BOX_EXAMPLES: Example[] = [
+export const BOX_EXAMPLES: DocExample[] = [
   {
     jsx: <Box>Default box</Box>,
     description:

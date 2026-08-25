@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TOOLBAR_END_OVERVIEW: Overview = {
+export const TOOLBAR_END_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Toolbar.End?',
   title: 'Defines the end slot of Toolbar.',

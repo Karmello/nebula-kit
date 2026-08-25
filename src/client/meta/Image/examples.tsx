@@ -1,8 +1,8 @@
 import { Box } from 'lib/components/core/Box'
 import { Image } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const IMAGE_EXAMPLES: Example[] = [
+export const IMAGE_EXAMPLES: DocExample[] = [
   {
     jsx: <Image />,
     skip: true,

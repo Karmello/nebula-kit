@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const TEXT_CHANGELOG: Changelog = {
+export const TEXT_CHANGELOG: DocChangelog = {
   '0.10.0': ['removed `scale` prop', 'added `wordBreak` prop', 'removed `WithIcon` dependency'],
   '0.9.0': [
     'added `fontSize` and `lineHeight` props for overriding typography-derived values directly',

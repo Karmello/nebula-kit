@@ -5,11 +5,11 @@ import {
 } from 'lib/components/pro/Avatar/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { AvatarProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { IMAGE_META } from '../Image'
 
-export const AVATAR_PROPS: Record<keyof AvatarProps, Prop> = {
+export const AVATAR_PROPS: Record<keyof AvatarProps, DocProp> = {
   alt: IMAGE_META.props.alt,
   crossOrigin: IMAGE_META.props.crossOrigin,
   decoding: IMAGE_META.props.decoding,

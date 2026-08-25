@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const BOX_CHANGELOG: Changelog = {
+export const BOX_CHANGELOG: DocChangelog = {
   '0.11.0': ['replaced `flipped` theme value with `global` and `global-flipped`'],
   '0.9.0': [
     'added `hidden` prop',

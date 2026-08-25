@@ -1,7 +1,7 @@
 import { Divider, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const DIVIDER_EXAMPLES: Example[] = [
+export const DIVIDER_EXAMPLES: DocExample[] = [
   {
     description: 'By default Divider renders with tertiary intent and marginBlock of 3.',
     jsx: <Divider />,

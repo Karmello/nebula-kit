@@ -2,7 +2,7 @@ import { useRef } from 'react'
 
 import { FocusTrap } from 'lib/components/pro/FocusTrap/focus-trap'
 import { Box, Button } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const FocusTrapWrapper = () => {
   const ref = useRef(null)
@@ -18,7 +18,7 @@ const FocusTrapWrapper = () => {
   )
 }
 
-export const FOCUS_TRAP_EXAMPLES: Example[] = [
+export const FOCUS_TRAP_EXAMPLES: DocExample[] = [
   {
     description: 'Focus stays locked between the three buttons while the trap is active.',
     jsx: <FocusTrapWrapper />,

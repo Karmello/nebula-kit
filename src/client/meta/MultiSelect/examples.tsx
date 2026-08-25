@@ -1,7 +1,7 @@
 import { MultiSelect } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const MULTI_SELECT_EXAMPLES: Example[] = [
+export const MULTI_SELECT_EXAMPLES: DocExample[] = [
   {
     description:
       'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',

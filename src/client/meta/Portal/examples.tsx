@@ -3,7 +3,7 @@ import { useRef, useState } from 'react'
 import { Portal } from 'lib/components/pro/Portal/portal'
 import { type PortalProps } from 'lib/components/pro/Portal/types'
 import { Box, Button } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -25,7 +25,7 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
   )
 }
 
-export const PORTAL_EXAMPLES: Example[] = [
+export const PORTAL_EXAMPLES: DocExample[] = [
   {
     code: `const [visible, setVisible] = useState<boolean>(false)
 const buttonRef = useRef<HTMLButtonElement>(null)

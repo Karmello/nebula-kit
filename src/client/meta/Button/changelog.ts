@@ -1,6 +1,6 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const BUTTON_CHANGELOG: Changelog = {
+export const BUTTON_CHANGELOG: DocChangelog = {
   '0.10.0': ['removed `justifyContent` prop', 'removed `textAlign` prop', 'added `align` prop'],
   '0.9.0': ['changed `surface` prop to `elevated`'],
   '0.8.0': ['exposed `selected` prop', 'changed `elevated` prop to `surface`'],

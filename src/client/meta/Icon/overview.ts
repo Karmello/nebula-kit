@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const ICON_OVERVIEW: Overview = {
+export const ICON_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'SVG icon wrapped in a styled inline container.',
   features: [

@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const PAGINATION_OVERVIEW: Overview = {
+export const PAGINATION_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Navigation control for paging through large collections of content.',
   description:

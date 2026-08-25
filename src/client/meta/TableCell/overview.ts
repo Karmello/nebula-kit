@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_CELL_OVERVIEW: Overview = {
+export const TABLE_CELL_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Table.Cell',
   title: 'Represents a single cell within a table row.',

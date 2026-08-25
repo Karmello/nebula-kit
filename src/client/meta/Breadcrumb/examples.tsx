@@ -1,5 +1,5 @@
 import { Breadcrumb } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const tree = [
   {
@@ -48,7 +48,7 @@ const tree = [
   },
 ]
 
-export const BREADCRUMB_EXAMPLES: Example[] = [
+export const BREADCRUMB_EXAMPLES: DocExample[] = [
   {
     jsx: <Breadcrumb tree={tree} />,
     description:

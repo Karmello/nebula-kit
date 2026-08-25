@@ -1,7 +1,7 @@
 import { CALLOUT_TAGS } from 'lib/components/core/Callout/constants'
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const CALLOUT_OVERVIEW: Overview = {
+export const CALLOUT_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Semantic message block for emphasizing important information.',
   features: [

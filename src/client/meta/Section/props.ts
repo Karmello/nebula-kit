@@ -6,13 +6,13 @@ import {
 } from 'lib/components/core/Section/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { SectionProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { TEXT_META } from '../Text'
 import { TITLE_META } from '../Title'
 
-export const SECTION_PROPS: Record<keyof SectionProps, Prop> = {
+export const SECTION_PROPS: Record<keyof SectionProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

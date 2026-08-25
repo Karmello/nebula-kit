@@ -1,7 +1,7 @@
 import { Avatar } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const AVATAR_EXAMPLES: Example[] = [
+export const AVATAR_EXAMPLES: DocExample[] = [
   {
     code: '<Avatar src={src} size="sm" />',
     skip: true,

@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SPLIT_VIEW_SIDE_OVERVIEW: Overview = {
+export const SPLIT_VIEW_SIDE_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'SplitView.Side',
   title: 'Defines the side panel region of the SplitView layout.',

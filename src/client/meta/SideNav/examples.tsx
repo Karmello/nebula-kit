@@ -1,7 +1,7 @@
 import { SideNav } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SIDE_NAV_EXAMPLES: Example[] = [
+export const SIDE_NAV_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for SideNav.',
     jsx: (

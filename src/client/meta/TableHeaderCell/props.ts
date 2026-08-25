@@ -1,9 +1,9 @@
 import type { TableHeaderCellProps } from 'lib/components/core/Table/slots/TableHeaderCell/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABLE_HEADER_CELL_PROPS: Record<keyof TableHeaderCellProps, Prop> = {
+export const TABLE_HEADER_CELL_PROPS: Record<keyof TableHeaderCellProps, DocProp> = {
   blockSize: BOX_META.props.blockSize,
   children: {
     ...BOX_META.props.children,

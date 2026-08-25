@@ -5,12 +5,12 @@ import {
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
 } from 'lib/components/pro/SideNav/slots/SideNavCategory/constants'
 import type { SideNavCategoryProps } from 'lib/components/pro/SideNav/slots/SideNavCategory/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { BUTTON_META } from '../Button'
 
-export const SIDE_NAV_CATEGORY_PROPS: Record<keyof SideNavCategoryProps, Prop> = {
+export const SIDE_NAV_CATEGORY_PROPS: Record<keyof SideNavCategoryProps, DocProp> = {
   align: BUTTON_META.props.align,
   bold: BUTTON_META.props.bold,
   children: {

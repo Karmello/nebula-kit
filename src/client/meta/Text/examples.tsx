@@ -1,7 +1,7 @@
 import { Text } from 'lib/components/core/Text/text'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const TEXT_EXAMPLES: Example[] = [
+export const TEXT_EXAMPLES: DocExample[] = [
   {
     jsx: <Text>Paragraph</Text>,
     description: 'Text renders as <p> tag by default.',

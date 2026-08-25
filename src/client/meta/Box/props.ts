@@ -25,9 +25,9 @@ import {
   CSS_TEXT_ALIGN,
   CSS_VISIBILITY,
 } from 'lib/constants'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
-export const BOX_PROPS: Record<keyof BoxProps, Prop> = {
+export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   activeOnFocus: {
     options: ['boolean'],
     description: 'Applies the active (pressed) visual state while the element is focused.',

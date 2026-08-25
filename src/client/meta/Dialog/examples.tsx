@@ -2,7 +2,7 @@ import { useState } from 'react'
 
 import { Dialog } from 'lib/components/pro/Dialog'
 import { Button } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const DialogWrapper = () => {
   const [open, setOpen] = useState<boolean>(false)
@@ -27,7 +27,7 @@ const DialogWrapper = () => {
   )
 }
 
-export const DIALOG_EXAMPLES: Example[] = [
+export const DIALOG_EXAMPLES: DocExample[] = [
   {
     code: `<Dialog open={open}>
   <Dialog.Content>Dialog content</Dialog.Content>

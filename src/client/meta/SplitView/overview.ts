@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SPLIT_VIEW_OVERVIEW: Overview = {
+export const SPLIT_VIEW_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Two-panel layout for displaying side content alongside main content.',
   composedOf: ['Box'],

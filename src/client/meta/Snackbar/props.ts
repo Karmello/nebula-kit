@@ -8,11 +8,11 @@ import {
 } from 'lib/components/pro/Snackbar/constants'
 import { UseSnackbarShowArgs } from 'lib/components/pro/Snackbar/types'
 import { SnackbarProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const SNACKBAR_PROPS: Record<keyof SnackbarProps, Prop> = {
+export const SNACKBAR_PROPS: Record<keyof SnackbarProps, DocProp> = {
   autoCloseDelay: {
     options: ['number'],
     defaultValue: String(DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY),
@@ -40,7 +40,7 @@ export const SNACKBAR_PROPS: Record<keyof SnackbarProps, Prop> = {
   },
 }
 
-export const USE_SNACKBAR_PROPS: Record<keyof UseSnackbarShowArgs, Prop> = {
+export const USE_SNACKBAR_PROPS: Record<keyof UseSnackbarShowArgs, DocProp> = {
   content: {
     options: ['string'],
     isRequired: true,

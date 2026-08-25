@@ -1,10 +1,10 @@
 import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from 'lib/components/core/Rotate/rotate'
 import { RotateProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const ROTATE_PROPS: Record<keyof RotateProps, Prop> = {
+export const ROTATE_PROPS: Record<keyof RotateProps, DocProp> = {
   angle: {
     options: ['number'],
     isRequired: true,

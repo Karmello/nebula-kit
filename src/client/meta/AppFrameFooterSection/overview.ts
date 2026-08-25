@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const APP_FRAME_FOOTER_SECTION_OVERVIEW: Overview = {
+export const APP_FRAME_FOOTER_SECTION_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'AppFrame.FooterSection?',
   title: 'Defines a content group inside AppFrame.Footer.',

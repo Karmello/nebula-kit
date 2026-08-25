@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SIDE_NAV_OVERVIEW: Overview = {
+export const SIDE_NAV_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title:
     'Sidebar navigation component designed specifically for flat and nested navigation with expandable categories.',

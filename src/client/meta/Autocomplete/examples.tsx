@@ -1,7 +1,7 @@
 import { Autocomplete } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const AUTOCOMPLETE_EXAMPLES: Example[] = [
+export const AUTOCOMPLETE_EXAMPLES: DocExample[] = [
   {
     description: 'Autocomplete used in uncontrolled mode.',
     jsx: (

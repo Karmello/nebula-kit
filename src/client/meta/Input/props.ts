@@ -5,11 +5,11 @@ import {
 } from 'lib/components/core/Input/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { InputProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const INPUT_PROPS: Record<keyof InputProps, Prop> = {
+export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
   autoComplete: {
     options: ['HTMLInputAutoCompleteAttribute'],
     description: 'Controls the browser autocomplete behavior for the input field.',

@@ -8,12 +8,12 @@ import {
 } from 'lib/components/pro/Pagination/constants'
 import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
 import { PaginationProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { BUTTON_META } from '../Button'
 
-export const PAGINATION_PROPS: Record<keyof PaginationProps, Prop> = {
+export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
   boundaryCount: {
     options: ['number'],
     defaultValue: String(DEFAULT_PAGINATION_BOUNDARY_COUNT),

@@ -1,10 +1,10 @@
 import type { TableRowProps } from 'lib/components/core/Table/slots/TableRow/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { TABLE_META } from '../Table'
 
-export const TABLE_ROW_PROPS: Record<keyof TableRowProps, Prop> = {
+export const TABLE_ROW_PROPS: Record<keyof TableRowProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Table.Cell', 'Table.HeaderCell'],

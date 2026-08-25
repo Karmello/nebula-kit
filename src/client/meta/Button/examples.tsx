@@ -1,8 +1,8 @@
 import { NEB_LENGTH, TSHIRT_SIZES } from 'lib/constants'
 import { Box, Button } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const BUTTON_EXAMPLES: Example[] = [
+export const BUTTON_EXAMPLES: DocExample[] = [
   {
     description: 'Default button has medium size, solid variant and tertiary intent.',
     jsx: <Button>Default button</Button>,

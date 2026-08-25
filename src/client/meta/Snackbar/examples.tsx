@@ -2,7 +2,7 @@ import { CALLOUT_CONFIG, CalloutStatus } from 'lib/components/core/Callout'
 import { type SnackbarPlacement } from 'lib/components/pro/Snackbar/types'
 import { Button } from 'lib/index.core'
 import { useSnackbar } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const SnackbarWrapper = ({
   status,
@@ -32,7 +32,7 @@ const SnackbarWrapper = ({
   )
 }
 
-export const SNACKBAR_EXAMPLES: Example[] = [
+export const SNACKBAR_EXAMPLES: DocExample[] = [
   {
     code: `<Snackbar>
   <App />
@@ -152,7 +152,7 @@ show({
   },
 ]
 
-export const USE_SNACKBAR_EXAMPLES: Example[] = [
+export const USE_SNACKBAR_EXAMPLES: DocExample[] = [
   {
     code: `const { show } = useSnackbar()
 

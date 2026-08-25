@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TOOLBAR_OVERVIEW: Overview = {
+export const TOOLBAR_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Horizontal bar with Start, Main and End slots for organizing actions and controls.',
   features: [

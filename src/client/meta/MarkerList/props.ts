@@ -4,11 +4,11 @@ import {
   MARKER_LIST_TAGS,
 } from 'lib/components/core/MarkerList/constants'
 import { MarkerListProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const MARKER_LIST_PROPS: Record<keyof MarkerListProps, Prop> = {
+export const MARKER_LIST_PROPS: Record<keyof MarkerListProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

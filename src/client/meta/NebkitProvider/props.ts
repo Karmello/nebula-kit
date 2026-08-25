@@ -11,9 +11,9 @@ import {
   NEBKIT_PROVIDER_THEMES,
 } from 'lib/components/core/NebkitProvider/constants'
 import type { NebkitProviderProps } from 'lib/components/core/NebkitProvider/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
-export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, Prop> = {
+export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, DocProp> = {
   borderRadiusSize: {
     options: NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),

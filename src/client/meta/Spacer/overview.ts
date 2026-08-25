@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SPACER_OVERVIEW: Overview = {
+export const SPACER_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Layout component that introduces controlled empty space between elements.',
   features: [

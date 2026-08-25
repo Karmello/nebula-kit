@@ -1,8 +1,8 @@
 import { MarkerList, Text } from 'lib/index.core'
 import { Markup } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const MARKUP_EXAMPLES: Example[] = [
+export const MARKUP_EXAMPLES: DocExample[] = [
   {
     description: 'Basic inline formatting.',
     jsx: (

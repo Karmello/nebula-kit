@@ -2,7 +2,7 @@ import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { Slide, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -26,7 +26,7 @@ const SlideWrapper = ({ children }: { children: ReactElement }) => {
   return cloneElement(children as any, { visible })
 }
 
-export const SLIDE_EXAMPLES: Example[] = [
+export const SLIDE_EXAMPLES: DocExample[] = [
   {
     description: 'Sliding in from the left.',
     jsx: (

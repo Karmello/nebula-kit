@@ -4,12 +4,12 @@ import {
   SWITCH_INTENTS,
 } from 'lib/components/pro/Switch/constants'
 import { SwitchProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { BUTTON_META } from '../Button'
 
-export const SWITCH_PROPS: Record<keyof SwitchProps, Prop> = {
+export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
   checked: {
     options: ['boolean'],
     description: 'Controls the checked state in controlled mode.',

@@ -5,9 +5,9 @@ import {
   FLOATING_PLACEMENT,
 } from 'lib/components/pro/Floating/constants'
 import { FloatingProps } from 'lib/components/pro/Floating/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
-export const FLOATING_PROPS: Record<keyof FloatingProps, Prop> = {
+export const FLOATING_PROPS: Record<keyof FloatingProps, DocProp> = {
   children: {
     options: ['ReactNode'],
     isRequired: true,

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 import { Pagination } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const Example1 = () => {
   const [page, setPage] = useState<number>(1)
@@ -43,7 +43,7 @@ const Example3 = () => {
   )
 }
 
-export const PAGINATION_EXAMPLES: Example[] = [
+export const PAGINATION_EXAMPLES: DocExample[] = [
   {
     description: 'Basic controlled pagination.',
     jsx: <Example1 />,

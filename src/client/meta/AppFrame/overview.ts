@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const APP_FRAME_OVERVIEW: Overview = {
+export const APP_FRAME_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Application shell for structuring a full page view.',
   description:

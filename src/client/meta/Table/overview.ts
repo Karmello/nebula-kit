@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_OVERVIEW: Overview = {
+export const TABLE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title:
     'Layout component built on the HTML table element, providing a semantic structure for displaying data in rows and columns.',

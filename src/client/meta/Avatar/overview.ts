@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const AVATAR_OVERVIEW: Overview = {
+export const AVATAR_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'User image component with consistent sizing, shape and fallback behavior.',
   features: [

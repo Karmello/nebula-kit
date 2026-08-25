@@ -1,8 +1,8 @@
 import { Box } from 'lib/index.core'
 import { VirtualList } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const VIRTUAL_LIST_EXAMPLES: Example[] = [
+export const VIRTUAL_LIST_EXAMPLES: DocExample[] = [
   {
     description: 'Virtual list with 100 items, displaying 10 and rendering 30 at a time.',
     sandBoxWithNoPadding: true,

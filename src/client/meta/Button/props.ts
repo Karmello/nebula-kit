@@ -10,13 +10,13 @@ import {
 } from 'lib/components/core/Button/constants'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { ButtonProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { ICON_META } from '../Icon'
 import { TEXT_META } from '../Text'
 
-export const BUTTON_PROPS: Record<keyof ButtonProps, Prop> = {
+export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   align: {
     options: BUTTON_ALIGNS,
     defaultValue: String(DEFAULT_BUTTON_ALIGN),

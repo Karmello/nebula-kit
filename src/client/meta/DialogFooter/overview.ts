@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const DIALOG_FOOTER_OVERVIEW: Overview = {
+export const DIALOG_FOOTER_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Dialog.Footer?',
   title: 'Footer area of the dialog.',

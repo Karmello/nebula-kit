@@ -1,7 +1,7 @@
 import { Section } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SECTION_EXAMPLES: Example[] = [
+export const SECTION_EXAMPLES: DocExample[] = [
   {
     description: 'Default section with a heading and body content.',
     jsx: <Section heading="Section heading">Section content area</Section>,

@@ -4,11 +4,11 @@ import {
   VIRTUAL_LIST_SCROLL_ALIGN,
 } from 'lib/components/pro/VirtualList/constants'
 import { VirtualListProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, Prop> = {
+export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
   color: {
     ...BOX_META.props.color,
     description: 'Color applied to the surface behind list items.',

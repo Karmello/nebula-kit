@@ -1,12 +1,12 @@
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from 'lib/components/core/Reveal/constants'
 import { RevealProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { BUTTON_META } from '../Button'
 import { RESIZE_META } from '../Resize'
 
-export const REVEAL_PROPS: Record<keyof RevealProps, Prop> = {
+export const REVEAL_PROPS: Record<keyof RevealProps, DocProp> = {
   children: {
     ...RESIZE_META.props.children,
     isRequired: true,

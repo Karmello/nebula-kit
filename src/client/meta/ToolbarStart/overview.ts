@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TOOLBAR_START_OVERVIEW: Overview = {
+export const TOOLBAR_START_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Toolbar.Start?',
   title: 'Defines the start slot of Toolbar.',

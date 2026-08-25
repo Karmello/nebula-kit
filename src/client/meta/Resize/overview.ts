@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const RESIZE_OVERVIEW: Overview = {
+export const RESIZE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Motion component for animating layout size.',
   description:

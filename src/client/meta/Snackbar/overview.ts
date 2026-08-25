@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SNACKBAR_OVERVIEW: Overview = {
+export const SNACKBAR_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Floating message container for transient status notifications, anchored to the viewport.',
   features: [
@@ -16,7 +16,7 @@ export const SNACKBAR_OVERVIEW: Overview = {
   hooks: ['useSnackbar'],
 }
 
-export const USE_SNACKBAR_OVERVIEW: Overview = {
+export const USE_SNACKBAR_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'useSnackbar.show()',
   title: 'Programmatic API for triggering snackbar messages.',

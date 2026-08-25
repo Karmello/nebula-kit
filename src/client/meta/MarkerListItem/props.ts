@@ -1,9 +1,9 @@
 import type { MarkerListItemProps } from 'lib/components/core/MarkerList/slots/MarkerListItem/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const MARKER_LIST_ITEM_PROPS: Record<keyof MarkerListItemProps, Prop> = {
+export const MARKER_LIST_ITEM_PROPS: Record<keyof MarkerListItemProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

@@ -4,11 +4,11 @@ import {
   DIALOG_SIZES,
 } from 'lib/components/pro/Dialog/constants'
 import type { DialogProps } from 'lib/components/pro/Dialog/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const DIALOG_PROPS: Record<keyof DialogProps, Prop> = {
+export const DIALOG_PROPS: Record<keyof DialogProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],

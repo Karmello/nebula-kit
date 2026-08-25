@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TEXTAREA_OVERVIEW: Overview = {
+export const TEXTAREA_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Multiline text input for entering and editing longer text.',
   features: ['supports both controlled and uncontrolled modes'],

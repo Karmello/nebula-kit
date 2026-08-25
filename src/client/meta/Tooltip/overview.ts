@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TOOLTIP_OVERVIEW: Overview = {
+export const TOOLTIP_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Non-interactive overlay for displaying short, contextual information.',
   description:

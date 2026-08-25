@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const APP_FRAME_MAIN_OVERVIEW: Overview = {
+export const APP_FRAME_MAIN_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'AppFrame.Main',
   title: 'Defines the central content region of AppFrame.',

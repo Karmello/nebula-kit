@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SELECT_OPTION_OVERVIEW: Overview = {
+export const SELECT_OPTION_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Select.Option',
   title: 'Represents a selectable item within a Select dropdown list.',

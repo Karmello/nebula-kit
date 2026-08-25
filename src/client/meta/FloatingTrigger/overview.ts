@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const FLOATING_TRIGGER_OVERVIEW: Overview = {
+export const FLOATING_TRIGGER_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Floating.Trigger',
   title: 'Anchor element used to position and control the floating content.',

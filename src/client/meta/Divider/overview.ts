@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const DIVIDER_OVERVIEW: Overview = {
+export const DIVIDER_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Boundary marker between content sections.',
   features: [

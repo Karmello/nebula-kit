@@ -1,9 +1,9 @@
 import type { TabsTabProps } from 'lib/components/pro/Tabs/slots/TabsTab/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABS_TAB_PROPS: Record<keyof TabsTabProps, Prop> = {
+export const TABS_TAB_PROPS: Record<keyof TabsTabProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

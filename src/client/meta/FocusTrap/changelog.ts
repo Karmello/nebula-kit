@@ -1,5 +1,5 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const FOCUS_TRAP_CHANGELOG: Changelog = {
+export const FOCUS_TRAP_CHANGELOG: DocChangelog = {
   '0.2.3': ['released'],
 }

@@ -6,11 +6,11 @@ import {
 } from 'lib/components/pro/Tabs/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { TabsProps } from 'lib/index.pro'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const TABS_PROPS: Record<keyof TabsProps, Prop> = {
+export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     options: ['Tabs.Tab', 'Tabs.Panel'],

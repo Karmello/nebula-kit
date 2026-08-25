@@ -1,14 +1,14 @@
 import { useState } from 'react'
 
 import { Textarea } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const TextareaControlled = () => {
   const [value, setValue] = useState<string>('value')
   return <Textarea value={value} onChange={setValue} />
 }
 
-export const TEXTAREA_EXAMPLES: Example[] = [
+export const TEXTAREA_EXAMPLES: DocExample[] = [
   {
     description:
       'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',

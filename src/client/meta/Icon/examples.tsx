@@ -1,9 +1,9 @@
 import { Footprints } from 'lucide-react'
 
 import { Icon } from 'lib/components/core/Icon/icon'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const ICON_EXAMPLES: Example[] = [
+export const ICON_EXAMPLES: DocExample[] = [
   {
     description: 'Default icon.',
     jsx: <Icon name="search" />,

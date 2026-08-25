@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const NEBKIT_PROVIDER_OVERVIEW: Overview = {
+export const NEBKIT_PROVIDER_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Root configuration and context provider for NebulaKit.',
   features: [

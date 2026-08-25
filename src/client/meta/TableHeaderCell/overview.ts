@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const TABLE_HEADER_CELL_OVERVIEW: Overview = {
+export const TABLE_HEADER_CELL_OVERVIEW: DocOverview = {
   bundle: 'core',
   name: 'Table.HeaderCell?',
   title: 'Represents a single header cell.',

@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const DIALOG_OVERVIEW: Overview = {
+export const DIALOG_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Centered modal dialog for interrupting the current user flow.',
   features: [

@@ -1,5 +1,5 @@
-import { type Changelog } from 'client/definitions'
+import { type DocChangelog } from 'client/definitions'
 
-export const SCALE_CHANGELOG: Changelog = {
+export const SCALE_CHANGELOG: DocChangelog = {
   '0.11.0': ['released'],
 }

@@ -1,7 +1,7 @@
 import { Box, Checkbox } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const CHECKBOX_EXAMPLES: Example[] = [
+export const CHECKBOX_EXAMPLES: DocExample[] = [
   {
     code: '<Checkbox checked={checked} />',
     skip: true,

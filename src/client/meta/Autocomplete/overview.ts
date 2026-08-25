@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const AUTOCOMPLETE_OVERVIEW: Overview = {
+export const AUTOCOMPLETE_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Text input with a searchable, selectable dropdown list.',
   description:

@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const FOCUS_TRAP_OVERVIEW: Overview = {
+export const FOCUS_TRAP_OVERVIEW: DocOverview = {
   bundle: 'pro',
   title: 'Utility for trapping keyboard focus within a specific region.',
   features: [

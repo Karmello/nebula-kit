@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const PORTAL_OVERVIEW: Overview = {
+export const PORTAL_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Low-level utility component for rendering content outside the normal document flow.',
   description:

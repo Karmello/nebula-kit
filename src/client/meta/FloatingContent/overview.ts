@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const FLOATING_CONTENT_OVERVIEW: Overview = {
+export const FLOATING_CONTENT_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'Floating.Content',
   title: 'Portal-rendered overlay positioned relative to the trigger.',

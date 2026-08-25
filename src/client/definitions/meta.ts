@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 import { ReleaseVersion } from './release'
 
-export type Overview = {
+export type DocOverview = {
   name?: string
   bundle: 'core' | 'pro'
   title: string
@@ -19,7 +19,7 @@ export type Overview = {
   }
 }
 
-export type Prop = {
+export type DocProp = {
   options: readonly string[]
   defaultValue?: string
   isRequired?: boolean
@@ -28,7 +28,7 @@ export type Prop = {
   link?: boolean
 }
 
-export type Example = {
+export type DocExample = {
   jsx?: JSX.Element
   code?: string
   description?: string
@@ -38,12 +38,12 @@ export type Example = {
   skip?: boolean
 }
 
-export type Changelog = Partial<Record<ReleaseVersion, string[]>>
+export type DocChangelog = Partial<Record<ReleaseVersion, string[]>>
 
 export type DocMeta<PropsType> = {
-  overview: Overview
-  props?: Record<keyof PropsType, Prop>
-  examples?: Example[]
-  changelog?: Changelog
+  overview: DocOverview
+  props?: Record<keyof PropsType, DocProp>
+  examples?: DocExample[]
+  changelog?: DocChangelog
   hideExamplesThemeToggle?: boolean
 }

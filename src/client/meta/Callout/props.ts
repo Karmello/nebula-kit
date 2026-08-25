@@ -8,11 +8,11 @@ import {
 } from 'lib/components/core/Callout/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { CalloutProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const CALLOUT_PROPS: Record<keyof CalloutProps, Prop> = {
+export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
   content: {
     options: ['string'],
     isRequired: true,

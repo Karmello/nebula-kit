@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SPLIT_VIEW_MAIN_OVERVIEW: Overview = {
+export const SPLIT_VIEW_MAIN_OVERVIEW: DocOverview = {
   bundle: 'pro',
   name: 'SplitView.Main',
   title: 'Defines the main content region of the SplitView layout.',

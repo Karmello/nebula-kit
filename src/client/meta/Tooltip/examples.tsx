@@ -1,8 +1,8 @@
 import { Button, Icon } from 'lib/index.core'
 import { Tooltip } from 'lib/index.pro'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const TOOLTIP_EXAMPLES: Example[] = [
+export const TOOLTIP_EXAMPLES: DocExample[] = [
   {
     description: 'Tooltip using hover mode (default).',
     jsx: (

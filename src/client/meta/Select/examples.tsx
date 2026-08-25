@@ -1,7 +1,7 @@
 import { Select } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SELECT_EXAMPLES: Example[] = [
+export const SELECT_EXAMPLES: DocExample[] = [
   {
     description:
       'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',

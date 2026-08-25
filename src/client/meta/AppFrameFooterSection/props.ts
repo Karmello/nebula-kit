@@ -1,10 +1,10 @@
 import { DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING } from 'lib/components/core/AppFrame/slots/AppFrameFooterSection/constants'
 import type { AppFrameFooterSectionProps } from 'lib/components/core/AppFrame/slots/AppFrameFooterSection/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const APP_FRAME_FOOTER_SECTION_PROPS: Record<keyof AppFrameFooterSectionProps, Prop> = {
+export const APP_FRAME_FOOTER_SECTION_PROPS: Record<keyof AppFrameFooterSectionProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

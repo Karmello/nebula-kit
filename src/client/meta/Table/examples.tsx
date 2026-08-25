@@ -1,7 +1,7 @@
 import { Table } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const TABLE_EXAMPLES: Example[] = [
+export const TABLE_EXAMPLES: DocExample[] = [
   {
     jsx: (
       <Table>

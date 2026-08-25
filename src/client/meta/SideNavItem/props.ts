@@ -1,11 +1,11 @@
 import { SIDE_NAV_VARIANTS } from 'lib/components/pro/SideNav/constants'
 import type { SideNavItemProps } from 'lib/components/pro/SideNav/slots/SideNavItem/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BUTTON_META } from '../Button'
 import { LINK_META } from '../Link'
 
-export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, Prop> = {
+export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
   align: BUTTON_META.props.align,
   bold: BUTTON_META.props.bold,
   children: {

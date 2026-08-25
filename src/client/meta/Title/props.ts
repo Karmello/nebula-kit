@@ -5,12 +5,12 @@ import {
   TITLE_TYPOGRAPHY,
 } from 'lib/components/core/Title/constants'
 import { TitleProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 import { ICON_META } from '../Icon'
 
-export const TITLE_PROPS: Record<keyof TitleProps, Prop> = {
+export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

@@ -5,9 +5,9 @@ import {
   LINK_TARGETS,
 } from 'lib/components/core/Link/constants'
 import { LinkProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
-export const LINK_PROPS: Record<keyof LinkProps, Prop> = {
+export const LINK_PROPS: Record<keyof LinkProps, DocProp> = {
   children: {
     options: ['ReactNode'],
     isRequired: true,

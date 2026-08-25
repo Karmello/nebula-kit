@@ -1,9 +1,9 @@
 import type { AppFrameMainProps } from 'lib/components/core/AppFrame/slots/AppFrameMain/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const APP_FRAME_MAIN_PROPS: Record<keyof AppFrameMainProps, Prop> = {
+export const APP_FRAME_MAIN_PROPS: Record<keyof AppFrameMainProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,

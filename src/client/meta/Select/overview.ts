@@ -1,6 +1,6 @@
-import type { Overview } from 'client/definitions'
+import type { DocOverview } from 'client/definitions'
 
-export const SELECT_OVERVIEW: Overview = {
+export const SELECT_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Form control for choosing a single option from a list.',
   description:

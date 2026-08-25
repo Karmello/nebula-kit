@@ -3,11 +3,11 @@ import {
   DEFAULT_DIVIDER_MARGIN_BLOCK,
 } from 'lib/components/core/Divider/constants'
 import { DividerProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const DIVIDER_PROPS: Record<keyof DividerProps, Prop> = {
+export const DIVIDER_PROPS: Record<keyof DividerProps, DocProp> = {
   color: BOX_META.props.color,
   elevated: BOX_META.props.elevated,
   intent: {

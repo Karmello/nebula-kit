@@ -1,7 +1,7 @@
 import { HtmlTag } from 'lib/components'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const HTML_TAG_EXAMPLES: Example[] = [
+export const HTML_TAG_EXAMPLES: DocExample[] = [
   {
     description: 'Renders as <div> by default.',
     jsx: <HtmlTag />,

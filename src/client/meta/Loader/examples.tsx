@@ -1,8 +1,8 @@
 import { Box } from 'lib/components/core/Box'
 import { Loader } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const LOADER_EXAMPLES: Example[] = [
+export const LOADER_EXAMPLES: DocExample[] = [
   {
     description: 'Default loader.',
     jsx: <Loader />,

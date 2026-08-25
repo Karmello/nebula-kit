@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
 import { Rotate, RotateProps, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
 const RotateWrapper = ({ children }: Partial<RotateProps>) => {
   const [angle, setAngle] = useState<number>(0)
@@ -21,7 +21,7 @@ const RotateWrapper = ({ children }: Partial<RotateProps>) => {
   return <Rotate angle={angle}>{children}</Rotate>
 }
 
-export const ROTATE_EXAMPLES: Example[] = [
+export const ROTATE_EXAMPLES: DocExample[] = [
   {
     description: 'Rotation is triggered by changing the value of the angle prop.',
     jsx: (

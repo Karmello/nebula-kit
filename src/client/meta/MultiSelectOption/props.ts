@@ -1,9 +1,9 @@
 import type { MultiSelectOptionProps } from 'lib/components/pro/MultiSelect/slots/MultiSelectOption/types'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const MULTI_SELECT_OPTION_PROPS: Record<keyof MultiSelectOptionProps, Prop> = {
+export const MULTI_SELECT_OPTION_PROPS: Record<keyof MultiSelectOptionProps, DocProp> = {
   children: BOX_META.props.children,
   value: {
     options: ['string'],

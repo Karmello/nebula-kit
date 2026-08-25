@@ -1,7 +1,7 @@
 import { Spacer, Text } from 'lib/index.core'
-import { type Example } from 'client/definitions'
+import { type DocExample } from 'client/definitions'
 
-export const SPACER_EXAMPLES: Example[] = [
+export const SPACER_EXAMPLES: DocExample[] = [
   {
     description: `Vertical spacing between two text blocks.`,
     jsx: (

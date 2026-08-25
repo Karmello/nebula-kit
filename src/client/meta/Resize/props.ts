@@ -1,11 +1,11 @@
 import { RESIZE_PROPERTIES } from 'lib/components/core/Resize/constants'
 import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/core/Resize/resize'
 import { ResizeProps } from 'lib/index.core'
-import type { Prop } from 'client/definitions'
+import type { DocProp } from 'client/definitions'
 
 import { BOX_META } from '../Box'
 
-export const RESIZE_PROPS: Record<keyof ResizeProps, Prop> = {
+export const RESIZE_PROPS: Record<keyof ResizeProps, DocProp> = {
   children: {
     ...BOX_META.props.children,
     isRequired: true,
