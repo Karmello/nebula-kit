@@ -1,5 +1,4 @@
-import { Table } from './'
-import { type TableProps } from './types'
+import { Table, type TableProps } from 'lib/index.core'
 
 export type PropsFromTableKey = (typeof PROPS_FROM_TABLE)[number]
 

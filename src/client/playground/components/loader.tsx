@@ -1,4 +1,4 @@
-import { type LoaderProps } from './types'
+import { type LoaderProps } from 'lib/index.core'
 
 export type PropsFromLoaderKey = (typeof PROPS_FROM_LOADER)[number]
 

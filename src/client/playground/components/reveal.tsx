@@ -1,6 +1,4 @@
-import { Box } from '../Box'
-import { Reveal } from './reveal'
-import { type RevealProps } from './types'
+import { Box, Reveal, type RevealProps } from 'lib/index.core'
 
 export type PropsFromRevealKey = (typeof PROPS_FROM_REVEAL)[number]
 

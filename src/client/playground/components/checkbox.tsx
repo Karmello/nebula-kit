@@ -1,4 +1,4 @@
-import { type CheckboxProps } from './types'
+import { type CheckboxProps } from 'lib/index.core'
 
 export type PropsFromCheckboxKey = (typeof PROPS_FROM_CHECKBOX)[number]
 

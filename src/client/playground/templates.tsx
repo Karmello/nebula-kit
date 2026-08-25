@@ -1,9 +1,9 @@
-import { RevealTemplate } from 'lib/components/core/Reveal/playground'
-import { SelectTemplate } from 'lib/components/core/Select/playground'
-import { TableTemplate } from 'lib/components/core/Table/playground'
-import { AvatarTemplate } from 'lib/components/pro/Avatar/playground'
-import { TabsTemplate } from 'lib/components/pro/Tabs/playground'
-import { TooltipTemplate } from 'lib/components/pro/Tooltip/playground'
+import { AvatarTemplate } from './components/avatar'
+import { RevealTemplate } from './components/reveal'
+import { SelectTemplate } from './components/select'
+import { TableTemplate } from './components/table'
+import { TabsTemplate } from './components/tabs'
+import { TooltipTemplate } from './components/tooltip'
 
 export const COMPONENT_TEMPLATES = {
   Avatar: AvatarTemplate,

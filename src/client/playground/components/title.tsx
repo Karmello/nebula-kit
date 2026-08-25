@@ -1,4 +1,4 @@
-import type { TitleProps } from './types'
+import type { TitleProps } from 'lib/index.core'
 
 export type PropsFromTitleKey = (typeof PROPS_FROM_TITLE)[number]
 
