@@ -10,29 +10,25 @@ import {
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_INTENT,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+  DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT,
 } from './constants'
 
 export const Autocomplete = ({
-  // HtmlTag
   children,
-  tagAttrs,
   tagRef,
-  // DropdownList
+  // own
   color,
   intent = DEFAULT_AUTOCOMPLETE_INTENT,
-  scrollAlign,
-  visibleItemsCount,
+  visibleItemsCount = DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT,
   noOptionsLabel,
   // Box
   inlineSize = DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   disabled,
-  // own
   defaultValue,
   value,
   onChange,
   onInputChange,
   size = DEFAULT_TSHIRT_SIZE,
-  dropdownPlacement,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,
   placeholder,
@@ -57,18 +53,15 @@ export const Autocomplete = ({
       {({ slotsByName }) => {
         return (
           <AutocompleteMain
-            tagAttrs={tagAttrs}
             tagRef={tagRef}
             intent={intent}
             color={color}
             size={size}
-            scrollAlign={scrollAlign}
             visibleItemsCount={visibleItemsCount}
             noOptionsLabel={noOptionsLabel}
             inlineSize={inlineSize}
             disabled={disabled}
             onInputChange={onInputChange}
-            dropdownPlacement={dropdownPlacement}
             disableFiltering={disableFiltering}
             debounceDelay={debounceDelay}
             placeholder={placeholder}

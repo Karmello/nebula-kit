@@ -1,11 +1,10 @@
-import { ReactElement, ReactNode, useLayoutEffect, useState } from 'react'
-import classNames from 'classnames'
+import { ReactElement, ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
-import { DropdownList, DropdownListState } from 'lib/components/shared'
-import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { withPrefix } from 'lib/helpers'
-import { Box, IconButton, Input, Text } from 'lib/index.core'
-import { AutocompleteOptionProps, AutocompleteProps } from 'lib/index.pro'
+import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
+import { Box, Divider, IconButton, Input, Resize, Text } from 'lib/index.core'
+import { AutocompleteOptionProps, AutocompleteProps, Floating, FloatingProps } from 'lib/index.pro'
+
+import { resolveAutocompleteValues } from '../../helpers'
 
 type AutocompleteMainProps = Omit<
   AutocompleteProps,
@@ -17,21 +16,17 @@ type AutocompleteMainProps = Omit<
 }
 
 export const AutocompleteMain = ({
-  tagAttrs,
   tagRef,
-  // DropdownList
+  // own
   color,
   size,
   intent,
-  scrollAlign,
   visibleItemsCount,
   noOptionsLabel,
   // Box
   inlineSize,
   disabled,
-  // own
   onInputChange,
-  dropdownPlacement,
   disableFiltering,
   debounceDelay,
   placeholder,
@@ -45,9 +40,21 @@ export const AutocompleteMain = ({
   const [queryValue, setQueryValue] = useState<string>('')
   const [filteredItems, setFilteredItems] = useState<AutocompleteMainProps['items']>([])
 
-  const [dropdownListState, setDropdownListState] = useState<DropdownListState>({
-    open: false,
-    placement: dropdownPlacement || 'bottom-center',
+  const [open, setOpen] = useState<boolean>(false)
+  const [visible, setVisible] = useState<boolean>(false)
+  const [placement, setPlacement] = useState<FloatingProps['placement']>('bottom-start')
+
+  const internalRef = useRef<HTMLDivElement | null>(null)
+  const triggerRef = tagRef || internalRef
+
+  const triggerWidth = triggerRef.current?.offsetWidth
+  const isOpenDownwards = placement?.startsWith('bottom')
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))
+
+  const { menuBlockSize } = resolveAutocompleteValues({
+    visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
+    optionBlockSize,
+    itemsCount: filteredItems.length || (noOptionsLabel ? 1 : 0),
   })
 
   useLayoutEffect(() => {
@@ -63,11 +70,9 @@ export const AutocompleteMain = ({
     }
   }, [queryValue, disableFiltering, items])
 
-  const currentItemIndex = items.findIndex(
+  const currentItem = items.find(
     item => (item as ReactElement<AutocompleteOptionProps>).props.value === currentValue
-  )
-
-  const currentItem = items[currentItemIndex] as ReactElement<AutocompleteOptionProps>
+  ) as ReactElement<AutocompleteOptionProps>
 
   useLayoutEffect(() => {
     if (currentValue === undefined) return
@@ -77,7 +82,7 @@ export const AutocompleteMain = ({
   }, [currentValue])
 
   useLayoutEffect(() => {
-    if (!dropdownListState?.open) return
+    if (!open) return
 
     if (!debounceDelay) {
       setQueryValue(inputValue)
@@ -89,57 +94,56 @@ export const AutocompleteMain = ({
     }, debounceDelay)
 
     return () => clearTimeout(id)
-  }, [inputValue, debounceDelay, dropdownListState?.open])
+  }, [inputValue, debounceDelay, open])
 
   useLayoutEffect(() => {
-    if (!dropdownListState?.open) {
+    if (!open) {
       setQueryValue(inputValue)
     }
-  }, [dropdownListState?.open])
+  }, [open])
+
+  useEffect(() => {
+    requestAnimationFrame(() => {
+      setVisible(open)
+    })
+  }, [open])
 
   return (
-    <DropdownList
-      tagRef={tagRef}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('autocomplete'), tagAttrs?.className),
-      }}
-      state={dropdownListState}
-      onStateChange={setDropdownListState}
-      intent={intent}
-      color={color}
-      itemBlockSize={Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))}
-      scrollToIndex={currentItemIndex}
-      scrollAlign={scrollAlign}
-      visibleItemsCount={visibleItemsCount}
-      noOptionsLabel={noOptionsLabel}
-      disableListAnimation
-      placement={dropdownPlacement}
-      openOnFocus
-      onOpened={() => {
-        setDropdownListState(prev => ({ ...prev, open: true }))
-      }}
+    <Floating
+      mode="click"
+      open={open}
+      onOpenChange={setOpen}
+      placement={placement}
+      onPlacementChange={setPlacement}
+      disabled={disabled}
     >
-      <DropdownList.Trigger
-        tag="div"
-        inlineSize={inlineSize}
-        disabled={disabled}
-        surface={dropdownListState?.open ? 'selected' : undefined}
-      >
-        <Box display="flex">
-          <Box flex="1">
+      <Floating.Trigger display="block">
+        <Box
+          tagRef={triggerRef}
+          display="flex"
+          inlineSize={inlineSize}
+          disabled={disabled}
+          surface={open ? 'selected' : undefined}
+        >
+          <Box
+            flex="1"
+            tagAttrs={{
+              onClick: (e: { stopPropagation: () => void }) => {
+                e.stopPropagation()
+              },
+            }}
+          >
             <Input
               tagAttrs={{
-                'aria-labelledby': tagAttrs?.['aria-labelledby'],
                 style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 },
               }}
               value={inputValue}
               onChange={value => {
                 setInputValue(value)
-                if (!dropdownListState?.open)
-                  setDropdownListState(prev => ({ ...prev, open: true }))
+                if (!open) setOpen(true)
                 onInputChange?.(value)
               }}
+              onFocus={() => setOpen(true)}
               placeholder={placeholder}
               scale={size}
               variant="solid"
@@ -159,41 +163,110 @@ export const AutocompleteMain = ({
                   borderBottomLeftRadius: 0,
                 },
               }}
-              iconName={
-                dropdownListState?.placement?.startsWith('bottom') ? 'chevron-down' : 'chevron-up'
-              }
-              elevated={dropdownListState?.open}
+              iconName={isOpenDownwards ? 'chevron-down' : 'chevron-up'}
+              elevated={open}
               onClick={() => {
-                setDropdownListState(prev => ({ ...prev, open: !prev.open }))
+                setOpen(prev => !prev)
               }}
               scale={size}
             />
           ) : null}
         </Box>
-      </DropdownList.Trigger>
-      {filteredItems.map((slot, index) => {
-        const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
-        const isSelected = slotProps.value === currentValue
-
-        return (
-          <DropdownList.Item
-            key={index}
-            index={index}
-            blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-            paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
-            elevated={dropdownListState?.open}
-            surface={isSelected ? 'selected' : undefined}
-            inlineSize="100%"
-            onClick={() => {
-              setInputValue(slotProps.label)
-              setQueryValue(slotProps.label)
-              handleChange(slotProps.value)
-            }}
+      </Floating.Trigger>
+      <Floating.Content>
+        <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
+          <Box
+            drawable
+            variant="solid"
+            intent={intent}
+            color={color}
+            inlineSize={`${triggerWidth}px`}
+            maxBlockSize={`${menuBlockSize}px`}
+            overflowY="auto"
+            borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
+            borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
+            borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
+            borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
           >
-            <Text bold={isSelected}>{slot}</Text>
-          </DropdownList.Item>
-        )
-      })}
-    </DropdownList>
+            <Box intent={intent} color={color} elevated>
+              {filteredItems.length === 0 && noOptionsLabel ? (
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  tagAttrs={{
+                    style: {
+                      blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
+                      paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                    },
+                  }}
+                >
+                  <Text>{noOptionsLabel}</Text>
+                </Box>
+              ) : (
+                filteredItems.map((slot, key) => {
+                  const slotProps = (slot as ReactElement<AutocompleteOptionProps>).props
+                  const isSelected = slotProps.value === currentValue
+
+                  return (
+                    <Box key={key}>
+                      {isOpenDownwards ? (
+                        <Divider
+                          marginBlock={NEB_LENGTH.px_000}
+                          elevated
+                          color={color}
+                          intent={intent}
+                        />
+                      ) : null}
+                      <Box
+                        tag="button"
+                        tagAttrs={{
+                          onClick: () => {
+                            setInputValue(slotProps.label)
+                            setQueryValue(slotProps.label)
+                            handleChange(slotProps.value)
+                            setOpen(false)
+                          },
+                        }}
+                        drawable
+                        interactive
+                        variant="solid"
+                        elevated
+                        intent={intent}
+                        color={color}
+                        cursor="pointer"
+                        surface={isSelected ? 'selected' : undefined}
+                        inlineSize="100%"
+                        borderRadius={NEB_LENGTH.px_000}
+                      >
+                        <Box
+                          display="flex"
+                          tagAttrs={{
+                            style: {
+                              blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
+                              paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                            },
+                          }}
+                          alignItems="center"
+                        >
+                          <Text bold={isSelected}>{slot}</Text>
+                        </Box>
+                      </Box>
+                      {!isOpenDownwards ? (
+                        <Divider
+                          marginBlock={NEB_LENGTH.px_000}
+                          elevated
+                          color={color}
+                          intent={intent}
+                        />
+                      ) : null}
+                    </Box>
+                  )
+                })
+              )}
+            </Box>
+          </Box>
+        </Resize>
+      </Floating.Content>
+    </Floating>
   )
 }

@@ -3,14 +3,8 @@ import {
   DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   DEFAULT_AUTOCOMPLETE_INLINE_SIZE,
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
+  DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT,
 } from 'lib/components/pro/Autocomplete/constants'
-import {
-  DEFAULT_DROPDOWN_LIST_PLACEMENT,
-  DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-  DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT,
-  DROPDOWN_LIST_PLACEMENTS,
-  DROPDOWN_LIST_SCROLL_ALIGN,
-} from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { AutocompleteProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
@@ -43,12 +37,6 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
       'Disables internal label-based filtering. Use when options are filtered externally.',
   },
   disabled: BOX_META.props.disabled,
-  dropdownPlacement: {
-    options: DROPDOWN_LIST_PLACEMENTS,
-    defaultValue: DEFAULT_DROPDOWN_LIST_PLACEMENT,
-    description:
-      'Defines the preferred placement of the dropdown relative to the trigger. The final placement may be adjusted automatically to keep the list visible.',
-  },
   inlineSize: {
     ...BOX_META.props.inlineSize,
     defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
@@ -75,11 +63,6 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     description:
       'Placeholder text displayed in the input when no value is selected and the input is empty.',
   },
-  scrollAlign: {
-    options: DROPDOWN_LIST_SCROLL_ALIGN,
-    defaultValue: DEFAULT_DROPDOWN_LIST_SCROLL_ALIGN,
-    description: 'Defines how the selected option is positioned within the scroll area.',
-  },
   showToggle: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
@@ -89,7 +72,6 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },
-  tagAttrs: BOX_META.props.tagAttrs,
   tagRef: BOX_META.props.tagRef,
   value: {
     options: ['string'],
@@ -97,7 +79,7 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
   },
   visibleItemsCount: {
     options: ['number'],
-    defaultValue: String(DEFAULT_DROPDOWN_LIST_VISIBLE_ITEMS_COUNT),
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT),
     description: 'Specifies the number of list items visible before scrolling is enabled.',
   },
 }

@@ -1,9 +1,8 @@
-import { DropdownListItemProps } from 'lib/components/shared'
+import { ReactNode } from 'react'
 
 export type AutocompleteOptionProps = {
   // own
   value: string
   label: string
-  // DropdownListItem
-  children?: DropdownListItemProps['children']
+  children?: ReactNode
 }
