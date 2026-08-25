@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box, TableCaptionProps } from 'lib/index.core'
 
 import { useTableContext } from '../../TableContext'
 import { DEFAULT_TABLE_CAPTION_INTENT } from './constants'
+import { TableCaptionProps } from './types'
 
 export const TableCaption = ({
   // Box

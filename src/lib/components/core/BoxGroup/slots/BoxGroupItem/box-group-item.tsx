@@ -1,6 +1,7 @@
 import { ElementType } from 'react'
 
-import { Box, NEB_LENGTH } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { NEB_LENGTH } from 'lib/constants'
 
 import { BORDER_WIDTH_AT_START, CORNERS_AT_END, CORNERS_AT_START } from './constants'
 import type { BoxGroupItemInternalProps, BoxGroupItemProps } from './types'

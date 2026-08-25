@@ -1,5 +1,6 @@
-import { Box } from 'lib/index.core'
-import { ToolbarEndProps } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+
+import type { ToolbarEndProps } from './types'
 
 export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
   return (

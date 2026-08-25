@@ -1,4 +1,6 @@
-import { BoxProps, IconProps, LinkProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
+import { IconProps } from 'lib/components/core/Icon'
+import { LinkProps } from 'lib/components/core/Link'
 
 import { SideNavVariant } from '../../types'
 import { SIDE_NAV_ITEM_ALIGNS, SIDE_NAV_ITEM_ICON_PLACEMENTS } from './constants'

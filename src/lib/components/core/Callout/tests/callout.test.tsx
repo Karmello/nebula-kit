@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { Callout } from 'lib/components'
+import { Callout } from '../callout'
 
 describe('<Callout />', () => {
   describe('basic rendering', () => {

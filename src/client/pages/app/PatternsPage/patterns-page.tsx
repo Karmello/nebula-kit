@@ -12,7 +12,7 @@ import {
   SplitView,
   Text,
 } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 import { useNavigateTo } from 'client/hooks'
 import { PATTERN_CATEGORIES, PATTERNS } from 'client/patterns'
 import { usePatternsStore } from 'client/store'

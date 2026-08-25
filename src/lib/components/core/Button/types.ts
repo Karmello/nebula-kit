@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { BoxProps, IconProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
+import { IconProps } from 'lib/components/core/Icon'
 import { RespValue, TShirtSize } from 'lib/types'
 
 import { type TextProps } from '../Text'

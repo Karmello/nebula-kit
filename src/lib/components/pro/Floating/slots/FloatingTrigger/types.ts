@@ -1,5 +1,5 @@
+import { BoxProps } from 'lib/components/core/Box'
 import { FLOATING_TRIGGER_DISPLAY } from 'lib/components/pro/Floating/slots/FloatingTrigger/constants'
-import { BoxProps } from 'lib/index.core'
 
 export type FloatingTriggerDisplay = (typeof FLOATING_TRIGGER_DISPLAY)[number]
 

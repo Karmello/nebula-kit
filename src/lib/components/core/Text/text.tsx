@@ -3,12 +3,11 @@ import classNames from 'classnames'
 
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { TextProps } from 'lib/index.core'
 import { buildStaticDataset } from 'lib/internals/dom'
 
 import { Box } from '../Box'
 import { DEFAULT_TEXT_TYPOGRAPHY } from './constants'
-import { TextTag } from './types'
+import { TextProps, TextTag } from './types'
 
 import './text.scss'
 

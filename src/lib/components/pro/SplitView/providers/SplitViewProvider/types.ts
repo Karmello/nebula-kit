@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { SplitViewProps } from 'lib/index.pro'
+import { SplitViewMode, SplitViewProps } from '../../types'
 
 export type ProviderProps = {
   // own
@@ -10,7 +10,7 @@ export type ProviderProps = {
   switchAt?: SplitViewProps['switchAt']
 }
 
-export type SplitViewMode = 'overlay' | 'inline'
+export type { SplitViewMode }
 
 export type SplitViewContextProps = {
   // own

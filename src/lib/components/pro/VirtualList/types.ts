@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 import { VIRTUAL_LIST_SCROLL_ALIGN } from './constants'
 

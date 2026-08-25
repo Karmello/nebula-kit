@@ -69,7 +69,7 @@
     "prettier": "prettier --check src/**/*.{ts,tsx}",
     "prettify": "prettier --write src/**/*.{ts,tsx}",
     "lint": "eslint src/**/*.{ts,tsx}",
-    "circ": "madge --circular --extensions ts,tsx src",
+    "circ": "madge --circular --extensions ts,tsx --ts-config tsconfig.json src",
     "ts": "tsc --noEmit -p tsconfig.typecheck.json",
     "tsd": "rimraf dist && tsc -p tsconfig.tsd.json && tsd --cwd . -t dist/types/index.d.ts -f \"src/lib/components/**/*.test.d.tsx\"",
     "test": "vitest run",

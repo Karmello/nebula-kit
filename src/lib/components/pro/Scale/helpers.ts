@@ -1,6 +1,5 @@
-import { ScaleProps } from 'lib/index.pro'
-
 import { SCALE_ORIGIN_MAP } from './constants'
+import { ScaleProps } from './types'
 
 const getScaleTransform = ({
   visible,

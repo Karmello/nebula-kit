@@ -1,4 +1,4 @@
-import { SelectOptionProps } from 'lib/index.core'
+import type { SelectOptionProps } from './types'
 
 export const SelectOption = ({ children }: SelectOptionProps) => {
   return children

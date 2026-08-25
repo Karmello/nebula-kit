@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 export type MarkerListItemProps = {
   tagAttrs?: BoxProps<'li'>['tagAttrs']

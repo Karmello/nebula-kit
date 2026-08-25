@@ -1,9 +1,9 @@
-import type { TextTag, TextTypography } from 'lib/components/core/Text/types'
+import { TEXT_TAGS, TEXT_TYPOGRAPHY } from 'lib/components/core/Text/constants'
 
 export const TYPOGRAPHY_MAP: Record<
-  TextTypography,
+  (typeof TEXT_TYPOGRAPHY)[number],
   {
-    tag: TextTag
+    tag: (typeof TEXT_TAGS)[number]
     fontSize: string
     lineHeight: number
     gap?: string

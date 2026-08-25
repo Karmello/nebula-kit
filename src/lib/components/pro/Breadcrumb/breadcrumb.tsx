@@ -1,9 +1,13 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
 
+import { Box } from 'lib/components/core/Box'
+import { Divider } from 'lib/components/core/Divider'
+import { Icon } from 'lib/components/core/Icon'
+import { Resize } from 'lib/components/core/Resize'
+import { Text } from 'lib/components/core/Text'
+import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
-import { Box, Divider, Icon, Resize, Text } from 'lib/index.core'
-import { type BreadcrumbProps, Floating, type FloatingProps } from 'lib/index.pro'
 
 import {
   DEFAULT_BREADCRUMB_INTENT,
@@ -11,7 +15,7 @@ import {
   DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { convertTreeToLevels, resolveBreadcrumbValues } from './helpers'
-import { type BreadcrumbNode, type BreadcrumbTag } from './types'
+import { type BreadcrumbNode, type BreadcrumbProps, type BreadcrumbTag } from './types'
 
 type BreadcrumbLevelProps = {
   nodes: BreadcrumbNode[]

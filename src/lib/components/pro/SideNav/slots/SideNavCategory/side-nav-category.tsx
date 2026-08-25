@@ -1,11 +1,14 @@
 import { cloneElement, useEffect, useId, useLayoutEffect } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
+import { Resize } from 'lib/components/core/Resize'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Icon, Resize, Spacer, Text } from 'lib/index.core'
-import { SideNavCategoryProps } from 'lib/index.pro'
 
 import { useSideNavContext } from '../../providers/SideNavProvider'
 import {
@@ -14,6 +17,7 @@ import {
   DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
 } from './constants'
+import { SideNavCategoryProps } from './types'
 
 export const SideNavCategory = ({
   // Box

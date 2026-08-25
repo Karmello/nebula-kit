@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Text } from 'lib/index.core'
-import { Fade, Floating, TooltipProps } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+import { Text } from 'lib/components/core/Text'
+import { Fade } from 'lib/components/pro/Fade'
+import { Floating } from 'lib/components/pro/Floating'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -10,6 +12,7 @@ import {
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
 } from './constants'
+import { TooltipProps } from './types'
 
 export const Tooltip = ({
   // Box

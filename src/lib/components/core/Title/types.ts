@@ -1,4 +1,6 @@
-import type { BoxProps, IconProps, TextProps } from 'lib/index.core'
+import type { BoxProps } from 'lib/components/core/Box'
+import type { IconProps } from 'lib/components/core/Icon'
+import type { TextProps } from 'lib/components/core/Text'
 
 import { TITLE_ICON_PLACEMENTS, TITLE_TYPOGRAPHY } from './constants'
 

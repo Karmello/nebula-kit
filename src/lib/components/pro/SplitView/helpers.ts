@@ -1,4 +1,4 @@
-import { SplitViewProps } from 'lib/index.pro'
+import { SplitViewProps } from './types'
 
 export const getToggleIconName = (
   sidePosition: SplitViewProps['sidePosition'],

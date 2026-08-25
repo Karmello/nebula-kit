@@ -1,5 +1,9 @@
-import { Box, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { MarkerList } from 'lib/components/core/MarkerList'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (

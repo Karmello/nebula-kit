@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { DividerProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from './constants'
+import { DividerProps } from './types'
 
 import './divider.scss'
 

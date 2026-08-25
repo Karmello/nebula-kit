@@ -1,5 +1,8 @@
-import { Box, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (

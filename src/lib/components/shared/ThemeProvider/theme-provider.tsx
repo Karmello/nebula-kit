@@ -1,10 +1,10 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import { BoxTheme } from 'lib/components/core/Box'
+import { BOX_THEMES } from 'lib/components/core/Box/constants'
 import { RespValue } from 'lib/types'
 
 type ThemeContextValue = {
-  theme?: RespValue<BoxTheme>
+  theme?: RespValue<(typeof BOX_THEMES)[number]>
 }
 
 type ThemeProviderProps = ThemeContextValue & {

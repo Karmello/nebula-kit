@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 
+import { BoxProps } from 'lib/components/core/Box'
 import { CalloutStatus } from 'lib/components/core/Callout'
-import { BoxProps } from 'lib/index.core'
 
 import { SNACKBAR_PLACEMENTS } from './constants'
 

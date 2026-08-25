@@ -1,12 +1,15 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
+import { Link } from 'lib/components/core/Link'
+import { Text } from 'lib/components/core/Text'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Icon, Link, Text } from 'lib/index.core'
-import { SideNavItemProps } from 'lib/index.pro'
 
 import { useSideNavContext } from '../../providers/SideNavProvider'
 import { DEFAULT_SIDE_NAV_ITEM_ALIGN, DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT } from './constants'
+import { SideNavItemProps } from './types'
 
 export const SideNavItem = ({
   tagRef,

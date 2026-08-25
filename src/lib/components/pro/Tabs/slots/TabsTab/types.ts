@@ -1,4 +1,4 @@
-import { TextProps } from 'lib/index.core'
+import { TextProps } from 'lib/components/core/Text'
 
 export type TabsTabProps = {
   children: TextProps<'span'>['children']

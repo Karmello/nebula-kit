@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Text } from 'lib/components'
+import { Text } from '../text'
 
 test.describe('Text responsive props', () => {
   test('textAlign responds to breakpoints', async ({ page, mount }) => {

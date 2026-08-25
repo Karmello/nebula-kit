@@ -1,7 +1,7 @@
 import { cloneElement } from 'react'
 
+import { Box } from 'lib/components/core/Box'
 import { WithSlots } from 'lib/components/shared'
-import { Box } from 'lib/index.core'
 
 import { type AppFrameProps } from './types'
 

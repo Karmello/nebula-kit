@@ -1,20 +1,19 @@
 import { memo } from 'react'
 
-import {
-  Box,
-  Button,
-  Divider,
-  Link,
-  NEB_LENGTH,
-  SideNav,
-  Spacer,
-  SplitView,
-  Text,
-} from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Button } from 'lib/components/core/Button'
+import { Divider } from 'lib/components/core/Divider'
+import { Link } from 'lib/components/core/Link'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { SideNav } from 'lib/components/pro/SideNav'
+import { SplitView } from 'lib/components/pro/SplitView'
+import { NEB_LENGTH } from 'lib/constants'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
-import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
+import { ComponentsPageRoutes } from 'client/pages/routes/ComponentsPageRoutes'
+import { FoundationsPageRoutes } from 'client/pages/routes/FoundationsPageRoutes'
 import { PLAYGROUND_PROPS_MAP } from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 

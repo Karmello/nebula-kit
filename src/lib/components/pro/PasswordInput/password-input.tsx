@@ -1,9 +1,11 @@
 import { useState } from 'react'
 
-import { Box, IconButton, Input } from 'lib/index.core'
-import { PasswordInputProps } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+import { IconButton } from 'lib/components/core/IconButton'
+import { Input } from 'lib/components/core/Input'
 
 import { DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE, DEFAULT_PASSWORD_INPUT_SCALE } from './constants'
+import { PasswordInputProps } from './types'
 
 export const PasswordInput = ({
   // Input

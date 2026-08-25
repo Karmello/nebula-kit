@@ -3,10 +3,10 @@ import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { ImageProps } from 'lib/index.core'
 import { syncRespStyle } from 'lib/internals/dom'
 
 import { Box } from '../Box'
+import { ImageProps } from './types'
 
 import './image.scss'
 

@@ -1,4 +1,4 @@
-import { ImageProps } from 'lib/index.core'
+import { ImageProps } from 'lib/components/core/Image'
 import { TShirtSize } from 'lib/types'
 
 import { AVATAR_SHAPES } from './constants'

@@ -1,9 +1,9 @@
 import { useCallback } from 'react'
 
+import { Box } from 'lib/components/core/Box'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
-import { Box } from 'lib/index.core'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from './constants'
 import { SplitViewProvider, useSplitViewContext } from './providers/SplitViewProvider'

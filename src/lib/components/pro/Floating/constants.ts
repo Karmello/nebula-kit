@@ -1,5 +1,3 @@
-import { FloatingProps } from 'lib/index.pro'
-
 export const FLOATING_MODE = ['hover', 'click'] as const
 
 export const FLOATING_PLACEMENT = [
@@ -17,5 +15,5 @@ export const FLOATING_PLACEMENT = [
   'left-end',
 ] as const
 
-export const DEFAULT_FLOATING_MODE: FloatingProps['mode'] = 'hover'
-export const DEFAULT_FLOATING_PLACEMENT: FloatingProps['placement'] = 'bottom-start'
+export const DEFAULT_FLOATING_MODE: (typeof FLOATING_MODE)[number] = 'hover'
+export const DEFAULT_FLOATING_PLACEMENT: (typeof FLOATING_PLACEMENT)[number] = 'bottom-start'

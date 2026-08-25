@@ -1,9 +1,11 @@
 import { useCallback, useMemo } from 'react'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
 import { type IconName } from 'lib/components/core/Icon/types'
+import { Link } from 'lib/components/core/Link'
+import { Text } from 'lib/components/core/Text'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Box, Icon, Link, Text } from 'lib/index.core'
-import { PaginationProps } from 'lib/index.pro'
 
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
@@ -15,6 +17,7 @@ import {
   DEFAULT_PAGINATION_VARIANT,
 } from './constants'
 import { getPaginationItems } from './helpers'
+import { PaginationProps } from './types'
 
 export const Pagination = ({
   // Box

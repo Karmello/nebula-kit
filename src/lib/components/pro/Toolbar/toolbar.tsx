@@ -1,15 +1,15 @@
 import { useCallback } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { ToolbarProps } from 'lib/index.pro'
 
 import { ToolbarProvider, useToolbarContext } from './providers/ToolbarProvider'
 import { ToolbarToggle } from './ToolbarToggle'
+import { ToolbarProps } from './types'
 
 import './toolbar.scss'
 

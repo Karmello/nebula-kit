@@ -1,10 +1,14 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
+import { Box } from 'lib/components/core/Box'
+import { Divider } from 'lib/components/core/Divider'
+import { Icon } from 'lib/components/core/Icon'
+import { Resize } from 'lib/components/core/Resize'
+import { Text } from 'lib/components/core/Text'
+import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Divider, Icon, Resize, SelectOptionProps, SelectProps, Text } from 'lib/index.core'
-import { Floating, FloatingProps } from 'lib/index.pro'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -13,6 +17,8 @@ import {
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { resolveSelectValues } from './helpers'
+import type { SelectOptionProps } from './slots/SelectOption/types'
+import type { SelectProps } from './types'
 
 export const SelectImpl = ({
   variant = DEFAULT_SELECT_VARIANT,

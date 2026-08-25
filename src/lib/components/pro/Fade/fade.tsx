@@ -1,12 +1,12 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { FadeProps } from 'lib/index.pro'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { syncFadeOpacity } from './helpers'
+import { FadeProps } from './types'
 
 export const DEFAULT_FADE_DURATION = 200
 export const DEFAULT_FADE_EASING = 'linear'

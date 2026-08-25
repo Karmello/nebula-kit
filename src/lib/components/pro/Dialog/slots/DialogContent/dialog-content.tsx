@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { DialogContentProps } from 'lib/index.pro'
 
 import { useDialogContext } from '../../providers/DialogProvider'
+import { DialogContentProps } from './types'
 
 export const DialogContent = ({
   // Box

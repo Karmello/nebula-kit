@@ -1,8 +1,10 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
 import { withPrefix } from 'lib/helpers'
-import { CalloutProps, Spacer, Text, Title } from 'lib/index.core'
 
 import { Box } from '../Box'
 import {
@@ -13,7 +15,7 @@ import {
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
 } from './constants'
-import { CalloutTag } from './types'
+import { CalloutProps, CalloutTag } from './types'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box

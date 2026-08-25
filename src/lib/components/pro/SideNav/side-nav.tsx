@@ -1,9 +1,8 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { SideNavProps } from 'lib/index.pro'
 
 import { SideNavToggle } from './components'
 import {
@@ -12,6 +11,7 @@ import {
   DEFAULT_SIDE_NAV_SCALE,
 } from './constants'
 import { SideNavProvider } from './providers/SideNavProvider'
+import { SideNavProps } from './types'
 
 import './side-nav.scss'
 

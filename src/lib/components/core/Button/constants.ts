@@ -1,12 +1,13 @@
-import { ButtonProps } from 'lib/index.core'
-
-export const DEFAULT_BUTTON_SCALE: ButtonProps['scale'] = 'md'
-export const DEFAULT_BUTTON_VARIANT: ButtonProps['variant'] = 'solid'
-export const DEFAULT_BUTTON_INTENT: ButtonProps['intent'] = 'tertiary'
-export const DEFAULT_BUTTON_RIPPLE: ButtonProps['ripple'] = true
-export const DEFAULT_BUTTON_ALIGN: ButtonProps['align'] = 'center'
-export const DEFAULT_BUTTON_ICON_PLACEMENT: ButtonProps['iconPlacement'] = 'left'
+import type { BoxIntent, BoxVariant } from 'lib/components/core/Box'
+import type { TShirtSize } from 'lib/types'
 
 export const BUTTON_ALIGNS = ['center', 'start', 'split'] as const
 export const BUTTON_ICON_PLACEMENTS = ['left', 'right'] as const
 export const BUTTON_TAGS = ['button', 'a'] as const
+
+export const DEFAULT_BUTTON_SCALE: TShirtSize = 'md'
+export const DEFAULT_BUTTON_VARIANT: BoxVariant = 'solid'
+export const DEFAULT_BUTTON_INTENT: BoxIntent = 'tertiary'
+export const DEFAULT_BUTTON_RIPPLE = true
+export const DEFAULT_BUTTON_ALIGN: (typeof BUTTON_ALIGNS)[number] = 'center'
+export const DEFAULT_BUTTON_ICON_PLACEMENT: (typeof BUTTON_ICON_PLACEMENTS)[number] = 'left'

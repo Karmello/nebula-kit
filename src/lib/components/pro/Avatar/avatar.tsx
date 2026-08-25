@@ -1,7 +1,9 @@
 import { useLayoutEffect, useRef, useState } from 'react'
 
-import { Box, Image, Loader, Text } from 'lib/index.core'
-import { AvatarProps } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+import { Image } from 'lib/components/core/Image'
+import { Loader } from 'lib/components/core/Loader'
+import { Text } from 'lib/components/core/Text'
 
 import {
   AVATAR_SIZES_MAP,
@@ -12,6 +14,7 @@ import {
   LOADER_DELAY,
   MIN_LOADER_VISIBLE_TIME,
 } from './constants'
+import { AvatarProps } from './types'
 
 export const Avatar = ({
   // Image

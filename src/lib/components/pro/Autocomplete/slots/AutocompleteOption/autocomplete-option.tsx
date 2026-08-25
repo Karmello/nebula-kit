@@ -1,4 +1,4 @@
-import { AutocompleteOptionProps } from 'lib/index.pro'
+import { AutocompleteOptionProps } from './types'
 
 export const AutocompleteOption = ({ children }: AutocompleteOptionProps) => {
   return children

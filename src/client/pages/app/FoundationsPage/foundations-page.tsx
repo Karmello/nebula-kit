@@ -1,7 +1,7 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { CatalogPageTemplate } from 'client/components'
+import { CatalogPageTemplate } from 'client/components/page/CatalogPageTemplate'
 import { FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
 import { useFoundationsPageStore } from 'client/store'
 

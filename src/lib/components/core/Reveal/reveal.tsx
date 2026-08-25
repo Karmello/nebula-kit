@@ -1,10 +1,14 @@
 import { useState } from 'react'
 
+import { Icon } from 'lib/components/core/Icon'
+import { Resize } from 'lib/components/core/Resize'
+import { Rotate } from 'lib/components/core/Rotate'
+import { Text } from 'lib/components/core/Text'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { Icon, Resize, RevealProps, Rotate, Text } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_REVEAL_INTENT, DEFAULT_REVEAL_SCALE } from './constants'
+import type { RevealProps } from './types'
 import { RevealTag } from './types'
 
 export const Reveal = <T extends RevealTag = 'div'>({

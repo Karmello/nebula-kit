@@ -1,8 +1,8 @@
+import { Box } from 'lib/components/core/Box'
+import { Text } from 'lib/components/core/Text'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
-import { Box, Text } from 'lib/index.core'
-import { TabsPanelProps, TabsProps, TabsTabProps } from 'lib/index.pro'
 
 import {
   DEFAULT_TABS_DEFAULT_VALUE,
@@ -10,6 +10,9 @@ import {
   DEFAULT_TABS_INTENT,
   DEFAULT_TABS_SIZE,
 } from './constants'
+import type { TabsPanelProps } from './slots/TabsPanel/types'
+import type { TabsTabProps } from './slots/TabsTab/types'
+import type { TabsProps } from './types'
 
 export const Tabs = ({
   children,

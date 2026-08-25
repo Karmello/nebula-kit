@@ -1,6 +1,6 @@
 import { createContext, useContext } from 'react'
 
-import { TableProps } from 'lib/index.core'
+import type { TableProps } from '../types'
 
 type TableContextValue = Pick<
   TableProps,

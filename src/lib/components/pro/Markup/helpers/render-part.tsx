@@ -1,4 +1,4 @@
-import { Box } from 'lib/index.core'
+import { Box } from 'lib/components/core/Box'
 
 import { MarkupPart } from '../types'
 

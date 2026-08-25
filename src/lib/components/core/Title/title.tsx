@@ -1,10 +1,13 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
+import { Text } from 'lib/components/core/Text'
 import { TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Icon, Text, TitleProps } from 'lib/index.core'
 
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY } from './constants'
+import { TitleProps } from './types'
 
 export const Title = ({
   // own

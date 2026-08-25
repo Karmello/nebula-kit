@@ -2,8 +2,11 @@ import { Children, ReactElement, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import { Box, Button, Divider, NEB_LENGTH } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Button } from 'lib/components/core/Button'
+import { Divider } from 'lib/components/core/Divider'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
 
 type AssistantMessageProps = {

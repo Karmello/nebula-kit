@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-import { HtmlTagProps } from 'lib/index.core'
+import { HtmlTagProps } from 'lib/components/core/HtmlTag'
 
 import { LINK_COMPOSE_MODES, LINK_TARGETS } from './constants'
 

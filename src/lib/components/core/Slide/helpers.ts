@@ -1,6 +1,6 @@
 import { RefObject } from 'react'
 
-import { SlideProps } from 'lib/index.core'
+import type { SlideProps } from './types'
 
 export const syncSlidePosition = (
   ref: RefObject<HTMLDivElement | null>,

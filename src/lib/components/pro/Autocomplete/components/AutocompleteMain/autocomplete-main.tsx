@@ -1,10 +1,17 @@
 import { ReactElement, ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
+import { Box } from 'lib/components/core/Box'
+import { Divider } from 'lib/components/core/Divider'
+import { IconButton } from 'lib/components/core/IconButton'
+import { Input } from 'lib/components/core/Input'
+import { Resize } from 'lib/components/core/Resize'
+import { Text } from 'lib/components/core/Text'
+import { Floating, FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
-import { Box, Divider, IconButton, Input, Resize, Text } from 'lib/index.core'
-import { AutocompleteOptionProps, AutocompleteProps, Floating, FloatingProps } from 'lib/index.pro'
 
 import { resolveAutocompleteValues } from '../../helpers'
+import { AutocompleteOptionProps } from '../../slots/AutocompleteOption/types'
+import { AutocompleteProps } from '../../types'
 
 type AutocompleteMainProps = Omit<
   AutocompleteProps,

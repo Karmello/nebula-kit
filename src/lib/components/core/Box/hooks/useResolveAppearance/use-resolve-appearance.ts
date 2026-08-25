@@ -1,9 +1,10 @@
-import { BoxProps } from 'lib/components'
 import type { BoxTheme } from 'lib/components/core/Box/types'
 import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
 import { useBrandContext, useThemeContext } from 'lib/components/shared'
 import { useCurrentTheme } from 'lib/hooks'
 import { RespValue } from 'lib/types'
+
+import { BoxProps } from '../../types'
 
 export const flipTheme = (theme: NebkitProviderTheme): NebkitProviderTheme =>
   theme === 'dark' ? 'light' : 'dark'

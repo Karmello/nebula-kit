@@ -9,10 +9,10 @@ import {
 } from 'react'
 import classNames from 'classnames'
 
+import { HtmlTag } from 'lib/components/core/HtmlTag'
 import { BrandProvider, ThemeProvider } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { HtmlTag } from 'lib/index.core'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 
 import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'

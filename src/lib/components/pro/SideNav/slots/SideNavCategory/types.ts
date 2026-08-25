@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 import { SideNavVariant } from '../../types'
 import { SIDE_NAV_CATEGORY_ALIGNS } from './constants'

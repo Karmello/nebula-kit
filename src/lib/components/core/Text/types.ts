@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 import { TEXT_SPACE, TEXT_TAGS, TEXT_TYPOGRAPHY, TEXT_WORD_BREAK } from './constants'
 

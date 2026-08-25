@@ -1,10 +1,11 @@
 import { Children, cloneElement, isValidElement, MouseEvent } from 'react'
 import classNames from 'classnames'
 
+import { HtmlTag, HtmlTagProps } from 'lib/components/core/HtmlTag'
 import { withPrefix } from 'lib/helpers'
-import { HtmlTag, HtmlTagProps, LinkProps } from 'lib/index.core'
 
 import { DEFAULT_LINK_COMPOSE_MODE, DEFAULT_LINK_TARGET } from './constants'
+import { LinkProps } from './types'
 
 import './link.scss'
 

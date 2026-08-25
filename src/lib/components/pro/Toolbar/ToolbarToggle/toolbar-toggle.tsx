@@ -1,4 +1,5 @@
-import { Box, IconButton } from 'lib/index.core'
+import { Box } from 'lib/components/core/Box'
+import { IconButton } from 'lib/components/core/IconButton'
 
 import { useToolbarContext } from '../providers/ToolbarProvider'
 

@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { Resize } from 'lib/components'
+import { Resize } from '../resize'
 
 describe('<Resize />', () => {
   describe('basic rendering', () => {

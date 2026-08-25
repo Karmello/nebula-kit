@@ -1,5 +1,3 @@
-import { TitleProps } from 'lib/index.core'
-
 import { TextTypography } from '../Text'
 
 export const TITLE_TYPOGRAPHY = [
@@ -12,5 +10,5 @@ export const TITLE_TYPOGRAPHY = [
 ] as const satisfies TextTypography[]
 export const TITLE_ICON_PLACEMENTS = ['left', 'right'] as const
 
-export const DEFAULT_TITLE_TYPOGRAPHY: TitleProps['typography'] = 'h6'
-export const DEFAULT_TITLE_ICON_PLACEMENT: TitleProps['iconPlacement'] = 'left'
+export const DEFAULT_TITLE_TYPOGRAPHY: (typeof TITLE_TYPOGRAPHY)[number] = 'h6'
+export const DEFAULT_TITLE_ICON_PLACEMENT: (typeof TITLE_ICON_PLACEMENTS)[number] = 'left'

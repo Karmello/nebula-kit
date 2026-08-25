@@ -1,4 +1,4 @@
-import { TabsPanelProps } from 'lib/index.pro'
+import type { TabsPanelProps } from './types'
 
 export const TabsPanel = ({ children }: TabsPanelProps) => {
   return children

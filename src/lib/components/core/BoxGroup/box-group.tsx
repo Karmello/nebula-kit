@@ -1,7 +1,8 @@
 import { cloneElement, ElementType } from 'react'
 
-import { Box, NEB_LENGTH } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
 import { WithSlots } from 'lib/components/shared'
+import { NEB_LENGTH } from 'lib/constants'
 import { useRespValue } from 'lib/hooks'
 
 import { DEFAULT_BOX_GROUP_DISPLAY, DEFAULT_BOX_GROUP_FLEX_DIRECTION } from './constants'

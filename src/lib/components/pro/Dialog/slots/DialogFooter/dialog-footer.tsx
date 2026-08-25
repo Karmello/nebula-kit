@@ -1,10 +1,10 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { DialogFooterProps } from 'lib/index.pro'
 
 import { useDialogContext } from '../../providers/DialogProvider'
+import { DialogFooterProps } from './types'
 
 export const DialogFooter = ({
   // Box

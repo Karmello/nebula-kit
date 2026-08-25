@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box } from '../box'
 
 test.describe('<Box /> responsive props', () => {
   test('applies raw css value when string is passed', async ({ mount }) => {

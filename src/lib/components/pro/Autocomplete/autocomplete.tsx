@@ -2,7 +2,6 @@ import { useState } from 'react'
 
 import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
-import { AutocompleteProps } from 'lib/index.pro'
 
 import { AutocompleteMain } from './components'
 import {
@@ -12,6 +11,7 @@ import {
   DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE,
   DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT,
 } from './constants'
+import { AutocompleteProps } from './types'
 
 export const Autocomplete = ({
   children,

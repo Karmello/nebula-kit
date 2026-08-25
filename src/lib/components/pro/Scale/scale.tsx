@@ -1,12 +1,12 @@
 import { useRef } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
-import { ScaleProps } from 'lib/index.pro'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { syncScale } from './helpers'
+import { ScaleProps } from './types'
 
 export const DEFAULT_SCALE_AXIS: ScaleProps['axis'] = 'both'
 export const DEFAULT_SCALE_FROM: ScaleProps['from'] = 0

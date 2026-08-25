@@ -2,10 +2,10 @@ import { CSSProperties } from 'react'
 import classNames from 'classnames'
 
 import { withPrefix } from 'lib/helpers'
-import { LoaderProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_LOADER_ACTIVE, DEFAULT_LOADER_SIZE } from './constants'
+import { LoaderProps } from './types'
 
 import './loader.scss'
 

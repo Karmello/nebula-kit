@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import classNames from 'classnames'
 
+import { Icon } from 'lib/components/core/Icon'
 import { withPrefix } from 'lib/helpers'
-import { CheckboxProps, Icon } from 'lib/index.core'
 
 import { Box } from '../Box'
 import {
@@ -11,6 +11,7 @@ import {
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
 } from './constants'
+import { type CheckboxProps } from './types'
 
 import './checkbox.scss'
 

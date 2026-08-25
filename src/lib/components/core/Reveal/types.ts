@@ -1,4 +1,4 @@
-import { ResizeProps } from 'lib/index.core'
+import type { ResizeProps } from 'lib/components/core/Resize'
 import { TShirtSize } from 'lib/types'
 
 import { BoxProps } from '../Box'

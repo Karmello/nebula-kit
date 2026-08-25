@@ -1,30 +1,14 @@
-import type { Length, TShirtSize } from 'lib/types'
+import { LENGTHS } from './length'
+import { TSHIRT_SIZES } from './tshirt-size'
 
 export * from './control-scale-map'
+export * from './length'
+export * from './tshirt-size'
 export * from './typography-map'
 
-export const TSHIRT_SIZES = ['xs', 'sm', 'md', 'lg', 'xl'] as const
-export const DEFAULT_TSHIRT_SIZE: TShirtSize = 'md'
+export const DEFAULT_TSHIRT_SIZE: (typeof TSHIRT_SIZES)[number] = 'md'
 
-export const LENGTHS = [
-  'px_000',
-  'px_002',
-  'px_004',
-  'px_006',
-  'px_008',
-  'px_012',
-  'px_016',
-  'px_024',
-  'px_032',
-  'px_048',
-  'px_064',
-  'px_096',
-  'px_128',
-  'px_256',
-  'px_512',
-] as const
-
-export const NEB_LENGTH: Record<Length, string> = {
+export const NEB_LENGTH: Record<(typeof LENGTHS)[number], string> = {
   px_000: '0px',
   px_002: '2px',
   px_004: '4px',

@@ -3,7 +3,6 @@ import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP, TYPOGRAPHY_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { TextareaProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import {
@@ -14,6 +13,7 @@ import {
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
 } from './constants'
+import { TextareaProps } from './types'
 
 import './textarea.scss'
 

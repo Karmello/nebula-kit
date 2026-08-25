@@ -1,7 +1,7 @@
-import { TShirtSize } from 'lib/types'
+import { TSHIRT_SIZES } from './tshirt-size'
 
 export const CONTROL_SCALE_MAP: Record<
-  TShirtSize,
+  (typeof TSHIRT_SIZES)[number],
   {
     blockSize: string
     paddingInline: string

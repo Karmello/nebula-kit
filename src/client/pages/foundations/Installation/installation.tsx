@@ -1,5 +1,11 @@
-import { Box, Link, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Link } from 'lib/components/core/Link'
+import { Section } from 'lib/components/core/Section'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (

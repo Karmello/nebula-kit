@@ -1,5 +1,5 @@
-import { Box } from 'lib/index.core'
-import { Portal } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+import { Portal } from 'lib/components/pro/Portal'
 
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 

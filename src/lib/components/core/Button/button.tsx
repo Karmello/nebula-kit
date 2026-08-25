@@ -1,10 +1,13 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
+import { Loader } from 'lib/components/core/Loader'
+import { Text } from 'lib/components/core/Text'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
-import { Box, Icon, Loader, Text } from 'lib/index.core'
 import { syncRespDataset } from 'lib/internals/dom'
 
 import {

@@ -1,8 +1,9 @@
 import { useCallback, useRef, useState } from 'react'
 
-import { CALLOUT_CONFIG } from 'lib/components/core/Callout'
-import { Box, Callout, IconButton, Slide } from 'lib/index.core'
-import { SnackbarProps } from 'lib/index.pro'
+import { Box } from 'lib/components/core/Box'
+import { Callout, CALLOUT_CONFIG } from 'lib/components/core/Callout'
+import { IconButton } from 'lib/components/core/IconButton'
+import { Slide } from 'lib/components/core/Slide'
 
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
@@ -11,7 +12,7 @@ import {
   DEFAULT_SNACKBAR_PLACEMENT,
 } from './constants'
 import { SnackbarProvider } from './providers/SnackbarProvider'
-import { UseSnackbarShowArgs } from './types'
+import { SnackbarProps, UseSnackbarShowArgs } from './types'
 
 export const Snackbar = ({
   // Box

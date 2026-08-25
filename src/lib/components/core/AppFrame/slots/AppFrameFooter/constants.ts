@@ -1,5 +1,5 @@
-import { type AppFrameFooterProps } from 'lib/index.core'
+import type { BoxIntent } from 'lib/components/core/Box'
 
 export const FOOTER_TAGS = ['div', 'footer'] as const
 
-export const DEFAULT_APP_FRAME_FOOTER_INTENT: AppFrameFooterProps['intent'] = 'muted'
+export const DEFAULT_APP_FRAME_FOOTER_INTENT: BoxIntent = 'muted'

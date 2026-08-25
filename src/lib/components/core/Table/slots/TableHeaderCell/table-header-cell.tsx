@@ -1,9 +1,10 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
-import { Box, TableHeaderCellProps } from 'lib/index.core'
 
 import { useTableContext } from '../../TableContext'
+import { TableHeaderCellProps } from './types'
 
 export const TableHeaderCell = ({
   // Box

@@ -1,7 +1,6 @@
 import { Placement } from '@floating-ui/react'
 
 import { BoxIntent, BoxVariant } from 'lib/components/core/Box'
-import { TooltipProps } from 'lib/index.pro'
 
 export const TOOLTIP_PLACEMENTS = [
   'top',
@@ -28,8 +27,8 @@ export const TOOLTIP_INTENTS = [
 ] as const satisfies BoxIntent[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const
 
-export const DEFAULT_TOOLTIP_VARIANT: TooltipProps['variant'] = 'solid'
-export const DEFAULT_TOOLTIP_INTENT: TooltipProps['intent'] = 'inverse'
-export const DEFAULT_TOOLTIP_PLACEMENT: TooltipProps['placement'] = 'top'
-export const DEFAULT_TOOLTIP_MODE: TooltipProps['mode'] = 'hover'
-export const DEFAULT_TOOLTIP_MAX_INLINE_SIZE: TooltipProps['maxInlineSize'] = 250
+export const DEFAULT_TOOLTIP_VARIANT: (typeof TOOLTIP_VARIANTS)[number] = 'solid'
+export const DEFAULT_TOOLTIP_INTENT: (typeof TOOLTIP_INTENTS)[number] = 'inverse'
+export const DEFAULT_TOOLTIP_PLACEMENT: (typeof TOOLTIP_PLACEMENTS)[number] = 'top'
+export const DEFAULT_TOOLTIP_MODE: (typeof TOOLTIP_MODES)[number] = 'hover'
+export const DEFAULT_TOOLTIP_MAX_INLINE_SIZE = 250

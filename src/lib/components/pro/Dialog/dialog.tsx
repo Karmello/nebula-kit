@@ -1,11 +1,14 @@
 import { useEffect, useRef } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { IconButton } from 'lib/components/core/IconButton'
+import { FocusTrap } from 'lib/components/pro/FocusTrap'
+import { Portal } from 'lib/components/pro/Portal'
+import { Scale } from 'lib/components/pro/Scale'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
-import { Box, IconButton } from 'lib/index.core'
-import { FocusTrap, Portal, Scale } from 'lib/index.pro'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,

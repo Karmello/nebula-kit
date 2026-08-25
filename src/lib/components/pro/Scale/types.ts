@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 import { SCALE_AXIS, SCALE_ORIGIN } from './constants'
 

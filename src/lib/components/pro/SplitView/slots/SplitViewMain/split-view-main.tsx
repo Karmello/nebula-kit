@@ -1,9 +1,11 @@
+import { Box } from 'lib/components/core/Box'
+import { IconButton } from 'lib/components/core/IconButton'
+import { Spacer } from 'lib/components/core/Spacer'
 import { WithSlots } from 'lib/components/shared'
-import { Box, IconButton, Spacer } from 'lib/index.core'
-import { SplitViewMainProps } from 'lib/index.pro'
 
 import { getToggleIconName } from '../../helpers'
 import { useSplitViewContext } from '../../providers/SplitViewProvider'
+import { SplitViewMainProps } from './types'
 
 export const SplitViewMain = ({
   // Box

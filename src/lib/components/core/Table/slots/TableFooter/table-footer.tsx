@@ -1,11 +1,12 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Box, TableFooterProps } from 'lib/index.core'
 
 import { TableContext, useTableContext } from '../../TableContext'
 import { DEFAULT_TABLE_FOOTER_INTENT } from './constants'
+import { TableFooterProps } from './types'
 
 export const TableFooter = ({
   // Box

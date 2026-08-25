@@ -1,4 +1,4 @@
-import { Box } from 'lib/index.core'
+import { Box } from 'lib/components/core/Box'
 
 import { DEFAULT_FLOATING_TRIGGER_DISPLAY } from './constants'
 import { FloatingTriggerInternalProps, FloatingTriggerProps } from './types'

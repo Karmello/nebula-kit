@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { Box } from 'lib/components'
+import { Box } from '../box'
 
 describe('<Box />', () => {
   describe('basic rendering', () => {

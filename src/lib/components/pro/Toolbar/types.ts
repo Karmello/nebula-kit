@@ -1,6 +1,6 @@
 import { JSX } from 'react'
 
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 import { SwitchBreakpoint } from 'lib/types'
 
 type ChildrenAsFuncArgs = {

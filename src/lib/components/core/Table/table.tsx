@@ -2,7 +2,6 @@ import classNames from 'classnames'
 
 import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { TableProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import {
@@ -12,6 +11,7 @@ import {
   DEFAULT_TABLE_PADDING_INLINE,
 } from './constants'
 import { TableContext } from './TableContext'
+import { TableProps } from './types'
 
 import './table.scss'
 

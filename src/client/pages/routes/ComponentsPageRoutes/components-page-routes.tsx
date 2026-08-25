@@ -1,15 +1,16 @@
 import { useMemo } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { NEB_LENGTH, Spacer } from 'lib/components'
-import { NextPageButton } from 'client/components'
+import { Spacer } from 'lib/components/core/Spacer'
+import { NEB_LENGTH } from 'lib/constants'
+import { NextPageButton } from 'client/components/page/NextPageButton'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import {
   ComponentChangelogPage,
   ComponentExamplesPage,
   ComponentOverviewPage,
   ComponentPropsPage,
-} from 'client/pages'
+} from 'client/pages/component'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {

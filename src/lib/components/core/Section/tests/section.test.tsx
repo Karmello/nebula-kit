@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { Section } from 'lib/components'
+import { Section } from '../section'
 
 describe('<Section />', () => {
   describe('basic rendering', () => {

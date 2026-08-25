@@ -1,5 +1,9 @@
-import { Box, Callout, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Callout } from 'lib/components/core/Callout'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (

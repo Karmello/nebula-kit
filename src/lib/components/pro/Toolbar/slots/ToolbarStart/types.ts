@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 export type ToolbarStartProps = {
   tagAttrs?: BoxProps<'div'>['tagAttrs']

@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 
-import { type TitleProps } from 'lib/index.core'
+import { type TitleProps } from 'lib/components/core/Title'
 import type { TShirtSize } from 'lib/types'
 
 import { type BoxProps } from '../Box'

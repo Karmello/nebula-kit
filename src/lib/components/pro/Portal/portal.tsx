@@ -2,9 +2,9 @@ import { useLayoutEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
 import { useBrandContext, useThemeContext } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
-import { Box } from 'lib/index.core'
 
 import { useAnchoredPosition } from './hooks'
 import { type PortalProps } from './types'

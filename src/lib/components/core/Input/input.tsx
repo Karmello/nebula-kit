@@ -3,10 +3,10 @@ import classNames from 'classnames'
 
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { InputProps } from 'lib/index.core'
 
 import { Box } from '../Box'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_SCALE, DEFAULT_INPUT_VARIANT } from './constants'
+import { InputProps } from './types'
 
 import './input.scss'
 

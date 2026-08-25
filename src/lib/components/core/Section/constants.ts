@@ -1,15 +1,14 @@
-import { SectionProps } from 'lib/index.core'
 import type { TShirtSize } from 'lib/types'
 
-import { type BoxVariant } from '../Box'
+import { type BoxIntent, type BoxVariant } from '../Box'
 import { type TextTypography } from '../Text'
 
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 
-export const DEFAULT_SECTION_VARIANT: SectionProps['variant'] = 'ghost'
-export const DEFAULT_SECTION_INTENT: SectionProps['intent'] = 'neutral'
-export const DEFAULT_SECTION_SIZE: SectionProps['size'] = 'md'
+export const DEFAULT_SECTION_VARIANT: (typeof SECTION_VARIANTS)[number] = 'ghost'
+export const DEFAULT_SECTION_INTENT: BoxIntent = 'neutral'
+export const DEFAULT_SECTION_SIZE: TShirtSize = 'md'
 
 export const SECTION_SIZE_CONFIG: Record<
   TShirtSize,

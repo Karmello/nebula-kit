@@ -1,4 +1,4 @@
-import { Box } from 'lib/index.core'
+import { Box } from 'lib/components/core/Box'
 
 import { DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING } from './constants'
 import { type AppFrameFooterSectionInternalProps, type AppFrameFooterSectionProps } from './types'

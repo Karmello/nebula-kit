@@ -1,7 +1,7 @@
-import { RotateProps } from 'lib/index.core'
 import { buildTransition } from 'lib/internals/motion'
 
 import { Box } from '../Box'
+import type { RotateProps } from './types'
 
 export const DEFAULT_ROTATE_DURATION: RotateProps['duration'] = 200
 export const DEFAULT_ROTATE_EASING: RotateProps['easing'] = 'linear'

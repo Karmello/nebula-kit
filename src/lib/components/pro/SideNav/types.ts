@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 import { TShirtSize } from 'lib/types'
 
 import { SIDE_NAV_EXPAND_MODES, SIDE_NAV_VARIANTS } from './constants'

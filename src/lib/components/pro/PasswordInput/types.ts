@@ -1,4 +1,4 @@
-import { InputProps } from 'lib/index.core'
+import { InputProps } from 'lib/components/core/Input'
 
 export type PasswordInputProps = {
   autoComplete?: InputProps['autoComplete']

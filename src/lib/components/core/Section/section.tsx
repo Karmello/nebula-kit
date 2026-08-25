@@ -1,8 +1,11 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
+import { Divider } from 'lib/components/core/Divider'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
 import { withPrefix } from 'lib/helpers'
-import { Divider, SectionProps, Spacer, Text, Title } from 'lib/index.core'
 
 import { Box } from '../Box'
 import {
@@ -11,6 +14,7 @@ import {
   DEFAULT_SECTION_VARIANT,
   SECTION_SIZE_CONFIG,
 } from './constants'
+import type { SectionProps } from './types'
 import { SectionTag } from './types'
 
 export const Section = <T extends SectionTag = 'section'>({

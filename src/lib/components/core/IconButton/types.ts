@@ -1,6 +1,7 @@
 import { ComponentPropsWithoutRef } from 'react'
 
-import { BoxProps, IconProps } from 'lib/index.core'
+import type { BoxProps } from 'lib/components/core/Box'
+import type { IconProps } from 'lib/components/core/Icon'
 import type { TShirtSize } from 'lib/types'
 
 import { ICON_BUTTON_TAGS } from './constants'

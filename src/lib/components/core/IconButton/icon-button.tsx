@@ -1,9 +1,11 @@
 import { ComponentProps, ComponentRef, PropsWithoutRef, useRef } from 'react'
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Icon } from 'lib/components/core/Icon'
+import { Loader } from 'lib/components/core/Loader'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
-import { Box, Icon, IconButtonProps, Loader } from 'lib/index.core'
 
 import {
   DEFAULT_ICON_BUTTON_INTENT,
@@ -11,7 +13,7 @@ import {
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
 } from './constants'
-import { IconButtonTag } from './types'
+import { IconButtonProps, IconButtonTag } from './types'
 
 import './icon-button.scss'
 

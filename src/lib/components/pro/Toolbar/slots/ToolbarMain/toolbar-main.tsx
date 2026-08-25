@@ -1,10 +1,11 @@
 import classNames from 'classnames'
 
+import { Box } from 'lib/components/core/Box'
+import { Resize } from 'lib/components/core/Resize'
 import { withPrefix } from 'lib/helpers'
-import { Box, Resize } from 'lib/index.core'
-import { ToolbarMainProps } from 'lib/index.pro'
 
 import { useToolbarContext } from '../../providers/ToolbarProvider'
+import type { ToolbarMainProps } from './types'
 
 export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
   const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()
