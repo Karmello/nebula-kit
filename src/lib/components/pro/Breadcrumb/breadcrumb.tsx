@@ -161,6 +161,7 @@ const BreadcrumbLevel = ({
                           fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
                           lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
                           textAlign="center"
+                          noWrap
                         >
                           {node.label}
                         </Text>
