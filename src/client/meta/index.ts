@@ -9,6 +9,8 @@ import { AUTOCOMPLETE_META } from './Autocomplete'
 import { AUTOCOMPLETE_OPTION_META } from './AutocompleteOption'
 import { AVATAR_META } from './Avatar'
 import { BOX_META } from './Box'
+import { BOX_GROUP_META } from './BoxGroup'
+import { BOX_GROUP_ITEM_META } from './BoxGroupItem'
 import { BREADCRUMB_META } from './Breadcrumb'
 import { BUTTON_META } from './Button'
 import { CALLOUT_META } from './Callout'
@@ -96,6 +98,10 @@ const META = {
   },
   Box: {
     Box: BOX_META,
+  },
+  BoxGroup: {
+    BoxGroup: BOX_GROUP_META,
+    BoxGroupItem: BOX_GROUP_ITEM_META,
   },
   Breadcrumb: {
     Breadcrumb: BREADCRUMB_META,

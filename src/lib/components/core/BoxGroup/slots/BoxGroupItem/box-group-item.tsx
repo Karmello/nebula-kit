@@ -7,7 +7,7 @@ import { BORDER_WIDTH_AT_START, CORNERS_AT_END, CORNERS_AT_START } from './const
 import type { BoxGroupItemInternalProps, BoxGroupItemProps } from './types'
 
 export const BoxGroupItem = <T extends ElementType = 'div'>(props: BoxGroupItemProps<T>) => {
-  const { index, count, squared, flexDirection } = props as BoxGroupItemInternalProps
+  const { index, count, squared, flexDirection } = props as unknown as BoxGroupItemInternalProps
   const direction = flexDirection as BoxGroupItemInternalProps['flexDirection']
 
   const radii: Record<string, string> = squared
