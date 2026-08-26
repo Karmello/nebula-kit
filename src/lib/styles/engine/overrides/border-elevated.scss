@@ -3,10 +3,9 @@
   &[data-neb-box-variant='soft-outline'] {
     &[data-neb-box-intent='neutral'] {
       --border: hsl(var(--h) var(--s) var(--main-elevated-muted-l));
-      --border-hover: hsl(var(--h) var(--s) var(--main-elevated-muted-l-hover));
-      --border-active: hsl(var(--h) var(--s) var(--main-elevated-muted-l-active));
       --border-disabled: hsl(var(--h) var(--s) var(--main-elevated-muted-l) / 0.5);
       --border-selected: hsl(var(--h) var(--s) var(--main-elevated-muted-l-selected));
+      --border-dividing: hsl(var(--h) var(--s) var(--main-elevated-muted-l-dividing));
     }
   }
 }

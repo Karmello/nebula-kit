@@ -10,7 +10,7 @@ const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 type State = (typeof STATES)[number]
 
 export default () => {
-  const [variant, setVariant] = useState<BoxVariant>('solid')
+  const [variant, setVariant] = useState<BoxVariant>('ghost')
   const [elevated, setElevated] = useState<boolean>(false)
   const [state, setState] = useState<State>('rest')
 
@@ -56,7 +56,7 @@ export default () => {
           <Text bold intent="primary">
             Elevated
           </Text>
-          <Switch checked={elevated} onChange={setElevated} />
+          <Switch checked={elevated} onChange={setElevated} scale="sm" />
         </Box>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />

@@ -13,7 +13,6 @@
       // hover
       &:hover:not(:active),
       &[data-neb-box-hovered='true'] {
-        border-color: var(--border-hover);
         color: var(--text-hover);
         background-color: var(--bg-hover);
       }
@@ -21,7 +20,6 @@
       // active
       &:active,
       &[data-neb-box-active-on-focus='true']:focus-visible {
-        border-color: var(--border-active);
         color: var(--text-active);
         background-color: var(--bg-active);
       }

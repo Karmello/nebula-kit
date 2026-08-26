@@ -9,6 +9,7 @@ export const PROPS_FROM_BOX = [
   'brand',
   'children',
   'color',
+  'cursor',
   'disabled',
   'drawable',
   'elevated',

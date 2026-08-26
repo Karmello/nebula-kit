@@ -42,4 +42,17 @@ export const BOX_GROUP_EXAMPLES: DocExample[] = [
       </BoxGroup>
     ),
   },
+  {
+    description: '...',
+    jsx: (
+      <BoxGroup drawable variant="outline" intent="primary" brand="blue" display="flex">
+        <BoxGroup.Item drawable variant="solid" intent="tertiary">
+          Content 1
+        </BoxGroup.Item>
+        <BoxGroup.Item drawable variant="solid" intent="tertiary">
+          Content 2
+        </BoxGroup.Item>
+      </BoxGroup>
+    ),
+  },
 ]

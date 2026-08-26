@@ -21,6 +21,14 @@
       "path": "src/client/meta",
     },
     {
+      "name": "patterns",
+      "path": "src/client/patterns",
+    },
+    {
+      "name": "playground",
+      "path": "src/client/playground",
+    },
+    {
       "name": "lib",
       "path": "src/lib",
     },

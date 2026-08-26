@@ -13,6 +13,7 @@ import { BoxGroup } from '../BoxGroup'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
+  DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { resolveSelectValues } from './helpers'
@@ -31,6 +32,7 @@ export const SelectImpl = ({
   scale = DEFAULT_TSHIRT_SIZE,
   visibleItemsCount = DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
   staticLabel,
+  variant = DEFAULT_SELECT_VARIANT,
   // extra
   optionSlots,
 }: SelectProps & { optionSlots: ReactElement<SelectOptionProps>[] }) => {
@@ -79,7 +81,7 @@ export const SelectImpl = ({
         <Box
           tag="button"
           tagRef={triggerRef}
-          variant="solid"
+          variant={variant}
           intent={intent}
           color={color}
           inlineSize="100%"
@@ -113,7 +115,9 @@ export const SelectImpl = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant="ghost"
+            variant={variant}
+            color={color}
+            surface="selected"
             intent={intent}
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
@@ -122,19 +126,23 @@ export const SelectImpl = ({
             borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
             borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
             borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
             <BoxGroup
               flexDirection="column"
               gap={NEB_LENGTH.px_002}
               drawable
               variant="solid"
-              intent={intent}
+              intent={variant === 'solid' ? intent : 'neutral'}
               color={color}
               elevated
               surface="dividing"
               squared
-              paddingTop={isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
-              paddingBottom={!isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
+              paddingTop={variant === 'solid' && isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
+              paddingBottom={
+                variant === 'solid' && !isOpenDownwards ? NEB_LENGTH.px_002 : undefined
+              }
               inlineSize="100%"
             >
               {optionSlots.map((slot, key) => {
@@ -153,7 +161,7 @@ export const SelectImpl = ({
                     cursor="pointer"
                     interactive
                     variant="solid"
-                    intent={intent}
+                    intent={variant === 'solid' ? intent : 'neutral'}
                     color={color}
                     elevated
                     surface={isSelected ? 'selected' : undefined}

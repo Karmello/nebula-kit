@@ -9,28 +9,23 @@ export const PROPS_FROM_SELECT = [
   'intent',
   'scale',
   'staticLabel',
+  'variant',
   'visibleItemsCount',
 ] as const satisfies readonly (keyof SelectProps)[]
 
 export const SELECT_PRESETS = [
   {
-    name: 'Default',
+    name: 'Outline',
     props: {
-      //
-    },
-  },
-  {
-    name: 'Custom width',
-    props: {
+      variant: 'outline',
       inlineSize: '200px',
     },
   },
   {
-    name: 'Blue primary',
+    name: 'Solid',
     props: {
+      variant: 'solid',
       inlineSize: '200px',
-      intent: 'primary',
-      color: 'blue',
     },
   },
 ] satisfies {

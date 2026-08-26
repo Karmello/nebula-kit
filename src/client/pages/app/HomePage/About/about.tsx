@@ -2,7 +2,7 @@ import { Box, NEB_LENGTH, Reveal, Spacer, Text } from 'lib/components'
 
 export const About = () => {
   return (
-    <Reveal scale="sm" intent="tertiary" label="Read me">
+    <Reveal scale="sm" intent="tertiary" label="Read me" color="red">
       <Box padding={NEB_LENGTH.px_016}>
         <Text>
           This website is built entirely with NebulaKit components. It serves as both documentation

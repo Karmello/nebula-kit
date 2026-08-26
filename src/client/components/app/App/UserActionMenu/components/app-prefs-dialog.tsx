@@ -131,7 +131,7 @@ export const AppPrefsDialog = () => {
         </Box>
       </Dialog.Content>
       <Dialog.Footer>
-        <Text typography="small" color="gray" intent="primary">
+        <Text typography="caption" color="blue" intent="secondary">
           Preferences here map directly to NebkitProvider configuration.
         </Text>
       </Dialog.Footer>

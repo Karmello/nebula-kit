@@ -19,6 +19,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
   clampLines: { type: 'string' },
   color: { type: 'array' },
   content: { type: 'string' },
+  cursor: { type: 'array' },
   direction: { type: 'array' },
   disabled: { type: 'boolean' },
   drawable: { type: 'boolean' },

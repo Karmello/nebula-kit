@@ -53,6 +53,7 @@ export const UserActionMenu = () => {
           }}
         />
         <Select
+          variant="solid"
           intent="muted"
           staticLabel="Profile"
           value={currentPageKey}
