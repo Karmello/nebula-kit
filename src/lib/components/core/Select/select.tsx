@@ -1,7 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -10,6 +9,7 @@ import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 
+import { BoxGroup } from '../BoxGroup'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
@@ -96,104 +96,82 @@ export const SelectImpl = ({
           borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+          display="flex"
+          alignItems="center"
+          justifyContent="space-between"
+          columnGap={NEB_LENGTH.px_008}
         >
-          <Box
-            display="flex"
-            tag="span"
-            alignItems="center"
-            justifyContent="space-between"
-            columnGap={NEB_LENGTH.px_008}
+          <Text
+            fontSize={CONTROL_SCALE_MAP[size].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+            truncate
           >
-            <Text
-              fontSize={CONTROL_SCALE_MAP[size].fontSize}
-              lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-              truncate
-            >
-              {staticLabel ?? currentLabel ?? 'Select...'}
-            </Text>
-            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
-          </Box>
+            {staticLabel ?? currentLabel ?? 'Select...'}
+          </Text>
+          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
         </Box>
       </Floating.Trigger>
       <Floating.Content>
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant="solid"
+            variant="ghost"
             intent={intent}
-            color={color}
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
             overflowY="auto"
-            borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
-            borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
-            borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
-            borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
+            borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
-            <Box intent={intent} color={color} elevated>
+            <BoxGroup
+              flexDirection="column"
+              gap={NEB_LENGTH.px_002}
+              drawable
+              variant="solid"
+              intent={intent}
+              color={color}
+              elevated
+              surface="dividing"
+              squared
+              paddingTop={isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
+              paddingBottom={!isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
+              inlineSize="100%"
+            >
               {optionSlots.map((slot, key) => {
                 const isSelected = currentValue === slot.props.value
 
                 return (
-                  <Box key={key}>
-                    {isOpenDownwards ? (
-                      <Divider
-                        marginBlock={NEB_LENGTH.px_000}
-                        elevated
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
-                    <Box
-                      tag="button"
-                      tagAttrs={{
-                        onClick: () => {
-                          setCurrentValue(slot.props.value)
-                          setOpen(false)
-                        },
-                      }}
-                      drawable
-                      interactive
-                      variant="solid"
-                      elevated
-                      intent={intent}
-                      color={color}
-                      cursor="pointer"
-                      surface={isSelected ? 'selected' : undefined}
-                      inlineSize="100%"
-                      borderRadius={NEB_LENGTH.px_000}
+                  <BoxGroup.Item
+                    key={key}
+                    tag="button"
+                    tagAttrs={{
+                      onClick: () => {
+                        setCurrentValue(slot.props.value)
+                        setOpen(false)
+                      },
+                    }}
+                    cursor="pointer"
+                    interactive
+                    variant="solid"
+                    intent={intent}
+                    color={color}
+                    elevated
+                    surface={isSelected ? 'selected' : undefined}
+                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
+                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
+                  >
+                    <Text
+                      fontSize={CONTROL_SCALE_MAP[size].fontSize}
+                      lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
                     >
-                      <Box
-                        display="flex"
-                        tagAttrs={{
-                          style: {
-                            blockSize: CONTROL_SCALE_MAP[size].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[size].paddingInline,
-                          },
-                        }}
-                        alignItems="center"
-                        alignContent="stretch"
-                      >
-                        <Text
-                          fontSize={CONTROL_SCALE_MAP[size].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-                        >
-                          {slot}
-                        </Text>
-                      </Box>
-                    </Box>
-                    {!isOpenDownwards ? (
-                      <Divider
-                        marginBlock={NEB_LENGTH.px_000}
-                        elevated
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
-                  </Box>
+                      {slot}
+                    </Text>
+                  </BoxGroup.Item>
                 )
               })}
-            </Box>
+            </BoxGroup>
           </Box>
         </Resize>
       </Floating.Content>
