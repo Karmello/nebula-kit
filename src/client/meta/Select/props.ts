@@ -2,9 +2,7 @@ import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
-  DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
-  SELECT_VARIANTS,
 } from 'lib/components/core/Select/constants'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { SelectProps } from 'lib/index.core'
@@ -43,7 +41,7 @@ export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
     options: ['(value: string) => void'],
     description: 'Callback fired when the selected value changes.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
     description:
@@ -57,11 +55,6 @@ export const SELECT_PROPS: Record<keyof SelectProps, DocProp> = {
   value: {
     options: ['string'],
     description: 'Current selected item value when the component is used in controlled mode.',
-  },
-  variant: {
-    options: SELECT_VARIANTS,
-    defaultValue: DEFAULT_SELECT_VARIANT,
-    description: 'Visual style variant.',
   },
   visibleItemsCount: {
     options: ['number'],

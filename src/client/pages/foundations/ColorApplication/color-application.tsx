@@ -30,7 +30,7 @@ export default () => {
             value={variant}
             onChange={value => setVariant(value as BoxVariant)}
             inlineSize="140px"
-            size="sm"
+            scale="sm"
           >
             {BOX_VARIANTS.map(variant => (
               <Select.Option value={variant}>{sentenceCase(variant)}</Select.Option>
@@ -45,7 +45,7 @@ export default () => {
             value={state}
             onChange={value => setState(value as State)}
             inlineSize="130px"
-            size="sm"
+            scale="sm"
           >
             {STATES.map(state => (
               <Select.Option value={state}>{sentenceCase(state)}</Select.Option>

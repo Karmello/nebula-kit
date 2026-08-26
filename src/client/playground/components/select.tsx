@@ -7,9 +7,8 @@ export const PROPS_FROM_SELECT = [
   'disabled',
   'inlineSize',
   'intent',
-  'size',
+  'scale',
   'staticLabel',
-  'variant',
   'visibleItemsCount',
 ] as const satisfies readonly (keyof SelectProps)[]
 

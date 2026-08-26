@@ -1,21 +1,17 @@
 import { TShirtSize } from 'lib/types'
 
 import { BoxColor, BoxIntent, BoxProps } from '../Box'
-import { SELECT_VARIANTS } from './constants'
-
-type SelectVariant = (typeof SELECT_VARIANTS)[number]
 
 export type SelectProps = {
   // own
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  size?: TShirtSize
+  scale?: TShirtSize
   visibleItemsCount?: number
   staticLabel?: string
   // Box
   children: BoxProps['children']
-  variant?: SelectVariant
   intent?: BoxIntent
   color?: BoxColor
   inlineSize?: BoxProps['inlineSize']

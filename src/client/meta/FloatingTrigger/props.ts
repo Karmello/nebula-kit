@@ -23,4 +23,10 @@ export const FLOATING_TRIGGER_PROPS: Record<keyof FloatingTriggerProps, DocProp>
     description: 'Display type controlling how the component is laid out.',
     link: true,
   },
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+  },
 }

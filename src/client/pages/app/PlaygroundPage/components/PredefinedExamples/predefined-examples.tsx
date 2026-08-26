@@ -13,7 +13,7 @@ export const PredefinedExamples = () => {
 
   return (
     <Select
-      size="xs"
+      scale="xs"
       staticLabel="Presets"
       inlineSize="140px"
       value=""

@@ -3,7 +3,7 @@ import { NEB_LENGTH, Select, SelectProps } from 'lib/components'
 export const ContextMenu = (props: Partial<SelectProps>) => {
   return (
     <Select
-      size="xs"
+      scale="xs"
       inlineSize={NEB_LENGTH.px_096}
       intent="muted"
       staticLabel="Actions"

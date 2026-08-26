@@ -15,7 +15,7 @@ export default () => {
       <Text>All color palettes defined in the system.</Text>
       <Spacer />
       <Text bold>Brand</Text>
-      <Select value={brand} onChange={setBrand} inlineSize="150px" size="sm">
+      <Select value={brand} onChange={setBrand} inlineSize="150px" scale="sm">
         {BOX_COLORS.map(brand => (
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}

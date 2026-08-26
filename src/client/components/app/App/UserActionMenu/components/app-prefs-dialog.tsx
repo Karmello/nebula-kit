@@ -83,7 +83,7 @@ export const AppPrefsDialog = () => {
                 Brand
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={brand} onChange={setBrand} inlineSize="150px" size="xs">
+              <Select value={brand} onChange={setBrand} inlineSize="150px" scale="xs">
                 {BOX_COLORS.map(brand => (
                   <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
                 ))}
@@ -94,7 +94,7 @@ export const AppPrefsDialog = () => {
                 Saturation
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={saturation} onChange={setSaturation} inlineSize="150px" size="xs">
+              <Select value={saturation} onChange={setSaturation} inlineSize="150px" scale="xs">
                 {NEBKIT_PROVIDER_SATURATIONS.map(saturation => (
                   <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
                 ))}
@@ -109,7 +109,7 @@ export const AppPrefsDialog = () => {
                 value={borderRadiusSize}
                 onChange={setBorderRadiusSize}
                 inlineSize="150px"
-                size="xs"
+                scale="xs"
               >
                 {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
                   <Select.Option value={n}>{n}</Select.Option>
@@ -121,7 +121,7 @@ export const AppPrefsDialog = () => {
                 Ripple mode
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" size="xs">
+              <Select value={rippleMode} onChange={setRippleMode} inlineSize="150px" scale="xs">
                 {NEBKIT_PROVIDER_RIPPLE_MODES.map(n => (
                   <Select.Option value={n}>{sentenceCase(n)}</Select.Option>
                 ))}

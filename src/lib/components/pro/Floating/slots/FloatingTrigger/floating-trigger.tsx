@@ -7,12 +7,20 @@ export const FloatingTrigger = ({
   children,
   display = DEFAULT_FLOATING_TRIGGER_DISPLAY,
   cursor,
+  inlineSize,
   ...internalProps
 }: FloatingTriggerProps) => {
   const { tagRef, tagAttrs } = internalProps as FloatingTriggerInternalProps
 
   return (
-    <Box tag="span" tagRef={tagRef} tagAttrs={tagAttrs} display={display} cursor={cursor}>
+    <Box
+      tag="span"
+      tagRef={tagRef}
+      tagAttrs={tagAttrs}
+      display={display}
+      cursor={cursor}
+      inlineSize={inlineSize}
+    >
       {children}
     </Box>
   )

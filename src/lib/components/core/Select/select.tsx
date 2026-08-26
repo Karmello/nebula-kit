@@ -13,7 +13,6 @@ import { BoxGroup } from '../BoxGroup'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
-  DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { resolveSelectValues } from './helpers'
@@ -21,7 +20,6 @@ import type { SelectOptionProps } from './slots/SelectOption/types'
 import type { SelectProps } from './types'
 
 export const SelectImpl = ({
-  variant = DEFAULT_SELECT_VARIANT,
   intent = DEFAULT_SELECT_INTENT,
   color,
   inlineSize = DEFAULT_SELECT_INLINE_SIZE,
@@ -30,7 +28,7 @@ export const SelectImpl = ({
   defaultValue,
   value,
   onChange,
-  size = DEFAULT_TSHIRT_SIZE,
+  scale = DEFAULT_TSHIRT_SIZE,
   visibleItemsCount = DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
   staticLabel,
   // extra
@@ -47,7 +45,7 @@ export const SelectImpl = ({
   const triggerWidth = triggerRef.current?.offsetWidth
   const currentLabel = optionSlots.find(slot => slot.props.value === currentValue)?.props.children
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveSelectValues({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
@@ -77,16 +75,16 @@ export const SelectImpl = ({
       onPlacementChange={setPlacement}
       disabled={disabled}
     >
-      <Floating.Trigger display="block">
+      <Floating.Trigger display="block" inlineSize={inlineSize}>
         <Box
           tag="button"
           tagRef={triggerRef}
-          variant={variant}
+          variant="solid"
           intent={intent}
           color={color}
-          inlineSize={inlineSize}
-          blockSize={CONTROL_SCALE_MAP[size].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
+          inlineSize="100%"
+          blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
           disabled={disabled}
           surface={open ? 'selected' : undefined}
           cursor="pointer"
@@ -96,19 +94,19 @@ export const SelectImpl = ({
           borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
-          display="flex"
+          display="inline-flex"
           alignItems="center"
           justifyContent="space-between"
           columnGap={NEB_LENGTH.px_008}
         >
           <Text
-            fontSize={CONTROL_SCALE_MAP[size].fontSize}
-            lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
             truncate
           >
             {staticLabel ?? currentLabel ?? 'Select...'}
           </Text>
-          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
+          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
         </Box>
       </Floating.Trigger>
       <Floating.Content>
@@ -159,12 +157,12 @@ export const SelectImpl = ({
                     color={color}
                     elevated
                     surface={isSelected ? 'selected' : undefined}
-                    blockSize={CONTROL_SCALE_MAP[size].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
+                    blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+                    paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
                   >
                     <Text
-                      fontSize={CONTROL_SCALE_MAP[size].fontSize}
-                      lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
+                      fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                      lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
                     >
                       {slot}
                     </Text>

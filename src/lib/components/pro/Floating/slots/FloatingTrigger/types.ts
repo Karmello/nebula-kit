@@ -9,6 +9,7 @@ export type FloatingTriggerProps = {
   display?: FloatingTriggerDisplay
   // Box
   cursor?: BoxProps<'span'>['cursor']
+  inlineSize?: BoxProps<'span'>['inlineSize']
 }
 
 export type FloatingTriggerInternalProps = {
