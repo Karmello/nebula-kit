@@ -36,7 +36,7 @@
 
     // focus ring
     &:focus-visible {
-      color: var(--text-focused, var(--text));
+      color: var(--text);
       outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
       outline-offset: calc(var(--neb-focus-ring-width) * -1);
     }

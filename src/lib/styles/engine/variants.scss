@@ -8,8 +8,6 @@
     --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
 
     --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-selected: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
 
     --text: hsl(var(--h) var(--s) var(--l-25));
@@ -18,7 +16,6 @@
     --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
-
     --ripple: currentColor;
   }
 
@@ -36,14 +33,11 @@
     --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
-
     --ripple: currentColor;
   }
 
   &[data-neb-box-variant='outline'] {
     --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-selected: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
 
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
@@ -54,14 +48,11 @@
     --text-disabled: hsl(var(--h) var(--s) var(--l-14) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
-
     --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 
   &[data-neb-box-variant='soft-outline'] {
     --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-selected: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
 
     --text: hsl(var(--h) var(--s) var(--main-l));
@@ -77,7 +68,6 @@
     --bg-dividing: transparent;
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
-
     --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 
@@ -90,7 +80,6 @@
     --text-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.25);
 
     --loader: hsl(var(--h) var(--s) var(--main-primary-l));
-
     --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 }

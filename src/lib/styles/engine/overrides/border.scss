@@ -5,8 +5,6 @@
     &[data-neb-box-intent='neutral'] {
       --border: hsl(var(--h) var(--s) var(--main-muted-l-dividing));
       --border-disabled: hsl(var(--h) var(--s) var(--main-muted-l-dividing) / 0.5);
-      --border-selected: hsl(var(--h) var(--s) var(--main-muted-l-dividing));
-      --border-dividing: hsl(var(--h) var(--s) var(--main-muted-l-dividing));
     }
   }
 }
