@@ -10,7 +10,7 @@ const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 type State = (typeof STATES)[number]
 
 export default () => {
-  const [variant, setVariant] = useState<BoxVariant>('ghost')
+  const [variant, setVariant] = useState<BoxVariant>('solid-outline')
   const [elevated, setElevated] = useState<boolean>(false)
   const [state, setState] = useState<State>('rest')
 
