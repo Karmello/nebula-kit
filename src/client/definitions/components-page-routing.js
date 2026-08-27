@@ -20,7 +20,7 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'layout',
     label: 'Layout',
-    items: [{ key: 'box-group', label: 'BoxGroup', sections, bundle: 'core' }],
+    items: [{ key: 'surface-group', label: 'SurfaceGroup', sections, bundle: 'core' }],
   },
   {
     key: 'controls',

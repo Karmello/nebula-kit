@@ -1,5 +1,7 @@
 import type { CssFlexDirection } from 'lib/types'
 
+import type { SurfaceGroupProps } from './types'
+
 export const CORNERS_AT_START: Record<CssFlexDirection, string[]> = {
   row: ['borderTopLeftRadius', 'borderBottomLeftRadius'],
   column: ['borderTopLeftRadius', 'borderTopRightRadius'],
@@ -20,3 +22,6 @@ export const BORDER_WIDTH_AT_START: Record<CssFlexDirection, string> = {
   'row-reverse': 'borderRightWidth',
   'column-reverse': 'borderBottomWidth',
 }
+
+export const DEFAULT_SURFACE_GROUP_DISPLAY: SurfaceGroupProps['display'] = 'inline-flex'
+export const DEFAULT_SURFACE_GROUP_FLEX_DIRECTION: SurfaceGroupProps['flexDirection'] = 'row'

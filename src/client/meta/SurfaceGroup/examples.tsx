@@ -1,12 +1,12 @@
-import { BoxGroup, Text } from 'lib/index.core'
+import { Box, SurfaceGroup, Text } from 'lib/index.core'
 import { type DocExample } from 'client/definitions'
 
-export const BOX_GROUP_EXAMPLES: DocExample[] = [
+export const SURFACE_GROUP_EXAMPLES: DocExample[] = [
   {
     description: 'Segmented action group of three joined, interactive items.',
     jsx: (
-      <BoxGroup display="flex">
-        <BoxGroup.Item
+      <SurfaceGroup display="flex">
+        <Box
           tag="button"
           interactive
           ripple
@@ -16,8 +16,8 @@ export const BOX_GROUP_EXAMPLES: DocExample[] = [
           padding="12px"
         >
           <Text>One</Text>
-        </BoxGroup.Item>
-        <BoxGroup.Item
+        </Box>
+        <Box
           tag="button"
           interactive
           ripple
@@ -27,8 +27,8 @@ export const BOX_GROUP_EXAMPLES: DocExample[] = [
           padding="12px"
         >
           <Text>Two</Text>
-        </BoxGroup.Item>
-        <BoxGroup.Item
+        </Box>
+        <Box
           tag="button"
           interactive
           ripple
@@ -38,21 +38,21 @@ export const BOX_GROUP_EXAMPLES: DocExample[] = [
           padding="12px"
         >
           <Text>Three</Text>
-        </BoxGroup.Item>
-      </BoxGroup>
+        </Box>
+      </SurfaceGroup>
     ),
   },
   {
     description: '...',
     jsx: (
-      <BoxGroup drawable variant="outline" intent="primary" brand="blue" display="flex">
-        <BoxGroup.Item drawable variant="solid" intent="tertiary">
+      <SurfaceGroup drawable variant="outline" intent="primary" brand="blue" display="flex">
+        <Box drawable variant="solid" intent="tertiary">
           Content 1
-        </BoxGroup.Item>
-        <BoxGroup.Item drawable variant="solid" intent="tertiary">
+        </Box>
+        <Box drawable variant="solid" intent="tertiary">
           Content 2
-        </BoxGroup.Item>
-      </BoxGroup>
+        </Box>
+      </SurfaceGroup>
     ),
   },
 ]

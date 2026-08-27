@@ -9,7 +9,7 @@ import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
 import { useControlled } from 'lib/hooks'
 
-import { BoxGroup } from '../BoxGroup'
+import { SurfaceGroup } from '../SurfaceGroup'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
@@ -129,7 +129,7 @@ export const SelectImpl = ({
             borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
             borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
-            <BoxGroup
+            <SurfaceGroup
               flexDirection="column"
               gap={NEB_LENGTH.px_002}
               drawable
@@ -149,7 +149,7 @@ export const SelectImpl = ({
                 const isSelected = currentValue === slot.props.value
 
                 return (
-                  <BoxGroup.Item
+                  <Box
                     key={key}
                     tag="button"
                     tagAttrs={{
@@ -174,10 +174,10 @@ export const SelectImpl = ({
                     >
                       {slot}
                     </Text>
-                  </BoxGroup.Item>
+                  </Box>
                 )
               })}
-            </BoxGroup>
+            </SurfaceGroup>
           </Box>
         </Resize>
       </Floating.Content>
