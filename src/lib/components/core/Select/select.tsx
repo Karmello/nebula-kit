@@ -93,7 +93,7 @@ export const SelectImpl = ({
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
           disabled={disabled}
-          surface={open ? 'selected' : undefined}
+          elevated={open}
           cursor="pointer"
           ripple={!open}
           interactive
@@ -122,7 +122,7 @@ export const SelectImpl = ({
             drawable
             variant={variant}
             color={color}
-            surface="selected"
+            elevated
             intent={intent}
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
@@ -167,13 +167,15 @@ export const SelectImpl = ({
                     }}
                     cursor="pointer"
                     interactive
-                    variant="solid"
-                    intent={variant === 'solid' ? intent : 'neutral'}
+                    variant={variant}
+                    intent={intent}
                     color={color}
                     elevated
                     surface={isSelected ? 'selected' : undefined}
                     blockSize={CONTROL_SCALE_MAP[scale].blockSize}
                     paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                    borderWidth={NEB_LENGTH.px_000}
+                    borderRadius={NEB_LENGTH.px_000}
                   >
                     <Text
                       fontSize={CONTROL_SCALE_MAP[scale].fontSize}

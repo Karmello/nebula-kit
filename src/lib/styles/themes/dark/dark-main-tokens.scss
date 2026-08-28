@@ -1,109 +1,91 @@
-@use '../generate-main-tokens.scss' as *;
-
 .neb-box[data-neb-box-theme='dark'] {
-  $config: (
-    // neutral
-    neutral: 0,
-    neutral-hover: 2,
-    neutral-active: 3,
-    neutral-selected: 3,
-    neutral-dividing: 2,
-    neutral-bordered: 2,
+  // neutral
+  --main-neutral-l: var(--l-0);
+  --main-neutral-l-hover: var(--l-2);
+  --main-neutral-l-active: var(--l-3);
+  --main-neutral-l-selected: var(--l-3);
+  --main-neutral-l-dividing: var(--l-2);
 
-    elevated-neutral: 3,
-    elevated-neutral-hover: 4,
-    elevated-neutral-active: 5,
-    elevated-neutral-selected: 5,
-    elevated-neutral-dividing: 4,
-    elevated-neutral-bordered: 4,
+  --main-elevated-neutral-l: var(--l-3);
+  --main-elevated-neutral-l-hover: var(--l-4);
+  --main-elevated-neutral-l-active: var(--l-5);
+  --main-elevated-neutral-l-selected: var(--l-5);
+  --main-elevated-neutral-l-dividing: var(--l-4);
 
-    neutral-fill: 55%,
+  --main-neutral-fill: 55%;
 
-    // muted
-    muted: 2,
-    muted-hover: 3,
-    muted-active: 4,
-    muted-selected: 4,
-    muted-dividing: 3,
-    muted-bordered: 3,
+  // muted
+  --main-muted-l: var(--l-2);
+  --main-muted-l-hover: var(--l-3);
+  --main-muted-l-active: var(--l-4);
+  --main-muted-l-selected: var(--l-4);
+  --main-muted-l-dividing: var(--l-3);
 
-    elevated-muted: 4,
-    elevated-muted-hover: 5,
-    elevated-muted-active: 6,
-    elevated-muted-selected: 6,
-    elevated-muted-dividing: 5,
-    elevated-muted-bordered: 5,
+  --main-elevated-muted-l: var(--l-4);
+  --main-elevated-muted-l-hover: var(--l-5);
+  --main-elevated-muted-l-active: var(--l-6);
+  --main-elevated-muted-l-selected: var(--l-6);
+  --main-elevated-muted-l-dividing: var(--l-5);
 
-    muted-fill: 35%,
+  --main-muted-fill: 35%;
 
-    // tertiary
-    tertiary: 4,
-    tertiary-hover: 5,
-    tertiary-active: 6,
-    tertiary-selected: 6,
-    tertiary-dividing: 5,
-    tertiary-bordered: 5,
+  // tertiary
+  --main-tertiary-l: var(--l-4);
+  --main-tertiary-l-hover: var(--l-5);
+  --main-tertiary-l-active: var(--l-6);
+  --main-tertiary-l-selected: var(--l-6);
+  --main-tertiary-l-dividing: var(--l-5);
 
-    elevated-tertiary: 6,
-    elevated-tertiary-hover: 7,
-    elevated-tertiary-active: 8,
-    elevated-tertiary-selected: 8,
-    elevated-tertiary-dividing: 7,
-    elevated-tertiary-bordered: 7,
+  --main-elevated-tertiary-l: var(--l-6);
+  --main-elevated-tertiary-l-hover: var(--l-7);
+  --main-elevated-tertiary-l-active: var(--l-8);
+  --main-elevated-tertiary-l-selected: var(--l-8);
+  --main-elevated-tertiary-l-dividing: var(--l-7);
 
-    tertiary-fill: 35%,
+  --main-tertiary-fill: 35%;
 
-    // secondary
-    secondary: 7,
-    secondary-hover: 8,
-    secondary-active: 10,
-    secondary-selected: 10,
-    secondary-dividing: 9,
-    secondary-bordered: 9,
+  // secondary
+  --main-secondary-l: var(--l-7);
+  --main-secondary-l-hover: var(--l-8);
+  --main-secondary-l-active: var(--l-10);
+  --main-secondary-l-selected: var(--l-10);
+  --main-secondary-l-dividing: var(--l-9);
 
-    elevated-secondary: 10,
-    elevated-secondary-hover: 9,
-    elevated-secondary-active: 7,
-    elevated-secondary-selected: 7,
-    elevated-secondary-dividing: 11,
-    elevated-secondary-bordered: 11,
+  --main-elevated-secondary-l: var(--l-10);
+  --main-elevated-secondary-l-hover: var(--l-9);
+  --main-elevated-secondary-l-active: var(--l-7);
+  --main-elevated-secondary-l-selected: var(--l-7);
+  --main-elevated-secondary-l-dividing: var(--l-11);
 
-    secondary-fill: 18%,
+  --main-secondary-fill: 18%;
 
-    // primary
-    primary: 12,
-    primary-hover: 14,
-    primary-active: 16,
-    primary-selected: 16,
-    primary-dividing: 15,
-    primary-bordered: 15,
+  // primary
+  --main-primary-l: var(--l-12);
+  --main-primary-l-hover: var(--l-14);
+  --main-primary-l-active: var(--l-16);
+  --main-primary-l-selected: var(--l-16);
+  --main-primary-l-dividing: var(--l-15);
 
-    elevated-primary: 16,
-    elevated-primary-hover: 15,
-    elevated-primary-active: 13,
-    elevated-primary-selected: 13,
-    elevated-primary-dividing: 17,
-    elevated-primary-bordered: 17,
+  --main-elevated-primary-l: var(--l-16);
+  --main-elevated-primary-l-hover: var(--l-15);
+  --main-elevated-primary-l-active: var(--l-13);
+  --main-elevated-primary-l-selected: var(--l-13);
+  --main-elevated-primary-l-dividing: var(--l-17);
 
-    primary-fill: 17%,
+  --main-primary-fill: 17%;
 
-    // inverse
-    inverse: 25,
-    inverse-hover: 22,
-    inverse-active: 18,
-    inverse-selected: 18,
-    inverse-dividing: 18,
-    inverse-bordered: 18,
+  // inverse
+  --main-inverse-l: var(--l-25);
+  --main-inverse-l-hover: var(--l-22);
+  --main-inverse-l-active: var(--l-18);
+  --main-inverse-l-selected: var(--l-18);
+  --main-inverse-l-dividing: var(--l-18);
 
-    elevated-inverse: 18,
-    elevated-inverse-hover: 17,
-    elevated-inverse-active: 15,
-    elevated-inverse-selected: 15,
-    elevated-inverse-dividing: 19,
-    elevated-inverse-bordered: 19,
+  --main-elevated-inverse-l: var(--l-18);
+  --main-elevated-inverse-l-hover: var(--l-17);
+  --main-elevated-inverse-l-active: var(--l-15);
+  --main-elevated-inverse-l-selected: var(--l-15);
+  --main-elevated-inverse-l-dividing: var(--l-19);
 
-    inverse-fill: 16%
-  );
-
-  @include generate-main-tokens($config);
+  --main-inverse-fill: 16%;
 }

@@ -5,7 +5,6 @@
     --main-l-active: var(--main-elevated-neutral-l-active);
     --main-l-selected: var(--main-elevated-neutral-l-selected);
     --main-l-dividing: var(--main-elevated-neutral-l-dividing);
-    --main-l-bordered: var(--main-elevated-neutral-l-bordered);
   }
 
   &[data-neb-box-intent='muted'] {
@@ -14,7 +13,6 @@
     --main-l-active: var(--main-elevated-muted-l-active);
     --main-l-selected: var(--main-elevated-muted-l-selected);
     --main-l-dividing: var(--main-elevated-muted-l-dividing);
-    --main-l-bordered: var(--main-elevated-muted-l-bordered);
   }
 
   &[data-neb-box-intent='tertiary'] {
@@ -23,7 +21,6 @@
     --main-l-active: var(--main-elevated-tertiary-l-active);
     --main-l-selected: var(--main-elevated-tertiary-l-selected);
     --main-l-dividing: var(--main-elevated-tertiary-l-dividing);
-    --main-l-bordered: var(--main-elevated-tertiary-l-bordered);
   }
 
   &[data-neb-box-intent='secondary'] {
@@ -32,7 +29,6 @@
     --main-l-active: var(--main-elevated-secondary-l-active);
     --main-l-selected: var(--main-elevated-secondary-l-selected);
     --main-l-dividing: var(--main-elevated-secondary-l-dividing);
-    --main-l-bordered: var(--main-elevated-secondary-l-bordered);
   }
 
   &[data-neb-box-intent='primary'] {
@@ -41,7 +37,6 @@
     --main-l-active: var(--main-elevated-primary-l-active);
     --main-l-selected: var(--main-elevated-primary-l-selected);
     --main-l-dividing: var(--main-elevated-primary-l-dividing);
-    --main-l-bordered: var(--main-elevated-primary-l-bordered);
   }
 
   &[data-neb-box-intent='inverse'] {
@@ -50,6 +45,5 @@
     --main-l-active: var(--main-elevated-inverse-l-active);
     --main-l-selected: var(--main-elevated-inverse-l-selected);
     --main-l-dividing: var(--main-elevated-inverse-l-dividing);
-    --main-l-bordered: var(--main-elevated-inverse-l-bordered);
   }
 }
