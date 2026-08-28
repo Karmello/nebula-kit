@@ -8,3 +8,4 @@
 - [Component vs behavior](feedback_component_vs_behavior.md) — new components are for repeatable DOM structure only; behavior/mechanics belong in hooks/functions, reuse Box directly otherwise
 - [Memory lives in the repo](feedback_memory_lives_in_repo.md) — the harness's own memory path is ephemeral in this container; .claude-memory/ in nebula-kit is the source of truth, always commit it
 - [Outline surface contrast](project_outline_surface_contrast.md) — outline/soft-outline Box has no bg; contrast against arbitrary backgrounds is the consumer's job, not a framework fix
+- [Box token architecture validated](project_box_token_architecture_validated.md) — variant/token model is sound; friction so far is token-value mismatches (elevated-neutral, border/bg token sharing), not a design flaw
