@@ -8,12 +8,14 @@
     neutral-active: 3,
     neutral-selected: 3,
     neutral-dividing: 2,
+    neutral-bordered: 2,
 
     elevated-neutral: 3,
     elevated-neutral-hover: 4,
     elevated-neutral-active: 5,
     elevated-neutral-selected: 5,
     elevated-neutral-dividing: 4,
+    elevated-neutral-bordered: 4,
 
     neutral-fill: 55%,
 
@@ -23,12 +25,14 @@
     muted-active: 4,
     muted-selected: 4,
     muted-dividing: 3,
+    muted-bordered: 3,
 
     elevated-muted: 4,
     elevated-muted-hover: 5,
     elevated-muted-active: 6,
     elevated-muted-selected: 6,
     elevated-muted-dividing: 5,
+    elevated-muted-bordered: 5,
 
     muted-fill: 35%,
 
@@ -38,12 +42,14 @@
     tertiary-active: 6,
     tertiary-selected: 6,
     tertiary-dividing: 5,
+    tertiary-bordered: 5,
 
     elevated-tertiary: 6,
     elevated-tertiary-hover: 7,
     elevated-tertiary-active: 8,
     elevated-tertiary-selected: 8,
     elevated-tertiary-dividing: 7,
+    elevated-tertiary-bordered: 7,
 
     tertiary-fill: 35%,
 
@@ -52,13 +58,15 @@
     secondary-hover: 8,
     secondary-active: 10,
     secondary-selected: 10,
-    secondary-dividing: 8,
+    secondary-dividing: 9,
+    secondary-bordered: 9,
 
     elevated-secondary: 10,
     elevated-secondary-hover: 9,
     elevated-secondary-active: 7,
     elevated-secondary-selected: 7,
     elevated-secondary-dividing: 11,
+    elevated-secondary-bordered: 11,
 
     secondary-fill: 18%,
 
@@ -67,13 +75,15 @@
     primary-hover: 14,
     primary-active: 16,
     primary-selected: 16,
-    primary-dividing: 13,
+    primary-dividing: 15,
+    primary-bordered: 15,
 
     elevated-primary: 16,
     elevated-primary-hover: 15,
     elevated-primary-active: 13,
     elevated-primary-selected: 13,
     elevated-primary-dividing: 17,
+    elevated-primary-bordered: 17,
 
     primary-fill: 17%,
 
@@ -82,13 +92,15 @@
     inverse-hover: 22,
     inverse-active: 18,
     inverse-selected: 18,
-    inverse-dividing: 23,
+    inverse-dividing: 18,
+    inverse-bordered: 18,
 
     elevated-inverse: 18,
     elevated-inverse-hover: 17,
     elevated-inverse-active: 15,
     elevated-inverse-selected: 15,
     elevated-inverse-dividing: 19,
+    elevated-inverse-bordered: 19,
 
     inverse-fill: 16%
   );

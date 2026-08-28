@@ -1,25 +1,25 @@
-import { Box, NEB_LENGTH, SurfaceGroup, Text } from '@nebula-kit/core'
+import { Box, BoxProps, NEB_LENGTH, SurfaceGroup, Text } from '@nebula-kit/core'
 
 export const JoinedActionGroup = () => {
+  const intent: BoxProps['intent'] = 'inverse'
+
   return (
     <SurfaceGroup
-      // gap={NEB_LENGTH.px_002}
-      display="flex"
-      // flexDirection="column"
-      squared
-      // drawable
-      // variant="solid"
-      // intent="primary"
-      // surface="dividing"
-      // paddingTop={NEB_LENGTH.px_002}
+      brand="blue"
+      gap={NEB_LENGTH.px_002}
+      // squared
+      drawable
+      variant="solid"
+      intent={intent}
+      surface="dividing"
     >
       <Box
         tag="button"
         interactive
         ripple
         cursor="pointer"
-        variant="outline"
-        intent="primary"
+        variant="solid"
+        intent={intent}
         padding={NEB_LENGTH.px_012}
       >
         <Text>Box 1</Text>
@@ -30,7 +30,7 @@ export const JoinedActionGroup = () => {
         ripple
         cursor="pointer"
         variant="solid"
-        intent="primary"
+        intent={intent}
         padding={NEB_LENGTH.px_012}
       >
         <Text>Box 2</Text>
@@ -41,32 +41,10 @@ export const JoinedActionGroup = () => {
         ripple
         cursor="pointer"
         variant="solid"
-        intent="primary"
+        intent={intent}
         padding={NEB_LENGTH.px_012}
       >
         <Text>Box 3</Text>
-      </Box>
-      <Box
-        tag="button"
-        interactive
-        ripple
-        cursor="pointer"
-        variant="solid"
-        intent="primary"
-        padding={NEB_LENGTH.px_012}
-      >
-        <Text>Box 4</Text>
-      </Box>
-      <Box
-        tag="button"
-        interactive
-        ripple
-        cursor="pointer"
-        variant="solid"
-        intent="primary"
-        padding={NEB_LENGTH.px_012}
-      >
-        <Text>Box 5</Text>
       </Box>
     </SurfaceGroup>
   )

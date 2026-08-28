@@ -41,6 +41,14 @@
   --main-primary-l-dividing: var(--l-#{map.get($config, primary-dividing)});
   --main-inverse-l-dividing: var(--l-#{map.get($config, inverse-dividing)});
 
+  // base bordered
+  --main-neutral-l-bordered: var(--l-#{map.get($config, neutral-bordered)});
+  --main-muted-l-bordered: var(--l-#{map.get($config, muted-bordered)});
+  --main-tertiary-l-bordered: var(--l-#{map.get($config, tertiary-bordered)});
+  --main-secondary-l-bordered: var(--l-#{map.get($config, secondary-bordered)});
+  --main-primary-l-bordered: var(--l-#{map.get($config, primary-bordered)});
+  --main-inverse-l-bordered: var(--l-#{map.get($config, inverse-bordered)});
+
   // elevated rest
   --main-elevated-neutral-l: var(--l-#{map.get($config, elevated-neutral)});
   --main-elevated-muted-l: var(--l-#{map.get($config, elevated-muted)});
@@ -80,6 +88,14 @@
   --main-elevated-secondary-l-dividing: var(--l-#{map.get($config, elevated-secondary-dividing)});
   --main-elevated-primary-l-dividing: var(--l-#{map.get($config, elevated-primary-dividing)});
   --main-elevated-inverse-l-dividing: var(--l-#{map.get($config, elevated-inverse-dividing)});
+
+  // elevated bordered
+  --main-elevated-neutral-l-bordered: var(--l-#{map.get($config, elevated-neutral-bordered)});
+  --main-elevated-muted-l-bordered: var(--l-#{map.get($config, elevated-muted-bordered)});
+  --main-elevated-tertiary-l-bordered: var(--l-#{map.get($config, elevated-tertiary-bordered)});
+  --main-elevated-secondary-l-bordered: var(--l-#{map.get($config, elevated-secondary-bordered)});
+  --main-elevated-primary-l-bordered: var(--l-#{map.get($config, elevated-primary-bordered)});
+  --main-elevated-inverse-l-bordered: var(--l-#{map.get($config, elevated-inverse-bordered)});
 
   // fill
   --main-neutral-fill: #{map.get($config, neutral-fill)};

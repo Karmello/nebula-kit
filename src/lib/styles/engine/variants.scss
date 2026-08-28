@@ -1,3 +1,13 @@
+// border
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-variant='solid-outline'],
+  &[data-neb-box-variant='outline'],
+  &[data-neb-box-variant='soft-outline'] {
+    --border: hsl(var(--h) var(--s) var(--main-l-bordered));
+    --border-disabled: hsl(var(--h) var(--s) var(--main-l-bordered) / 0.25);
+  }
+}
+
 .neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
   &[data-neb-box-variant='solid-outline'] {
     --bg: hsl(var(--h) var(--s) var(--main-l));
@@ -7,13 +17,10 @@
     --bg-dividing: hsl(var(--h) var(--s) var(--main-l-dividing));
     --bg-disabled: hsl(var(--h) var(--s) var(--main-l) / 0.5);
 
-    --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
-
     --text: hsl(var(--h) var(--s) var(--l-25));
     --text-active: hsl(var(--h) var(--s) var(--l-25));
     --text-selected: hsl(var(--h) var(--s) var(--l-25));
-    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.1);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
     --ripple: currentColor;
@@ -30,16 +37,13 @@
     --text: hsl(var(--h) var(--s) var(--l-25));
     --text-active: hsl(var(--h) var(--s) var(--l-25));
     --text-selected: hsl(var(--h) var(--s) var(--l-25));
-    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+    --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.1);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
     --ripple: currentColor;
   }
 
   &[data-neb-box-variant='outline'] {
-    --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
-
     --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-hover)) var(--main-fill), transparent);
     --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-active)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
     --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--main-l-selected)) calc(var(--main-fill) * var(--fill-multiplier)), transparent);
@@ -52,9 +56,6 @@
   }
 
   &[data-neb-box-variant='soft-outline'] {
-    --border: hsl(var(--h) var(--s) var(--main-l-dividing));
-    --border-disabled: hsl(var(--h) var(--s) var(--main-l-dividing) / 0.5);
-
     --text: hsl(var(--h) var(--s) var(--main-l));
     --text-hover: hsl(var(--h) var(--s) var(--main-l-hover));
     --text-active: hsl(var(--h) var(--s) var(--main-l-active));

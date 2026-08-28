@@ -14,4 +14,4 @@ export const BOX_INTENTS = [
   'primary',
   'inverse',
 ] as const
-export const BOX_SURFACES = ['selected', 'dividing'] as const
+export const BOX_SURFACES = ['selected', 'dividing', 'bordered'] as const
