@@ -1,15 +1,16 @@
 ---
 name: project-docs-meta-flattening
 description: props.ts files were flattened to remove cross-component DocProp references; punch-list of pre-existing bugs surfaced but left untouched
-metadata:
+metadata: 
   node_type: memory
   type: project
-  modified: 2026-08-25T00:00:00.000Z
+  originSessionId: 30643ef2-d119-442f-93d4-7e3acd9fda9b
+  modified: 2026-08-25T18:44:41.685Z
 ---
 
 All 72 of 78 `client/meta/*/props.ts` files (everything except `Box`, `Floating`, `FloatingContent`, `HtmlTag`, `Link`, `NebkitProvider`, which were already self-contained) were refactored to remove cross-component `X_META.props.Y` references. Each file now writes every `DocProp` object out in full, in place — no more borrowing/spreading another component's docs entry.
 
-**Why:** the user found the reference/spread pattern hard to read and fragile to maintain (jumping files to see what a prop documents, silent propagation when a shared entry changes, friction when they wanted to override a description or narrow an inherited union per-component). Decision was to duplicate the doc content (Option B from that discussion) rather than keep referencing, specifically because a zero-exception "never reference another component's meta" rule is far easier for both a human and an AI to audit than a hybrid rule with judgment calls. See [[project-docs-meta-architecture]] for the adjacent (separate) decision about *not* moving descriptions into JSDoc on types.ts.
+**Why:** the user found the reference/spread pattern hard to read and fragile to maintain (jumping files to see what a prop documents, silent propagation when a shared entry changes, friction when they wanted to override a description or narrow an inherited union per-component). Decision was to duplicate the doc content (Option B from that discussion) rather than keep referencing, specifically because a zero-exception "never reference another component's meta" rule is far easier for both a human and an AI to audit than a hybrid rule with judgment calls. See [[project_docs_meta_architecture]] for the adjacent (separate) decision about *not* moving descriptions into JSDoc on types.ts.
 
 **The one thing NOT flattened:** the `options` field still imports the real backing constant (e.g. `BOX_COLORS`, or a component's own narrowed constant like `SWITCH_INTENTS`) rather than duplicating literal string arrays — that's a deliberate exception, since those arrays are genuine compiler-adjacent source-of-truth values, not docs-authoring duplication.
 

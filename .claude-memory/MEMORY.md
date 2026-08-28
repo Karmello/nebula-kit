@@ -4,3 +4,6 @@
 - [Always commit workspace file](feedback_commit_workspace_file.md) — include nebula-kit.code-workspace changes in commits, don't leave them out
 - [Docs meta architecture](project_docs_meta_architecture.md) — props.ts vs types.ts split is deliberate, don't suggest merging via JSDoc
 - [Docs meta flattening](project_docs_meta_flattening.md) — props.ts cross-refs removed; punch-list of pre-existing bugs left unfixed
+- [Wrapper components vs hooks](feedback_wrapper_components_vs_hooks.md) — a Box-wrapper that mostly forwards props is a wrong abstraction; extract the real logic into a hook instead
+- [Component vs behavior](feedback_component_vs_behavior.md) — new components are for repeatable DOM structure only; behavior/mechanics belong in hooks/functions, reuse Box directly otherwise
+- [Memory lives in the repo](feedback_memory_lives_in_repo.md) — the harness's own memory path is ephemeral in this container; .claude-memory/ in nebula-kit is the source of truth, always commit it
