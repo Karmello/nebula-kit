@@ -7,3 +7,4 @@
 - [Wrapper components vs hooks](feedback_wrapper_components_vs_hooks.md) — a Box-wrapper that mostly forwards props is a wrong abstraction; extract the real logic into a hook instead
 - [Component vs behavior](feedback_component_vs_behavior.md) — new components are for repeatable DOM structure only; behavior/mechanics belong in hooks/functions, reuse Box directly otherwise
 - [Memory lives in the repo](feedback_memory_lives_in_repo.md) — the harness's own memory path is ephemeral in this container; .claude-memory/ in nebula-kit is the source of truth, always commit it
+- [Outline surface contrast](project_outline_surface_contrast.md) — outline/soft-outline Box has no bg; contrast against arbitrary backgrounds is the consumer's job, not a framework fix
