@@ -28,7 +28,6 @@ export { Section, type SectionProps } from './Section'
 export { Select, type SelectOptionProps, type SelectProps } from './Select'
 export { Slide, type SlideProps } from './Slide'
 export { Spacer, type SpacerProps } from './Spacer'
-export { SurfaceGroup, type SurfaceGroupProps } from './SurfaceGroup'
 export {
   Table,
   type TableBodyProps,

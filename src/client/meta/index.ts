@@ -56,7 +56,6 @@ import { SPLIT_VIEW_META } from './SplitView'
 import { SPLIT_VIEW_MAIN_META } from './SplitViewMain'
 import { SPLIT_VIEW_MAIN_BAR_META } from './SplitViewMainBar'
 import { SPLIT_VIEW_SIDE_META } from './SplitViewSide'
-import { SURFACE_GROUP_META } from './SurfaceGroup'
 import { SWITCH_META } from './Switch'
 import { TABLE_META } from './Table'
 import { TABLE_BODY_META } from './TableBody'
@@ -213,9 +212,6 @@ const META = {
     SplitViewSide: SPLIT_VIEW_SIDE_META,
     SplitViewMain: SPLIT_VIEW_MAIN_META,
     SplitViewMainBar: SPLIT_VIEW_MAIN_BAR_META,
-  },
-  SurfaceGroup: {
-    SurfaceGroup: SURFACE_GROUP_META,
   },
   Switch: {
     Switch: SWITCH_META,

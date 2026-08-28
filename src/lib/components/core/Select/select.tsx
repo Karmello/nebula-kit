@@ -7,9 +7,8 @@ import { Text } from 'lib/components/core/Text'
 import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
-import { useControlled } from 'lib/hooks'
+import { useControlled, useJoinedSurfaceStyle } from 'lib/hooks'
 
-import { SurfaceGroup } from '../SurfaceGroup'
 import {
   DEFAULT_SELECT_INLINE_SIZE,
   DEFAULT_SELECT_INTENT,
@@ -53,6 +52,12 @@ export const SelectImpl = ({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
     optionBlockSize,
     itemsCount: optionSlots.length,
+  })
+
+  const getJoinedSurfaceStyle = useJoinedSurfaceStyle({
+    count: optionSlots.length,
+    squared: true,
+    flexDirection: 'column',
   })
 
   useEffect(() => {
@@ -129,7 +134,8 @@ export const SelectImpl = ({
             borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
             borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
-            <SurfaceGroup
+            <Box
+              display="inline-flex"
               flexDirection="column"
               gap={NEB_LENGTH.px_002}
               drawable
@@ -138,7 +144,7 @@ export const SelectImpl = ({
               color={color}
               elevated
               surface="dividing"
-              squared
+              borderRadius={NEB_LENGTH.px_000}
               paddingTop={variant === 'solid' && isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
               paddingBottom={
                 variant === 'solid' && !isOpenDownwards ? NEB_LENGTH.px_002 : undefined
@@ -151,6 +157,7 @@ export const SelectImpl = ({
                 return (
                   <Box
                     key={key}
+                    {...getJoinedSurfaceStyle(key)}
                     tag="button"
                     tagAttrs={{
                       onClick: () => {
@@ -177,7 +184,7 @@ export const SelectImpl = ({
                   </Box>
                 )
               })}
-            </SurfaceGroup>
+            </Box>
           </Box>
         </Resize>
       </Floating.Content>

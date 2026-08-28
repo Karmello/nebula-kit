@@ -13,6 +13,6 @@ export const SELECT_OVERVIEW: DocOverview = {
     'click outside and Escape key dismissal',
     'supports fixed trigger labels via `staticLabel`',
   ],
-  composedOf: ['Box', 'Floating', 'Icon', 'Resize', 'SurfaceGroup', 'Text'],
+  composedOf: ['Box', 'Floating', 'Icon', 'Resize', 'Text'],
   slots: ['Select.Option'],
 }

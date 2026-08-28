@@ -18,11 +18,6 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
-    key: 'layout',
-    label: 'Layout',
-    items: [{ key: 'surface-group', label: 'SurfaceGroup', sections, bundle: 'core' }],
-  },
-  {
     key: 'controls',
     label: 'Controls',
     items: [
