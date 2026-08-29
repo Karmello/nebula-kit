@@ -20,7 +20,14 @@ const Family = ({
 
   return (
     <Box drawable variant="ghost" intent="primary" brand="blue">
-      <Section size="md" variant="outline" intent="tertiary" heading={heading} iconName={iconName}>
+      <Section
+        size="md"
+        variant="outline"
+        intent="tertiary"
+        heading={heading}
+        iconName={iconName}
+        headingIntent="primary"
+      >
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>

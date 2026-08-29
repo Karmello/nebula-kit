@@ -60,6 +60,7 @@ export const Section = <T extends SectionTag = 'section'>({
         typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography as any}
         iconName={iconName}
         iconPlacement={iconPlacement}
+        intent={headingIntent}
       >
         <Text
           typography={SECTION_SIZE_CONFIG[size || 'md'].textTypography}

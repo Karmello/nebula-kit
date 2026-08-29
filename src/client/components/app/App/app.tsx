@@ -139,17 +139,13 @@ export const App = () => {
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
-            <Link href="https://x.com/captainnebula" target="_blank">
-              <Button
-                color="gray"
-                intent="primary"
-                scale="xs"
-                iconName="external-link"
-                iconPlacement="right"
-              >
-                X profile
-              </Button>
-            </Link>
+            <Box theme="global-flipped">
+              <Link href="https://x.com/captainnebula" target="_blank">
+                <Button color="gray" scale="xs" iconName="external-link" iconPlacement="right">
+                  X profile
+                </Button>
+              </Link>
+            </Box>
             <Link href="https://discord.gg/BgezCRDN8H" target="_blank">
               <Button
                 color="blue"
@@ -183,17 +179,13 @@ export const App = () => {
                 LinkedIn
               </Button>
             </Link>
-            <Link href="https://github.com/Karmello" target="_blank">
-              <Button
-                color="gray"
-                intent="primary"
-                scale="xs"
-                iconName="external-link"
-                iconPlacement="right"
-              >
-                GitHub
-              </Button>
-            </Link>
+            <Box theme="global-flipped">
+              <Link href="https://github.com/Karmello" target="_blank">
+                <Button color="gray" scale="xs" iconName="external-link" iconPlacement="right">
+                  GitHub
+                </Button>
+              </Link>
+            </Box>
           </Box>
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
