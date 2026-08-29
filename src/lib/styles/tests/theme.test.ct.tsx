@@ -18,7 +18,7 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
       color: el.dataset.nebBoxColor,
       variant: el.dataset.nebBoxVariant,
       intent: el.dataset.nebBoxIntent,
-      main: styles.getPropertyValue('--base-l').trim(),
+      main: styles.getPropertyValue('--l').trim(),
       bg: styles.getPropertyValue('--bg').trim(),
     }
   })
@@ -64,8 +64,8 @@ test('Nested Box resolves same primary solid styling as parent', async ({ mount,
       childTheme: child.dataset.nebBoxTheme,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
-      childMain: childStyles.getPropertyValue('--base-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--l').trim(),
+      childMain: childStyles.getPropertyValue('--l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -132,8 +132,8 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
       globalTheme: global.dataset.nebBoxTheme,
 
       // tokens
-      localMain: localStyles.getPropertyValue('--base-l').trim(),
-      globalMain: globalStyles.getPropertyValue('--base-l').trim(),
+      localMain: localStyles.getPropertyValue('--l').trim(),
+      globalMain: globalStyles.getPropertyValue('--l').trim(),
 
       // projection
       localBg: localStyles.getPropertyValue('--bg').trim(),
@@ -196,8 +196,8 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
       lightColor: light.dataset.nebBoxColor,
 
       // tokens
-      darkMain: darkStyles.getPropertyValue('--base-l').trim(),
-      lightMain: lightStyles.getPropertyValue('--base-l').trim(),
+      darkMain: darkStyles.getPropertyValue('--l').trim(),
+      lightMain: lightStyles.getPropertyValue('--l').trim(),
 
       // projection
       darkBg: darkStyles.getPropertyValue('--bg').trim(),
@@ -280,9 +280,9 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
       dark2Theme: dark2.dataset.nebBoxTheme,
 
       // tokens
-      dark1Main: dark1Styles.getPropertyValue('--base-l').trim(),
-      light1Main: light1Styles.getPropertyValue('--base-l').trim(),
-      dark2Main: dark2Styles.getPropertyValue('--base-l').trim(),
+      dark1Main: dark1Styles.getPropertyValue('--l').trim(),
+      light1Main: light1Styles.getPropertyValue('--l').trim(),
+      dark2Main: dark2Styles.getPropertyValue('--l').trim(),
 
       // projection
       dark1Bg: dark1Styles.getPropertyValue('--bg').trim(),
@@ -352,8 +352,8 @@ test('Global dark theme resolves primary solid styling consistently', async ({ m
       twoTheme: two.dataset.nebBoxTheme,
 
       // tokens
-      oneMain: oneStyles.getPropertyValue('--base-l').trim(),
-      twoMain: twoStyles.getPropertyValue('--base-l').trim(),
+      oneMain: oneStyles.getPropertyValue('--l').trim(),
+      twoMain: twoStyles.getPropertyValue('--l').trim(),
 
       // projection
       oneBg: oneStyles.getPropertyValue('--bg').trim(),
