@@ -5,6 +5,7 @@ import {
   BOX_SURFACES,
   BOX_THEMES,
   BOX_VARIANTS,
+  DEFAULT_BOX_SURFACE,
 } from 'lib/components/core/Box/constants'
 import {
   CSS_ALIGN_CONTENT,
@@ -165,11 +166,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: ['boolean'],
     description:
       'Enables visual rendering. When true, the Box can draw a surface using variant and intent. When false, it is structural and has no visual styling.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   flex: {
     options: ['string'],
@@ -479,10 +475,14 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Defines vertical spacing between rows of children.',
     link: true,
   },
+  selected: {
+    options: ['boolean'],
+    description: '...',
+  },
   surface: {
     options: BOX_SURFACES,
-    description:
-      'Applies a persistent surface behavior that overrides transient interaction states like hover and active.',
+    defaultValue: DEFAULT_BOX_SURFACE,
+    description: '...',
   },
   tag: {
     options: ['HTML tag'],

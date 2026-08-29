@@ -1,5 +1,6 @@
-@use './intents';
-@use './intents-elevated';
+@use './base-intents';
+@use './raised-intents';
+@use './lowered-intents';
 @use './variants';
 @use './overrides/index';
 

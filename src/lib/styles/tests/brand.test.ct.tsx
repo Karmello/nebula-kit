@@ -45,8 +45,8 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // tokens
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
+      childMain: childStyles.getPropertyValue('--base-l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -102,8 +102,8 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
+      childMain: childStyles.getPropertyValue('--base-l').trim(),
 
       // projection layer
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -171,8 +171,8 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       darkTheme: dark.dataset.nebBoxTheme,
       lightTheme: light.dataset.nebBoxTheme,
 
-      darkMain: darkStyles.getPropertyValue('--main-l').trim(),
-      lightMain: lightStyles.getPropertyValue('--main-l').trim(),
+      darkMain: darkStyles.getPropertyValue('--base-l').trim(),
+      lightMain: lightStyles.getPropertyValue('--base-l').trim(),
 
       darkBg: darkStyles.getPropertyValue('--bg').trim(),
       lightBg: lightStyles.getPropertyValue('--bg').trim(),

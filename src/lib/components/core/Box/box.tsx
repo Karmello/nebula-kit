@@ -15,6 +15,7 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 
+import { DEFAULT_BOX_SURFACE } from './constants'
 import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'
 import { BoxProps } from './types'
 
@@ -26,16 +27,16 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   drawable,
-  elevated,
   theme,
   brand,
   color,
   variant,
   intent,
   interactive,
-  surface,
+  surface = DEFAULT_BOX_SURFACE,
   ripple,
   disabled,
+  selected,
   activeOnFocus,
   cursor,
   hidden,
@@ -304,10 +305,10 @@ export const Box = <T extends ElementType = 'div'>({
               disabled,
               ...buildStaticDataset('Box', {
                 drawable: drawable || interactive,
-                elevated,
                 interactive,
                 surface,
                 disabled,
+                selected,
                 activeOnFocus,
                 ripple: usesRipple,
                 color: resolvedAppearance.color,

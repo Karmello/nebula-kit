@@ -31,7 +31,7 @@ export const Loader = ({
         style: {
           ...tagAttrs?.style,
           '--neb-loader-color': color
-            ? 'hsl(var(--h) var(--s) var(--main-primary-l))'
+            ? 'hsl(var(--h) var(--s) var(--base-primary-l))'
             : 'var(--loader)',
         } as CSSProperties,
       }}

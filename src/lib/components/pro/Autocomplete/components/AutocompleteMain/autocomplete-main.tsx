@@ -130,7 +130,7 @@ export const AutocompleteMain = ({
           display="flex"
           inlineSize={inlineSize}
           disabled={disabled}
-          surface={open ? 'selected' : undefined}
+          selected={open}
         >
           <Box
             flex="1"
@@ -171,7 +171,7 @@ export const AutocompleteMain = ({
                 },
               }}
               iconName={isOpenDownwards ? 'chevron-down' : 'chevron-up'}
-              elevated={open}
+              surface={open ? 'raised' : undefined}
               onClick={() => {
                 setOpen(prev => !prev)
               }}
@@ -195,7 +195,7 @@ export const AutocompleteMain = ({
             borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
             borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
           >
-            <Box intent={intent} color={color} elevated>
+            <Box intent={intent} color={color} surface="raised">
               {filteredItems.length === 0 && noOptionsLabel ? (
                 <Box
                   display="flex"
@@ -219,7 +219,7 @@ export const AutocompleteMain = ({
                       {isOpenDownwards ? (
                         <Divider
                           marginBlock={NEB_LENGTH.px_000}
-                          elevated
+                          surface="raised"
                           color={color}
                           intent={intent}
                         />
@@ -237,11 +237,11 @@ export const AutocompleteMain = ({
                         drawable
                         interactive
                         variant="solid"
-                        elevated
+                        surface="raised"
                         intent={intent}
                         color={color}
                         cursor="pointer"
-                        surface={isSelected ? 'selected' : undefined}
+                        selected={isSelected}
                         inlineSize="100%"
                         borderRadius={NEB_LENGTH.px_000}
                       >
@@ -261,7 +261,7 @@ export const AutocompleteMain = ({
                       {!isOpenDownwards ? (
                         <Divider
                           marginBlock={NEB_LENGTH.px_000}
-                          elevated
+                          surface="raised"
                           color={color}
                           intent={intent}
                         />

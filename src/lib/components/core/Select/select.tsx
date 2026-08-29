@@ -1,13 +1,14 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
+import { Divider } from 'lib/components/core/Divider'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
-import { useControlled, useJoinedSurfaceStyle } from 'lib/hooks'
+import { useControlled } from 'lib/hooks'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -54,12 +55,6 @@ export const SelectImpl = ({
     itemsCount: optionSlots.length,
   })
 
-  const getJoinedSurfaceStyle = useJoinedSurfaceStyle({
-    count: optionSlots.length,
-    squared: true,
-    flexDirection: 'column',
-  })
-
   useEffect(() => {
     if (!open) return
     requestAnimationFrame(() => {
@@ -93,7 +88,7 @@ export const SelectImpl = ({
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
           disabled={disabled}
-          elevated={open}
+          surface={open ? 'raised' : undefined}
           cursor="pointer"
           ripple={!open}
           interactive
@@ -121,9 +116,9 @@ export const SelectImpl = ({
           <Box
             drawable
             variant={variant}
-            color={color}
-            elevated
             intent={intent}
+            color={color}
+            surface="raised"
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
             overflowY="auto"
@@ -137,52 +132,53 @@ export const SelectImpl = ({
             <Box
               display="inline-flex"
               flexDirection="column"
-              gap={NEB_LENGTH.px_002}
               drawable
               variant="solid"
-              intent={variant === 'solid' ? intent : 'neutral'}
+              intent="neutral"
               color={color}
-              elevated
-              surface="dividing"
-              borderRadius={NEB_LENGTH.px_000}
-              paddingTop={variant === 'solid' && isOpenDownwards ? NEB_LENGTH.px_002 : undefined}
-              paddingBottom={
-                variant === 'solid' && !isOpenDownwards ? NEB_LENGTH.px_002 : undefined
-              }
               inlineSize="100%"
             >
               {optionSlots.map((slot, key) => {
                 const isSelected = currentValue === slot.props.value
 
                 return (
-                  <Box
-                    key={key}
-                    {...getJoinedSurfaceStyle(key)}
-                    tag="button"
-                    tagAttrs={{
-                      onClick: () => {
-                        setCurrentValue(slot.props.value)
-                        setOpen(false)
-                      },
-                    }}
-                    cursor="pointer"
-                    interactive
-                    variant={variant}
-                    intent={intent}
-                    color={color}
-                    elevated
-                    surface={isSelected ? 'selected' : undefined}
-                    blockSize={CONTROL_SCALE_MAP[scale].blockSize}
-                    paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
-                    borderWidth={NEB_LENGTH.px_000}
-                    borderRadius={NEB_LENGTH.px_000}
-                  >
-                    <Text
-                      fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-                      lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                  <Box key={key}>
+                    {(variant !== 'outline' && variant !== 'soft-outline') || key > 0 ? (
+                      <Divider
+                        intent={variant.startsWith('solid') ? intent : 'neutral'}
+                        color={color}
+                        marginBlock={NEB_LENGTH.px_000}
+                        surface={variant.startsWith('solid') ? 'base' : undefined}
+                      />
+                    ) : null}
+                    <Box
+                      tag="button"
+                      tagAttrs={{
+                        onClick: () => {
+                          setCurrentValue(slot.props.value)
+                          setOpen(false)
+                        },
+                      }}
+                      cursor="pointer"
+                      interactive
+                      inlineSize="100%"
+                      variant={variant}
+                      intent={intent}
+                      color={color}
+                      surface="raised"
+                      selected={isSelected}
+                      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+                      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                      borderWidth={NEB_LENGTH.px_000}
+                      borderRadius={NEB_LENGTH.px_000}
                     >
-                      {slot}
-                    </Text>
+                      <Text
+                        fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                      >
+                        {slot}
+                      </Text>
+                    </Box>
                   </Box>
                 )
               })}

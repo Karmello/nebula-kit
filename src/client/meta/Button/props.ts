@@ -1,4 +1,9 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import {
+  BOX_COLORS,
+  BOX_INTENTS,
+  BOX_SURFACES,
+  BOX_VARIANTS,
+} from 'lib/components/core/Box/constants'
 import {
   BUTTON_ALIGNS,
   BUTTON_ICON_PLACEMENTS,
@@ -40,11 +45,6 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   fullWidth: {
     options: ['boolean'],
@@ -107,6 +107,11 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     options: ['boolean'],
     description:
       'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   tag: {
     options: BUTTON_TAGS,

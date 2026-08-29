@@ -1,9 +1,14 @@
 import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, NEB_LENGTH, Select, Spacer, Switch, Text } from 'lib/components'
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
-import type { BoxVariant } from 'lib/components/core/Box/types'
+import { Box, Button, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
+import {
+  BOX_COLORS,
+  BOX_INTENTS,
+  BOX_SURFACES,
+  BOX_VARIANTS,
+} from 'lib/components/core/Box/constants'
+import type { BoxSurface, BoxVariant } from 'lib/components/core/Box/types'
 
 const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 
@@ -11,8 +16,8 @@ type State = (typeof STATES)[number]
 
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
-  const [elevated, setElevated] = useState<boolean>(false)
   const [state, setState] = useState<State>('rest')
+  const [surface, setSurface] = useState<BoxSurface>('base')
 
   return (
     <>
@@ -39,6 +44,21 @@ export default () => {
         </Box>
         <Box>
           <Text bold intent="primary">
+            Surface
+          </Text>
+          <Select
+            value={surface}
+            onChange={value => setSurface(value as BoxSurface)}
+            inlineSize="130px"
+            scale="sm"
+          >
+            {BOX_SURFACES.map(surface => (
+              <Select.Option value={surface}>{sentenceCase(surface)}</Select.Option>
+            ))}
+          </Select>
+        </Box>
+        <Box>
+          <Text bold intent="primary">
             State
           </Text>
           <Select
@@ -51,12 +71,6 @@ export default () => {
               <Select.Option value={state}>{sentenceCase(state)}</Select.Option>
             ))}
           </Select>
-        </Box>
-        <Box>
-          <Text bold intent="primary">
-            Elevated
-          </Text>
-          <Switch checked={elevated} onChange={setElevated} scale="sm" />
         </Box>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
@@ -75,7 +89,7 @@ export default () => {
                     variant={variant}
                     intent={intent}
                     fullWidth
-                    elevated={elevated}
+                    surface={surface !== 'base' ? surface : undefined}
                     selected={state === 'selected'}
                     disabled={state === 'disabled'}
                     loading={state === 'loading'}

@@ -33,7 +33,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
   color,
   intent = DEFAULT_ICON_BUTTON_INTENT,
   disabled,
-  elevated,
+  surface,
   ripple = DEFAULT_ICON_BUTTON_RIPPLE,
 }: IconButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
@@ -58,7 +58,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       color={color}
       intent={intent}
       disabled={disabled || loading}
-      elevated={elevated}
+      surface={surface}
       ripple={ripple}
       minInlineSize={CONTROL_SCALE_MAP[scale].blockSize}
       maxInlineSize={CONTROL_SCALE_MAP[scale].blockSize}

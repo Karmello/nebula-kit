@@ -31,7 +31,7 @@ export const AppFrameHeader = ({
       borderWidth="0px"
       borderRadius="0px"
       borderBottomWidth="2px"
-      surface="dividing"
+      surface="raised"
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
     >

@@ -6,12 +6,7 @@ export { BOX_COLORS }
 
 export const BOX_THEMES = [...NEBKIT_PROVIDER_THEMES, 'global', 'global-flipped'] as const
 export const BOX_VARIANTS = ['solid', 'solid-outline', 'outline', 'soft-outline', 'ghost'] as const
-export const BOX_INTENTS = [
-  'neutral',
-  'muted',
-  'tertiary',
-  'secondary',
-  'primary',
-  'inverse',
-] as const
-export const BOX_SURFACES = ['selected', 'dividing'] as const
+export const BOX_INTENTS = ['neutral', 'muted', 'tertiary', 'secondary', 'primary'] as const
+export const BOX_SURFACES = ['base', 'raised', 'lowered'] as const
+
+export const DEFAULT_BOX_SURFACE = 'base'

@@ -8,7 +8,7 @@ export const PROPS_FROM_BUTTON = [
   'children',
   'color',
   'disabled',
-  'elevated',
+  'surface',
   'fullWidth',
   'iconName',
   'iconPlacement',

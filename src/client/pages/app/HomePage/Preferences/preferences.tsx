@@ -21,7 +21,7 @@ export const Preferences = () => {
       <Box>
         <Text bold>Theme</Text>
         <Button
-          intent={theme === 'light' ? 'inverse' : 'tertiary'}
+          intent={theme === 'light' ? 'primary' : 'tertiary'}
           scale="sm"
           tagAttrs={{
             onClick: () => setTheme('light'),
@@ -34,7 +34,7 @@ export const Preferences = () => {
           {sentenceCase('Light')}
         </Button>
         <Button
-          intent={theme === 'dark' ? 'inverse' : 'tertiary'}
+          intent={theme === 'dark' ? 'primary' : 'tertiary'}
           scale="sm"
           tagAttrs={{
             onClick: () => setTheme('dark'),

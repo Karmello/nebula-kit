@@ -1,4 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
@@ -11,10 +11,6 @@ export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
   color: {
     options: BOX_COLORS,
     description: 'Color applied to the surface behind list items.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description: 'Applies an elevated surface level behind the list items.',
   },
   ensureVisibleIndex: {
     options: ['number'],
@@ -55,6 +51,10 @@ export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
     options: ['number'],
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description: 'Applies an elevated surface level behind the list items.',
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

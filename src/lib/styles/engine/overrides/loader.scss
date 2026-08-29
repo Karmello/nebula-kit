@@ -5,9 +5,5 @@
     &[data-neb-box-intent='secondary'] {
       --loader: hsl(var(--h) var(--s) var(--light-l));
     }
-
-    &[data-neb-box-intent='inverse'] {
-      --loader: hsl(var(--h) var(--s) var(--l-0));
-    }
   }
 }

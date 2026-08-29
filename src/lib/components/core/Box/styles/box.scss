@@ -1,8 +1,5 @@
-@use './solid-outline.scss';
-@use './solid.scss';
-@use './outline.scss';
-@use './soft-outline.scss';
-@use './ghost.scss';
+@use './box-variant.scss';
+@use './box-ripple.scss';
 
 .neb-box {
   background-color: transparent;

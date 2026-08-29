@@ -15,7 +15,7 @@ export type SideNavItemProps = {
   customSvgIcon?: IconProps['children']
   iconName?: IconProps['name']
   iconPlacement?: SideNavItemIconPlacement
-  elevated?: boolean
+  surface?: BoxProps<'button'>['surface']
   selected?: boolean
   // Box
   tagRef?: BoxProps<'button'>['tagRef']

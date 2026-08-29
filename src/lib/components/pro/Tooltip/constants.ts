@@ -23,12 +23,11 @@ export const TOOLTIP_INTENTS = [
   'tertiary',
   'secondary',
   'primary',
-  'inverse',
 ] as const satisfies BoxIntent[]
 export const TOOLTIP_MODES = ['hover', 'click'] as const
 
 export const DEFAULT_TOOLTIP_VARIANT: (typeof TOOLTIP_VARIANTS)[number] = 'solid'
-export const DEFAULT_TOOLTIP_INTENT: (typeof TOOLTIP_INTENTS)[number] = 'inverse'
+export const DEFAULT_TOOLTIP_INTENT: (typeof TOOLTIP_INTENTS)[number] = 'primary'
 export const DEFAULT_TOOLTIP_PLACEMENT: (typeof TOOLTIP_PLACEMENTS)[number] = 'top'
 export const DEFAULT_TOOLTIP_MODE: (typeof TOOLTIP_MODES)[number] = 'hover'
 export const DEFAULT_TOOLTIP_MAX_INLINE_SIZE = 250

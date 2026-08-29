@@ -110,8 +110,8 @@ export const Pagination = ({
               variant={variant}
               intent={intent}
               color={color}
-              elevated={active}
-              surface={active ? 'selected' : undefined}
+              surface={active ? 'raised' : undefined}
+              selected={active}
               ripple
               blockSize={CONTROL_SCALE_MAP[scale].blockSize}
               paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}

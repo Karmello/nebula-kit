@@ -39,7 +39,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   color,
   intent = DEFAULT_BUTTON_INTENT,
   disabled,
-  elevated,
+  surface,
   ripple = DEFAULT_BUTTON_RIPPLE,
   inlineSize,
   minInlineSize,
@@ -84,8 +84,8 @@ export const Button = <T extends ButtonTag = 'button'>({
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
-      elevated={elevated}
-      surface={selected ? 'selected' : undefined}
+      surface={surface}
+      selected={selected}
       blockSize={CONTROL_SCALE_MAP[scale].blockSize}
       paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
       ripple={ripple}

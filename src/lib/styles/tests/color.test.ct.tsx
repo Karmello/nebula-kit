@@ -30,7 +30,7 @@ test('Box color prop overrides resolved brand color', async ({ mount, page }) =>
       color: el.dataset.nebBoxColor,
 
       // token layer
-      main: styles.getPropertyValue('--main-l').trim(),
+      main: styles.getPropertyValue('--base-l').trim(),
 
       // projection
       bg: styles.getPropertyValue('--bg').trim(),
@@ -85,8 +85,8 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
+      childMain: childStyles.getPropertyValue('--base-l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -139,8 +139,8 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
+      childMain: childStyles.getPropertyValue('--base-l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -201,8 +201,8 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--base-l').trim(),
+      childMain: childStyles.getPropertyValue('--base-l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -256,7 +256,7 @@ test('Explicit color overrides brand', async ({ mount, page }) => {
       rootBrand: document.documentElement.dataset.brand,
       color: el.dataset.nebBoxColor,
 
-      main: styles.getPropertyValue('--main-l').trim(),
+      main: styles.getPropertyValue('--base-l').trim(),
       bg: styles.getPropertyValue('--bg').trim(),
     }
   })

@@ -23,7 +23,6 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
   direction: { type: 'array' },
   disabled: { type: 'boolean' },
   drawable: { type: 'boolean' },
-  elevated: { type: 'boolean' },
   fontSize: { type: 'string' },
   fullWidth: { type: 'boolean' },
   heading: { type: 'string' },

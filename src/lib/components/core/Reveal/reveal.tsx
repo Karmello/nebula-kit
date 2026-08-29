@@ -39,7 +39,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       borderRadius="var(--neb-border-radius)"
       overflow="hidden"
       maxInlineSize="100%"
-      surface="dividing"
+      surface="lowered"
       disabled={disabled}
     >
       <Box display="flex" flexDirection="column" alignItems="stretch">
@@ -62,7 +62,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           variant="solid"
           intent={intent}
           ripple={!open}
-          surface={open ? 'selected' : undefined}
+          selected={open}
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
         >

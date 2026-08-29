@@ -1,0 +1,41 @@
+.neb-box[data-neb-box-theme='light'] {
+  // neutral
+  --base-neutral-l: var(--l-0);
+  --base-neutral-l-hover: var(--l-1);
+  --base-neutral-l-active: var(--l-3);
+  --base-neutral-l-selected: var(--l-3);
+
+  --base-neutral-fill: 35%;
+
+  // muted
+  --base-muted-l: var(--l-2);
+  --base-muted-l-hover: var(--l-3);
+  --base-muted-l-active: var(--l-5);
+  --base-muted-l-selected: var(--l-5);
+
+  --base-muted-fill: 25%;
+
+  // tertiary
+  --base-tertiary-l: var(--l-5);
+  --base-tertiary-l-hover: var(--l-6);
+  --base-tertiary-l-active: var(--l-8);
+  --base-tertiary-l-selected: var(--l-8);
+
+  --base-tertiary-fill: 20%;
+
+  // secondary
+  --base-secondary-l: var(--l-10);
+  --base-secondary-l-hover: var(--l-11);
+  --base-secondary-l-active: var(--l-13);
+  --base-secondary-l-selected: var(--l-13);
+
+  --base-secondary-fill: 14%;
+
+  // primary
+  --base-primary-l: var(--l-15);
+  --base-primary-l-hover: var(--l-16);
+  --base-primary-l-active: var(--l-18);
+  --base-primary-l-selected: var(--l-18);
+
+  --base-primary-fill: 13%;
+}

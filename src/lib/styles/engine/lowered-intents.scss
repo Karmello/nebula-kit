@@ -1,0 +1,51 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant][data-neb-box-surface='lowered'] {
+  &[data-neb-box-intent='neutral'] {
+    --l: var(--lowered-neutral-l);
+    --l-hover: var(--lowered-neutral-l-hover);
+    --l-active: var(--lowered-neutral-l-active);
+    --l-selected: var(--lowered-neutral-l-selected);
+    --fill: var(--lowered-neutral-fill);
+
+    --ripple-opacity: 0.07;
+  }
+
+  &[data-neb-box-intent='muted'] {
+    --l: var(--lowered-muted-l);
+    --l-hover: var(--lowered-muted-l-hover);
+    --l-active: var(--lowered-muted-l-active);
+    --l-selected: var(--lowered-muted-l-selected);
+    --fill: var(--lowered-muted-fill);
+
+    --ripple-opacity: 0.04;
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --l: var(--lowered-tertiary-l);
+    --l-hover: var(--lowered-tertiary-l-hover);
+    --l-active: var(--lowered-tertiary-l-active);
+    --l-selected: var(--lowered-tertiary-l-selected);
+    --fill: var(--lowered-tertiary-fill);
+
+    --ripple-opacity: 0.05;
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --l: var(--lowered-secondary-l);
+    --l-hover: var(--lowered-secondary-l-hover);
+    --l-active: var(--lowered-secondary-l-active);
+    --l-selected: var(--lowered-secondary-l-selected);
+    --fill: var(--lowered-secondary-fill);
+
+    --ripple-opacity: 0.08;
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --l: var(--lowered-primary-l);
+    --l-hover: var(--lowered-primary-l-hover);
+    --l-active: var(--lowered-primary-l-active);
+    --l-selected: var(--lowered-primary-l-selected);
+    --fill: var(--lowered-primary-fill);
+
+    --ripple-opacity: 0.1;
+  }
+}

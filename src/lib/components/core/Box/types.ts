@@ -33,17 +33,17 @@ export type BoxSurface = (typeof BOX_SURFACES)[number]
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
   drawable?: boolean
-  elevated?: boolean
   theme?: RespValue<BoxTheme>
   brand?: BoxColor
   color?: BoxColor
   variant?: BoxVariant
   intent?: BoxIntent
+  surface?: BoxSurface
   // interaction
   interactive?: boolean
-  surface?: BoxSurface
   ripple?: boolean
   disabled?: boolean
+  selected?: boolean
   activeOnFocus?: boolean
   cursor?: CssCursor
   hidden?: RespValue<boolean>

@@ -1,4 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/constants'
 import { SIDE_NAV_VARIANTS } from 'lib/components/pro/SideNav/constants'
 import {
   SIDE_NAV_ITEM_ALIGNS,
@@ -31,11 +31,6 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     options: ['ReactNode'],
     description: 'Custom SVG icon rendered when not using name prop.',
   },
-  elevated: {
-    options: ['boolean'],
-    description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
-  },
   href: {
     options: ['string'],
     isRequired: true,
@@ -65,6 +60,11 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     options: ['boolean'],
     description:
       'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

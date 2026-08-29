@@ -12,7 +12,7 @@ export const PROPS_FROM_BOX = [
   'cursor',
   'disabled',
   'drawable',
-  'elevated',
+  'surface',
   'inlineSize',
   'intent',
   'interactive',

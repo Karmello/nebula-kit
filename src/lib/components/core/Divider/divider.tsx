@@ -3,7 +3,11 @@ import classNames from 'classnames'
 import { withPrefix } from 'lib/helpers'
 
 import { Box } from '../Box'
-import { DEFAULT_DIVIDER_INTENT, DEFAULT_DIVIDER_MARGIN_BLOCK } from './constants'
+import {
+  DEFAULT_DIVIDER_INTENT,
+  DEFAULT_DIVIDER_MARGIN_BLOCK,
+  DEFAULT_DIVIDER_SURFACE,
+} from './constants'
 import { DividerProps } from './types'
 
 import './divider.scss'
@@ -17,7 +21,7 @@ export const Divider = ({
   marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,
   marginTop,
   marginBottom,
-  elevated,
+  surface = DEFAULT_DIVIDER_SURFACE,
 }: DividerProps) => {
   return (
     <Box
@@ -36,8 +40,7 @@ export const Divider = ({
       marginBlock={marginBlock}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      elevated={elevated}
-      surface="dividing"
+      surface={surface}
     />
   )
 }

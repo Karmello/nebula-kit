@@ -1,4 +1,9 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import {
+  BOX_COLORS,
+  BOX_INTENTS,
+  BOX_SURFACES,
+  BOX_VARIANTS,
+} from 'lib/components/core/Box/constants'
 import {
   DEFAULT_ICON_BUTTON_INTENT,
   DEFAULT_ICON_BUTTON_RIPPLE,
@@ -22,11 +27,6 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
-  },
-  elevated: {
-    options: ['boolean'],
-    description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   iconName: {
     options: ['IconName'],
@@ -55,6 +55,11 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_ICON_BUTTON_SCALE,
     description: 'Controls the overall interaction geometry and icon proportions',
+  },
+  surface: {
+    options: BOX_SURFACES,
+    description:
+      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
   },
   tag: {
     options: ICON_BUTTON_TAGS,

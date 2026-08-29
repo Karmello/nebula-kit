@@ -1,0 +1,51 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant]:not(data-neb-box-surface) {
+  &[data-neb-box-intent='neutral'] {
+    --l: var(--base-neutral-l);
+    --l-hover: var(--base-neutral-l-hover);
+    --l-active: var(--base-neutral-l-active);
+    --l-selected: var(--base-neutral-l-selected);
+    --fill: var(--base-neutral-fill);
+
+    --ripple-opacity: 0.07;
+  }
+
+  &[data-neb-box-intent='muted'] {
+    --l: var(--base-muted-l);
+    --l-hover: var(--base-muted-l-hover);
+    --l-active: var(--base-muted-l-active);
+    --l-selected: var(--base-muted-l-selected);
+    --fill: var(--base-muted-fill);
+
+    --ripple-opacity: 0.04;
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --l: var(--base-tertiary-l);
+    --l-hover: var(--base-tertiary-l-hover);
+    --l-active: var(--base-tertiary-l-active);
+    --l-selected: var(--base-tertiary-l-selected);
+    --fill: var(--base-tertiary-fill);
+
+    --ripple-opacity: 0.05;
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --l: var(--base-secondary-l);
+    --l-hover: var(--base-secondary-l-hover);
+    --l-active: var(--base-secondary-l-active);
+    --l-selected: var(--base-secondary-l-selected);
+    --fill: var(--base-secondary-fill);
+
+    --ripple-opacity: 0.08;
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --l: var(--base-primary-l);
+    --l-hover: var(--base-primary-l-hover);
+    --l-active: var(--base-primary-l-active);
+    --l-selected: var(--base-primary-l-selected);
+    --fill: var(--base-primary-fill);
+
+    --ripple-opacity: 0.1;
+  }
+}

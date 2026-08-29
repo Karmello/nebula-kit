@@ -142,7 +142,7 @@ export const App = () => {
             <Link href="https://x.com/captainnebula" target="_blank">
               <Button
                 color="gray"
-                intent="inverse"
+                intent="primary"
                 scale="xs"
                 iconName="external-link"
                 iconPlacement="right"
@@ -186,7 +186,7 @@ export const App = () => {
             <Link href="https://github.com/Karmello" target="_blank">
               <Button
                 color="gray"
-                intent="inverse"
+                intent="primary"
                 scale="xs"
                 iconName="external-link"
                 iconPlacement="right"

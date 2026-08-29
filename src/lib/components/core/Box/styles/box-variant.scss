@@ -1,0 +1,125 @@
+// bg
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-variant='solid'],
+  &[data-neb-box-variant='solid-outline'],
+  &[data-neb-box-variant='soft-outline'],
+  &[data-neb-box-variant='outline'] {
+    // rest
+    background-color: var(--bg);
+
+    // enabled
+    &:not([data-neb-box-disabled='true']) {
+      // interactive
+      &[data-neb-box-interactive='true'] {
+        // hover
+        &:hover:not(:active),
+        &[data-neb-box-hovered='true'] {
+          background-color: var(--bg-hover, var(--bg));
+        }
+
+        // active
+        &:active,
+        &[data-neb-box-active-on-focus='true']:focus-visible {
+          background-color: var(--bg-active, var(--bg-hover, var(--bg)));
+        }
+      }
+
+      // selected
+      &[data-neb-box-selected='true'] {
+        background-color: var(--bg-selected, var(--bg-active, var(--bg-hover, var(--bg)))) !important;
+      }
+    }
+
+    // disabled
+    &[data-neb-box-disabled='true'] {
+      background-color: var(--bg-disabled, var(--bg));
+    }
+  }
+}
+
+// border
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-variant='solid-outline'],
+  &[data-neb-box-variant='outline'],
+  &[data-neb-box-variant='soft-outline'] {
+    // rest
+    border-width: var(--neb-border-width);
+    border-color: var(--border);
+
+    // enabled
+    &:not([data-neb-box-disabled='true']) {
+      // interactive
+      &[data-neb-box-interactive='true'] {
+        // hover
+        &:hover:not(:active),
+        &[data-neb-box-hovered='true'] {
+          border-color: var(--border-hover, var(--border));
+        }
+
+        // active
+        &:active,
+        &[data-neb-box-active-on-focus='true']:focus-visible {
+          border-color: var(--border-active, var(--border-hover, var(--border)));
+        }
+      }
+
+      // selected
+      &[data-neb-box-selected='true'] {
+        border-color: var(--border-selected, var(--border)) !important;
+      }
+    }
+
+    // disabled
+    &[data-neb-box-disabled='true'] {
+      border-color: var(--border-disabled, var(--border));
+    }
+  }
+}
+
+// text
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-variant] {
+  // rest
+  color: var(--text);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        color: var(--text-hover, var(--text));
+      }
+
+      // active
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
+        color: var(--text-active, var(--text-hover, var(--text)));
+      }
+    }
+
+    // selected
+    &[data-neb-box-selected='true'] {
+      color: var(--text-selected, var(--text-active, var(--text-hover, var(--text)))) !important;
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    color: var(--text-disabled, var(--text));
+  }
+}
+
+// all variants
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-variant] {
+  border-radius: var(--neb-border-radius);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // focus ring
+    &:focus-visible {
+      outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
+      outline-offset: calc(var(--neb-focus-ring-width) * -1);
+    }
+  }
+}

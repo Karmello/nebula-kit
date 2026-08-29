@@ -2,7 +2,6 @@
 @use './themes/_index' as *;
 @use './engine/_index' as *;
 @use './tokens/_index' as *;
-@use './ripple/ripple.scss' as *;
 
 html {
   font-family:
@@ -39,6 +38,7 @@ html[data-neb-enable-global-transitions] {
 
 body {
   background: var(--neb-background);
+  // background-color: darkblue;
   color: var(--neb-text);
 
   font-size: var(--neb-typography-body-font-size);

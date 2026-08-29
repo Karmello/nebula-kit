@@ -47,7 +47,7 @@ export const CodeSnippet = ({
         variant="solid"
         tagAttrs={{
           style: {
-            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--main-muted-l))' : undefined,
+            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--base-muted-l))' : undefined,
           },
         }}
       >
@@ -73,7 +73,7 @@ export const CodeSnippet = ({
           tagAttrs={{
             style: {
               borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
-              backgroundColor: 'hsl(var(--h) var(--s) var(--main-muted-l))',
+              backgroundColor: 'hsl(var(--h) var(--s) var(--base-muted-l))',
             },
           }}
           overflowY="auto"
