@@ -70,8 +70,8 @@ export const Switch = ({
         }}
         drawable
         interactive
-        surface={animatedChecked && !disabled ? 'raised' : undefined}
-        selected={animatedChecked && !disabled}
+        surfaceDepth={animatedChecked && !disabled ? 'raised' : undefined}
+        surfaceRole={animatedChecked && !disabled ? 'selection' : undefined}
         disabled={disabled}
         variant="solid"
         intent={intent}

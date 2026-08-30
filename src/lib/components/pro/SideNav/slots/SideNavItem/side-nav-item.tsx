@@ -24,7 +24,7 @@ export const SideNavItem = ({
   customSvgIcon,
   iconName,
   iconPlacement = DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT,
-  surface,
+  surfaceDepth,
   selected,
   // Link
   href,
@@ -70,8 +70,8 @@ export const SideNavItem = ({
         variant={variant || rootVariant}
         color={color || rootColor}
         intent={intent || rootIntent}
-        surface={surface}
-        selected={selected}
+        surfaceDepth={surfaceDepth}
+        surfaceRole={selected ? 'selection' : undefined}
         inlineSize="100%"
         blockSize={CONTROL_SCALE_MAP[scale].blockSize}
         paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}

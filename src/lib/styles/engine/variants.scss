@@ -1,11 +1,12 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
   // solid bg
-  &[data-neb-box-variant='solid'],
-  &[data-neb-box-variant='solid-outline'] {
+  &[data-neb-box-variant='solid'] {
     --bg: hsl(var(--h) var(--s) var(--l));
     --bg-hover: hsl(var(--h) var(--s) var(--l-hover));
     --bg-active: hsl(var(--h) var(--s) var(--l-active));
-    --bg-selected: hsl(var(--h) var(--s) var(--l-selected));
+    --bg-selection: hsl(var(--h) var(--s) var(--l-selection));
+    --bg-divider: hsl(var(--h) var(--s) var(--l-divider));
+    --bg-edge: hsl(var(--h) var(--s) var(--l-edge));
     --bg-disabled: hsl(var(--h) var(--s) var(--l) / 0.75);
 
     --loader: hsl(var(--h) var(--s) var(--l-25));
@@ -13,19 +14,19 @@
   }
 
   // outline border
-  &[data-neb-box-variant='solid-outline'],
   &[data-neb-box-variant='outline'],
   &[data-neb-box-variant='soft-outline'] {
     --border: hsl(var(--h) var(--s) var(--l));
     --border-hover: hsl(var(--h) var(--s) var(--l-hover));
     --border-active: hsl(var(--h) var(--s) var(--l-active));
-    --border-selected: hsl(var(--h) var(--s) var(--l-selected));
+    --border-selection: hsl(var(--h) var(--s) var(--l-selection));
+    --border-divider: hsl(var(--h) var(--s) var(--l-divider));
+    --border-edge: hsl(var(--h) var(--s) var(--l-edge));
     --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
   }
 
   // black and white text
   &[data-neb-box-variant='solid'],
-  &[data-neb-box-variant='solid-outline'],
   &[data-neb-box-variant='outline'] {
     --text: hsl(var(--h) var(--s) var(--l-25));
     --text-hover: hsl(var(--h) var(--s) var(--l-25));
@@ -36,9 +37,12 @@
   // fill bg for outline
   &[data-neb-box-variant='outline'],
   &[data-neb-box-variant='soft-outline'] {
-    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-hover)) var(--fill), transparent);
-    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-active)) calc(var(--fill) * var(--fill-multiplier)), transparent);
-    --bg-selected: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-selected)) calc(var(--fill) * var(--fill-multiplier)), transparent);
+    --bg: color-mix(in srgb, hsl(var(--h) var(--s) var(--l)) var(--tint), transparent);
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-hover)) var(--tint-hover), transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-active)) var(--tint-active), transparent);
+    --bg-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-selection)) var(--tint-selection), transparent);
+    --bg-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
+    --bg-edge: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-edge)) var(--tint-edge), transparent);
   }
 
   // text as surface
@@ -47,7 +51,9 @@
     --text: hsl(var(--h) var(--s) var(--l));
     --text-hover: hsl(var(--h) var(--s) var(--l-hover));
     --text-active: hsl(var(--h) var(--s) var(--l-active));
-    --text-selected: hsl(var(--h) var(--s) var(--l-selected));
+    --text-selection: hsl(var(--h) var(--s) var(--l-selection));
+    --text-divider: hsl(var(--h) var(--s) var(--l-divider));
+    --text-edge: hsl(var(--h) var(--s) var(--l-edge));
     --text-disabled: hsl(var(--h) var(--s) var(--l) / 0.25);
   }
 

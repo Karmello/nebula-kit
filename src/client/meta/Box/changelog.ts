@@ -1,7 +1,11 @@
 import { type DocChangelog } from 'client/definitions'
 
 export const BOX_CHANGELOG: DocChangelog = {
-  '0.11.0': ['replaced `flipped` theme value with `global` and `global-flipped`'],
+  '0.11.0': [
+    'replaced `flipped` theme value with `global` and `global-flipped`',
+    'changed `surface` prop to `surfaceDepth`',
+    'changed `selected` prop to `surfaceRole`',
+  ],
   '0.9.0': [
     'added `hidden` prop',
     'added support for the flipped `theme` value, allowing components to invert the nearest inherited theme within a subtree',

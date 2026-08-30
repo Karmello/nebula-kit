@@ -21,5 +21,5 @@ export type VirtualListProps<T = any> = {
   tagRef?: BoxProps['tagRef']
   intent?: BoxProps['intent']
   color?: BoxProps['color']
-  surface?: BoxProps['surface']
+  surfaceDepth?: BoxProps['surfaceDepth']
 }

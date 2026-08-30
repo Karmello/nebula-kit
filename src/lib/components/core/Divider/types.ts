@@ -8,5 +8,5 @@ export type DividerProps = {
   marginBlock?: BoxProps<'hr'>['marginBlock']
   marginTop?: BoxProps<'hr'>['marginTop']
   marginBottom?: BoxProps<'hr'>['marginBottom']
-  surface?: BoxProps<'hr'>['surface']
+  surfaceDepth?: BoxProps<'hr'>['surfaceDepth']
 }

@@ -59,7 +59,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
   staticLabel: { type: 'string' },
   status: { type: 'array' },
   stretch: { type: 'boolean' },
-  surface: { type: 'array' },
+  surfaceDepth: { type: 'array' },
   textAlign: { type: 'array' },
   theme: { type: 'array' },
   truncate: { type: 'boolean' },

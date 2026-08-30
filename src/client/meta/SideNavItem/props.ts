@@ -1,4 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import { SIDE_NAV_VARIANTS } from 'lib/components/pro/SideNav/constants'
 import {
   SIDE_NAV_ITEM_ALIGNS,
@@ -61,10 +61,10 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     description:
       'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
-  surface: {
-    options: BOX_SURFACES,
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
     description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

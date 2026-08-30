@@ -1,7 +1,7 @@
 import {
   BOX_COLORS,
   BOX_INTENTS,
-  BOX_SURFACES,
+  BOX_SURFACE_DEPTHS,
   BOX_THEMES,
   BOX_VARIANTS,
 } from 'lib/components/core/Box/constants'
@@ -109,10 +109,10 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description:
       'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
-  surface: {
-    options: BOX_SURFACES,
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
     description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tag: {
     options: BUTTON_TAGS,

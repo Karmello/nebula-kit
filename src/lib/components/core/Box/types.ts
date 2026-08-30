@@ -22,13 +22,21 @@ import type {
 } from 'lib/types'
 
 import { type HtmlTagProps } from '../HtmlTag/types'
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES, BOX_THEMES, BOX_VARIANTS } from './constants'
+import {
+  BOX_COLORS,
+  BOX_INTENTS,
+  BOX_SURFACE_DEPTHS,
+  BOX_SURFACE_ROLES,
+  BOX_THEMES,
+  BOX_VARIANTS,
+} from './constants'
 
 export type BoxTheme = (typeof BOX_THEMES)[number]
 export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
 export type BoxColor = (typeof BOX_COLORS)[number]
-export type BoxSurface = (typeof BOX_SURFACES)[number]
+export type BoxSurfaceDepth = (typeof BOX_SURFACE_DEPTHS)[number]
+export type BoxSurfaceRole = (typeof BOX_SURFACE_ROLES)[number]
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
@@ -38,12 +46,12 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   color?: BoxColor
   variant?: BoxVariant
   intent?: BoxIntent
-  surface?: BoxSurface
+  surfaceDepth?: BoxSurfaceDepth
   // interaction
   interactive?: boolean
   ripple?: boolean
   disabled?: boolean
-  selected?: boolean
+  surfaceRole?: BoxSurfaceRole
   activeOnFocus?: boolean
   cursor?: CssCursor
   hidden?: RespValue<boolean>

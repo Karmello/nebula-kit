@@ -1,46 +1,48 @@
-import { useJoinedSurfaceStyle } from 'lib/hooks'
 import { Box, BoxProps, NEB_LENGTH } from 'lib/index.core'
 
 export const JoinedActionGroup = () => {
-  const getJoinedSurfaceStyle = useJoinedSurfaceStyle({
-    count: 2,
-    // squared: true,
-  })
-
-  const intent: BoxProps['intent'] = 'strong'
+  const intent: BoxProps['intent'] = 'tertiary'
+  const surfaceDepth: BoxProps['surfaceDepth'] = 'base'
 
   return (
     <Box
       drawable
       variant="solid"
       intent={intent}
-      surface="lowered"
+      surfaceDepth={surfaceDepth}
+      surfaceRole="edge"
       display="inline-flex"
-      gap={NEB_LENGTH.px_002}
-      // borderRadius={NEB_LENGTH.px_000}
-      overflow="hidden"
+      flexDirection="column"
+      padding={NEB_LENGTH.px_002}
+      borderRadius={NEB_LENGTH.px_000}
     >
       <Box
-        tag="button"
-        cursor="pointer"
-        interactive
+        drawable
         variant="solid"
         intent={intent}
-        padding={NEB_LENGTH.px_012}
-        {...getJoinedSurfaceStyle(0)}
+        surfaceDepth={surfaceDepth}
+        padding={NEB_LENGTH.px_048}
+        borderRadius={NEB_LENGTH.px_000}
       >
-        Box 1
+        Box
       </Box>
       <Box
-        tag="button"
-        cursor="pointer"
-        interactive
+        drawable
         variant="solid"
         intent={intent}
-        padding={NEB_LENGTH.px_012}
-        {...getJoinedSurfaceStyle(1)}
+        surfaceDepth={surfaceDepth}
+        surfaceRole="divider"
+        blockSize={NEB_LENGTH.px_002}
+      />
+      <Box
+        drawable
+        variant="solid"
+        intent={intent}
+        surfaceDepth={surfaceDepth}
+        padding={NEB_LENGTH.px_048}
+        borderRadius={NEB_LENGTH.px_000}
       >
-        Box 2
+        Box
       </Box>
     </Box>
   )

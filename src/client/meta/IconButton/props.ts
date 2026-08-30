@@ -1,7 +1,7 @@
 import {
   BOX_COLORS,
   BOX_INTENTS,
-  BOX_SURFACES,
+  BOX_SURFACE_DEPTHS,
   BOX_VARIANTS,
 } from 'lib/components/core/Box/constants'
 import {
@@ -56,10 +56,10 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     defaultValue: DEFAULT_ICON_BUTTON_SCALE,
     description: 'Controls the overall interaction geometry and icon proportions',
   },
-  surface: {
-    options: BOX_SURFACES,
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
     description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tag: {
     options: ICON_BUTTON_TAGS,

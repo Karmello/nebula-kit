@@ -1,4 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
@@ -52,9 +52,10 @@ export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
   },
-  surface: {
-    options: BOX_SURFACES,
-    description: 'Applies an elevated surface level behind the list items.',
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
+    description:
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

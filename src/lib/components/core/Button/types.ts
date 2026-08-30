@@ -29,7 +29,7 @@ export type ButtonProps<T extends ButtonTag = 'button'> = {
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']
   disabled?: BoxProps<T>['disabled']
-  surface?: BoxProps<T>['surface']
+  surfaceDepth?: BoxProps<T>['surfaceDepth']
   ripple?: BoxProps<T>['ripple']
   inlineSize?: BoxProps<T>['inlineSize']
   minInlineSize?: BoxProps<T>['minInlineSize']

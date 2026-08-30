@@ -21,7 +21,7 @@ export type IconButtonProps<T extends IconButtonTag = 'button'> = {
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']
   disabled?: BoxProps<T>['disabled']
-  surface?: BoxProps<T>['surface']
+  surfaceDepth?: BoxProps<T>['surfaceDepth']
   ripple?: BoxProps<T>['ripple']
   // Icon
   iconName?: IconProps['name']

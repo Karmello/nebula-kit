@@ -83,7 +83,7 @@ const BreadcrumbLevel = ({
           interactive
           variant="ghost"
           intent="primary"
-          selected={open}
+          surfaceRole={open ? 'selection' : undefined}
           ripple={!open}
           blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
           paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
@@ -115,7 +115,7 @@ const BreadcrumbLevel = ({
             borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
             borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
           >
-            <Box intent={intent} color={color} surface="raised">
+            <Box intent={intent} color={color} surfaceDepth="raised">
               {nodes.map(node => {
                 const isSelected = node.value === currentValue
 
@@ -124,7 +124,7 @@ const BreadcrumbLevel = ({
                     {isOpenDownwards ? (
                       <Divider
                         marginBlock={NEB_LENGTH.px_000}
-                        surface="raised"
+                        surfaceDepth="raised"
                         color={color}
                         intent={intent}
                       />
@@ -141,11 +141,11 @@ const BreadcrumbLevel = ({
                       drawable
                       interactive
                       variant="solid"
-                      surface="raised"
+                      surfaceDepth="raised"
                       intent={intent}
                       color={color}
                       cursor="pointer"
-                      selected={isSelected}
+                      surfaceRole={isSelected ? 'selection' : undefined}
                       inlineSize="100%"
                       borderRadius={NEB_LENGTH.px_000}
                     >
@@ -174,7 +174,7 @@ const BreadcrumbLevel = ({
                     {!isOpenDownwards ? (
                       <Divider
                         marginBlock={NEB_LENGTH.px_000}
-                        surface="raised"
+                        surfaceDepth="raised"
                         color={color}
                         intent={intent}
                       />

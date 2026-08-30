@@ -1,10 +1,18 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-variant][data-neb-box-surface='base'] {
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant][data-neb-box-surface-depth='base'] {
+  --tint: 20%;
+  --tint-hover: 30%;
+  --tint-active: 40%;
+  --tint-selection: 40%;
+  --tint-divider: 40%;
+  --tint-edge: 40%;
+
   &[data-neb-box-intent='neutral'] {
     --l: var(--base-neutral-l);
     --l-hover: var(--base-neutral-l-hover);
     --l-active: var(--base-neutral-l-active);
-    --l-selected: var(--base-neutral-l-selected);
-    --fill: var(--base-neutral-fill);
+    --l-selection: var(--base-neutral-l-selection);
+    --l-divider: var(--base-neutral-l-divider);
+    --l-edge: var(--base-neutral-l-edge);
 
     --ripple-opacity: 0.07;
   }
@@ -13,8 +21,9 @@
     --l: var(--base-muted-l);
     --l-hover: var(--base-muted-l-hover);
     --l-active: var(--base-muted-l-active);
-    --l-selected: var(--base-muted-l-selected);
-    --fill: var(--base-muted-fill);
+    --l-selection: var(--base-muted-l-selection);
+    --l-divider: var(--base-muted-l-divider);
+    --l-edge: var(--base-muted-l-edge);
 
     --ripple-opacity: 0.04;
   }
@@ -23,8 +32,9 @@
     --l: var(--base-tertiary-l);
     --l-hover: var(--base-tertiary-l-hover);
     --l-active: var(--base-tertiary-l-active);
-    --l-selected: var(--base-tertiary-l-selected);
-    --fill: var(--base-tertiary-fill);
+    --l-selection: var(--base-tertiary-l-selection);
+    --l-divider: var(--base-tertiary-l-divider);
+    --l-edge: var(--base-tertiary-l-edge);
 
     --ripple-opacity: 0.05;
   }
@@ -33,8 +43,9 @@
     --l: var(--base-secondary-l);
     --l-hover: var(--base-secondary-l-hover);
     --l-active: var(--base-secondary-l-active);
-    --l-selected: var(--base-secondary-l-selected);
-    --fill: var(--base-secondary-fill);
+    --l-selection: var(--base-secondary-l-selection);
+    --l-divider: var(--base-secondary-l-divider);
+    --l-edge: var(--base-secondary-l-edge);
 
     --ripple-opacity: 0.08;
   }
@@ -43,8 +54,9 @@
     --l: var(--base-primary-l);
     --l-hover: var(--base-primary-l-hover);
     --l-active: var(--base-primary-l-active);
-    --l-selected: var(--base-primary-l-selected);
-    --fill: var(--base-primary-fill);
+    --l-selection: var(--base-primary-l-selection);
+    --l-divider: var(--base-primary-l-divider);
+    --l-edge: var(--base-primary-l-edge);
 
     --ripple-opacity: 0.1;
   }
@@ -53,8 +65,9 @@
     --l: var(--base-strong-l);
     --l-hover: var(--base-strong-l-hover);
     --l-active: var(--base-strong-l-active);
-    --l-selected: var(--base-strong-l-selected);
-    --fill: var(--base-strong-fill);
+    --l-selection: var(--base-strong-l-selection);
+    --l-divider: var(--base-strong-l-divider);
+    --l-edge: var(--base-strong-l-edge);
 
     --ripple-opacity: 0.1;
   }

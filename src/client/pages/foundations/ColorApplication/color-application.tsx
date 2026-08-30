@@ -5,10 +5,10 @@ import { Box, Button, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import {
   BOX_COLORS,
   BOX_INTENTS,
-  BOX_SURFACES,
+  BOX_SURFACE_DEPTHS,
   BOX_VARIANTS,
 } from 'lib/components/core/Box/constants'
-import type { BoxSurface, BoxVariant } from 'lib/components/core/Box/types'
+import type { BoxSurfaceDepth, BoxVariant } from 'lib/components/core/Box/types'
 
 const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 
@@ -17,7 +17,7 @@ type State = (typeof STATES)[number]
 export default () => {
   const [variant, setVariant] = useState<BoxVariant>('solid')
   const [state, setState] = useState<State>('rest')
-  const [surface, setSurface] = useState<BoxSurface>('base')
+  const [surfaceDepth, setSurfaceDepth] = useState<BoxSurfaceDepth>('base')
 
   return (
     <>
@@ -44,16 +44,16 @@ export default () => {
         </Box>
         <Box>
           <Text bold intent="primary">
-            Surface
+            Surface depth
           </Text>
           <Select
-            value={surface}
-            onChange={value => setSurface(value as BoxSurface)}
+            value={surfaceDepth}
+            onChange={value => setSurfaceDepth(value as BoxSurfaceDepth)}
             inlineSize="130px"
             scale="sm"
           >
-            {BOX_SURFACES.map(surface => (
-              <Select.Option value={surface}>{sentenceCase(surface)}</Select.Option>
+            {BOX_SURFACE_DEPTHS.map(surfaceDepth => (
+              <Select.Option value={surfaceDepth}>{sentenceCase(surfaceDepth)}</Select.Option>
             ))}
           </Select>
         </Box>
@@ -89,7 +89,7 @@ export default () => {
                     variant={variant}
                     intent={intent}
                     fullWidth
-                    surface={surface !== 'base' ? surface : undefined}
+                    surfaceDepth={surfaceDepth !== 'base' ? surfaceDepth : undefined}
                     selected={state === 'selected'}
                     disabled={state === 'disabled'}
                     loading={state === 'loading'}

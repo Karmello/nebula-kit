@@ -3,47 +3,47 @@
   --base-neutral-l: var(--l-0);
   --base-neutral-l-hover: var(--l-1);
   --base-neutral-l-active: var(--l-3);
-  --base-neutral-l-selected: var(--l-3);
-
-  --base-neutral-fill: 35%;
+  --base-neutral-l-selection: var(--l-3);
+  --base-neutral-l-divider: var(--l-1);
+  --base-neutral-l-edge: var(--l-1);
 
   // muted
   --base-muted-l: var(--l-1);
   --base-muted-l-hover: var(--l-2);
   --base-muted-l-active: var(--l-4);
-  --base-muted-l-selected: var(--l-4);
-
-  --base-muted-fill: 25%;
+  --base-muted-l-selection: var(--l-3);
+  --base-muted-l-divider: var(--l-2);
+  --base-muted-l-edge: var(--l-3);
 
   // tertiary
   --base-tertiary-l: var(--l-3);
   --base-tertiary-l-hover: var(--l-4);
   --base-tertiary-l-active: var(--l-6);
-  --base-tertiary-l-selected: var(--l-6);
-
-  --base-tertiary-fill: 20%;
+  --base-tertiary-l-selection: var(--l-5);
+  --base-tertiary-l-divider: var(--l-4);
+  --base-tertiary-l-edge: var(--l-5);
 
   // secondary
   --base-secondary-l: var(--l-7);
   --base-secondary-l-hover: var(--l-8);
   --base-secondary-l-active: var(--l-10);
-  --base-secondary-l-selected: var(--l-10);
-
-  --base-secondary-fill: 14%;
+  --base-secondary-l-selection: var(--l-9);
+  --base-secondary-l-divider: var(--l-8);
+  --base-secondary-l-edge: var(--l-9);
 
   // primary
   --base-primary-l: var(--l-13);
   --base-primary-l-hover: var(--l-14);
   --base-primary-l-active: var(--l-16);
-  --base-primary-l-selected: var(--l-16);
-
-  --base-primary-fill: 13%;
+  --base-primary-l-selection: var(--l-15);
+  --base-primary-l-divider: var(--l-11);
+  --base-primary-l-edge: var(--l-17);
 
   // strong
   --base-strong-l: var(--l-18);
   --base-strong-l-hover: var(--l-19);
   --base-strong-l-active: var(--l-21);
-  --base-strong-l-selected: var(--l-21);
-
-  --base-strong-fill: 13%;
+  --base-strong-l-selection: var(--l-20);
+  --base-strong-l-divider: var(--l-16);
+  --base-strong-l-edge: var(--l-10);
 }

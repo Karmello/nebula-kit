@@ -101,7 +101,7 @@ export const MultiSelectImpl = ({
           blockSize={CONTROL_SCALE_MAP[size].blockSize}
           paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
           disabled={disabled}
-          selected={open}
+          surfaceRole={open ? 'selection' : undefined}
           cursor="pointer"
           ripple={!open}
           interactive
@@ -143,7 +143,7 @@ export const MultiSelectImpl = ({
             borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
             borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
           >
-            <Box intent={intent} color={color} surface="raised">
+            <Box intent={intent} color={color} surfaceDepth="raised">
               {optionSlots.map((slot, key) => {
                 const isSelected = currentValue.includes(slot.props.value)
 
@@ -152,7 +152,7 @@ export const MultiSelectImpl = ({
                     {isOpenDownwards ? (
                       <Divider
                         marginBlock={NEB_LENGTH.px_000}
-                        surface="raised"
+                        surfaceDepth="raised"
                         color={color}
                         intent={intent}
                       />
@@ -167,11 +167,11 @@ export const MultiSelectImpl = ({
                       drawable
                       interactive
                       variant="solid"
-                      surface="raised"
+                      surfaceDepth="raised"
                       intent={intent}
                       color={color}
                       cursor="pointer"
-                      selected={isSelected}
+                      surfaceRole={isSelected ? 'selection' : undefined}
                       inlineSize="100%"
                       borderRadius={NEB_LENGTH.px_000}
                     >
@@ -202,7 +202,7 @@ export const MultiSelectImpl = ({
                     {!isOpenDownwards ? (
                       <Divider
                         marginBlock={NEB_LENGTH.px_000}
-                        surface="raised"
+                        surfaceDepth="raised"
                         color={color}
                         intent={intent}
                       />

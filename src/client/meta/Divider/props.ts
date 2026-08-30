@@ -1,8 +1,8 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACES } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_DIVIDER_INTENT,
   DEFAULT_DIVIDER_MARGIN_BLOCK,
-  DEFAULT_DIVIDER_SURFACE,
+  DEFAULT_DIVIDER_SURFACE_DEPTH,
 } from 'lib/components/core/Divider/constants'
 import { DividerProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
@@ -36,11 +36,11 @@ export const DIVIDER_PROPS: Record<keyof DividerProps, DocProp> = {
     description: 'Margin for the top side.',
     link: true,
   },
-  surface: {
-    options: BOX_SURFACES,
-    defaultValue: DEFAULT_DIVIDER_SURFACE,
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
+    defaultValue: DEFAULT_DIVIDER_SURFACE_DEPTH,
     description:
-      'Shifts the component onto an elevated surface level, adjusting the base surface and all related interaction states together.',
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

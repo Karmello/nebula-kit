@@ -5,7 +5,7 @@ export type PropsFromIconButtonKey = (typeof PROPS_FROM_ICON_BUTTON)[number]
 export const PROPS_FROM_ICON_BUTTON = [
   'color',
   'disabled',
-  'surface',
+  'surfaceDepth',
   'iconName',
   'intent',
   'loading',

@@ -1,7 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -88,10 +87,11 @@ export const SelectImpl = ({
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
           disabled={disabled}
-          surface={open ? 'raised' : undefined}
+          surfaceDepth={open ? 'raised' : undefined}
           cursor="pointer"
           ripple={!open}
-          interactive
+          drawable
+          interactive={!open}
           borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
           borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
@@ -118,7 +118,7 @@ export const SelectImpl = ({
             variant={variant}
             intent={intent}
             color={color}
-            surface="raised"
+            surfaceDepth="raised"
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
             overflowY="auto"
@@ -137,6 +137,7 @@ export const SelectImpl = ({
               intent="neutral"
               color={color}
               inlineSize="100%"
+              borderRadius={NEB_LENGTH.px_000}
             >
               {optionSlots.map((slot, key) => {
                 const isSelected = currentValue === slot.props.value
@@ -144,11 +145,16 @@ export const SelectImpl = ({
                 return (
                   <Box key={key}>
                     {(variant !== 'outline' && variant !== 'soft-outline') || key > 0 ? (
-                      <Divider
-                        intent={variant.startsWith('solid') ? intent : 'neutral'}
+                      <Box
+                        tag="hr"
+                        drawable
+                        variant={variant}
+                        intent={intent}
                         color={color}
-                        marginBlock={NEB_LENGTH.px_000}
-                        surface={variant.startsWith('solid') ? 'base' : 'lowered'}
+                        borderWidth={NEB_LENGTH.px_000}
+                        blockSize={NEB_LENGTH.px_002}
+                        surfaceDepth="raised"
+                        surfaceRole="divider"
                       />
                     ) : null}
                     <Box
@@ -165,8 +171,8 @@ export const SelectImpl = ({
                       variant={variant}
                       intent={intent}
                       color={color}
-                      surface="raised"
-                      selected={isSelected}
+                      surfaceDepth="raised"
+                      surfaceRole={isSelected ? 'selection' : undefined}
                       blockSize={CONTROL_SCALE_MAP[scale].blockSize}
                       paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
                       borderWidth={NEB_LENGTH.px_000}

@@ -6,7 +6,7 @@ import { Box } from '../Box'
 import {
   DEFAULT_DIVIDER_INTENT,
   DEFAULT_DIVIDER_MARGIN_BLOCK,
-  DEFAULT_DIVIDER_SURFACE,
+  DEFAULT_DIVIDER_SURFACE_DEPTH,
 } from './constants'
 import { DividerProps } from './types'
 
@@ -21,7 +21,7 @@ export const Divider = ({
   marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,
   marginTop,
   marginBottom,
-  surface = DEFAULT_DIVIDER_SURFACE,
+  surfaceDepth = DEFAULT_DIVIDER_SURFACE_DEPTH,
 }: DividerProps) => {
   return (
     <Box
@@ -35,12 +35,13 @@ export const Divider = ({
       variant="solid"
       color={color}
       intent={intent}
+      surfaceDepth={surfaceDepth}
+      surfaceRole="edge"
       blockSize="2px"
       borderWidth="0px"
       marginBlock={marginBlock}
       marginTop={marginTop}
       marginBottom={marginBottom}
-      surface={surface}
     />
   )
 }
