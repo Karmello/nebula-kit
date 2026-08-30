@@ -61,7 +61,7 @@
   &[data-neb-box-variant='outline'],
   &[data-neb-box-variant='soft-outline'],
   &[data-neb-box-variant='ghost'] {
-    --loader: hsl(var(--h) var(--s) var(--base-primary-l));
+    --loader: hsl(var(--h) var(--s) var(--base-strong-l));
     --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 }
