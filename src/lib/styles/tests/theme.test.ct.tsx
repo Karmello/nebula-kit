@@ -162,7 +162,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
       tagAttrs={{ id: 'dark-parent' }}
       drawable
       variant="solid"
-      intent="primary"
+      intent="secondary"
       theme="dark"
       blockSize="200px"
       padding="16px"
@@ -171,7 +171,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
         tagAttrs={{ id: 'light-child' }}
         drawable
         variant="solid"
-        intent="primary"
+        intent="secondary"
         theme="light"
         blockSize="100px"
       >
@@ -236,7 +236,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
       tagAttrs={{ id: 'dark-1' }}
       drawable
       variant="solid"
-      intent="primary"
+      intent="secondary"
       theme="dark"
       blockSize="300px"
       padding="16px"
@@ -245,7 +245,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
         tagAttrs={{ id: 'light-1' }}
         drawable
         variant="solid"
-        intent="primary"
+        intent="secondary"
         theme="light"
         blockSize="220px"
         padding="16px"
@@ -254,7 +254,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
           tagAttrs={{ id: 'dark-2' }}
           drawable
           variant="solid"
-          intent="primary"
+          intent="secondary"
           theme="dark"
           blockSize="140px"
         >

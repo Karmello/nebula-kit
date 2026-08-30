@@ -1,41 +1,49 @@
 .neb-box[data-neb-box-theme='dark'] {
   // neutral
-  --lowered-neutral-l: var(--l-0);
-  --lowered-neutral-l-hover: var(--l-2);
-  --lowered-neutral-l-active: var(--l-3);
-  --lowered-neutral-l-selected: var(--l-3);
+  --lowered-neutral-l: var(--l-2);
+  --lowered-neutral-l-hover: var(--l-3);
+  --lowered-neutral-l-active: var(--l-4);
+  --lowered-neutral-l-selected: var(--l-4);
 
   --lowered-neutral-fill: 55%;
 
   // muted
-  --lowered-muted-l: var(--l-2);
-  --lowered-muted-l-hover: var(--l-3);
-  --lowered-muted-l-active: var(--l-4);
-  --lowered-muted-l-selected: var(--l-4);
+  --lowered-muted-l: var(--l-1);
+  --lowered-muted-l-hover: var(--l-2);
+  --lowered-muted-l-active: var(--l-3);
+  --lowered-muted-l-selected: var(--l-3);
 
   --lowered-muted-fill: 35%;
 
   // tertiary
-  --lowered-tertiary-l: var(--l-4);
-  --lowered-tertiary-l-hover: var(--l-5);
-  --lowered-tertiary-l-active: var(--l-6);
-  --lowered-tertiary-l-selected: var(--l-6);
+  --lowered-tertiary-l: var(--l-3);
+  --lowered-tertiary-l-hover: var(--l-4);
+  --lowered-tertiary-l-active: var(--l-5);
+  --lowered-tertiary-l-selected: var(--l-5);
 
   --lowered-tertiary-fill: 35%;
 
   // secondary
-  --lowered-secondary-l: var(--l-7);
-  --lowered-secondary-l-hover: var(--l-8);
-  --lowered-secondary-l-active: var(--l-10);
-  --lowered-secondary-l-selected: var(--l-10);
+  --lowered-secondary-l: var(--l-5);
+  --lowered-secondary-l-hover: var(--l-6);
+  --lowered-secondary-l-active: var(--l-7);
+  --lowered-secondary-l-selected: var(--l-7);
 
   --lowered-secondary-fill: 18%;
 
   // primary
-  --lowered-primary-l: var(--l-12);
-  --lowered-primary-l-hover: var(--l-14);
-  --lowered-primary-l-active: var(--l-16);
-  --lowered-primary-l-selected: var(--l-16);
+  --lowered-primary-l: var(--l-9);
+  --lowered-primary-l-hover: var(--l-11);
+  --lowered-primary-l-active: var(--l-13);
+  --lowered-primary-l-selected: var(--l-13);
 
   --lowered-primary-fill: 17%;
+
+  // strong
+  --lowered-strong-l: var(--l-16);
+  --lowered-strong-l-hover: var(--l-18);
+  --lowered-strong-l-active: var(--l-21);
+  --lowered-strong-l-selected: var(--l-21);
+
+  --lowered-strong-fill: 17%;
 }

@@ -1,41 +1,49 @@
 .neb-box[data-neb-box-theme='dark'] {
   // neutral
-  --raised-neutral-l: var(--l-0);
-  --raised-neutral-l-hover: var(--l-2);
-  --raised-neutral-l-active: var(--l-3);
-  --raised-neutral-l-selected: var(--l-3);
+  --raised-neutral-l: var(--l-2);
+  --raised-neutral-l-hover: var(--l-3);
+  --raised-neutral-l-active: var(--l-4);
+  --raised-neutral-l-selected: var(--l-4);
 
   --raised-neutral-fill: 55%;
 
   // muted
-  --raised-muted-l: var(--l-2);
-  --raised-muted-l-hover: var(--l-3);
-  --raised-muted-l-active: var(--l-4);
-  --raised-muted-l-selected: var(--l-4);
+  --raised-muted-l: var(--l-3);
+  --raised-muted-l-hover: var(--l-4);
+  --raised-muted-l-active: var(--l-5);
+  --raised-muted-l-selected: var(--l-5);
 
   --raised-muted-fill: 35%;
 
   // tertiary
-  --raised-tertiary-l: var(--l-4);
-  --raised-tertiary-l-hover: var(--l-5);
-  --raised-tertiary-l-active: var(--l-6);
-  --raised-tertiary-l-selected: var(--l-6);
+  --raised-tertiary-l: var(--l-6);
+  --raised-tertiary-l-hover: var(--l-7);
+  --raised-tertiary-l-active: var(--l-8);
+  --raised-tertiary-l-selected: var(--l-8);
 
   --raised-tertiary-fill: 35%;
 
   // secondary
-  --raised-secondary-l: var(--l-7);
-  --raised-secondary-l-hover: var(--l-8);
-  --raised-secondary-l-active: var(--l-10);
-  --raised-secondary-l-selected: var(--l-10);
+  --raised-secondary-l: var(--l-10);
+  --raised-secondary-l-hover: var(--l-12);
+  --raised-secondary-l-active: var(--l-14);
+  --raised-secondary-l-selected: var(--l-14);
 
   --raised-secondary-fill: 18%;
 
   // primary
-  --raised-primary-l: var(--l-12);
-  --raised-primary-l-hover: var(--l-14);
-  --raised-primary-l-active: var(--l-16);
-  --raised-primary-l-selected: var(--l-16);
+  --raised-primary-l: var(--l-16);
+  --raised-primary-l-hover: var(--l-18);
+  --raised-primary-l-active: var(--l-20);
+  --raised-primary-l-selected: var(--l-20);
 
   --raised-primary-fill: 17%;
+
+  // strong
+  --raised-strong-l: var(--l-21);
+  --raised-strong-l-hover: var(--l-23);
+  --raised-strong-l-active: var(--l-25);
+  --raised-strong-l-selected: var(--l-25);
+
+  --raised-strong-fill: 17%;
 }

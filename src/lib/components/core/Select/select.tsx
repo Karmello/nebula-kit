@@ -148,7 +148,7 @@ export const SelectImpl = ({
                         intent={variant.startsWith('solid') ? intent : 'neutral'}
                         color={color}
                         marginBlock={NEB_LENGTH.px_000}
-                        surface={variant.startsWith('solid') ? 'base' : undefined}
+                        surface={variant.startsWith('solid') ? 'base' : 'lowered'}
                       />
                     ) : null}
                     <Box

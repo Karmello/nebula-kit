@@ -2,7 +2,6 @@
   &[data-neb-box-variant='solid'],
   &[data-neb-box-variant='solid-outline'] {
     &[data-neb-box-intent='primary'],
-    &[data-neb-box-intent='secondary'],
     &[data-neb-box-intent='strong'] {
       --loader: hsl(var(--h) var(--s) var(--light-l));
     }
