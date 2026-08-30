@@ -31,6 +31,7 @@ export const AppFrameFooterSection = ({
       padding={padding}
       paddingBlock={paddingBlock}
       paddingInline={paddingInline}
+      blockSize="100%"
     >
       {children}
     </Box>

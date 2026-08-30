@@ -7,7 +7,7 @@ export const JoinedActionGroup = () => {
     // squared: true,
   })
 
-  const intent: BoxProps['intent'] = 'primary'
+  const intent: BoxProps['intent'] = 'strong'
 
   return (
     <Box
