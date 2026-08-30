@@ -8,6 +8,7 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   tertiary: 'subtle, lowest emphasis action',
   secondary: 'supporting action, less emphasis than primary',
   primary: 'main call-to-action or highlight',
+  strong: 'heightened emphasis beyond primary, for critical or destructive actions',
 }
 
 export default () => {

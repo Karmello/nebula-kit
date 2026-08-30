@@ -28,6 +28,8 @@
   &[data-neb-box-variant='solid-outline'],
   &[data-neb-box-variant='outline'] {
     --text: hsl(var(--h) var(--s) var(--l-25));
+    --text-hover: hsl(var(--h) var(--s) var(--l-25));
+    --text-active: hsl(var(--h) var(--s) var(--l-25));
     --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
   }
 

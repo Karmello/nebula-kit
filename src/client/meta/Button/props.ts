@@ -2,6 +2,7 @@ import {
   BOX_COLORS,
   BOX_INTENTS,
   BOX_SURFACES,
+  BOX_THEMES,
   BOX_VARIANTS,
 } from 'lib/components/core/Box/constants'
 import {
@@ -125,6 +126,12 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   tagRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
+  },
+  theme: {
+    options: BOX_THEMES,
+    isResponsive: true,
+    description:
+      'Sets a local theme boundary for the component and its drawable descendants. Supports explicit themes, the global application theme or the opposite of the global application theme.',
   },
   variant: {
     options: BOX_VARIANTS,

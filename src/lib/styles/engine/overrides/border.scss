@@ -31,5 +31,13 @@
       --border-selected: hsl(var(--h) var(--s) var(--raised-primary-l-selected));
       --border-disabled: hsl(var(--h) var(--s) var(--raised-primary-l) / 0.5);
     }
+
+    &[data-neb-box-intent='strong'] {
+      --border: hsl(var(--h) var(--s) var(--raised-strong-l));
+      --border-hover: hsl(var(--h) var(--s) var(--raised-strong-l-hover));
+      --border-active: hsl(var(--h) var(--s) var(--raised-strong-l-active));
+      --border-selected: hsl(var(--h) var(--s) var(--raised-strong-l-selected));
+      --border-disabled: hsl(var(--h) var(--s) var(--raised-strong-l) / 0.5);
+    }
   }
 }

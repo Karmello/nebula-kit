@@ -48,4 +48,14 @@
 
     --ripple-opacity: 0.1;
   }
+
+  &[data-neb-box-intent='strong'] {
+    --l: var(--raised-strong-l);
+    --l-hover: var(--raised-strong-l-hover);
+    --l-active: var(--raised-strong-l-active);
+    --l-selected: var(--raised-strong-l-selected);
+    --fill: var(--raised-strong-fill);
+
+    --ripple-opacity: 0.1;
+  }
 }

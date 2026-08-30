@@ -477,12 +477,14 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   },
   selected: {
     options: ['boolean'],
-    description: '...',
+    description:
+      'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
   },
   surface: {
     options: BOX_SURFACES,
     defaultValue: DEFAULT_BOX_SURFACE,
-    description: '...',
+    description:
+      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
   },
   tag: {
     options: ['HTML tag'],

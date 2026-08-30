@@ -1,4 +1,4 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-variant]:not(data-neb-box-surface) {
+.neb-box[data-neb-box-drawable='true'][data-neb-box-variant][data-neb-box-surface='base'] {
   &[data-neb-box-intent='neutral'] {
     --l: var(--base-neutral-l);
     --l-hover: var(--base-neutral-l-hover);
@@ -45,6 +45,16 @@
     --l-active: var(--base-primary-l-active);
     --l-selected: var(--base-primary-l-selected);
     --fill: var(--base-primary-fill);
+
+    --ripple-opacity: 0.1;
+  }
+
+  &[data-neb-box-intent='strong'] {
+    --l: var(--base-strong-l);
+    --l-hover: var(--base-strong-l-hover);
+    --l-active: var(--base-strong-l-active);
+    --l-selected: var(--base-strong-l-selected);
+    --fill: var(--base-strong-fill);
 
     --ripple-opacity: 0.1;
   }
