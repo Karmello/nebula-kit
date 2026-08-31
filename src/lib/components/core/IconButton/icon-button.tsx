@@ -54,7 +54,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      variant={variant}
+      // variant={variant}
       color={color}
       intent={intent}
       disabled={disabled || loading}

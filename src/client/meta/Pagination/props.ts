@@ -1,4 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_PAGINATION_BOUNDARY_COUNT,
   DEFAULT_PAGINATION_INTENT,
@@ -7,6 +7,7 @@ import {
   DEFAULT_PAGINATION_SIBLING_COUNT,
   DEFAULT_PAGINATION_VARIANT,
 } from 'lib/components/pro/Pagination/constants'
+import { PAGINATION_VARIANTS } from 'lib/components/pro/Pagination/types'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { PaginationProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
@@ -81,7 +82,7 @@ export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
     description: 'Total number of available pages.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: PAGINATION_VARIANTS,
     defaultValue: String(DEFAULT_PAGINATION_VARIANT),
     description: 'Visual style variant.',
   },

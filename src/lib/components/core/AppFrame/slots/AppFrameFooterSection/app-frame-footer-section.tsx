@@ -17,10 +17,10 @@ export const AppFrameFooterSection = ({
     <Box
       tag="section"
       drawable
-      variant="outline"
+      // variant="outline"
       intent={intent}
       color={color}
-      surfaceRole="divider"
+      borderRole="divider"
       borderRadius="0px"
       borderWidth="0px"
       borderBottomWidth={{

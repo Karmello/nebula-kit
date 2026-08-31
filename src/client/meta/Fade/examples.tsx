@@ -33,7 +33,12 @@ export const FADE_EXAMPLES: DocExample[] = [
     description: 'Fade transition controlled by `visible` prop.',
     jsx: (
       <FadeWrapper>
-        <Box drawable variant="outline" intent="primary" padding="20px">
+        <Box
+          drawable
+          // variant="outline"
+          intent="primary"
+          padding="20px"
+        >
           Fade content
         </Box>
       </FadeWrapper>

@@ -20,7 +20,6 @@ export const PROPS_FROM_BOX = [
   'padding',
   'surfaceDepth',
   'theme',
-  'variant',
   'visibility',
 ] as const satisfies readonly (keyof BoxProps)[]
 
@@ -36,7 +35,7 @@ export const BOX_PRESETS = [
     props: {
       children: 'Drawable Box with solid variant, primary intent and green color applied.',
       drawable: true,
-      variant: 'solid',
+      // variant: 'solid',
       color: 'green',
       intent: 'primary',
       padding: '20px',
@@ -48,7 +47,7 @@ export const BOX_PRESETS = [
       children: 'Interactive Box with solid variant, primary intent and blue color applied.',
       drawable: true,
       interactive: true,
-      variant: 'solid',
+      // variant: 'solid',
       color: 'blue',
       intent: 'primary',
       padding: '20px',

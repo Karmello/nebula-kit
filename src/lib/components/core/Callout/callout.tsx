@@ -41,7 +41,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
       }
       tagRef={tagRef}
       drawable
-      variant={variant}
+      // variant={variant}
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"

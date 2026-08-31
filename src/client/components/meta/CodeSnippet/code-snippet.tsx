@@ -44,7 +44,7 @@ export const CodeSnippet = ({
     >
       <Box
         drawable
-        variant="solid"
+        bg="filled"
         tagAttrs={{
           style: {
             backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--base-muted-l))' : undefined,
@@ -79,7 +79,7 @@ export const CodeSnippet = ({
           overflowY="auto"
           maxBlockSize={maxBlockSize}
           drawable
-          variant="solid"
+          bg="filled"
         >
           <Box display="flex" tag="pre">
             <Box

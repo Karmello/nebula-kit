@@ -67,11 +67,11 @@ export const SideNavItem = ({
           tabIndex: expandedCategories[categoryId] === false ? -1 : undefined,
           'aria-expanded': expandedCategories[categoryId],
         }}
-        variant={variant || rootVariant}
+        // variant={variant || rootVariant}
         color={color || rootColor}
         intent={intent || rootIntent}
         surfaceDepth={surfaceDepth}
-        surfaceRole={selected ? 'selection' : undefined}
+        bgRole={selected ? 'selection' : undefined}
         inlineSize="100%"
         blockSize={CONTROL_SCALE_MAP[scale].blockSize}
         paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}

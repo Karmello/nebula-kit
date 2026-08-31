@@ -1,0 +1,43 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-border='true'] {
+  // rest
+  border-width: var(--neb-border-width);
+  border-color: var(--border);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        border-color: var(--border-hover, var(--border));
+      }
+
+      // active
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
+        border-color: var(--border-active, var(--border-hover, var(--border)));
+      }
+    }
+
+    // selection
+    &[data-neb-box-bg-role='selection'] {
+      border-color: var(--border-selection, var(--border)) !important;
+    }
+
+    // edge
+    &[data-neb-box-border-role='edge'] {
+      border-color: var(--border-edge, var(--border)) !important;
+    }
+
+    // divider
+    &[data-neb-box-border-role='divider'] {
+      border-color: var(--border-divider, var(--border)) !important;
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    border-color: var(--border-disabled, var(--border));
+  }
+}

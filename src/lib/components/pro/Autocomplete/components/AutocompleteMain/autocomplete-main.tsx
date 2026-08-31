@@ -130,7 +130,7 @@ export const AutocompleteMain = ({
           display="flex"
           inlineSize={inlineSize}
           disabled={disabled}
-          surfaceRole={open ? 'selection' : undefined}
+          bgRole={open ? 'selection' : undefined}
         >
           <Box
             flex="1"
@@ -153,7 +153,6 @@ export const AutocompleteMain = ({
               onFocus={() => setOpen(true)}
               placeholder={placeholder}
               scale={size}
-              variant="solid"
               intent={intent}
               color={color}
               disabled={disabled}
@@ -184,7 +183,7 @@ export const AutocompleteMain = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant="solid"
+            bg="filled"
             intent={intent}
             color={color}
             inlineSize={`${triggerWidth}px`}
@@ -236,12 +235,12 @@ export const AutocompleteMain = ({
                         }}
                         drawable
                         interactive
-                        variant="solid"
+                        bg="filled"
                         surfaceDepth="raised"
                         intent={intent}
                         color={color}
                         cursor="pointer"
-                        surfaceRole={isSelected ? 'selection' : undefined}
+                        bgRole={isSelected ? 'selection' : undefined}
                         inlineSize="100%"
                         borderRadius={NEB_LENGTH.px_000}
                       >

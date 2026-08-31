@@ -47,7 +47,7 @@ export const Section = <T extends SectionTag = 'section'>({
       tagRef={tagRef}
       drawable
       interactive={interactive}
-      variant={variant}
+      // variant={variant}
       color={color}
       intent={intent}
       borderRadius={variant === 'ghost' ? '0px' : 'var(--neb-border-radius)'}

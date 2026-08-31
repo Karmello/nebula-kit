@@ -29,7 +29,7 @@ export default () => {
               <Spacer blockSize={NEB_LENGTH.px_002} />
               <Box
                 drawable
-                variant="outline"
+                // variant="outline"
                 intent="muted"
                 brand={brand}
                 tagAttrs={{ style: { backgroundColor: `hsl(var(--h) var(--s) var(--l-${n}))` } }}

@@ -37,7 +37,7 @@ export const Loader = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="ghost"
+      // variant="ghost"
       blockSize={size}
       inlineSize={size}
       color={color}

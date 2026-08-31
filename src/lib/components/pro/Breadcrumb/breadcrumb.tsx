@@ -81,9 +81,9 @@ const BreadcrumbLevel = ({
           tag="button"
           cursor="pointer"
           interactive
-          variant="ghost"
+          // variant="ghost"
           intent="primary"
-          surfaceRole={open ? 'selection' : undefined}
+          bgRole={open ? 'selection' : undefined}
           ripple={!open}
           blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
           paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
@@ -103,7 +103,7 @@ const BreadcrumbLevel = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant="solid"
+            bg="filled"
             intent={intent}
             color={color}
             minInlineSize="auto"
@@ -140,12 +140,12 @@ const BreadcrumbLevel = ({
                       }}
                       drawable
                       interactive
-                      variant="solid"
+                      bg="filled"
                       surfaceDepth="raised"
                       intent={intent}
                       color={color}
                       cursor="pointer"
-                      surfaceRole={isSelected ? 'selection' : undefined}
+                      bgRole={isSelected ? 'selection' : undefined}
                       inlineSize="100%"
                       borderRadius={NEB_LENGTH.px_000}
                     >

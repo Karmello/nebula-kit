@@ -98,7 +98,7 @@ export const SideNavCategory = ({
                   },
                   'aria-expanded': expandedCategories[id],
                 }}
-                variant={variant || rootVariant}
+                // variant={variant || rootVariant}
                 color={color || rootColor}
                 intent={intent || rootIntent}
                 ripple={!expandedCategories[id]}

@@ -1,6 +1,6 @@
 import { Placement } from '@floating-ui/react'
 
-import { BoxIntent, BoxVariant } from 'lib/components/core/Box'
+import { BoxIntent } from 'lib/components/core/Box'
 
 export const TOOLTIP_PLACEMENTS = [
   'top',
@@ -17,7 +17,7 @@ export const TOOLTIP_PLACEMENTS = [
   'left-end',
 ] as const satisfies readonly Placement[]
 
-export const TOOLTIP_VARIANTS = ['solid', 'outline'] as const satisfies BoxVariant[]
+export const TOOLTIP_VARIANTS = ['solid', 'outline'] as const
 export const TOOLTIP_INTENTS = [
   'muted',
   'tertiary',

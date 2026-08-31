@@ -1,12 +1,19 @@
 import type { BoxProps } from 'lib/components/core/Box'
 import {
+  BOX_BG,
+  BOX_BG_ROLES,
+  BOX_BORDER_ROLES,
   BOX_COLORS,
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
-  BOX_SURFACE_ROLES,
+  BOX_TEXT,
   BOX_THEMES,
-  BOX_VARIANTS,
+  DEFAULT_BOX_BG,
+  DEFAULT_BOX_BG_ROLE,
+  DEFAULT_BOX_BORDER,
+  DEFAULT_BOX_BORDER_ROLE,
   DEFAULT_BOX_SURFACE_DEPTH,
+  DEFAULT_BOX_TEXT,
 } from 'lib/components/core/Box/constants'
 import {
   CSS_ALIGN_CONTENT,
@@ -65,6 +72,11 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Logical height.',
     link: true,
   },
+  border: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_BOX_BORDER),
+    description: 'Enables border rendering.',
+  },
   borderBottomLeftRadius: {
     options: ['string'],
     isResponsive: true,
@@ -95,6 +107,12 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Sets border radius overriding global value set by NebkitProvider.',
     link: true,
   },
+  borderRole: {
+    options: BOX_BORDER_ROLES,
+    defaultValue: DEFAULT_BOX_BORDER_ROLE,
+    description:
+      'Applies a persistent visual role to the component - divider to separate similar items within a group, or edge to mark the boundary of a surface against what sits behind it.',
+  },
   borderRightWidth: {
     options: ['string'],
     isResponsive: true,
@@ -124,6 +142,18 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     isResponsive: true,
     description: 'Sets border width overriding global value set by NebkitProvider.',
     link: true,
+  },
+  bg: {
+    options: BOX_BG,
+    defaultValue: DEFAULT_BOX_BG,
+    description:
+      "Controls how the component's background is painted - transparent for no fill, tinted for a soft, low-emphasis fill, or filled for a solid, full-strength fill.",
+  },
+  bgRole: {
+    options: BOX_BG_ROLES,
+    defaultValue: DEFAULT_BOX_BG_ROLE,
+    description:
+      "Applies a persistent visual role to the background - default for the component's normal fill, or selection to indicate a highlighted, chosen state.",
   },
   bottom: {
     options: ['string'],
@@ -166,7 +196,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   drawable: {
     options: ['boolean'],
     description:
-      'Enables visual rendering. When true, the Box can draw a surface using variant and intent. When false, it is structural and has no visual styling.',
+      'Enables visual rendering. When true, the Box can draw a surface using bg and intent. When false, it is structural and has no visual styling.',
   },
   flex: {
     options: ['string'],
@@ -480,12 +510,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: BOX_SURFACE_DEPTHS,
     defaultValue: DEFAULT_BOX_SURFACE_DEPTH,
     description:
-      "Selects which depth tier the component's surface color is drawn from — base, raised or lowered — each with its own per-intent lightness and interaction states.",
-  },
-  surfaceRole: {
-    options: BOX_SURFACE_ROLES,
-    description:
-      'Applies a persistent visual role to the component — selection for a highlighted, chosen state, divider to separate similar items within a group, or edge to mark the boundary of a surface against what sits behind it.',
+      "Selects which depth tier the component's surface color is drawn from - base, raised or lowered - each with its own per-intent lightness and interaction states.",
   },
   tag: {
     options: ['HTML tag'],
@@ -499,6 +524,12 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   tagRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
+  },
+  text: {
+    options: BOX_TEXT,
+    defaultValue: DEFAULT_BOX_TEXT,
+    description:
+      "Controls how the component's text color is resolved - default to inherit the surrounding text color, or colored to use the component's own intent/color.",
   },
   textAlign: {
     options: CSS_TEXT_ALIGN,
@@ -523,10 +554,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     isResponsive: true,
     description: 'Applies a CSS transform for positional adjustment.',
     link: true,
-  },
-  variant: {
-    options: BOX_VARIANTS,
-    description: 'Visual style variant.',
   },
   visibility: {
     options: Object.values(CSS_VISIBILITY),

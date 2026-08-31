@@ -33,7 +33,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      variant="outline"
+      // variant="outline"
       color={color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"
@@ -59,10 +59,10 @@ export const Reveal = <T extends RevealTag = 'div'>({
           }}
           disabled={disabled}
           color={color}
-          variant="solid"
+          bg="filled"
           intent={intent}
           ripple={!open}
-          surfaceRole={open ? 'selection' : undefined}
+          bgRole={open ? 'selection' : undefined}
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
         >

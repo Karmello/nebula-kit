@@ -1,6 +1,9 @@
 import { BoxProps } from 'lib/components/core/Box'
 import { TShirtSize } from 'lib/types'
 
+export const PAGINATION_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
+export type PaginationVariant = (typeof PAGINATION_VARIANTS)[number]
+
 export type PaginationItem =
   | { type: 'page'; page: number }
   | { type: 'ellipsis'; page: never }
@@ -26,5 +29,5 @@ export type PaginationProps = {
   color?: BoxProps<'nav'>['color']
   disabled?: BoxProps<'nav'>['disabled']
   intent?: BoxProps<'nav'>['intent']
-  variant?: BoxProps<'nav'>['variant']
+  variant?: PaginationVariant
 }

@@ -45,7 +45,7 @@ export const Tooltip = ({
         <Fade visible={visible}>
           <Box
             drawable
-            variant={variant}
+            // variant={variant}
             intent={intent}
             color={color}
             minInlineSize={`${minInlineSize}px`}
@@ -53,7 +53,7 @@ export const Tooltip = ({
           >
             <Box
               drawable
-              variant="solid"
+              bg="filled"
               intent={variant === 'outline' ? 'neutral' : intent}
               color={color}
               paddingBlock="8px"

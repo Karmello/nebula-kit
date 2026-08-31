@@ -47,7 +47,7 @@ export const Checkbox = ({
       }}
       tagRef={tagRef}
       drawable
-      variant={variant}
+      // variant={variant}
       intent={intent}
       color={color}
       disabled={disabled}
@@ -64,7 +64,7 @@ export const Checkbox = ({
         drawable
         interactive
         disabled={disabled}
-        variant={variant}
+        // variant={variant}
         intent={intent}
         color={color}
         blockSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}

@@ -79,7 +79,7 @@ export const Tabs = ({
             drawable
             color={color}
             intent={intent}
-            variant="outline"
+            // variant="outline"
             surfaceDepth="lowered"
             borderTopWidth={direction === 'row' ? '0px' : undefined}
             borderLeftWidth={direction === 'column' ? '0px' : undefined}
@@ -102,7 +102,7 @@ export const Tabs = ({
                   tagRef={tagRef}
                   drawable
                   surfaceDepth="lowered"
-                  variant="solid"
+                  bg="filled"
                   inlineSize="max-content"
                   minInlineSize="100%"
                   overflow="clip"
@@ -138,19 +138,19 @@ export const Tabs = ({
                             },
                           }}
                           flex={stretch ? '1 0 auto' : undefined}
-                          surfaceRole={isSelected ? 'selection' : undefined}
+                          bgRole={isSelected ? 'selection' : undefined}
                           disabled={disabled}
                         >
                           <Box
                             drawable
                             color={color}
                             intent={intent}
-                            surfaceRole={isSelected ? 'selection' : undefined}
+                            bgRole={isSelected ? 'selection' : undefined}
                             disabled={disabled}
                             minInlineSize="100%"
                             interactive
                             cursor="pointer"
-                            variant="solid"
+                            bg="filled"
                             borderRadius="0px"
                           >
                             <Box

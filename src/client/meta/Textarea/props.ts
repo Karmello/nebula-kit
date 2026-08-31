@@ -1,10 +1,11 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TEXTAREA_INTENT,
   DEFAULT_TEXTAREA_RESIZE,
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
   TEXTAREA_RESIZE,
+  TEXTAREA_VARIANTS,
 } from 'lib/components/core/Textarea/constants'
 import { TextareaProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
@@ -92,7 +93,7 @@ export const TEXTAREA_PROPS: Record<keyof TextareaProps, DocProp> = {
     description: 'Current value displayed when the component is used in controlled mode.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: TEXTAREA_VARIANTS,
     defaultValue: String(DEFAULT_TEXTAREA_VARIANT),
     description: 'Visual style variant.',
   },

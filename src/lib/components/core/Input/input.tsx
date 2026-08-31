@@ -63,7 +63,7 @@ export const Input = ({
         autoComplete,
       }}
       tagRef={tagRef}
-      variant={variant}
+      // variant={variant}
       color={color}
       intent={intent}
       disabled={disabled}

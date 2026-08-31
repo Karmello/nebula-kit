@@ -1,7 +1,7 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box } from 'lib/components/core/Box'
+import { Box, BoxBg, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Loader } from 'lib/components/core/Loader'
 import { Text } from 'lib/components/core/Text'
@@ -18,9 +18,16 @@ import {
   DEFAULT_BUTTON_SCALE,
   DEFAULT_BUTTON_VARIANT,
 } from './constants'
-import type { ButtonProps, ButtonTag } from './types'
+import type { ButtonProps, ButtonTag, ButtonVariant } from './types'
 
 import './button.scss'
+
+const VARIANT_MAP: Record<ButtonVariant, { bg: BoxBg; border: boolean; text: BoxText }> = {
+  solid: { bg: 'filled', border: false, text: 'default' },
+  outline: { bg: 'tinted', border: true, text: 'default' },
+  'soft-outline': { bg: 'tinted', border: true, text: 'colored' },
+  ghost: { bg: 'transparent', border: false, text: 'colored' },
+}
 
 export const Button = <T extends ButtonTag = 'button'>({
   // own
@@ -79,7 +86,9 @@ export const Button = <T extends ButtonTag = 'button'>({
       }}
       tagRef={finalRef}
       theme={theme}
-      variant={variant}
+      bg={VARIANT_MAP[variant].bg}
+      border={VARIANT_MAP[variant].border}
+      text={VARIANT_MAP[variant].text}
       color={color}
       intent={intent}
       disabled={disabled || loading}
@@ -87,7 +96,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
       surfaceDepth={surfaceDepth}
-      surfaceRole={selected ? 'selection' : undefined}
+      bgRole={selected ? 'selection' : undefined}
       blockSize={CONTROL_SCALE_MAP[scale].blockSize}
       paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
       ripple={ripple}

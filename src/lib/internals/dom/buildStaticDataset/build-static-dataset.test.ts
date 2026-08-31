@@ -4,19 +4,19 @@ describe('buildStaticDataset', () => {
   it('maps defined props to static data attributes', () => {
     const result = buildStaticDataset('Box', {
       intent: 'primary',
-      variant: 'solid',
+      color: 'blue',
     })
 
     expect(result).toEqual({
       'data-neb-box-intent': 'primary',
-      'data-neb-box-variant': 'solid',
+      'data-neb-box-color': 'blue',
     })
   })
 
   it('ignores props with undefined values', () => {
     const result = buildStaticDataset('Box', {
       intent: 'primary',
-      variant: undefined,
+      color: undefined,
     })
 
     expect(result).toEqual({

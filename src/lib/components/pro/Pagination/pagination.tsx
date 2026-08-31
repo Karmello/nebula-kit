@@ -107,11 +107,11 @@ export const Pagination = ({
                 onClick: () => handleChange(item.page),
               }}
               disabled={disabled}
-              variant={variant}
+              // variant={variant}
               intent={intent}
               color={color}
               surfaceDepth={active ? 'raised' : undefined}
-              surfaceRole={active ? 'selection' : undefined}
+              bgRole={active ? 'selection' : undefined}
               ripple
               blockSize={CONTROL_SCALE_MAP[scale].blockSize}
               paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
@@ -153,7 +153,7 @@ export const Pagination = ({
               <Box
                 tagAttrs={{ 'aria-hidden': true }}
                 drawable
-                variant={variant}
+                // variant={variant}
                 intent={intent}
                 color={color}
                 disabled

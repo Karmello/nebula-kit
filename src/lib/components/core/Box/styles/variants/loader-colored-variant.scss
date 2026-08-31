@@ -1,0 +1,7 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-bg='transparent'],
+  &[data-neb-box-bg='tinted'] {
+    --loader: hsl(var(--h) var(--s) var(--base-strong-l));
+    --ripple: hsl(var(--h) var(--s) var(--l-25));
+  }
+}

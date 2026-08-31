@@ -94,14 +94,14 @@ export const MultiSelectImpl = ({
         <Box
           tag="button"
           tagRef={triggerRef}
-          variant={variant}
+          // variant={variant}
           intent={intent}
           color={color}
           inlineSize={inlineSize}
           blockSize={CONTROL_SCALE_MAP[size].blockSize}
           paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
           disabled={disabled}
-          surfaceRole={open ? 'selection' : undefined}
+          bgRole={open ? 'selection' : undefined}
           cursor="pointer"
           ripple={!open}
           interactive
@@ -132,7 +132,7 @@ export const MultiSelectImpl = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant="solid"
+            bg="filled"
             intent={intent}
             color={color}
             inlineSize={`${triggerWidth}px`}
@@ -166,12 +166,12 @@ export const MultiSelectImpl = ({
                       }}
                       drawable
                       interactive
-                      variant="solid"
+                      bg="filled"
                       surfaceDepth="raised"
                       intent={intent}
                       color={color}
                       cursor="pointer"
-                      surfaceRole={isSelected ? 'selection' : undefined}
+                      bgRole={isSelected ? 'selection' : undefined}
                       inlineSize="100%"
                       borderRadius={NEB_LENGTH.px_000}
                     >

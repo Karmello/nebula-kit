@@ -30,15 +30,15 @@ export const AppFrameFooter = ({
             tagAttrs={tagAttrs}
             tagRef={tagRef}
             drawable
-            variant="outline"
+            // variant="outline"
             color={color}
             intent={intent}
-            surfaceRole="edge"
+            borderRole="edge"
             borderRadius="0px"
             borderWidth="0px"
             borderTopWidth="2px"
           >
-            <Box drawable variant="solid" intent={intent} color={color} borderRadius="0px">
+            <Box drawable bg="filled" intent={intent} color={color} borderRadius="0px">
               {appFrameFooterSectionSlots.length ? (
                 <Box
                   display="flex"

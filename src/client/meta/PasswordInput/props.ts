@@ -1,5 +1,6 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { DEFAULT_INPUT_INTENT, DEFAULT_INPUT_VARIANT } from 'lib/components/core/Input/constants'
+import { INPUT_VARIANTS } from 'lib/components/core/Input/types'
 import {
   DEFAULT_PASSWORD_INPUT_AUTO_COMPLETE,
   DEFAULT_PASSWORD_INPUT_SCALE,
@@ -74,7 +75,7 @@ export const PASSWORD_PROPS: Record<keyof PasswordInputProps, DocProp> = {
     description: 'Current value displayed when the component is used in controlled mode.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: INPUT_VARIANTS,
     defaultValue: String(DEFAULT_INPUT_VARIANT),
     description: 'Visual style variant.',
   },

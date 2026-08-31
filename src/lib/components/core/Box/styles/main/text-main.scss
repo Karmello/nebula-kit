@@ -1,0 +1,32 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-text] {
+  // rest
+  color: var(--text);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        color: var(--text-hover, var(--text));
+      }
+
+      // active
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
+        color: var(--text-active, var(--text-hover, var(--text)));
+      }
+    }
+
+    // selection
+    &[data-neb-box-bg-role='selection'] {
+      color: var(--text-selection, var(--text)) !important;
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    color: var(--text-disabled, var(--text));
+  }
+}

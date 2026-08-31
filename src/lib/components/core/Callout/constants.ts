@@ -1,10 +1,10 @@
 import { TShirtSize } from 'lib/types'
 
-import type { BoxColor, BoxIntent, BoxVariant } from '../Box/types'
+import type { BoxColor, BoxIntent } from '../Box/types'
 import { type IconName } from '../Icon/types'
 import type { TextTypography } from '../Text/types'
 
-export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
+export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 

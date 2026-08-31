@@ -1,9 +1,10 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_VARIANTS } from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_INPUT_INTENT,
   DEFAULT_INPUT_SCALE,
   DEFAULT_INPUT_VARIANT,
 } from 'lib/components/core/Input/constants'
+import { INPUT_VARIANTS } from 'lib/components/core/Input/types'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { InputProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
@@ -73,7 +74,7 @@ export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
     description: 'Current value displayed when the component is used in controlled mode.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: INPUT_VARIANTS,
     defaultValue: String(DEFAULT_INPUT_VARIANT),
     description: 'Visual style variant.',
   },

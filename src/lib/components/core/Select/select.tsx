@@ -80,9 +80,10 @@ export const SelectImpl = ({
         <Box
           tag="button"
           tagRef={triggerRef}
-          variant={variant}
           intent={intent}
           color={color}
+          bg="tinted"
+          border
           inlineSize="100%"
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
@@ -92,10 +93,10 @@ export const SelectImpl = ({
           ripple={!open}
           drawable
           interactive={!open}
-          borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
-          borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
-          borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
-          borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+          // borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
+          // borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
+          // borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
+          // borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
           display="inline-flex"
           alignItems="center"
           justifyContent="space-between"
@@ -115,76 +116,67 @@ export const SelectImpl = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            variant={variant}
             intent={intent}
             color={color}
+            border
             surfaceDepth="raised"
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
             overflowY="auto"
-            borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            // borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
             <Box
               display="inline-flex"
               flexDirection="column"
               drawable
-              variant="solid"
+              bg="filled"
               intent="neutral"
               color={color}
               inlineSize="100%"
               borderRadius={NEB_LENGTH.px_000}
             >
               {optionSlots.map((slot, key) => {
+                const slotsCount = optionSlots.length
                 const isSelected = currentValue === slot.props.value
 
                 return (
-                  <Box key={key}>
-                    {(variant !== 'outline' && variant !== 'soft-outline') || key > 0 ? (
-                      <Box
-                        tag="hr"
-                        drawable
-                        variant={variant}
-                        intent={intent}
-                        color={color}
-                        borderWidth={NEB_LENGTH.px_000}
-                        blockSize={NEB_LENGTH.px_002}
-                        surfaceDepth="raised"
-                        surfaceRole="divider"
-                      />
-                    ) : null}
-                    <Box
-                      tag="button"
-                      tagAttrs={{
-                        onClick: () => {
-                          setCurrentValue(slot.props.value)
-                          setOpen(false)
-                        },
-                      }}
-                      cursor="pointer"
-                      interactive
-                      inlineSize="100%"
-                      variant={variant}
-                      intent={intent}
-                      color={color}
-                      surfaceDepth="raised"
-                      surfaceRole={isSelected ? 'selection' : undefined}
-                      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
-                      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
-                      borderWidth={NEB_LENGTH.px_000}
-                      borderRadius={NEB_LENGTH.px_000}
+                  <Box
+                    key={key}
+                    tag="button"
+                    tagAttrs={{
+                      onClick: () => {
+                        setCurrentValue(slot.props.value)
+                        setOpen(false)
+                      },
+                    }}
+                    cursor="pointer"
+                    interactive
+                    inlineSize="100%"
+                    intent={intent}
+                    color={color}
+                    bg="tinted"
+                    border
+                    borderRole="divider"
+                    surfaceDepth="raised"
+                    bgRole={isSelected ? 'selection' : undefined}
+                    blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+                    paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                    borderWidth={NEB_LENGTH.px_000}
+                    borderTopWidth={key > 0 ? '1px' : NEB_LENGTH.px_000}
+                    borderBottomWidth={key < slotsCount - 1 ? '1px' : NEB_LENGTH.px_000}
+                    borderRadius={NEB_LENGTH.px_000}
+                  >
+                    <Text
+                      fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                      lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
                     >
-                      <Text
-                        fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-                        lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-                      >
-                        {slot}
-                      </Text>
-                    </Box>
+                      {slot}
+                    </Text>
                   </Box>
                 )
               })}

@@ -32,11 +32,11 @@ export const Divider = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="solid"
+      bg="filled"
       color={color}
       intent={intent}
       surfaceDepth={surfaceDepth}
-      surfaceRole="edge"
+      borderRole="edge"
       blockSize="2px"
       borderWidth="0px"
       marginBlock={marginBlock}

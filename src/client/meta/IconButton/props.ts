@@ -1,15 +1,11 @@
-import {
-  BOX_COLORS,
-  BOX_INTENTS,
-  BOX_SURFACE_DEPTHS,
-  BOX_VARIANTS,
-} from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_ICON_BUTTON_INTENT,
   DEFAULT_ICON_BUTTON_RIPPLE,
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
   ICON_BUTTON_TAGS,
+  ICON_BUTTON_VARIANTS,
 } from 'lib/components/core/IconButton/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { IconButtonProps } from 'lib/index.core'
@@ -75,7 +71,7 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     description: 'Reference to the root HTML tag.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: ICON_BUTTON_VARIANTS,
     defaultValue: String(DEFAULT_ICON_BUTTON_VARIANT),
     description: 'Visual style variant.',
   },

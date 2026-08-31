@@ -2,20 +2,17 @@ import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
-import {
-  BOX_COLORS,
-  BOX_INTENTS,
-  BOX_SURFACE_DEPTHS,
-  BOX_VARIANTS,
-} from 'lib/components/core/Box/constants'
-import type { BoxSurfaceDepth, BoxVariant } from 'lib/components/core/Box/types'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
+import type { BoxSurfaceDepth } from 'lib/components/core/Box/types'
+import { BUTTON_VARIANTS } from 'lib/components/core/Button/constants'
+import type { ButtonVariant } from 'lib/components/core/Button/types'
 
 const STATES = ['rest', 'selected', 'disabled', 'loading'] as const
 
 type State = (typeof STATES)[number]
 
 export default () => {
-  const [variant, setVariant] = useState<BoxVariant>('solid')
+  const [variant, setVariant] = useState<ButtonVariant>('solid')
   const [state, setState] = useState<State>('rest')
   const [surfaceDepth, setSurfaceDepth] = useState<BoxSurfaceDepth>('base')
 
@@ -33,11 +30,11 @@ export default () => {
           </Text>
           <Select
             value={variant}
-            onChange={value => setVariant(value as BoxVariant)}
+            onChange={value => setVariant(value as ButtonVariant)}
             inlineSize="140px"
             scale="sm"
           >
-            {BOX_VARIANTS.map(variant => (
+            {BUTTON_VARIANTS.map(variant => (
               <Select.Option value={variant}>{sentenceCase(variant)}</Select.Option>
             ))}
           </Select>

@@ -18,7 +18,7 @@ export const InteractiveCard = () => {
         tag="button"
         interactive
         ripple
-        variant="solid"
+        bg="filled"
         intent="muted"
         color="amber"
         padding={NEB_LENGTH.px_048}

@@ -9,7 +9,11 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+      >
         Box is a block
       </Box>
     ),
@@ -17,7 +21,12 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+      >
         Padded box
       </Box>
     ),
@@ -25,7 +34,13 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" textAlign="center">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+        textAlign="center"
+      >
         Centered content
       </Box>
     ),
@@ -33,7 +48,13 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" display="inline-block">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+        display="inline-block"
+      >
         Box as inline block
       </Box>
     ),
@@ -41,7 +62,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box interactive variant="solid" intent="primary" padding="20px">
+      <Box interactive bg="filled" intent="primary" padding="20px">
         Interactive Box
       </Box>
     ),
@@ -49,7 +70,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box interactive disabled variant="solid" intent="primary" padding="20px">
+      <Box interactive disabled bg="filled" intent="primary" padding="20px">
         Disabled Box
       </Box>
     ),

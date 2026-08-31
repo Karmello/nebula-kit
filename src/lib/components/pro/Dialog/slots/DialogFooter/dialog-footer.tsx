@@ -22,7 +22,7 @@ export const DialogFooter = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="outline"
+      // variant="outline"
       intent={intent}
       paddingInline={padding}
       paddingBlock={`calc(${padding} / 1.25)`}

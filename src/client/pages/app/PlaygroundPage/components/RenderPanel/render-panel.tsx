@@ -30,7 +30,7 @@ export const RenderPanel = () => {
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable
-        variant="outline"
+        // variant="outline"
         intent="tertiary"
         padding={NEB_LENGTH.px_024}
         overflowX="auto"

@@ -4,7 +4,7 @@ import { Box } from 'lib/components'
 
 test('Box resolves default primary solid styling', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" blockSize="200px">
+    <Box tagAttrs={{ id: 'box' }} drawable bg="filled" intent="primary" blockSize="200px">
       Box
     </Box>
   )
@@ -16,7 +16,6 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
     return {
       theme: el.dataset.nebBoxTheme,
       color: el.dataset.nebBoxColor,
-      variant: el.dataset.nebBoxVariant,
       intent: el.dataset.nebBoxIntent,
       main: styles.getPropertyValue('--l').trim(),
       bg: styles.getPropertyValue('--bg').trim(),
@@ -25,7 +24,6 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
 
   expect(result.theme).toBe('light')
   expect(result.color).not.toBe('')
-  expect(result.variant).toBe('solid')
   expect(result.intent).toBe('primary')
 
   expect(result.main).not.toBe('')
@@ -37,12 +35,12 @@ test('Nested Box resolves same primary solid styling as parent', async ({ mount,
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      variant="solid"
+      bg="filled"
       intent="primary"
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
+      <Box tagAttrs={{ id: 'child' }} drawable bg="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -94,7 +92,7 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
       <Box
         tagAttrs={{ id: 'local-dark' }}
         drawable
-        variant="solid"
+        bg="filled"
         intent="primary"
         theme="dark"
         blockSize="200px"
@@ -102,13 +100,7 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
         Local Dark
       </Box>
 
-      <Box
-        tagAttrs={{ id: 'global-dark' }}
-        drawable
-        variant="solid"
-        intent="primary"
-        blockSize="200px"
-      >
+      <Box tagAttrs={{ id: 'global-dark' }} drawable bg="filled" intent="primary" blockSize="200px">
         Global Dark
       </Box>
     </>,
@@ -161,7 +153,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
     <Box
       tagAttrs={{ id: 'dark-parent' }}
       drawable
-      variant="solid"
+      bg="filled"
       intent="secondary"
       theme="dark"
       blockSize="200px"
@@ -170,7 +162,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
       <Box
         tagAttrs={{ id: 'light-child' }}
         drawable
-        variant="solid"
+        bg="filled"
         intent="secondary"
         theme="light"
         blockSize="100px"
@@ -235,7 +227,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
     <Box
       tagAttrs={{ id: 'dark-1' }}
       drawable
-      variant="solid"
+      bg="filled"
       intent="secondary"
       theme="dark"
       blockSize="300px"
@@ -244,7 +236,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
       <Box
         tagAttrs={{ id: 'light-1' }}
         drawable
-        variant="solid"
+        bg="filled"
         intent="secondary"
         theme="light"
         blockSize="220px"
@@ -253,7 +245,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
         <Box
           tagAttrs={{ id: 'dark-2' }}
           drawable
-          variant="solid"
+          bg="filled"
           intent="secondary"
           theme="dark"
           blockSize="140px"
@@ -324,11 +316,11 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
 test('Global dark theme resolves primary solid styling consistently', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'box-1' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box tagAttrs={{ id: 'box-1' }} drawable bg="filled" intent="primary" blockSize="200px">
         One
       </Box>
 
-      <Box tagAttrs={{ id: 'box-2' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box tagAttrs={{ id: 'box-2' }} drawable bg="filled" intent="primary" blockSize="200px">
         Two
       </Box>
     </>,

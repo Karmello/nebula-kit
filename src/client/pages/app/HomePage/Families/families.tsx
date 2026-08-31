@@ -19,7 +19,12 @@ const Family = ({
   const navigateTo = useNavigateTo()
 
   return (
-    <Box drawable variant="ghost" intent="primary" brand="blue">
+    <Box
+      drawable
+      // variant="ghost"
+      intent="primary"
+      brand="blue"
+    >
       <Section
         size="md"
         variant="outline"

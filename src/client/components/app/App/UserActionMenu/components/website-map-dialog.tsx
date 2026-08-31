@@ -27,7 +27,7 @@ const Item = ({
       interactive
       cursor="pointer"
       color="blue"
-      variant="solid"
+      bg="filled"
       intent="muted"
     >
       <Box>

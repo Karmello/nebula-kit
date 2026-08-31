@@ -1,6 +1,6 @@
-import { BoxIntent, BoxVariant } from 'lib/components/core/Box'
+import { BoxIntent } from 'lib/components/core/Box'
 
-export const MULTI_SELECT_VARIANTS = ['solid', 'outline'] as const satisfies readonly BoxVariant[]
+export const MULTI_SELECT_VARIANTS = ['solid', 'outline'] as const
 
 export const DEFAULT_MULTI_SELECT_INLINE_SIZE = '100%'
 export const DEFAULT_MULTI_SELECT_VARIANT: (typeof MULTI_SELECT_VARIANTS)[number] = 'solid'

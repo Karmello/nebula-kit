@@ -25,17 +25,17 @@ export const AppFrameHeader = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="outline"
+      // variant="outline"
       color={color}
       intent={intent}
       borderWidth="0px"
       borderRadius="0px"
       borderBottomWidth="2px"
-      surfaceRole="edge"
+      borderRole="edge"
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
     >
-      <Box drawable borderRadius="0px" variant="solid" color={color} intent={intent}>
+      <Box drawable borderRadius="0px" bg="filled" color={color} intent={intent}>
         {children}
       </Box>
     </Box>

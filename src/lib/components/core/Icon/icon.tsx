@@ -51,7 +51,7 @@ export const Icon = memo(
           },
         }}
         drawable
-        variant="ghost"
+        // variant="ghost"
         color={color}
         intent={intent}
         display="block"

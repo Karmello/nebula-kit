@@ -15,7 +15,14 @@ import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 
-import { DEFAULT_BOX_SURFACE_DEPTH } from './constants'
+import {
+  DEFAULT_BOX_BG,
+  DEFAULT_BOX_BG_ROLE,
+  DEFAULT_BOX_BORDER,
+  DEFAULT_BOX_BORDER_ROLE,
+  DEFAULT_BOX_SURFACE_DEPTH,
+  DEFAULT_BOX_TEXT,
+} from './constants'
 import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'
 import { BoxProps } from './types'
 
@@ -27,16 +34,19 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   drawable,
+  bg = DEFAULT_BOX_BG,
+  bgRole = DEFAULT_BOX_BG_ROLE,
+  border = DEFAULT_BOX_BORDER,
+  text = DEFAULT_BOX_TEXT,
   theme,
   brand,
   color,
-  variant,
   intent,
   interactive,
   surfaceDepth = DEFAULT_BOX_SURFACE_DEPTH,
   ripple,
   disabled,
-  surfaceRole,
+  borderRole = DEFAULT_BOX_BORDER_ROLE,
   activeOnFocus,
   cursor,
   hidden,
@@ -278,16 +288,7 @@ export const Box = <T extends ElementType = 'div'>({
       hidden,
       flexDirection,
     })
-  }, [
-    bp,
-    tag,
-    resolvedAppearance.theme,
-    resolvedAppearance.color,
-    variant,
-    intent,
-    hidden,
-    flexDirection,
-  ])
+  }, [bp, tag, resolvedAppearance.theme, hidden, flexDirection])
 
   const usesRipple = ripple && interactive && !disabled
   useRipple(finalRef, usesRipple)
@@ -308,11 +309,14 @@ export const Box = <T extends ElementType = 'div'>({
                 interactive,
                 surfaceDepth,
                 disabled,
-                surfaceRole,
+                border,
+                borderRole,
                 activeOnFocus,
                 ripple: usesRipple,
                 color: resolvedAppearance.color,
-                variant,
+                bg,
+                bgRole,
+                text,
                 intent,
               }),
             } as PropsWithoutRef<ComponentProps<T>>

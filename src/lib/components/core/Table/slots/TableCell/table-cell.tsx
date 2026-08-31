@@ -34,7 +34,7 @@ export const TableCell = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="solid"
+      bg="filled"
       color={color || context.color}
       intent={intent || context.intent}
       minInlineSize={minInlineSize}

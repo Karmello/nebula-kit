@@ -1,0 +1,32 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-bg]:not([data-neb-box-bg='transparent']) {
+  // rest
+  background-color: var(--bg);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // interactive
+    &[data-neb-box-interactive='true'] {
+      // hover
+      &:hover:not(:active),
+      &[data-neb-box-hovered='true'] {
+        background-color: var(--bg-hover, var(--bg));
+      }
+
+      // active
+      &:active,
+      &[data-neb-box-active-on-focus='true']:focus-visible {
+        background-color: var(--bg-active, var(--bg-hover, var(--bg)));
+      }
+    }
+
+    // selection
+    &[data-neb-box-bg-role='selection'] {
+      background-color: var(--bg-selection, var(--bg)) !important;
+    }
+  }
+
+  // disabled
+  &[data-neb-box-disabled='true'] {
+    background-color: var(--bg-disabled, var(--bg));
+  }
+}

@@ -1,9 +1,9 @@
 import type { TShirtSize } from 'lib/types'
 
-import { type BoxIntent, type BoxVariant } from '../Box'
+import { type BoxIntent } from '../Box'
 import { type TextTypography } from '../Text'
 
-export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const satisfies BoxVariant[]
+export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const
 
 export const DEFAULT_SECTION_VARIANT: (typeof SECTION_VARIANTS)[number] = 'ghost'

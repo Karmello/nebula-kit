@@ -9,11 +9,11 @@ export const resolveSelectValues = ({
 }): { menuBlockSize: number; finalVisibleItemsCount: number } => {
   const finalVisibleItemsCount = Math.min(itemsCount, visibleItemsCount)
 
-  const dividerSize = 2
+  const dividerSize = 1
 
   const menuBlockSize =
     finalVisibleItemsCount * optionBlockSize +
-    (finalVisibleItemsCount - 1) * dividerSize +
+    (finalVisibleItemsCount - 1) * dividerSize -
     dividerSize
 
   return {

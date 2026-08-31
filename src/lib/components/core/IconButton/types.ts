@@ -4,9 +4,10 @@ import type { BoxProps } from 'lib/components/core/Box'
 import type { IconProps } from 'lib/components/core/Icon'
 import type { TShirtSize } from 'lib/types'
 
-import { ICON_BUTTON_TAGS } from './constants'
+import { ICON_BUTTON_TAGS, ICON_BUTTON_VARIANTS } from './constants'
 
 export type IconButtonTag = (typeof ICON_BUTTON_TAGS)[number]
+export type IconButtonVariant = (typeof ICON_BUTTON_VARIANTS)[number]
 
 export type IconButtonProps<T extends IconButtonTag = 'button'> = {
   // own
@@ -17,7 +18,7 @@ export type IconButtonProps<T extends IconButtonTag = 'button'> = {
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
-  variant?: BoxProps<T>['variant']
+  variant?: IconButtonVariant
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']
   disabled?: BoxProps<T>['disabled']

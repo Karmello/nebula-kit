@@ -75,7 +75,7 @@ export const Textarea = ({
       }}
       tagRef={tagRef}
       drawable
-      variant={variant}
+      // variant={variant}
       color={color}
       intent={intent}
       disabled={disabled}

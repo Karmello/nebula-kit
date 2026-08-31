@@ -45,7 +45,7 @@ const SingleExample = (
         <>
           <Box
             drawable
-            variant="outline"
+            // variant="outline"
             intent="tertiary"
             tagAttrs={{ style: { borderStyle: 'dashed' } }}
           >
@@ -58,7 +58,7 @@ const SingleExample = (
                     : theme
                   : undefined
               }
-              variant="solid"
+              bg="filled"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
               borderRadius={NEB_LENGTH.px_000}

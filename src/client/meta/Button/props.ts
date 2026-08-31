@@ -3,12 +3,12 @@ import {
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
   BOX_THEMES,
-  BOX_VARIANTS,
 } from 'lib/components/core/Box/constants'
 import {
   BUTTON_ALIGNS,
   BUTTON_ICON_PLACEMENTS,
   BUTTON_TAGS,
+  BUTTON_VARIANTS,
   DEFAULT_BUTTON_ALIGN,
   DEFAULT_BUTTON_ICON_PLACEMENT,
   DEFAULT_BUTTON_INTENT,
@@ -134,7 +134,7 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
       'Sets a local theme boundary for the component and its drawable descendants. Supports explicit themes, the global application theme or the opposite of the global application theme.',
   },
   variant: {
-    options: BOX_VARIANTS,
+    options: BUTTON_VARIANTS,
     description: 'Visual style variant.',
     defaultValue: String(DEFAULT_BUTTON_VARIANT),
   },

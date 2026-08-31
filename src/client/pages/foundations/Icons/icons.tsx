@@ -23,7 +23,7 @@ export default () => {
             <Box
               tagAttrs={{ style: { lineHeight: 0 } }}
               drawable
-              variant="outline"
+              // variant="outline"
               intent="tertiary"
               padding={NEB_LENGTH.px_016}
             >

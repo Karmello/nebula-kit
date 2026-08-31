@@ -17,7 +17,7 @@ export const renderPart = (part: MarkupPart, index: number) => {
           key={index}
           drawable
           display="inline-block"
-          variant="solid"
+          bg="filled"
           intent="tertiary"
           paddingInline="4px"
         >

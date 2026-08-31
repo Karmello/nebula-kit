@@ -123,7 +123,7 @@ export const Dialog = ({
                         }}
                         tagRef={tagRef || ref}
                         drawable
-                        variant="outline"
+                        // variant="outline"
                         maxInlineSize="95dvw"
                         maxBlockSize="90dvh"
                         position="relative"
@@ -132,13 +132,13 @@ export const Dialog = ({
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                         borderRadius="var(--neb-border-radius)"
                       >
-                        <Box drawable variant="solid" intent="neutral" borderRadius="0px">
+                        <Box drawable bg="filled" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="8px" right="8px">
                               <IconButton
                                 scale="xs"
                                 iconName="close"
-                                variant="outline"
+                                // variant="outline"
                                 intent="tertiary"
                                 onClick={onClose}
                               />

@@ -29,7 +29,7 @@ export const TableCaption = ({
       }}
       tagRef={tagRef}
       drawable
-      variant="ghost"
+      // variant="ghost"
       color={color}
       intent={intent}
       paddingBlock={paddingBlock || context.paddingBlock}

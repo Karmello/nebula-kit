@@ -7,12 +7,12 @@ export const FLOATING_EXAMPLES: DocExample[] = [
     jsx: (
       <Floating offset={10}>
         <Floating.Trigger>
-          <Box drawable variant="solid" intent="primary" padding="16px">
+          <Box drawable bg="filled" intent="primary" padding="16px">
             Trigger
           </Box>
         </Floating.Trigger>
         <Floating.Content>
-          <Box drawable variant="solid" intent="primary" padding="16px">
+          <Box drawable bg="filled" intent="primary" padding="16px">
             Content
           </Box>
         </Floating.Content>

@@ -23,35 +23,42 @@ import type {
 
 import { type HtmlTagProps } from '../HtmlTag/types'
 import {
+  BOX_BG,
+  BOX_BG_ROLES,
+  BOX_BORDER_ROLES,
   BOX_COLORS,
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
-  BOX_SURFACE_ROLES,
+  BOX_TEXT,
   BOX_THEMES,
-  BOX_VARIANTS,
 } from './constants'
 
 export type BoxTheme = (typeof BOX_THEMES)[number]
-export type BoxVariant = (typeof BOX_VARIANTS)[number]
 export type BoxIntent = (typeof BOX_INTENTS)[number]
 export type BoxColor = (typeof BOX_COLORS)[number]
 export type BoxSurfaceDepth = (typeof BOX_SURFACE_DEPTHS)[number]
-export type BoxSurfaceRole = (typeof BOX_SURFACE_ROLES)[number]
+export type BoxBorderRole = (typeof BOX_BORDER_ROLES)[number]
+export type BoxBg = (typeof BOX_BG)[number]
+export type BoxBgRole = (typeof BOX_BG_ROLES)[number]
+export type BoxText = (typeof BOX_TEXT)[number]
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
-  drawable?: boolean
   theme?: RespValue<BoxTheme>
   brand?: BoxColor
+  drawable?: boolean
   color?: BoxColor
-  variant?: BoxVariant
   intent?: BoxIntent
   surfaceDepth?: BoxSurfaceDepth
+  bg?: BoxBg
+  bgRole?: BoxBgRole
+  border?: boolean
+  borderRole?: BoxBorderRole
+  text?: BoxText
   // interaction
   interactive?: boolean
   ripple?: boolean
   disabled?: boolean
-  surfaceRole?: BoxSurfaceRole
   activeOnFocus?: boolean
   cursor?: CssCursor
   hidden?: RespValue<boolean>
@@ -132,7 +139,6 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   gridAutoFlow?: RespValue<CssGridAutoFlow>
   placeItems?: RespValue<CssPlaceItems>
   placeContent?: RespValue<CssPlaceContent>
-  // grid item
   gridColumn?: RespValue<string>
   gridRow?: RespValue<string>
   justifySelf?: RespValue<CssJustifySelf>

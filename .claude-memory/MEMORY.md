@@ -10,3 +10,4 @@
 - [Outline surface contrast](project_outline_surface_contrast.md) — outline/soft-outline Box has no bg; contrast against arbitrary backgrounds is the consumer's job, not a framework fix
 - [Box token architecture validated](project_box_token_architecture_validated.md) — variant/token model is sound; friction so far is token-value mismatches (elevated-neutral, border/bg token sharing), not a design flaw
 - [Smaller commit messages](feedback_smaller_commit_messages.md) — keep commits to a short summary line, skip verbose rationale/verification recaps in the message body
+- [No em dashes](feedback_no_em_dashes.md) — never use em dashes (—) anywhere in the repo, always use normal hyphens (-)

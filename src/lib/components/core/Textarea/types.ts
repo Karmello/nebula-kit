@@ -1,7 +1,8 @@
 import { BoxProps } from '../Box'
-import { TEXTAREA_RESIZE } from './constants'
+import { TEXTAREA_RESIZE, TEXTAREA_VARIANTS } from './constants'
 
 export type TextareaResize = (typeof TEXTAREA_RESIZE)[number]
+export type TextareaVariant = (typeof TEXTAREA_VARIANTS)[number]
 
 export type TextareaProps = {
   // own
@@ -18,7 +19,7 @@ export type TextareaProps = {
   // Box
   tagAttrs?: BoxProps<'textarea'>['tagAttrs']
   tagRef?: BoxProps<'textarea'>['tagRef']
-  variant?: BoxProps<'textarea'>['variant']
+  variant?: TextareaVariant
   color?: BoxProps<'textarea'>['color']
   intent?: BoxProps<'textarea'>['intent']
   disabled?: BoxProps<'textarea'>['disabled']

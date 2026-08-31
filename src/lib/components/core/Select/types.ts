@@ -1,6 +1,9 @@
 import { TShirtSize } from 'lib/types'
 
-import { BoxColor, BoxIntent, BoxProps, BoxVariant } from '../Box'
+import { BoxColor, BoxIntent, BoxProps } from '../Box'
+import { SELECT_VARIANTS } from './constants'
+
+export type SelectVariant = (typeof SELECT_VARIANTS)[number]
 
 export type SelectProps = {
   // own
@@ -10,7 +13,7 @@ export type SelectProps = {
   scale?: TShirtSize
   visibleItemsCount?: number
   staticLabel?: string
-  variant?: BoxVariant
+  variant?: SelectVariant
   // Box
   children: BoxProps['children']
   intent?: BoxIntent
