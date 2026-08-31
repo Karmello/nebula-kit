@@ -4,12 +4,10 @@
 @use './main/text-main.scss';
 @use './main/ripple-main.scss';
 
-@use './variants/bg-filled-variant.scss';
-@use './variants/bg-tinted-variant.scss';
-@use './variants/bordered-variant.scss';
-@use './variants/text-default-variant.scss';
-@use './variants/text-colored-variant.scss';
-@use './variants/loader-colored-variant.scss';
+@use './variants/bg-variants.scss';
+@use './variants/border-variants.scss';
+@use './variants/text-variants.scss';
+@use './variants/loader-variants.scss';
 
 @use './overrides/text-overrides.scss';
 @use './overrides/loader-overrides.scss';

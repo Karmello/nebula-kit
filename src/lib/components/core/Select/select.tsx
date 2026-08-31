@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { Box } from 'lib/components/core/Box'
+import { Box, BoxBg, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -15,9 +15,43 @@ import {
   DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
 } from './constants'
-import { resolveSelectValues } from './helpers'
 import type { SelectOptionProps } from './slots/SelectOption/types'
-import type { SelectProps } from './types'
+import type { SelectProps, SelectVariant } from './types'
+
+const VARIANT_MAP: Record<
+  SelectVariant,
+  {
+    trigger: { bg: BoxBg; border: boolean; text: BoxText }
+    content: { border: boolean }
+    item: { bg: BoxBg; text: BoxText }
+    removeFirstTopBorder: boolean
+  }
+> = {
+  solid: {
+    trigger: { bg: 'filled', border: false, text: 'default' },
+    content: { border: false },
+    item: { bg: 'filled', text: 'default' },
+    removeFirstTopBorder: false,
+  },
+  outline: {
+    trigger: { bg: 'tinted', border: true, text: 'default' },
+    content: { border: true },
+    item: { bg: 'tinted', text: 'default' },
+    removeFirstTopBorder: true,
+  },
+  'soft-outline': {
+    trigger: { bg: 'tinted', border: true, text: 'colored' },
+    content: { border: true },
+    item: { bg: 'tinted', text: 'colored' },
+    removeFirstTopBorder: true,
+  },
+  ghost: {
+    trigger: { bg: 'transparent', border: false, text: 'colored' },
+    content: { border: false },
+    item: { bg: 'transparent', text: 'colored' },
+    removeFirstTopBorder: false,
+  },
+}
 
 export const SelectImpl = ({
   intent = DEFAULT_SELECT_INTENT,
@@ -46,13 +80,10 @@ export const SelectImpl = ({
   const triggerWidth = triggerRef.current?.offsetWidth
   const currentLabel = optionSlots.find(slot => slot.props.value === currentValue)?.props.children
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale].blockSize.replace('px', ''))
+  const optionBlockSize = parseInt(CONTROL_SCALE_MAP[scale].blockSize)
 
-  const { menuBlockSize } = resolveSelectValues({
-    visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
-    optionBlockSize,
-    itemsCount: optionSlots.length,
-  })
+  const finalVisibleItemsCount = Math.min(optionSlots.length, visibleItemsCount)
+  const menuBlockSize = finalVisibleItemsCount * optionBlockSize
 
   useEffect(() => {
     if (!open) return
@@ -80,10 +111,16 @@ export const SelectImpl = ({
         <Box
           tag="button"
           tagRef={triggerRef}
+          tagAttrs={{
+            style: {
+              userSelect: 'none',
+            },
+          }}
           intent={intent}
           color={color}
-          bg="tinted"
-          border
+          bg={VARIANT_MAP[variant].trigger.bg}
+          border={VARIANT_MAP[variant].trigger.border}
+          text={VARIANT_MAP[variant].trigger.text}
           inlineSize="100%"
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
@@ -93,10 +130,10 @@ export const SelectImpl = ({
           ripple={!open}
           drawable
           interactive={!open}
-          // borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
-          // borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
-          // borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
-          // borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+          borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
+          borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
+          borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
           display="inline-flex"
           alignItems="center"
           justifyContent="space-between"
@@ -118,17 +155,17 @@ export const SelectImpl = ({
             drawable
             intent={intent}
             color={color}
-            border
+            border={VARIANT_MAP[variant].content.border}
             surfaceDepth="raised"
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
             overflowY="auto"
-            // borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            // borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            // borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            // borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            // borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            // borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
           >
             <Box
               display="inline-flex"
@@ -141,7 +178,6 @@ export const SelectImpl = ({
               borderRadius={NEB_LENGTH.px_000}
             >
               {optionSlots.map((slot, key) => {
-                const slotsCount = optionSlots.length
                 const isSelected = currentValue === slot.props.value
 
                 return (
@@ -153,22 +189,33 @@ export const SelectImpl = ({
                         setCurrentValue(slot.props.value)
                         setOpen(false)
                       },
+                      style: { backgroundClip: 'padding-box' },
                     }}
                     cursor="pointer"
                     interactive
                     inlineSize="100%"
+                    blockSize={
+                      key === 0
+                        ? !VARIANT_MAP[variant].removeFirstTopBorder
+                          ? optionBlockSize + 'px'
+                          : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
+                        : `${optionBlockSize}px`
+                    }
                     intent={intent}
                     color={color}
-                    bg="tinted"
+                    bg={VARIANT_MAP[variant].item.bg}
                     border
                     borderRole="divider"
                     surfaceDepth="raised"
                     bgRole={isSelected ? 'selection' : undefined}
-                    blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+                    text={VARIANT_MAP[variant].item.text}
                     paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
                     borderWidth={NEB_LENGTH.px_000}
-                    borderTopWidth={key > 0 ? '1px' : NEB_LENGTH.px_000}
-                    borderBottomWidth={key < slotsCount - 1 ? '1px' : NEB_LENGTH.px_000}
+                    borderTopWidth={
+                      VARIANT_MAP[variant].removeFirstTopBorder && key === 0
+                        ? NEB_LENGTH.px_000
+                        : NEB_LENGTH.px_002
+                    }
                     borderRadius={NEB_LENGTH.px_000}
                   >
                     <Text

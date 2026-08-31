@@ -6,4 +6,12 @@
   --border-divider: hsl(var(--h) var(--s) var(--l-divider));
   --border-edge: hsl(var(--h) var(--s) var(--l-edge));
   --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+
+  &[data-neb-box-bg='tinted'] {
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
+  }
+
+  &[data-neb-box-bg='transparent'] {
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) 10%, white);
+  }
 }
