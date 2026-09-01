@@ -9,7 +9,7 @@ import './ortho.scss'
 type Placement = 'top' | 'right' | 'bottom' | 'left'
 
 const Dot = () => {
-  return <Box tagAttrs={{ className: withPrefix('dot') }} />
+  return <Box tagAttrs={{ className: withPrefix('dot') }} intent="secondary" />
 }
 
 const ArrowTriangle = ({ placement }: { placement: Placement }) => {

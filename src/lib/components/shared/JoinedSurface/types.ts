@@ -1,4 +1,4 @@
-import { BoxProps } from 'lib/index.core'
+import { BoxProps } from 'lib/components/core/Box'
 
 import { JOINED_SURFACE_ATTACHED } from './constants'
 

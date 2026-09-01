@@ -37,6 +37,10 @@
       "path": "src/lib/styles",
     },
     {
+      "name": "styles",
+      "path": "src/lib/components/core/Box/styles",
+    },
+    {
       "name": "constants",
       "path": "src/lib/constants",
     },

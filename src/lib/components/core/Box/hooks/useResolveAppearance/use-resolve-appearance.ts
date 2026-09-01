@@ -1,6 +1,7 @@
 import type { BoxTheme } from 'lib/components/core/Box/types'
 import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
-import { useBrandContext, useThemeContext } from 'lib/components/shared'
+import { useBrandContext } from 'lib/components/shared/BrandProvider'
+import { useThemeContext } from 'lib/components/shared/ThemeProvider'
 import { useCurrentTheme } from 'lib/hooks'
 import { RespValue } from 'lib/types'
 

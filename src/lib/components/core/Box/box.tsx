@@ -10,7 +10,8 @@ import {
 import classNames from 'classnames'
 
 import { HtmlTag } from 'lib/components/core/HtmlTag'
-import { BrandProvider, ThemeProvider } from 'lib/components/shared'
+import { BrandProvider } from 'lib/components/shared/BrandProvider'
+import { ThemeProvider } from 'lib/components/shared/ThemeProvider'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'

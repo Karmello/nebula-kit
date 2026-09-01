@@ -1,7 +1,8 @@
 import { Children } from 'react'
 
 import { useRespValue } from 'lib/hooks'
-import { Box, NEB_LENGTH } from 'lib/index.core'
+import { Box } from 'lib/components/core/Box'
+import { NEB_LENGTH } from 'lib/constants'
 
 import {
   DEFAULT_JOINED_SURFACE_BG,
@@ -45,6 +46,9 @@ export const JoinedSurface = ({
 
   return (
     <Box
+      tagAttrs={{
+        style: { backgroundClip: 'padding-box' },
+      }}
       drawable
       color={color}
       intent={intent}

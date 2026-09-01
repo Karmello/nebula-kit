@@ -10,12 +10,12 @@
   }
 
   &[data-neb-box-border='tinted'] {
-    --border: color-mix(in srgb, hsl(var(--h) var(--s) var(--l)) var(--tint), transparent);
-    --border-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-hover)) var(--tint-hover), transparent);
-    --border-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-active)) var(--tint-active), transparent);
-    --border-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-selection)) var(--tint-selection), transparent);
-    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
-    --border-edge: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-edge)) var(--tint-edge), transparent);
-    --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+    --border: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint), transparent);
+    --border-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-hover), transparent);
+    --border-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-active), transparent);
+    --border-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-selection), transparent);
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-divider), transparent);
+    --border-edge: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-edge), transparent);
+    --border-disabled: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-disabled), transparent);
   }
 }
