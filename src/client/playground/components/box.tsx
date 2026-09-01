@@ -3,8 +3,12 @@ import type { BoxProps } from 'lib/index.core'
 export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
 
 export const PROPS_FROM_BOX = [
+  'bg',
+  'bgRole',
   'blockSize',
+  'border',
   'borderRadius',
+  'borderRole',
   'borderWidth',
   'brand',
   'children',
@@ -12,13 +16,13 @@ export const PROPS_FROM_BOX = [
   'cursor',
   'disabled',
   'drawable',
-  'surfaceDepth',
   'inlineSize',
   'intent',
   'interactive',
   'margin',
   'padding',
   'surfaceDepth',
+  'text',
   'theme',
   'visibility',
 ] as const satisfies readonly (keyof BoxProps)[]

@@ -1,11 +1,11 @@
-.neb-box[data-neb-box-theme='light'] {
+.neb-box[data-neb-box-theme='light'][data-neb-box-surface-depth='raised'] {
   // neutral
-  --raised-neutral-l: var(--l-3);
-  --raised-neutral-l-hover: var(--l-4);
-  --raised-neutral-l-active: var(--l-6);
-  --raised-neutral-l-selection: var(--l-5);
-  --raised-neutral-l-divider: var(--l-2);
-  --raised-neutral-l-edge: var(--l-4);
+  --raised-neutral-l: var(--l-2);
+  --raised-neutral-l-hover: var(--l-3);
+  --raised-neutral-l-active: var(--l-4);
+  --raised-neutral-l-selection: var(--l-4);
+  --raised-neutral-l-divider: var(--l-1);
+  --raised-neutral-l-edge: var(--l-3);
 
   // muted
   --raised-muted-l: var(--l-4);
