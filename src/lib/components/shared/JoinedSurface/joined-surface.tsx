@@ -5,6 +5,7 @@ import { Box, NEB_LENGTH } from 'lib/index.core'
 
 import {
   DEFAULT_JOINED_SURFACE_BG,
+  DEFAULT_JOINED_SURFACE_BORDER,
   DEFAULT_JOINED_SURFACE_FLEX_DIRECTION,
   DEFAULT_JOINED_SURFACE_INTENT,
   DEFAULT_JOINED_SURFACE_SURFACE_DEPTH,
@@ -24,6 +25,7 @@ export const JoinedSurface = ({
   intent = DEFAULT_JOINED_SURFACE_INTENT,
   surfaceDepth = DEFAULT_JOINED_SURFACE_SURFACE_DEPTH,
   bg = DEFAULT_JOINED_SURFACE_BG,
+  border = DEFAULT_JOINED_SURFACE_BORDER,
   inlineSize,
   maxInlineSize,
   blockSize,
@@ -46,10 +48,8 @@ export const JoinedSurface = ({
       drawable
       color={color}
       intent={intent}
-      // intent="neutral"
-      // bg="filled"
       surfaceDepth={surfaceDepth}
-      border={bordered}
+      border={border}
       borderRole={bordered ? 'edge' : undefined}
       display="inline-flex"
       flexDirection={resolvedFlexDirection}
@@ -73,7 +73,7 @@ export const JoinedSurface = ({
             intent={intent}
             surfaceDepth={surfaceDepth}
             bg={bg}
-            border
+            border={border}
             borderRole="divider"
             flex="1"
             {...getJoinedItemStyle(key)}

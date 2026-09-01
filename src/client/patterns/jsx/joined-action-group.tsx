@@ -5,10 +5,11 @@ export const JoinedActionGroup = () => {
   return (
     <JoinedSurface
       flexDirection="row"
-      bg="tinted"
+      bg="transparent"
+      border="tinted"
       color="blue"
       surfaceDepth="base"
-      intent="primary"
+      intent="tertiary"
       bordered
       squared
     >

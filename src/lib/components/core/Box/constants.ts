@@ -15,12 +15,13 @@ export const BOX_INTENTS = [
 ] as const
 export const BOX_SURFACE_DEPTHS = ['base', 'raised', 'lowered'] as const
 export const BOX_BORDER_ROLES = ['default', 'divider', 'edge'] as const
+export const BOX_BORDER = ['none', 'tinted', 'filled'] as const
 export const BOX_BG = ['transparent', 'tinted', 'filled'] as const
 export const BOX_BG_ROLES = ['default', 'selection'] as const
 export const BOX_TEXT = ['default', 'colored'] as const
 
 export const DEFAULT_BOX_SURFACE_DEPTH = 'base'
-export const DEFAULT_BOX_BORDER = false
+export const DEFAULT_BOX_BORDER = 'none'
 export const DEFAULT_BOX_BORDER_ROLE = 'default'
 export const DEFAULT_BOX_BG = 'transparent'
 export const DEFAULT_BOX_BG_ROLE = 'default'

@@ -44,9 +44,9 @@ describe('<Box />', () => {
     })
 
     it('adds data attr for border', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} border />)
+      render(<Box tagAttrs={{ 'data-testid': 'elem' }} border="filled" />)
       const el = screen.getByTestId('elem')
-      expect(el).toHaveAttribute('data-neb-box-border', 'true')
+      expect(el).toHaveAttribute('data-neb-box-border', 'filled')
     })
 
     it('adds data attr for borderRole', () => {

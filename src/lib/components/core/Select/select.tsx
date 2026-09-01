@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { Box, BoxBg, BoxText } from 'lib/components/core/Box'
+import { Box, BoxBg, BoxBorder, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -21,34 +21,34 @@ import type { SelectProps, SelectVariant } from './types'
 const VARIANT_MAP: Record<
   SelectVariant,
   {
-    trigger: { bg: BoxBg; border: boolean; text: BoxText }
-    content: { border: boolean }
-    item: { bg: BoxBg; text: BoxText }
+    trigger: { bg: BoxBg; border: BoxBorder; text: BoxText }
+    content: { border: BoxBorder }
+    item: { bg: BoxBg; border: BoxBorder; text: BoxText }
     removeFirstTopBorder: boolean
   }
 > = {
   solid: {
-    trigger: { bg: 'filled', border: false, text: 'default' },
-    content: { border: false },
-    item: { bg: 'filled', text: 'default' },
+    trigger: { bg: 'filled', border: 'none', text: 'default' },
+    content: { border: 'none' },
+    item: { bg: 'filled', border: 'filled', text: 'default' },
     removeFirstTopBorder: false,
   },
   outline: {
-    trigger: { bg: 'tinted', border: true, text: 'default' },
-    content: { border: true },
-    item: { bg: 'tinted', text: 'default' },
+    trigger: { bg: 'tinted', border: 'filled', text: 'default' },
+    content: { border: 'filled' },
+    item: { bg: 'tinted', border: 'tinted', text: 'default' },
     removeFirstTopBorder: true,
   },
   'soft-outline': {
-    trigger: { bg: 'tinted', border: true, text: 'colored' },
-    content: { border: true },
-    item: { bg: 'tinted', text: 'colored' },
+    trigger: { bg: 'tinted', border: 'filled', text: 'colored' },
+    content: { border: 'filled' },
+    item: { bg: 'tinted', border: 'tinted', text: 'colored' },
     removeFirstTopBorder: true,
   },
   ghost: {
-    trigger: { bg: 'transparent', border: false, text: 'colored' },
-    content: { border: false },
-    item: { bg: 'transparent', text: 'colored' },
+    trigger: { bg: 'transparent', border: 'none', text: 'colored' },
+    content: { border: 'none' },
+    item: { bg: 'transparent', border: 'tinted', text: 'colored' },
     removeFirstTopBorder: false,
   },
 }
@@ -204,7 +204,7 @@ export const SelectImpl = ({
                     intent={intent}
                     color={color}
                     bg={VARIANT_MAP[variant].item.bg}
-                    border
+                    border={VARIANT_MAP[variant].item.border}
                     borderRole="divider"
                     surfaceDepth="raised"
                     bgRole={isSelected ? 'selection' : undefined}

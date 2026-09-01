@@ -2,6 +2,7 @@ import type { BoxProps } from 'lib/components/core/Box'
 import {
   BOX_BG,
   BOX_BG_ROLES,
+  BOX_BORDER,
   BOX_BORDER_ROLES,
   BOX_COLORS,
   BOX_INTENTS,
@@ -73,9 +74,10 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     link: true,
   },
   border: {
-    options: ['boolean'],
-    defaultValue: String(DEFAULT_BOX_BORDER),
-    description: 'Enables border rendering.',
+    options: BOX_BORDER,
+    defaultValue: DEFAULT_BOX_BORDER,
+    description:
+      "Controls how the component's border is painted - none for no border, tinted for a soft, low-emphasis border, or filled for a solid, full-strength border.",
   },
   borderBottomLeftRadius: {
     options: ['string'],

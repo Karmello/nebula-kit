@@ -1,17 +1,21 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-intent][data-neb-box-border='true'] {
-  --border: hsl(var(--h) var(--s) var(--l));
-  --border-hover: hsl(var(--h) var(--s) var(--l-hover));
-  --border-active: hsl(var(--h) var(--s) var(--l-active));
-  --border-selection: hsl(var(--h) var(--s) var(--l-selection));
-  --border-divider: hsl(var(--h) var(--s) var(--l-divider));
-  --border-edge: hsl(var(--h) var(--s) var(--l-edge));
-  --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-border='filled'] {
+    --border: hsl(var(--h) var(--s) var(--l));
+    --border-hover: hsl(var(--h) var(--s) var(--l-hover));
+    --border-active: hsl(var(--h) var(--s) var(--l-active));
+    --border-selection: hsl(var(--h) var(--s) var(--l-selection));
+    --border-divider: hsl(var(--h) var(--s) var(--l-divider));
+    --border-edge: hsl(var(--h) var(--s) var(--l-edge));
+    --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+  }
 
-  // &[data-neb-box-bg='tinted'] {
-  //   --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
-  // }
-
-  // &[data-neb-box-bg='transparent'] {
-  //   --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
-  // }
+  &[data-neb-box-border='tinted'] {
+    --border: color-mix(in srgb, hsl(var(--h) var(--s) var(--l)) var(--tint), transparent);
+    --border-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-hover)) var(--tint-hover), transparent);
+    --border-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-active)) var(--tint-active), transparent);
+    --border-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-selection)) var(--tint-selection), transparent);
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) var(--tint-divider), transparent);
+    --border-edge: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-edge)) var(--tint-edge), transparent);
+    --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+  }
 }
