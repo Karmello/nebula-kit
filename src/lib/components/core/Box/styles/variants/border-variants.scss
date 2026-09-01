@@ -12,6 +12,6 @@
   }
 
   &[data-neb-box-bg='transparent'] {
-    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) 10%, white);
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-divider)) 5%, transparent);
   }
 }

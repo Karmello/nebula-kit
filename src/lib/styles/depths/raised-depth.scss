@@ -1,10 +1,10 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-surface-depth='raised'] {
-  --tint: 30%;
-  --tint-hover: 40%;
-  --tint-active: 50%;
-  --tint-selection: 50%;
-  --tint-divider: 25%;
-  --tint-edge: 50%;
+  --tint: var(--raised-tint);
+  --tint-hover: var(--raised-tint-hover);
+  --tint-active: var(--raised-tint-active);
+  --tint-selection: var(--raised-tint-selection);
+  --tint-divider: var(--raised-tint-divider);
+  --tint-edge: var(--raised-tint-edge);
 
   &[data-neb-box-intent='neutral'] {
     --l: var(--raised-neutral-l);

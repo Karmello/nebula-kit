@@ -1,6 +1,6 @@
-@use './base-intents';
-@use './raised-intents';
-@use './lowered-intents';
+@use './base-depth';
+@use './raised-depth';
+@use './lowered-depth';
 
 html {
   --neb-border-width: 2px;

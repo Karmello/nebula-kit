@@ -41,9 +41,17 @@
 
   // strong
   --raised-strong-l: var(--l-21);
-  --raised-strong-l-hover: var(--l-22);
-  --raised-strong-l-active: var(--l-24);
-  --raised-strong-l-selection: var(--l-23);
+  --raised-strong-l-hover: var(--l-20);
+  --raised-strong-l-active: var(--l-18);
+  --raised-strong-l-selection: var(--l-19);
   --raised-strong-l-divider: var(--l-20);
   --raised-strong-l-edge: var(--l-12);
+
+  // tint
+  --raised-tint: 30%;
+  --raised-tint-hover: 40%;
+  --raised-tint-active: 50%;
+  --raised-tint-selection: 50%;
+  --raised-tint-divider: 20%;
+  --raised-tint-edge: 50%;
 }
