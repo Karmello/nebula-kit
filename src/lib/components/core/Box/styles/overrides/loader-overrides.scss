@@ -1,9 +1,11 @@
 .neb-box[data-neb-box-drawable='true'] {
   &[data-neb-box-bg='filled'] {
-    &[data-neb-box-intent='secondary'],
-    &[data-neb-box-intent='primary'],
-    &[data-neb-box-intent='strong'] {
+    &[data-neb-box-intent='primary'] {
       --loader: hsl(var(--h) var(--s) var(--light-l));
+    }
+
+    &[data-neb-box-intent='strong'] {
+      --loader: hsl(var(--h) var(--s) var(--l-0));
     }
   }
 }
