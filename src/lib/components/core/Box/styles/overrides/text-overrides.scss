@@ -1,12 +1,27 @@
 .neb-box[data-neb-box-drawable='true'] {
   &[data-neb-box-bg='filled'] {
-    &[data-neb-box-intent='secondary'],
     &[data-neb-box-intent='primary'] {
       --text: hsl(var(--h) var(--s) var(--light-l));
       --text-hover: hsl(var(--h) var(--s) var(--light-l));
       --text-active: hsl(var(--h) var(--s) var(--light-l));
       --text-selection: hsl(var(--h) var(--s) var(--light-l));
       --text-disabled: hsl(var(--h) var(--s) var(--light-l) / 0.25);
+    }
+
+    &[data-neb-box-intent='primary'] {
+      &[data-neb-box-surface-depth='raised'] {
+        --text: hsl(var(--h) var(--s) var(--l-0));
+        --text-hover: hsl(var(--h) var(--s) var(--l-0));
+      }
+    }
+
+    &[data-neb-box-intent='secondary'] {
+      &[data-neb-box-surface-depth='raised'] {
+        --text: hsl(var(--h) var(--s) var(--light-l));
+        --text-hover: hsl(var(--h) var(--s) var(--light-l));
+        --text-active: hsl(var(--h) var(--s) var(--light-l));
+        --text-selection: hsl(var(--h) var(--s) var(--light-l));
+      }
     }
 
     &[data-neb-box-intent='strong'] {
