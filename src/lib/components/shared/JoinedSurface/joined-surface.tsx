@@ -1,8 +1,8 @@
 import { Children } from 'react'
 
-import { useRespValue } from 'lib/hooks'
 import { Box } from 'lib/components/core/Box'
 import { NEB_LENGTH } from 'lib/constants'
+import { useRespValue } from 'lib/hooks'
 
 import {
   DEFAULT_JOINED_SURFACE_BG,
