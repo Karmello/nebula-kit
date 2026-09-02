@@ -58,7 +58,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
           }}
           disabled={disabled}
           color={color}
-          bg="filled"
+          bgMode="filled"
           intent={intent}
           ripple={!open}
           bgRole={open ? 'selection' : undefined}

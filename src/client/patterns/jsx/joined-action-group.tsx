@@ -6,7 +6,7 @@ export const JoinedActionGroup = () => {
     <Box
       drawable
       intent="strong"
-      bg="filled"
+      bgMode="filled"
       border="filled"
       borderRole="edge"
       padding={NEB_LENGTH.px_016}

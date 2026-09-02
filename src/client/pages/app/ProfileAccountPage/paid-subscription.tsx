@@ -118,7 +118,13 @@ export default ({ enabled }: { enabled: boolean }) => {
           ) : null}
         </>
       ) : (
-        <Box position="relative" blockSize={NEB_LENGTH.px_064} drawable bg="filled" intent="muted">
+        <Box
+          position="relative"
+          blockSize={NEB_LENGTH.px_064}
+          drawable
+          bgMode="filled"
+          intent="muted"
+        >
           <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}

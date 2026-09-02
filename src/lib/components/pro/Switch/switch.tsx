@@ -73,7 +73,7 @@ export const Switch = ({
         surfaceDepth={animatedChecked && !disabled ? 'raised' : undefined}
         bgRole={animatedChecked && !disabled ? 'selection' : undefined}
         disabled={disabled}
-        bg="filled"
+        bgMode="filled"
         intent={intent}
         color={color}
         blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
@@ -93,7 +93,7 @@ export const Switch = ({
       >
         <Box
           drawable
-          bg="filled"
+          bgMode="filled"
           intent="neutral"
           blockSize={thumbBlockSize}
           inlineSize={thumbBlockSize}

@@ -35,7 +35,7 @@ export const AppFrameHeader = ({
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
     >
-      <Box drawable borderRadius="0px" bg="filled" color={color} intent={intent}>
+      <Box drawable borderRadius="0px" bgMode="filled" color={color} intent={intent}>
         {children}
       </Box>
     </Box>

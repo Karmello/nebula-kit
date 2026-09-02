@@ -145,7 +145,7 @@ export const CatalogPageTemplate = memo(
                           {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                             <Box
                               drawable
-                              bg="filled"
+                              bgMode="filled"
                               intent="muted"
                               color="amber"
                               borderRadius={NEB_LENGTH.px_012}

@@ -3,7 +3,7 @@ import type { BoxProps } from 'lib/index.core'
 export type PropsFromBoxKey = (typeof PROPS_FROM_BOX)[number]
 
 export const PROPS_FROM_BOX = [
-  'bg',
+  'bgMode',
   'bgRole',
   'blockSize',
   'border',

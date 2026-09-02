@@ -7,7 +7,7 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       blockSize="200px"
       padding="16px"
@@ -15,7 +15,7 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       <Box
         tagAttrs={{ id: 'child' }}
         drawable
-        bg="filled"
+        bgMode="filled"
         intent="primary"
         brand="green"
         blockSize="100px"
@@ -77,13 +77,13 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       brand="green"
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bg="filled" intent="primary" blockSize="100px">
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -131,7 +131,7 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
     <Box
       tagAttrs={{ id: 'dark-parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       theme="dark"
       blockSize="200px"
@@ -140,7 +140,7 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       <Box
         tagAttrs={{ id: 'light-child' }}
         drawable
-        bg="filled"
+        bgMode="filled"
         intent="primary"
         theme="light"
         blockSize="100px"

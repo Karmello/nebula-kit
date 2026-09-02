@@ -17,7 +17,7 @@ import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
 
 import {
-  DEFAULT_BOX_BG,
+  DEFAULT_BOX_BG_MODE,
   DEFAULT_BOX_BG_ROLE,
   DEFAULT_BOX_BORDER,
   DEFAULT_BOX_BORDER_ROLE,
@@ -35,7 +35,7 @@ export const Box = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   drawable,
-  bg = DEFAULT_BOX_BG,
+  bgMode = DEFAULT_BOX_BG_MODE,
   bgRole = DEFAULT_BOX_BG_ROLE,
   border = DEFAULT_BOX_BORDER,
   text = DEFAULT_BOX_TEXT,
@@ -315,7 +315,7 @@ export const Box = <T extends ElementType = 'div'>({
                 activeOnFocus,
                 ripple: usesRipple,
                 color: resolvedAppearance.color,
-                bg,
+                bgMode,
                 bgRole,
                 text,
                 intent,

@@ -7,7 +7,7 @@ test('Box color prop overrides resolved brand color', async ({ mount, page }) =>
     <Box
       tagAttrs={{ id: 'box' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       color="red"
       blockSize="200px"
@@ -53,7 +53,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       color="blue"
       blockSize="200px"
@@ -62,7 +62,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
       <Box
         tagAttrs={{ id: 'child' }}
         drawable
-        bg="filled"
+        bgMode="filled"
         intent="primary"
         color="red"
         blockSize="100px"
@@ -114,13 +114,13 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       color="red"
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bg="filled" intent="primary" blockSize="100px">
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -170,13 +170,13 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
     <Box
       tagAttrs={{ id: 'parent' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       color="red"
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bg="filled" intent="primary" blockSize="100px">
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>,
@@ -234,7 +234,7 @@ test('Explicit color overrides brand', async ({ mount, page }) => {
     <Box
       tagAttrs={{ id: 'box' }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="primary"
       color="red"
       blockSize="200px"

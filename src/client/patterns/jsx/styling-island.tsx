@@ -6,7 +6,7 @@ export const StylingIsland = () => {
       drawable
       theme="global-flipped"
       brand="red"
-      bg="filled"
+      bgMode="filled"
       intent="neutral"
       padding={NEB_LENGTH.px_048}
     >

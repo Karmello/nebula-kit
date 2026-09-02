@@ -1,11 +1,11 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
-  &[data-neb-box-bg='transparent'],
-  &[data-neb-box-bg='tinted'] {
+  &[data-neb-box-bg-mode='transparent'],
+  &[data-neb-box-bg-mode='tinted'] {
     --loader: hsl(var(--h) var(--s) var(--l-25));
     --ripple: hsl(var(--h) var(--s) var(--l-25));
   }
 
-  &[data-neb-box-bg='filled'] {
+  &[data-neb-box-bg-mode='filled'] {
     &[data-neb-box-intent='primary'] {
       --loader: hsl(var(--h) var(--s) var(--light-l));
     }

@@ -38,7 +38,7 @@ export const AppFrameFooter = ({
             borderWidth="0px"
             borderTopWidth="2px"
           >
-            <Box drawable bg="filled" intent={intent} color={color} borderRadius="0px">
+            <Box drawable bgMode="filled" intent={intent} color={color} borderRadius="0px">
               {appFrameFooterSectionSlots.length ? (
                 <Box
                   display="flex"

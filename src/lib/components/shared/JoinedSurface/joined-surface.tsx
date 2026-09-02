@@ -5,7 +5,7 @@ import { NEB_LENGTH } from 'lib/constants'
 import { useRespValue } from 'lib/hooks'
 
 import {
-  DEFAULT_JOINED_SURFACE_BG,
+  DEFAULT_JOINED_SURFACE_BG_MODE,
   DEFAULT_JOINED_SURFACE_BORDER,
   DEFAULT_JOINED_SURFACE_FLEX_DIRECTION,
   DEFAULT_JOINED_SURFACE_INTENT,
@@ -25,7 +25,7 @@ export const JoinedSurface = ({
   color,
   intent = DEFAULT_JOINED_SURFACE_INTENT,
   surfaceDepth = DEFAULT_JOINED_SURFACE_SURFACE_DEPTH,
-  bg = DEFAULT_JOINED_SURFACE_BG,
+  bgMode = DEFAULT_JOINED_SURFACE_BG_MODE,
   border = DEFAULT_JOINED_SURFACE_BORDER,
   inlineSize,
   maxInlineSize,
@@ -76,7 +76,7 @@ export const JoinedSurface = ({
             color={color}
             intent={intent}
             surfaceDepth={surfaceDepth}
-            bg={bg}
+            bgMode={bgMode}
             border={border}
             borderRole="divider"
             flex="1"

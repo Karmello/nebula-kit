@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { Box, BoxBg, BoxBorder, BoxText } from 'lib/components/core/Box'
+import { Box, BoxBgMode, BoxBorder, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -21,34 +21,34 @@ import type { SelectProps, SelectVariant } from './types'
 const VARIANT_MAP: Record<
   SelectVariant,
   {
-    trigger: { bg: BoxBg; border: BoxBorder; text: BoxText }
+    trigger: { bgMode: BoxBgMode; border: BoxBorder; text: BoxText }
     content: { border: BoxBorder }
-    item: { bg: BoxBg; border: BoxBorder; text: BoxText }
+    item: { bgMode: BoxBgMode; border: BoxBorder; text: BoxText }
     removeFirstTopBorder: boolean
   }
 > = {
   solid: {
-    trigger: { bg: 'filled', border: 'none', text: 'default' },
+    trigger: { bgMode: 'filled', border: 'none', text: 'default' },
     content: { border: 'none' },
-    item: { bg: 'filled', border: 'filled', text: 'default' },
+    item: { bgMode: 'filled', border: 'filled', text: 'default' },
     removeFirstTopBorder: false,
   },
   outline: {
-    trigger: { bg: 'tinted', border: 'filled', text: 'default' },
+    trigger: { bgMode: 'tinted', border: 'filled', text: 'default' },
     content: { border: 'filled' },
-    item: { bg: 'tinted', border: 'tinted', text: 'default' },
+    item: { bgMode: 'tinted', border: 'tinted', text: 'default' },
     removeFirstTopBorder: true,
   },
   'soft-outline': {
-    trigger: { bg: 'tinted', border: 'filled', text: 'colored' },
+    trigger: { bgMode: 'tinted', border: 'filled', text: 'colored' },
     content: { border: 'filled' },
-    item: { bg: 'tinted', border: 'tinted', text: 'colored' },
+    item: { bgMode: 'tinted', border: 'tinted', text: 'colored' },
     removeFirstTopBorder: true,
   },
   ghost: {
-    trigger: { bg: 'transparent', border: 'none', text: 'colored' },
+    trigger: { bgMode: 'transparent', border: 'none', text: 'colored' },
     content: { border: 'none' },
-    item: { bg: 'transparent', border: 'tinted', text: 'colored' },
+    item: { bgMode: 'transparent', border: 'tinted', text: 'colored' },
     removeFirstTopBorder: false,
   },
 }
@@ -118,7 +118,7 @@ export const SelectImpl = ({
           }}
           intent={intent}
           color={color}
-          bg={VARIANT_MAP[variant].trigger.bg}
+          bgMode={VARIANT_MAP[variant].trigger.bgMode}
           border={VARIANT_MAP[variant].trigger.border}
           text={VARIANT_MAP[variant].trigger.text}
           inlineSize="100%"
@@ -171,7 +171,7 @@ export const SelectImpl = ({
               display="inline-flex"
               flexDirection="column"
               drawable
-              bg="filled"
+              bgMode="filled"
               intent="neutral"
               color={color}
               inlineSize="100%"
@@ -203,7 +203,7 @@ export const SelectImpl = ({
                     }
                     intent={intent}
                     color={color}
-                    bg={VARIANT_MAP[variant].item.bg}
+                    bgMode={VARIANT_MAP[variant].item.bgMode}
                     border={VARIANT_MAP[variant].item.border}
                     borderRole="divider"
                     surfaceDepth="raised"

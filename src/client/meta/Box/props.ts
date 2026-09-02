@@ -1,6 +1,6 @@
 import type { BoxProps } from 'lib/components/core/Box'
 import {
-  BOX_BG,
+  BOX_BG_MODE,
   BOX_BG_ROLES,
   BOX_BORDER,
   BOX_BORDER_ROLES,
@@ -9,7 +9,7 @@ import {
   BOX_SURFACE_DEPTHS,
   BOX_TEXT,
   BOX_THEMES,
-  DEFAULT_BOX_BG,
+  DEFAULT_BOX_BG_MODE,
   DEFAULT_BOX_BG_ROLE,
   DEFAULT_BOX_BORDER,
   DEFAULT_BOX_BORDER_ROLE,
@@ -145,9 +145,9 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Sets border width overriding global value set by NebkitProvider.',
     link: true,
   },
-  bg: {
-    options: BOX_BG,
-    defaultValue: DEFAULT_BOX_BG,
+  bgMode: {
+    options: BOX_BG_MODE,
+    defaultValue: DEFAULT_BOX_BG_MODE,
     description:
       "Controls how the component's background is painted - transparent for no fill, tinted for a soft, low-emphasis fill, or filled for a solid, full-strength fill.",
   },

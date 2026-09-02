@@ -62,7 +62,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box interactive bg="filled" intent="primary" padding="20px">
+      <Box interactive bgMode="filled" intent="primary" padding="20px">
         Interactive Box
       </Box>
     ),
@@ -70,7 +70,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box interactive disabled bg="filled" intent="primary" padding="20px">
+      <Box interactive disabled bgMode="filled" intent="primary" padding="20px">
         Disabled Box
       </Box>
     ),

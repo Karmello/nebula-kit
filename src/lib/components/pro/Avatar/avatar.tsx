@@ -105,7 +105,7 @@ export const Avatar = ({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent="tertiary"
       color="gray"
       blockSize={AVATAR_SIZES_MAP[size || 'md'].side}

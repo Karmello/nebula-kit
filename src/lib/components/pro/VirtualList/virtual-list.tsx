@@ -115,7 +115,7 @@ export const VirtualList = <T,>({
         },
       }}
       drawable
-      bg="filled"
+      bgMode="filled"
       intent={intent}
       color={color}
       surfaceDepth={surfaceDepth}

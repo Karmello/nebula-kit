@@ -100,7 +100,7 @@ export const Tabs = ({
                   intent={intent}
                   tagRef={tagRef}
                   drawable
-                  bg="filled"
+                  bgMode="filled"
                   inlineSize="max-content"
                   minInlineSize="100%"
                   overflow="clip"
@@ -148,7 +148,7 @@ export const Tabs = ({
                             minInlineSize="100%"
                             interactive
                             cursor="pointer"
-                            bg="filled"
+                            bgMode="filled"
                             borderRadius="0px"
                           >
                             <Box

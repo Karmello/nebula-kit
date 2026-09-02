@@ -23,7 +23,7 @@ import type {
 
 import { type HtmlTagProps } from '../HtmlTag/types'
 import {
-  BOX_BG,
+  BOX_BG_MODE,
   BOX_BG_ROLES,
   BOX_BORDER,
   BOX_BORDER_ROLES,
@@ -40,7 +40,7 @@ export type BoxColor = (typeof BOX_COLORS)[number]
 export type BoxSurfaceDepth = (typeof BOX_SURFACE_DEPTHS)[number]
 export type BoxBorderRole = (typeof BOX_BORDER_ROLES)[number]
 export type BoxBorder = (typeof BOX_BORDER)[number]
-export type BoxBg = (typeof BOX_BG)[number]
+export type BoxBgMode = (typeof BOX_BG_MODE)[number]
 export type BoxBgRole = (typeof BOX_BG_ROLES)[number]
 export type BoxText = (typeof BOX_TEXT)[number]
 
@@ -52,7 +52,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   color?: BoxColor
   intent?: BoxIntent
   surfaceDepth?: BoxSurfaceDepth
-  bg?: BoxBg
+  bgMode?: BoxBgMode
   bgRole?: BoxBgRole
   border?: BoxBorder
   borderRole?: BoxBorderRole

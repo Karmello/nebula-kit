@@ -34,7 +34,7 @@ export const TableHeaderCell = ({
       }}
       tagRef={tagRef}
       drawable
-      bg="filled"
+      bgMode="filled"
       color={color || context.color}
       intent={intent || context.intent}
       minInlineSize={minInlineSize}

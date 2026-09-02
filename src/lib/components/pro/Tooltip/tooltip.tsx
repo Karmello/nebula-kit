@@ -53,7 +53,7 @@ export const Tooltip = ({
           >
             <Box
               drawable
-              bg="filled"
+              bgMode="filled"
               intent={variant === 'outline' ? 'neutral' : intent}
               color={color}
               paddingBlock="8px"

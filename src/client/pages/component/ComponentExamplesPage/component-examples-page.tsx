@@ -58,7 +58,7 @@ const SingleExample = (
                     : theme
                   : undefined
               }
-              bg="filled"
+              bgMode="filled"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
               borderRadius={NEB_LENGTH.px_000}

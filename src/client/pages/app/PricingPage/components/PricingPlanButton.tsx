@@ -68,7 +68,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
           return (
             <Box
               drawable
-              bg="filled"
+              bgMode="filled"
               intent="secondary"
               color={color}
               paddingBlock={NEB_LENGTH.px_012}

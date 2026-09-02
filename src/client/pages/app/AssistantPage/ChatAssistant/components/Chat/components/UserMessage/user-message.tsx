@@ -9,7 +9,7 @@ export const UserMessage = ({ content }: UserMessageProps) => {
     <Box alignSelf="flex-end">
       <Box
         drawable
-        bg="filled"
+        bgMode="filled"
         intent="primary"
         color="blue"
         paddingInline={NEB_LENGTH.px_012}

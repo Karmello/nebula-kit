@@ -27,7 +27,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
                 tag="code"
                 display="inline-block"
                 drawable
-                bg="filled"
+                bgMode="filled"
                 intent="muted"
                 paddingInline={NEB_LENGTH.px_006}
                 paddingBlock={NEB_LENGTH.px_002}

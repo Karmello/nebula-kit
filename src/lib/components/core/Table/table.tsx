@@ -62,7 +62,7 @@ export const Table = ({
               }}
               tagRef={tagRef}
               drawable
-              bg="filled"
+              bgMode="filled"
               color={color}
               intent={intent}
               borderRadius="0px"

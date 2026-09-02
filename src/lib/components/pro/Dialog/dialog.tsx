@@ -132,7 +132,7 @@ export const Dialog = ({
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                         borderRadius="var(--neb-border-radius)"
                       >
-                        <Box drawable bg="filled" intent="neutral" borderRadius="0px">
+                        <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
                           {onClose ? (
                             <Box position="absolute" top="8px" right="8px">
                               <IconButton

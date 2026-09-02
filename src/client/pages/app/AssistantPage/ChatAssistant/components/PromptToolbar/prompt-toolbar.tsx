@@ -19,7 +19,7 @@ export const PromptToolbar = ({
     <Box
       drawable
       theme="global-flipped"
-      bg="filled"
+      bgMode="filled"
       intent="neutral"
       padding={NEB_LENGTH.px_008}
       paddingLeft={NEB_LENGTH.px_016}

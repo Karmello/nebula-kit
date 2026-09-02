@@ -15,7 +15,7 @@ export const VIRTUAL_LIST_EXAMPLES: DocExample[] = [
           <Box
             drawable
             interactive
-            bg="filled"
+            bgMode="filled"
             intent="muted"
             borderRadius="0px"
             blockSize="50px"

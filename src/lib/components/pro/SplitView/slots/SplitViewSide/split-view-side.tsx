@@ -73,7 +73,7 @@ export const SplitViewSide = ({
         drawable
         borderRadius="0px"
         theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
-        bg="filled"
+        bgMode="filled"
         color={color}
         intent={intent}
         blockSize="100%"

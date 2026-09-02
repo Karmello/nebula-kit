@@ -32,7 +32,7 @@ export const Divider = ({
       }}
       tagRef={tagRef}
       drawable
-      bg="filled"
+      bgMode="filled"
       color={color}
       intent={intent}
       surfaceDepth={surfaceDepth}

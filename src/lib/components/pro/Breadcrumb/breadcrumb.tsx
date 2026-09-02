@@ -103,7 +103,7 @@ const BreadcrumbLevel = ({
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
           <Box
             drawable
-            bg="filled"
+            bgMode="filled"
             intent={intent}
             color={color}
             minInlineSize="auto"
@@ -140,7 +140,7 @@ const BreadcrumbLevel = ({
                       }}
                       drawable
                       interactive
-                      bg="filled"
+                      bgMode="filled"
                       surfaceDepth="raised"
                       intent={intent}
                       color={color}

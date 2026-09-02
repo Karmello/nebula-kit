@@ -31,10 +31,10 @@ describe('<Box />', () => {
       expect(el).toHaveAttribute('data-neb-box-intent', 'primary')
     })
 
-    it('adds data attr for bg', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} bg="filled" />)
+    it('adds data attr for bgMode', () => {
+      render(<Box tagAttrs={{ 'data-testid': 'elem' }} bgMode="filled" />)
       const el = screen.getByTestId('elem')
-      expect(el).toHaveAttribute('data-neb-box-bg', 'filled')
+      expect(el).toHaveAttribute('data-neb-box-bg-mode', 'filled')
     })
 
     it('adds data attr for bgRole', () => {

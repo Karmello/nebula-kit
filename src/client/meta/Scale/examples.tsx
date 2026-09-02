@@ -11,7 +11,7 @@ const Example1 = () => {
     <>
       <Button onClick={() => setVisible(value => !value)}>Toggle scale</Button>
       <Scale visible={visible}>
-        <Box drawable bg="filled" intent="primary" padding="24px">
+        <Box drawable bgMode="filled" intent="primary" padding="24px">
           Scaled content
         </Box>
       </Scale>
