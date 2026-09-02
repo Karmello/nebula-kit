@@ -4,7 +4,7 @@ import { Box, NEB_LENGTH } from 'lib/index.core'
 
 export const JoinedActionGroup = () => {
   const surfaceDepth: BoxSurfaceDepth = 'raised'
-  const intent: BoxIntent = 'tertiary'
+  const intent: BoxIntent = 'strong'
 
   return (
     <JoinedSurface

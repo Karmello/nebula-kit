@@ -11,10 +11,10 @@
   }
 
   &[data-neb-box-bg='tinted'] {
-    --bg: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint), transparent);
-    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-hover), transparent);
-    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-active), transparent);
-    --bg-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-selection), transparent);
-    --bg-disabled: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-disabled), transparent);
+    --bg: color-mix(in srgb, hsl(var(--h) var(--s) var(--tint-base-l)) var(--tint), transparent);
+    --bg-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--tint-base-l)) var(--tint-hover), transparent);
+    --bg-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--tint-base-l)) var(--tint-active), transparent);
+    --bg-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--tint-base-l)) var(--tint-selection), transparent);
+    --bg-disabled: color-mix(in srgb, hsl(var(--h) var(--s) var(--tint-base-l)) var(--tint-disabled), transparent);
   }
 }

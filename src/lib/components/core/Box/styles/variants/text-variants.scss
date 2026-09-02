@@ -32,13 +32,6 @@
       --text-disabled: hsl(var(--h) var(--s) var(--light-l) / 0.25);
     }
 
-    &[data-neb-box-intent='primary'] {
-      &[data-neb-box-surface-depth='raised'] {
-        --text: hsl(var(--h) var(--s) var(--l-0));
-        --text-hover: hsl(var(--h) var(--s) var(--l-0));
-      }
-    }
-
     &[data-neb-box-intent='secondary'] {
       &[data-neb-box-surface-depth='raised'] {
         &[data-neb-box-bg-role='selection'] {
@@ -69,7 +62,9 @@
     &[data-neb-box-intent='strong'] {
       &[data-neb-box-surface-depth='raised'] {
         &[data-neb-box-bg-role='selection'] {
-          --text-selection: hsl(var(--h) var(--s) var(--l-0));
+          &[data-neb-box-text='default'] {
+            --text-selection: hsl(var(--h) var(--s) var(--light-l));
+          }
         }
       }
     }
