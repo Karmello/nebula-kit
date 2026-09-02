@@ -26,6 +26,7 @@ export type DocProp = {
   isResponsive?: boolean
   description?: string
   link?: boolean
+  group?: string
 }
 
 export type DocExample = {
