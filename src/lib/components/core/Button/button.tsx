@@ -24,8 +24,8 @@ import './button.scss'
 
 const VARIANT_MAP: Record<ButtonVariant, { bg: BoxBg; border: BoxBorder; text: BoxText }> = {
   solid: { bg: 'filled', border: 'none', text: 'default' },
-  outline: { bg: 'tinted', border: 'tinted', text: 'default' },
-  'soft-outline': { bg: 'tinted', border: 'tinted', text: 'colored' },
+  outline: { bg: 'tinted', border: 'filled', text: 'default' },
+  'soft-outline': { bg: 'tinted', border: 'filled', text: 'colored' },
   ghost: { bg: 'transparent', border: 'none', text: 'colored' },
 }
 

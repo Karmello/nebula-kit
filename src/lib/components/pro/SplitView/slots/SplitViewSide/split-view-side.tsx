@@ -54,7 +54,6 @@ export const SplitViewSide = ({
       // variant="outline"
       color={color}
       intent={intent}
-      surfaceDepth="lowered"
       borderWidth="0px"
       borderRadius="0px"
       borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? '2px' : '0px'}

@@ -13,7 +13,7 @@ export const BOX_INTENTS = [
   'primary',
   'strong',
 ] as const
-export const BOX_SURFACE_DEPTHS = ['base', 'raised', 'lowered'] as const
+export const BOX_SURFACE_DEPTHS = ['base', 'raised'] as const
 export const BOX_BORDER_ROLES = ['default', 'divider', 'edge'] as const
 export const BOX_BORDER = ['none', 'tinted', 'filled'] as const
 export const BOX_BG = ['transparent', 'tinted', 'filled'] as const

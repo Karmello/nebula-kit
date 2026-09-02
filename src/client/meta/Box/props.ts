@@ -512,7 +512,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: BOX_SURFACE_DEPTHS,
     defaultValue: DEFAULT_BOX_SURFACE_DEPTH,
     description:
-      "Selects which depth tier the component's surface color is drawn from - base, raised or lowered - each with its own per-intent lightness and interaction states.",
+      "Selects which depth tier the component's surface color is drawn from - base or raised - each with its own per-intent lightness and interaction states.",
   },
   tag: {
     options: ['HTML tag'],

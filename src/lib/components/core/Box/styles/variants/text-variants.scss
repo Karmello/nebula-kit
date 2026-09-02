@@ -41,10 +41,9 @@
 
     &[data-neb-box-intent='secondary'] {
       &[data-neb-box-surface-depth='raised'] {
-        --text: hsl(var(--h) var(--s) var(--light-l));
-        --text-hover: hsl(var(--h) var(--s) var(--light-l));
-        --text-active: hsl(var(--h) var(--s) var(--light-l));
-        --text-selection: hsl(var(--h) var(--s) var(--light-l));
+        &[data-neb-box-bg-role='selection'] {
+          --text-selection: hsl(var(--h) var(--s) var(--light-l));
+        }
       }
     }
 
@@ -65,6 +64,14 @@
       --text-active: hsl(var(--h) var(--s) var(--l-25));
       --text-selection: hsl(var(--h) var(--s) var(--l-25));
       --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+    }
+
+    &[data-neb-box-intent='strong'] {
+      &[data-neb-box-surface-depth='raised'] {
+        &[data-neb-box-bg-role='selection'] {
+          --text-selection: hsl(var(--h) var(--s) var(--l-0));
+        }
+      }
     }
   }
 }

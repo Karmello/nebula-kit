@@ -80,7 +80,6 @@ export const Tabs = ({
             color={color}
             intent={intent}
             // variant="outline"
-            surfaceDepth="lowered"
             borderTopWidth={direction === 'row' ? '0px' : undefined}
             borderLeftWidth={direction === 'column' ? '0px' : undefined}
             overflow="clip"
@@ -101,7 +100,6 @@ export const Tabs = ({
                   intent={intent}
                   tagRef={tagRef}
                   drawable
-                  surfaceDepth="lowered"
                   bg="filled"
                   inlineSize="max-content"
                   minInlineSize="100%"
