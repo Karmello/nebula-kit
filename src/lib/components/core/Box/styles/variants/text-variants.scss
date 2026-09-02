@@ -13,5 +13,58 @@
     --text-active: hsl(var(--h) var(--s) var(--l-active));
     --text-selection: hsl(var(--h) var(--s) var(--l-selection));
     --text-disabled: hsl(var(--h) var(--s) var(--l) / 0.25);
+
+    &[data-neb-box-bg='tinted'] {
+      --text: hsl(var(--h) var(--s) var(--l-18));
+      --text-hover: hsl(var(--h) var(--s) var(--l-18));
+      --text-active: hsl(var(--h) var(--s) var(--l-18));
+      --text-selection: hsl(var(--h) var(--s) var(--l-18));
+      --text-disabled: hsl(var(--h) var(--s) var(--l-18) / 0.25);
+    }
+  }
+
+  &[data-neb-box-bg='filled'] {
+    &[data-neb-box-intent='primary'] {
+      --text: hsl(var(--h) var(--s) var(--light-l));
+      --text-hover: hsl(var(--h) var(--s) var(--light-l));
+      --text-active: hsl(var(--h) var(--s) var(--light-l));
+      --text-selection: hsl(var(--h) var(--s) var(--light-l));
+      --text-disabled: hsl(var(--h) var(--s) var(--light-l) / 0.25);
+    }
+
+    &[data-neb-box-intent='primary'] {
+      &[data-neb-box-surface-depth='raised'] {
+        --text: hsl(var(--h) var(--s) var(--l-0));
+        --text-hover: hsl(var(--h) var(--s) var(--l-0));
+      }
+    }
+
+    &[data-neb-box-intent='secondary'] {
+      &[data-neb-box-surface-depth='raised'] {
+        --text: hsl(var(--h) var(--s) var(--light-l));
+        --text-hover: hsl(var(--h) var(--s) var(--light-l));
+        --text-active: hsl(var(--h) var(--s) var(--light-l));
+        --text-selection: hsl(var(--h) var(--s) var(--light-l));
+      }
+    }
+
+    &[data-neb-box-intent='strong'] {
+      --text: hsl(var(--h) var(--s) var(--l-0));
+      --text-hover: hsl(var(--h) var(--s) var(--l-0));
+      --text-active: hsl(var(--h) var(--s) var(--l-0));
+      --text-selection: hsl(var(--h) var(--s) var(--l-0));
+      --text-disabled: hsl(var(--h) var(--s) var(--l-0) / 0.25);
+    }
+  }
+
+  &[data-neb-box-bg='transparent'],
+  &[data-neb-box-bg='tinted'] {
+    &[data-neb-box-intent='neutral'] {
+      --text: hsl(var(--h) var(--s) var(--l-25));
+      --text-hover: hsl(var(--h) var(--s) var(--l-25));
+      --text-active: hsl(var(--h) var(--s) var(--l-25));
+      --text-selection: hsl(var(--h) var(--s) var(--l-25));
+      --text-disabled: hsl(var(--h) var(--s) var(--l-25) / 0.25);
+    }
   }
 }

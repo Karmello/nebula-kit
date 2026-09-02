@@ -9,9 +9,6 @@
 @use './variants/text-variants.scss';
 @use './variants/loader-variants.scss';
 
-@use './overrides/text-overrides.scss';
-@use './overrides/loader-overrides.scss';
-
 .neb-box {
   background-color: transparent;
   color: inherit;
