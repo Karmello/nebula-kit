@@ -6,7 +6,7 @@ export const PROPS_FROM_BOX = [
   'bgMode',
   'bgRole',
   'blockSize',
-  'border',
+  'borderMode',
   'borderRadius',
   'borderRole',
   'borderWidth',

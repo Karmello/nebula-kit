@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { Box, BoxBgMode, BoxBorder, BoxText } from 'lib/components/core/Box'
+import { Box, BoxBgMode, BoxBorderMode, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -21,34 +21,34 @@ import type { SelectProps, SelectVariant } from './types'
 const VARIANT_MAP: Record<
   SelectVariant,
   {
-    trigger: { bgMode: BoxBgMode; border: BoxBorder; text: BoxText }
-    content: { border: BoxBorder }
-    item: { bgMode: BoxBgMode; border: BoxBorder; text: BoxText }
+    trigger: { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+    content: { borderMode: BoxBorderMode }
+    item: { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
     removeFirstTopBorder: boolean
   }
 > = {
   solid: {
-    trigger: { bgMode: 'filled', border: 'none', text: 'default' },
-    content: { border: 'none' },
-    item: { bgMode: 'filled', border: 'filled', text: 'default' },
+    trigger: { bgMode: 'filled', borderMode: 'none', text: 'default' },
+    content: { borderMode: 'none' },
+    item: { bgMode: 'filled', borderMode: 'filled', text: 'default' },
     removeFirstTopBorder: false,
   },
   outline: {
-    trigger: { bgMode: 'tinted', border: 'filled', text: 'default' },
-    content: { border: 'filled' },
-    item: { bgMode: 'tinted', border: 'tinted', text: 'default' },
+    trigger: { bgMode: 'tinted', borderMode: 'filled', text: 'default' },
+    content: { borderMode: 'filled' },
+    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
     removeFirstTopBorder: true,
   },
   'soft-outline': {
-    trigger: { bgMode: 'tinted', border: 'filled', text: 'colored' },
-    content: { border: 'filled' },
-    item: { bgMode: 'tinted', border: 'tinted', text: 'colored' },
+    trigger: { bgMode: 'tinted', borderMode: 'filled', text: 'colored' },
+    content: { borderMode: 'filled' },
+    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
     removeFirstTopBorder: true,
   },
   ghost: {
-    trigger: { bgMode: 'transparent', border: 'none', text: 'colored' },
-    content: { border: 'none' },
-    item: { bgMode: 'transparent', border: 'tinted', text: 'colored' },
+    trigger: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
+    content: { borderMode: 'none' },
+    item: { bgMode: 'transparent', borderMode: 'tinted', text: 'colored' },
     removeFirstTopBorder: false,
   },
 }
@@ -119,7 +119,7 @@ export const SelectImpl = ({
           intent={intent}
           color={color}
           bgMode={VARIANT_MAP[variant].trigger.bgMode}
-          border={VARIANT_MAP[variant].trigger.border}
+          borderMode={VARIANT_MAP[variant].trigger.borderMode}
           text={VARIANT_MAP[variant].trigger.text}
           inlineSize="100%"
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
@@ -155,7 +155,7 @@ export const SelectImpl = ({
             drawable
             intent={intent}
             color={color}
-            border={VARIANT_MAP[variant].content.border}
+            borderMode={VARIANT_MAP[variant].content.borderMode}
             surfaceDepth="raised"
             inlineSize={`${triggerWidth}px`}
             maxBlockSize={`${menuBlockSize}px`}
@@ -204,7 +204,7 @@ export const SelectImpl = ({
                     intent={intent}
                     color={color}
                     bgMode={VARIANT_MAP[variant].item.bgMode}
-                    border={VARIANT_MAP[variant].item.border}
+                    borderMode={VARIANT_MAP[variant].item.borderMode}
                     borderRole="divider"
                     surfaceDepth="raised"
                     bgRole={isSelected ? 'selection' : undefined}

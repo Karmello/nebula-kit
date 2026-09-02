@@ -6,7 +6,7 @@ import { useRespValue } from 'lib/hooks'
 
 import {
   DEFAULT_JOINED_SURFACE_BG_MODE,
-  DEFAULT_JOINED_SURFACE_BORDER,
+  DEFAULT_JOINED_SURFACE_BORDER_MODE,
   DEFAULT_JOINED_SURFACE_FLEX_DIRECTION,
   DEFAULT_JOINED_SURFACE_INTENT,
   DEFAULT_JOINED_SURFACE_SURFACE_DEPTH,
@@ -26,7 +26,7 @@ export const JoinedSurface = ({
   intent = DEFAULT_JOINED_SURFACE_INTENT,
   surfaceDepth = DEFAULT_JOINED_SURFACE_SURFACE_DEPTH,
   bgMode = DEFAULT_JOINED_SURFACE_BG_MODE,
-  border = DEFAULT_JOINED_SURFACE_BORDER,
+  borderMode = DEFAULT_JOINED_SURFACE_BORDER_MODE,
   inlineSize,
   maxInlineSize,
   blockSize,
@@ -53,7 +53,7 @@ export const JoinedSurface = ({
       color={color}
       intent={intent}
       surfaceDepth={surfaceDepth}
-      border={border}
+      borderMode={borderMode}
       borderRole={bordered ? 'edge' : undefined}
       display="inline-flex"
       flexDirection={resolvedFlexDirection}
@@ -77,7 +77,7 @@ export const JoinedSurface = ({
             intent={intent}
             surfaceDepth={surfaceDepth}
             bgMode={bgMode}
-            border={border}
+            borderMode={borderMode}
             borderRole="divider"
             flex="1"
             {...getJoinedItemStyle(key)}

@@ -25,7 +25,7 @@ import { type HtmlTagProps } from '../HtmlTag/types'
 import {
   BOX_BG_MODE,
   BOX_BG_ROLES,
-  BOX_BORDER,
+  BOX_BORDER_MODE,
   BOX_BORDER_ROLES,
   BOX_COLORS,
   BOX_INTENTS,
@@ -39,7 +39,7 @@ export type BoxIntent = (typeof BOX_INTENTS)[number]
 export type BoxColor = (typeof BOX_COLORS)[number]
 export type BoxSurfaceDepth = (typeof BOX_SURFACE_DEPTHS)[number]
 export type BoxBorderRole = (typeof BOX_BORDER_ROLES)[number]
-export type BoxBorder = (typeof BOX_BORDER)[number]
+export type BoxBorderMode = (typeof BOX_BORDER_MODE)[number]
 export type BoxBgMode = (typeof BOX_BG_MODE)[number]
 export type BoxBgRole = (typeof BOX_BG_ROLES)[number]
 export type BoxText = (typeof BOX_TEXT)[number]
@@ -54,7 +54,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   surfaceDepth?: BoxSurfaceDepth
   bgMode?: BoxBgMode
   bgRole?: BoxBgRole
-  border?: BoxBorder
+  borderMode?: BoxBorderMode
   borderRole?: BoxBorderRole
   text?: BoxText
   // interaction

@@ -2,7 +2,7 @@ import type { BoxProps } from 'lib/components/core/Box'
 import {
   BOX_BG_MODE,
   BOX_BG_ROLES,
-  BOX_BORDER,
+  BOX_BORDER_MODE,
   BOX_BORDER_ROLES,
   BOX_COLORS,
   BOX_INTENTS,
@@ -11,7 +11,7 @@ import {
   BOX_THEMES,
   DEFAULT_BOX_BG_MODE,
   DEFAULT_BOX_BG_ROLE,
-  DEFAULT_BOX_BORDER,
+  DEFAULT_BOX_BORDER_MODE,
   DEFAULT_BOX_BORDER_ROLE,
   DEFAULT_BOX_SURFACE_DEPTH,
   DEFAULT_BOX_TEXT,
@@ -67,17 +67,23 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Defines the preferred width-to-height ratio of the component.',
     link: true,
   },
+  bgMode: {
+    options: BOX_BG_MODE,
+    defaultValue: DEFAULT_BOX_BG_MODE,
+    description:
+      "Controls how the component's background is painted - transparent for no fill, tinted for a fill that blends with whatever sits behind it, or filled for a solid, full-strength fill.",
+  },
+  bgRole: {
+    options: BOX_BG_ROLES,
+    defaultValue: DEFAULT_BOX_BG_ROLE,
+    description:
+      'Controls whether the background acts as a standard surface or as a selection, giving the component a highlighted, chosen look.',
+  },
   blockSize: {
     options: ['string'],
     isResponsive: true,
     description: 'Logical height.',
     link: true,
-  },
-  border: {
-    options: BOX_BORDER,
-    defaultValue: DEFAULT_BOX_BORDER,
-    description:
-      "Controls how the component's border is painted - none for no border, tinted for a soft, low-emphasis border, or filled for a solid, full-strength border.",
   },
   borderBottomLeftRadius: {
     options: ['string'],
@@ -103,10 +109,22 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Border width for the left side.',
     link: true,
   },
+  borderMode: {
+    options: BOX_BORDER_MODE,
+    defaultValue: DEFAULT_BOX_BORDER_MODE,
+    description:
+      "Controls how the component's border is painted - none for no border, tinted for a border that blends with whatever sits behind it, or filled for a solid, full-strength border.",
+  },
   borderRadius: {
     options: ['string'],
     isResponsive: true,
     description: 'Sets border radius overriding global value set by NebkitProvider.',
+    link: true,
+  },
+  borderRightWidth: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Border width for the right side.',
     link: true,
   },
   borderRole: {
@@ -114,12 +132,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     defaultValue: DEFAULT_BOX_BORDER_ROLE,
     description:
       'Controls what the border is for - surface is the basic border, divider acts as a separator between items, and edge wraps the whole element as its outer boundary.',
-  },
-  borderRightWidth: {
-    options: ['string'],
-    isResponsive: true,
-    description: 'Border width for the right side.',
-    link: true,
   },
   borderTopLeftRadius: {
     options: ['string'],
@@ -144,18 +156,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     isResponsive: true,
     description: 'Sets border width overriding global value set by NebkitProvider.',
     link: true,
-  },
-  bgMode: {
-    options: BOX_BG_MODE,
-    defaultValue: DEFAULT_BOX_BG_MODE,
-    description:
-      "Controls how the component's background is painted - transparent for no fill, tinted for a soft, low-emphasis fill, or filled for a solid, full-strength fill.",
-  },
-  bgRole: {
-    options: BOX_BG_ROLES,
-    defaultValue: DEFAULT_BOX_BG_ROLE,
-    description:
-      'Controls whether the background acts as a standard surface or as a selection, giving the component a highlighted, chosen look.',
   },
   bottom: {
     options: ['string'],

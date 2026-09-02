@@ -7,7 +7,7 @@ export const JoinedActionGroup = () => {
       drawable
       intent="strong"
       bgMode="filled"
-      border="filled"
+      borderMode="filled"
       borderRole="edge"
       padding={NEB_LENGTH.px_016}
     >

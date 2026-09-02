@@ -1,7 +1,7 @@
 import { ComponentRef, useLayoutEffect, useRef } from 'react'
 import classNames from 'classnames'
 
-import { Box, BoxBgMode, BoxBorder, BoxText } from 'lib/components/core/Box'
+import { Box, BoxBgMode, BoxBorderMode, BoxText } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Loader } from 'lib/components/core/Loader'
 import { Text } from 'lib/components/core/Text'
@@ -22,13 +22,15 @@ import type { ButtonProps, ButtonTag, ButtonVariant } from './types'
 
 import './button.scss'
 
-const VARIANT_MAP: Record<ButtonVariant, { bgMode: BoxBgMode; border: BoxBorder; text: BoxText }> =
-  {
-    solid: { bgMode: 'filled', border: 'none', text: 'default' },
-    outline: { bgMode: 'tinted', border: 'filled', text: 'default' },
-    'soft-outline': { bgMode: 'tinted', border: 'filled', text: 'colored' },
-    ghost: { bgMode: 'transparent', border: 'none', text: 'colored' },
-  }
+const VARIANT_MAP: Record<
+  ButtonVariant,
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+> = {
+  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'filled', text: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'filled', text: 'colored' },
+  ghost: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
+}
 
 export const Button = <T extends ButtonTag = 'button'>({
   // own
@@ -88,7 +90,7 @@ export const Button = <T extends ButtonTag = 'button'>({
       tagRef={finalRef}
       theme={theme}
       bgMode={VARIANT_MAP[variant].bgMode}
-      border={VARIANT_MAP[variant].border}
+      borderMode={VARIANT_MAP[variant].borderMode}
       text={VARIANT_MAP[variant].text}
       color={color}
       intent={intent}

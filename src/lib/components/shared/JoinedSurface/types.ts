@@ -16,7 +16,7 @@ export type JoinedSurfaceProps = {
   intent?: BoxProps['intent']
   surfaceDepth?: BoxProps['surfaceDepth']
   bgMode?: BoxProps['bgMode']
-  border?: BoxProps['border']
+  borderMode?: BoxProps['borderMode']
   inlineSize?: BoxProps['inlineSize']
   maxInlineSize?: BoxProps['maxInlineSize']
   blockSize?: BoxProps['blockSize']

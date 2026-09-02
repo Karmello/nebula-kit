@@ -15,7 +15,7 @@
     --base-neutral-tint-edge: 3%;
     --base-neutral-tint-disabled: 0%;
 
-    &[data-neb-box-border]:not([data-neb-box-border='none']):not([data-neb-box-bg-mode='filled']) {
+    &[data-neb-box-border-mode]:not([data-neb-box-border-mode='none']):not([data-neb-box-bg-mode='filled']) {
       --base-neutral-l: var(--l-1);
       --base-neutral-l-hover: var(--l-2);
       --base-neutral-l-active: var(--l-3);

@@ -12,7 +12,7 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
   bgRole: { type: 'array' },
   blockSize: { type: 'string' },
   bold: { type: 'boolean' },
-  border: { type: 'array' },
+  borderMode: { type: 'array' },
   borderRadius: { type: 'string' },
   borderRole: { type: 'array' },
   borderWidth: { type: 'string' },
