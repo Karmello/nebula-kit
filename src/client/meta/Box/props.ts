@@ -113,7 +113,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: BOX_BORDER_ROLES,
     defaultValue: DEFAULT_BOX_BORDER_ROLE,
     description:
-      'Applies a persistent visual role to the component - divider to separate similar items within a group, or edge to mark the boundary of a surface against what sits behind it.',
+      'Controls what the border is for - surface is the basic border, divider acts as a separator between items, and edge wraps the whole element as its outer boundary.',
   },
   borderRightWidth: {
     options: ['string'],
@@ -155,7 +155,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: BOX_BG_ROLES,
     defaultValue: DEFAULT_BOX_BG_ROLE,
     description:
-      "Applies a persistent visual role to the background - surface for the component's normal fill, or selection to indicate a highlighted, chosen state.",
+      'Controls whether the background acts as a standard surface or as a selection, giving the component a highlighted, chosen look.',
   },
   bottom: {
     options: ['string'],
