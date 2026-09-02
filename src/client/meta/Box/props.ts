@@ -155,7 +155,7 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     options: BOX_BG_ROLES,
     defaultValue: DEFAULT_BOX_BG_ROLE,
     description:
-      "Applies a persistent visual role to the background - default for the component's normal fill, or selection to indicate a highlighted, chosen state.",
+      "Applies a persistent visual role to the background - surface for the component's normal fill, or selection to indicate a highlighted, chosen state.",
   },
   bottom: {
     options: ['string'],
