@@ -6,7 +6,7 @@ export enum PageKey {
   authRecover = '/auth/recover',
   authRegister = '/auth/register',
   confirmAction = '/confirm-action',
-  components = '/components',
+  library = '/library',
   faq = '/faq',
   blog = '/blog',
   feedback = '/feedback',
@@ -24,5 +24,5 @@ export enum PageKey {
 
 export const PAGE_SECTIONS = [
   ...FOUNDATIONS_SECTIONS.map(o => ({ ...o, pageKey: PageKey.foundations.replace('/', '') })),
-  ...COMPONENTS_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.components.replace('/', '') })),
+  ...COMPONENTS_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.library.replace('/', '') })),
 ]

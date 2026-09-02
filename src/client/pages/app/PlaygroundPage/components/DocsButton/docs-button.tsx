@@ -16,7 +16,7 @@ export const DocsButton = () => {
     const { key: category } = COMPONENT_CATEGORIES.find(obj =>
       obj.items.some(obj => obj.key === componentName)
     )
-    return `${PageKey.components}/${category}/${componentName}/overview`
+    return `${PageKey.library}/${category}/${componentName}/overview`
   }, [activeComponent])
 
   return (

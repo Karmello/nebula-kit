@@ -31,7 +31,7 @@ export const RootPage = () => {
         <Route path={PageKey.patterns} Component={PatternsPage} />
         <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`${PageKey.components}/*`} Component={ComponentsPage} />
+        <Route path={`${PageKey.library}/*`} Component={ComponentsPage} />
         <Route path={PageKey.faq} Component={FaqPage} />
         <Route path={PageKey.blog} Component={BlogPage} />
         <Route path={PageKey.pricing} Component={PricingPage} />

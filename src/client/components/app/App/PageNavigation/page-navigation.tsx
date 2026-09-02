@@ -87,23 +87,23 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
       </Box>
       <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
-          href={`${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
+          href={`${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `${PageKey.components}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
+              `${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
             )
           }}
         >
           <Button
             intent="muted"
-            selected={currentPageKey === PageKey.components}
-            bold={currentPageKey === PageKey.components}
+            selected={currentPageKey === PageKey.library}
+            bold={currentPageKey === PageKey.library}
             iconName="package"
             fullWidth
-            minInlineSize="150px"
+            minInlineSize="110px"
           >
-            Components
+            Library
           </Button>
         </Link>
       </Box>

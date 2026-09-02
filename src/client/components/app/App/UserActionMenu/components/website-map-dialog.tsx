@@ -93,7 +93,7 @@ export const WebsiteMapDialog = () => {
           <Item
             description="Documentation for Core and Pro components."
             iconName="package"
-            onClick={() => handleClick(PageKey.components)}
+            onClick={() => handleClick(PageKey.library)}
           >
             Components
           </Item>

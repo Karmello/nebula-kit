@@ -30,7 +30,7 @@ const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
 export const ComponentsPageRoutes = ({
   pageKey,
 }: {
-  pageKey: PageKey.foundations | PageKey.components
+  pageKey: PageKey.foundations | PageKey.library
 }) => {
   const ROUTES = useMemo(() => {
     return COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>

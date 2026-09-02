@@ -16,8 +16,8 @@ export const TREE = [
     children: parsePageCategories(FOUNDATIONS_CATEGORIES),
   },
   {
-    value: 'components',
-    label: 'Components',
+    value: 'library',
+    label: 'Library',
     children: parsePageCategories(COMPONENT_CATEGORIES),
   },
 ]

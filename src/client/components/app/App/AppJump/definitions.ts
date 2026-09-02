@@ -33,11 +33,11 @@ FOUNDATIONS_CATEGORIES.forEach(c =>
 COMPONENT_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `${PageKey.components.replace('/', '')} / ${noCase(c.key)} / ${pascalCase(i.key)} / ${noCase(s.key)}`
+      const label = `${PageKey.library.replace('/', '')} / ${noCase(c.key)} / ${pascalCase(i.key)} / ${noCase(s.key)}`
       OPTIONS.push({
         label,
         tokens: label.toLowerCase().split(/\s+/),
-        href: `${PageKey.components.replace('/', '')}/${c.key}/${i.key}/${s.key}`,
+        href: `${PageKey.library.replace('/', '')}/${c.key}/${i.key}/${s.key}`,
         iconName: 'package',
       })
     })

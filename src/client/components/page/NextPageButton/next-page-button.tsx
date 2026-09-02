@@ -6,7 +6,7 @@ import { useNavigateTo } from 'client/hooks'
 import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 
 export type NextPageButtonProps = {
-  pageKey: PageKey.foundations | PageKey.components
+  pageKey: PageKey.foundations | PageKey.library
 }
 
 type Section = { categoryKey: string; itemKey: string; sectionKey: string }
@@ -33,7 +33,7 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
         sectionKey: foundationsPageSectionKey,
       },
     },
-    [PageKey.components]: {
+    [PageKey.library]: {
       sections: COMPONENTS_PAGE_SECTIONS,
       keys: {
         categoryKey: componentsPageCategoryKey,

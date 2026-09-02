@@ -53,7 +53,7 @@ function generateSitemap() {
     '/playground',
     '/patterns',
     '/foundations',
-    '/components',
+    '/library',
     '/faq',
     '/blog',
     '/pricing',

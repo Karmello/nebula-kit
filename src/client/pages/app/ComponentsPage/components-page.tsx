@@ -30,7 +30,7 @@ export const ComponentsPage = () => {
   return (
     <CatalogPageTemplate
       pathname={pathname}
-      pageKey={PageKey.components}
+      pageKey={PageKey.library}
       data={COMPONENT_CATEGORIES}
       activeCategoryObj={activeCategoryObj}
       activeItemObj={activeItemObj}
