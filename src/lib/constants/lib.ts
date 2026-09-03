@@ -3,13 +3,13 @@ export const LIB_PREFIX = 'neb'
 
 export const BOX_COLORS = [
   'gray',
+  'red',
+  'amber',
   'green',
   'teal',
   'blue',
   'purple',
   'pink',
-  'red',
-  'amber',
 ] as const
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
