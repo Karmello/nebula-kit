@@ -33,12 +33,16 @@ html[data-theme='light'],
 }
 
 html[data-theme='light'] {
-  &[data-saturation='soft'] {
-    --neb-saturation: 54%;
+  &[data-saturation='subtle'] {
+    --neb-saturation: 42%;
+  }
+
+  &[data-saturation='balanced'] {
+    --neb-saturation: 52%;
   }
 
   &[data-saturation='vivid'] {
-    --neb-saturation: 75%;
+    --neb-saturation: 62%;
   }
 }
 

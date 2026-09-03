@@ -5,7 +5,6 @@ import { persist } from 'zustand/middleware'
 import { NebkitProviderProps } from 'lib/components'
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
-  DEFAULT_NEBKIT_PROVIDER_BRAND,
   DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
   DEFAULT_NEBKIT_PROVIDER_SATURATION,
   DEFAULT_NEBKIT_PROVIDER_THEME,
@@ -16,8 +15,6 @@ import { ApiUser } from 'client/definitions'
 export type AppStore = {
   theme: NebkitProviderProps['theme']
   setTheme: (theme: NebkitProviderProps['theme']) => void
-  brand: NebkitProviderProps['brand']
-  setBrand: (brand: NebkitProviderProps['brand']) => void
   saturation: NebkitProviderProps['saturation']
   setSaturation: (saturation: NebkitProviderProps['saturation']) => void
   borderRadiusSize: NebkitProviderProps['borderRadiusSize']
@@ -42,8 +39,6 @@ export const useAppStore = create<AppStore>()(
       ({
         theme: DEFAULT_NEBKIT_PROVIDER_THEME,
         setTheme: (theme: NebkitProviderProps['theme']) => set({ theme }),
-        brand: DEFAULT_NEBKIT_PROVIDER_BRAND,
-        setBrand: (brand: NebkitProviderProps['brand']) => set({ brand }),
         saturation: DEFAULT_NEBKIT_PROVIDER_SATURATION,
         setSaturation: (saturation: NebkitProviderProps['saturation']) => set({ saturation }),
         borderRadiusSize: DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
@@ -67,7 +62,6 @@ export const useAppStore = create<AppStore>()(
       name: `${LIB_PREFIX}.app`,
       partialize: state => ({
         theme: state.theme,
-        brand: state.brand,
         saturation: state.saturation,
         borderRadiusSize: state.borderRadiusSize,
         rippleMode: state.rippleMode,

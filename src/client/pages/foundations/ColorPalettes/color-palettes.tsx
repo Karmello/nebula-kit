@@ -1,12 +1,12 @@
+import { useState } from 'react'
 import { sentenceCase } from 'change-case'
 
 import { Box, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
-import { useAppStore } from 'client/store'
+import { DEFAULT_NEBKIT_PROVIDER_BRAND } from 'lib/components/core/NebkitProvider'
 
 export default () => {
-  const brand = useAppStore(state => state.brand)
-  const setBrand = useAppStore(state => state.setBrand)
+  const [brand, setBrand] = useState<(typeof BOX_COLORS)[number]>(DEFAULT_NEBKIT_PROVIDER_BRAND)
 
   const arr = Array.from({ length: 26 }, (v, k) => k)
 
@@ -15,7 +15,12 @@ export default () => {
       <Text>All color palettes defined in the system.</Text>
       <Spacer />
       <Text bold>Brand</Text>
-      <Select value={brand} onChange={setBrand} inlineSize="150px" scale="sm">
+      <Select
+        value={brand}
+        onChange={value => setBrand(value as (typeof BOX_COLORS)[number])}
+        inlineSize="150px"
+        scale="sm"
+      >
         {BOX_COLORS.map(brand => (
           <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
         ))}

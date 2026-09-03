@@ -1,7 +1,6 @@
 import { sentenceCase } from 'change-case'
 
 import { Box, Button, Dialog, NEB_LENGTH, Select, Spacer, Text, Title } from 'lib/components'
-import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
   NEBKIT_PROVIDER_RIPPLE_MODES,
@@ -12,8 +11,6 @@ import { useAppStore } from 'client/store'
 export const AppPrefsDialog = () => {
   const theme = useAppStore(state => state.theme)
   const setTheme = useAppStore(state => state.setTheme)
-  const brand = useAppStore(state => state.brand)
-  const setBrand = useAppStore(state => state.setBrand)
   const saturation = useAppStore(state => state.saturation)
   const setSaturation = useAppStore(state => state.setSaturation)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
@@ -77,17 +74,6 @@ export const AppPrefsDialog = () => {
               >
                 {sentenceCase('Dark')}
               </Button>
-            </Box>
-            <Box>
-              <Text bold typography="small">
-                Brand
-              </Text>
-              <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={brand} onChange={setBrand} inlineSize="150px" scale="xs">
-                {BOX_COLORS.map(brand => (
-                  <Select.Option value={brand}>{sentenceCase(brand)}</Select.Option>
-                ))}
-              </Select>
             </Box>
             <Box>
               <Text bold typography="small">
