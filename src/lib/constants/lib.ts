@@ -1,7 +1,16 @@
 export const LIB_NAME = 'NebulaKit'
 export const LIB_PREFIX = 'neb'
 
-export const BOX_COLORS = ['gray', 'green', 'blue', 'red', 'pink', 'amber'] as const
+export const BOX_COLORS = [
+  'gray',
+  'green',
+  'teal',
+  'blue',
+  'purple',
+  'pink',
+  'red',
+  'amber',
+] as const
 
 export const BREAKPOINTS = ['base', 'sm', 'md', 'lg', 'xl', 'xxl'] as const
 export const SWITCH_BREAKPOINTS = [...BREAKPOINTS.filter(bp => bp !== 'base')] as const
