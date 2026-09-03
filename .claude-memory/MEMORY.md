@@ -11,3 +11,5 @@
 - [Box token architecture validated](project_box_token_architecture_validated.md) — variant/token model is sound; friction so far is token-value mismatches (elevated-neutral, border/bg token sharing), not a design flaw
 - [Smaller commit messages](feedback_smaller_commit_messages.md) — keep commits to a short summary line, skip verbose rationale/verification recaps in the message body
 - [No em dashes](feedback_no_em_dashes.md) — never use em dashes (—) anywhere in the repo, always use normal hyphens (-)
+- [No repo check for concepts](feedback_no_repo_check_for_concepts.md) — answer general/conceptual questions directly, don't grep repo unless asked about this codebase's convention
+- [Never run dev server](feedback_never_run_dev_server.md) — running yarn dev/vite in this container crashes the container itself, never do it, not even backgrounded
