@@ -32,6 +32,16 @@ html[data-theme='light'],
   --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
 }
 
+html[data-theme='light'] {
+  &[data-saturation='soft'] {
+    --neb-saturation: 54%;
+  }
+
+  &[data-saturation='vivid'] {
+    --neb-saturation: 75%;
+  }
+}
+
 .neb-box[data-neb-box-theme='light'] {
   --light-l: var(--l-0);
   --dark-l: var(--l-25);

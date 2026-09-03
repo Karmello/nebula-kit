@@ -2,7 +2,7 @@ import { Box, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 
 export default () => {
-  const arr = Array.from({ length: 25 }, (v, k) => k + 1)
+  const arr = Array.from({ length: 24 }, (v, k) => k + 1)
 
   return (
     <Box>
