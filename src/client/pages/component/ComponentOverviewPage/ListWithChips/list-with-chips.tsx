@@ -1,5 +1,6 @@
-import { Box, NEB_LENGTH, Section, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Text } from 'lib/components'
 import { BoxColor } from 'lib/components/core/Box/types'
+import { Section } from 'client/components/reusable/Section'
 
 export const ListWithChips = ({
   heading,

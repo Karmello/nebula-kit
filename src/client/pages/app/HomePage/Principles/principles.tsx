@@ -1,4 +1,5 @@
-import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

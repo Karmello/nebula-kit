@@ -1,7 +1,6 @@
+import { type BoxIntent } from 'lib/components/core/Box'
+import { type TextTypography } from 'lib/components/core/Text'
 import type { TShirtSize } from 'lib/types'
-
-import { type BoxIntent } from '../Box'
-import { type TextTypography } from '../Text'
 
 export const SECTION_VARIANTS = ['ghost', 'outline', 'soft-outline'] as const
 export const SECTION_TAGS = ['section', 'article', 'aside', 'div'] as const

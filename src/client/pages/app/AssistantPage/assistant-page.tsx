@@ -1,4 +1,5 @@
-import { Box, NEB_LENGTH, Section } from 'lib/components'
+import { Box, NEB_LENGTH } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 
 import { ChatAssistant } from './ChatAssistant'
 

@@ -1,4 +1,5 @@
-import { Box, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 
 export default () => {
   return (

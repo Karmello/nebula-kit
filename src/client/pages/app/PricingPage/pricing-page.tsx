@@ -1,7 +1,8 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Loader, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 import { useAppStore } from 'client/store'
 
 import { PricingPlanCard } from './components/PricingPlanCard'

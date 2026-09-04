@@ -61,7 +61,6 @@ export const COMPONENT_CATEGORIES = [
     key: 'containers',
     label: 'Containers',
     items: [
-      { key: 'section', label: 'Section', sections, bundle: 'core' },
       { key: 'reveal', label: 'Reveal', sections, bundle: 'core' },
     ],
   },

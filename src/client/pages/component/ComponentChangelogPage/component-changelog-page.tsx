@@ -1,6 +1,7 @@
 import { pascalCase } from 'change-case'
 
-import { Box, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, MarkerList, Markup, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 

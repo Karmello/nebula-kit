@@ -1,18 +1,8 @@
 import { useLayoutEffect } from 'react'
 
-import {
-  Box,
-  Button,
-  Callout,
-  Link,
-  Loader,
-  NEB_LENGTH,
-  Section,
-  Spacer,
-  Table,
-  Text,
-} from 'lib/components'
+import { Box, Button, Callout, Link, Loader, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 import { useAppStore } from 'client/store'
 
 export default ({ enabled }: { enabled: boolean }) => {

@@ -43,7 +43,6 @@ import { RESIZE_META } from './Resize'
 import { REVEAL_META } from './Reveal'
 import { ROTATE_META } from './Rotate'
 import { SCALE_META } from './Scale'
-import { SECTION_META } from './Section'
 import { SELECT_META } from './Select'
 import { SELECT_OPTION_META } from './SelectOption'
 import { SIDE_NAV_META } from './SideNav'
@@ -184,9 +183,6 @@ const META = {
   },
   Scale: {
     Scale: SCALE_META,
-  },
-  Section: {
-    Section: SECTION_META,
   },
   Select: {
     Select: SELECT_META,

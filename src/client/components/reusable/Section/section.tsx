@@ -1,9 +1,9 @@
+import { Box } from 'lib/components/core/Box'
 import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
 
-import { Box } from '../Box'
 import {
   DEFAULT_SECTION_INTENT,
   DEFAULT_SECTION_SIZE,

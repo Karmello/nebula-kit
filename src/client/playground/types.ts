@@ -8,7 +8,6 @@ import { PropsFromIconButtonKey } from './components/icon-button'
 import { PropsFromInputKey } from './components/input'
 import { PropsFromLoaderKey } from './components/loader'
 import { PropsFromRevealKey } from './components/reveal'
-import { PropsFromSectionKey } from './components/section'
 import { PropsFromSelectKey } from './components/select'
 import { PropsFromSwitchKey } from './components/switch'
 import { PropsFromTableKey } from './components/table'
@@ -28,7 +27,6 @@ export type PlaygroundProp =
   | PropsFromInputKey
   | PropsFromLoaderKey
   | PropsFromRevealKey
-  | PropsFromSectionKey
   | PropsFromSelectKey
   | PropsFromSwitchKey
   | PropsFromTableKey

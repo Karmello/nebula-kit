@@ -1,4 +1,5 @@
-import { NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 
 import { AccountDeactivationForm } from './account-deactivation-form'
 

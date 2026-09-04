@@ -1,4 +1,5 @@
-import { Box, NEB_LENGTH, Reveal, Section, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Reveal, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 
 import { FAQ } from './definitions'
 

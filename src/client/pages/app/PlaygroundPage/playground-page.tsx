@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
 
-import { Box, NEB_LENGTH, Section, Spacer, SplitView } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer, SplitView } from 'lib/components'
 import { LIB_PREFIX } from 'lib/constants'
+import { Section } from 'client/components/reusable/Section'
 import { getInitialState, usePlaygroundStore } from 'client/store'
 
 import {

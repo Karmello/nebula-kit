@@ -8,7 +8,6 @@ import { PROPS_FROM_ICON_BUTTON } from './components/icon-button'
 import { PROPS_FROM_INPUT } from './components/input'
 import { PROPS_FROM_LOADER } from './components/loader'
 import { PROPS_FROM_REVEAL } from './components/reveal'
-import { PROPS_FROM_SECTION } from './components/section'
 import { PROPS_FROM_SELECT } from './components/select'
 import { PROPS_FROM_SWITCH } from './components/switch'
 import { PROPS_FROM_TABLE } from './components/table'
@@ -28,7 +27,6 @@ export const PLAYGROUND_PROPS_MAP: Record<string, readonly string[]> = {
   Input: PROPS_FROM_INPUT,
   Loader: PROPS_FROM_LOADER,
   Reveal: PROPS_FROM_REVEAL,
-  Section: PROPS_FROM_SECTION,
   Select: PROPS_FROM_SELECT,
   Switch: PROPS_FROM_SWITCH,
   Tabs: PROPS_FROM_TABS,

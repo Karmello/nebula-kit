@@ -1,20 +1,10 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import {
-  Box,
-  Button,
-  Link,
-  Loader,
-  NEB_LENGTH,
-  Section,
-  Spacer,
-  Table,
-  Text,
-  Title,
-} from 'lib/components'
+import { Box, Button, Link, Loader, NEB_LENGTH, Spacer, Table, Text, Title } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { CopyButton } from 'client/components/reusable/CopyButton'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'

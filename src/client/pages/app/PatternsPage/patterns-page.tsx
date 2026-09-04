@@ -6,13 +6,13 @@ import {
   Markup,
   MultiSelect,
   NEB_LENGTH,
-  Section,
   SideNav,
   Spacer,
   SplitView,
   Text,
 } from 'lib/components'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
+import { Section } from 'client/components/reusable/Section'
 import { useNavigateTo } from 'client/hooks'
 import { PATTERN_CATEGORIES, PATTERNS } from 'client/patterns'
 import { usePatternsStore } from 'client/store'

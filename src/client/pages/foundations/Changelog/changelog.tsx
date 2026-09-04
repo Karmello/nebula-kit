@@ -1,16 +1,7 @@
 import { useMemo } from 'react'
 
-import {
-  Box,
-  MarkerList,
-  Markup,
-  NEB_LENGTH,
-  Section,
-  Spacer,
-  Tabs,
-  Text,
-  Title,
-} from 'lib/components'
+import { Box, MarkerList, Markup, NEB_LENGTH, Spacer, Tabs, Text, Title } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
 import meta from 'client/meta'
 

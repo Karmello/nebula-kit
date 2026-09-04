@@ -9,12 +9,12 @@ import {
   Link,
   NEB_LENGTH,
   PasswordInput,
-  Section,
   Spacer,
   Text,
   useSnackbar,
 } from 'lib/components'
 import { useRegisterUser } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { UseMakeApiRequestRes, useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'

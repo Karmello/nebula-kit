@@ -1,5 +1,6 @@
-import { Box, Button, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { useConnectToGithub } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 
 export const ConnectToGithubSection = ({
   userPlan,

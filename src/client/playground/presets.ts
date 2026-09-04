@@ -8,7 +8,6 @@ import { ICON_BUTTON_PRESETS } from './components/icon-button'
 import { INPUT_PRESETS } from './components/input'
 import { LOADER_PRESETS } from './components/loader'
 import { REVEAL_PRESETS } from './components/reveal'
-import { SECTION_PRESETS } from './components/section'
 import { SELECT_PRESETS } from './components/select'
 import { SWITCH_PRESETS } from './components/switch'
 import { TABLE_PRESETS } from './components/table'
@@ -28,7 +27,6 @@ export const PLAYGROUND_PRESETS: Record<string, Array<{ name: string; props: obj
   Input: INPUT_PRESETS,
   Loader: LOADER_PRESETS,
   Reveal: REVEAL_PRESETS,
-  Section: SECTION_PRESETS,
   Select: SELECT_PRESETS,
   Switch: SWITCH_PRESETS,
   Table: TABLE_PRESETS,

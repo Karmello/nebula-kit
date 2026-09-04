@@ -1,7 +1,8 @@
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
-import { Box, Button, Input, NEB_LENGTH, Section, Spacer, Text, useSnackbar } from 'lib/components'
+import { Box, Button, Input, NEB_LENGTH, Spacer, Text, useSnackbar } from 'lib/components'
 import { useLogoutUser, useRequestEmailUpdate } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

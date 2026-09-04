@@ -1,5 +1,6 @@
-import { Box, Link, NEB_LENGTH, Section, Text, Title } from 'lib/components'
+import { Box, Link, NEB_LENGTH, Text, Title } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
+import { Section } from 'client/components/reusable/Section'
 
 type ArticleProps = {
   title: string

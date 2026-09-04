@@ -1,7 +1,8 @@
 import { kebabCase } from 'change-case'
 
-import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Button, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
+import { Section } from 'client/components/reusable/Section'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 

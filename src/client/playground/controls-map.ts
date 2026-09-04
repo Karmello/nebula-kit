@@ -30,7 +30,6 @@ export const PLAYGROUND_CONTROLS_MAP: Record<
   fontSize: { type: 'string' },
   fullWidth: { type: 'boolean' },
   heading: { type: 'string' },
-  headingIntent: { type: 'array' },
   iconName: { type: 'array' },
   iconPlacement: { type: 'array' },
   initials: { type: 'string' },

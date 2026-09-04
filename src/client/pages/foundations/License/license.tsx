@@ -1,4 +1,5 @@
-import { Box, Link, MarkerList, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { Box, Link, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { getCopyrightInfo } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'

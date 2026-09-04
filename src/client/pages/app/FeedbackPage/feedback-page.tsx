@@ -1,17 +1,9 @@
 import { FormProvider, useForm } from 'react-hook-form'
 import { Controller } from 'react-hook-form'
 
-import {
-  Box,
-  Button,
-  NEB_LENGTH,
-  Section,
-  Spacer,
-  Text,
-  Textarea,
-  useSnackbar,
-} from 'lib/components'
+import { Box, Button, NEB_LENGTH, Spacer, Text, Textarea, useSnackbar } from 'lib/components'
 import { useSendFeedback } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 
 export const FeedbackPage = () => {
   const { show } = useSnackbar()

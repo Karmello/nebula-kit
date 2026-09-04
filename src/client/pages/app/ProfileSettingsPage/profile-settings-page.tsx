@@ -1,8 +1,9 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Loader, NEB_LENGTH, Section, Spacer, useSnackbar } from 'lib/components'
+import { Box, Loader, NEB_LENGTH, Spacer, useSnackbar } from 'lib/components'
 import { useGetUser } from 'client/api'
+import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
 

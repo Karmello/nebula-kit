@@ -1,4 +1,5 @@
-import { MarkerList, Markup, Section, Text } from 'lib/components'
+import { MarkerList, Markup, Text } from 'lib/components'
+import { Section } from 'client/components/reusable/Section'
 
 export const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
   <Section heading={heading} size="sm">
