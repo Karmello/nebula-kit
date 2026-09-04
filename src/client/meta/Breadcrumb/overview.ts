@@ -12,6 +12,6 @@ export const BREADCRUMB_OVERVIEW: DocOverview = {
     'integrates cleanly with routing, configuration and non-routing flows',
     'keeps application logic and navigation policy outside the component',
   ],
-  composedOf: ['Box', 'Divider', 'Floating', 'Icon', 'Resize', 'Text'],
+  composedOf: ['Box', 'Floating', 'HorizontalRule', 'Icon', 'Resize', 'Text'],
   exposedTags: ['div', 'nav', 'section'],
 }

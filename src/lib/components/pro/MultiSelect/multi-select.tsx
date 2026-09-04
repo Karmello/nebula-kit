@@ -1,7 +1,7 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -150,7 +150,7 @@ export const MultiSelectImpl = ({
                 return (
                   <Box key={key}>
                     {isOpenDownwards ? (
-                      <Divider
+                      <HorizontalRule
                         marginBlock={NEB_LENGTH.px_000}
                         surfaceDepth="raised"
                         color={color}
@@ -200,7 +200,7 @@ export const MultiSelectImpl = ({
                       </Box>
                     </Box>
                     {!isOpenDownwards ? (
-                      <Divider
+                      <HorizontalRule
                         marginBlock={NEB_LENGTH.px_000}
                         surfaceDepth="raised"
                         color={color}

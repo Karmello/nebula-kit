@@ -1,5 +1,5 @@
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { IconButton } from 'lib/components/core/IconButton'
 import { Spacer } from 'lib/components/core/Spacer'
 
@@ -30,7 +30,7 @@ export const SideNavToggle = () => {
           }}
         />
       </Box>
-      <Divider />
+      <HorizontalRule />
       <Spacer blockSize="16px" />
     </>
   )

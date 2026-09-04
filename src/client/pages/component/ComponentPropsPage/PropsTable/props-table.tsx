@@ -3,7 +3,7 @@ import { capitalCase, kebabCase } from 'change-case'
 
 import {
   Box,
-  Divider,
+  HorizontalRule,
   Icon,
   Link,
   NEB_LENGTH,
@@ -49,7 +49,7 @@ export const PropsTable = ({ data, category }: Props) => {
       {category ? (
         <>
           <Text typography="h5">{category}</Text>
-          <Divider marginBlock={NEB_LENGTH.px_008} />
+          <HorizontalRule marginBlock={NEB_LENGTH.px_008} />
         </>
       ) : null}
 

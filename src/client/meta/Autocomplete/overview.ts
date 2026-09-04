@@ -11,7 +11,7 @@ export const AUTOCOMPLETE_OVERVIEW: DocOverview = {
     'allows debounced result updates while typing',
     'renders its dropdown without animation for maximum responsiveness',
   ],
-  composedOf: ['Box', 'Divider', 'Floating', 'IconButton', 'Input', 'Resize', 'Text'],
+  composedOf: ['Box', 'Floating', 'HorizontalRule', 'IconButton', 'Input', 'Resize', 'Text'],
   exposedTags: ['div'],
   slots: ['Autocomplete.Option'],
 }

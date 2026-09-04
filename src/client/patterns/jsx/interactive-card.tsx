@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Box, Divider, NEB_LENGTH, Spacer, Text, Title } from '@nebula-kit/core'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, Text, Title } from '@nebula-kit/core'
 import { Scale } from '@nebula-kit/pro'
 
 export const InteractiveCard = () => {
@@ -29,7 +29,7 @@ export const InteractiveCard = () => {
         </Title>
         <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>This is clickable card.</Text>
-        <Divider marginBlock={NEB_LENGTH.px_008} />
+        <HorizontalRule marginBlock={NEB_LENGTH.px_008} />
         <Text color="blue" intent="primary">
           Click to learn more
         </Text>

@@ -13,6 +13,6 @@ export const MULTI_SELECT_OVERVIEW: DocOverview = {
     'automatic dropdown positioning and viewport collision handling',
     'supports fixed trigger labels via `staticLabel`',
   ],
-  composedOf: ['Box', 'Divider', 'Floating', 'Icon', 'Resize', 'Text'],
+  composedOf: ['Box', 'Floating', 'HorizontalRule', 'Icon', 'Resize', 'Text'],
   slots: ['MultiSelect.Option'],
 }

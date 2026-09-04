@@ -1,7 +1,11 @@
 import { type DocChangelog } from 'client/definitions'
 
-export const DIVIDER_CHANGELOG: DocChangelog = {
-  '0.11.0': ['removed `surface` prop', 'changed `surface` prop to `surfaceDepth`'],
+export const HORIZONTAL_RULE_CHANGELOG: DocChangelog = {
+  '0.11.0': [
+    'renamed `Divider` to `HorizontalRule`',
+    'removed `surface` prop',
+    'changed `surface` prop to `surfaceDepth`',
+  ],
   '0.9.0': [
     'added support for predefined size scale values on margin-related props',
     'removed `opacity` prop',

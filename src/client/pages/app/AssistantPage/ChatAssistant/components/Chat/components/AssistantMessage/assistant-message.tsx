@@ -4,7 +4,7 @@ import remarkGfm from 'remark-gfm'
 
 import { Box } from 'lib/components/core/Box'
 import { Button } from 'lib/components/core/Button'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { NEB_LENGTH } from 'lib/constants'
 import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
@@ -72,7 +72,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
             return <a href={href}>{children}</a>
           },
           hr() {
-            return <Divider intent="muted" marginTop={NEB_LENGTH.px_048} />
+            return <HorizontalRule intent="muted" marginTop={NEB_LENGTH.px_048} />
           },
         }}
       >

@@ -1,4 +1,4 @@
-import { Box, Divider, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, Text } from 'lib/components'
 
 import { About } from './About'
 import { Families } from './Families'
@@ -25,10 +25,10 @@ export const HomePage = () => {
           <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
-          <Divider />
+          <HorizontalRule />
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Hero />
-          <Divider marginBlock={NEB_LENGTH.px_048} />
+          <HorizontalRule marginBlock={NEB_LENGTH.px_048} />
           <Video />
         </Box>
         <Box flex="1">

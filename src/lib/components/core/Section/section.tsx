@@ -1,7 +1,7 @@
 import { ComponentProps, PropsWithoutRef } from 'react'
 import classNames from 'classnames'
 
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
@@ -71,7 +71,7 @@ export const Section = <T extends SectionTag = 'section'>({
           {heading}
         </Text>
       </Title>
-      <Divider color={color} marginTop="4px" />
+      <HorizontalRule color={color} marginTop="4px" />
       {children ? (
         <>
           <Spacer blockSize={SECTION_SIZE_CONFIG[size || 'md'].spacerBlockSize} />

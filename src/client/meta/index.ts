@@ -17,12 +17,12 @@ import { DIALOG_META } from './Dialog'
 import { DIALOG_CONTENT_META } from './DialogContent'
 import { DIALOG_FOOTER_META } from './DialogFooter'
 import { DIALOG_HEADER_META } from './DialogHeader'
-import { DIVIDER_META } from './Divider'
 import { FADE_META } from './Fade'
 import { FLOATING_META } from './Floating'
 import { FLOATING_CONTENT_META } from './FloatingContent'
 import { FLOATING_TRIGGER_META } from './FloatingTrigger'
 import { FOCUS_TRAP_META } from './FocusTrap'
+import { HORIZONTAL_RULE_META } from './HorizontalRule'
 import { HTML_TAG_META } from './HtmlTag'
 import { ICON_META } from './Icon'
 import { ICON_BUTTON_META } from './IconButton'
@@ -115,9 +115,6 @@ const META = {
     DialogContent: DIALOG_CONTENT_META,
     DialogFooter: DIALOG_FOOTER_META,
   },
-  Divider: {
-    Divider: DIVIDER_META,
-  },
   Fade: {
     Fade: FADE_META,
   },
@@ -128,6 +125,9 @@ const META = {
   },
   FocusTrap: {
     FocusTrap: FOCUS_TRAP_META,
+  },
+  HorizontalRule: {
+    HorizontalRule: HORIZONTAL_RULE_META,
   },
   HtmlTag: {
     HtmlTag: HTML_TAG_META,

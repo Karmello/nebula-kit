@@ -2,7 +2,7 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
 
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -122,7 +122,7 @@ const BreadcrumbLevel = ({
                 return (
                   <Box key={node.value}>
                     {isOpenDownwards ? (
-                      <Divider
+                      <HorizontalRule
                         marginBlock={NEB_LENGTH.px_000}
                         surfaceDepth="raised"
                         color={color}
@@ -172,7 +172,7 @@ const BreadcrumbLevel = ({
                       </Box>
                     </Box>
                     {!isOpenDownwards ? (
-                      <Divider
+                      <HorizontalRule
                         marginBlock={NEB_LENGTH.px_000}
                         surfaceDepth="raised"
                         color={color}

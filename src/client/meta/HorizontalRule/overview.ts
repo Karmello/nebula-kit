@@ -1,6 +1,6 @@
 import type { DocOverview } from 'client/definitions'
 
-export const DIVIDER_OVERVIEW: DocOverview = {
+export const HORIZONTAL_RULE_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Boundary marker between content sections.',
   features: [

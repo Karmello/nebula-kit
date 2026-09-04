@@ -4,31 +4,31 @@ import { withPrefix } from 'lib/helpers'
 
 import { Box } from '../Box'
 import {
-  DEFAULT_DIVIDER_INTENT,
-  DEFAULT_DIVIDER_MARGIN_BLOCK,
-  DEFAULT_DIVIDER_SURFACE_DEPTH,
+  DEFAULT_HORIZONTAL_RULE_INTENT,
+  DEFAULT_HORIZONTAL_RULE_MARGIN_BLOCK,
+  DEFAULT_HORIZONTAL_RULE_SURFACE_DEPTH,
 } from './constants'
-import { DividerProps } from './types'
+import { HorizontalRuleProps } from './types'
 
-import './divider.scss'
+import './horizontal-rule.scss'
 
-export const Divider = ({
+export const HorizontalRule = ({
   // Box
   tagAttrs,
   tagRef,
   color,
-  intent = DEFAULT_DIVIDER_INTENT,
-  marginBlock = DEFAULT_DIVIDER_MARGIN_BLOCK,
+  intent = DEFAULT_HORIZONTAL_RULE_INTENT,
+  marginBlock = DEFAULT_HORIZONTAL_RULE_MARGIN_BLOCK,
   marginTop,
   marginBottom,
-  surfaceDepth = DEFAULT_DIVIDER_SURFACE_DEPTH,
-}: DividerProps) => {
+  surfaceDepth = DEFAULT_HORIZONTAL_RULE_SURFACE_DEPTH,
+}: HorizontalRuleProps) => {
   return (
     <Box
       tag="hr"
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('divider'), tagAttrs?.className),
+        className: classNames(withPrefix('horizontal-rule'), tagAttrs?.className),
       }}
       tagRef={tagRef}
       drawable
@@ -46,4 +46,4 @@ export const Divider = ({
   )
 }
 
-Divider.displayName = 'Divider'
+HorizontalRule.displayName = 'HorizontalRule'

@@ -1,7 +1,7 @@
 import { ReactElement, ReactNode, useEffect, useLayoutEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { IconButton } from 'lib/components/core/IconButton'
 import { Input } from 'lib/components/core/Input'
 import { Resize } from 'lib/components/core/Resize'
@@ -216,7 +216,7 @@ export const AutocompleteMain = ({
                   return (
                     <Box key={key}>
                       {isOpenDownwards ? (
-                        <Divider
+                        <HorizontalRule
                           marginBlock={NEB_LENGTH.px_000}
                           surfaceDepth="raised"
                           color={color}
@@ -258,7 +258,7 @@ export const AutocompleteMain = ({
                         </Box>
                       </Box>
                       {!isOpenDownwards ? (
-                        <Divider
+                        <HorizontalRule
                           marginBlock={NEB_LENGTH.px_000}
                           surfaceDepth="raised"
                           color={color}

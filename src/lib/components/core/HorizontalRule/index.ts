@@ -1,3 +1,3 @@
 export * from './constants'
-export * from './divider'
+export * from './horizontal-rule'
 export * from './types'

@@ -5,7 +5,7 @@ import { useLocation } from 'react-router'
 import {
   Box,
   Button,
-  Divider,
+  HorizontalRule,
   Input,
   Link,
   NEB_LENGTH,
@@ -187,7 +187,7 @@ export const LoginPage = () => {
             </Box>
           </FormProvider>
           <Spacer blockSize={NEB_LENGTH.px_048} />
-          <Divider />
+          <HorizontalRule />
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Box display="flex" justifyContent="center">
             <Link

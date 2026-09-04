@@ -2,7 +2,7 @@ import { memo } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { Button } from 'lib/components/core/Button'
-import { Divider } from 'lib/components/core/Divider'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Link } from 'lib/components/core/Link'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
@@ -177,7 +177,7 @@ export const CatalogPageTemplate = memo(
                             </Link>
                           ) : null}
                         </Box>
-                        <Divider marginTop={NEB_LENGTH.px_008} />
+                        <HorizontalRule marginTop={NEB_LENGTH.px_008} />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

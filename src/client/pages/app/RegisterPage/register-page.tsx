@@ -4,7 +4,7 @@ import { Controller, FormProvider, useForm } from 'react-hook-form'
 import {
   Box,
   Button,
-  Divider,
+  HorizontalRule,
   Input,
   Link,
   NEB_LENGTH,
@@ -170,7 +170,7 @@ export const RegisterPage = () => {
             </Box>
           </FormProvider>
           <Spacer blockSize={NEB_LENGTH.px_048} />
-          <Divider />
+          <HorizontalRule />
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Box display="flex" justifyContent="center">
             <Link
