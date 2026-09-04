@@ -1,8 +1,6 @@
 import { useRef } from 'react'
-import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
-import { withPrefix } from 'lib/helpers'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { syncScale } from './helpers'
@@ -56,14 +54,7 @@ export const Scale = ({
   })
 
   return (
-    <Box
-      tagRef={finalRef}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('scale'), tagAttrs?.className || ''),
-      }}
-      display="inline-block"
-    >
+    <Box tagRef={finalRef} tagAttrs={tagAttrs} display="inline-block">
       {children}
     </Box>
   )

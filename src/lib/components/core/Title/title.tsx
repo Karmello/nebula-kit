@@ -1,10 +1,7 @@
-import classNames from 'classnames'
-
 import { Box } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Text } from 'lib/components/core/Text'
 import { TYPOGRAPHY_MAP } from 'lib/constants'
-import { withPrefix } from 'lib/helpers'
 
 import { DEFAULT_TITLE_ICON_PLACEMENT, DEFAULT_TITLE_TYPOGRAPHY } from './constants'
 import { TitleProps } from './types'
@@ -39,16 +36,7 @@ export const Title = ({
   const isPlainText = typeof children === 'string' || typeof children === 'number'
 
   return (
-    <Box
-      tag="span"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('title'), tagAttrs?.className || ''),
-      }}
-      tagRef={tagRef}
-      color={color}
-      intent={intent}
-    >
+    <Box tag="span" tagAttrs={tagAttrs} tagRef={tagRef} color={color} intent={intent}>
       <Box
         display="flex"
         tag="span"

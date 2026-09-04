@@ -1,7 +1,5 @@
 import { useRef } from 'react'
-import classNames from 'classnames'
 
-import { withPrefix } from 'lib/helpers'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { Box } from '../Box'
@@ -51,14 +49,7 @@ export const Slide = ({
   })
 
   return (
-    <Box
-      tagRef={finalRef}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('slide'), tagAttrs?.className || ''),
-      }}
-      display="inline-block"
-    >
+    <Box tagRef={finalRef} tagAttrs={tagAttrs} display="inline-block">
       {children}
     </Box>
   )

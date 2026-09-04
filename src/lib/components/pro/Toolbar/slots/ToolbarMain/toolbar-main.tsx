@@ -1,8 +1,5 @@
-import classNames from 'classnames'
-
 import { Box } from 'lib/components/core/Box'
 import { Resize } from 'lib/components/core/Resize'
-import { withPrefix } from 'lib/helpers'
 
 import { useToolbarContext } from '../../providers/ToolbarProvider'
 import type { ToolbarMainProps } from './types'
@@ -14,7 +11,6 @@ export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) =>
     <Box
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('toolbar-main'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
           minInlineSize: 0,

@@ -1,5 +1,4 @@
 import { useEffect, useRef } from 'react'
-import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
 import { IconButton } from 'lib/components/core/IconButton'
@@ -7,7 +6,6 @@ import { FocusTrap } from 'lib/components/pro/FocusTrap'
 import { Portal } from 'lib/components/pro/Portal'
 import { Scale } from 'lib/components/pro/Scale'
 import { WithSlots } from 'lib/components/shared'
-import { withPrefix } from 'lib/helpers'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 
 import {
@@ -114,7 +112,6 @@ export const Dialog = ({
                         tag="dialog"
                         tagAttrs={{
                           ...tagAttrs,
-                          className: classNames(withPrefix('dialog'), tagAttrs?.className),
                           role: 'dialog',
                           'aria-modal': true,
                           onClick: e => {

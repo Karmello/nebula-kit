@@ -1,10 +1,6 @@
-import { ComponentProps, PropsWithoutRef } from 'react'
-import classNames from 'classnames'
-
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
-import { withPrefix } from 'lib/helpers'
 
 import { Box } from '../Box'
 import {
@@ -33,12 +29,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('callout'), tagAttrs?.className),
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       // variant={variant}

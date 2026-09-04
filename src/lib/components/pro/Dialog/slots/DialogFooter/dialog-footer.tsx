@@ -1,7 +1,4 @@
-import classNames from 'classnames'
-
 import { Box } from 'lib/components/core/Box'
-import { withPrefix } from 'lib/helpers'
 
 import { useDialogContext } from '../../providers/DialogProvider'
 import { DialogFooterProps } from './types'
@@ -16,10 +13,7 @@ export const DialogFooter = ({
 
   return (
     <Box
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('dialog-footer'), tagAttrs?.className),
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       // variant="outline"

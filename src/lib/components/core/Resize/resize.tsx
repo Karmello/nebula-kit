@@ -1,7 +1,4 @@
 import { useEffect, useRef } from 'react'
-import classNames from 'classnames'
-
-import { withPrefix } from 'lib/helpers'
 
 import { Box } from '../Box'
 import {
@@ -74,7 +71,6 @@ export const Resize = ({
     <Box
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('resize'), tagAttrs?.className || ''),
         inert: !visible,
         style: {
           ...tagAttrs?.style,

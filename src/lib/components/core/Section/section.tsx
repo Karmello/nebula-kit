@@ -1,11 +1,7 @@
-import { ComponentProps, PropsWithoutRef } from 'react'
-import classNames from 'classnames'
-
 import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
-import { withPrefix } from 'lib/helpers'
 
 import { Box } from '../Box'
 import {
@@ -38,12 +34,7 @@ export const Section = <T extends SectionTag = 'section'>({
   return (
     <Box
       tag={tag}
-      tagAttrs={
-        {
-          ...tagAttrs,
-          className: classNames(withPrefix('section'), tagAttrs?.className),
-        } as PropsWithoutRef<ComponentProps<T>>
-      }
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       interactive={interactive}

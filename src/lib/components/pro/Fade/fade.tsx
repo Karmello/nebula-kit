@@ -1,8 +1,6 @@
 import { useRef } from 'react'
-import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
-import { withPrefix } from 'lib/helpers'
 import { buildTransition, useVisibilityTransition } from 'lib/internals/motion'
 
 import { syncFadeOpacity } from './helpers'
@@ -48,15 +46,7 @@ export const Fade = ({
   })
 
   return (
-    <Box
-      tag="span"
-      tagRef={finalRef}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('fade'), tagAttrs?.className || ''),
-      }}
-      display="inline-block"
-    >
+    <Box tag="span" tagRef={finalRef} tagAttrs={tagAttrs} display="inline-block">
       {children}
     </Box>
   )
