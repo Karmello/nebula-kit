@@ -1,7 +1,9 @@
+import { kebabCase } from 'change-case'
+
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
+import { type IconName } from 'lib/components/core/Icon/types'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
-import { IconName } from 'lib/definitions'
 
 const Family = ({
   heading,
@@ -17,25 +19,45 @@ const Family = ({
   const navigateTo = useNavigateTo()
 
   return (
-    <Box drawable variant="ghost" intent="primary" brand="blue">
-      <Section size="md" variant="outline" intent="tertiary" heading={heading} iconName={iconName}>
+    <Box
+      drawable
+      // variant="ghost"
+      intent="primary"
+      brand="blue"
+    >
+      <Section
+        size="md"
+        variant="outline"
+        intent="tertiary"
+        heading={heading}
+        iconName={iconName}
+        headingIntent="primary"
+      >
         <Text intent="neutral">{description}</Text>
         {components ? (
           <>
-            <Spacer blockSize="md" />
-            <Flex gap="xs">
+            <Spacer blockSize={NEB_LENGTH.px_024} />
+            <Box display="flex" gap={NEB_LENGTH.px_008}>
               {components.map(c => {
-                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(s => s.itemKey === c.toLowerCase())
+                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
+                  s => s.itemKey === kebabCase(c)
+                )
                 const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
                 return (
                   <Link key={c} href={href} onClick={() => navigateTo(href)}>
-                    <Button size="sm" variant="solid" intent="tertiary" iconName="box" iconPlacement="right">
+                    <Button
+                      scale="sm"
+                      variant="solid"
+                      intent="tertiary"
+                      iconName="box"
+                      iconPlacement="right"
+                    >
                       {c}
                     </Button>
                   </Link>
                 )
               })}
-            </Flex>
+            </Box>
           </>
         ) : null}
       </Section>
@@ -45,38 +67,39 @@ const Family = ({
 
 export const Families = () => {
   return (
-    <Grid
+    <Box
+      display="grid"
       gridTemplateColumns={{
         base: '1fr',
         md: 'repeat(2, 1fr)',
         xl: 'repeat(4, 1fr)',
       }}
-      gap="sm"
+      gap={NEB_LENGTH.px_016}
     >
       <Family
         heading="Primitives"
-        description="All low-level building blocks are exposed for composing UI, allowing custom interfaces to be assembled quickly with full control and predictability."
-        iconName="puzzle"
-        components={['Box', 'Text']}
+        description="Primitive components are the simplest building blocks that lets you create higher level components just the way you want."
+        iconName="box"
+        components={['Box', 'Text', 'Icon']}
       />
       <Family
-        heading="Layout"
-        description="Powerful layout components make arranging UI straightforward by using well-known techniques like Flexbox or CSS Grid."
-        iconName="panel-top-bottom-dashed"
-        components={['Flex', 'Grid']}
-      />
-      <Family
-        heading="Navigation"
-        description="A range of navigational components makes it possible to handle different view transitions."
-        iconName="square-menu"
-        components={['Breadcrumb', 'Pagination']}
-      />
-      <Family
-        heading="Forms"
-        description="Form components simplify form bootstrapping while remaining consistent with system surfaces and UI."
+        heading="Form"
+        description="Form elements provide consistent controls for collecting and selecting user input."
         iconName="text-select"
-        components={['Form', 'Input']}
+        components={['Input', 'Select']}
       />
-    </Grid>
+      <Family
+        heading="Overlays"
+        description="Overlay components handle layered UI patterns like dialogs, tooltips and floating surfaces."
+        iconName="layers"
+        components={['Dialog', 'Tooltip']}
+      />
+      <Family
+        heading="Motion"
+        description="Motion components lets you add simple animations without a need for a third party library."
+        iconName="orbit"
+        components={['Resize', 'Scale']}
+      />
+    </Box>
   )
 }

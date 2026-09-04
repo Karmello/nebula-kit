@@ -1,5 +1,8 @@
-import { CodeSnippet } from 'client/components'
-import { Box, Spacer, Text } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (
@@ -7,13 +10,18 @@ export default () => {
       <Text intent="neutral" bold>
         NebulaKit works smoothly with Webpack 5.
       </Text>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text intent="neutral">
-        The only requirement is to ensure Webpack can process CSS files, since NebulaKit ships styles as plain CSS. If you already
-        have a React + Webpack setup, you only need a small addition to your configuration.
+        The only requirement is to ensure Webpack can process CSS files, since NebulaKit ships
+        styles as plain CSS. If you already have a React + Webpack setup, you only need a small
+        addition to your configuration.
       </Text>
       <Spacer />
-      <CodeSnippet lang="bash" code={`npm install --save-dev style-loader css-loader`} description="Install the loaders:" />
+      <CodeSnippet
+        lang="bash"
+        code={`npm install --save-dev style-loader css-loader`}
+        description="Install the loaders:"
+      />
       <Spacer />
       <CodeSnippet
         lang="tsx"
@@ -29,8 +37,11 @@ export default () => {
 }`}
         description="Then add this rule to your webpack.config.js:"
       />
-      <Spacer blockSize="lg" />
-      <Text>Then import styles and wrap your entire App with NebkitProvider the same as in the Vite example.</Text>
+      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Text>
+        Then import styles and wrap your entire App with NebkitProvider the same as in the Vite
+        example.
+      </Text>
     </Box>
   )
 }

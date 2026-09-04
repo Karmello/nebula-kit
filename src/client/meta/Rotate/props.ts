@@ -1,17 +1,16 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
+import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING } from 'lib/components/core/Rotate/rotate'
+import { RotateProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { DEFAULT_ROTATE_DURATION, DEFAULT_ROTATE_EASING, RotateProps } from 'lib/components/core/motion/Rotate'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
+export const ROTATE_PROPS: Record<keyof RotateProps, DocProp> = {
   angle: {
     options: ['number'],
     isRequired: true,
-    description: 'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
+    description:
+      'Rotation angle of the content in degrees. Changing the value triggers a rotation animation.',
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content being rotated.',
   },
@@ -21,12 +20,16 @@ const ROTATE_PROPS_META: ComponentMeta<RotateProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: [DOCS_CSS_LABEL],
+    options: ['string'],
     defaultValue: DEFAULT_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }
-
-export { ROTATE_PROPS_META }

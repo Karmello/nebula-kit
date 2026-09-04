@@ -1,15 +1,13 @@
 import { pascalCase } from 'change-case'
 
+import { Box, MarkerList, Markup, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import meta from 'client/meta'
-import { PageKey } from 'client/definitions'
-import { useCorePageStore, useProPageStore } from 'client/store'
-import { Box, Flex, MarkerList, Markup, Section, Spacer, Text } from 'lib/components'
+import { useComponentsPageStore } from 'client/store'
 
-export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+export const ComponentChangelogPage = () => {
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 
@@ -19,7 +17,7 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Flex flexDirection="column" alignItems="stretch" gap="lg">
+        <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
           {versionKeys.map(vKey => (
             <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
               <MarkerList>
@@ -33,9 +31,9 @@ export const ComponentChangelogPage = ({ pageKey }: { pageKey: PageKey.core | Pa
               </MarkerList>
             </Section>
           ))}
-        </Flex>
+        </Box>
       </Box>
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize={NEB_LENGTH.px_064} />
     </>
   )
 }

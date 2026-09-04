@@ -1,9 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Button, Image, Link, LinkProps, Text } from 'lib/components'
+import { Button, IconButton, Image, Link, Text } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-import img1 from 'client/assets/img-1.webp'
-
-const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
+export const LINK_EXAMPLES: DocExample[] = [
   {
     jsx: (
       <Link href="https://google.com">
@@ -15,10 +13,10 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     jsx: (
       <Link href="https://google.com" target="_blank">
-        <Button iconName="external-link" intent="primary" />
+        <IconButton iconName="external-link" intent="primary" />
       </Link>
     ),
-    description: 'Using Link to make Button open an external page in a new tab.',
+    description: 'Using Link to make IconButton open an external page in a new tab.',
   },
   {
     jsx: (
@@ -57,11 +55,9 @@ const LINK_EXAMPLES_META: ComponentMeta<LinkProps>['examples'] = [
   {
     description: 'Using Link together with Image.',
     jsx: (
-      <Link href="https://google.com" target="_blank">
-        <Image src={img1} display="inline-block" inlineSize="300px" />
+      <Link href="https://google.com" target="_blank" composeMode="wrap">
+        <Image src="/imgs/town.webp" display="inline-block" inlineSize="300px" />
       </Link>
     ),
   },
 ]
-
-export { LINK_EXAMPLES_META }

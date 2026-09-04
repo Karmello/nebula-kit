@@ -1,12 +1,12 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { PageKey, FOUNDATIONS_SECTIONS, CORE_PAGE_SECTIONS, PRO_PAGE_SECTIONS } from 'client/definitions'
-import { useCorePageStore, useFoundationsPageStore, useProPageStore } from 'client/store'
+import { Box, Button, Link } from 'lib/components'
+import { COMPONENTS_PAGE_SECTIONS, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Flex, Button, Link } from 'lib/components'
+import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
 
 export type NextPageButtonProps = {
-  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
+  pageKey: PageKey.foundations | PageKey.library
 }
 
 type Section = { categoryKey: string; itemKey: string; sectionKey: string }
@@ -19,12 +19,10 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
-  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
-  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
-  const proPageSectionKey = useProPageStore(state => state.sectionKey)
+
+  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   const MAP = {
     [PageKey.foundations]: {
@@ -35,20 +33,12 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
         sectionKey: foundationsPageSectionKey,
       },
     },
-    [PageKey.core]: {
-      sections: CORE_PAGE_SECTIONS,
+    [PageKey.library]: {
+      sections: COMPONENTS_PAGE_SECTIONS,
       keys: {
-        categoryKey: corePageCategoryKey,
-        itemKey: corePageItemKey,
-        sectionKey: corePageSectionKey,
-      },
-    },
-    [PageKey.pro]: {
-      sections: PRO_PAGE_SECTIONS,
-      keys: {
-        categoryKey: proPageCategoryKey,
-        itemKey: proPageItemKey,
-        sectionKey: proPageSectionKey,
+        categoryKey: componentsPageCategoryKey,
+        itemKey: componentsPageItemKey,
+        sectionKey: componentsPageSectionKey,
       },
     },
   }
@@ -59,7 +49,10 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
 
   const keys = MAP[pageKey].keys
   const currentSectionIndex = sections.findIndex(
-    s => s.categoryKey === keys.categoryKey && s.itemKey === keys.itemKey && s.sectionKey === keys.sectionKey
+    s =>
+      s.categoryKey === keys.categoryKey &&
+      s.itemKey === keys.itemKey &&
+      s.sectionKey === keys.sectionKey
   )
 
   const nextSectionIndex = currentSectionIndex + 1
@@ -72,17 +65,17 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const href = `${pageKey}/${categoryKey}/${itemKey}/${sectionKey}`
 
   return (
-    <Flex justifyContent={{ base: 'center', lg: 'flex-start' }}>
+    <Box display="flex" justifyContent={{ base: 'center', lg: 'flex-start' }}>
       <Link
         href={href}
         onClick={() => {
           navigateTo(href)
         }}
       >
-        <Button iconName="arrow-right" iconPlacement="right" intent="primary" size="sm">
+        <Button iconName="arrow-right" iconPlacement="right" intent="primary" scale="sm">
           Continue
         </Button>
       </Link>
-    </Flex>
+    </Box>
   )
 }

@@ -1,16 +1,17 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Textarea, TextareaProps } from 'lib/components'
+import { Textarea } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const TextareaControlled = () => {
   const [value, setValue] = useState<string>('value')
   return <Textarea value={value} onChange={setValue} />
 }
 
-const TEXTAREA_EXAMPLES_META: ComponentMeta<TextareaProps>['examples'] = [
+export const TEXTAREA_EXAMPLES: DocExample[] = [
   {
-    description: 'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Textarea used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: <Textarea defaultValue="default value" />,
   },
   {
@@ -27,5 +28,3 @@ return (
     jsx: <Textarea defaultValue="default value" disabled />,
   },
 ]
-
-export { TEXTAREA_EXAMPLES_META }

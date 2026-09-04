@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, BoxProps } from 'lib/components'
+import { Box } from 'lib/components/core/Box/box'
+import { type DocExample } from 'client/definitions'
 
-const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
+export const BOX_EXAMPLES: DocExample[] = [
   {
     jsx: <Box>Default box</Box>,
     description:
@@ -9,7 +9,11 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+      >
         Box is a block
       </Box>
     ),
@@ -17,7 +21,12 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+      >
         Padded box
       </Box>
     ),
@@ -25,7 +34,13 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" textAlign="center">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+        textAlign="center"
+      >
         Centered content
       </Box>
     ),
@@ -33,7 +48,13 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" display="inline-block">
+      <Box
+        drawable
+        // variant="outline"
+        intent="primary"
+        padding="20px"
+        display="inline-block"
+      >
         Box as inline block
       </Box>
     ),
@@ -41,7 +62,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable interactive variant="solid" intent="primary" padding="20px">
+      <Box interactive bgMode="filled" intent="primary" padding="20px">
         Interactive Box
       </Box>
     ),
@@ -49,12 +70,10 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable interactive disabled variant="solid" intent="primary" padding="20px">
+      <Box interactive disabled bgMode="filled" intent="primary" padding="20px">
         Disabled Box
       </Box>
     ),
     description: 'Interactive Box in disabled state.',
   },
 ]
-
-export { BOX_EXAMPLES_META }

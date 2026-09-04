@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Section, SectionProps } from 'lib/components'
+import { Section } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
+export const SECTION_EXAMPLES: DocExample[] = [
   {
     description: 'Default section with a heading and body content.',
     jsx: <Section heading="Section heading">Section content area</Section>,
@@ -31,5 +31,3 @@ const SECTION_EXAMPLES_META: ComponentMeta<SectionProps>['examples'] = [
     ),
   },
 ]
-
-export { SECTION_EXAMPLES_META }

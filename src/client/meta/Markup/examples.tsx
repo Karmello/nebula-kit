@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { MarkerList, Markup, MarkupProps, Text } from 'lib/components'
+import { MarkerList, Text } from 'lib/index.core'
+import { Markup } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const MARKUP_EXAMPLES_META: ComponentMeta<MarkupProps>['examples'] = [
+export const MARKUP_EXAMPLES: DocExample[] = [
   {
     description: 'Basic inline formatting.',
     jsx: (
@@ -55,5 +56,3 @@ const MARKUP_EXAMPLES_META: ComponentMeta<MarkupProps>['examples'] = [
     ),
   },
 ]
-
-export { MARKUP_EXAMPLES_META }

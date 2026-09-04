@@ -1,7 +1,9 @@
 import { useRef, useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Box, Button, Portal, PortalProps } from 'lib/components'
+import { Portal } from 'lib/components/pro/Portal/portal'
+import { type PortalProps } from 'lib/components/pro/Portal/types'
+import { Box, Button } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -14,7 +16,7 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
       </Button>
       {visible ? (
         <Portal anchorRef={buttonRef} placement={placement} offset={15}>
-          <Box drawable variant="solid" color="blue" intent="primary" padding="25px">
+          <Box drawable bgMode="filled" color="blue" intent="primary" padding="25px">
             This is Portal content
           </Box>
         </Portal>
@@ -23,7 +25,7 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
   )
 }
 
-const PORTAL_EXAMPLES_META: ComponentMeta<PortalProps>['examples'] = [
+export const PORTAL_EXAMPLES: DocExample[] = [
   {
     code: `const [visible, setVisible] = useState<boolean>(false)
 const buttonRef = useRef<HTMLButtonElement>(null)
@@ -105,5 +107,3 @@ return (
     noCode: true,
   },
 ]
-
-export { PORTAL_EXAMPLES_META }

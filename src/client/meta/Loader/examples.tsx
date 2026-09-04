@@ -1,17 +1,19 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, Loader, LoaderProps } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Loader } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
+export const LOADER_EXAMPLES: DocExample[] = [
   {
     description: 'Default loader.',
     jsx: <Loader />,
   },
   {
     description: 'Custom loader.',
-    jsx: <Loader size="lg" color="blue" />,
+    jsx: <Loader size="48px" color="blue" />,
   },
   {
-    description: 'Absolutely centered Loader rendered inside a parent container with position set to relative.',
+    description:
+      'Absolutely centered Loader rendered inside a parent container with position set to relative.',
     jsx: (
       <Box position="relative">
         <Loader centered />
@@ -19,5 +21,3 @@ const LOADER_EXAMPLES_META: ComponentMeta<LoaderProps>['examples'] = [
     ),
   },
 ]
-
-export { LOADER_EXAMPLES_META }

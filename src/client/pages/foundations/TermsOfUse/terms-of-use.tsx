@@ -1,6 +1,6 @@
+import { Box, Link, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { Box, Link, MarkerList, Spacer, Text } from 'lib/components'
 
 export default () => {
   const navigateTo = useNavigateTo()
@@ -8,12 +8,13 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        NebulaKit is provided for developers building user interfaces and digital products. By installing, accessing or using
-        NebulaKit or any related materials, you agree to be bound by the NebulaKit License.
+        NebulaKit is provided for developers building user interfaces and digital products. By
+        installing, accessing or using NebulaKit or any related materials, you agree to be bound by
+        the NebulaKit License.
       </Text>
       <Spacer />
       <Text>The license defines:</Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <MarkerList>
         <MarkerList.Item>
           <Text>permitted and prohibited uses of the library</Text>
@@ -34,14 +35,14 @@ export default () => {
           <Text>liability and warranty disclaimers</Text>
         </MarkerList.Item>
       </MarkerList>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>If you do not agree to the license, you may not use NebulaKit.</Text>
-      <Spacer blockSize="md" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <Text>
-        NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or removed. Notable changes are
-        documented in the changelog.
+        NebulaKit may evolve over time. Features, APIs and bundles may be added, modified or
+        removed. Notable changes are documented in the changelog.
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
         <Text tag="span" space="end">
           For full legal terms, see the
@@ -58,7 +59,7 @@ export default () => {
         </Link>
         .
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>For questions regarding these terms, contact via email.</Text>
     </Box>
   )

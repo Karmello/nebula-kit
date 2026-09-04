@@ -1,17 +1,27 @@
 import { memo } from 'react'
 
-import meta from 'client/meta'
+import { Box } from 'lib/components/core/Box'
+import { Button } from 'lib/components/core/Button'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
+import { Link } from 'lib/components/core/Link'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { SideNav } from 'lib/components/pro/SideNav'
+import { SplitView } from 'lib/components/pro/SplitView'
+import { NEB_LENGTH } from 'lib/constants'
+import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { ComponentsPageRoutes, FoundationsPageRoutes } from 'client/pages'
-import { usePlaygroundStore } from 'client/pages/app/PlaygroundPage/store'
-import { PageKey, PLAYGROUND_PROPS_MAP } from 'client/definitions'
-import { Box, SideNav, Spacer, SplitView, Text, Divider, Flex, Link, Button } from 'lib/components'
+import meta from 'client/meta'
+import { ComponentsPageRoutes } from 'client/pages/routes/ComponentsPageRoutes'
+import { FoundationsPageRoutes } from 'client/pages/routes/FoundationsPageRoutes'
+import { PLAYGROUND_PROPS_MAP } from 'client/playground'
+import { usePlaygroundStore } from 'client/store'
 
 import { CatalogPageBreadcrumb } from './CatalogPageBreadcrumb'
 
 type Props = {
   pathname: string
-  pageKey: PageKey.foundations | PageKey.core | PageKey.pro
+  pageKey: PageKey.foundations | PageKey.library
   data: {
     key: string
     label: string
@@ -35,7 +45,10 @@ export const CatalogPageTemplate = memo(
       <SplitView>
         {({ mode, setSideOpen }) => (
           <>
-            <SplitView.Side inlineSize={{ base: '275px', lg: '225px' }}>
+            <SplitView.Side
+              inlineSize={{ base: '275px', lg: '225px' }}
+              blockSize={{ lg: 'calc(100dvh - 125px)' }}
+            >
               <SideNav expandMode="single">
                 {data.map(({ key: categoryKey, label, items }) => {
                   const isCategorySelected = activeCategoryObj?.key === categoryKey
@@ -61,7 +74,6 @@ export const CatalogPageTemplate = memo(
                               }
                               navigateTo(href)
                             }}
-                            intent={{ base: 'tertiary', lg: 'neutral' }}
                             selected={isItemSelected}
                             bold={isItemSelected}
                           >
@@ -74,9 +86,9 @@ export const CatalogPageTemplate = memo(
                 })}
               </SideNav>
             </SplitView.Side>
-            <SplitView.Main paddingLeft="md">
+            <SplitView.Main paddingLeft={NEB_LENGTH.px_024}>
               <SplitView.MainBar>
-                <Box marginRight="md">
+                <Box marginRight={NEB_LENGTH.px_024}>
                   <CatalogPageBreadcrumb
                     pageKey={pageKey.replace('/', '')}
                     categoryKey={activeCategoryObj?.key}
@@ -85,7 +97,7 @@ export const CatalogPageTemplate = memo(
                   />
                 </Box>
               </SplitView.MainBar>
-              <Spacer blockSize="md" />
+              <Spacer blockSize={NEB_LENGTH.px_024} />
               <SplitView sidePosition="right">
                 {({ mode, setSideOpen }) => (
                   <>
@@ -107,7 +119,6 @@ export const CatalogPageTemplate = memo(
                                   }
                                   navigateTo(href)
                                 }}
-                                intent={{ base: 'tertiary', lg: 'neutral' }}
                                 selected={isItemSelected}
                                 bold={isItemSelected}
                               >
@@ -117,20 +128,29 @@ export const CatalogPageTemplate = memo(
                           })}
                       </SideNav>
                     </SplitView.Side>
-                    <SplitView.Main paddingRight="20px">
+                    <SplitView.Main paddingRight={NEB_LENGTH.px_024}>
                       <SplitView.MainBar>
-                        <Flex columnGap="sm" rowGap="2xs" alignItems="center" flexWrap="wrap">
+                        <Box
+                          display="flex"
+                          columnGap={NEB_LENGTH.px_016}
+                          rowGap={NEB_LENGTH.px_004}
+                          alignItems="center"
+                          flexWrap="wrap"
+                        >
                           <Text typography="h3">
-                            {pageKey === PageKey.foundations.toString() ? activeSectionObj?.label : activeItemObj?.label}
+                            {pageKey === PageKey.foundations.toString()
+                              ? activeSectionObj?.label
+                              : activeItemObj?.label}
                           </Text>
                           {pageKey !== PageKey.foundations.toString() && bundleLabel ? (
                             <Box
                               drawable
-                              variant="solid"
-                              intent="tertiary"
-                              borderRadius="10px"
-                              paddingBlock="6px"
-                              paddingInline="9px"
+                              bgMode="filled"
+                              intent="muted"
+                              color="amber"
+                              borderRadius={NEB_LENGTH.px_012}
+                              paddingBlock={NEB_LENGTH.px_006}
+                              paddingInline={NEB_LENGTH.px_008}
                             >
                               <Text typography="small">{bundleLabel}</Text>
                             </Box>
@@ -146,7 +166,7 @@ export const CatalogPageTemplate = memo(
                               <Button
                                 iconName="arrow-right"
                                 iconPlacement="right"
-                                size="xs"
+                                scale="xs"
                                 variant="ghost"
                                 intent="primary"
                                 color="blue"
@@ -156,8 +176,8 @@ export const CatalogPageTemplate = memo(
                               </Button>
                             </Link>
                           ) : null}
-                        </Flex>
-                        <Divider marginTop="xs" />
+                        </Box>
+                        <HorizontalRule marginTop={NEB_LENGTH.px_008} />
                       </SplitView.MainBar>
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />

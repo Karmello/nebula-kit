@@ -1,6 +1,5 @@
 import { Button } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { usePlaygroundStore } from 'client/store'
 
 export const SwitchPropViewButton = () => {
   const components = usePlaygroundStore(state => state.components)
@@ -16,17 +15,17 @@ export const SwitchPropViewButton = () => {
   return (
     <Button
       intent="primary"
-      size="sm"
+      scale="sm"
       fullWidth
       iconName="screen-share"
-      tagAttrs={{
-        onClick: () => {
-          if (typeof value !== 'object') {
-            setPropField(activeComponent, activeProp, 'value', { base: value })
-          } else {
-            setPropField(activeComponent, activeProp, 'value', value.base)
-          }
-        },
+      iconPlacement="right"
+      align="split"
+      onClick={() => {
+        if (typeof value !== 'object') {
+          setPropField(activeComponent, activeProp, 'value', { base: value })
+        } else {
+          setPropField(activeComponent, activeProp, 'value', value.base)
+        }
       }}
     >
       {typeof value === 'object' ? 'Responsive values: ON' : 'Responsive values: OFF'}

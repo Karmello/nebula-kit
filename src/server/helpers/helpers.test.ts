@@ -1,6 +1,6 @@
 import META from 'client/meta'
 
-import { getHtmlMetaData, DEFAULT_TITLE, DEFAULT_DESCRIPTION } from './helpers'
+import { DEFAULT_DESCRIPTION, DEFAULT_TITLE, getHtmlMetaData } from './helpers'
 
 describe('server / helpers / getHtmlMetaData', () => {
   it('path /', () => {
@@ -24,17 +24,17 @@ describe('server / helpers / getHtmlMetaData', () => {
     })
   })
 
-  it('path /foundations/overview/introduction/why-nebula', () => {
-    expect(getHtmlMetaData('/foundations/overview/introduction/why-nebula')).toEqual({
-      title: 'NebulaKit | Foundations | Overview | Introduction | Why Nebula',
+  it('path /foundations/overview/introduction/about-nebula-kit', () => {
+    expect(getHtmlMetaData('/foundations/overview/introduction/about-nebula-kit')).toEqual({
+      title: 'NebulaKit | Foundations | Overview | Introduction | About Nebula Kit',
       description: DEFAULT_DESCRIPTION,
     })
   })
 
-  it('path /core/base/html-tag/overview', () => {
-    expect(getHtmlMetaData('/core/base/html-tag/overview')).toEqual({
-      title: 'NebulaKit | Core | Base | HtmlTag | Overview',
-      description: META.HtmlTag.HtmlTag.overview.title,
+  it('path /core/base/box/overview', () => {
+    expect(getHtmlMetaData('/core/base/box/overview')).toEqual({
+      title: 'NebulaKit | Core | Base | Box | Overview',
+      description: META.Box.Box.overview.title,
     })
   })
 

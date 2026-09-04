@@ -1,9 +1,13 @@
-import { DOCS_CSS_LABEL, PLAYGROUND_ARRAY_DATA_MAP, PLAYGROUND_CONTROLS_MAP, PlaygroundProp } from 'client/definitions'
-import { Input, Button, Text, Spacer, Select } from 'lib/components'
-import { Breakpoint } from 'lib/definitions'
-
-import { usePlaygroundStore } from '../../../../store'
 import { sentenceCase } from 'change-case'
+
+import { Box, IconButton, Input, NEB_LENGTH, Select, Spacer, Text } from 'lib/components'
+import { Breakpoint } from 'lib/types'
+import {
+  PLAYGROUND_ARRAY_DATA_MAP,
+  PLAYGROUND_CONTROLS_MAP,
+  PlaygroundProp,
+} from 'client/playground'
+import { usePlaygroundStore } from 'client/store'
 
 export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
   const components = usePlaygroundStore(state => state.components)
@@ -46,16 +50,26 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
 
   return (
     <>
-      <Text bold>{bp ? `${activeProp} [${bp}]` : sentenceCase(activeProp)}</Text>
-      <Spacer blockSize="2xs" />
+      <Text bold>{bp ? `${sentenceCase(activeProp)} [${bp}]` : sentenceCase(activeProp)}</Text>
+      <Spacer blockSize={NEB_LENGTH.px_004} />
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'string' ? (
-        <Input
-          placeholder="..."
-          value={value}
-          onChange={onChange}
-          endAffix={props => <Button {...props} iconName="close" tagAttrs={{ onClick: () => onChange('') }} />}
-        />
+        <Box display="flex">
+          <Box flex="1">
+            <Input
+              tagAttrs={{ style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 } }}
+              placeholder="..."
+              value={value}
+              onChange={onChange}
+            />
+          </Box>
+          <IconButton
+            tagAttrs={{ style: { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } }}
+            iconName="close"
+            onClick={() => onChange('')}
+            scale="md"
+          />
+        </Box>
       ) : null}
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'boolean' ? (
@@ -67,9 +81,11 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
       ) : null}
 
       {PLAYGROUND_CONTROLS_MAP[activeProp as PlaygroundProp].type === 'array' ? (
-        <Select value={value} onChange={onChange} scrollAlign="center">
+        <Select value={value} onChange={onChange}>
           <Select.Option value="">...</Select.Option>
-          {(PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options.filter(o => o !== DOCS_CSS_LABEL)).map(option => (
+          {(
+            PLAYGROUND_ARRAY_DATA_MAP[prop.options[0]] || prop.options.filter(o => o !== 'string')
+          ).map(option => (
             <Select.Option key={option} value={option}>
               {option}
             </Select.Option>

@@ -1,17 +1,16 @@
-import { ComponentMeta } from 'client/definitions'
-import { SnackbarProps } from 'lib/components'
-
+import { CALLOUT_STATUSES, DEFAULT_CALLOUT_STATUS } from 'lib/components/core/Callout'
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
   DEFAULT_SNACKBAR_CLOSE_ON_OUTSIDE_CLICK,
   DEFAULT_SNACKBAR_INLINE_SIZE,
   DEFAULT_SNACKBAR_PLACEMENT,
   SNACKBAR_PLACEMENTS,
-} from 'lib/components/pro/feedback/Snackbar'
+} from 'lib/components/pro/Snackbar/constants'
+import { UseSnackbarShowArgs } from 'lib/components/pro/Snackbar/types'
+import { SnackbarProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-
-const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
+export const SNACKBAR_PROPS: Record<keyof SnackbarProps, DocProp> = {
   autoCloseDelay: {
     options: ['number'],
     defaultValue: String(DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY),
@@ -28,7 +27,9 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
     description: 'Closes the snackbar when the user clicks outside of its surface.',
   },
   inlineSize: {
-    ...BOX_PROPS_META.inlineSize,
+    options: ['string'],
+    isResponsive: true,
+    link: true,
     defaultValue: String(DEFAULT_SNACKBAR_INLINE_SIZE),
     description: 'Logical inline size of the snackbar container.',
   },
@@ -39,4 +40,25 @@ const SNACKBAR_PROPS_META: ComponentMeta<SnackbarProps>['props'] = {
   },
 }
 
-export { SNACKBAR_PROPS_META }
+export const USE_SNACKBAR_PROPS: Record<keyof UseSnackbarShowArgs, DocProp> = {
+  content: {
+    options: ['string'],
+    isRequired: true,
+    description: 'Message text content displayed in the snackbar.',
+  },
+  heading: {
+    options: ['string'],
+    description: 'Overrides default heading of the snackbar message.',
+  },
+  placement: {
+    options: SNACKBAR_PLACEMENTS,
+    defaultValue: DEFAULT_SNACKBAR_PLACEMENT,
+    description: 'Overrides the default placement for the opened snackbar.',
+  },
+  status: {
+    options: CALLOUT_STATUSES,
+    defaultValue: DEFAULT_CALLOUT_STATUS,
+    isRequired: true,
+    description: 'Defines the message type of the snackbar.',
+  },
+}

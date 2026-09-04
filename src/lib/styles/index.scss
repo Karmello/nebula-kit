@@ -1,6 +1,6 @@
 @use './palette/_index' as *;
 @use './themes/_index' as *;
-@use './engine/_index' as *;
+@use './depths/_index' as *;
 @use './tokens/_index' as *;
 
 html {
@@ -21,8 +21,13 @@ html {
   }
 }
 
-html.neb-transitions {
-  .neb-box[data-neb-box-drawable='true'][data-neb-box-transitions='true'] {
+html:not([data-neb-hydrated]) #root {
+  visibility: hidden;
+  pointer-events: none;
+}
+
+html[data-neb-enable-global-transitions] {
+  .neb-box[data-neb-box-drawable='true'][data-neb-box-enable-transitions='true'] {
     transition:
       background-color 0.15s linear,
       border-color 0.15s linear,
@@ -41,17 +46,6 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
-}
-
-a,
-button,
-[role='button'] {
-  -webkit-tap-highlight-color: transparent;
-}
-
-code {
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
-  line-height: 1;
 }
 
 ::selection {

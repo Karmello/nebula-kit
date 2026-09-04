@@ -1,59 +1,80 @@
-import { ComponentMeta } from 'client/definitions'
-
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
-  DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_INTENT,
+  DEFAULT_SECTION_SIZE,
   DEFAULT_SECTION_VARIANT,
-  SECTION_SIZES,
   SECTION_VARIANTS,
-  SectionProps,
-} from 'lib/components/core/containers/Section'
+} from 'lib/components/core/Section/constants'
+import {
+  DEFAULT_TITLE_ICON_PLACEMENT,
+  TITLE_ICON_PLACEMENTS,
+} from 'lib/components/core/Title/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
+import { SectionProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-import { TEXT_PROPS_META } from '../Text/props'
-import { WITH_ICON_PROPS_META } from '../WithIcon/props'
-
-const SECTION_PROPS_META: ComponentMeta<SectionProps>['props'] = {
-  ...HTML_TAG_PROPS_META,
+export const SECTION_PROPS: Record<keyof SectionProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Content rendered.',
   },
-  color: BOX_PROPS_META.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   heading: {
     options: ['string'],
     isRequired: true,
     description: 'Heading text.',
   },
   headingIntent: {
-    ...TEXT_PROPS_META.intent,
+    options: BOX_INTENTS,
     description: "Color tone applied to the component's heading text.",
   },
-  iconName: WITH_ICON_PROPS_META.iconName,
+  iconName: {
+    options: ['IconName'],
+    isResponsive: true,
+    description: 'Name of the icon to render.',
+  },
   iconPlacement: {
-    ...WITH_ICON_PROPS_META.iconPlacement,
+    options: TITLE_ICON_PLACEMENTS as unknown as string[],
+    defaultValue: DEFAULT_TITLE_ICON_PLACEMENT,
+    isRequired: false,
+    isResponsive: false,
     description: 'Icon placement relative to heading.',
   },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_SECTION_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
-  interactive: BOX_PROPS_META.interactive,
+  interactive: {
+    options: ['boolean'],
+    description:
+      'Enables visual interaction affordances such as hover and active styling. Sets drawable to true automatically.',
+  },
   size: {
-    options: SECTION_SIZES as unknown as string[],
+    options: TSHIRT_SIZES,
     defaultValue: DEFAULT_SECTION_SIZE,
     description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
+    options: ['HTML tag'],
     defaultValue: 'section',
+    description: 'The HTML tag to be rendered as the container.',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
   },
   variant: {
-    ...BOX_PROPS_META.variant,
-    options: SECTION_VARIANTS as unknown as string[],
-    defaultValue: DEFAULT_SECTION_VARIANT,
+    options: SECTION_VARIANTS,
+    defaultValue: String(DEFAULT_SECTION_VARIANT),
+    description: 'Visual style variant.',
   },
 }
-
-export { SECTION_PROPS_META }

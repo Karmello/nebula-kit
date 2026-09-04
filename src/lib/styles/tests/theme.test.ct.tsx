@@ -1,10 +1,10 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { expect, test } from '@playwright/experimental-ct-react'
 
 import { Box } from 'lib/components'
 
 test('Box resolves default primary solid styling', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" blockSize="200px">
+    <Box tagAttrs={{ id: 'box' }} drawable bgMode="filled" intent="primary" blockSize="200px">
       Box
     </Box>
   )
@@ -16,16 +16,14 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
     return {
       theme: el.dataset.nebBoxTheme,
       color: el.dataset.nebBoxColor,
-      variant: el.dataset.nebBoxVariant,
       intent: el.dataset.nebBoxIntent,
-      main: styles.getPropertyValue('--main-l').trim(),
+      main: styles.getPropertyValue('--l').trim(),
       bg: styles.getPropertyValue('--bg').trim(),
     }
   })
 
   expect(result.theme).toBe('light')
   expect(result.color).not.toBe('')
-  expect(result.variant).toBe('solid')
   expect(result.intent).toBe('primary')
 
   expect(result.main).not.toBe('')
@@ -34,8 +32,15 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
 
 test('Nested Box resolves same primary solid styling as parent', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -57,8 +62,8 @@ test('Nested Box resolves same primary solid styling as parent', async ({ mount,
       childTheme: child.dataset.nebBoxTheme,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--l').trim(),
+      childMain: childStyles.getPropertyValue('--l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -84,11 +89,24 @@ test('Nested Box resolves same primary solid styling as parent', async ({ mount,
 test('Local dark theme produces same result as global dark theme', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'local-dark' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px">
+      <Box
+        tagAttrs={{ id: 'local-dark' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        theme="dark"
+        blockSize="200px"
+      >
         Local Dark
       </Box>
 
-      <Box tagAttrs={{ id: 'global-dark' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box
+        tagAttrs={{ id: 'global-dark' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        blockSize="200px"
+      >
         Global Dark
       </Box>
     </>,
@@ -112,8 +130,8 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
       globalTheme: global.dataset.nebBoxTheme,
 
       // tokens
-      localMain: localStyles.getPropertyValue('--main-l').trim(),
-      globalMain: globalStyles.getPropertyValue('--main-l').trim(),
+      localMain: localStyles.getPropertyValue('--l').trim(),
+      globalMain: globalStyles.getPropertyValue('--l').trim(),
 
       // projection
       localBg: localStyles.getPropertyValue('--bg').trim(),
@@ -138,8 +156,23 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
 
 test('Nested theme islands reset correctly (dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="inverse" theme="light" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'dark-parent' }}
+      drawable
+      bgMode="filled"
+      intent="secondary"
+      theme="dark"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-child' }}
+        drawable
+        bgMode="filled"
+        intent="secondary"
+        theme="light"
+        blockSize="100px"
+      >
         Light Child
       </Box>
     </Box>
@@ -161,8 +194,8 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
       lightColor: light.dataset.nebBoxColor,
 
       // tokens
-      darkMain: darkStyles.getPropertyValue('--main-l').trim(),
-      lightMain: lightStyles.getPropertyValue('--main-l').trim(),
+      darkMain: darkStyles.getPropertyValue('--l').trim(),
+      lightMain: lightStyles.getPropertyValue('--l').trim(),
 
       // projection
       darkBg: darkStyles.getPropertyValue('--bg').trim(),
@@ -192,11 +225,37 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
   expect(result.lightBg).not.toBe(result.darkBg)
 })
 
-test('Nested theme islands rebind correctly across multiple boundaries (dark → light → dark)', async ({ mount, page }) => {
+test('Nested theme islands rebind correctly across multiple boundaries (dark → light → dark)', async ({
+  mount,
+  page,
+}) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-1' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="300px" padding="16px">
-      <Box tagAttrs={{ id: 'light-1' }} drawable variant="solid" intent="inverse" theme="light" blockSize="220px" padding="16px">
-        <Box tagAttrs={{ id: 'dark-2' }} drawable variant="solid" intent="inverse" theme="dark" blockSize="140px">
+    <Box
+      tagAttrs={{ id: 'dark-1' }}
+      drawable
+      bgMode="filled"
+      intent="secondary"
+      theme="dark"
+      blockSize="300px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'light-1' }}
+        drawable
+        bgMode="filled"
+        intent="secondary"
+        theme="light"
+        blockSize="220px"
+        padding="16px"
+      >
+        <Box
+          tagAttrs={{ id: 'dark-2' }}
+          drawable
+          bgMode="filled"
+          intent="secondary"
+          theme="dark"
+          blockSize="140px"
+        >
           Dark Again
         </Box>
       </Box>
@@ -219,9 +278,9 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
       dark2Theme: dark2.dataset.nebBoxTheme,
 
       // tokens
-      dark1Main: dark1Styles.getPropertyValue('--main-l').trim(),
-      light1Main: light1Styles.getPropertyValue('--main-l').trim(),
-      dark2Main: dark2Styles.getPropertyValue('--main-l').trim(),
+      dark1Main: dark1Styles.getPropertyValue('--l').trim(),
+      light1Main: light1Styles.getPropertyValue('--l').trim(),
+      dark2Main: dark2Styles.getPropertyValue('--l').trim(),
 
       // projection
       dark1Bg: dark1Styles.getPropertyValue('--bg').trim(),
@@ -263,11 +322,11 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
 test('Global dark theme resolves primary solid styling consistently', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'box-1' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box tagAttrs={{ id: 'box-1' }} drawable bgMode="filled" intent="primary" blockSize="200px">
         One
       </Box>
 
-      <Box tagAttrs={{ id: 'box-2' }} drawable variant="solid" intent="primary" blockSize="200px">
+      <Box tagAttrs={{ id: 'box-2' }} drawable bgMode="filled" intent="primary" blockSize="200px">
         Two
       </Box>
     </>,
@@ -291,8 +350,8 @@ test('Global dark theme resolves primary solid styling consistently', async ({ m
       twoTheme: two.dataset.nebBoxTheme,
 
       // tokens
-      oneMain: oneStyles.getPropertyValue('--main-l').trim(),
-      twoMain: twoStyles.getPropertyValue('--main-l').trim(),
+      oneMain: oneStyles.getPropertyValue('--l').trim(),
+      twoMain: twoStyles.getPropertyValue('--l').trim(),
 
       // projection
       oneBg: oneStyles.getPropertyValue('--bg').trim(),

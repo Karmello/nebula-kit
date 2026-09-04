@@ -1,17 +1,15 @@
-import { ComponentMeta } from 'client/definitions'
-import { FocusTrapProps } from 'lib/components'
-import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from 'lib/components/pro/utility/FocusTrap'
+import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from 'lib/components/pro/FocusTrap/constants'
+import type { FocusTrapProps } from 'lib/components/pro/FocusTrap/types'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const FOCUS_TRAP_PROPS_META: ComponentMeta<FocusTrapProps>['props'] = {
+export const FOCUS_TRAP_PROPS: Record<keyof FocusTrapProps, DocProp> = {
   active: {
     options: ['boolean'],
     isRequired: true,
     description: 'Enables or disables the focus trap.',
   },
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content whose focus is controlled by the trap.',
   },
@@ -22,13 +20,12 @@ const FOCUS_TRAP_PROPS_META: ComponentMeta<FocusTrapProps>['props'] = {
   },
   onFocusEscape: {
     options: ['() => void'],
-    description: 'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
+    description:
+      'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
   },
   tagRef: {
-    ...HTML_TAG_PROPS_META.tagRef,
+    options: ['RefObject'],
     isRequired: true,
     description: 'Ref to the DOM element that the trap should contain focus within.',
   },
 }
-
-export { FOCUS_TRAP_PROPS_META }

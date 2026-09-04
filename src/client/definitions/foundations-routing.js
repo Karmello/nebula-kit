@@ -7,11 +7,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'introduction',
         label: 'Introduction',
         sections: [
-          { key: 'why-nebula', label: 'Why "Nebula"' },
           { key: 'about-nebula-kit', label: 'About NebulaKit' },
-          { key: 'development-spectrum', label: 'Development spectrum' },
-          { key: 'audience', label: 'Audience' },
-          { key: 'authoring-apps', label: 'Authoring apps' },
           { key: 'under-the-hood', label: 'Under the hood' },
         ],
       },
@@ -83,6 +79,7 @@ export const FOUNDATIONS_CATEGORIES = [
         key: 'changelog',
         label: 'Changelog',
         sections: [
+          { key: 'v0.11.0', label: 'v0.11.0' },
           { key: 'v0.10.0', label: 'v0.10.0' },
           { key: 'v0.9.0', label: 'v0.9.0' },
           { key: 'v0.8.0', label: 'v0.8.0' },

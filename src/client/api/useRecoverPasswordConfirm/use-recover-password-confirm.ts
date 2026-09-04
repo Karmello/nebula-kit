@@ -8,7 +8,10 @@ export type UseRecoverPasswordConfirmError = {
   message: string
 }
 
-export type UseRecoverPasswordConfirmRes = UseMakeApiRequestRes<UseRecoverPasswordConfirmSuccess, UseRecoverPasswordConfirmError>
+export type UseRecoverPasswordConfirmRes = UseMakeApiRequestRes<
+  UseRecoverPasswordConfirmSuccess,
+  UseRecoverPasswordConfirmError
+>
 
 export const useRecoverPasswordConfirm = () => {
   return useMakeApiRequest<UseRecoverPasswordConfirmSuccess, UseRecoverPasswordConfirmError>({

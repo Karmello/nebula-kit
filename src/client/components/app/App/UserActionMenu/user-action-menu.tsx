@@ -1,13 +1,13 @@
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
-import { useAppStore } from 'client/store'
+import { Box, IconButton, Select } from 'lib/components'
 import { useLogoutUser } from 'client/api'
-import { Button, Flex, Select } from 'lib/components'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
 
-import { WebsiteMapDialog } from './components/website-map-dialog'
 import { AppPrefsDialog } from './components/app-prefs-dialog'
+import { WebsiteMapDialog } from './components/website-map-dialog'
 
 export const UserActionMenu = () => {
   const { pathname } = useLocation()
@@ -27,22 +27,25 @@ export const UserActionMenu = () => {
 
   return (
     <>
-      <Flex>
-        <Button
+      <Box display="flex">
+        <IconButton
+          scale="md"
           iconName="compass"
           intent="muted"
           onClick={() => {
             if (!showWebsiteMap) setShowWebsiteMap(true)
           }}
         />
-        <Button
+        <IconButton
+          scale="md"
           iconName={showAppJump ? 'search-x' : 'search'}
           intent="muted"
           onClick={() => {
             if (!showAppJump) setShowAppJump(true)
           }}
         />
-        <Button
+        <IconButton
+          scale="md"
           iconName="settings"
           intent="muted"
           onClick={() => {
@@ -50,8 +53,8 @@ export const UserActionMenu = () => {
           }}
         />
         <Select
+          variant="solid"
           intent="muted"
-          dropdownPlacement="bottom-end"
           staticLabel="Profile"
           value={currentPageKey}
           onChange={async value => {
@@ -76,7 +79,7 @@ export const UserActionMenu = () => {
             </>
           )}
         </Select>
-      </Flex>
+      </Box>
       <WebsiteMapDialog />
       <AppPrefsDialog />
     </>

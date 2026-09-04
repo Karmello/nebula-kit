@@ -1,6 +1,6 @@
-import { useNavigateTo } from 'client/hooks'
+import { Box, Button, Link, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 import { CORE_DATA, PRO_DATA } from './definitions'
 
@@ -12,29 +12,47 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
       <Section
         size="lg"
-        heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
+        heading={
+          bundle === 'core'
+            ? `Core bundle (${CORE_DATA.length})`
+            : `Pro bundle (${PRO_DATA.length})`
+        }
         iconName="package"
       >
-        <Flex alignItems="center" columnGap="xl" flexWrap="wrap" justifyContent="space-between">
-          {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
+        <Box
+          display="flex"
+          alignItems="center"
+          columnGap={NEB_LENGTH.px_048}
+          flexWrap="wrap"
+          justifyContent="space-between"
+        >
+          {bundle === 'core' ? (
+            <Text>All components available for free.</Text>
+          ) : (
+            <Text>Comes with the paid plans.</Text>
+          )}
           <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
-            <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
+            <Button scale="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
               Back to Pricing page
             </Button>
           </Link>
-        </Flex>
-        <Spacer blockSize="lg" />
-        <Grid
+        </Box>
+        <Spacer blockSize={NEB_LENGTH.px_048} />
+        <Box
+          display="grid"
           gridTemplateColumns={{
             base: '1fr',
             md: 'repeat(2, 1fr)',
             lg: 'repeat(3, 1fr)',
             xl: 'repeat(4, 1fr)',
           }}
-          gap="sm"
+          gap={NEB_LENGTH.px_016}
         >
           {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
             <Section
@@ -50,20 +68,20 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
               <Text intent="neutral">{item.title}</Text>
             </Section>
           ))}
-        </Grid>
-        <Spacer blockSize="lg" />
-        <Flex justifyContent="center">
+        </Box>
+        <Spacer blockSize={NEB_LENGTH.px_048} />
+        <Box display="flex" justifyContent="center">
           <Link
             href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
             onClick={() => {
               navigateTo(bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore)
             }}
           >
-            <Button size="sm" color="amber" iconName="package">
+            <Button scale="sm" color="amber" iconName="package">
               {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
             </Button>
           </Link>
-        </Flex>
+        </Box>
       </Section>
     </Box>
   )

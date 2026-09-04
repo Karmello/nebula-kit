@@ -1,0 +1,35 @@
+.neb-box {
+  &[data-neb-box-ripple] {
+    position: relative;
+    overflow: hidden;
+  }
+
+  &[data-neb-box-ripple]::after {
+    content: '';
+    position: absolute;
+    left: var(--neb-ripple-left, 0);
+    top: var(--neb-ripple-top, 0);
+    width: var(--neb-ripple-size, 0);
+    height: var(--neb-ripple-size, 0);
+    border-radius: 50%;
+    background-color: var(--ripple);
+    opacity: calc(var(--ripple-opacity) * var(--neb-ripple-factor));
+    transform: scale(0);
+    pointer-events: none;
+    will-change: transform, opacity;
+  }
+
+  &[data-neb-box-ripple].neb-ripple-active::after {
+    animation-name: neb-ripple-animation;
+    animation-duration: var(--neb-ripple-duration, 1500ms);
+    animation-timing-function: cubic-bezier(0.4, 0, 0.75, 1);
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes neb-ripple-animation {
+    to {
+      opacity: 0;
+      transform: scale(3);
+    }
+  }
+}

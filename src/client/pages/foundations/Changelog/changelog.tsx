@@ -1,8 +1,18 @@
 import { useMemo } from 'react'
 
-import meta from 'client/meta'
+import {
+  Box,
+  MarkerList,
+  Markup,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Tabs,
+  Text,
+  Title,
+} from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
-import { Box, MarkerList, Section, Spacer, Text, Tabs, Markup } from 'lib/components'
+import meta from 'client/meta'
 
 type Notes = { core: Record<string, string[]>; pro: Record<string, string[]> }
 
@@ -34,16 +44,22 @@ const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: s
   )
 }
 
-const PanelContent = ({ bundleNotes, componentNotes }: { bundleNotes?: string[]; componentNotes: Record<string, string[]> }) => {
+const PanelContent = ({
+  bundleNotes,
+  componentNotes,
+}: {
+  bundleNotes?: string[]
+  componentNotes: Record<string, string[]>
+}) => {
   const componentNames = Object.keys(componentNotes)
 
   return (
-    <Box paddingInline="15px" paddingBlock="25px">
+    <Box paddingInline={NEB_LENGTH.px_016} paddingBlock={NEB_LENGTH.px_024}>
       <Notes notes={bundleNotes} />
       {componentNames.map((name, i) => (
         <Box key={name}>
           <Notes componentName={name} notes={componentNotes[name]} />
-          {i < componentNames.length - 1 ? <Spacer blockSize="lg" /> : null}
+          {i < componentNames.length - 1 ? <Spacer blockSize={NEB_LENGTH.px_048} /> : null}
         </Box>
       ))}
     </Box>
@@ -77,37 +93,40 @@ export default ({ pathname }: { pathname: string }) => {
   return (
     <Box maxInlineSize="55rem">
       {releaseInfo.headline ? (
-        <Box marginBottom="2xs">
+        <Box marginBottom={NEB_LENGTH.px_004}>
           <Text typography="h5">{releaseInfo.headline}</Text>
         </Box>
       ) : null}
       <Text italic intent="secondary">
         {new Date(releaseInfo.timestamp).toDateString()}
       </Text>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       {releaseInfo.changelog?.main ? (
         <>
-          <Spacer blockSize="xs" />
+          <Spacer blockSize={NEB_LENGTH.px_008} />
           <Notes notes={releaseInfo.changelog.main} />
         </>
       ) : null}
       {displayCoreNotes || displayProNotes ? (
         <>
-          <Spacer blockSize="lg" />
-          <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'} inlineSize="100%">
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <Tabs defaultValue={displayCoreNotes ? 'core' : 'pro'}>
             {displayCoreNotes ? (
-              <Tabs.Tab value="core" iconName="package">
-                Core
+              <Tabs.Tab value="core">
+                <Title iconName="package">Core</Title>
               </Tabs.Tab>
             ) : null}
             {displayProNotes ? (
-              <Tabs.Tab value="pro" iconName="star">
-                Pro
+              <Tabs.Tab value="pro">
+                <Title iconName="star">Pro</Title>
               </Tabs.Tab>
             ) : null}
             {displayCoreNotes ? (
               <Tabs.Panel value="core">
-                <PanelContent bundleNotes={releaseInfo.changelog?.core} componentNotes={notes.core} />
+                <PanelContent
+                  bundleNotes={releaseInfo.changelog?.core}
+                  componentNotes={notes.core}
+                />
               </Tabs.Panel>
             ) : null}
             <Tabs.Panel value="pro">

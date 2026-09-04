@@ -2,8 +2,11 @@ import { Children, ReactElement, ReactNode } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import { Box, Button, Divider } from 'lib/components'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Button } from 'lib/components/core/Button'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
 
 type AssistantMessageProps = {
@@ -24,10 +27,10 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
                 tag="code"
                 display="inline-block"
                 drawable
-                variant="solid"
+                bgMode="filled"
                 intent="muted"
-                paddingInline="6px"
-                paddingBlock="2px"
+                paddingInline={NEB_LENGTH.px_006}
+                paddingBlock={NEB_LENGTH.px_002}
               >
                 {children}
               </Box>
@@ -54,7 +57,13 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
               const question = decodeURIComponent(href.replace('app://ask/', ''))
 
               return (
-                <Button size="xs" variant="outline" color="blue" intent="tertiary" onClick={() => handleQuestionClick(question)}>
+                <Button
+                  scale="xs"
+                  variant="outline"
+                  color="blue"
+                  intent="tertiary"
+                  onClick={() => handleQuestionClick(question)}
+                >
                   {children}
                 </Button>
               )
@@ -63,7 +72,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
             return <a href={href}>{children}</a>
           },
           hr() {
-            return <Divider intent="muted" marginTop="lg" />
+            return <HorizontalRule intent="muted" marginTop={NEB_LENGTH.px_048} />
           },
         }}
       >

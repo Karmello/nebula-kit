@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Button, Flex, Input, Resize, Text } from 'lib/components'
+import { Box, Button, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
 
 import { PaymentCancelDialog } from './payment-cancel-dialog'
 
@@ -35,13 +35,13 @@ export const PaymentCancelForm = ({
         }}
         handleCancelSuccess={handleCancelSuccess}
       />
-      <Flex flexDirection="column" rowGap="xs">
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_008}>
         {!cancelSectionEnabled ? (
           <Text intent="secondary" color="gray" italic>
             * For paid users
           </Text>
         ) : null}
-        <Box position="relative" blockSize="45px">
+        <Box position="relative" blockSize={NEB_LENGTH.px_048}>
           <Box position="absolute">
             <Button
               tagAttrs={{
@@ -49,7 +49,7 @@ export const PaymentCancelForm = ({
                   setEnableInput(true)
                 },
               }}
-              size="sm"
+              scale="sm"
               intent="tertiary"
               color="red"
               disabled={!cancelSectionEnabled || enableInput}
@@ -59,46 +59,61 @@ export const PaymentCancelForm = ({
           </Box>
           <Box position="absolute">
             <Resize property="inlineSize" visible={enableInput}>
-              <Box inlineSize="400px" paddingRight="20px">
-                <Input
-                  placeholder="Enter your email"
-                  tagAttrs={{ autoComplete: 'off' }}
-                  value={inputValue}
-                  onChange={setInputValue}
-                  size="sm"
+              <Box display="flex" inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
+                <IconButton
+                  tagAttrs={{
+                    style: {
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                    },
+                  }}
+                  scale="sm"
                   variant="solid"
                   intent="tertiary"
                   color="red"
-                  startAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setEnableInput(false)
-                        },
-                      }}
-                      iconName="close"
-                    />
-                  )}
-                  endAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setOpenDialog(true)
-                        },
-                      }}
-                      disabled={inputValue !== userEmail}
-                    >
-                      Continue
-                    </Button>
-                  )}
+                  iconName="close"
+                  onClick={() => {
+                    setEnableInput(false)
+                  }}
                 />
+                <Input
+                  placeholder="Enter your email"
+                  tagAttrs={{
+                    autoComplete: 'off',
+                    style: {
+                      borderRadius: 0,
+                    },
+                  }}
+                  value={inputValue}
+                  onChange={setInputValue}
+                  scale="sm"
+                  variant="solid"
+                  intent="tertiary"
+                  color="red"
+                />
+                <Button
+                  scale="sm"
+                  variant="solid"
+                  intent="tertiary"
+                  color="red"
+                  tagAttrs={{
+                    onClick: () => {
+                      setOpenDialog(true)
+                    },
+                    style: {
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                    },
+                  }}
+                  disabled={inputValue !== userEmail}
+                >
+                  Continue
+                </Button>
               </Box>
             </Resize>
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </>
   )
 }

@@ -1,0 +1,334 @@
+import {
+  ComponentProps,
+  ComponentRef,
+  ElementType,
+  PropsWithoutRef,
+  RefObject,
+  useLayoutEffect,
+  useRef,
+} from 'react'
+import classNames from 'classnames'
+
+import { HtmlTag } from 'lib/components/core/HtmlTag'
+import { BrandProvider } from 'lib/components/shared/BrandProvider'
+import { ThemeProvider } from 'lib/components/shared/ThemeProvider'
+import { withPrefix } from 'lib/helpers'
+import { useScreen } from 'lib/hooks'
+import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
+
+import {
+  DEFAULT_BOX_BG_MODE,
+  DEFAULT_BOX_BG_ROLE,
+  DEFAULT_BOX_BORDER_MODE,
+  DEFAULT_BOX_BORDER_ROLE,
+  DEFAULT_BOX_SURFACE_DEPTH,
+  DEFAULT_BOX_TEXT,
+} from './constants'
+import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'
+import { BoxProps } from './types'
+
+import './styles/box.scss'
+
+export const Box = <T extends ElementType = 'div'>({
+  children,
+  tag,
+  tagAttrs,
+  tagRef,
+  drawable,
+  bgMode = DEFAULT_BOX_BG_MODE,
+  bgRole = DEFAULT_BOX_BG_ROLE,
+  borderMode = DEFAULT_BOX_BORDER_MODE,
+  text = DEFAULT_BOX_TEXT,
+  theme,
+  brand,
+  color,
+  intent,
+  interactive,
+  surfaceDepth = DEFAULT_BOX_SURFACE_DEPTH,
+  ripple,
+  disabled,
+  borderRole = DEFAULT_BOX_BORDER_ROLE,
+  activeOnFocus,
+  cursor,
+  hidden,
+  opacity,
+  visibility,
+  textAlign,
+  zIndex,
+  pointerEvents,
+  aspectRatio,
+  transform,
+  borderWidth,
+  borderTopWidth,
+  borderRightWidth,
+  borderBottomWidth,
+  borderLeftWidth,
+  borderRadius,
+  borderTopLeftRadius,
+  borderTopRightRadius,
+  borderBottomRightRadius,
+  borderBottomLeftRadius,
+  display,
+  overflow,
+  overflowX,
+  overflowY,
+  position,
+  inset,
+  top,
+  right,
+  bottom,
+  left,
+  blockSize,
+  minBlockSize,
+  maxBlockSize,
+  inlineSize,
+  minInlineSize,
+  maxInlineSize,
+  padding,
+  paddingInline,
+  paddingBlock,
+  paddingTop,
+  paddingRight,
+  paddingBottom,
+  paddingLeft,
+  margin,
+  marginInline,
+  marginBlock,
+  marginTop,
+  marginRight,
+  marginBottom,
+  marginLeft,
+  // flex
+  flexDirection,
+  flexWrap,
+  justifyContent,
+  alignItems,
+  alignContent,
+  gap,
+  rowGap,
+  columnGap,
+  flex,
+  flexGrow,
+  flexShrink,
+  flexBasis,
+  alignSelf,
+  order,
+  // grid
+  gridTemplateColumns,
+  gridTemplateRows,
+  gridAutoRows,
+  gridAutoColumns,
+  gridAutoFlow,
+  placeItems,
+  placeContent,
+  // grid item
+  gridColumn,
+  gridRow,
+  justifySelf,
+}: BoxProps<T>) => {
+  const ref = useRef<ComponentRef<T>>(null)
+  const finalRef = tagRef || ref
+
+  const { bp } = useScreen()
+
+  const resolvedAppearance = useResolveAppearance({ theme, brand, color })
+
+  useTransitionLifecycle(finalRef as RefObject<HTMLElement>)
+
+  useLayoutEffect(() => {
+    syncRespStyle('Box', finalRef, bp, {
+      opacity,
+      visibility,
+      textAlign,
+      zIndex,
+      aspectRatio,
+      transform,
+      borderWidth,
+      borderTopWidth,
+      borderRightWidth,
+      borderBottomWidth,
+      borderLeftWidth,
+      borderRadius,
+      borderTopLeftRadius,
+      borderTopRightRadius,
+      borderBottomRightRadius,
+      borderBottomLeftRadius,
+      display,
+      overflow,
+      overflowX,
+      overflowY,
+      position,
+      inset,
+      top,
+      right,
+      bottom,
+      left,
+      blockSize,
+      minBlockSize,
+      maxBlockSize,
+      inlineSize,
+      minInlineSize,
+      maxInlineSize,
+      padding,
+      paddingInline,
+      paddingBlock,
+      paddingTop,
+      paddingRight,
+      paddingBottom,
+      paddingLeft,
+      margin,
+      marginInline,
+      marginBlock,
+      marginTop,
+      marginRight,
+      marginBottom,
+      marginLeft,
+      flexDirection,
+      flexWrap,
+      justifyContent,
+      alignItems,
+      alignContent,
+      gap,
+      rowGap,
+      columnGap,
+      flex,
+      flexGrow,
+      flexShrink,
+      flexBasis,
+      alignSelf,
+      order,
+      gridTemplateColumns,
+      gridTemplateRows,
+      gridAutoRows,
+      gridAutoColumns,
+      gridAutoFlow,
+      placeItems,
+      placeContent,
+      gridColumn,
+      gridRow,
+      justifySelf,
+    })
+  }, [
+    bp,
+    tag,
+    opacity,
+    visibility,
+    zIndex,
+    aspectRatio,
+    transform,
+    textAlign,
+    borderWidth,
+    borderTopWidth,
+    borderRightWidth,
+    borderBottomWidth,
+    borderLeftWidth,
+    borderRadius,
+    borderTopLeftRadius,
+    borderTopRightRadius,
+    borderBottomRightRadius,
+    borderBottomLeftRadius,
+    display,
+    overflow,
+    overflowX,
+    overflowY,
+    position,
+    inset,
+    top,
+    right,
+    bottom,
+    left,
+    blockSize,
+    minBlockSize,
+    maxBlockSize,
+    inlineSize,
+    minInlineSize,
+    maxInlineSize,
+    padding,
+    paddingInline,
+    paddingBlock,
+    paddingTop,
+    paddingRight,
+    paddingBottom,
+    paddingLeft,
+    margin,
+    marginInline,
+    marginBlock,
+    marginTop,
+    marginRight,
+    marginBottom,
+    marginLeft,
+    flexDirection,
+    flexWrap,
+    justifyContent,
+    alignItems,
+    alignContent,
+    gap,
+    rowGap,
+    columnGap,
+    flex,
+    flexGrow,
+    flexShrink,
+    flexBasis,
+    alignSelf,
+    order,
+    gridTemplateColumns,
+    gridTemplateRows,
+    gridAutoRows,
+    gridAutoColumns,
+    gridAutoFlow,
+    placeItems,
+    placeContent,
+    gridColumn,
+    gridRow,
+    justifySelf,
+  ])
+
+  useLayoutEffect(() => {
+    syncRespDataset('Box', finalRef, bp, {
+      theme: resolvedAppearance.theme,
+      hidden,
+      flexDirection,
+    })
+  }, [bp, tag, resolvedAppearance.theme, hidden, flexDirection])
+
+  const usesRipple = ripple && interactive && !disabled
+  useRipple(finalRef, usesRipple)
+
+  return (
+    <ThemeProvider theme={resolvedAppearance.theme}>
+      <BrandProvider brand={resolvedAppearance.brand}>
+        <HtmlTag
+          tag={tag}
+          tagAttrs={
+            {
+              ...tagAttrs,
+              className: classNames(withPrefix('box'), tagAttrs?.className || ''),
+              style: { ...tagAttrs?.style, pointerEvents, cursor },
+              disabled,
+              ...buildStaticDataset('Box', {
+                drawable: drawable || interactive,
+                interactive,
+                surfaceDepth,
+                disabled,
+                borderMode,
+                borderRole,
+                activeOnFocus,
+                ripple: usesRipple,
+                color: resolvedAppearance.color,
+                bgMode,
+                bgRole,
+                text,
+                intent,
+              }),
+            } as PropsWithoutRef<ComponentProps<T>>
+          }
+          tagRef={finalRef}
+        >
+          {children}
+        </HtmlTag>
+      </BrandProvider>
+    </ThemeProvider>
+  )
+}
+
+Box.displayName = 'Box'

@@ -1,19 +1,21 @@
-import { ComponentMeta } from 'client/definitions'
-import { BreadcrumbProps } from 'lib/components'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from 'lib/components/pro/Breadcrumb/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { BreadcrumbProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from 'lib/components/pro/navigation/Breadcrumb'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
-
-const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
-  color: DROPDOWN_LIST_PROPS_META.color,
+export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   defaultPath: {
     options: ['string[]'],
-    description: 'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
+    description:
+      'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
   },
   intent: {
-    ...DROPDOWN_LIST_PROPS_META.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
     description: 'Color tone applied to the list.',
   },
@@ -26,20 +28,26 @@ const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
     description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
   },
   size: {
-    ...DROPDOWN_LIST_PROPS_META.size,
-    defaultValue: DEFAULT_BREADCRUMB_SIZE,
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
   },
   tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: BREADCRUMB_TAGS as never,
+    options: BREADCRUMB_TAGS,
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   tree: {
     options: ['object[]'],
     isRequired: true,
-    description: 'Hierarchical data source that defines the breadcrumb structure and available selections.',
+    description:
+      'Hierarchical data source that defines the breadcrumb structure and available selections.',
   },
 }
-
-export { BREADCRUMB_PROPS_META }

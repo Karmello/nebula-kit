@@ -1,8 +1,8 @@
 import { useLayoutEffect } from 'react'
 
+import { Box, Loader, NEB_LENGTH, Section, Spacer, Text } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, Text, Grid, Loader } from 'lib/components'
 
 import { PricingPlanCard } from './components/PricingPlanCard'
 import { PRICING_DATA } from './definitions'
@@ -19,15 +19,22 @@ export const PricingPage = () => {
   }, [user])
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
       <Section size="lg" heading="Pricing plans" iconName="credit-card">
         <Text>Choose the plan that fits your workflow.</Text>
-        <Spacer blockSize="lg" />
+        <Spacer blockSize={NEB_LENGTH.px_048} />
         {getUser.isMakingRequest ? (
-          <Loader centered size="lg" color="blue" />
+          <Loader centered size={NEB_LENGTH.px_024} color="blue" />
         ) : (
           <>
-            <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }} gap="sm">
+            <Box
+              display="grid"
+              gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', xl: 'repeat(4, 1fr)' }}
+              gap={NEB_LENGTH.px_016}
+            >
               <PricingPlanCard
                 plan={PRICING_DATA.plans.free.id as never}
                 activePlan={getUser.data?.user.plan}
@@ -72,15 +79,15 @@ export const PricingPage = () => {
                 description={PRICING_DATA.plans.enterprise.description}
                 options={PRICING_DATA.plans.enterprise.whatYouGet}
               />
-            </Grid>
-            <Spacer blockSize="lg" />
-            <Flex flexDirection="column" rowGap="2xs">
+            </Box>
+            <Spacer blockSize={NEB_LENGTH.px_048} />
+            <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_004}>
               {PRICING_DATA.additionalInfo.map((info, key) => (
                 <Text key={key} italic>
                   {info}
                 </Text>
               ))}
-            </Flex>
+            </Box>
           </>
         )}
       </Section>

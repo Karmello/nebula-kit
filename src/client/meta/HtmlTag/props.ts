@@ -1,9 +1,9 @@
 import { ElementType } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
 import { HtmlTagProps } from 'lib/components'
+import type { DocProp } from 'client/definitions'
 
-const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
+export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = {
   children: {
     options: ['ReactNode'],
     description: 'Content rendered.',
@@ -22,5 +22,3 @@ const HTML_TAG_PROPS_META: ComponentMeta<HtmlTagProps<ElementType>>['props'] = {
     description: 'Reference to the root HTML tag.',
   },
 }
-
-export { HTML_TAG_PROPS_META }

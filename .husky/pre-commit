@@ -1,3 +1,4 @@
+yarn circ
 yarn prettier
 yarn lint
-yarn typecheck
+yarn ts

@@ -1,7 +1,8 @@
 import { cloneElement, ReactElement, useEffect, useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Box, Flex, Slide, SlideProps, Text } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Slide, Text } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const SlideWrapper = ({ children }: { children: ReactElement }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -25,7 +26,7 @@ const SlideWrapper = ({ children }: { children: ReactElement }) => {
   return cloneElement(children as any, { visible })
 }
 
-const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
+export const SLIDE_EXAMPLES: DocExample[] = [
   {
     description: 'Sliding in from the left.',
     jsx: (
@@ -43,7 +44,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
   {
     description: 'Sliding in from the right.',
     jsx: (
-      <Flex justifyContent="flex-end">
+      <Box display="flex" justifyContent="flex-end">
         <Box overflowX="hidden">
           <SlideWrapper>
             <Slide visible={false} from="right" duration={1000}>
@@ -51,7 +52,7 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
             </Slide>
           </SlideWrapper>
         </Box>
-      </Flex>
+      </Box>
     ),
     code: `<Slide visible={visible} from="right" duration={1000}>
   <Text>Animated content.</Text>
@@ -77,5 +78,3 @@ const SLIDE_EXAMPLES_META: ComponentMeta<SlideProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
 ]
-
-export { SLIDE_EXAMPLES_META }

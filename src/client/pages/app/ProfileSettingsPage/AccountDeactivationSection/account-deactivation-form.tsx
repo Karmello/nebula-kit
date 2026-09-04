@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-import { Box, Button, Flex, Input, Resize, Text } from 'lib/components'
+import { Box, Button, IconButton, Input, NEB_LENGTH, Resize, Text } from 'lib/components'
 
 import { AccountDeactivationDialog } from './account-deactivation-dialog'
 
@@ -35,13 +35,13 @@ export const AccountDeactivationForm = ({
         }}
         handleDeactivateSuccess={handleDeactivateSuccess}
       />
-      <Flex flexDirection="column" rowGap="xs">
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_008}>
         {!deactivateSectionEnabled ? (
           <Text intent="secondary" color="gray" italic>
             * You need to unsubscribe from your paid plan first
           </Text>
         ) : null}
-        <Box position="relative" blockSize="45px">
+        <Box position="relative" blockSize={NEB_LENGTH.px_048}>
           <Box position="absolute">
             <Button
               tagAttrs={{
@@ -49,7 +49,7 @@ export const AccountDeactivationForm = ({
                   setEnableInput(true)
                 },
               }}
-              size="sm"
+              scale="sm"
               intent="tertiary"
               color="red"
               disabled={!deactivateSectionEnabled || enableInput}
@@ -59,48 +59,59 @@ export const AccountDeactivationForm = ({
           </Box>
           <Box position="absolute">
             <Resize property="inlineSize" visible={enableInput}>
-              <Box inlineSize="400px" paddingRight="20px">
+              <Box display="flex" inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
+                <IconButton
+                  tagAttrs={{
+                    style: {
+                      borderTopRightRadius: 0,
+                      borderBottomRightRadius: 0,
+                    },
+                  }}
+                  intent="tertiary"
+                  color="red"
+                  iconName="close"
+                  onClick={() => {
+                    setEnableInput(false)
+                  }}
+                />
                 <Input
                   tagAttrs={{
                     autoComplete: 'off',
+                    style: {
+                      borderRadius: 0,
+                    },
                   }}
                   placeholder="Enter your email"
                   value={inputValue}
                   onChange={setInputValue}
-                  size="sm"
+                  scale="sm"
                   variant="solid"
                   intent="tertiary"
                   color="red"
-                  startAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setEnableInput(false)
-                        },
-                      }}
-                      iconName="close"
-                    />
-                  )}
-                  endAffix={props => (
-                    <Button
-                      {...props}
-                      tagAttrs={{
-                        onClick: () => {
-                          setOpenDialog(true)
-                        },
-                      }}
-                      disabled={inputValue !== userEmail}
-                    >
-                      Continue
-                    </Button>
-                  )}
                 />
+                <Button
+                  tagAttrs={{
+                    onClick: () => {
+                      setOpenDialog(true)
+                    },
+                    style: {
+                      borderTopLeftRadius: 0,
+                      borderBottomLeftRadius: 0,
+                    },
+                  }}
+                  scale="sm"
+                  variant="solid"
+                  intent="tertiary"
+                  color="red"
+                  disabled={inputValue !== userEmail}
+                >
+                  Continue
+                </Button>
               </Box>
             </Resize>
           </Box>
         </Box>
-      </Flex>
+      </Box>
     </>
   )
 }

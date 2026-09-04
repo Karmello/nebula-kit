@@ -1,13 +1,11 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { ResizeProps } from 'lib/components'
+import { RESIZE_PROPERTIES } from 'lib/components/core/Resize/constants'
+import { DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/core/Resize/resize'
+import { ResizeProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { RESIZE_PROPERTIES, DEFAULT_RESIZE_DURATION, DEFAULT_RESIZE_EASING } from 'lib/components/core/motion/Resize'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
+export const RESIZE_PROPS: Record<keyof ResizeProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content animated.',
   },
@@ -17,22 +15,26 @@ const RESIZE_PROPS_META: ComponentMeta<ResizeProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: [DOCS_CSS_LABEL],
+    options: ['string'],
     defaultValue: DEFAULT_RESIZE_EASING,
     description: 'Timing function for the animation.',
   },
   property: {
-    options: RESIZE_PROPERTIES as unknown as string[],
+    options: RESIZE_PROPERTIES,
     isRequired: true,
     description: 'Property to animate (logical size only).',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visible: {
     options: ['boolean'],
     isRequired: true,
     description: 'Toggles the visibility of the content.',
   },
 }
-
-export { RESIZE_PROPS_META }

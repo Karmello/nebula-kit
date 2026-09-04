@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Button, Flex } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
+import { Box, Button, NEB_LENGTH } from 'lib/components'
+import { BoxColor } from 'lib/components/core/Box/types'
 
 const BUTTON_LABEL_MAP: Record<string, { label: string; color: BoxColor }> = {
   new_account_verification: {
@@ -33,8 +33,11 @@ export const ConfirmActionPage = () => {
   const url = params.get('url')
 
   return (
-    <Box padding={{ base: 'md', lg: 'xl' }} paddingTop="100px">
-      <Flex justifyContent="center">
+    <Box
+      padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      paddingTop={NEB_LENGTH.px_096}
+    >
+      <Box display="flex" justifyContent="center">
         <Button
           tagAttrs={{
             onClick: () => {
@@ -43,13 +46,19 @@ export const ConfirmActionPage = () => {
             },
           }}
           intent="primary"
-          color={action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].color : 'blue'}
+          color={
+            action && BUTTON_LABEL_MAP[action as never]
+              ? BUTTON_LABEL_MAP[action as never].color
+              : 'blue'
+          }
           loading={loading}
           disabled={!url}
         >
-          {action && BUTTON_LABEL_MAP[action as never] ? BUTTON_LABEL_MAP[action as never].label : 'Confirm'}
+          {action && BUTTON_LABEL_MAP[action as never]
+            ? BUTTON_LABEL_MAP[action as never].label
+            : 'Confirm'}
         </Button>
-      </Flex>
+      </Box>
     </Box>
   )
 }

@@ -1,17 +1,14 @@
-import { ComponentMeta } from 'client/definitions'
-import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
-import { SplitViewProps, SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/layouts/SplitView'
+import { SPLIT_VIEW_SIDE_POSITIONS } from 'lib/components/pro/SplitView/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
+import { SplitViewProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
-    isRequired: true,
     options: ['SplitView.Side', 'SplitView.Main'],
-    description: 'Accepts slots directly or via a render function with access to the SplitView context.',
+    isRequired: true,
+    description:
+      'Accepts slots directly or via a render function with access to the SplitView context.',
   },
   sidePosition: {
     options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
@@ -19,10 +16,17 @@ const SPLIT_VIEW_PROPS_META: ComponentMeta<SplitViewProps>['props'] = {
     description: 'Controls which horizontal side the side panel is attached to.',
   },
   switchAt: {
-    options: SWITCH_AT as unknown as string[],
-    defaultValue: DEFAULT_SWITCH_AT,
-    description: 'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
+    options: SWITCH_BREAKPOINTS,
+    defaultValue: DEFAULT_SWITCH_BREAKPOINT,
+    description:
+      'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
   },
 }
-
-export { SPLIT_VIEW_PROPS_META }

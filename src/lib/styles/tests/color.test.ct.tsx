@@ -1,10 +1,17 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { expect, test } from '@playwright/experimental-ct-react'
 
 import { Box } from 'lib/components'
 
 test('Box color prop overrides resolved brand color', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" color="red" blockSize="200px">
+    <Box
+      tagAttrs={{ id: 'box' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      color="red"
+      blockSize="200px"
+    >
       Box
     </Box>,
     {
@@ -23,7 +30,7 @@ test('Box color prop overrides resolved brand color', async ({ mount, page }) =>
       color: el.dataset.nebBoxColor,
 
       // token layer
-      main: styles.getPropertyValue('--main-l').trim(),
+      main: styles.getPropertyValue('--l').trim(),
 
       // projection
       bg: styles.getPropertyValue('--bg').trim(),
@@ -43,8 +50,23 @@ test('Box color prop overrides resolved brand color', async ({ mount, page }) =>
 
 test('Child Box color overrides parent color', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="blue" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" color="red" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      color="blue"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box
+        tagAttrs={{ id: 'child' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        color="red"
+        blockSize="100px"
+      >
         Child
       </Box>
     </Box>
@@ -63,8 +85,8 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--l').trim(),
+      childMain: childStyles.getPropertyValue('--l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -89,8 +111,16 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
 
 test('Parent color does not leak into child Box without color', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      color="red"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -109,8 +139,8 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--l').trim(),
+      childMain: childStyles.getPropertyValue('--l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -137,8 +167,16 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
 
 test('Color does not inherit to child Box', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" color="red" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
+    <Box
+      tagAttrs={{ id: 'parent' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      color="red"
+      blockSize="200px"
+      padding="16px"
+    >
+      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>,
@@ -163,8 +201,8 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--l').trim(),
+      childMain: childStyles.getPropertyValue('--l').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -193,7 +231,14 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
 
 test('Explicit color overrides brand', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable variant="solid" intent="primary" color="red" blockSize="200px">
+    <Box
+      tagAttrs={{ id: 'box' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      color="red"
+      blockSize="200px"
+    >
       Box
     </Box>,
     {
@@ -211,7 +256,7 @@ test('Explicit color overrides brand', async ({ mount, page }) => {
       rootBrand: document.documentElement.dataset.brand,
       color: el.dataset.nebBoxColor,
 
-      main: styles.getPropertyValue('--main-l').trim(),
+      main: styles.getPropertyValue('--l').trim(),
       bg: styles.getPropertyValue('--bg').trim(),
     }
   })

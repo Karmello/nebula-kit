@@ -1,0 +1,21 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-border-mode='filled'] {
+    --border: hsl(var(--h) var(--s) var(--l));
+    --border-hover: hsl(var(--h) var(--s) var(--l-hover));
+    --border-active: hsl(var(--h) var(--s) var(--l-active));
+    --border-selection: hsl(var(--h) var(--s) var(--l-selection));
+    --border-divider: hsl(var(--h) var(--s) var(--l-divider));
+    --border-edge: hsl(var(--h) var(--s) var(--l-edge));
+    --border-disabled: hsl(var(--h) var(--s) var(--l) / 0.5);
+  }
+
+  &[data-neb-box-border-mode='tinted'] {
+    --border: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint), transparent);
+    --border-hover: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-hover), transparent);
+    --border-active: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-active), transparent);
+    --border-selection: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-selection), transparent);
+    --border-divider: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-divider), transparent);
+    --border-edge: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-edge), transparent);
+    --border-disabled: color-mix(in srgb, hsl(var(--h) var(--s) var(--l-13)) var(--tint-disabled), transparent);
+  }
+}

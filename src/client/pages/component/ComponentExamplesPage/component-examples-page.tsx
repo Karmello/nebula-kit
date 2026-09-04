@@ -1,15 +1,32 @@
 import { pascalCase } from 'change-case'
 
-import meta from 'client/meta'
-import { CodeSnippet } from 'client/components'
-import { convertElemToString } from 'client/helpers'
-import { useAppStore, useCorePageStore, useProPageStore } from 'client/store'
-import { ComponentMeta, PageKey } from 'client/definitions'
-import { Box, Flex, Reveal, Spacer, Switch, Text, WithIcon } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Reveal } from 'lib/components/core/Reveal'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
+import { Markup } from 'lib/components/pro/Markup'
+import { Switch } from 'lib/components/pro/Switch'
+import { NEB_LENGTH } from 'lib/constants'
 import { useCurrentTheme } from 'lib/hooks'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
+import { DocMeta } from 'client/definitions'
+import { convertElemToString } from 'client/helpers'
+import meta from 'client/meta'
+import { useAppStore, useComponentsPageStore } from 'client/store'
 
-const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
-  const { description, jsx, code, noSandBox, noCode, sandBoxWithNoPadding } = props
+const SingleExample = (
+  props: DocMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
+) => {
+  const {
+    description,
+    jsx,
+    code,
+    noSandBox,
+    noCode,
+    sandBoxWithNoPadding,
+    hideExamplesThemeToggle,
+  } = props
 
   const theme = useCurrentTheme()
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
@@ -17,33 +34,51 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
   return (
     <>
       {description && !noSandBox ? (
-        <WithIcon iconName="arrow-down">
-          <Text bold>{description}</Text>
-        </WithIcon>
+        <Title iconName="arrow-down">
+          <Markup>
+            <Text bold>{description}</Text>
+          </Markup>
+        </Title>
       ) : null}
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       {!noSandBox ? (
         <>
-          <Box drawable variant="outline" intent="tertiary" tagAttrs={{ style: { borderStyle: 'dashed' } }}>
+          <Box
+            drawable
+            // variant="outline"
+            intent="tertiary"
+            tagAttrs={{ style: { borderStyle: 'dashed' } }}
+          >
             <Box
               drawable
-              theme={flipGlobalThemeOnExamples ? 'flipped' : theme}
-              variant="solid"
+              theme={
+                !hideExamplesThemeToggle
+                  ? flipGlobalThemeOnExamples
+                    ? 'global-flipped'
+                    : theme
+                  : undefined
+              }
+              bgMode="filled"
               intent="neutral"
               padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-              borderRadius="0px"
+              borderRadius={NEB_LENGTH.px_000}
             >
               {jsx}
             </Box>
           </Box>
-          <Spacer blockSize="xs" />
+          <Spacer blockSize={NEB_LENGTH.px_008} />
         </>
       ) : null}
       {!noCode ? (
         <>
           {!noSandBox ? (
             <Reveal label="Code" intent="tertiary">
-              <CodeSnippet lang="tsx" code={code || convertElemToString(jsx)} borderRadius={false} fullBg />
+              <CodeSnippet
+                lang="tsx"
+                code={code || convertElemToString(jsx)}
+                borderRadius={false}
+                fullBg
+              />
             </Reveal>
           ) : (
             <CodeSnippet
@@ -56,42 +91,53 @@ const SingleExample = (props: ComponentMeta<unknown>['examples'][number]) => {
           )}
         </>
       ) : null}
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize={NEB_LENGTH.px_064} />
     </>
   )
 }
 
-export const ComponentExamplesPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
+export const ComponentExamplesPage = () => {
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
   const setFlipGlobalThemeOnExamples = useAppStore(state => state.setFlipGlobalThemeOnExamples)
 
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 
+  const hideExamplesThemeToggle = meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle
+
   return (
     <Box maxInlineSize="55rem">
-      {!meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle ? (
+      {!hideExamplesThemeToggle ? (
         <>
-          <Flex alignItems="center" columnGap="sm">
-            <Switch size="xs" checked={flipGlobalThemeOnExamples} onChange={setFlipGlobalThemeOnExamples} />
+          <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
+            <Switch
+              scale="xs"
+              checked={flipGlobalThemeOnExamples}
+              onChange={setFlipGlobalThemeOnExamples}
+            />
             <Text bold typography="small">
               Use flipped theme
             </Text>
-          </Flex>
-          <Spacer blockSize="xl" />
+          </Box>
+          <Spacer blockSize={NEB_LENGTH.px_048} />
         </>
       ) : null}
-      <Flex flexDirection="column" alignItems="stretch">
+      <Box display="flex" flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemKeyPascal] || []).map(key => {
           return (meta[itemKeyPascal][key].examples || [])
             .filter(example => !example.skip)
-            .map((example, i) => <SingleExample key={`${key}_${i}`} {...example} />)
+            .map((example, i) => (
+              <SingleExample
+                key={`${key}_${i}`}
+                {...example}
+                hideExamplesThemeToggle={hideExamplesThemeToggle}
+              />
+            ))
         })}
-      </Flex>
+      </Box>
     </Box>
   )
 }

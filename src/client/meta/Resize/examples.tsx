@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Resize, ResizeProps, Text } from 'lib/components'
+import { Resize, ResizeProps, Text } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   const [visible, setVisible] = useState<boolean>(false)
@@ -29,7 +29,7 @@ const ResizeWrapper = ({ property }: { property: ResizeProps['property'] }) => {
   )
 }
 
-const RESIZE_EXAMPLES_META: ComponentMeta<ResizeProps>['examples'] = [
+export const RESIZE_EXAMPLES: DocExample[] = [
   {
     description: 'Animating the inlineSize property.',
     jsx: <ResizeWrapper property="inlineSize" />,
@@ -47,5 +47,3 @@ const RESIZE_EXAMPLES_META: ComponentMeta<ResizeProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
 ]
-
-export { RESIZE_EXAMPLES_META }

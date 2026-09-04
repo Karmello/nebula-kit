@@ -1,17 +1,23 @@
-import { Section, Button, Text, Spacer, Flex, WithIcon } from 'lib/components'
+import { Box, Button, NEB_LENGTH, Section, Spacer, Text, Title } from 'lib/components'
 import { useConnectToGithub } from 'client/api'
 
-export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan: string; githubUsername: string }) => {
+export const ConnectToGithubSection = ({
+  userPlan,
+  githubUsername,
+}: {
+  userPlan: string
+  githubUsername: string
+}) => {
   const connectToGithub = useConnectToGithub()
 
   return (
     <Section heading="GitHub" variant="outline" intent="tertiary">
       <Text>
-        Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you follow upcoming features,
-        track progress and stay aligned with what's being built next.
+        Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you
+        follow upcoming features, track progress and stay aligned with what's being built next.
       </Text>
-      <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="sm">
+      <Spacer blockSize={NEB_LENGTH.px_024} />
+      <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -21,7 +27,7 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
               }
             },
           }}
-          size="sm"
+          scale="sm"
           intent="primary"
           color="blue"
           iconName="plug"
@@ -35,14 +41,14 @@ export const ConnectToGithubSection = ({ userPlan, githubUsername }: { userPlan:
             * For paid users
           </Text>
         ) : githubUsername ? (
-          <WithIcon iconName="check" iconPlacement="right">
+          <Title iconName="check" iconPlacement="right">
             <Text intent="secondary" color="gray" italic>
               Done
             </Text>
-          </WithIcon>
+          </Title>
         ) : null}
-      </Flex>
-      <Spacer blockSize="xs" />
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_008} />
     </Section>
   )
 }

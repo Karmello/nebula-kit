@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, Reveal, RevealProps } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Reveal } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
+export const REVEAL_EXAMPLES: DocExample[] = [
   {
     description: 'Default reveal with a label and content provided.',
     jsx: (
@@ -23,5 +24,3 @@ const REVEAL_EXAMPLES_META: ComponentMeta<RevealProps>['examples'] = [
     ),
   },
 ]
-
-export { REVEAL_EXAMPLES_META }

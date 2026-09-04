@@ -1,9 +1,10 @@
 import js from '@eslint/js'
-import globals from 'globals'
-import tseslint from 'typescript-eslint'
+import prettier from 'eslint-config-prettier'
 import reactPlugin from 'eslint-plugin-react'
 import reactHooks from 'eslint-plugin-react-hooks'
-import prettier from 'eslint-config-prettier'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
 
 export default [
   {
@@ -27,6 +28,7 @@ export default [
     plugins: {
       react: reactPlugin,
       'react-hooks': reactHooks,
+      'simple-import-sort': simpleImportSort,
     },
     rules: {
       indent: 'off',
@@ -44,6 +46,19 @@ export default [
       'react-hooks/exhaustive-deps': 'off',
       'linebreak-style': ['error', 'unix'],
       'no-extra-boolean-cast': 'off',
+      'simple-import-sort/imports': [
+        'error',
+        {
+          groups: [
+            ['^\\u0000'],
+            ['^react$', '^react-dom$', '^@?\\w', '^node:'],
+            ['^@/', '^lib/', '^client/', '^components/', '^utils/'],
+            ['^\\.'],
+            ['^.+\\.(css|scss)$'],
+          ],
+        },
+      ],
+      'simple-import-sort/exports': 'error',
     },
     settings: {
       react: {

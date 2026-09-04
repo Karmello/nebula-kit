@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, Button, Segment, Select, Toolbar, ToolbarProps } from 'lib/components'
+import { Box, Button, Select } from 'lib/index.core'
+import { Toolbar } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
+export const TOOLBAR_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for Toolbar.',
     jsx: (
@@ -23,14 +24,10 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
           <Box paddingInline="20px">Brand</Box>
         </Toolbar.Start>
         <Toolbar.Main>
-          <Segment flexDirection={{ base: 'column', md: 'row' }}>
-            <Segment.Item>
-              <Button fullWidth>Page 1</Button>
-            </Segment.Item>
-            <Segment.Item>
-              <Button fullWidth>Page 2</Button>
-            </Segment.Item>
-          </Segment>
+          <Box display="flex" flexDirection={{ base: 'column', md: 'row' }}>
+            <Button fullWidth={{ base: true, md: false }}>Page 1</Button>
+            <Button fullWidth={{ base: true, md: false }}>Page 2</Button>
+          </Box>
         </Toolbar.Main>
         <Toolbar.End>
           <Select staticLabel="Menu">
@@ -43,5 +40,3 @@ const TOOLBAR_EXAMPLES_META: ComponentMeta<ToolbarProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
 ]
-
-export { TOOLBAR_EXAMPLES_META }

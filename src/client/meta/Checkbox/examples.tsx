@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Checkbox, CheckboxProps, Flex } from 'lib/components'
+import { Box, Checkbox } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
+export const CHECKBOX_EXAMPLES: DocExample[] = [
   {
     code: '<Checkbox checked={checked} />',
     skip: true,
@@ -9,47 +9,45 @@ const CHECKBOX_EXAMPLES_META: ComponentMeta<CheckboxProps>['examples'] = [
   {
     description: 'Different checkbox sizes in the outline variant.',
     jsx: (
-      <Flex gap="xs" alignItems="center">
+      <Box display="flex" gap="8px" alignItems="center">
         <Checkbox size="xs" variant="outline" />
         <Checkbox size="sm" variant="outline" />
         <Checkbox size="md" variant="outline" />
         <Checkbox size="lg" variant="outline" />
-      </Flex>
+      </Box>
     ),
   },
   {
     description: 'Different checkbox sizes in the soft-outline variant.',
     jsx: (
-      <Flex gap="xs" alignItems="center">
+      <Box display="flex" gap="8px" alignItems="center">
         <Checkbox size="xs" variant="soft-outline" />
         <Checkbox size="sm" variant="soft-outline" />
         <Checkbox size="md" variant="soft-outline" />
         <Checkbox size="lg" variant="soft-outline" />
-      </Flex>
+      </Box>
     ),
   },
   {
     description: 'Different checkbox sizes in the solid variant.',
     jsx: (
-      <Flex gap="xs" alignItems="center">
+      <Box display="flex" gap="8px" alignItems="center">
         <Checkbox size="xs" variant="solid" />
         <Checkbox size="sm" variant="solid" />
         <Checkbox size="md" variant="solid" />
         <Checkbox size="lg" variant="solid" />
-      </Flex>
+      </Box>
     ),
   },
   {
     description: 'Disabled selected checkboxes.',
     jsx: (
-      <Flex gap="xs" alignItems="center">
+      <Box display="flex" gap="8px" alignItems="center">
         <Checkbox size="xs" variant="solid" disabled defaultChecked />
         <Checkbox size="sm" variant="solid" disabled defaultChecked />
         <Checkbox size="md" variant="solid" disabled defaultChecked />
         <Checkbox size="lg" variant="solid" disabled defaultChecked />
-      </Flex>
+      </Box>
     ),
   },
 ]
-
-export { CHECKBOX_EXAMPLES_META }

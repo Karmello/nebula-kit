@@ -1,11 +1,12 @@
 import { useMemo } from 'react'
-import { Navigate, Route, Routes, useLocation } from 'react-router'
 import { pascalCase } from 'change-case'
+import { Navigate, Route, Routes, useLocation } from 'react-router'
 
-import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
+import { Spacer } from 'lib/components/core/Spacer'
+import { NEB_LENGTH } from 'lib/constants'
+import { NextPageButton } from 'client/components/page/NextPageButton'
 import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
-import { NextPageButton } from 'client/components'
-import { Spacer } from 'lib/components'
+import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
 
 export const FoundationsPageRoutes = () => {
   const { pathname } = useLocation()
@@ -26,7 +27,7 @@ export const FoundationsPageRoutes = () => {
           Component={() => (
             <>
               <Component pathname={pathname} />
-              <Spacer blockSize="xl" />
+              <Spacer blockSize={NEB_LENGTH.px_048} />
               <NextPageButton pageKey={PageKey.foundations} />
             </>
           )}
@@ -37,7 +38,7 @@ export const FoundationsPageRoutes = () => {
 
   return (
     <>
-      <Spacer blockSize="sm" />
+      <Spacer blockSize={NEB_LENGTH.px_016} />
       <Routes>
         {ROUTES}
         <Route

@@ -1,0 +1,12 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  border-radius: var(--neb-border-radius);
+
+  // enabled
+  &:not([data-neb-box-disabled='true']) {
+    // focus ring
+    &:focus-visible {
+      outline: var(--neb-focus-ring-width) solid var(--neb-focus-ring-color);
+      outline-offset: calc(var(--neb-focus-ring-width) * -1);
+    }
+  }
+}

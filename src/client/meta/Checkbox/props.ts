@@ -1,48 +1,56 @@
-import { ComponentMeta } from 'client/definitions'
-import { CheckboxProps } from 'lib/components'
-
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
-  CHECKBOX_SIZES,
   CHECKBOX_VARIANTS,
   DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
-} from 'lib/components/core/form-elements/Checkbox'
+} from 'lib/components/core/Checkbox/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
+import { CheckboxProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-
-const CHECKBOX_PROPS_META: ComponentMeta<CheckboxProps>['props'] = {
+export const CHECKBOX_PROPS: Record<keyof CheckboxProps, DocProp> = {
   checked: {
     options: ['boolean'],
     description: 'Controls the checked state in controlled mode.',
   },
-  color: BOX_PROPS_META.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+  },
   defaultChecked: {
     options: ['boolean'],
     description: 'Sets the initial checked state for uncontrolled usage.',
   },
-  disabled: BOX_PROPS_META.disabled,
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+  },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_CHECKBOX_INTENT),
+    description: "Color tone applied to the component's main color.",
   },
   onChange: {
     options: ['(checked: boolean) => void'],
     description: 'Called when the checked state changes. Receives the new checked value.',
   },
   size: {
-    options: CHECKBOX_SIZES,
+    options: TSHIRT_SIZES,
     defaultValue: DEFAULT_CHECKBOX_SIZE,
     description: 'Controls overall proportions, adjusting the checkbox and icon size.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   variant: {
-    ...BOX_PROPS_META.variant,
     options: CHECKBOX_VARIANTS,
-    defaultValue: DEFAULT_CHECKBOX_VARIANT,
+    defaultValue: String(DEFAULT_CHECKBOX_VARIANT),
+    description: 'Visual style variant.',
   },
 }
-
-export { CHECKBOX_PROPS_META }

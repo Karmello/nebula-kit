@@ -1,5 +1,4 @@
 import { JSX, SVGProps } from 'react'
-
 import {
   ArrowDown,
   ArrowLeft,
@@ -16,11 +15,11 @@ import {
   ChevronDown,
   ChevronLeft,
   ChevronRight,
-  ChevronUp,
   ChevronsDown,
   ChevronsLeft,
   ChevronsRight,
   ChevronsUp,
+  ChevronUp,
   CircleAlert,
   CircleUser,
   CircleX,
@@ -81,13 +80,13 @@ import {
   TreePine,
   TriangleAlert,
   User,
-  Users,
   UserPlus,
+  Users,
   X,
   Zap,
 } from 'lucide-react'
 
-import { IconName } from 'lib/definitions'
+import { type IconName } from 'lib/components/core/Icon/types'
 
 export const ICONS: Record<IconName, any> = {
   'arrow-down': ArrowDown,
@@ -176,6 +175,8 @@ export const ICONS: Record<IconName, any> = {
   zap: Zap,
 }
 
-export const getSvgIconComponent = (name: IconName): ((props: SVGProps<SVGElement>) => JSX.Element) => {
+export const getSvgIconComponent = (
+  name: IconName
+): ((props: SVGProps<SVGElement>) => JSX.Element) => {
   return ICONS[name]
 }

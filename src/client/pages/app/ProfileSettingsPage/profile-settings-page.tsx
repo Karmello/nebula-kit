@@ -1,10 +1,10 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
+import { Box, Loader, NEB_LENGTH, Section, Spacer, useSnackbar } from 'lib/components'
 import { useGetUser } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
-import { Box, Loader, Section, Spacer, useSnackbar } from 'lib/components'
 
 import { AccountDeactivationSection } from './AccountDeactivationSection'
 import { ConnectToDiscordSection } from './ConnectToDiscordSection'
@@ -38,23 +38,33 @@ export const ProfileSettingsPage = () => {
   }, [search])
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
       <Section size="lg" heading="Settings" iconName="settings">
-        <Spacer blockSize="md" />
+        <Spacer blockSize={NEB_LENGTH.px_024} />
         {!getUser.data || getUser.isMakingRequest ? (
           <Box position="relative" blockSize="160px">
-            <Loader centered size="lg" color="blue" />
+            <Loader centered size={NEB_LENGTH.px_024} color="blue" />
           </Box>
         ) : (
           <>
             <UpdatePasswordSection />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize={NEB_LENGTH.px_048} />
             <UpdateEmailSection />
-            <Spacer blockSize="lg" />
-            <ConnectToDiscordSection userPlan={getUser.data.user.plan} discordUserId={getUser.data.user.discordUserId} />
-            <Spacer blockSize="lg" />
-            <ConnectToGithubSection userPlan={getUser.data.user.plan} githubUsername={getUser.data.user.githubUsername} />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize={NEB_LENGTH.px_048} />
+            <ConnectToDiscordSection
+              userPlan={getUser.data.user.plan}
+              discordUserId={getUser.data.user.discordUserId}
+            />
+            <Spacer blockSize={NEB_LENGTH.px_048} />
+            <ConnectToGithubSection
+              userPlan={getUser.data.user.plan}
+              githubUsername={getUser.data.user.githubUsername}
+            />
+            <Spacer blockSize={NEB_LENGTH.px_048} />
             <PaymentCancelSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}
@@ -63,7 +73,7 @@ export const ProfileSettingsPage = () => {
                 getUser.sendRequest()
               }}
             />
-            <Spacer blockSize="lg" />
+            <Spacer blockSize={NEB_LENGTH.px_048} />
             <AccountDeactivationSection
               userEmail={getUser.data.user.email}
               userPlan={getUser.data.user.plan}

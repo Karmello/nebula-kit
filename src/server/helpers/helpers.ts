@@ -5,7 +5,7 @@ import META from 'client/meta'
 export const DEFAULT_TITLE = 'NebulaKit | React UI System'
 
 export const DEFAULT_DESCRIPTION =
-  'React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.'
+  'React UI system designed to minimize interface development effort, letting you focus on application logic while keeping products consistent, maintainable and resistant to entropy.'
 
 export const getHtmlMetaData = (path: string): { title: string; description: string } => {
   let title, description
@@ -50,7 +50,10 @@ export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: strin
     .replace('<!-- og:title -->', `<meta property="og:title" content="${title}" />`)
     .replace('<!-- og:description -->', `<meta name="og:description" content="${description}" />`)
     .replace('<!-- twitter:title -->', `<meta property="twitter:title" content="${title}" />`)
-    .replace('<!-- twitter:description -->', `<meta name="twitter:description" content="${description}" />`)
+    .replace(
+      '<!-- twitter:description -->',
+      `<meta name="twitter:description" content="${description}" />`
+    )
     .replace(
       '</head>',
       `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`

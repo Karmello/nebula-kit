@@ -1,27 +1,25 @@
-import { Routes, Route, Navigate } from 'react-router'
-
-import {
-  HomePage,
-  FoundationsPage,
-  CorePage,
-  ProPage,
-  FaqPage,
-  BlogPage,
-  PricingPage,
-  ComponentsBundlePage,
-  LoginPage,
-  RegisterPage,
-  RecoveryPage,
-  ProfileAccountPage,
-  ProfileSettingsPage,
-  ConfirmActionPage,
-  FeedbackPage,
-  PlaygroundPage,
-  PatternsPage,
-  AssistantPage,
-} from 'client/pages'
+import { Navigate, Route, Routes } from 'react-router'
 
 import { PageKey } from 'client/definitions'
+import {
+  AssistantPage,
+  BlogPage,
+  ComponentsBundlePage,
+  ComponentsPage,
+  ConfirmActionPage,
+  FaqPage,
+  FeedbackPage,
+  FoundationsPage,
+  HomePage,
+  LoginPage,
+  PatternsPage,
+  PlaygroundPage,
+  PricingPage,
+  ProfileAccountPage,
+  ProfileSettingsPage,
+  RecoveryPage,
+  RegisterPage,
+} from 'client/pages'
 
 import styles from './root-page.module.scss'
 
@@ -33,8 +31,7 @@ export const RootPage = () => {
         <Route path={PageKey.patterns} Component={PatternsPage} />
         <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`${PageKey.core}/*`} Component={CorePage} />
-        <Route path={`${PageKey.pro}/*`} Component={ProPage} />
+        <Route path={`${PageKey.library}/*`} Component={ComponentsPage} />
         <Route path={PageKey.faq} Component={FaqPage} />
         <Route path={PageKey.blog} Component={BlogPage} />
         <Route path={PageKey.pricing} Component={PricingPage} />

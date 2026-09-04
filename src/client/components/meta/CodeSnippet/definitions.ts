@@ -5,6 +5,7 @@ export type CodeSnippetLang = (typeof CODE_SNIPPET_LANGS)[number]
 
 export type CodeSnippetProps = {
   code: string
+  usage?: string
   lang: CodeSnippetLang
   borderRadius?: boolean
   description?: string

@@ -1,12 +1,12 @@
-import { Box, Spacer, Table, Text } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
 import { BP } from 'lib/hooks'
 
 export default () => {
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>Responsive breakpoints with their pixel ranges defined in the system.</Text>
-      <Spacer blockSize="lg" />
-      <Table paddingBlock="10px" paddingInline="15px">
+      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Table paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_016}>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>Breakpoint</Table.HeaderCell>

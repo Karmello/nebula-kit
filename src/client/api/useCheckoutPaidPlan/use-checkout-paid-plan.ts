@@ -6,7 +6,10 @@ export type UseCheckoutPaidPlanSuccess = { url: string }
 export type UseCheckoutPaidPlanError = { message: string }
 
 export const useCheckoutPaidPlan = () => {
-  const { data, error, isMakingRequest, sendRequest } = useMakeApiRequest<UseCheckoutPaidPlanSuccess, UseCheckoutPaidPlanError>({
+  const { data, error, isMakingRequest, sendRequest } = useMakeApiRequest<
+    UseCheckoutPaidPlanSuccess,
+    UseCheckoutPaidPlanError
+  >({
     path: '/payment/checkout',
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

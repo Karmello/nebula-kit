@@ -1,55 +1,41 @@
-import { Box, Divider, Flex, Spacer, Text } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, Text } from 'lib/components'
 
 import { About } from './About'
+import { Families } from './Families'
 import { Hero } from './Hero'
 import { Principles } from './Principles'
-import { Ortho } from './Ortho'
-import { Preferences } from './Preferences'
 import { Video } from './Video'
-import { Families } from './Families'
 
 export const HomePage = () => {
   return (
-    <Box padding={{ base: 'md', lg: 'xl' }} paddingTop="2xs">
-      <Flex
+    <Box
+      padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      paddingTop={NEB_LENGTH.px_004}
+    >
+      <Box
+        display="flex"
         flexDirection={{ base: 'column', lg: 'row' }}
         justifyContent="center"
-        rowGap="2xl"
-        columnGap={{ base: '50px', xl: '100px' }}
+        rowGap={NEB_LENGTH.px_064}
+        columnGap={{ base: NEB_LENGTH.px_048, xl: NEB_LENGTH.px_096 }}
       >
-        <Flex.Item flex="2">
+        <Box flex="2">
           <About />
-          <Spacer blockSize={{ base: 'lg', lg: 'xl' }} />
+          <Spacer blockSize={{ base: NEB_LENGTH.px_048, lg: NEB_LENGTH.px_048 }} />
           <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
-          <Divider />
-          <Spacer blockSize="md" />
+          <HorizontalRule />
+          <Spacer blockSize={NEB_LENGTH.px_024} />
           <Hero />
-          <Divider marginBlock="lg" />
+          <HorizontalRule marginBlock={NEB_LENGTH.px_048} />
           <Video />
-        </Flex.Item>
-        <Flex.Item flex="1">
-          <Flex
-            alignItems="center"
-            alignContent="center"
-            columnGap="xl"
-            rowGap="xl"
-            justifyContent="center"
-            flexDirection={{ base: 'column', md: 'row-reverse' }}
-          >
-            <Flex.Item>
-              <Preferences />
-            </Flex.Item>
-            <Flex.Item>
-              <Ortho />
-            </Flex.Item>
-          </Flex>
-          <Spacer blockSize="2xl" />
+        </Box>
+        <Box flex="1">
           <Principles />
-        </Flex.Item>
-      </Flex>
-      <Spacer blockSize="3xl" />
+        </Box>
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_096} />
       <Families />
     </Box>
   )

@@ -1,12 +1,23 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { useNavigateTo } from 'client/hooks'
-import { PageKey } from 'client/definitions'
+import {
+  Box,
+  Button,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Table,
+  Text,
+  Title,
+} from 'lib/components'
 import { useGetUser } from 'client/api'
+import { CopyButton } from 'client/components/meta/CopyButton'
+import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { CopyButton } from 'client/components'
-import { Loader, Table, Text, Flex, Link, Button, Box, Spacer, Section, WithIcon } from 'lib/components'
 
 export default () => {
   const getUser = useGetUser()
@@ -32,15 +43,23 @@ export default () => {
 
   const discordStatusText = hasPaidPlan ? (isDiscordConnected ? 'Connected' : 'Not connected') : '-'
 
-  const githubStatusText = hasPaidPlan ? (isGithubConnected ? `Connected as ${userData?.githubUsername}` : 'Not connected') : '-'
+  const githubStatusText = hasPaidPlan
+    ? isGithubConnected
+      ? `Connected as ${userData?.githubUsername}`
+      : 'Not connected'
+    : '-'
 
   return (
     <Section heading="Details" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
 
       {!getUser.isMakingRequest ? (
         <Table layout="fixed" intent="neutral">
-          <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+          <Table.Body
+            intent="muted"
+            paddingBlock={NEB_LENGTH.px_012}
+            paddingInline={NEB_LENGTH.px_012}
+          >
             <Table.Row>
               <Table.Cell>
                 <Text lineHeight={1.2}>Email</Text>
@@ -57,7 +76,9 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Text wordBreak="break-all">{userData ? new Date(userData.createdAt).toDateString() : ''}</Text>
+                <Text wordBreak="break-all">
+                  {userData ? new Date(userData.createdAt).toDateString() : ''}
+                </Text>
               </Table.Cell>
             </Table.Row>
 
@@ -67,7 +88,13 @@ export default () => {
               </Table.Cell>
 
               <Table.Cell colSpan={2}>
-                <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
+                <Box
+                  display="flex"
+                  alignItems="center"
+                  flexWrap="wrap"
+                  rowGap={NEB_LENGTH.px_008}
+                  columnGap={NEB_LENGTH.px_016}
+                >
                   <Text bold>{userData ? sentenceCase(userData.plan) : ''}</Text>
 
                   {!getUser.isMakingRequest ? (
@@ -77,12 +104,12 @@ export default () => {
                         navigateTo(PageKey.pricing)
                       }}
                     >
-                      <Button size="xs" variant="outline" intent="tertiary" color="blue">
+                      <Button scale="xs" variant="outline" intent="tertiary" color="blue">
                         {userData?.plan === 'free' ? 'Upgrade' : 'Details'}
                       </Button>
                     </Link>
                   ) : null}
-                </Flex>
+                </Box>
               </Table.Cell>
             </Table.Row>
 
@@ -93,7 +120,7 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" gap="xs">
+                  <Box display="flex" alignItems="center" gap={NEB_LENGTH.px_008}>
                     <Text
                       intent={userData.licenseKey ? 'primary' : undefined}
                       color={userData.licenseKey ? 'blue' : undefined}
@@ -105,7 +132,7 @@ export default () => {
                     </Text>
 
                     {userData.licenseKey ? <CopyButton text={userData.licenseKey} /> : null}
-                  </Flex>
+                  </Box>
                 ) : (
                   ''
                 )}
@@ -119,16 +146,14 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <WithIcon
+                  <Title
                     iconName={hasPaidPlan ? (isDiscordConnected ? 'check' : undefined) : undefined}
                     iconPlacement="right"
-                    iconColor={discordStatusColor}
-                    iconIntent={hasPaidPlan ? 'primary' : undefined}
+                    color={discordStatusColor}
+                    intent={hasPaidPlan ? 'primary' : undefined}
                   >
-                    <Text color={discordStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
-                      {discordStatusText}
-                    </Text>
-                  </WithIcon>
+                    {discordStatusText}
+                  </Title>
                 ) : null}
               </Table.Cell>
             </Table.Row>
@@ -140,24 +165,30 @@ export default () => {
 
               <Table.Cell colSpan={2}>
                 {userData ? (
-                  <Flex alignItems="center" flexWrap="wrap" rowGap="xs" columnGap="sm">
-                    <Flex.Item alignSelf="auto">
-                      <WithIcon
-                        iconName={hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined}
+                  <Box
+                    display="flex"
+                    alignItems="center"
+                    flexWrap="wrap"
+                    rowGap={NEB_LENGTH.px_008}
+                    columnGap={NEB_LENGTH.px_016}
+                  >
+                    <Box alignSelf="auto">
+                      <Title
+                        iconName={
+                          hasPaidPlan ? (isGithubConnected ? 'check' : undefined) : undefined
+                        }
                         iconPlacement="right"
-                        iconColor={githubStatusColor}
-                        iconIntent={hasPaidPlan ? 'primary' : undefined}
+                        color={githubStatusColor}
+                        intent={hasPaidPlan ? 'primary' : undefined}
                       >
-                        <Text color={githubStatusColor} intent={hasPaidPlan ? 'primary' : undefined}>
-                          {githubStatusText}
-                        </Text>
-                      </WithIcon>
-                    </Flex.Item>
+                        {githubStatusText}
+                      </Title>
+                    </Box>
 
                     {isGithubConnected ? (
                       <Link href="https://github.com/orgs/nebula-kit/projects/1" target="_blank">
                         <Button
-                          size="xs"
+                          scale="xs"
                           variant="outline"
                           intent="secondary"
                           color="blue"
@@ -168,15 +199,21 @@ export default () => {
                         </Button>
                       </Link>
                     ) : null}
-                  </Flex>
+                  </Box>
                 ) : null}
               </Table.Cell>
             </Table.Row>
           </Table.Body>
         </Table>
       ) : (
-        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
-          <Loader centered active color="blue" size="sm" />
+        <Box
+          position="relative"
+          blockSize={NEB_LENGTH.px_064}
+          drawable
+          bgMode="filled"
+          intent="muted"
+        >
+          <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
     </Section>

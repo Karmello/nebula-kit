@@ -1,6 +1,5 @@
-import { Select, Spacer, Text, Icon, Tooltip, Flex } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { Box, Icon, NEB_LENGTH, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { usePlaygroundStore } from 'client/store'
 
 export const ComponentSelect = () => {
   const components = usePlaygroundStore(state => state.components)
@@ -9,7 +8,7 @@ export const ComponentSelect = () => {
 
   return (
     <>
-      <Flex justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
         <Text bold>Component</Text>
         <Tooltip
           content="This list does not include all components, only the ones that best fit the purpose of the Playground."
@@ -17,11 +16,11 @@ export const ComponentSelect = () => {
           maxInlineSize={400}
           mode="click"
         >
-          <Icon name="info" size="18px" color="blue" intent="primary" />
+          <Icon name="info" size={NEB_LENGTH.px_016} color="blue" intent="primary" />
         </Tooltip>
-      </Flex>
-      <Spacer blockSize="2xs" />
-      <Select value={activeComponent} onChange={setActiveComponent} scrollAlign="center">
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_004} />
+      <Select value={activeComponent} onChange={setActiveComponent}>
         {Object.keys(components).map(name => (
           <Select.Option value={name}>{name}</Select.Option>
         ))}

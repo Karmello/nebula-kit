@@ -1,18 +1,24 @@
-import { CodeSnippet } from 'client/components'
-import { Box, MarkerList, Section, Spacer, Text } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { MarkerList } from 'lib/components/core/MarkerList'
+import { Section } from 'lib/components/core/Section'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Section size="sm" heading="Box can act as a local styling island">
         <Text>
-          When theme or brand is set, the Box creates a scoped styling context for all its descendants without affecting the rest
-          of the app. Under the hood, a styling island provides both Theme and Brand context. All drawable descendants resolve
-          their colors using the nearest styling island.
+          When theme or brand is set, the Box creates a scoped styling context for all its
+          descendants without affecting the rest of the app. Under the hood, a styling island
+          provides both Theme and Brand context. All drawable descendants resolve their colors using
+          the nearest styling island.
         </Text>
         <Spacer />
         <Text>Theme and brand follow the same rules:</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>they are scoped to a subtree</Text>
@@ -31,12 +37,12 @@ export default () => {
       <Spacer />
       <Section size="sm" heading="Theme defines the rules, surface makes them visible">
         <Text>
-          A styling island is complete only when both context and surface are defined. Setting theme alone changes how colors are
-          interpreted, but does not create a visible surface.
+          A styling island is complete only when both context and surface are defined. Setting theme
+          alone changes how colors are interpreted, but does not create a visible surface.
         </Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <Text>How to do it properly ?</Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <CodeSnippet
           lang="tsx"
           code={`<Box theme="dark" drawable variant="solid" intent="neutral">
@@ -46,10 +52,11 @@ export default () => {
         />
         <Spacer />
         <Text>
-          Components inside the island rely on the active theme to resolve contrast, states and colors. Without a surface, they
-          may still render on the parent background, which can lead to:
+          Components inside the island rely on the active theme to resolve contrast, states and
+          colors. Without a surface, they may still render on the parent background, which can lead
+          to:
         </Text>
-        <Spacer blockSize="xs" />
+        <Spacer blockSize={NEB_LENGTH.px_008} />
         <MarkerList>
           <MarkerList.Item>
             <Text>incorrect contrast</Text>
@@ -63,8 +70,9 @@ export default () => {
         </MarkerList>
         <Spacer />
         <Text>
-          Styling islands should typically use neutral surfaces (light or dark). Strong colored backgrounds are not recommended,
-          as they can interfere with contrast and distort component states. If a colored surface is needed, prefer subtle tones.
+          Styling islands should typically use neutral surfaces (light or dark). Strong colored
+          backgrounds are not recommended, as they can interfere with contrast and distort component
+          states. If a colored surface is needed, prefer subtle tones.
         </Text>
       </Section>
     </Box>

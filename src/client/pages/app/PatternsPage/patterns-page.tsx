@@ -1,29 +1,54 @@
-import { useState } from 'react'
-import { useLocation, Navigate } from 'react-router-dom'
+import { useLayoutEffect } from 'react'
+import { Navigate, useLocation } from 'react-router'
 
+import {
+  Box,
+  Markup,
+  MultiSelect,
+  NEB_LENGTH,
+  Section,
+  SideNav,
+  Spacer,
+  SplitView,
+  Text,
+} from 'lib/components'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 import { useNavigateTo } from 'client/hooks'
-import { PATTERNS } from 'client/definitions'
-import { CodeSnippet } from 'client/components'
-import { convertElemToString } from 'client/helpers'
-import { Box, Button, Flex, Section, Segment, SideNav, Spacer, SplitView, Text } from 'lib/components'
+import { PATTERN_CATEGORIES, PATTERNS } from 'client/patterns'
+import { usePatternsStore } from 'client/store'
 
 export const PatternsPage = () => {
-  const [viewMode, setViewMode] = useState<'code' | 'preview'>('code')
-
-  const navigateTo = useNavigateTo()
   const { pathname, search } = useLocation()
-  const patternId = new URLSearchParams(search).get('id')
+  const navigateTo = useNavigateTo()
+  const { patternCategories, setPatternCategories, activePatternId, setActivePatternId } =
+    usePatternsStore()
 
-  if (patternId == null) {
-    return <Navigate replace to={{ pathname, search: `?id=${encodeURIComponent(PATTERNS[0].id)}` }} />
+  const patternIdParam = new URLSearchParams(search).get('id')
+  const queryPattern = PATTERNS.find(p => p.id === patternIdParam)
+  const activePattern = PATTERNS.find(p => p.id === activePatternId)
+
+  useLayoutEffect(() => {
+    if (queryPattern) {
+      setActivePatternId(queryPattern.id)
+    }
+  }, [queryPattern])
+
+  if (!queryPattern) {
+    if (activePattern) {
+      return <Navigate replace to={{ pathname, search: `?id=${activePatternId}` }} />
+    } else {
+      return <Navigate replace to={{ pathname, search: `?id=${PATTERNS[0].id}` }} />
+    }
   }
 
-  const pattern = PATTERNS.find(p => p.id === patternId)
-
-  if (!pattern) return null
+  const pattern = queryPattern || activePattern
+  const Component = pattern.component
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }}>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
       <Section size="lg" heading="Patterns" iconName="pyramid">
         <SplitView>
           {({ mode, setSideOpen }) => {
@@ -31,87 +56,77 @@ export const PatternsPage = () => {
               <>
                 <SplitView.Main>
                   <SplitView.MainBar>
-                    <Flex alignItems="center" flexWrap="wrap" columnGap="md" rowGap="xs">
-                      <Flex.Item flex="1">
-                        <Text typography="h5" noWrap>
-                          {pattern.title}
-                        </Text>
-                      </Flex.Item>
-                      <Segment>
-                        <Segment.Item>
-                          <Button
-                            size="xs"
-                            intent="muted"
-                            selected={viewMode === 'code'}
-                            bold={viewMode === 'code'}
-                            inlineSize="85px"
-                            onClick={() => setViewMode('code')}
-                          >
-                            Code
-                          </Button>
-                        </Segment.Item>
-                        <Segment.Item>
-                          <Button
-                            size="xs"
-                            intent="muted"
-                            selected={viewMode === 'preview'}
-                            bold={viewMode === 'preview'}
-                            inlineSize="85px"
-                            onClick={() => setViewMode('preview')}
-                          >
-                            Preview
-                          </Button>
-                        </Segment.Item>
-                      </Segment>
-                    </Flex>
+                    <Text typography="h5" noWrap>
+                      {pattern.title}
+                    </Text>
+                    <Spacer blockSize={NEB_LENGTH.px_002} />
+                    <Markup>
+                      <Text intent="primary">{pattern.description}</Text>
+                    </Markup>
                   </SplitView.MainBar>
-                  <Spacer />
-                  <Text>{pattern.description}</Text>
-                  <Spacer />
-                  {pattern.jsx ? (
-                    viewMode === 'code' ? (
-                      <CodeSnippet
-                        key={patternId}
-                        lang="tsx"
-                        code={convertElemToString(pattern.jsx)}
-                        maxBlockSize="calc(100dvh - 275px)"
-                      />
-                    ) : (
+                  <Spacer blockSize={NEB_LENGTH.px_048} />
+                  <Box
+                    display="flex"
+                    gap={NEB_LENGTH.px_024}
+                    flexDirection="column"
+                    alignItems="stretch"
+                  >
+                    <Box flex="1">
                       <Box
                         tagAttrs={{ style: { borderStyle: 'dashed' } }}
                         drawable
-                        variant="outline"
-                        intent="muted"
+                        // variant="outline"
+                        intent="tertiary"
                         maxBlockSize="calc(100dvh - 275px)"
-                        padding="sm"
+                        padding={NEB_LENGTH.px_016}
                       >
-                        {pattern.jsx}
+                        <Component />
                       </Box>
-                    )
-                  ) : null}
+                    </Box>
+                    {pattern?.code ? (
+                      <Box flex="1">
+                        <CodeSnippet
+                          lang="tsx"
+                          code={pattern.code}
+                          usage={pattern.usage}
+                          maxBlockSize="calc(100dvh - 275px)"
+                        />
+                      </Box>
+                    ) : null}
+                  </Box>
                 </SplitView.Main>
-                <SplitView.Side inlineSize="350px" paddingRight={{ lg: 'md' }}>
-                  <SideNav size="xl" gap="3xs" intent={{ base: 'tertiary', lg: 'muted' }}>
-                    {PATTERNS.map(({ id, title, category }) => {
-                      const href = `/patterns?id=${id}`
+                <SplitView.Side inlineSize="350px" paddingRight={{ lg: NEB_LENGTH.px_024 }}>
+                  <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">
+                    {PATTERN_CATEGORIES.map(c => (
+                      <MultiSelect.Option key={c} value={c}>
+                        {c}
+                      </MultiSelect.Option>
+                    ))}
+                  </MultiSelect>
+                  <Spacer blockSize={NEB_LENGTH.px_016} />
+                  <SideNav scale="xl" gap={NEB_LENGTH.px_002}>
+                    {PATTERNS.filter(p => patternCategories.includes(p.category)).map(
+                      ({ id, title }) => {
+                        const href = `/patterns?id=${id}`
 
-                      return (
-                        <SideNav.Item
-                          key={id}
-                          href={href}
-                          onClick={async () => {
-                            if (mode === 'overlay') await setSideOpen(false)
-                            navigateTo(href)
-                          }}
-                          selected={patternId === id}
-                          description={category}
-                          bold
-                          align="start"
-                        >
-                          {title}
-                        </SideNav.Item>
-                      )
-                    })}
+                        return (
+                          <SideNav.Item
+                            key={id}
+                            href={href}
+                            onClick={async () => {
+                              if (mode === 'overlay') await setSideOpen(false)
+                              navigateTo(href)
+                            }}
+                            selected={pattern.id === id}
+                            // description={category}
+                            bold
+                            align="start"
+                          >
+                            {title}
+                          </SideNav.Item>
+                        )
+                      }
+                    )}
                   </SideNav>
                 </SplitView.Side>
               </>

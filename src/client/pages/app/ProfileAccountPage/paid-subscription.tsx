@@ -1,8 +1,19 @@
 import { useLayoutEffect } from 'react'
 
+import {
+  Box,
+  Button,
+  Callout,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Section,
+  Spacer,
+  Table,
+  Text,
+} from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
 import { useAppStore } from 'client/store'
-import { Box, Button, Callout, Link, Loader, Section, Spacer, Table, Text } from 'lib/components'
 
 export default ({ enabled }: { enabled: boolean }) => {
   const user = useAppStore(state => state.user)
@@ -21,11 +32,15 @@ export default ({ enabled }: { enabled: boolean }) => {
 
   return (
     <Section heading="Subscription" size="sm" intent="primary" color="blue">
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       {!getPaymentInfo.isMakingRequest ? (
         <>
           <Table layout="fixed" intent="neutral">
-            <Table.Body intent="muted" paddingBlock="10px" paddingInline="12px">
+            <Table.Body
+              intent="muted"
+              paddingBlock={NEB_LENGTH.px_012}
+              paddingInline={NEB_LENGTH.px_012}
+            >
               <Table.Row>
                 <Table.Cell colSpan={1}>
                   <Text lineHeight={1.2}>Renews every</Text>
@@ -36,7 +51,8 @@ export default ({ enabled }: { enabled: boolean }) => {
                   </Text>
                 </Table.Cell>
               </Table.Row>
-              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+              {getPaymentInfo.data?.subscription.status &&
+              getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
                 <Table.Row>
                   <Table.Cell colSpan={1}>
                     <Text lineHeight={1.2}>Amount</Text>
@@ -48,7 +64,8 @@ export default ({ enabled }: { enabled: boolean }) => {
                   </Table.Cell>
                 </Table.Row>
               ) : null}
-              {getPaymentInfo.data?.subscription.status && getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
+              {getPaymentInfo.data?.subscription.status &&
+              getPaymentInfo.data?.subscription.status !== 'PAST_DUE' ? (
                 <Table.Row>
                   <Table.Cell colSpan={1}>
                     <Text lineHeight={1.2}>Last payment</Text>
@@ -74,10 +91,10 @@ export default ({ enabled }: { enabled: boolean }) => {
               </Table.Row>
             </Table.Body>
           </Table>
-          <Spacer blockSize="sm" />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
           <Link href={getPaymentDetailsUrl.data?.url} target="_blank">
             <Button
-              size="xs"
+              scale="xs"
               intent="primary"
               color="blue"
               disabled={!!getPaymentDetailsUrl.error}
@@ -89,7 +106,7 @@ export default ({ enabled }: { enabled: boolean }) => {
           </Link>
           {getPaymentInfo.data?.subscription.status === 'PAST_DUE' ? (
             <>
-              <Spacer blockSize="lg" />
+              <Spacer blockSize={NEB_LENGTH.px_048} />
               <Callout
                 size="sm"
                 status="error"
@@ -101,8 +118,14 @@ export default ({ enabled }: { enabled: boolean }) => {
           ) : null}
         </>
       ) : (
-        <Box position="relative" blockSize="2xl" drawable variant="solid" intent="muted">
-          <Loader centered active color="blue" size="sm" />
+        <Box
+          position="relative"
+          blockSize={NEB_LENGTH.px_064}
+          drawable
+          bgMode="filled"
+          intent="muted"
+        >
+          <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
     </Section>

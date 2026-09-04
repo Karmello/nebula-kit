@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react'
 import { TokensResult } from 'shiki'
 
-import { Box, Flex, Text, WithIcon } from 'lib/components'
+import { Box, NEB_LENGTH, Text, Title } from 'lib/components'
 import { useCurrentTheme } from 'lib/hooks'
 
 import { CopyButton } from '../CopyButton'
-import { tokenizeCode } from './highlight-tokens'
 import { CodeSnippetProps, DEFAULT_MAX_BLOCK_SIZE } from './definitions'
+import { tokenizeCode } from './highlight-tokens'
 
 export const CodeSnippet = ({
   code,
+  usage,
   lang = 'log',
   borderRadius = true,
   description,
@@ -23,15 +24,16 @@ export const CodeSnippet = ({
   const [data, setData] = useState<TokensResult>(() => tokenizeCode(code, lang, theme))
 
   useEffect(() => {
-    setData(tokenizeCode(code, lang, theme))
-  }, [theme])
+    setData(tokenizeCode(code + `${usage ? `\n// Render\n${usage}` : ''}`, lang, theme))
+  }, [code, lang, theme])
 
   if (!data) {
     return null
   }
 
   return (
-    <Flex
+    <Box
+      display="flex"
       flexDirection="column"
       alignItems="stretch"
       tagAttrs={{
@@ -42,41 +44,50 @@ export const CodeSnippet = ({
     >
       <Box
         drawable
-        variant="solid"
+        bgMode="filled"
         tagAttrs={{
           style: {
-            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--main-muted-l))' : undefined,
+            backgroundColor: fullBg ? 'hsl(var(--h) var(--s) var(--base-muted-l))' : undefined,
           },
         }}
       >
-        <Flex alignItems="flex-end" columnGap="xs">
-          <Flex.Item flex="1">
+        <Box display="flex" alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
+          <Box flex="1">
             {description ? (
-              <Box paddingBlock="10px">
-                <WithIcon iconName={descriptionIcon ? 'arrow-down' : undefined}>
-                  <Text bold={boldDescription} intent="neutral" tagAttrs={{ style: { lineHeight: 1.25 } }}>
+              <Box paddingBlock={NEB_LENGTH.px_012}>
+                <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
+                  <Text
+                    bold={boldDescription}
+                    intent="neutral"
+                    tagAttrs={{ style: { lineHeight: 1.25 } }}
+                  >
                     {description}
                   </Text>
-                </WithIcon>
+                </Title>
               </Box>
             ) : null}
-          </Flex.Item>
+          </Box>
           <CopyButton text={code} />
-        </Flex>
+        </Box>
         <Box
           tagAttrs={{
             style: {
               borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
-              backgroundColor: 'hsl(var(--h) var(--s) var(--main-muted-l))',
+              backgroundColor: 'hsl(var(--h) var(--s) var(--base-muted-l))',
             },
           }}
           overflowY="auto"
           maxBlockSize={maxBlockSize}
           drawable
-          variant="solid"
+          bgMode="filled"
         >
-          <Flex tag="pre">
-            <Box tag="code" paddingInline="sm" paddingBlock={fullBg ? '0px' : 'sm'} paddingBottom="sm">
+          <Box display="flex" tag="pre">
+            <Box
+              tag="code"
+              paddingInline={NEB_LENGTH.px_016}
+              paddingBlock={fullBg ? '0px' : '16px'}
+              paddingBottom={NEB_LENGTH.px_016}
+            >
               {data.tokens.map((token, i) => {
                 const isEmpty = token.length === 0
 
@@ -89,7 +100,12 @@ export const CodeSnippet = ({
                             key={j}
                             tag="span"
                             tagAttrs={{
-                              style: { display: 'inline', color, fontSize: '13px', letterSpacing: '0px' },
+                              style: {
+                                display: 'inline',
+                                color,
+                                fontSize: '13px',
+                                letterSpacing: '0px',
+                              },
                             }}
                           >
                             {content}
@@ -99,9 +115,9 @@ export const CodeSnippet = ({
                 )
               })}
             </Box>
-          </Flex>
+          </Box>
         </Box>
       </Box>
-    </Flex>
+    </Box>
   )
 }

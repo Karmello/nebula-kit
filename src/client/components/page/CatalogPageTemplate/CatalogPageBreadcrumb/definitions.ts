@@ -1,4 +1,4 @@
-import { FOUNDATIONS_CATEGORIES, CORE_PAGE_CATEGORIES, PRO_PAGE_CATEGORIES } from 'client/definitions'
+import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES } from 'client/definitions'
 
 import { parsePageCategories } from './helpers'
 
@@ -16,13 +16,8 @@ export const TREE = [
     children: parsePageCategories(FOUNDATIONS_CATEGORIES),
   },
   {
-    value: 'core',
-    label: 'Core',
-    children: parsePageCategories(CORE_PAGE_CATEGORIES),
-  },
-  {
-    value: 'pro',
-    label: 'Pro',
-    children: parsePageCategories(PRO_PAGE_CATEGORIES),
+    value: 'library',
+    label: 'Library',
+    children: parsePageCategories(COMPONENT_CATEGORIES),
   },
 ]

@@ -32,9 +32,22 @@ html[data-theme='dark'],
   --neb-focus-ring-color: hsl(var(--h) var(--s) var(--l-25));
 }
 
+html[data-theme='dark'] {
+  &[data-saturation='subtle'] {
+    --neb-saturation: 38%;
+  }
+
+  &[data-saturation='balanced'] {
+    --neb-saturation: 48%;
+  }
+
+  &[data-saturation='vivid'] {
+    --neb-saturation: 58%;
+  }
+}
+
 .neb-box[data-neb-box-theme='dark'] {
   --light-l: var(--l-25);
   --dark-l: var(--l-0);
-
-  --fill-multiplier: 1.5;
+  --tint-base-l: var(--l-12);
 }

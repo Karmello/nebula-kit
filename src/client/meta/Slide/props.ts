@@ -1,13 +1,11 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { SlideProps } from 'lib/components'
+import { SLIDE_FROM } from 'lib/components/core/Slide/constants'
+import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING } from 'lib/components/core/Slide/slide'
+import { SlideProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { DEFAULT_SLIDE_DURATION, DEFAULT_SLIDE_EASING, SLIDE_FROM } from 'lib/components/core/motion/Slide'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
+export const SLIDE_PROPS: Record<keyof SlideProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
     description: 'Content animated.',
   },
@@ -17,7 +15,7 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     description: 'Animation duration in milliseconds.',
   },
   easing: {
-    options: [DOCS_CSS_LABEL],
+    options: ['string'],
     defaultValue: DEFAULT_SLIDE_EASING,
     description: 'Timing function for the animation.',
   },
@@ -26,13 +24,17 @@ const SLIDE_PROPS_META: ComponentMeta<SlideProps>['props'] = {
     isRequired: true,
     description: 'Edge from which the content slides when becoming visible.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visible: {
     options: ['boolean'],
     isRequired: true,
     description: 'Toggles the visibility of the content.',
   },
 }
-
-export { SLIDE_PROPS_META }

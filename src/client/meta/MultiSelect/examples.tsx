@@ -1,9 +1,10 @@
-import { ComponentMeta } from 'client/definitions'
-import { MultiSelect, MultiSelectProps } from 'lib/components'
+import { MultiSelect } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const MULTI_SELECT_EXAMPLES_META: ComponentMeta<MultiSelectProps>['examples'] = [
+export const MULTI_SELECT_EXAMPLES: DocExample[] = [
   {
-    description: 'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'MultiSelect used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: (
       <MultiSelect defaultValue={['option-1']}>
         <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>
@@ -23,16 +24,6 @@ const MULTI_SELECT_EXAMPLES_META: ComponentMeta<MultiSelectProps>['examples'] = 
     ),
   },
   {
-    description: 'MultiSelect configured to open above the trigger element.',
-    jsx: (
-      <MultiSelect defaultValue={['option-1']} inlineSize="200px" dropdownPlacement="top-start">
-        <MultiSelect.Option value="option-1">Option 1</MultiSelect.Option>
-        <MultiSelect.Option value="option-2">Option 2</MultiSelect.Option>
-        <MultiSelect.Option value="option-3">Option 3</MultiSelect.Option>
-      </MultiSelect>
-    ),
-  },
-  {
     description: 'Disabled MultiSelect.',
     jsx: (
       <MultiSelect defaultValue={['option-1']} inlineSize="200px" disabled>
@@ -43,5 +34,3 @@ const MULTI_SELECT_EXAMPLES_META: ComponentMeta<MultiSelectProps>['examples'] = 
     ),
   },
 ]
-
-export { MULTI_SELECT_EXAMPLES_META }

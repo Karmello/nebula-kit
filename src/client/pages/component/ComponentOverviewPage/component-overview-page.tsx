@@ -1,32 +1,52 @@
 import { pascalCase } from 'change-case'
 
-import meta from 'client/meta'
-import { useCorePageStore, useProPageStore } from 'client/store'
-import { ComponentMeta, PageKey } from 'client/definitions'
-import { CodeSnippet } from 'client/components'
+import { Box } from 'lib/components/core/Box'
+import { Button } from 'lib/components/core/Button'
+import { Link } from 'lib/components/core/Link'
+import { Section } from 'lib/components/core/Section'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
+import { DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
-import { Text, Box, Spacer, Section, Button, Link, Flex } from 'lib/components'
+import meta from 'client/meta'
+import { useComponentsPageStore } from 'client/store'
 
-import { ListWithHeading } from './ListWithHeading'
 import { ListWithChips } from './ListWithChips'
+import { ListWithHeading } from './ListWithHeading'
 
-const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
+const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
   const navigateTo = useNavigateTo()
 
   const {
-    overview: { name, title, description, features, guidelines, composedOf, topLevelTags, slots, hooks, readMoreLink },
+    overview: {
+      name,
+      title,
+      description,
+      features,
+      guidelines,
+      composedOf,
+      exposedTags,
+      slots,
+      hooks,
+      readMoreLink,
+    },
     examples,
     props,
   } = meta
 
   const content = (
-    <Flex flexDirection="column" alignItems="stretch" gap="lg">
+    <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_032}>
       <Box>
         <Text typography="lead">{title}</Text>
         {examples?.[0] ? (
-          <Box marginBlock="sm">
-            <CodeSnippet lang="tsx" code={examples[0].code || convertElemToString(examples[0].jsx)} />
+          <Box marginBlock={NEB_LENGTH.px_016}>
+            <CodeSnippet
+              lang="tsx"
+              code={examples[0].code || convertElemToString(examples[0].jsx)}
+            />
           </Box>
         ) : null}
       </Box>
@@ -38,31 +58,42 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
       {composedOf ? <ListWithChips heading="Composed of" items={composedOf} color="red" /> : null}
-      {topLevelTags ? (
+      {exposedTags ? (
         <ListWithChips
-          heading={topLevelTags.length > 1 ? 'Root tags' : 'Root tag'}
-          items={topLevelTags as string[]}
+          heading={exposedTags.length > 1 ? 'Exposed tags' : 'Exposed tag'}
+          items={exposedTags as string[]}
           color="amber"
         />
       ) : null}
-      {props ? <ListWithChips heading="Props" items={Object.keys(props).sort((a, b) => a.localeCompare(b))} /> : null}
+      {props ? (
+        <ListWithChips
+          heading="Props"
+          items={Object.keys(props).sort((a, b) => a.localeCompare(b))}
+        />
+      ) : null}
       {slots ? <ListWithChips heading="Slots" items={slots} color="gray" /> : null}
       {hooks ? <ListWithChips heading="Hooks" items={hooks} color="green" /> : null}
       {readMoreLink ? (
-        <Box marginTop="sm">
+        <Box marginTop={NEB_LENGTH.px_016}>
           <Link
             href={readMoreLink.href}
             onClick={() => {
               navigateTo(readMoreLink.href)
             }}
           >
-            <Button variant="ghost" color="blue" intent="primary" iconName="arrow-right" iconPlacement="right">
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-right"
+              iconPlacement="right"
+            >
               {readMoreLink.label}
             </Button>
           </Link>
         </Box>
       ) : null}
-    </Flex>
+    </Box>
   )
 
   return (
@@ -74,16 +105,15 @@ const SingleOverview = ({ meta }: { meta: ComponentMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize="2xl" />
+      <Spacer blockSize={NEB_LENGTH.px_064} />
     </>
   )
 }
 
-export const ComponentOverviewPage = ({ pageKey }: { pageKey: PageKey.core | PageKey.pro }) => {
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
+export const ComponentOverviewPage = () => {
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase((pageKey === PageKey.core ? corePageItemKey : proPageItemKey) || '')
+  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
 
   if (!meta[itemKeyPascal]) return null
 

@@ -1,19 +1,24 @@
-import { CodeSnippet } from 'client/components'
-import { Box, Spacer, Table, Text } from 'lib/components'
-import { LENGTH_SCALE } from 'lib/definitions'
+import { Box } from 'lib/components/core/Box'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Table } from 'lib/components/core/Table'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (
     <Box maxInlineSize={{ lg: '55rem' }}>
       <Text>
-        The length scale defines the set of consistent values used for spacing and dimensions across the system. It is used in
-        layout-related props such as logical sizes as well as margin, padding and gap props. It replaces arbitrary CSS values with
-        a predictable scale, making layouts easier to reason about and maintain. The scale follows a progressive step pattern,
-        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each length token is also exposed as
-        a CSS custom property, allowing the scale to be referenced directly in custom styles and external content.
+        The length scale defines the set of consistent values used for spacing and dimensions across
+        the system. It is used in layout-related props such as logical sizes as well as margin,
+        padding and gap props. It replaces arbitrary CSS values with a predictable scale, making
+        layouts easier to reason about and maintain. The scale follows a progressive step pattern,
+        allowing small adjustments at lower values and larger jumps for layout-level spacing. Each
+        length token is also exposed as a CSS custom property, allowing the scale to be referenced
+        directly in custom styles and external content.
       </Text>
-      <Spacer blockSize="xl" />
-      <Table paddingBlock="10px" paddingInline="15px">
+      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Table paddingBlock={NEB_LENGTH.px_012} paddingInline={NEB_LENGTH.px_016}>
         <Table.Header>
           <Table.HeaderRow>
             <Table.HeaderCell>T-shirt size</Table.HeaderCell>
@@ -22,7 +27,7 @@ export default () => {
           </Table.HeaderRow>
         </Table.Header>
         <Table.Body>
-          {Object.keys(LENGTH_SCALE).map(key => (
+          {Object.keys(NEB_LENGTH).map(key => (
             <Table.Row key={key}>
               <Table.Cell>
                 <Text intent="primary" bold>
@@ -33,7 +38,7 @@ export default () => {
                 <Text italic>{`--neb-length-${key}`}</Text>
               </Table.Cell>
               <Table.Cell>
-                <Text>{LENGTH_SCALE[key as never]}</Text>
+                <Text>{NEB_LENGTH[key as never]}</Text>
               </Table.Cell>
             </Table.Row>
           ))}
@@ -43,8 +48,8 @@ export default () => {
       <CodeSnippet
         lang="tsx"
         description="Scale values can be used anywhere length props are accepted."
-        code={`<Box padding="md" />
-<Box margin="lg" />
+        code={`<Box padding="24px" />
+<Box margin="48px" />
 <Box inlineSize="2xl" />`}
       />
       <Spacer />

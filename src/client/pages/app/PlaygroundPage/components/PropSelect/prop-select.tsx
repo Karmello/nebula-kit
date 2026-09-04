@@ -1,6 +1,5 @@
-import { Flex, Icon, Select, Spacer, Text, Tooltip } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { Box, Icon, NEB_LENGTH, Select, Spacer, Text, Tooltip } from 'lib/components'
+import { usePlaygroundStore } from 'client/store'
 
 export const PropSelect = () => {
   const components = usePlaygroundStore(state => state.components)
@@ -12,7 +11,7 @@ export const PropSelect = () => {
 
   return (
     <>
-      <Flex justifyContent="space-between" alignItems="center">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
         <Text bold>Property</Text>
         <Tooltip
           content="The props list was also intentionally narrowed to include only those that best fit this context."
@@ -20,19 +19,19 @@ export const PropSelect = () => {
           maxInlineSize={400}
           mode="click"
         >
-          <Icon name="info" size="18px" color="blue" intent="primary" />
+          <Icon name="info" size={NEB_LENGTH.px_016} color="blue" intent="primary" />
         </Tooltip>
-      </Flex>
-      <Spacer blockSize="2xs" />
-      <Select value={value} onChange={value => setActiveProp(activeComponent, value)} scrollAlign="center">
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_004} />
+      <Select value={value} onChange={value => setActiveProp(activeComponent, value)}>
         {Object.keys(props)
           .sort()
           .map(propName => (
             <Select.Option
               value={propName}
-              iconName={props[propName].isResponsive ? 'screen-share' : undefined}
-              iconPlacement="right"
-              align="split"
+              // iconName={props[propName].isResponsive ? 'screen-share' : undefined}
+              // iconPlacement="right"
+              // align="split"
             >
               {propName}
             </Select.Option>

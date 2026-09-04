@@ -1,77 +1,68 @@
-import { ComponentMeta } from 'client/definitions'
-import { TooltipProps } from 'lib/components'
-import { PORTAL_PLACEMENTS } from 'lib/components/core/utility/Portal'
-
+import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TOOLTIP_INTENT,
+  DEFAULT_TOOLTIP_MAX_INLINE_SIZE,
   DEFAULT_TOOLTIP_MODE,
-  DEFAULT_TOOLTIP_OFFSET,
-  DEFAULT_TOOLTIP_PADDING,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
+  TOOLTIP_INTENTS,
   TOOLTIP_MODES,
+  TOOLTIP_PLACEMENTS,
   TOOLTIP_VARIANTS,
-} from 'lib/components/pro/overlays/Tooltip'
+} from 'lib/components/pro/Tooltip/constants'
+import { TooltipProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-
-const TOOLTIP_PROPS_META: ComponentMeta<TooltipProps>['props'] = {
+export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
   children: {
-    ...BOX_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
+    description: 'Trigger element.',
   },
-  color: BOX_PROPS_META.color,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    isResponsive: false,
+  },
   content: {
     options: ['string'],
     isRequired: true,
     description: 'The text content displayed inside the tooltip.',
   },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: TOOLTIP_INTENTS,
     defaultValue: String(DEFAULT_TOOLTIP_INTENT),
+    description: "Color tone applied to the component's main color.",
+    isResponsive: false,
   },
   maxInlineSize: {
-    ...BOX_PROPS_META.maxInlineSize,
     options: ['number'],
-    isRequired: true,
+    defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
     isResponsive: false,
+    description: 'Maximum logical width.',
+    link: true,
   },
   minInlineSize: {
-    ...BOX_PROPS_META.minInlineSize,
     options: ['number'],
-    isRequired: true,
     isResponsive: false,
+    description: 'Minimum logical width.',
+    link: true,
   },
   mode: {
     options: TOOLTIP_MODES,
     defaultValue: DEFAULT_TOOLTIP_MODE,
     description: 'Controls which interaction opens the tooltip.',
   },
-  offset: {
-    options: ['number'],
-    defaultValue: String(DEFAULT_TOOLTIP_OFFSET),
-    description: 'Distance in pixels between the tooltip and its trigger element.',
-  },
-  padding: {
-    ...BOX_PROPS_META.padding,
-    defaultValue: String(DEFAULT_TOOLTIP_PADDING),
-  },
-  paddingBlock: BOX_PROPS_META.paddingBlock,
-  paddingInline: BOX_PROPS_META.paddingInline,
   placement: {
-    options: PORTAL_PLACEMENTS,
+    options: TOOLTIP_PLACEMENTS,
     defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
     description:
       'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
-  textAlign: BOX_PROPS_META.textAlign,
   variant: {
-    ...BOX_PROPS_META.variant,
     options: TOOLTIP_VARIANTS,
-    defaultValue: DEFAULT_TOOLTIP_VARIANT,
+    defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
+    description: 'Visual style variant.',
+    isResponsive: false,
   },
 }
-
-export { TOOLTIP_PROPS_META }

@@ -1,5 +1,9 @@
-import { CodeSnippet } from 'client/components'
-import { Box, Callout, Spacer, Text } from 'lib/components'
+import { Box } from 'lib/components/core/Box'
+import { Callout } from 'lib/components/core/Callout'
+import { Spacer } from 'lib/components/core/Spacer'
+import { Text } from 'lib/components/core/Text'
+import { NEB_LENGTH } from 'lib/constants'
+import { CodeSnippet } from 'client/components/meta/CodeSnippet'
 
 export default () => {
   return (
@@ -9,8 +13,9 @@ export default () => {
         <Text tag="span" space="start" bold>
           tagRef
         </Text>
-        , which gives access to the underlying root DOM element rendered by the component. This allows direct interaction with the
-        element for tasks like measuring size, managing focus or integrating with external systems.
+        , which gives access to the underlying root DOM element rendered by the component. This
+        allows direct interaction with the element for tasks like measuring size, managing focus or
+        integrating with external systems.
       </Text>
       <Spacer />
       <Callout
@@ -19,7 +24,7 @@ export default () => {
         content="In rare cases, a component may not expose tagRef because it already uses a ref internally and overriding it would break existing functionality.
         However, in most situations you can rely on tagRef being available for direct access and control of the root element."
       />
-      <Spacer blockSize="md" />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
       <CodeSnippet
         lang="tsx"
         code={`const [visible, setVisible] = useState<boolean>(false)

@@ -1,11 +1,9 @@
-import { ComponentMeta } from 'client/definitions'
-import { PasswordInput, type PasswordInputProps } from 'lib/components'
+import { PasswordInput } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const PASSWORD_INPUT_EXAMPLES_META: ComponentMeta<PasswordInputProps>['examples'] = [
+export const PASSWORD_INPUT_EXAMPLES: DocExample[] = [
   {
     description: 'Basic PasswordInput.',
     jsx: <PasswordInput />,
   },
 ]
-
-export { PASSWORD_INPUT_EXAMPLES_META }

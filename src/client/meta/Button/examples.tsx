@@ -1,22 +1,22 @@
-import { ComponentMeta } from 'client/definitions'
-import { Button, Flex } from 'lib/components'
-import { ButtonProps, BUTTON_SIZES } from 'lib/components/core/controls/Button/definitions'
+import { NEB_LENGTH, TSHIRT_SIZES } from 'lib/constants'
+import { Box, Button } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
+export const BUTTON_EXAMPLES: DocExample[] = [
   {
     description: 'Default button has medium size, solid variant and tertiary intent.',
     jsx: <Button>Default button</Button>,
   },
   {
-    description: 'Examples of different button sizes.',
+    description: 'Examples of different button scales.',
     jsx: (
-      <Flex flexWrap="wrap" alignItems="center" gap="xs">
-        {BUTTON_SIZES.map(size => (
-          <Button key={size} size={size} iconName="tree-pine">
-            {size}
+      <Box display="flex" flexWrap="wrap" alignItems="center" gap={NEB_LENGTH.px_008}>
+        {TSHIRT_SIZES.map(size => (
+          <Button key={size} scale={size} iconName="tree-pine">
+            {size.toUpperCase()} scale
           </Button>
         ))}
-      </Flex>
+      </Box>
     ),
   },
   {
@@ -36,10 +36,6 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     ),
   },
   {
-    description: 'Icon button.',
-    jsx: <Button iconName="close" />,
-  },
-  {
     description: 'Button with bolded text.',
     jsx: <Button bold>Bold</Button>,
   },
@@ -51,14 +47,4 @@ const BUTTON_EXAMPLES_META: ComponentMeta<ButtonProps>['examples'] = [
     description: 'Button in loading state.',
     jsx: <Button loading>Loading</Button>,
   },
-  {
-    description: 'Extra large button with description.',
-    jsx: (
-      <Button description="Description text." size="xl" bold>
-        Extra large button
-      </Button>
-    ),
-  },
 ]
-
-export { BUTTON_EXAMPLES_META }

@@ -1,13 +1,12 @@
+import { COMPONENTS_PAGE_SECTIONS } from './components-page-routing'
 import { FOUNDATIONS_SECTIONS } from './foundations-routing'
-import { CORE_PAGE_SECTIONS } from './core-page-routing'
-import { PRO_PAGE_SECTIONS } from './pro-page-routing'
 
 export enum PageKey {
   authLogin = '/auth/log-in',
   authRecover = '/auth/recover',
   authRegister = '/auth/register',
   confirmAction = '/confirm-action',
-  core = '/core',
+  library = '/library',
   faq = '/faq',
   blog = '/blog',
   feedback = '/feedback',
@@ -19,15 +18,11 @@ export enum PageKey {
   pricing = '/pricing',
   pricingCore = '/pricing/core',
   pricingPro = '/pricing/pro',
-  pro = '/pro',
   profileAccount = '/profile/account',
   profileSettings = '/profile/settings',
 }
 
 export const PAGE_SECTIONS = [
   ...FOUNDATIONS_SECTIONS.map(o => ({ ...o, pageKey: PageKey.foundations.replace('/', '') })),
-  ...CORE_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.core.replace('/', '') })),
-  ...PRO_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.pro.replace('/', '') })),
+  ...COMPONENTS_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.library.replace('/', '') })),
 ]
-
-export const DOCS_CSS_LABEL = '<CSS>'

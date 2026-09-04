@@ -1,0 +1,16 @@
+- [Project resurrection](project_resurrection.md) — nebula-kit is being revived from dormancy; expect structural cleanup work
+- [Large refactor approach](large_refactor_approach.md) — validated pattern: manual convention + parallel batch agents + full verification
+- [Always verify with prettier](feedback_verify_prettier.md) — run yarn prettier/prettify alongside lint + typecheck on every change
+- [Always commit workspace file](feedback_commit_workspace_file.md) — include nebula-kit.code-workspace changes in commits, don't leave them out
+- [Docs meta architecture](project_docs_meta_architecture.md) — props.ts vs types.ts split is deliberate, don't suggest merging via JSDoc
+- [Docs meta flattening](project_docs_meta_flattening.md) — props.ts cross-refs removed; punch-list of pre-existing bugs left unfixed
+- [Wrapper components vs hooks](feedback_wrapper_components_vs_hooks.md) — a Box-wrapper that mostly forwards props is a wrong abstraction; extract the real logic into a hook instead
+- [Component vs behavior](feedback_component_vs_behavior.md) — new components are for repeatable DOM structure only; behavior/mechanics belong in hooks/functions, reuse Box directly otherwise
+- [Memory lives in the repo](feedback_memory_lives_in_repo.md) — the harness's own memory path is ephemeral in this container; .claude-memory/ in nebula-kit is the source of truth, always commit it
+- [Outline surface contrast](project_outline_surface_contrast.md) — outline/soft-outline Box has no bg; contrast against arbitrary backgrounds is the consumer's job, not a framework fix
+- [Box token architecture validated](project_box_token_architecture_validated.md) — variant/token model is sound; friction so far is token-value mismatches (elevated-neutral, border/bg token sharing), not a design flaw
+- [Smaller commit messages](feedback_smaller_commit_messages.md) — keep commits to a short summary line, skip verbose rationale/verification recaps in the message body
+- [No em dashes](feedback_no_em_dashes.md) — never use em dashes (—) anywhere in the repo, always use normal hyphens (-)
+- [No repo check for concepts](feedback_no_repo_check_for_concepts.md) — answer general/conceptual questions directly, don't grep repo unless asked about this codebase's convention
+- [Never run dev server](feedback_never_run_dev_server.md) — running yarn dev/vite in this container crashes the container itself, never do it, not even backgrounded
+- [Top-level component independence](project_top_level_component_independence.md) — components render Box directly, no shared structural wrappers; only behavior is reused via hooks

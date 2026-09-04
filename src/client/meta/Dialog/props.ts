@@ -1,13 +1,13 @@
-import { ComponentMeta } from 'client/definitions'
-import { DialogProps } from 'lib/components'
+import {
+  DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
+  DEFAULT_DIALOG_SIZE,
+  DIALOG_SIZES,
+} from 'lib/components/pro/Dialog/constants'
+import type { DialogProps } from 'lib/components/pro/Dialog/types'
+import type { DocProp } from 'client/definitions'
 
-import { DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK, DEFAULT_DIALOG_SIZE, DIALOG_SIZES } from 'lib/components/pro/overlays/Dialog'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
+export const DIALOG_PROPS: Record<keyof DialogProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
     options: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
     isRequired: true,
     description: 'Dialog.Content slot is required. Dialog.Header and Dialog.Footer are optional.',
@@ -15,7 +15,8 @@ const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
   closeOnBackdropClick: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK),
-    description: 'Controls whether clicking the backdrop closes the dialog. Requires onClose to be provided.',
+    description:
+      'Controls whether clicking the backdrop closes the dialog. Requires onClose to be provided.',
   },
   onClose: {
     options: ['() => void'],
@@ -32,8 +33,12 @@ const DIALOG_PROPS_META: ComponentMeta<DialogProps>['props'] = {
     defaultValue: DEFAULT_DIALOG_SIZE,
     description: 'Defines the dialog width using predefined size presets.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }
-
-export { DIALOG_PROPS_META }

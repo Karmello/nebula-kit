@@ -13,10 +13,6 @@
       "path": "src",
     },
     {
-      "name": "server",
-      "path": "src/server",
-    },
-    {
       "name": "client",
       "path": "src/client",
     },
@@ -25,24 +21,48 @@
       "path": "src/client/meta",
     },
     {
-      "name": "pages",
-      "path": "src/client/pages",
+      "name": "patterns",
+      "path": "src/client/patterns",
+    },
+    {
+      "name": "playground",
+      "path": "src/client/playground",
     },
     {
       "name": "lib",
       "path": "src/lib",
     },
     {
-      "name": "definitions",
-      "path": "src/lib/definitions",
-    },
-    {
       "name": "styles",
       "path": "src/lib/styles",
     },
     {
+      "name": "styles",
+      "path": "src/lib/components/core/Box/styles",
+    },
+    {
+      "name": "constants",
+      "path": "src/lib/constants",
+    },
+    {
+      "name": "types",
+      "path": "src/lib/types",
+    },
+    {
       "name": "components",
       "path": "src/lib/components",
+    },
+    {
+      "name": "core",
+      "path": "src/lib/components/core",
+    },
+    {
+      "name": "pro",
+      "path": "src/lib/components/pro",
+    },
+    {
+      "name": "shared",
+      "path": "src/lib/components/shared",
     },
   ],
   "settings": {

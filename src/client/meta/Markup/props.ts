@@ -1,16 +1,19 @@
-import { ComponentMeta } from 'client/definitions'
-import { MarkupProps } from 'lib/components'
+import { MarkupProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-
-const MARKUP_PROPS_META: ComponentMeta<MarkupProps>['props'] = {
+export const MARKUP_PROPS: Record<keyof MarkupProps, DocProp> = {
   children: {
-    ...BOX_PROPS_META.children,
+    options: ['ReactNode'],
     isRequired: true,
-    description: 'Text content rendered and processed for supported inline markup. Direct Text children are recommended.',
+    description:
+      'Text content rendered and processed for supported inline markup. Direct Text children are recommended.',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
 }
-
-export { MARKUP_PROPS_META }

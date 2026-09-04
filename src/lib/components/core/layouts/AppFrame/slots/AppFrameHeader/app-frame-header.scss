@@ -1,9 +1,0 @@
-.neb-app-frame-header {
-  --neb-border-radius: 0;
-}
-
-.neb-app-frame-header[data-neb-app-frame-header-sticky-header='true'] {
-  position: sticky;
-  top: 0;
-  z-index: 10;
-}
