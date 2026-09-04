@@ -48,7 +48,7 @@ const VARIANT_MAP: Record<
   ghost: {
     trigger: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
     content: { borderMode: 'none' },
-    item: { bgMode: 'transparent', borderMode: 'tinted', text: 'colored' },
+    item: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
     removeFirstTopBorder: false,
   },
 }
@@ -221,6 +221,7 @@ export const SelectImpl = ({
                     <Text
                       fontSize={CONTROL_SCALE_MAP[scale].fontSize}
                       lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                      bold={isSelected}
                     >
                       {slot}
                     </Text>
