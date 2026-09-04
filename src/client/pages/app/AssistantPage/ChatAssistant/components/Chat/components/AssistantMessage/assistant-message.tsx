@@ -6,8 +6,8 @@ import { Box } from 'lib/components/core/Box'
 import { Button } from 'lib/components/core/Button'
 import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { NEB_LENGTH } from 'lib/constants'
-import { CodeSnippet } from 'client/components/meta/CodeSnippet'
-import { CODE_SNIPPET_LANGS } from 'client/components/meta/CodeSnippet/definitions'
+import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
+import { CODE_SNIPPET_LANGS } from 'client/components/reusable/CodeSnippet/definitions'
 
 type AssistantMessageProps = {
   content: string

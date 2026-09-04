@@ -3,7 +3,7 @@ import { MarkerList } from 'lib/components/core/MarkerList'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { NEB_LENGTH } from 'lib/constants'
-import { CodeSnippet } from 'client/components/meta/CodeSnippet'
+import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
 
 export default () => {
   return (

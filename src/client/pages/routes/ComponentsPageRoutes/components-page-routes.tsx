@@ -3,7 +3,7 @@ import { Navigate, Route, Routes } from 'react-router'
 
 import { Spacer } from 'lib/components/core/Spacer'
 import { NEB_LENGTH } from 'lib/constants'
-import { NextPageButton } from 'client/components/page/NextPageButton'
+import { NextPageButton } from 'client/components/reusable/NextPageButton'
 import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
 import {
   ComponentChangelogPage,

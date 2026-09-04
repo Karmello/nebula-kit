@@ -14,7 +14,7 @@ import {
   Title,
 } from 'lib/components'
 import { useGetUser } from 'client/api'
-import { CopyButton } from 'client/components/meta/CopyButton'
+import { CopyButton } from 'client/components/reusable/CopyButton'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'

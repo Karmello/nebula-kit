@@ -4,7 +4,7 @@ import { Navigate, Route, Routes, useLocation } from 'react-router'
 
 import { Spacer } from 'lib/components/core/Spacer'
 import { NEB_LENGTH } from 'lib/constants'
-import { NextPageButton } from 'client/components/page/NextPageButton'
+import { NextPageButton } from 'client/components/reusable/NextPageButton'
 import { FOUNDATIONS_CATEGORIES, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
 import * as FOUNDATION_COMPONENTS from 'client/pages/foundations'
 
