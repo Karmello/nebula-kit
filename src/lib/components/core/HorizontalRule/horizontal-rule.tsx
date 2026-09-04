@@ -1,6 +1,4 @@
-import classNames from 'classnames'
-
-import { withPrefix } from 'lib/helpers'
+import { NEB_LENGTH } from 'lib/constants'
 
 import { Box } from '../Box'
 import {
@@ -9,8 +7,6 @@ import {
   DEFAULT_HORIZONTAL_RULE_SURFACE_DEPTH,
 } from './constants'
 import { HorizontalRuleProps } from './types'
-
-import './horizontal-rule.scss'
 
 export const HorizontalRule = ({
   // Box
@@ -26,19 +22,15 @@ export const HorizontalRule = ({
   return (
     <Box
       tag="hr"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('horizontal-rule'), tagAttrs?.className),
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       bgMode="filled"
+      surfaceDepth={surfaceDepth}
       color={color}
       intent={intent}
-      surfaceDepth={surfaceDepth}
-      borderRole="edge"
-      blockSize="2px"
-      borderWidth="0px"
+      blockSize={NEB_LENGTH.px_002}
+      borderWidth={NEB_LENGTH.px_000}
       marginBlock={marginBlock}
       marginTop={marginTop}
       marginBottom={marginBottom}

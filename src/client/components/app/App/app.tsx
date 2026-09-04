@@ -101,7 +101,7 @@ export const App = () => {
       <AppFrame.Footer footerStackBreakpoint="lg">
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>Current release</Text>
-          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="muted" />
+          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="neutral" />
           <Text typography="small" italic color="gray" intent="primary">
             NebulaKit is actively developed and released in incremental updates. Each release
             introduces improvements and refinements across the system.
@@ -132,7 +132,7 @@ export const App = () => {
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>Community & Support</Text>
-          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="muted" />
+          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="neutral" />
           <Text typography="small" italic color="gray" intent="primary">
             This is a closed-source project. There is no public GitHub repository. You can still
             follow updates, ask questions and join the community through the channels below.
@@ -165,7 +165,7 @@ export const App = () => {
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>About the author</Text>
-          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="muted" />
+          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="neutral" />
           <Text typography="small" italic color="gray" intent="primary">
             The product is designed and maintained by a solo software engineer focused on long-term
             UI architecture and system consistency.
@@ -198,7 +198,7 @@ export const App = () => {
         </AppFrame.FooterSection>
         <AppFrame.FooterSection padding={NEB_LENGTH.px_016}>
           <Text bold>Legal information</Text>
-          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="muted" />
+          <HorizontalRule marginBottom={NEB_LENGTH.px_016} intent="neutral" />
           <MarkerList gap={NEB_LENGTH.px_000}>
             <MarkerList.Item>
               <Link

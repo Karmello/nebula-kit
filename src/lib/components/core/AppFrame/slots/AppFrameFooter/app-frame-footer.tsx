@@ -2,7 +2,7 @@ import { cloneElement } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { WithSlots } from 'lib/components/shared'
-import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
+import { DEFAULT_SWITCH_BREAKPOINT, NEB_LENGTH } from 'lib/constants'
 
 import { DEFAULT_APP_FRAME_FOOTER_INTENT } from './constants'
 import { type AppFrameFooterProps } from './types'
@@ -33,6 +33,10 @@ export const AppFrameFooter = ({
             bgMode="filled"
             borderMode="filled"
             borderRole="edge"
+            borderBottomWidth={NEB_LENGTH.px_000}
+            borderLeftWidth={NEB_LENGTH.px_000}
+            borderRightWidth={NEB_LENGTH.px_000}
+            borderRadius={NEB_LENGTH.px_000}
             color={color}
             intent={intent}
           >
