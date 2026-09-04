@@ -13,3 +13,4 @@
 - [No em dashes](feedback_no_em_dashes.md) — never use em dashes (—) anywhere in the repo, always use normal hyphens (-)
 - [No repo check for concepts](feedback_no_repo_check_for_concepts.md) — answer general/conceptual questions directly, don't grep repo unless asked about this codebase's convention
 - [Never run dev server](feedback_never_run_dev_server.md) — running yarn dev/vite in this container crashes the container itself, never do it, not even backgrounded
+- [Top-level component independence](project_top_level_component_independence.md) — components render Box directly, no shared structural wrappers; only behavior is reused via hooks
