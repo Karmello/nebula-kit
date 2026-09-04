@@ -1,4 +1,5 @@
 import { Box } from 'lib/components/core/Box'
+import { NEB_LENGTH } from 'lib/constants'
 
 import { DEFAULT_APP_FRAME_HEADER_INTENT } from './constants'
 import { type AppFrameHeaderInternalProps, type AppFrameHeaderProps } from './types'
@@ -25,19 +26,19 @@ export const AppFrameHeader = ({
       }}
       tagRef={tagRef}
       drawable
-      // variant="outline"
+      bgMode="filled"
+      borderMode="filled"
+      borderRole="edge"
+      borderRadius={NEB_LENGTH.px_000}
+      borderLeftWidth={NEB_LENGTH.px_000}
+      borderRightWidth={NEB_LENGTH.px_000}
+      borderTopWidth={NEB_LENGTH.px_000}
       color={color}
       intent={intent}
-      borderWidth="0px"
-      borderRadius="0px"
-      borderBottomWidth="2px"
-      borderRole="edge"
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
     >
-      <Box drawable borderRadius="0px" bgMode="filled" color={color} intent={intent}>
-        {children}
-      </Box>
+      {children}
     </Box>
   )
 }

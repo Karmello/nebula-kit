@@ -30,36 +30,32 @@ export const AppFrameFooter = ({
             tagAttrs={tagAttrs}
             tagRef={tagRef}
             drawable
-            // variant="outline"
+            bgMode="filled"
+            borderMode="filled"
+            borderRole="edge"
             color={color}
             intent={intent}
-            borderRole="edge"
-            borderRadius="0px"
-            borderWidth="0px"
-            borderTopWidth="2px"
           >
-            <Box drawable bgMode="filled" intent={intent} color={color} borderRadius="0px">
-              {appFrameFooterSectionSlots.length ? (
-                <Box
-                  display="flex"
-                  flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }}
-                  alignItems="stretch"
-                >
-                  {appFrameFooterSectionSlots.map((footerSectionSlot, index) => (
-                    <Box key={index} flex="1">
-                      {cloneElement(footerSectionSlot as any, {
-                        color,
-                        intent,
-                        footerStackBreakpoint,
-                        isLast: index === appFrameFooterSectionSlots.length - 1,
-                      })}
-                    </Box>
-                  ))}
-                </Box>
-              ) : (
-                children
-              )}
-            </Box>
+            {appFrameFooterSectionSlots.length ? (
+              <Box
+                display="flex"
+                flexDirection={{ base: 'column', [footerStackBreakpoint]: 'row' }}
+                alignItems="stretch"
+              >
+                {appFrameFooterSectionSlots.map((footerSectionSlot, index) => (
+                  <Box key={index} flex="1">
+                    {cloneElement(footerSectionSlot as any, {
+                      color,
+                      intent,
+                      footerStackBreakpoint,
+                      isLast: index === appFrameFooterSectionSlots.length - 1,
+                    })}
+                  </Box>
+                ))}
+              </Box>
+            ) : (
+              children
+            )}
           </Box>
         )
       }}
