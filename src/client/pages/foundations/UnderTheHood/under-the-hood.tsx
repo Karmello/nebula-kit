@@ -9,7 +9,7 @@ export default () => {
         Each of these tools was selected not to add complexity, but to preserve it - a stack built
         for speed, structure and long-term clarity.
       </Text>
-      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Spacer blockSize={NEB_LENGTH.px_032} />
       <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_032}>
         <Box>
           <Text typography="h5" color="blue" intent="primary" bold>
