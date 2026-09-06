@@ -239,7 +239,7 @@ export const App = () => {
           </MarkerList>
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Link href="mailto:contact@nebulakit.dev" target="_blank">
-            <Button color="blue" intent="secondary" variant="outline" scale="xs" iconName="mail">
+            <Button color="blue" intent="tertiary" variant="outline" scale="xs" iconName="mail">
               contact@nebulakit.dev
             </Button>
           </Link>
