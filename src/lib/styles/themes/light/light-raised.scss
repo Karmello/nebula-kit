@@ -22,7 +22,7 @@
     --raised-muted-l-active: var(--l-6);
     --raised-muted-l-selection: var(--l-5);
     --raised-muted-l-divider: var(--l-2);
-    --raised-muted-l-edge: var(--l-4);
+    --raised-muted-l-edge: var(--l-2);
 
     --raised-muted-tint: 6%;
     --raised-muted-tint-hover: 11%;
@@ -39,7 +39,7 @@
     --raised-tertiary-l-active: var(--l-8);
     --raised-tertiary-l-selection: var(--l-7);
     --raised-tertiary-l-divider: var(--l-4);
-    --raised-tertiary-l-edge: var(--l-6);
+    --raised-tertiary-l-edge: var(--l-3);
 
     --raised-tertiary-tint: 12%;
     --raised-tertiary-tint-hover: 18%;
@@ -51,12 +51,12 @@
   }
 
   &[data-neb-box-intent='secondary'] {
-    --raised-secondary-l: var(--l-9);
-    --raised-secondary-l-hover: var(--l-10);
-    --raised-secondary-l-active: var(--l-12);
-    --raised-secondary-l-selection: var(--l-11);
-    --raised-secondary-l-divider: var(--l-8);
-    --raised-secondary-l-edge: var(--l-6);
+    --raised-secondary-l: var(--l-10);
+    --raised-secondary-l-hover: var(--l-12);
+    --raised-secondary-l-active: var(--l-15);
+    --raised-secondary-l-selection: var(--l-13);
+    --raised-secondary-l-divider: var(--l-9);
+    --raised-secondary-l-edge: var(--l-7);
 
     --raised-secondary-tint: 25%;
     --raised-secondary-tint-hover: 32%;
@@ -69,11 +69,11 @@
 
   &[data-neb-box-intent='primary'] {
     --raised-primary-l: var(--l-15);
-    --raised-primary-l-hover: var(--l-16);
-    --raised-primary-l-active: var(--l-18);
-    --raised-primary-l-selection: var(--l-17);
+    --raised-primary-l-hover: var(--l-17);
+    --raised-primary-l-active: var(--l-20);
+    --raised-primary-l-selection: var(--l-18);
     --raised-primary-l-divider: var(--l-14);
-    --raised-primary-l-edge: var(--l-10);
+    --raised-primary-l-edge: var(--l-11);
 
     --raised-primary-tint: 45%;
     --raised-primary-tint-hover: 54%;
@@ -86,11 +86,11 @@
 
   &[data-neb-box-intent='strong'] {
     --raised-strong-l: var(--l-20);
-    --raised-strong-l-hover: var(--l-21);
-    --raised-strong-l-active: var(--l-23);
-    --raised-strong-l-selection: var(--l-22);
+    --raised-strong-l-hover: var(--l-22);
+    --raised-strong-l-active: var(--l-25);
+    --raised-strong-l-selection: var(--l-23);
     --raised-strong-l-divider: var(--l-19);
-    --raised-strong-l-edge: var(--l-13);
+    --raised-strong-l-edge: var(--l-14);
 
     --raised-strong-tint: 70%;
     --raised-strong-tint-hover: 79%;

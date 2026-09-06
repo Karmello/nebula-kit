@@ -9,7 +9,7 @@ const Surface = ({
   surfaceDepth,
 }: { mode: 'tinted' | 'filled' } & Pick<BoxProps, 'intent' | 'surfaceDepth'>) => {
   return (
-    <Box brand="blue">
+    <Box brand="gray">
       <Text>{intent}</Text>
       <Spacer blockSize={NEB_LENGTH.px_004} />
       <Box
@@ -18,7 +18,7 @@ const Surface = ({
         }}
         drawable
         intent={intent}
-        borderMode={mode}
+        // borderMode={mode}
         borderRole="edge"
         surfaceDepth={surfaceDepth}
         display="flex"
@@ -26,7 +26,7 @@ const Surface = ({
         overflow="hidden"
       >
         <Box
-          drawable
+          interactive
           surfaceDepth={surfaceDepth}
           bgMode={mode}
           intent={intent}
@@ -37,7 +37,7 @@ const Surface = ({
           tagAttrs={{
             style: { backgroundClip: 'padding-box' },
           }}
-          drawable
+          interactive
           surfaceDepth={surfaceDepth}
           bgMode={mode}
           borderMode={mode}
@@ -49,9 +49,10 @@ const Surface = ({
           borderBottomWidth={NEB_LENGTH.px_000}
         />
         <Box
-          drawable
+          interactive
           surfaceDepth={surfaceDepth}
           bgMode={mode}
+          bgRole="selection"
           intent={intent}
           padding={NEB_LENGTH.px_024}
           borderRadius={NEB_LENGTH.px_000}
@@ -92,5 +93,47 @@ export const JoinedActionGroup = () => {
         </Box>
       </Box>
     </>
+    // <Box display="inline-flex" flexDirection="row">
+    //   <Box theme="light" drawable intent="neutral" bgMode="filled" padding={NEB_LENGTH.px_048}>
+    //     <Text intent="neutral" typography="h2">
+    //       neutral
+    //     </Text>
+    //     <Text intent="muted" typography="h2">
+    //       muted
+    //     </Text>
+    //     <Text intent="tertiary" typography="h2">
+    //       tertiary
+    //     </Text>
+    //     <Text intent="secondary" typography="h2">
+    //       secondary
+    //     </Text>
+    //     <Text intent="primary" typography="h2">
+    //       primary
+    //     </Text>
+    //     <Text intent="strong" typography="h2">
+    //       strong
+    //     </Text>
+    //   </Box>
+    //   <Box theme="dark" drawable intent="neutral" bgMode="filled" padding={NEB_LENGTH.px_048}>
+    //     <Text intent="neutral" typography="h2">
+    //       neutral
+    //     </Text>
+    //     <Text intent="muted" typography="h2">
+    //       muted
+    //     </Text>
+    //     <Text intent="tertiary" typography="h2">
+    //       tertiary
+    //     </Text>
+    //     <Text intent="secondary" typography="h2">
+    //       secondary
+    //     </Text>
+    //     <Text intent="primary" typography="h2">
+    //       primary
+    //     </Text>
+    //     <Text intent="strong" typography="h2">
+    //       strong
+    //     </Text>
+    //   </Box>
+    // </Box>
   )
 }
