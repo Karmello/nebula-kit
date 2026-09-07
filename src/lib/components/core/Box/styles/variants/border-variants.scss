@@ -1,25 +1,81 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-border-mode]:not([data-neb-box-border-mode='none']) {
-  &[data-neb-box-intent='neutral'] {
-    --border: var(--color-neutral);
-  }
+.neb-box[data-neb-box-drawable='true'] {
+  &[data-neb-box-border-mode='filled'] {
+    &[data-neb-box-border-role='surface'] {
+      &[data-neb-box-intent='neutral'] {
+        --border: var(--color-neutral);
+      }
 
-  &[data-neb-box-intent='muted'] {
-    --border: var(--color-muted);
-  }
+      &[data-neb-box-intent='muted'] {
+        --border: var(--color-muted);
+      }
 
-  &[data-neb-box-intent='tertiary'] {
-    --border: var(--color-tertiary);
-  }
+      &[data-neb-box-intent='tertiary'] {
+        --border: var(--color-tertiary);
+      }
 
-  &[data-neb-box-intent='secondary'] {
-    --border: var(--color-secondary);
-  }
+      &[data-neb-box-intent='secondary'] {
+        --border: var(--color-secondary);
+      }
 
-  &[data-neb-box-intent='primary'] {
-    --border: var(--color-primary);
-  }
+      &[data-neb-box-intent='primary'] {
+        --border: var(--color-primary);
+      }
 
-  &[data-neb-box-intent='strong'] {
-    --border: var(--color-strong);
+      &[data-neb-box-intent='strong'] {
+        --border: var(--color-strong);
+      }
+    }
+
+    &[data-neb-box-border-role='divider'] {
+      &[data-neb-box-intent='neutral'] {
+        --border: hsl(from var(--color-neutral) h s calc(l + var(--divider-neutral)));
+      }
+
+      &[data-neb-box-intent='muted'] {
+        --border: hsl(from var(--color-muted) h s calc(l + var(--divider-muted)));
+      }
+
+      &[data-neb-box-intent='tertiary'] {
+        --border: hsl(from var(--color-tertiary) h s calc(l + var(--divider-tertiary)));
+      }
+
+      &[data-neb-box-intent='secondary'] {
+        --border: hsl(from var(--color-secondary) h s calc(l + var(--divider-secondary)));
+      }
+
+      &[data-neb-box-intent='primary'] {
+        --border: hsl(from var(--color-primary) h s calc(l + var(--divider-primary)));
+      }
+
+      &[data-neb-box-intent='strong'] {
+        --border: hsl(from var(--color-strong) h s calc(l + var(--divider-strong)));
+      }
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      &[data-neb-box-intent='neutral'] {
+        --border: hsl(from var(--color-neutral) h s calc(l + var(--edge-neutral)));
+      }
+
+      &[data-neb-box-intent='muted'] {
+        --border: hsl(from var(--color-muted) h s calc(l + var(--edge-muted)));
+      }
+
+      &[data-neb-box-intent='tertiary'] {
+        --border: hsl(from var(--color-tertiary) h s calc(l + var(--edge-tertiary)));
+      }
+
+      &[data-neb-box-intent='secondary'] {
+        --border: hsl(from var(--color-secondary) h s calc(l + var(--edge-secondary)));
+      }
+
+      &[data-neb-box-intent='primary'] {
+        --border: hsl(from var(--color-primary) h s calc(l + var(--edge-primary)));
+      }
+
+      &[data-neb-box-intent='strong'] {
+        --border: hsl(from var(--color-strong) h s calc(l + var(--edge-strong)));
+      }
+    }
   }
 }
