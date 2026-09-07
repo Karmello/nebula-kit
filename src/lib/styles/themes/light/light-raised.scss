@@ -28,8 +28,8 @@
     --raised-muted-tint-hover: 11%;
     --raised-muted-tint-active: 18%;
     --raised-muted-tint-selection: 15%;
-    --raised-muted-tint-divider: 3%;
-    --raised-muted-tint-edge: 12%;
+    --raised-muted-tint-divider: 2%;
+    --raised-muted-tint-edge: 9%;
     --raised-muted-tint-disabled: 3%;
   }
 
@@ -45,15 +45,15 @@
     --raised-tertiary-tint-hover: 18%;
     --raised-tertiary-tint-active: 27%;
     --raised-tertiary-tint-selection: 23%;
-    --raised-tertiary-tint-divider: 7%;
-    --raised-tertiary-tint-edge: 20%;
+    --raised-tertiary-tint-divider: 6%;
+    --raised-tertiary-tint-edge: 6%;
     --raised-tertiary-tint-disabled: 8%;
   }
 
   &[data-neb-box-intent='secondary'] {
     --raised-secondary-l: var(--l-10);
-    --raised-secondary-l-hover: var(--l-12);
-    --raised-secondary-l-active: var(--l-15);
+    --raised-secondary-l-hover: var(--l-11);
+    --raised-secondary-l-active: var(--l-13);
     --raised-secondary-l-selection: var(--l-13);
     --raised-secondary-l-divider: var(--l-9);
     --raised-secondary-l-edge: var(--l-7);
@@ -63,14 +63,14 @@
     --raised-secondary-tint-active: 44%;
     --raised-secondary-tint-selection: 39%;
     --raised-secondary-tint-divider: 18%;
-    --raised-secondary-tint-edge: 37%;
+    --raised-secondary-tint-edge: 15%;
     --raised-secondary-tint-disabled: 15%;
   }
 
   &[data-neb-box-intent='primary'] {
     --raised-primary-l: var(--l-15);
-    --raised-primary-l-hover: var(--l-17);
-    --raised-primary-l-active: var(--l-20);
+    --raised-primary-l-hover: var(--l-16);
+    --raised-primary-l-active: var(--l-18);
     --raised-primary-l-selection: var(--l-18);
     --raised-primary-l-divider: var(--l-14);
     --raised-primary-l-edge: var(--l-11);
@@ -80,15 +80,15 @@
     --raised-primary-tint-active: 65%;
     --raised-primary-tint-selection: 60%;
     --raised-primary-tint-divider: 36%;
-    --raised-primary-tint-edge: 59%;
+    --raised-primary-tint-edge: 35%;
     --raised-primary-tint-disabled: 29%;
   }
 
   &[data-neb-box-intent='strong'] {
     --raised-strong-l: var(--l-20);
-    --raised-strong-l-hover: var(--l-22);
-    --raised-strong-l-active: var(--l-25);
-    --raised-strong-l-selection: var(--l-23);
+    --raised-strong-l-hover: var(--l-21);
+    --raised-strong-l-active: var(--l-23);
+    --raised-strong-l-selection: var(--l-22);
     --raised-strong-l-divider: var(--l-19);
     --raised-strong-l-edge: var(--l-14);
 
@@ -97,7 +97,7 @@
     --raised-strong-tint-active: 90%;
     --raised-strong-tint-selection: 85%;
     --raised-strong-tint-divider: 60%;
-    --raised-strong-tint-edge: 90%;
+    --raised-strong-tint-edge: 45%;
     --raised-strong-tint-disabled: 45%;
   }
 }

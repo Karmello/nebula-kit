@@ -6,8 +6,15 @@
   }
 
   &[data-neb-box-bg-mode='filled'] {
+    &[data-neb-box-intent='secondary'],
     &[data-neb-box-intent='primary'] {
       --loader: hsl(var(--h) var(--s) var(--light-l));
+    }
+
+    &[data-neb-box-intent='primary'] {
+      &[data-neb-box-surface-depth='raised'] {
+        --loader: hsl(var(--h) var(--s) var(--l-0));
+      }
     }
 
     &[data-neb-box-intent='strong'] {

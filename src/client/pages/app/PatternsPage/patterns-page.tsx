@@ -77,7 +77,7 @@ export const PatternsPage = () => {
                         drawable
                         // variant="outline"
                         intent="tertiary"
-                        // maxBlockSize="calc(100dvh - 275px)"
+                        maxBlockSize="calc(100dvh - 275px)"
                         padding={NEB_LENGTH.px_016}
                       >
                         <Component />

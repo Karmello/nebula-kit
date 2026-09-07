@@ -36,7 +36,7 @@ export const Hero = () => {
             }}
           >
             <Button
-              color="blue"
+              color="purple"
               intent="primary"
               iconName="arrow-right"
               iconPlacement="right"

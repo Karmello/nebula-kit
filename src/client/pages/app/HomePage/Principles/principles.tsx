@@ -1,12 +1,9 @@
 import { Box, Button, HorizontalRule, Icon, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { BoxIntent } from 'lib/components/core/Box'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
 export const Principles = () => {
   const navigateTo = useNavigateTo()
-
-  const tempIntent: BoxIntent = 'secondary'
 
   return (
     <>
@@ -23,8 +20,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="code" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="code" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               JSX first
             </Text>
           </Box>
@@ -46,8 +43,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="rectangle-circle" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="rectangle-circle" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               Composition and inheritance
             </Text>
           </Box>
@@ -69,8 +66,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="file-code" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="file-code" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               Enforcing HTML semantics
             </Text>
           </Box>
@@ -92,8 +89,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="atom" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="atom" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               Orthogonal styling engine
             </Text>
           </Box>
@@ -116,8 +113,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="paintbrush" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="paintbrush" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               Unified rendering models
             </Text>
           </Box>
@@ -139,8 +136,8 @@ export const Principles = () => {
             alignItems="center"
             columnGap="11px"
           >
-            <Icon name="shield-check" color="green" intent="secondary" size="22px" />
-            <Text typography="h5" bold color="green" intent={tempIntent}>
+            <Icon name="shield-check" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
               Resistant to entropy
             </Text>
           </Box>

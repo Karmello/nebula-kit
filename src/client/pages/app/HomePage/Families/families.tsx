@@ -1,8 +1,7 @@
 import { kebabCase } from 'change-case'
 
-import { Box, Button, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Box, Button, HorizontalRule, Link, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { type IconName } from 'lib/components/core/Icon/types'
-import { Section } from 'client/components/reusable/Section'
 import { PAGE_SECTIONS } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -22,46 +21,46 @@ const Family = ({
   return (
     <Box
       drawable
-      // variant="ghost"
-      intent="primary"
+      bgMode="tinted"
+      borderMode="filled"
+      borderRole="edge"
+      intent="muted"
       brand="blue"
+      paddingBlock={NEB_LENGTH.px_012}
+      paddingInline={NEB_LENGTH.px_016}
     >
-      <Section
-        size="md"
-        variant="outline"
-        intent="tertiary"
-        heading={heading}
-        iconName={iconName}
-        headingIntent="primary"
-      >
-        <Text intent="neutral">{description}</Text>
-        {components ? (
-          <>
-            <Spacer blockSize={NEB_LENGTH.px_024} />
-            <Box display="flex" gap={NEB_LENGTH.px_008}>
-              {components.map(c => {
-                const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
-                  s => s.itemKey === kebabCase(c)
-                )
-                const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
-                return (
-                  <Link key={c} href={href} onClick={() => navigateTo(href)}>
-                    <Button
-                      scale="sm"
-                      variant="solid"
-                      intent="tertiary"
-                      iconName="box"
-                      iconPlacement="right"
-                    >
-                      {c}
-                    </Button>
-                  </Link>
-                )
-              })}
-            </Box>
-          </>
-        ) : null}
-      </Section>
+      <Title typography="h5" iconName={iconName} intent="primary">
+        {heading}
+      </Title>
+      <HorizontalRule marginBottom={NEB_LENGTH.px_012} />
+      <Text intent="neutral">{description}</Text>
+      {components ? (
+        <>
+          <Spacer blockSize={NEB_LENGTH.px_024} />
+          <Box display="flex" gap={NEB_LENGTH.px_008}>
+            {components.map(c => {
+              const { pageKey, categoryKey, itemKey } = PAGE_SECTIONS.find(
+                s => s.itemKey === kebabCase(c)
+              )
+              const href = `/${pageKey}/${categoryKey}/${itemKey}/overview`
+              return (
+                <Link key={c} href={href} onClick={() => navigateTo(href)}>
+                  <Button
+                    scale="sm"
+                    variant="solid"
+                    intent="primary"
+                    iconName="box"
+                    theme="dark"
+                    iconPlacement="right"
+                  >
+                    {c}
+                  </Button>
+                </Link>
+              )
+            })}
+          </Box>
+        </>
+      ) : null}
     </Box>
   )
 }

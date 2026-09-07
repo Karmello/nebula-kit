@@ -8,14 +8,16 @@ export const CONTROL_SCALE_MAP: Record<
     fontSize: string
     lineHeight: number | string
     gap: string
+    iconSize: string
   }
 > = {
   xs: {
     blockSize: '32px',
     paddingInline: '10px',
     fontSize: '13px',
-    lineHeight: 1.1,
+    lineHeight: 1,
     gap: '5px',
+    iconSize: '11px',
   },
   sm: {
     blockSize: '38px',
@@ -23,6 +25,7 @@ export const CONTROL_SCALE_MAP: Record<
     fontSize: '14px',
     lineHeight: 1.1,
     gap: '6px',
+    iconSize: '12px',
   },
   md: {
     blockSize: '44px',
@@ -30,6 +33,7 @@ export const CONTROL_SCALE_MAP: Record<
     fontSize: '15px',
     lineHeight: 1.2,
     gap: '7px',
+    iconSize: '13px',
   },
   lg: {
     blockSize: '50px',
@@ -37,6 +41,7 @@ export const CONTROL_SCALE_MAP: Record<
     fontSize: '16px',
     lineHeight: 1.2,
     gap: '8px',
+    iconSize: '14px',
   },
   xl: {
     blockSize: '56px',
@@ -44,5 +49,6 @@ export const CONTROL_SCALE_MAP: Record<
     fontSize: '17px',
     lineHeight: 1.3,
     gap: '9px',
+    iconSize: '15px',
   },
 }

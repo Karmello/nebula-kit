@@ -18,7 +18,7 @@ const Surface = ({
         }}
         drawable
         intent={intent}
-        // borderMode={mode}
+        borderMode={mode}
         borderRole="edge"
         surfaceDepth={surfaceDepth}
         display="flex"
@@ -63,7 +63,7 @@ const Surface = ({
 }
 
 export const JoinedActionGroup = () => {
-  const surfaceDepth: BoxSurfaceDepth = 'base'
+  const surfaceDepth: BoxSurfaceDepth = 'raised'
 
   return (
     <>
