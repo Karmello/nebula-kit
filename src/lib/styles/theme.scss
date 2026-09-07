@@ -1,11 +1,29 @@
+html {
+  --neb-border-width: 2px;
+}
+
 html[data-theme='light'],
 .neb-box[data-neb-box-theme='light'] {
   --neb-background: white;
   --neb-text: black;
+
+  --tint-neutral: 0%;
+  --tint-muted: 3%;
+  --tint-tertiary: 10%;
+  --tint-secondary: 25%;
+  --tint-primary: 47%;
+  --tint-strong: 67%;
 }
 
 html[data-theme='dark'],
 .neb-box[data-neb-box-theme='dark'] {
   --neb-background: black;
   --neb-text: white;
+
+  --tint-neutral: 0%;
+  --tint-muted: 4%;
+  --tint-tertiary: 11%;
+  --tint-secondary: 22%;
+  --tint-primary: 34%;
+  --tint-strong: 52%;
 }

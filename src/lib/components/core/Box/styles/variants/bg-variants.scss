@@ -1,4 +1,4 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-bg-mode]:not([data-neb-box-bg-mode='transparent']) {
+.neb-box[data-neb-box-drawable='true'][data-neb-box-bg-mode='filled'] {
   &[data-neb-box-intent='neutral'] {
     --bg: var(--color-neutral);
   }
@@ -21,5 +21,31 @@
 
   &[data-neb-box-intent='strong'] {
     --bg: var(--color-strong);
+  }
+}
+
+.neb-box[data-neb-box-drawable='true'][data-neb-box-bg-mode='tinted'] {
+  &[data-neb-box-intent='neutral'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-neutral), transparent);
+  }
+
+  &[data-neb-box-intent='muted'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-muted), transparent);
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-tertiary), transparent);
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-secondary), transparent);
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-primary), transparent);
+  }
+
+  &[data-neb-box-intent='strong'] {
+    --bg: color-mix(in srgb, var(--color-primary) var(--tint-strong), transparent);
   }
 }

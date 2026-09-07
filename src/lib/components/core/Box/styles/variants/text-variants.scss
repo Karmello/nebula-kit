@@ -1,10 +1,14 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-text='default'] {
-  &[data-neb-box-intent='strong'] {
-    --text: var(--neb-background);
+  &[data-neb-box-intent='primary'] {
+    &[data-neb-box-bg-mode='filled'] {
+      --text: white;
+    }
   }
 
-  &[data-neb-box-intent='primary'] {
-    --text: white;
+  &[data-neb-box-intent='strong'] {
+    &[data-neb-box-bg-mode='filled'] {
+      --text: var(--neb-background);
+    }
   }
 }
 
@@ -30,6 +34,10 @@
   }
 
   &[data-neb-box-intent='strong'] {
+    --text: var(--color-strong);
+  }
+
+  &:not([data-neb-box-intent='neutral'])[data-neb-box-bg-mode='tinted'] {
     --text: var(--color-strong);
   }
 }
