@@ -6,7 +6,6 @@ import { App } from '../App'
 
 export const Client = () => {
   const theme = useAppStore(state => state.theme)
-  const saturation = useAppStore(state => state.saturation)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const rippleMode = useAppStore(state => state.rippleMode)
   const showAppJump = useAppStore(state => state.showAppJump)
@@ -14,7 +13,6 @@ export const Client = () => {
   return (
     <NebkitProvider
       theme={theme}
-      saturation={saturation}
       borderRadiusSize={borderRadiusSize}
       rippleMode={rippleMode}
       lockGlobalScroll={showAppJump}

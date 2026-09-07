@@ -4,15 +4,12 @@ import { Box, Button, Dialog, NEB_LENGTH, Select, Spacer, Text, Title } from 'li
 import {
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
   NEBKIT_PROVIDER_RIPPLE_MODES,
-  NEBKIT_PROVIDER_SATURATIONS,
 } from 'lib/components/core/NebkitProvider/constants'
 import { useAppStore } from 'client/store'
 
 export const AppPrefsDialog = () => {
   const theme = useAppStore(state => state.theme)
   const setTheme = useAppStore(state => state.setTheme)
-  const saturation = useAppStore(state => state.saturation)
-  const setSaturation = useAppStore(state => state.setSaturation)
   const borderRadiusSize = useAppStore(state => state.borderRadiusSize)
   const setBorderRadiusSize = useAppStore(state => state.setBorderRadiusSize)
   const rippleMode = useAppStore(state => state.rippleMode)
@@ -74,17 +71,6 @@ export const AppPrefsDialog = () => {
               >
                 {sentenceCase('Dark')}
               </Button>
-            </Box>
-            <Box>
-              <Text bold typography="small">
-                Saturation
-              </Text>
-              <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select value={saturation} onChange={setSaturation} inlineSize="150px" scale="xs">
-                {NEBKIT_PROVIDER_SATURATIONS.map(saturation => (
-                  <Select.Option value={saturation}>{sentenceCase(saturation)}</Select.Option>
-                ))}
-              </Select>
             </Box>
             <Box>
               <Text bold typography="small">

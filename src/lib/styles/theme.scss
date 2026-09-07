@@ -1,0 +1,11 @@
+html[data-theme='light'],
+.neb-box[data-neb-box-theme='light'] {
+  --neb-background: white;
+  --neb-text: black;
+}
+
+html[data-theme='dark'],
+.neb-box[data-neb-box-theme='dark'] {
+  --neb-background: black;
+  --neb-text: white;
+}

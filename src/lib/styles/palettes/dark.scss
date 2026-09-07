@@ -1,0 +1,79 @@
+html[data-theme='dark'][data-neb-box-brand='gray'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='gray'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(0 0% 8%);
+  --color-tertiary: hsl(0 0% 22%);
+  --color-secondary: hsl(0 0% 42%);
+  --color-primary: hsl(0 0% 62%);
+  --color-strong: hsl(0 0% 85%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='red'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='red'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(8 55% 9%);
+  --color-tertiary: hsl(6 60% 24%);
+  --color-secondary: hsl(4 65% 46%);
+  --color-primary: hsl(2 78% 62%);
+  --color-strong: hsl(0 72% 82%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='amber'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='amber'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(34 55% 10%);
+  --color-tertiary: hsl(36 62% 26%);
+  --color-secondary: hsl(38 68% 48%);
+  --color-primary: hsl(40 80% 62%);
+  --color-strong: hsl(44 75% 80%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='green'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='green'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(155 45% 9%);
+  --color-tertiary: hsl(153 50% 24%);
+  --color-secondary: hsl(150 48% 45%);
+  --color-primary: hsl(148 55% 60%);
+  --color-strong: hsl(146 55% 78%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='teal'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='teal'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(195 45% 10%);
+  --color-tertiary: hsl(192 50% 25%);
+  --color-secondary: hsl(189 55% 46%);
+  --color-primary: hsl(186 65% 58%);
+  --color-strong: hsl(183 60% 76%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='blue'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='blue'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(222 55% 12%);
+  --color-tertiary: hsl(218 60% 28%);
+  --color-secondary: hsl(215 65% 50%);
+  --color-primary: hsl(212 78% 64%);
+  --color-strong: hsl(208 70% 82%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='purple'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='purple'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(292 50% 12%);
+  --color-tertiary: hsl(295 55% 28%);
+  --color-secondary: hsl(297 62% 52%);
+  --color-primary: hsl(299 75% 66%);
+  --color-strong: hsl(301 65% 82%);
+}
+
+html[data-theme='dark'][data-neb-box-brand='pink'],
+.neb-box[data-neb-box-theme='dark'][data-neb-box-color='pink'] {
+  --color-neutral: hsl(0 0% 0%);
+  --color-muted: hsl(328 48% 12%);
+  --color-tertiary: hsl(331 52% 28%);
+  --color-secondary: hsl(333 58% 50%);
+  --color-primary: hsl(335 70% 64%);
+  --color-strong: hsl(338 64% 82%);
+}

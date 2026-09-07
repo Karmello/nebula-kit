@@ -7,7 +7,6 @@ import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
   DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
-  DEFAULT_NEBKIT_PROVIDER_SATURATION,
   DEFAULT_NEBKIT_PROVIDER_THEME,
   NEBKIT_PROVIDER_SIZES_MAP,
 } from './constants'
@@ -17,7 +16,6 @@ export const NebkitProvider = ({
   children,
   theme = DEFAULT_NEBKIT_PROVIDER_THEME,
   brand = DEFAULT_NEBKIT_PROVIDER_BRAND,
-  saturation = DEFAULT_NEBKIT_PROVIDER_SATURATION,
   borderRadiusSize = DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
   rippleMode = DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
   lockGlobalScroll,
@@ -85,10 +83,6 @@ export const NebkitProvider = ({
     document.documentElement.setAttribute('data-theme', theme || `${DEFAULT_NEBKIT_PROVIDER_THEME}`)
     document.documentElement.setAttribute('data-brand', brand || `${DEFAULT_NEBKIT_PROVIDER_BRAND}`)
     document.documentElement.setAttribute(
-      'data-saturation',
-      saturation || `${DEFAULT_NEBKIT_PROVIDER_SATURATION}`
-    )
-    document.documentElement.setAttribute(
       'data-ripple-mode',
       rippleMode || `${DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE}`
     )
@@ -99,7 +93,7 @@ export const NebkitProvider = ({
     )
 
     scheduleEnableGlobalTransitions()
-  }, [theme, brand, saturation, borderRadiusSize, rippleMode])
+  }, [theme, brand, borderRadiusSize, rippleMode])
 
   return (
     <ThemeProvider theme={theme}>

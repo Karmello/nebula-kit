@@ -1,6 +1,7 @@
-@use './palette/_index' as *;
-@use './themes/_index' as *;
-@use './depths/_index' as *;
+@use './palettes/light.scss' as *;
+@use './palettes/dark.scss' as *;
+
+@use './theme.scss' as *;
 @use './tokens/_index' as *;
 
 html {
