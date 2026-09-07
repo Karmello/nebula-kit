@@ -64,8 +64,6 @@ export const FOUNDATIONS_CATEGORIES = [
           { key: 'typography', label: 'Typography' },
           { key: 'length-scale', label: 'Length scale' },
           { key: 'breakpoints', label: 'Breakpoints' },
-          { key: 'color-matrix', label: 'Color matrix' },
-          { key: 'color-palettes', label: 'Color palettes' },
           { key: 'color-application', label: 'Color application' },
         ],
       },
