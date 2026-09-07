@@ -25,7 +25,7 @@ const Family = ({
       borderMode="filled"
       borderRole="edge"
       intent="muted"
-      brand="blue"
+      brand="purple"
       paddingBlock={NEB_LENGTH.px_012}
       paddingInline={NEB_LENGTH.px_016}
     >

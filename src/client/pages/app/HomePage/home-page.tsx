@@ -22,7 +22,7 @@ export const HomePage = () => {
         <Box flex="2">
           <About />
           <Spacer blockSize={{ base: NEB_LENGTH.px_048, lg: NEB_LENGTH.px_048 }} />
-          <Text typography="h1" color="purple" intent="primary" bold>
+          <Text typography="h1" color="blue" intent="primary" bold>
             NebulaKit
           </Text>
           <HorizontalRule />
