@@ -50,7 +50,6 @@ const Family = ({
                     variant="solid"
                     intent="primary"
                     iconName="box"
-                    theme="dark"
                     iconPlacement="right"
                   >
                     {c}
