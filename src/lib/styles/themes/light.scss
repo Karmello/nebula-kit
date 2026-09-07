@@ -1,0 +1,33 @@
+html[data-theme='light'],
+.neb-box[data-neb-box-theme='light'] {
+  --neb-background: white;
+  --neb-text: black;
+
+  --tint-neutral: 0%;
+  --tint-muted: 3%;
+  --tint-tertiary: 10%;
+  --tint-secondary: 25%;
+  --tint-primary: 47%;
+  --tint-strong: 67%;
+
+  --divider-neutral: -5;
+  --divider-muted: 5;
+  --divider-tertiary: 5;
+  --divider-secondary: 5;
+  --divider-primary: 5;
+  --divider-strong: 5;
+
+  --edge-neutral: -5;
+  --edge-muted: -5;
+  --edge-tertiary: 5;
+  --edge-secondary: 10;
+  --edge-primary: 15;
+  --edge-strong: 20;
+
+  --raised-neutral: -5;
+  --raised-muted: -10;
+  --raised-tertiary: -10;
+  --raised-secondary: -10;
+  --raised-primary: -10;
+  --raised-strong: -10;
+}

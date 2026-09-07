@@ -1,79 +1,79 @@
 html[data-theme='light'][data-neb-box-brand='gray'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='gray'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(0 0% 97%);
-  --color-tertiary: hsl(0 0% 88%);
-  --color-secondary: hsl(0 0% 72%);
-  --color-primary: hsl(0 0% 46%);
-  --color-strong: hsl(0 0% 22%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(0 0% 97%);
+  --color-tertiary-base: hsl(0 0% 88%);
+  --color-secondary-base: hsl(0 0% 72%);
+  --color-primary-base: hsl(0 0% 46%);
+  --color-strong-base: hsl(0 0% 22%);
 }
 
 html[data-theme='light'][data-neb-box-brand='red'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='red'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(10 45% 96%);
-  --color-tertiary: hsl(10 55% 87%);
-  --color-secondary: hsl(8 60% 72%);
-  --color-primary: hsl(6 68% 50%);
-  --color-strong: hsl(4 45% 28%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(10 45% 96%);
+  --color-tertiary-base: hsl(10 55% 87%);
+  --color-secondary-base: hsl(8 60% 72%);
+  --color-primary-base: hsl(6 68% 50%);
+  --color-strong-base: hsl(4 45% 28%);
 }
 
 html[data-theme='light'][data-neb-box-brand='amber'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='amber'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(42 60% 95%);
-  --color-tertiary: hsl(42 65% 84%);
-  --color-secondary: hsl(40 65% 68%);
-  --color-primary: hsl(38 78% 48%);
-  --color-strong: hsl(34 55% 28%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(42 60% 95%);
+  --color-tertiary-base: hsl(42 65% 84%);
+  --color-secondary-base: hsl(40 65% 68%);
+  --color-primary-base: hsl(38 78% 48%);
+  --color-strong-base: hsl(34 55% 28%);
 }
 
 html[data-theme='light'][data-neb-box-brand='green'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='green'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(150 55% 95%);
-  --color-tertiary: hsl(150 55% 84%);
-  --color-secondary: hsl(150 45% 65%);
-  --color-primary: hsl(152 55% 42%);
-  --color-strong: hsl(155 40% 24%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(150 55% 95%);
+  --color-tertiary-base: hsl(150 55% 84%);
+  --color-secondary-base: hsl(150 45% 65%);
+  --color-primary-base: hsl(152 55% 42%);
+  --color-strong-base: hsl(155 40% 24%);
 }
 
 html[data-theme='light'][data-neb-box-brand='teal'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='teal'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(185 55% 95%);
-  --color-tertiary: hsl(185 60% 84%);
-  --color-secondary: hsl(188 55% 65%);
-  --color-primary: hsl(190 68% 40%);
-  --color-strong: hsl(195 50% 22%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(185 55% 95%);
+  --color-tertiary-base: hsl(185 60% 84%);
+  --color-secondary-base: hsl(188 55% 65%);
+  --color-primary-base: hsl(190 68% 40%);
+  --color-strong-base: hsl(195 50% 22%);
 }
 
 html[data-theme='light'][data-neb-box-brand='blue'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='blue'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(212 72% 95%);
-  --color-tertiary: hsl(212 74% 84%);
-  --color-secondary: hsl(214 66% 68%);
-  --color-primary: hsl(216 80% 50%);
-  --color-strong: hsl(220 60% 26%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(212 72% 95%);
+  --color-tertiary-base: hsl(212 74% 84%);
+  --color-secondary-base: hsl(214 66% 68%);
+  --color-primary-base: hsl(216 80% 50%);
+  --color-strong-base: hsl(220 60% 26%);
 }
 
 html[data-theme='light'][data-neb-box-brand='purple'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='purple'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(300 68% 96%);
-  --color-tertiary: hsl(300 68% 86%);
-  --color-secondary: hsl(298 62% 72%);
-  --color-primary: hsl(296 75% 50%);
-  --color-strong: hsl(294 58% 28%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(300 68% 96%);
+  --color-tertiary-base: hsl(300 68% 86%);
+  --color-secondary-base: hsl(298 62% 72%);
+  --color-primary-base: hsl(296 75% 50%);
+  --color-strong-base: hsl(294 58% 28%);
 }
 
 html[data-theme='light'][data-neb-box-brand='pink'],
 .neb-box[data-neb-box-theme='light'][data-neb-box-color='pink'] {
-  --color-neutral: hsl(0 0% 100%);
-  --color-muted: hsl(335 55% 96%);
-  --color-tertiary: hsl(335 55% 87%);
-  --color-secondary: hsl(333 55% 72%);
-  --color-primary: hsl(330 68% 52%);
-  --color-strong: hsl(325 50% 28%);
+  --color-neutral-base: hsl(0 0% 100%);
+  --color-muted-base: hsl(335 55% 96%);
+  --color-tertiary-base: hsl(335 55% 87%);
+  --color-secondary-base: hsl(333 55% 72%);
+  --color-primary-base: hsl(330 68% 52%);
+  --color-strong-base: hsl(325 50% 28%);
 }

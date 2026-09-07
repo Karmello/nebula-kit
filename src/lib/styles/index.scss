@@ -1,10 +1,14 @@
 @use './palettes/light.scss' as *;
 @use './palettes/dark.scss' as *;
 
-@use './theme.scss' as *;
-@use './tokens/_index' as *;
+@use './themes/light.scss' as *;
+@use './themes/dark.scss' as *;
+
+@use './tokens/_index';
 
 html {
+  --neb-border-width: 2px;
+
   font-family:
     system-ui,
     -apple-system,

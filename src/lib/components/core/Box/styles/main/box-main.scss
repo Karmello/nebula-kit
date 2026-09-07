@@ -1,4 +1,24 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  &[data-neb-box-surface-depth='base'] {
+    --color-neutral: var(--color-neutral-base);
+    --color-muted: var(--color-muted-base);
+    --color-tertiary: var(--color-tertiary-base);
+    --color-secondary: var(--color-secondary-base);
+    --color-primary: var(--color-primary-base);
+    --color-strong: var(--color-strong-base);
+  }
+
+  &[data-neb-box-surface-depth='raised'] {
+    --color-neutral: hsl(from var(--color-neutral-base) h s calc(l + var(--raised-neutral)));
+    --color-muted: hsl(from var(--color-muted-base) h s calc(l + var(--raised-muted)));
+    --color-tertiary: hsl(from var(--color-tertiary-base) h s calc(l + var(--raised-tertiary)));
+    --color-secondary: hsl(from var(--color-secondary-base) h s calc(l + var(--raised-secondary)));
+    --color-primary: hsl(from var(--color-primary-base) h s calc(l + var(--raised-primary)));
+    --color-strong: hsl(from var(--color-strong-base) h s calc(l + var(--raised-strong)));
+  }
+}
+
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
   border-radius: var(--neb-border-radius);
 
   // enabled
