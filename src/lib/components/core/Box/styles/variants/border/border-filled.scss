@@ -5,11 +5,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-neutral)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-neutral) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-neutral)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-neutral) / 100) c h);
     }
   }
 
@@ -18,11 +18,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-muted)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-muted) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-muted)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-muted) / 100) c h);
     }
   }
 
@@ -31,11 +31,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-tertiary)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-tertiary) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-tertiary)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-tertiary) / 100) c h);
     }
   }
 
@@ -44,11 +44,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-secondary)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-secondary) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-secondary)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-secondary) / 100) c h);
     }
   }
 
@@ -57,11 +57,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-primary)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-primary) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-primary)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-primary) / 100) c h);
     }
   }
 
@@ -70,11 +70,11 @@
     --border: var(--hsl);
 
     &[data-neb-box-border-role='divider'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--divider-strong)));
+      --border: oklch(from var(--hsl) calc(l + var(--divider-strong) / 100) c h);
     }
 
     &[data-neb-box-border-role='edge'] {
-      --border: hsl(from var(--hsl) h s calc(l + var(--edge-strong)));
+      --border: oklch(from var(--hsl) calc(l + var(--edge-strong) / 100) c h);
     }
   }
 }
