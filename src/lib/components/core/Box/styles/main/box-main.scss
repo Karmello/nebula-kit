@@ -6,13 +6,6 @@
     --color-secondary: var(--color-secondary-base);
     --color-primary: var(--color-primary-base);
     --color-strong: var(--color-strong-base);
-
-    --tint-neutral: var(--tint-neutral-base);
-    --tint-muted: var(--tint-muted-base);
-    --tint-tertiary: var(--tint-tertiary-base);
-    --tint-secondary: var(--tint-secondary-base);
-    --tint-primary: var(--tint-primary-base);
-    --tint-strong: var(--tint-strong-base);
   }
 
   &[data-neb-box-surface-depth='raised'] {
@@ -22,13 +15,6 @@
     --color-secondary: hsl(from var(--color-secondary-base) h s calc(l + var(--raised-secondary)));
     --color-primary: hsl(from var(--color-primary-base) h s calc(l + var(--raised-primary)));
     --color-strong: hsl(from var(--color-strong-base) h s calc(l + var(--raised-strong)));
-
-    --tint-neutral: var(--tint-neutral-raised);
-    --tint-muted: var(--tint-muted-raised);
-    --tint-tertiary: var(--tint-tertiary-raised);
-    --tint-secondary: var(--tint-secondary-raised);
-    --tint-primary: var(--tint-primary-raised);
-    --tint-strong: var(--tint-strong-raised);
   }
 }
 
