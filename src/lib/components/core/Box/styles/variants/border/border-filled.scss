@@ -1,0 +1,80 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-border-mode='filled'] {
+  //
+  &[data-neb-box-intent='neutral'] {
+    --hsl: var(--color-neutral);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-neutral)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-neutral)));
+    }
+  }
+
+  &[data-neb-box-intent='muted'] {
+    --hsl: var(--color-muted);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-muted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-muted)));
+    }
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --hsl: var(--color-tertiary);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-tertiary)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-tertiary)));
+    }
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --hsl: var(--color-secondary);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-secondary)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-secondary)));
+    }
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --hsl: var(--color-primary);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-primary)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-primary)));
+    }
+  }
+
+  &[data-neb-box-intent='strong'] {
+    --hsl: var(--color-strong);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-strong)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-strong)));
+    }
+  }
+}

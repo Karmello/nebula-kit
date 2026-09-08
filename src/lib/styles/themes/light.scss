@@ -3,6 +3,13 @@ html[data-theme='light'],
   --neb-background: white;
   --neb-text: black;
 
+  --raised-neutral: -5;
+  --raised-muted: -10;
+  --raised-tertiary: -10;
+  --raised-secondary: -10;
+  --raised-primary: -10;
+  --raised-strong: -10;
+
   --tint-neutral: 0%;
   --tint-muted: 3%;
   --tint-tertiary: 10%;
@@ -10,24 +17,31 @@ html[data-theme='light'],
   --tint-primary: 47%;
   --tint-strong: 67%;
 
-  --divider-neutral: -5;
-  --divider-muted: 5;
+  --divider-neutral: 3;
+  --divider-muted: 4;
   --divider-tertiary: 5;
-  --divider-secondary: 5;
+  --divider-secondary: 6;
   --divider-primary: 5;
-  --divider-strong: 5;
+  --divider-strong: 6;
+
+  --divider-neutral-tinted: 0;
+  --divider-muted-tinted: -100;
+  --divider-tertiary-tinted: 35;
+  --divider-secondary-tinted: 20;
+  --divider-primary-tinted: 10;
+  --divider-strong-tinted: 10;
 
   --edge-neutral: -5;
-  --edge-muted: -5;
+  --edge-muted: -2;
   --edge-tertiary: 5;
   --edge-secondary: 10;
   --edge-primary: 15;
   --edge-strong: 20;
 
-  --raised-neutral: -5;
-  --raised-muted: -10;
-  --raised-tertiary: -10;
-  --raised-secondary: -10;
-  --raised-primary: -10;
-  --raised-strong: -10;
+  --edge-neutral-tinted: -100;
+  --edge-muted-tinted: -50;
+  --edge-tertiary-tinted: -10;
+  --edge-secondary-tinted: 30;
+  --edge-primary-tinted: 20;
+  --edge-strong-tinted: 15;
 }

@@ -3,6 +3,13 @@ html[data-theme='dark'],
   --neb-background: black;
   --neb-text: white;
 
+  --raised-neutral: 5;
+  --raised-muted: 10;
+  --raised-tertiary: 10;
+  --raised-secondary: 10;
+  --raised-primary: 10;
+  --raised-strong: 10;
+
   --tint-neutral: 0%;
   --tint-muted: 9%;
   --tint-tertiary: 18%;
@@ -17,6 +24,13 @@ html[data-theme='dark'],
   --divider-primary: 5;
   --divider-strong: 5;
 
+  --divider-neutral-tinted: 10;
+  --divider-muted-tinted: 5;
+  --divider-tertiary-tinted: 5;
+  --divider-secondary-tinted: 5;
+  --divider-primary-tinted: 5;
+  --divider-strong-tinted: 5;
+
   --edge-neutral: 10;
   --edge-muted: 5;
   --edge-tertiary: -5;
@@ -24,10 +38,10 @@ html[data-theme='dark'],
   --edge-primary: -15;
   --edge-strong: -20;
 
-  --raised-neutral: 5;
-  --raised-muted: 10;
-  --raised-tertiary: 10;
-  --raised-secondary: 10;
-  --raised-primary: 10;
-  --raised-strong: 10;
+  --edge-neutral-tinted: 10;
+  --edge-muted-tinted: 5;
+  --edge-tertiary-tinted: -5;
+  --edge-secondary-tinted: -10;
+  --edge-primary-tinted: -15;
+  --edge-strong-tinted: -20;
 }

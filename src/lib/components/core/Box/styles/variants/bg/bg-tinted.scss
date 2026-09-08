@@ -1,29 +1,3 @@
-.neb-box[data-neb-box-drawable='true'][data-neb-box-bg-mode='filled'] {
-  &[data-neb-box-intent='neutral'] {
-    --bg: var(--color-neutral);
-  }
-
-  &[data-neb-box-intent='muted'] {
-    --bg: var(--color-muted);
-  }
-
-  &[data-neb-box-intent='tertiary'] {
-    --bg: var(--color-tertiary);
-  }
-
-  &[data-neb-box-intent='secondary'] {
-    --bg: var(--color-secondary);
-  }
-
-  &[data-neb-box-intent='primary'] {
-    --bg: var(--color-primary);
-  }
-
-  &[data-neb-box-intent='strong'] {
-    --bg: var(--color-strong);
-  }
-}
-
 .neb-box[data-neb-box-drawable='true'][data-neb-box-bg-mode='tinted'] {
   &[data-neb-box-intent='neutral'] {
     --bg: color-mix(in srgb, var(--color-primary) var(--tint-neutral), transparent);

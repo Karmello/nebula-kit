@@ -1,0 +1,13 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-text='default'] {
+  &[data-neb-box-intent='primary'] {
+    &[data-neb-box-bg-mode='filled'] {
+      --text: white;
+    }
+  }
+
+  &[data-neb-box-intent='strong'] {
+    &[data-neb-box-bg-mode='filled'] {
+      --text: var(--neb-background);
+    }
+  }
+}

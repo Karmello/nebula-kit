@@ -4,9 +4,12 @@
 @use './main/text-main.scss';
 @use './main/ripple-main.scss';
 
-@use './variants/bg-variants.scss';
-@use './variants/border-variants.scss';
-@use './variants/text-variants.scss';
+@use './variants/bg/bg-filled.scss';
+@use './variants/bg/bg-tinted.scss';
+@use './variants/border/border-filled.scss';
+@use './variants/border/border-tinted.scss';
+@use './variants/text/text-default.scss';
+@use './variants/text/text-colored.scss';
 
 .neb-box {
   background-color: transparent;

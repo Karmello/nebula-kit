@@ -13,9 +13,9 @@ const Surface = ({
       <Text>{intent}</Text>
       <Spacer blockSize={NEB_LENGTH.px_004} />
       <Box
-        // tagAttrs={{
-        //   style: { backgroundClip: 'padding-box' },
-        // }}
+        tagAttrs={{
+          style: { backgroundClip: 'padding-box' },
+        }}
         drawable
         intent={intent}
         borderMode={mode}
@@ -34,9 +34,9 @@ const Surface = ({
           borderRadius={NEB_LENGTH.px_000}
         />
         <Box
-          // tagAttrs={{
-          //   style: { backgroundClip: 'padding-box' },
-          // }}
+          tagAttrs={{
+            style: { backgroundClip: 'padding-box' },
+          }}
           interactive
           surfaceDepth={surfaceDepth}
           bgMode={mode}

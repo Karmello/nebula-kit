@@ -1,0 +1,68 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-border-mode='tinted'] {
+  //
+  &[data-neb-box-intent='neutral'],
+  &[data-neb-box-intent='muted'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-muted), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-muted-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-muted-tinted)));
+    }
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-tertiary), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-tertiary-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-tertiary-tinted)));
+    }
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-secondary), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-secondary-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-secondary-tinted)));
+    }
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-primary), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-primary-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-primary-tinted)));
+    }
+  }
+
+  &[data-neb-box-intent='strong'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-strong), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-strong-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-strong-tinted)));
+    }
+  }
+}
