@@ -1,4 +1,4 @@
-html[data-theme='dark'][data-neb-box-brand='gray'],
+html[data-theme='dark'][data-brand='gray'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='gray'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(0 0% 8%);
@@ -8,7 +8,7 @@ html[data-theme='dark'][data-neb-box-brand='gray'],
   --color-strong-base: hsl(0 0% 85%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='red'],
+html[data-theme='dark'][data-brand='red'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='red'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(8 55% 9%);
@@ -18,7 +18,7 @@ html[data-theme='dark'][data-neb-box-brand='red'],
   --color-strong-base: hsl(0 72% 82%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='amber'],
+html[data-theme='dark'][data-brand='amber'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='amber'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(34 55% 10%);
@@ -28,7 +28,7 @@ html[data-theme='dark'][data-neb-box-brand='amber'],
   --color-strong-base: hsl(44 75% 80%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='green'],
+html[data-theme='dark'][data-brand='green'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='green'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(155 45% 9%);
@@ -38,7 +38,7 @@ html[data-theme='dark'][data-neb-box-brand='green'],
   --color-strong-base: hsl(146 55% 78%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='teal'],
+html[data-theme='dark'][data-brand='teal'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='teal'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(195 45% 10%);
@@ -48,7 +48,7 @@ html[data-theme='dark'][data-neb-box-brand='teal'],
   --color-strong-base: hsl(183 60% 76%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='blue'],
+html[data-theme='dark'][data-brand='blue'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='blue'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(222 55% 12%);
@@ -58,7 +58,7 @@ html[data-theme='dark'][data-neb-box-brand='blue'],
   --color-strong-base: hsl(208 70% 82%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='purple'],
+html[data-theme='dark'][data-brand='purple'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='purple'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(292 50% 12%);
@@ -68,7 +68,7 @@ html[data-theme='dark'][data-neb-box-brand='purple'],
   --color-strong-base: hsl(301 65% 82%);
 }
 
-html[data-theme='dark'][data-neb-box-brand='pink'],
+html[data-theme='dark'][data-brand='pink'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='pink'] {
   --color-neutral-base: hsl(0 0% 0%);
   --color-muted-base: hsl(328 48% 12%);

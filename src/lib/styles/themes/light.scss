@@ -3,45 +3,52 @@ html[data-theme='light'],
   --neb-background: white;
   --neb-text: black;
 
-  --raised-neutral: -5;
-  --raised-muted: -10;
-  --raised-tertiary: -10;
+  --raised-neutral: 0;
+  --raised-muted: -5;
+  --raised-tertiary: -8;
   --raised-secondary: -10;
-  --raised-primary: -10;
-  --raised-strong: -10;
+  --raised-primary: -12;
+  --raised-strong: -14;
 
-  --tint-neutral: 0%;
-  --tint-muted: 3%;
-  --tint-tertiary: 10%;
-  --tint-secondary: 25%;
-  --tint-primary: 47%;
-  --tint-strong: 67%;
+  --edge-neutral: -3;
+  --edge-muted: -3;
+  --edge-tertiary: -5;
+  --edge-secondary: -10;
+  --edge-primary: -15;
+  --edge-strong: 35;
 
-  --divider-neutral: 3;
-  --divider-muted: 4;
-  --divider-tertiary: 5;
-  --divider-secondary: 6;
+  --divider-neutral: -2;
+  --divider-muted: 2;
+  --divider-tertiary: 3;
+  --divider-secondary: 4;
   --divider-primary: 5;
   --divider-strong: 6;
 
-  --divider-neutral-tinted: 0;
-  --divider-muted-tinted: -100;
-  --divider-tertiary-tinted: 35;
-  --divider-secondary-tinted: 20;
-  --divider-primary-tinted: 10;
-  --divider-strong-tinted: 10;
+  --tint-neutral-base: 0%;
+  --tint-muted-base: 3%;
+  --tint-tertiary-base: 10%;
+  --tint-secondary-base: 25%;
+  --tint-primary-base: 47%;
+  --tint-strong-base: 67%;
 
-  --edge-neutral: -5;
-  --edge-muted: -2;
-  --edge-tertiary: 5;
-  --edge-secondary: 10;
-  --edge-primary: 15;
-  --edge-strong: 20;
+  --tint-neutral-raised: 0%;
+  --tint-muted-raised: 6%;
+  --tint-tertiary-raised: 15%;
+  --tint-secondary-raised: 30%;
+  --tint-primary-raised: 52%;
+  --tint-strong-raised: 70%;
 
-  --edge-neutral-tinted: -100;
+  --edge-neutral-tinted: 0;
   --edge-muted-tinted: -50;
-  --edge-tertiary-tinted: -10;
-  --edge-secondary-tinted: 30;
-  --edge-primary-tinted: 20;
-  --edge-strong-tinted: 15;
+  --edge-tertiary-tinted: -25;
+  --edge-secondary-tinted: -20;
+  --edge-primary-tinted: -17;
+  --edge-strong-tinted: -12;
+
+  --divider-neutral-tinted: 0;
+  --divider-muted-tinted: 45;
+  --divider-tertiary-tinted: 23;
+  --divider-secondary-tinted: 13;
+  --divider-primary-tinted: 6;
+  --divider-strong-tinted: 5;
 }

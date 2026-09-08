@@ -1,6 +1,18 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-border-mode='tinted'] {
   //
-  &[data-neb-box-intent='neutral'],
+  &[data-neb-box-intent='neutral'] {
+    --hsl: color-mix(in srgb, var(--color-primary) var(--tint-neutral), transparent);
+    --border: var(--hsl);
+
+    &[data-neb-box-border-role='divider'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--divider-neutral-tinted)));
+    }
+
+    &[data-neb-box-border-role='edge'] {
+      --border: hsl(from var(--hsl) h s calc(l + var(--edge-neutral-tinted)));
+    }
+  }
+
   &[data-neb-box-intent='muted'] {
     --hsl: color-mix(in srgb, var(--color-primary) var(--tint-muted), transparent);
     --border: var(--hsl);
