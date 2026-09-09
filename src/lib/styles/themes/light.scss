@@ -5,6 +5,13 @@ html[data-theme='light'],
   --neb-focus-ring-color: black;
 
   &[data-neb-box-surface-depth='base'] {
+    --surface-base-offset: 0;
+    --surface-hover-offset: 5;
+    --surface-active-offset: 10;
+    --surface-selection-offset: 10;
+    --surface-edge-offset: 5;
+    --surface-divider-offset: -5;
+
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 0%;
       --tint-hover-offset: 5%;
@@ -61,6 +68,13 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-surface-depth='raised'] {
+    --surface-base-offset: 5;
+    --surface-hover-offset: 10;
+    --surface-active-offset: 15;
+    --surface-selection-offset: 15;
+    --surface-edge-offset: 10;
+    --surface-divider-offset: 0;
+
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 10%;
       --tint-hover-offset: 16%;

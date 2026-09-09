@@ -1,17 +1,10 @@
 .neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
-  --surface: var(--color-base);
-  --surface-hover: oklch(from var(--color-base) calc(l - 5 / 100) c h);
-  --surface-active: oklch(from var(--color-base) calc(l - 10 / 100) c h);
-  --surface-selection: oklch(from var(--color-base) calc(l - 10 / 100) c h);
-  --surface-edge: oklch(from var(--color-base) calc(l - 5 / 100) c h);
-  --surface-divider: oklch(from var(--color-base) calc(l + 5 / 100) c h);
-
-  --surface-raised: oklch(from var(--color-base) calc(l - 5 / 100) c h);
-  --surface-raised-hover: oklch(from var(--color-base) calc(l - 10 / 100) c h);
-  --surface-raised-active: oklch(from var(--color-base) calc(l - 15 / 100) c h);
-  --surface-raised-selection: oklch(from var(--color-base) calc(l - 15 / 100) c h);
-  --surface-raised-edge: oklch(from var(--color-base) calc(l - 10 / 100) c h);
-  --surface-raised-divider: oklch(from var(--color-base) calc(l - 0 / 100) c h);
+  --surface: oklch(from var(--color-base) calc(l - var(--surface-base-offset) / 100) c h);
+  --surface-hover: oklch(from var(--color-base) calc(l - var(--surface-hover-offset) / 100) c h);
+  --surface-active: oklch(from var(--color-base) calc(l - var(--surface-active-offset) / 100) c h);
+  --surface-selection: oklch(from var(--color-base) calc(l - var(--surface-selection-offset) / 100) c h);
+  --surface-edge: oklch(from var(--color-base) calc(l - var(--surface-edge-offset) / 100) c h);
+  --surface-divider: oklch(from var(--color-base) calc(l - var(--surface-divider-offset) / 100) c h);
 
   --tint: color-mix(in srgb, var(--color-primary) var(--tint-offset), transparent);
   --tint-hover: color-mix(in srgb, var(--color-primary) var(--tint-hover-offset), transparent);
@@ -20,53 +13,18 @@
   --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
   --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
 
-  &[data-neb-box-surface-depth='base'] {
-    &[data-neb-box-bg-mode='filled'] {
-      --bg: var(--surface);
-      --bg-hover: var(--surface-hover);
-      --bg-active: var(--surface-active);
-      --bg-selection: var(--surface-selection);
-    }
+  &[data-neb-box-bg-mode='filled'] {
+    --bg: var(--surface);
+    --bg-hover: var(--surface-hover);
+    --bg-active: var(--surface-active);
+    --bg-selection: var(--surface-selection);
 
-    &[data-neb-box-border-mode='filled'] {
-      --border: var(--surface);
-      --border-hover: var(--surface-hover);
-      --border-active: var(--surface-active);
-      --border-selection: var(--surface-selection);
-      --border-edge: var(--surface-edge);
-      --border-divider: var(--surface-divider);
-    }
-
-    &[data-neb-box-text='colored'] {
-      --text: var(--surface);
-      --text-hover: var(--surface-hover);
-      --text-active: var(--surface-active);
-      --text-selection: var(--surface-selection);
-    }
-  }
-
-  &[data-neb-box-surface-depth='raised'] {
-    &[data-neb-box-bg-mode='filled'] {
-      --bg: var(--surface-raised);
-      --bg-hover: var(--surface-raised-hover);
-      --bg-active: var(--surface-raised-active);
-      --bg-selection: var(--surface-raised-selection);
-    }
-
-    &[data-neb-box-border-mode='filled'] {
-      --border: var(--surface-raised);
-      --border-hover: var(--surface-raised-hover);
-      --border-active: var(--surface-raised-active);
-      --border-selection: var(--surface-raised-selection);
-      --border-edge: var(--surface-raised-edge);
-      --border-divider: var(--surface-raised-divider);
-    }
-
-    &[data-neb-box-text='colored'] {
-      --text: var(--surface-raised);
-      --text-hover: var(--surface-raised-hover);
-      --text-active: var(--surface-raised-active);
-      --text-selection: var(--surface-raised-selection);
+    &[data-neb-box-intent='primary'],
+    &[data-neb-box-intent='strong'] {
+      --text: var(--neb-background);
+      --text-hover: var(--neb-background);
+      --text-active: var(--neb-background);
+      --text-selection: var(--neb-background);
     }
   }
 
@@ -75,6 +33,22 @@
     --bg-hover: var(--tint-hover);
     --bg-active: var(--tint-active);
     --bg-selection: var(--tint-selection);
+
+    &[data-neb-box-text='colored'] {
+      --text: var(--color-primary);
+      --text-hover: var(--color-primary);
+      --text-active: var(--color-primary);
+      --text-selection: var(--color-primary);
+    }
+  }
+
+  &[data-neb-box-border-mode='filled'] {
+    --border: var(--surface);
+    --border-hover: var(--surface-hover);
+    --border-active: var(--surface-active);
+    --border-selection: var(--surface-selection);
+    --border-edge: var(--surface-edge);
+    --border-divider: var(--surface-divider);
   }
 
   &[data-neb-box-border-mode='tinted'] {
@@ -86,22 +60,10 @@
     --border-divider: var(--tint-divider);
   }
 
-  &[data-neb-box-bg-mode='filled'] {
-    &[data-neb-box-intent='primary'],
-    &[data-neb-box-intent='strong'] {
-      --text: var(--neb-background);
-      --text-hover: var(--neb-background);
-      --text-active: var(--neb-background);
-      --text-selection: var(--neb-background);
-    }
-  }
-
-  &[data-neb-box-bg-mode='tinted'] {
-    &[data-neb-box-text='colored'] {
-      --text: var(--color-primary);
-      --text-hover: var(--color-primary);
-      --text-active: var(--color-primary);
-      --text-selection: var(--color-primary);
-    }
+  &[data-neb-box-text='colored'] {
+    --text: var(--surface);
+    --text-hover: var(--surface-hover);
+    --text-active: var(--surface-active);
+    --text-selection: var(--surface-selection);
   }
 }

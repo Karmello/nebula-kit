@@ -1,79 +1,191 @@
 html[data-theme='dark'][data-brand='gray'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='gray'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(0 0% 8%);
-  --color-tertiary-base: hsl(0 0% 19%);
-  --color-secondary-base: hsl(0 0% 42%);
-  --color-primary-base: hsl(0 0% 62%);
-  --color-strong-base: hsl(0 0% 85%);
+  --color-primary: hsl(0 0% 62%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(0 0% 8%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(0 0% 19%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(0 0% 42%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(0 0% 85%);
+  }
 }
 
 html[data-theme='dark'][data-brand='red'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='red'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(8 55% 9%);
-  --color-tertiary-base: hsl(6 60% 21%);
-  --color-secondary-base: hsl(4 65% 46%);
-  --color-primary-base: hsl(2 78% 62%);
-  --color-strong-base: hsl(0 72% 82%);
+  --color-primary: hsl(2 78% 62%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(8 55% 9%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(6 60% 21%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(4 65% 46%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(0 72% 82%);
+  }
 }
 
 html[data-theme='dark'][data-brand='amber'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='amber'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(34 55% 10%);
-  --color-tertiary-base: hsl(36 62% 23%);
-  --color-secondary-base: hsl(38 68% 48%);
-  --color-primary-base: hsl(40 80% 62%);
-  --color-strong-base: hsl(44 75% 80%);
+  --color-primary: hsl(40 80% 62%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(34 55% 10%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(36 62% 23%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(38 68% 48%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(44 75% 80%);
+  }
 }
 
 html[data-theme='dark'][data-brand='green'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='green'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(155 45% 9%);
-  --color-tertiary-base: hsl(153 50% 21%);
-  --color-secondary-base: hsl(150 48% 45%);
-  --color-primary-base: hsl(148 55% 60%);
-  --color-strong-base: hsl(146 55% 78%);
+  --color-primary: hsl(148 55% 60%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(155 45% 9%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(153 50% 21%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(150 48% 45%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(146 55% 78%);
+  }
 }
 
 html[data-theme='dark'][data-brand='teal'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='teal'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(195 45% 10%);
-  --color-tertiary-base: hsl(192 50% 22%);
-  --color-secondary-base: hsl(189 55% 46%);
-  --color-primary-base: hsl(186 65% 58%);
-  --color-strong-base: hsl(183 60% 76%);
+  --color-primary: hsl(186 65% 58%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(195 45% 10%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(192 50% 22%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(189 55% 46%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(183 60% 76%);
+  }
 }
 
 html[data-theme='dark'][data-brand='blue'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='blue'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(222 55% 12%);
-  --color-tertiary-base: hsl(218 60% 25%);
-  --color-secondary-base: hsl(215 65% 50%);
-  --color-primary-base: hsl(212 78% 64%);
-  --color-strong-base: hsl(208 70% 82%);
+  --color-primary: hsl(212 78% 64%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(222 55% 12%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(218 60% 25%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(215 65% 50%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(208 70% 82%);
+  }
 }
 
 html[data-theme='dark'][data-brand='purple'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='purple'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(292 50% 12%);
-  --color-tertiary-base: hsl(295 55% 25%);
-  --color-secondary-base: hsl(297 62% 52%);
-  --color-primary-base: hsl(299 75% 66%);
-  --color-strong-base: hsl(301 65% 82%);
+  --color-primary: hsl(299 75% 66%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(292 50% 12%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(295 55% 25%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(297 62% 52%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(301 65% 82%);
+  }
 }
 
 html[data-theme='dark'][data-brand='pink'],
 .neb-box[data-neb-box-theme='dark'][data-neb-box-color='pink'] {
-  --color-neutral-base: hsl(0 0% 0%);
-  --color-muted-base: hsl(328 48% 12%);
-  --color-tertiary-base: hsl(331 52% 25%);
-  --color-secondary-base: hsl(333 58% 50%);
-  --color-primary-base: hsl(335 70% 64%);
-  --color-strong-base: hsl(338 64% 82%);
+  --color-primary: hsl(335 70% 64%);
+
+  &[data-neb-box-intent='neutral'] {
+    --color-base: hsl(0 0% 0%);
+  }
+  &[data-neb-box-intent='muted'] {
+    --color-base: hsl(328 48% 12%);
+  }
+  &[data-neb-box-intent='tertiary'] {
+    --color-base: hsl(331 52% 25%);
+  }
+  &[data-neb-box-intent='secondary'] {
+    --color-base: hsl(333 58% 50%);
+  }
+  &[data-neb-box-intent='primary'] {
+    --color-base: var(--color-primary);
+  }
+  &[data-neb-box-intent='strong'] {
+    --color-base: hsl(338 64% 82%);
+  }
 }
