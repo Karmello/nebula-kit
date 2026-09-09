@@ -16,3 +16,4 @@
 - [Top-level component independence](project_top_level_component_independence.md) — components render Box directly, no shared structural wrappers; only behavior is reused via hooks
 - [OKLCH lightness bending](project_oklch_lightness_bending.md) — divider/edge/raised/hover use oklch(from...) not hsl(from...), confirmed visually better across hues
 - ["Commit all" means everything](feedback_commit_all_means_everything.md) — git add -A + commit, no selective exclusion of debug-looking files
+- [Talk vs task](feedback_distinguish_talk_vs_task.md) — a reflection/observation is not a request to act; classify before reaching for tools, this is a recurring pattern
