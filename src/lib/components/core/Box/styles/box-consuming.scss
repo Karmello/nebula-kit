@@ -46,6 +46,8 @@
   }
 
   &[data-neb-box-disabled='true'] {
-    opacity: 0.5;
+    background-color: var(--bg-disabled) !important;
+    border-color: var(--border-disabled) !important;
+    color: var(--text-disabled) !important;
   }
 }

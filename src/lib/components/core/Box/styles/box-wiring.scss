@@ -5,6 +5,7 @@
   --surface-selection: oklch(from var(--color-base) calc(l - var(--surface-selection-offset) / 100) c h);
   --surface-edge: oklch(from var(--color-base) calc(l - var(--surface-edge-offset) / 100) c h);
   --surface-divider: oklch(from var(--color-base) calc(l - var(--surface-divider-offset) / 100) c h);
+  --surface-disabled: oklch(from var(--color-base) l c h / var(--surface-disabled-offset));
 
   --tint: color-mix(in srgb, var(--color-primary) var(--tint-offset), transparent);
   --tint-hover: color-mix(in srgb, var(--color-primary) var(--tint-hover-offset), transparent);
@@ -13,11 +14,14 @@
   --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
   --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
 
+  --loader: var(--neb-text);
+
   &[data-neb-box-bg-mode='filled'] {
     --bg: var(--surface);
     --bg-hover: var(--surface-hover);
     --bg-active: var(--surface-active);
     --bg-selection: var(--surface-selection);
+    --bg-disabled: var(--surface-disabled);
 
     &[data-neb-box-intent='primary'],
     &[data-neb-box-intent='strong'] {
@@ -25,6 +29,8 @@
       --text-hover: var(--neb-background);
       --text-active: var(--neb-background);
       --text-selection: var(--neb-background);
+      --text-disabled: oklch(from var(--neb-background) l c h / 50%);
+      --loader: var(--neb-background);
     }
   }
 
@@ -39,6 +45,7 @@
       --text-hover: var(--color-primary);
       --text-active: var(--color-primary);
       --text-selection: var(--color-primary);
+      --text-disabled: oklch(from var(--color-primary) l c h / 25%);
     }
   }
 
@@ -49,6 +56,7 @@
     --border-selection: var(--surface-selection);
     --border-edge: var(--surface-edge);
     --border-divider: var(--surface-divider);
+    --border-disabled: var(--surface-disabled);
   }
 
   &[data-neb-box-border-mode='tinted'] {
@@ -65,5 +73,11 @@
     --text-hover: var(--surface-hover);
     --text-active: var(--surface-active);
     --text-selection: var(--surface-selection);
+    --text-disabled: oklch(from var(--surface) l c h / 25%);
+  }
+
+  &[data-neb-box-text='default'] {
+    --text: var(--neb-text);
+    --text-disabled: oklch(from var(--neb-text) l c h / 25%);
   }
 }

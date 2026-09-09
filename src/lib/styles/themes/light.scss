@@ -11,6 +11,7 @@ html[data-theme='light'],
     --surface-selection-offset: 10;
     --surface-edge-offset: 5;
     --surface-divider-offset: -5;
+    --surface-disabled-offset: 50%;
 
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 0%;
@@ -74,6 +75,7 @@ html[data-theme='light'],
     --surface-selection-offset: 15;
     --surface-edge-offset: 10;
     --surface-divider-offset: 0;
+    --surface-disabled-offset: 60%;
 
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 10%;

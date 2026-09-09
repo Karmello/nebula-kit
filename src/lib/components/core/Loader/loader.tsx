@@ -30,14 +30,11 @@ export const Loader = ({
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
-          '--neb-loader-color': color
-            ? 'hsl(var(--h) var(--s) var(--base-primary-l))'
-            : 'var(--loader)',
+          '--neb-loader-color': color ? 'var(--color-primary)' : 'var(--loader)',
         } as CSSProperties,
       }}
       tagRef={tagRef}
       drawable
-      // variant="ghost"
       blockSize={size}
       inlineSize={size}
       color={color}
