@@ -11,6 +11,7 @@ html[data-theme='dark'],
     --surface-selection-offset: 10;
     --surface-edge-offset: 5;
     --surface-divider-offset: -5;
+    --surface-disabled-offset: 50%;
 
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 0%;
@@ -19,6 +20,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 10%;
       --tint-edge-offset: 5%;
       --tint-divider-offset: 5%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='muted'] {
@@ -28,6 +30,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 19%;
       --tint-edge-offset: 13%;
       --tint-divider-offset: 1%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='tertiary'] {
@@ -37,6 +40,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 28%;
       --tint-edge-offset: 21%;
       --tint-divider-offset: 7%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='secondary'] {
@@ -46,6 +50,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 37%;
       --tint-edge-offset: 29%;
       --tint-divider-offset: 13%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='primary'] {
@@ -55,6 +60,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 47%;
       --tint-edge-offset: 38%;
       --tint-divider-offset: 18%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='strong'] {
@@ -64,6 +70,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 55%;
       --tint-edge-offset: 45%;
       --tint-divider-offset: 25%;
+      --tint-disabled-offset: 5%;
     }
   }
 
@@ -74,6 +81,7 @@ html[data-theme='dark'],
     --surface-selection-offset: 15;
     --surface-edge-offset: 10;
     --surface-divider-offset: 0;
+    --surface-disabled-offset: 50%;
 
     &[data-neb-box-intent='neutral'] {
       --tint-offset: 10%;
@@ -82,6 +90,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 22%;
       --tint-edge-offset: 16%;
       --tint-divider-offset: 4%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='muted'] {
@@ -91,6 +100,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 31%;
       --tint-edge-offset: 24%;
       --tint-divider-offset: 10%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='tertiary'] {
@@ -100,6 +110,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 40%;
       --tint-edge-offset: 32%;
       --tint-divider-offset: 16%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='secondary'] {
@@ -109,6 +120,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 49%;
       --tint-edge-offset: 40%;
       --tint-divider-offset: 22%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='primary'] {
@@ -118,6 +130,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 58%;
       --tint-edge-offset: 48%;
       --tint-divider-offset: 28%;
+      --tint-disabled-offset: 5%;
     }
 
     &[data-neb-box-intent='strong'] {
@@ -127,6 +140,7 @@ html[data-theme='dark'],
       --tint-selection-offset: 67%;
       --tint-edge-offset: 56%;
       --tint-divider-offset: 34%;
+      --tint-disabled-offset: 5%;
     }
   }
 }

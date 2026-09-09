@@ -13,6 +13,7 @@
   --tint-selection: color-mix(in srgb, var(--color-primary) var(--tint-selection-offset), transparent);
   --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
   --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
+  --tint-disabled: color-mix(in srgb, var(--color-primary) var(--tint-disabled-offset), transparent);
 
   --loader: var(--neb-text);
 
@@ -39,6 +40,7 @@
     --bg-hover: var(--tint-hover);
     --bg-active: var(--tint-active);
     --bg-selection: var(--tint-selection);
+    --bg-disabled: var(--tint-disabled);
 
     &[data-neb-box-text='colored'] {
       --text: var(--color-primary);
@@ -66,6 +68,7 @@
     --border-selection: var(--tint-selection);
     --border-edge: var(--tint-edge);
     --border-divider: var(--tint-divider);
+    --border-disabled: var(--tint-disabled);
   }
 
   &[data-neb-box-text='colored'] {
