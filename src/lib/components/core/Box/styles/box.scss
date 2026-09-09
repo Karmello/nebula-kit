@@ -1,15 +1,6 @@
-@use './main/box-main.scss';
-@use './main/bg-main.scss';
-@use './main/border-main.scss';
-@use './main/text-main.scss';
-@use './main/ripple-main.scss';
-
-@use './variants/bg/bg-filled.scss';
-@use './variants/bg/bg-tinted.scss';
-@use './variants/border/border-filled.scss';
-@use './variants/border/border-tinted.scss';
-@use './variants/text/text-default.scss';
-@use './variants/text/text-colored.scss';
+@use './box-wiring.scss';
+@use './box-consuming.scss';
+@use './box-ripple.scss';
 
 .neb-box {
   background-color: transparent;

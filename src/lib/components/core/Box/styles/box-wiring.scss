@@ -1,0 +1,61 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  --surface: var(--color-base);
+  --surface-hover: oklch(from var(--color-base) calc(l - 5 / 100) c h);
+  --surface-active: oklch(from var(--color-base) calc(l - 10 / 100) c h);
+
+  --surface-raised: oklch(from var(--color-base) calc(l - 5 / 100) c h);
+  --surface-raised-hover: oklch(from var(--color-base) calc(l - 10 / 100) c h);
+  --surface-raised-active: oklch(from var(--color-base) calc(l - 15 / 100) c h);
+
+  --tint: color-mix(in srgb, var(--color-primary) var(--tint-offset), transparent);
+  --tint-hover: color-mix(in srgb, var(--color-primary) var(--tint-hover-offset), transparent);
+  --tint-active: color-mix(in srgb, var(--color-primary) var(--tint-active-offset), transparent);
+
+  &[data-neb-box-bg-mode='filled'] {
+    &[data-neb-box-surface-depth='base'] {
+      --bg: var(--surface);
+      --bg-hover: var(--surface-hover);
+      --bg-active: var(--surface-active);
+    }
+
+    &[data-neb-box-surface-depth='raised'] {
+      --bg: var(--surface-raised);
+      --bg-hover: var(--surface-raised-hover);
+      --bg-active: var(--surface-raised-active);
+    }
+  }
+
+  &[data-neb-box-bg-mode='tinted'] {
+    --bg: var(--tint);
+    --bg-hover: var(--tint-hover);
+    --bg-active: var(--tint-active);
+  }
+
+  &[data-neb-box-border-mode='filled'] {
+    &[data-neb-box-surface-depth='base'] {
+      --border: var(--surface);
+      --border-hover: var(--surface-hover);
+      --border-active: var(--surface-active);
+    }
+
+    &[data-neb-box-surface-depth='raised'] {
+      --border: var(--surface-raised);
+      --border-hover: var(--surface-raised-hover);
+      --border-active: var(--surface-raised-active);
+    }
+  }
+
+  &[data-neb-box-text='colored'] {
+    &[data-neb-box-surface-depth='base'] {
+      --text: var(--surface);
+      --text-hover: var(--surface-hover);
+      --text-active: var(--surface-active);
+    }
+
+    &[data-neb-box-surface-depth='raised'] {
+      --text: var(--surface-raised);
+      --text-hover: var(--surface-raised-hover);
+      --text-active: var(--surface-raised-active);
+    }
+  }
+}

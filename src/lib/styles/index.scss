@@ -2,12 +2,12 @@
 @use './palettes/dark.scss' as *;
 
 @use './themes/light.scss' as *;
-@use './themes/dark.scss' as *;
 
 @use './tokens/_index';
 
 html {
   --neb-border-width: 2px;
+  --neb-focus-ring-width: 3px;
 
   font-family:
     system-ui,
