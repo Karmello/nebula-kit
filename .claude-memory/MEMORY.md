@@ -15,3 +15,4 @@
 - [Never run dev server](feedback_never_run_dev_server.md) — running yarn dev/vite in this container crashes the container itself, never do it, not even backgrounded
 - [Top-level component independence](project_top_level_component_independence.md) — components render Box directly, no shared structural wrappers; only behavior is reused via hooks
 - [OKLCH lightness bending](project_oklch_lightness_bending.md) — divider/edge/raised/hover use oklch(from...) not hsl(from...), confirmed visually better across hues
+- ["Commit all" means everything](feedback_commit_all_means_everything.md) — git add -A + commit, no selective exclusion of debug-looking files
