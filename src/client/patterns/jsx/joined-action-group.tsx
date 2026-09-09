@@ -24,6 +24,7 @@ const Surface = ({
         display="flex"
         flexDirection="row"
         overflow="hidden"
+        // disabled
       >
         <Box
           interactive
@@ -63,7 +64,7 @@ const Surface = ({
 }
 
 export const JoinedActionGroup = () => {
-  const surfaceDepth: BoxSurfaceDepth = 'raised'
+  const surfaceDepth: BoxSurfaceDepth = 'base'
 
   return (
     <>
