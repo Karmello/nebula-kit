@@ -13,8 +13,6 @@
   --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
   --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
 
-  --loader: var(--neb-text);
-
   &[data-neb-box-bg-mode='transparent'] {
     --bg: transparent;
     --bg-hover: transparent;
@@ -34,7 +32,6 @@
       --text-hover: var(--neb-background);
       --text-active: var(--neb-background);
       --text-selection: var(--neb-background);
-      --loader: var(--neb-background);
     }
   }
 
@@ -81,7 +78,6 @@
       --text-hover: var(--neb-text);
       --text-active: var(--neb-text);
       --text-selection: var(--neb-text);
-      --loader: var(--neb-text);
     }
   }
 

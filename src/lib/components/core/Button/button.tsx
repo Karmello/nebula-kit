@@ -78,61 +78,62 @@ export const Button = <T extends ButtonTag = 'button'>({
   )
 
   return (
-    <Box
-      tag={tag}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('button'), tagAttrs?.className),
-        ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
-        onClick: onClick || tagAttrs?.onClick,
-        'aria-disabled': disabled || undefined,
-      }}
-      tagRef={finalRef}
-      theme={theme}
-      bgMode={VARIANT_MAP[variant].bgMode}
-      borderMode={VARIANT_MAP[variant].borderMode}
-      text={VARIANT_MAP[variant].text}
-      color={color}
-      intent={intent}
-      disabled={disabled || loading}
-      inlineSize={inlineSize}
-      minInlineSize={minInlineSize}
-      maxInlineSize={maxInlineSize}
-      surfaceDepth={surfaceDepth}
-      bgRole={selected ? 'selection' : undefined}
-      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
-      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
-      ripple={ripple}
-      interactive
-      cursor="pointer"
-      position="relative"
-    >
+    <Box position="relative" display="inline">
       <Box
-        tag="span"
+        tag={tag}
         tagAttrs={{
-          style: { inlineSize: '100%' },
+          ...tagAttrs,
+          className: classNames(withPrefix('button'), tagAttrs?.className),
+          ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
+          onClick: onClick || tagAttrs?.onClick,
+          'aria-disabled': disabled || undefined,
         }}
-        display="flex"
-        alignItems="center"
-        columnGap={CONTROL_SCALE_MAP[scale].gap}
-        justifyContent={
-          align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'
-        }
+        tagRef={finalRef}
+        theme={theme}
+        bgMode={VARIANT_MAP[variant].bgMode}
+        borderMode={VARIANT_MAP[variant].borderMode}
+        text={VARIANT_MAP[variant].text}
+        color={color}
+        intent={intent}
+        disabled={disabled || loading}
+        inlineSize={inlineSize}
+        minInlineSize={minInlineSize}
+        maxInlineSize={maxInlineSize}
+        surfaceDepth={surfaceDepth}
+        bgRole={selected ? 'selection' : undefined}
+        blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+        paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+        ripple={ripple}
+        interactive
+        cursor="pointer"
       >
-        {iconPlacement === 'left' ? icon : null}
-        <Text
+        <Box
           tag="span"
-          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-          bold={bold}
-          textAlign={align === 'center' ? 'center' : undefined}
-          truncate
+          tagAttrs={{
+            style: { inlineSize: '100%' },
+          }}
+          display="flex"
+          alignItems="center"
+          columnGap={CONTROL_SCALE_MAP[scale].gap}
+          justifyContent={
+            align === 'split' ? 'space-between' : align === 'center' ? 'center' : 'flex-start'
+          }
         >
-          {children}
-        </Text>
-        {iconPlacement === 'right' ? icon : null}
-        {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale].fontSize} centered /> : null}
+          {iconPlacement === 'left' ? icon : null}
+          <Text
+            tag="span"
+            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+            bold={bold}
+            textAlign={align === 'center' ? 'center' : undefined}
+            truncate
+          >
+            {children}
+          </Text>
+          {iconPlacement === 'right' ? icon : null}
+        </Box>
       </Box>
+      {loading && !disabled ? <Loader size={CONTROL_SCALE_MAP[scale].fontSize} centered /> : null}
     </Box>
   )
 }
