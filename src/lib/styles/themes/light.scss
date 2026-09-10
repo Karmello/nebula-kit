@@ -8,8 +8,8 @@ html[data-theme='light'],
     --surface-offset: 2;
     --surface-divider-offset: 1.5;
     --tint-base-offset: calc(var(--tint-raised-offset) + 0%);
-    --tint-hover-offset: 2%;
-    --tint-divider-offset: 3%;
+    --tint-hover-offset: calc(var(--tint-raised-offset) + 2%);
+    --tint-divider-offset: calc(var(--tint-raised-offset) + 3%);
   }
 
   &[data-neb-box-intent='muted'] {
