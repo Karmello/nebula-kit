@@ -24,7 +24,7 @@ const Surface = ({
         display="flex"
         flexDirection="row"
         overflow="hidden"
-        disabled
+        // disabled
       >
         <Box
           interactive

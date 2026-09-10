@@ -5,36 +5,40 @@ html[data-theme='dark'],
   --neb-focus-ring-color: white;
 
   &[data-neb-box-intent='neutral'] {
-    --surface-offset: 2;
-    --surface-divider-offset: 1.5;
+    --surface-offset: -13;
+    --surface-hover-offset: -17;
+    --surface-active-offset: -20;
+    --surface-selection-offset: -20;
+    --surface-edge-offset: -20;
+    --surface-divider-offset: -16;
     --tint-base-offset: calc(var(--tint-raised-offset) + 0%);
     --tint-hover-offset: calc(var(--tint-raised-offset) + 2%);
     --tint-divider-offset: calc(var(--tint-raised-offset) + 3%);
   }
 
   &[data-neb-box-intent='muted'] {
-    --surface-offset: 2;
-    --tint-base-offset: calc(var(--tint-raised-offset) + 3%);
+    --surface-offset: -2;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 8%);
   }
 
   &[data-neb-box-intent='tertiary'] {
-    --surface-offset: 3;
-    --tint-base-offset: calc(var(--tint-raised-offset) + 7%);
+    --surface-offset: -3;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 11%);
   }
 
   &[data-neb-box-intent='secondary'] {
-    --surface-offset: 4;
-    --tint-base-offset: calc(var(--tint-raised-offset) + 12%);
+    --surface-offset: -5;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 15%);
   }
 
   &[data-neb-box-intent='primary'] {
-    --surface-offset: 5;
-    --tint-base-offset: calc(var(--tint-raised-offset) + 18%);
+    --surface-offset: -6;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 20%);
   }
 
   &[data-neb-box-intent='strong'] {
-    --surface-offset: 7;
-    --tint-base-offset: calc(var(--tint-raised-offset) + 25%);
+    --surface-offset: -7;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 26%);
   }
 
   &[data-neb-box-surface-depth='base'] {
@@ -43,19 +47,19 @@ html[data-theme='dark'],
   }
 
   &[data-neb-box-surface-depth='raised'] {
-    --surface-base-offset: calc(var(--surface-offset) + 1);
+    --surface-base-offset: calc(var(--surface-offset) - 2);
     --tint-raised-offset: 5%;
   }
 
   --surface-hover-offset: calc(var(--surface-base-offset) + var(--surface-offset));
-  --surface-active-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
-  --surface-selection-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
-  --surface-edge-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
+  --surface-active-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
+  --surface-selection-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
+  --surface-edge-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
   --surface-divider-offset: calc(var(--surface-base-offset) + var(--surface-offset) * -1);
 
-  --tint-hover-offset: calc(var(--tint-base-offset) * 1.4 + 2%);
-  --tint-active-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
-  --tint-selection-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
-  --tint-edge-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
+  --tint-hover-offset: calc(var(--tint-base-offset) * 1.2 + 2%);
+  --tint-active-offset: calc(var(--tint-base-offset) * 1.35 + 5%);
+  --tint-selection-offset: calc(var(--tint-base-offset) * 1.35 + 5%);
+  --tint-edge-offset: calc(var(--tint-base-offset) * 1.35 + 5%);
   --tint-divider-offset: calc(var(--tint-base-offset) * 0.8 - 2%);
 }

@@ -26,7 +26,13 @@
     --bg-active: var(--surface-active);
     --bg-selection: var(--surface-selection);
 
-    &[data-neb-box-intent='primary'],
+    &[data-neb-box-intent='primary'] {
+      --text: white;
+      --text-hover: white;
+      --text-active: white;
+      --text-selection: white;
+    }
+
     &[data-neb-box-intent='strong'] {
       --text: var(--neb-background);
       --text-hover: var(--neb-background);
@@ -56,15 +62,6 @@
     --border-selection: var(--surface-selection);
     --border-edge: var(--surface-edge);
     --border-divider: var(--surface-divider);
-
-    &[data-neb-box-intent='neutral'] {
-      --border: oklch(from var(--color-muted) calc(l - var(--surface-base-offset) / 100) c h);
-      --border-hover: oklch(from var(--color-muted) calc(l - var(--surface-hover-offset) / 100) c h);
-      --border-active: oklch(from var(--color-muted) calc(l - var(--surface-active-offset) / 100) c h);
-      --border-selection: oklch(from var(--color-muted) calc(l - var(--surface-selection-offset) / 100) c h);
-      --border-edge: oklch(from var(--color-muted) calc(l - var(--surface-edge-offset) / 100) c h);
-      --border-divider: oklch(from var(--color-muted) calc(l - var(--surface-divider-offset) / 100) c h);
-    }
   }
 
   &[data-neb-box-border-mode='tinted'] {

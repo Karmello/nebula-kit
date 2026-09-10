@@ -46,7 +46,7 @@ export const AppPrefsDialog = () => {
               </Text>
               <Spacer blockSize={NEB_LENGTH.px_002} />
               <Button
-                theme={theme === 'light' ? 'global-flipped' : undefined}
+                intent={theme === 'light' ? 'strong' : 'tertiary'}
                 scale="xs"
                 tagAttrs={{
                   onClick: () => setTheme('light'),
@@ -59,7 +59,7 @@ export const AppPrefsDialog = () => {
                 {sentenceCase('Light')}
               </Button>
               <Button
-                theme={theme === 'dark' ? 'global-flipped' : undefined}
+                intent={theme === 'dark' ? 'strong' : 'tertiary'}
                 scale="xs"
                 tagAttrs={{
                   onClick: () => setTheme('dark'),
