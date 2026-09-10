@@ -5,169 +5,57 @@ html[data-theme='light'],
   --neb-focus-ring-color: black;
 
   &[data-neb-box-intent='neutral'] {
-    --offset: 2;
+    --surface-offset: 2;
     --surface-divider-offset: 1.5;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 0%);
+    --tint-hover-offset: 2%;
+    --tint-divider-offset: 3%;
   }
 
   &[data-neb-box-intent='muted'] {
-    --offset: 2;
+    --surface-offset: 2;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 3%);
   }
 
   &[data-neb-box-intent='tertiary'] {
-    --offset: 3;
+    --surface-offset: 3;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 7%);
   }
 
   &[data-neb-box-intent='secondary'] {
-    --offset: 4;
+    --surface-offset: 4;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 12%);
   }
 
   &[data-neb-box-intent='primary'] {
-    --offset: 5;
+    --surface-offset: 5;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 18%);
   }
 
   &[data-neb-box-intent='strong'] {
-    --offset: 7;
+    --surface-offset: 7;
+    --tint-base-offset: calc(var(--tint-raised-offset) + 25%);
   }
 
   &[data-neb-box-surface-depth='base'] {
     --surface-base-offset: 0;
-    --surface-disabled-offset: 50%;
+    --tint-raised-offset: 0%;
   }
 
   &[data-neb-box-surface-depth='raised'] {
-    --surface-base-offset: calc(var(--offset) + 1);
-    --surface-disabled-offset: 70%;
+    --surface-base-offset: calc(var(--surface-offset) + 1);
+    --tint-raised-offset: 5%;
   }
 
-  --surface-hover-offset: calc(var(--surface-base-offset) + var(--offset));
-  --surface-active-offset: calc(var(--surface-base-offset) + var(--offset) * 2 + 1);
-  --surface-selection-offset: calc(var(--surface-base-offset) + var(--offset) * 2 + 1);
-  --surface-edge-offset: calc(var(--surface-base-offset) + var(--offset) * 2 + 1);
-  --surface-divider-offset: calc(var(--surface-base-offset) + var(--offset) * -1);
+  --surface-hover-offset: calc(var(--surface-base-offset) + var(--surface-offset));
+  --surface-active-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
+  --surface-selection-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
+  --surface-edge-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 + 1);
+  --surface-divider-offset: calc(var(--surface-base-offset) + var(--surface-offset) * -1);
 
-  // tint
-
-  &[data-neb-box-surface-depth='base'] {
-    &[data-neb-box-intent='neutral'] {
-      --tint-offset: 0%;
-      --tint-hover-offset: 5%;
-      --tint-active-offset: 10%;
-      --tint-selection-offset: 10%;
-      --tint-edge-offset: 5%;
-      --tint-divider-offset: 5%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='muted'] {
-      --tint-offset: 7%;
-      --tint-hover-offset: 13%;
-      --tint-active-offset: 19%;
-      --tint-selection-offset: 19%;
-      --tint-edge-offset: 13%;
-      --tint-divider-offset: 1%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='tertiary'] {
-      --tint-offset: 14%;
-      --tint-hover-offset: 21%;
-      --tint-active-offset: 28%;
-      --tint-selection-offset: 28%;
-      --tint-edge-offset: 21%;
-      --tint-divider-offset: 7%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='secondary'] {
-      --tint-offset: 21%;
-      --tint-hover-offset: 29%;
-      --tint-active-offset: 37%;
-      --tint-selection-offset: 37%;
-      --tint-edge-offset: 29%;
-      --tint-divider-offset: 13%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='primary'] {
-      --tint-offset: 28%;
-      --tint-hover-offset: 38%;
-      --tint-active-offset: 47%;
-      --tint-selection-offset: 47%;
-      --tint-edge-offset: 38%;
-      --tint-divider-offset: 18%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='strong'] {
-      --tint-offset: 35%;
-      --tint-hover-offset: 45%;
-      --tint-active-offset: 55%;
-      --tint-selection-offset: 55%;
-      --tint-edge-offset: 45%;
-      --tint-divider-offset: 25%;
-      --tint-disabled-offset: 5%;
-    }
-  }
-
-  &[data-neb-box-surface-depth='raised'] {
-    &[data-neb-box-intent='neutral'] {
-      --tint-offset: 10%;
-      --tint-hover-offset: 16%;
-      --tint-active-offset: 22%;
-      --tint-selection-offset: 22%;
-      --tint-edge-offset: 16%;
-      --tint-divider-offset: 4%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='muted'] {
-      --tint-offset: 17%;
-      --tint-hover-offset: 24%;
-      --tint-active-offset: 31%;
-      --tint-selection-offset: 31%;
-      --tint-edge-offset: 24%;
-      --tint-divider-offset: 10%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='tertiary'] {
-      --tint-offset: 24%;
-      --tint-hover-offset: 32%;
-      --tint-active-offset: 40%;
-      --tint-selection-offset: 40%;
-      --tint-edge-offset: 32%;
-      --tint-divider-offset: 16%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='secondary'] {
-      --tint-offset: 31%;
-      --tint-hover-offset: 40%;
-      --tint-active-offset: 49%;
-      --tint-selection-offset: 49%;
-      --tint-edge-offset: 40%;
-      --tint-divider-offset: 22%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='primary'] {
-      --tint-offset: 38%;
-      --tint-hover-offset: 48%;
-      --tint-active-offset: 58%;
-      --tint-selection-offset: 58%;
-      --tint-edge-offset: 48%;
-      --tint-divider-offset: 28%;
-      --tint-disabled-offset: 5%;
-    }
-
-    &[data-neb-box-intent='strong'] {
-      --tint-offset: 45%;
-      --tint-hover-offset: 56%;
-      --tint-active-offset: 67%;
-      --tint-selection-offset: 67%;
-      --tint-edge-offset: 56%;
-      --tint-divider-offset: 34%;
-      --tint-disabled-offset: 5%;
-    }
-  }
+  --tint-hover-offset: calc(var(--tint-base-offset) * 1.4 + 2%);
+  --tint-active-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
+  --tint-selection-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
+  --tint-edge-offset: calc(var(--tint-base-offset) * 1.7 + 6%);
+  --tint-divider-offset: calc(var(--tint-base-offset) * 0.8 - 2%);
 }
