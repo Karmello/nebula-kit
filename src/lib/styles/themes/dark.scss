@@ -55,7 +55,7 @@ html[data-theme='dark'],
   --surface-active-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
   --surface-selection-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
   --surface-edge-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 2 - 1);
-  --surface-divider-offset: calc(var(--surface-base-offset) + var(--surface-offset) * -1);
+  --surface-divider-offset: calc(var(--surface-base-offset) + var(--surface-offset) * 1);
 
   --tint-hover-offset: calc(var(--tint-base-offset) * 1.2 + 2%);
   --tint-active-offset: calc(var(--tint-base-offset) * 1.35 + 5%);

@@ -49,9 +49,9 @@
 
     &[data-neb-box-text='colored'] {
       --text: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
-      --text-hover: oklch(from var(--color-primary) calc(l - var(--surface-hover-offset) / 100) c h);
-      --text-active: oklch(from var(--color-primary) calc(l - var(--surface-active-offset) / 100) c h);
-      --text-selection: oklch(from var(--color-primary) calc(l - var(--surface-selection-offset) / 100) c h);
+      --text-hover: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
+      --text-active: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
+      --text-selection: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
     }
   }
 
