@@ -7,11 +7,11 @@ html[data-theme='dark'],
   &[data-neb-box-intent='neutral'] {
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
-      --surface-hover-offset: 2;
-      --surface-active-offset: 5;
-      --surface-selection-offset: 5;
-      --surface-edge-offset: 5;
-      --surface-divider-offset: 2;
+      --surface-hover-offset: -16;
+      --surface-active-offset: -18;
+      --surface-selection-offset: -18;
+      --surface-edge-offset: -18;
+      --surface-divider-offset: -16;
 
       --tint-base-offset: 0%;
       --tint-hover-offset: 2%;
@@ -21,12 +21,12 @@ html[data-theme='dark'],
       --tint-divider-offset: 3%;
     }
     &[data-neb-box-surface-depth='raised'] {
-      --surface-base-offset: 3;
-      --surface-hover-offset: 5;
-      --surface-active-offset: 8;
-      --surface-selection-offset: 8;
-      --surface-edge-offset: 8;
-      --surface-divider-offset: 1;
+      --surface-base-offset: -17;
+      --surface-hover-offset: -19;
+      --surface-active-offset: -22;
+      --surface-selection-offset: -22;
+      --surface-edge-offset: -22;
+      --surface-divider-offset: -14;
 
       --tint-base-offset: 3%;
       --tint-hover-offset: 6%;
@@ -40,11 +40,11 @@ html[data-theme='dark'],
   &[data-neb-box-intent='muted'] {
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
-      --surface-hover-offset: 2;
-      --surface-active-offset: 5;
-      --surface-selection-offset: 5;
-      --surface-edge-offset: 5;
-      --surface-divider-offset: -2;
+      --surface-hover-offset: -2;
+      --surface-active-offset: -5;
+      --surface-selection-offset: -5;
+      --surface-edge-offset: -5;
+      --surface-divider-offset: 2;
 
       --tint-base-offset: 8%;
       --tint-hover-offset: 6%;
@@ -54,12 +54,12 @@ html[data-theme='dark'],
       --tint-divider-offset: 0%;
     }
     &[data-neb-box-surface-depth='raised'] {
-      --surface-base-offset: 3;
-      --surface-hover-offset: 5;
-      --surface-active-offset: 8;
-      --surface-selection-offset: 8;
-      --surface-edge-offset: 8;
-      --surface-divider-offset: 1;
+      --surface-base-offset: -3;
+      --surface-hover-offset: -5;
+      --surface-active-offset: -8;
+      --surface-selection-offset: -8;
+      --surface-edge-offset: -8;
+      --surface-divider-offset: 0;
 
       --tint-base-offset: 8%;
       --tint-hover-offset: 12%;
@@ -73,11 +73,11 @@ html[data-theme='dark'],
   &[data-neb-box-intent='tertiary'] {
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
-      --surface-hover-offset: 3;
-      --surface-active-offset: 7;
-      --surface-selection-offset: 7;
-      --surface-edge-offset: 7;
-      --surface-divider-offset: -2;
+      --surface-hover-offset: -3;
+      --surface-active-offset: -7;
+      --surface-selection-offset: -7;
+      --surface-edge-offset: -7;
+      --surface-divider-offset: 2;
 
       --tint-base-offset: 11%;
       --tint-hover-offset: 13%;
@@ -87,12 +87,12 @@ html[data-theme='dark'],
       --tint-divider-offset: 4%;
     }
     &[data-neb-box-surface-depth='raised'] {
-      --surface-base-offset: 5;
-      --surface-hover-offset: 8;
-      --surface-active-offset: 12;
-      --surface-selection-offset: 12;
-      --surface-edge-offset: 12;
-      --surface-divider-offset: 2;
+      --surface-base-offset: -5;
+      --surface-hover-offset: -2;
+      --surface-active-offset: 2;
+      --surface-selection-offset: 2;
+      --surface-edge-offset: 2;
+      --surface-divider-offset: -7;
 
       --tint-base-offset: 16%;
       --tint-hover-offset: 23%;
@@ -106,11 +106,11 @@ html[data-theme='dark'],
   &[data-neb-box-intent='secondary'] {
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
-      --surface-hover-offset: 4;
-      --surface-active-offset: 9;
-      --surface-selection-offset: 9;
-      --surface-edge-offset: 9;
-      --surface-divider-offset: -3;
+      --surface-hover-offset: -4;
+      --surface-active-offset: -9;
+      --surface-selection-offset: -9;
+      --surface-edge-offset: -9;
+      --surface-divider-offset: 3;
 
       --tint-base-offset: 15%;
       --tint-hover-offset: 20%;
@@ -120,12 +120,12 @@ html[data-theme='dark'],
       --tint-divider-offset: 8%;
     }
     &[data-neb-box-surface-depth='raised'] {
-      --surface-base-offset: 6;
-      --surface-hover-offset: 10;
-      --surface-active-offset: 15;
-      --surface-selection-offset: 15;
-      --surface-edge-offset: 15;
-      --surface-divider-offset: 2;
+      --surface-base-offset: -6;
+      --surface-hover-offset: -2;
+      --surface-active-offset: 3;
+      --surface-selection-offset: 3;
+      --surface-edge-offset: 3;
+      --surface-divider-offset: -9;
 
       --tint-base-offset: 24%;
       --tint-hover-offset: 33%;
@@ -158,7 +158,7 @@ html[data-theme='dark'],
       --surface-active-offset: 19;
       --surface-selection-offset: 19;
       --surface-edge-offset: 19;
-      --surface-divider-offset: 4;
+      --surface-divider-offset: 5;
 
       --tint-base-offset: 32%;
       --tint-hover-offset: 42%;
@@ -172,11 +172,11 @@ html[data-theme='dark'],
   &[data-neb-box-intent='strong'] {
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
-      --surface-hover-offset: -5;
-      --surface-active-offset: -11;
-      --surface-selection-offset: -11;
-      --surface-edge-offset: -11;
-      --surface-divider-offset: -5;
+      --surface-hover-offset: 5;
+      --surface-active-offset: 11;
+      --surface-selection-offset: 11;
+      --surface-edge-offset: 11;
+      --surface-divider-offset: -3;
 
       --tint-base-offset: 26%;
       --tint-hover-offset: 37%;
@@ -186,12 +186,12 @@ html[data-theme='dark'],
       --tint-divider-offset: 18%;
     }
     &[data-neb-box-surface-depth='raised'] {
-      --surface-base-offset: -8;
-      --surface-hover-offset: -4;
-      --surface-active-offset: 0;
-      --surface-selection-offset: 0;
-      --surface-edge-offset: 16;
-      --surface-divider-offset: -11;
+      --surface-base-offset: 8;
+      --surface-hover-offset: 13;
+      --surface-active-offset: 19;
+      --surface-selection-offset: 19;
+      --surface-edge-offset: 19;
+      --surface-divider-offset: 5;
 
       --tint-base-offset: 41%;
       --tint-hover-offset: 51%;

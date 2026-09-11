@@ -187,10 +187,10 @@ html[data-theme='light'],
     }
     &[data-neb-box-surface-depth='raised'] {
       --surface-base-offset: -8;
-      --surface-hover-offset: -4;
-      --surface-active-offset: 0;
-      --surface-selection-offset: 0;
-      --surface-edge-offset: 16;
+      --surface-hover-offset: -3;
+      --surface-active-offset: 3;
+      --surface-selection-offset: 3;
+      --surface-edge-offset: 3;
       --surface-divider-offset: -11;
 
       --tint-base-offset: 41%;
