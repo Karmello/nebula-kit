@@ -1,7 +1,15 @@
 import { pascalCase } from 'change-case'
 
-import { Box, MarkerList, Markup, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { Section } from 'client/components/reusable/Section'
+import {
+  Box,
+  HorizontalRule,
+  MarkerList,
+  Markup,
+  NEB_LENGTH,
+  Spacer,
+  Text,
+  Title,
+} from 'lib/components'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 
@@ -18,9 +26,21 @@ export const ComponentChangelogPage = () => {
   return (
     <>
       <Box maxInlineSize="55rem">
-        <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
+        <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_016}>
           {versionKeys.map(vKey => (
-            <Section key={vKey} heading={`v${vKey}`} size="sm" intent="primary" color="blue">
+            <Box
+              key={vKey}
+              drawable
+              intent="primary"
+              color="blue"
+              padding={NEB_LENGTH.px_016}
+              overflowX="auto"
+              overflowY="hidden"
+              maxInlineSize="100%"
+            >
+              <Title typography="h6" color="blue">{`v${vKey}`}</Title>
+              <HorizontalRule color="blue" marginTop={NEB_LENGTH.px_004} />
+              <Spacer blockSize={NEB_LENGTH.px_004} />
               <MarkerList>
                 {(changelog[vKey as never] as string[]).map((s, i) => (
                   <MarkerList.Item key={i}>
@@ -30,7 +50,7 @@ export const ComponentChangelogPage = () => {
                   </MarkerList.Item>
                 ))}
               </MarkerList>
-            </Section>
+            </Box>
           ))}
         </Box>
       </Box>
