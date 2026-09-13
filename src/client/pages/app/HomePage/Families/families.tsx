@@ -48,7 +48,7 @@ const Family = ({
                   <Button
                     scale="sm"
                     variant="solid"
-                    intent="primary"
+                    intent="tertiary"
                     iconName="box"
                     iconPlacement="right"
                   >
