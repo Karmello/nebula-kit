@@ -65,7 +65,7 @@ const Surface = ({
 }
 
 export const JoinedActionGroup = () => {
-  const surfaceDepth: BoxSurfaceDepth = 'raised'
+  const surfaceDepth: BoxSurfaceDepth = 'base'
 
   return (
     <>

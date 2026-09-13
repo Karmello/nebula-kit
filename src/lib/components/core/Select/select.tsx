@@ -34,8 +34,8 @@ const VARIANT_MAP: Record<
     removeFirstTopBorder: false,
   },
   outline: {
-    trigger: { bgMode: 'tinted', borderMode: 'filled', text: 'default' },
-    content: { borderMode: 'filled' },
+    trigger: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+    content: { borderMode: 'tinted' },
     item: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
     removeFirstTopBorder: true,
   },
@@ -151,83 +151,86 @@ export const SelectImpl = ({
       </Floating.Trigger>
       <Floating.Content>
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
-          <Box
-            drawable
-            intent={intent}
-            color={color}
-            borderMode={VARIANT_MAP[variant].content.borderMode}
-            surfaceDepth="raised"
-            inlineSize={`${triggerWidth}px`}
-            maxBlockSize={`${menuBlockSize}px`}
-            overflowY="auto"
-            borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-            borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
-          >
+          <Box drawable bgMode="filled" intent="neutral" color={color}>
             <Box
-              display="inline-flex"
-              flexDirection="column"
               drawable
-              bgMode="filled"
-              intent="neutral"
+              intent={intent}
               color={color}
-              inlineSize="100%"
-              borderRadius={NEB_LENGTH.px_000}
+              bgMode="tinted"
+              borderMode={VARIANT_MAP[variant].content.borderMode}
+              surfaceDepth="raised"
+              inlineSize={`${triggerWidth}px`}
+              maxBlockSize={`${menuBlockSize}px`}
+              overflowY="auto"
+              borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
             >
-              {optionSlots.map((slot, key) => {
-                const isSelected = currentValue === slot.props.value
+              <Box
+                display="inline-flex"
+                flexDirection="column"
+                drawable
+                bgMode="filled"
+                intent="neutral"
+                color={color}
+                inlineSize="100%"
+                borderRadius={NEB_LENGTH.px_000}
+              >
+                {optionSlots.map((slot, key) => {
+                  const isSelected = currentValue === slot.props.value
 
-                return (
-                  <Box
-                    key={key}
-                    tag="button"
-                    tagAttrs={{
-                      onClick: () => {
-                        setCurrentValue(slot.props.value)
-                        setOpen(false)
-                      },
-                      style: { backgroundClip: 'padding-box' },
-                    }}
-                    cursor="pointer"
-                    interactive
-                    inlineSize="100%"
-                    blockSize={
-                      key === 0
-                        ? !VARIANT_MAP[variant].removeFirstTopBorder
-                          ? optionBlockSize + 'px'
-                          : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
-                        : `${optionBlockSize}px`
-                    }
-                    intent={intent}
-                    color={color}
-                    bgMode={VARIANT_MAP[variant].item.bgMode}
-                    borderMode={VARIANT_MAP[variant].item.borderMode}
-                    borderRole="divider"
-                    surfaceDepth="raised"
-                    bgRole={isSelected ? 'selection' : undefined}
-                    text={VARIANT_MAP[variant].item.text}
-                    paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
-                    borderWidth={NEB_LENGTH.px_000}
-                    borderTopWidth={
-                      VARIANT_MAP[variant].removeFirstTopBorder && key === 0
-                        ? NEB_LENGTH.px_000
-                        : NEB_LENGTH.px_002
-                    }
-                    borderRadius={NEB_LENGTH.px_000}
-                  >
-                    <Text
-                      fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-                      lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-                      bold={isSelected}
+                  return (
+                    <Box
+                      key={key}
+                      tag="button"
+                      tagAttrs={{
+                        onClick: () => {
+                          setCurrentValue(slot.props.value)
+                          setOpen(false)
+                        },
+                        style: { backgroundClip: 'padding-box' },
+                      }}
+                      cursor="pointer"
+                      interactive
+                      inlineSize="100%"
+                      blockSize={
+                        key === 0
+                          ? !VARIANT_MAP[variant].removeFirstTopBorder
+                            ? optionBlockSize + 'px'
+                            : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
+                          : `${optionBlockSize}px`
+                      }
+                      intent={intent}
+                      color={color}
+                      bgMode={VARIANT_MAP[variant].item.bgMode}
+                      borderMode={VARIANT_MAP[variant].item.borderMode}
+                      borderRole="divider"
+                      surfaceDepth="raised"
+                      bgRole={isSelected ? 'selection' : undefined}
+                      text={VARIANT_MAP[variant].item.text}
+                      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                      borderWidth={NEB_LENGTH.px_000}
+                      borderTopWidth={
+                        VARIANT_MAP[variant].removeFirstTopBorder && key === 0
+                          ? NEB_LENGTH.px_000
+                          : NEB_LENGTH.px_002
+                      }
+                      borderRadius={NEB_LENGTH.px_000}
                     >
-                      {slot}
-                    </Text>
-                  </Box>
-                )
-              })}
+                      <Text
+                        fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                        bold={isSelected}
+                      >
+                        {slot}
+                      </Text>
+                    </Box>
+                  )
+                })}
+              </Box>
             </Box>
           </Box>
         </Resize>

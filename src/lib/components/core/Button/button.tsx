@@ -27,8 +27,8 @@ const VARIANT_MAP: Record<
   { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
 > = {
   solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
-  outline: { bgMode: 'tinted', borderMode: 'filled', text: 'default' },
-  'soft-outline': { bgMode: 'tinted', borderMode: 'filled', text: 'colored' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
   ghost: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
 }
 

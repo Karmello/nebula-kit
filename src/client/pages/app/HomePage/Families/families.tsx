@@ -22,7 +22,7 @@ const Family = ({
     <Box
       drawable
       bgMode="tinted"
-      borderMode="filled"
+      borderMode="tinted"
       borderRole="edge"
       intent="muted"
       brand="purple"

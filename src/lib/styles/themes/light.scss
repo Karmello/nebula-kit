@@ -15,9 +15,9 @@ html[data-theme='light'],
 
       --tint-base-offset: 0%;
       --tint-hover-offset: 2%;
-      --tint-active-offset: 6%;
-      --tint-selection-offset: 6%;
-      --tint-edge-offset: 6%;
+      --tint-active-offset: 5%;
+      --tint-selection-offset: 5%;
+      --tint-edge-offset: 5%;
       --tint-divider-offset: 3%;
     }
     &[data-neb-box-surface-depth='raised'] {
@@ -48,9 +48,9 @@ html[data-theme='light'],
 
       --tint-base-offset: 3%;
       --tint-hover-offset: 6%;
-      --tint-active-offset: 11%;
-      --tint-selection-offset: 11%;
-      --tint-edge-offset: 11%;
+      --tint-active-offset: 10%;
+      --tint-selection-offset: 10%;
+      --tint-edge-offset: 9%;
       --tint-divider-offset: 0%;
     }
     &[data-neb-box-surface-depth='raised'] {
@@ -80,10 +80,10 @@ html[data-theme='light'],
       --surface-divider-offset: -2;
 
       --tint-base-offset: 7%;
-      --tint-hover-offset: 13%;
-      --tint-active-offset: 20%;
-      --tint-selection-offset: 20%;
-      --tint-edge-offset: 20%;
+      --tint-hover-offset: 11%;
+      --tint-active-offset: 16%;
+      --tint-selection-offset: 16%;
+      --tint-edge-offset: 16%;
       --tint-divider-offset: 4%;
     }
     &[data-neb-box-surface-depth='raised'] {
@@ -113,10 +113,10 @@ html[data-theme='light'],
       --surface-divider-offset: -3;
 
       --tint-base-offset: 12%;
-      --tint-hover-offset: 20%;
-      --tint-active-offset: 28%;
-      --tint-selection-offset: 28%;
-      --tint-edge-offset: 28%;
+      --tint-hover-offset: 17%;
+      --tint-active-offset: 24%;
+      --tint-selection-offset: 24%;
+      --tint-edge-offset: 24%;
       --tint-divider-offset: 8%;
     }
     &[data-neb-box-surface-depth='raised'] {
@@ -146,10 +146,10 @@ html[data-theme='light'],
       --surface-divider-offset: -3;
 
       --tint-base-offset: 18%;
-      --tint-hover-offset: 28%;
-      --tint-active-offset: 36%;
-      --tint-selection-offset: 36%;
-      --tint-edge-offset: 36%;
+      --tint-hover-offset: 24%;
+      --tint-active-offset: 32%;
+      --tint-selection-offset: 32%;
+      --tint-edge-offset: 32%;
       --tint-divider-offset: 12%;
     }
     &[data-neb-box-surface-depth='raised'] {
@@ -179,10 +179,10 @@ html[data-theme='light'],
       --surface-divider-offset: -5;
 
       --tint-base-offset: 25%;
-      --tint-hover-offset: 37%;
-      --tint-active-offset: 46%;
-      --tint-selection-offset: 46%;
-      --tint-edge-offset: 46%;
+      --tint-hover-offset: 31%;
+      --tint-active-offset: 39%;
+      --tint-selection-offset: 39%;
+      --tint-edge-offset: 39%;
       --tint-divider-offset: 18%;
     }
     &[data-neb-box-surface-depth='raised'] {

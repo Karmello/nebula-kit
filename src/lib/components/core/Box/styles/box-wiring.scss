@@ -48,10 +48,10 @@
     --bg-selection: var(--tint-selection);
 
     &[data-neb-box-text='colored'] {
-      --text: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
-      --text-hover: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
-      --text-active: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
-      --text-selection: oklch(from var(--color-primary) calc(l - var(--surface-base-offset) / 100) c h);
+      --text: var(--color-primary);
+      --text-hover: var(--color-primary);
+      --text-active: var(--color-primary);
+      --text-selection: var(--color-primary);
     }
   }
 
