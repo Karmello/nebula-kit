@@ -33,55 +33,53 @@ export const Reveal = <T extends RevealTag = 'div'>({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      // variant="outline"
+      borderMode="filled"
       color={color}
       intent={intent}
-      borderRadius="var(--neb-border-radius)"
       overflow="hidden"
       maxInlineSize="100%"
       disabled={disabled}
+      display="flex"
+      flexDirection="column"
+      alignItems="stretch"
     >
-      <Box display="flex" flexDirection="column" alignItems="stretch">
-        <Box
-          tag="button"
-          interactive
-          display="flex"
-          justifyContent="space-between"
-          alignItems="center"
-          cursor="pointer"
-          tagAttrs={{
-            type: 'button',
-            style: { borderRadius: 0 },
-            onClick: () => {
-              setOpen(!open)
-            },
-          }}
-          disabled={disabled}
-          color={color}
-          bgMode="filled"
-          intent={intent}
-          ripple={!open}
-          bgRole={open ? 'selection' : undefined}
-          blockSize={CONTROL_SCALE_MAP[scale].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+      <Box
+        tag="button"
+        interactive
+        display="flex"
+        justifyContent="space-between"
+        alignItems="center"
+        cursor="pointer"
+        tagAttrs={{
+          type: 'button',
+          style: { borderRadius: 0 },
+          onClick: () => {
+            setOpen(!open)
+          },
+        }}
+        disabled={disabled}
+        color={color}
+        bgMode="filled"
+        surfaceDepth={open ? 'raised' : 'base'}
+        intent={intent}
+        ripple={!open}
+        blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+        paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+      >
+        <Text
+          bold
+          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
         >
-          <Text
-            bold
-            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-          >
-            {label}
-          </Text>
-          <Rotate angle={!open ? 0 : 180}>
-            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
-          </Rotate>
-        </Box>
-        <Box tagAttrs={{ inert: !open }}>
-          <Resize property="blockSize" visible={open}>
-            {children}
-          </Resize>
-        </Box>
+          {label}
+        </Text>
+        <Rotate angle={!open ? 0 : 180}>
+          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
+        </Rotate>
       </Box>
+      <Resize tagAttrs={{ inert: !open }} property="blockSize" visible={open}>
+        {children}
+      </Resize>
     </Box>
   )
 }

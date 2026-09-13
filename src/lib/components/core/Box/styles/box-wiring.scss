@@ -55,6 +55,15 @@
     }
   }
 
+  &[data-neb-box-border-mode='none'] {
+    --border: transparent;
+    --border-hover: transparent;
+    --border-active: transparent;
+    --border-selection: transparent;
+    --border-edge: transparent;
+    --border-divider: transparent;
+  }
+
   &[data-neb-box-border-mode='filled'] {
     --border: var(--surface);
     --border-hover: var(--surface-hover);
