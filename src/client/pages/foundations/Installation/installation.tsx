@@ -1,62 +1,75 @@
 import { Box } from 'lib/components/core/Box'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Link } from 'lib/components/core/Link'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
 import { NEB_LENGTH } from 'lib/constants'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
-import { Section } from 'client/components/reusable/Section'
 
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Section size="sm" heading="Core bundle" iconName="arrow-down" intent="primary">
-        <Text intent="neutral">The Core bundle is published on the public npm registry.</Text>
-        <Title iconName="external-link" iconPlacement="right" color="blue" intent="primary">
-          <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
-            <Text intent="primary" color="blue">
-              https://www.npmjs.com/package/@nebula-kit/core
-            </Text>
-          </Link>
-        </Title>
-        <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet
-          lang="bash"
-          code="npm install @nebula-kit/core"
-          description="Install with NPM"
-        />
-        <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet lang="bash" code="yarn add @nebula-kit/core" description="Install with Yarn" />
-      </Section>
-      <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Section size="sm" heading="Pro bundle" iconName="arrow-down" intent="primary">
-        <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
-        <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet
-          lang="log"
-          code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_032}>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Core bundle
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+          <Text intent="neutral">The Core bundle is published on the public npm registry.</Text>
+          <Title iconName="external-link" iconPlacement="right" color="blue" intent="primary">
+            <Link href="https://www.npmjs.com/package/@nebula-kit/core" target="_blank">
+              <Text intent="primary" color="blue">
+                https://www.npmjs.com/package/@nebula-kit/core
+              </Text>
+            </Link>
+          </Title>
+          <Spacer blockSize={NEB_LENGTH.px_016} />
+          <CodeSnippet
+            lang="bash"
+            code="npm install @nebula-kit/core"
+            description="Install with NPM"
+          />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
+          <CodeSnippet
+            lang="bash"
+            code="yarn add @nebula-kit/core"
+            description="Install with Yarn"
+          />
+        </Box>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Pro bundle
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+          <Text intent="neutral">The Pro bundle is distributed through a private registry.</Text>
+          <Spacer blockSize={NEB_LENGTH.px_016} />
+          <CodeSnippet
+            lang="log"
+            code={`@nebula-kit-private:registry=https://api.nebulakit.dev/registry
 //api.nebulakit.dev/registry/:_authToken=\${NEB_TOKEN}\
 \nalways-auth=true`}
-          description="To access it, add the following to your project's .npmrc file"
-        />
-        <Spacer blockSize={NEB_LENGTH.px_008} />
-        <Text typography="caption" intent="secondary" color="gray">
-          NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle.
-          You'll find it in your NebulaKit account dashboard after subscribing.
-        </Text>
-        <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet
-          lang="bash"
-          code="npm install @nebula-kit-private/pro"
-          description="Install with NPM"
-        />
-        <Spacer blockSize={NEB_LENGTH.px_016} />
-        <CodeSnippet
-          lang="bash"
-          code="yarn add @nebula-kit-private/pro"
-          description="Install with Yarn"
-        />
-      </Section>
+            description="To access it, add the following to your project's .npmrc file"
+          />
+          <Spacer blockSize={NEB_LENGTH.px_008} />
+          <Text typography="caption" intent="secondary" color="gray">
+            NEB_TOKEN is your personal license key used to authenticate access to the Pro bundle.
+            You'll find it in your NebulaKit account dashboard after subscribing.
+          </Text>
+          <Spacer blockSize={NEB_LENGTH.px_016} />
+          <CodeSnippet
+            lang="bash"
+            code="npm install @nebula-kit-private/pro"
+            description="Install with NPM"
+          />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
+          <CodeSnippet
+            lang="bash"
+            code="yarn add @nebula-kit-private/pro"
+            description="Install with Yarn"
+          />
+        </Box>
+      </Box>
     </Box>
   )
 }
