@@ -1,7 +1,6 @@
-import { Box, Button, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Box, Button, HorizontalRule, MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { BOX_INTENTS } from 'lib/components/core/Box/constants'
 import { BoxIntent } from 'lib/components/core/Box/types'
-import { Section } from 'client/components/reusable/Section'
 
 const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
   neutral: 'surface without meaning, default tone',
@@ -15,12 +14,17 @@ const INTENTS_INFO_MAP: Record<BoxIntent, string> = {
 export default () => {
   return (
     <Box maxInlineSize="55rem">
-      <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_048}>
-        <Text>
-          Intents and variants available in the system, showing how semantic roles combine with
-          visual styles across components.
-        </Text>
-        <Section heading="Solid variant" size="sm">
+      <Text>
+        Intents and variants available in the system, showing how semantic roles combine with visual
+        styles across components.
+      </Text>
+      <Spacer blockSize={NEB_LENGTH.px_032} />
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_032}>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Solid variant
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <Text>Filled surface, strong emphasis.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
@@ -32,8 +36,12 @@ export default () => {
               )
             })}
           </Box>
-        </Section>
-        <Section heading="Outline variant" size="sm">
+        </Box>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Outline variant
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <Text>Border only, background matches the app's surface.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
@@ -45,8 +53,12 @@ export default () => {
               )
             })}
           </Box>
-        </Section>
-        <Section heading="Soft outline variant" size="sm">
+        </Box>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Soft outline variant
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <Text>Border only, background matches the app's surface, text matches the border.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
@@ -58,8 +70,12 @@ export default () => {
               )
             })}
           </Box>
-        </Section>
-        <Section heading="Ghost variant" size="sm">
+        </Box>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Ghost variant
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <Text>Text only, background and border match the app's surface.</Text>
           <Spacer blockSize={NEB_LENGTH.px_024} />
           <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
@@ -71,8 +87,12 @@ export default () => {
               )
             })}
           </Box>
-        </Section>
-        <Section heading="Intents" size="sm">
+        </Box>
+        <Box>
+          <Text typography="h5" bold color="blue" intent="primary">
+            Intents
+          </Text>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <MarkerList>
             {Object.keys(INTENTS_INFO_MAP).map(intent => (
               <MarkerList.Item key={intent}>
@@ -81,7 +101,7 @@ export default () => {
               </MarkerList.Item>
             ))}
           </MarkerList>
-        </Section>
+        </Box>
       </Box>
     </Box>
   )

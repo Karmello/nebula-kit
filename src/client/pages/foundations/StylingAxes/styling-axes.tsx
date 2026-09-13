@@ -86,24 +86,27 @@ export default () => {
         </Box>
         <Box>
           <Text typography="h5" bold color="blue" intent="primary">
-            Intent axis
+            Variant and intent axes
           </Text>
           <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
-          <Text>Intent defines how a drawable surface is rendered.</Text>
+          <Text>Variant and intent define how a drawable surface is rendered.</Text>
           <Spacer blockSize={NEB_LENGTH.px_008} />
           <MarkerList>
+            <MarkerList.Item>
+              <Text>Variant controls structure (solid, outline, soft-outline, ghost)</Text>
+            </MarkerList.Item>
             <MarkerList.Item>
               <Text>Intent controls semantic meaning (neutral, tertiary, primary, etc.)</Text>
             </MarkerList.Item>
             <MarkerList.Item>
-              <Text>Intent is always local to the component</Text>
+              <Text>Both are always local to the component</Text>
             </MarkerList.Item>
             <MarkerList.Item>
-              <Text>It relies on resolved theme and color/brand values</Text>
+              <Text>They rely on resolved theme and color/brand values</Text>
             </MarkerList.Item>
           </MarkerList>
           <Spacer blockSize={NEB_LENGTH.px_008} />
-          <Text>Intent never propagates.</Text>
+          <Text>Variant and intent never propagate.</Text>
         </Box>
       </Box>
     </Box>
