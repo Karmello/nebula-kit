@@ -1,6 +1,5 @@
-import { Box, Button, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
+import { Box, Button, HorizontalRule, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { useConnectToGithub } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 
 export const ConnectToGithubSection = ({
   userPlan,
@@ -12,7 +11,18 @@ export const ConnectToGithubSection = ({
   const connectToGithub = useConnectToGithub()
 
   return (
-    <Section heading="GitHub" variant="outline" intent="tertiary">
+    <Box
+      drawable
+      borderMode="tinted"
+      intent="tertiary"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h5">GitHub</Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
         Connect your GitHub account to unlock access to the private NebulaKit roadmap. This lets you
         follow upcoming features, track progress and stay aligned with what's being built next.
@@ -50,6 +60,6 @@ export const ConnectToGithubSection = ({
         ) : null}
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_008} />
-    </Section>
+    </Box>
   )
 }

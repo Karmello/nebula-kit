@@ -1,8 +1,17 @@
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
-import { Box, Button, NEB_LENGTH, PasswordInput, Spacer, Text, useSnackbar } from 'lib/components'
+import {
+  Box,
+  Button,
+  HorizontalRule,
+  NEB_LENGTH,
+  PasswordInput,
+  Spacer,
+  Text,
+  Title,
+  useSnackbar,
+} from 'lib/components'
 import { useLogoutUser, useUpdatePassword } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -38,7 +47,18 @@ export const UpdatePasswordSection = () => {
   const { isDirty, isSubmitting } = form.formState
 
   return (
-    <Section heading="Password" variant="outline" intent="tertiary">
+    <Box
+      drawable
+      borderMode="tinted"
+      intent="tertiary"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h5">Password</Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
         You can update your account password here. For security, your current password is required
         to complete the change.
@@ -139,6 +159,6 @@ export const UpdatePasswordSection = () => {
         </FormProvider>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_008} />
-    </Section>
+    </Box>
   )
 }

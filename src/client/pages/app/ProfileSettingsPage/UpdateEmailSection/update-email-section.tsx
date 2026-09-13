@@ -1,8 +1,17 @@
 import { Controller, FormProvider, useForm } from 'react-hook-form'
 
-import { Box, Button, Input, NEB_LENGTH, Spacer, Text, useSnackbar } from 'lib/components'
+import {
+  Box,
+  Button,
+  HorizontalRule,
+  Input,
+  NEB_LENGTH,
+  Spacer,
+  Text,
+  Title,
+  useSnackbar,
+} from 'lib/components'
 import { useLogoutUser, useRequestEmailUpdate } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -42,7 +51,18 @@ export const UpdateEmailSection = () => {
   const { isDirty, isSubmitting } = form.formState
 
   return (
-    <Section heading="Email address" variant="outline" intent="tertiary">
+    <Box
+      drawable
+      borderMode="tinted"
+      intent="tertiary"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h5">Email address</Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
         In case you need to update your email address, you can request a change by providing a new
         one. A verification link will be sent to that address. After confirming it, you'll be able
@@ -120,6 +140,6 @@ export const UpdateEmailSection = () => {
         </FormProvider>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_008} />
-    </Section>
+    </Box>
   )
 }

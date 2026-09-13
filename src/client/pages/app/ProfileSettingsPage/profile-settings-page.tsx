@@ -1,9 +1,8 @@
 import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
-import { Box, Loader, NEB_LENGTH, Spacer, useSnackbar } from 'lib/components'
+import { Box, HorizontalRule, Loader, NEB_LENGTH, Spacer, Title, useSnackbar } from 'lib/components'
 import { useGetUser } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useAppStore } from 'client/store'
 
@@ -44,48 +43,50 @@ export const ProfileSettingsPage = () => {
       paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       maxInlineSize="75rem"
     >
-      <Section size="lg" heading="Settings" iconName="settings">
-        <Spacer blockSize={NEB_LENGTH.px_024} />
-        {!getUser.data || getUser.isMakingRequest ? (
-          <Box position="relative" blockSize="160px">
-            <Loader centered size={NEB_LENGTH.px_024} color="blue" />
-          </Box>
-        ) : (
-          <>
-            <UpdatePasswordSection />
-            <Spacer blockSize={NEB_LENGTH.px_048} />
-            <UpdateEmailSection />
-            <Spacer blockSize={NEB_LENGTH.px_048} />
-            <ConnectToDiscordSection
-              userPlan={getUser.data.user.plan}
-              discordUserId={getUser.data.user.discordUserId}
-            />
-            <Spacer blockSize={NEB_LENGTH.px_048} />
-            <ConnectToGithubSection
-              userPlan={getUser.data.user.plan}
-              githubUsername={getUser.data.user.githubUsername}
-            />
-            <Spacer blockSize={NEB_LENGTH.px_048} />
-            <PaymentCancelSection
-              userEmail={getUser.data.user.email}
-              userPlan={getUser.data.user.plan}
-              handleCancelSuccess={() => {
-                window.scrollTo(0, 0)
-                getUser.sendRequest()
-              }}
-            />
-            <Spacer blockSize={NEB_LENGTH.px_048} />
-            <AccountDeactivationSection
-              userEmail={getUser.data.user.email}
-              userPlan={getUser.data.user.plan}
-              handleDeactivateSuccess={() => {
-                window.scrollTo(0, 0)
-                getUser.sendRequest()
-              }}
-            />
-          </>
-        )}
-      </Section>
+      <Title typography="h4" iconName="settings">
+        Settings
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <Spacer blockSize={NEB_LENGTH.px_024} />
+      {!getUser.data || getUser.isMakingRequest ? (
+        <Box position="relative" blockSize="160px">
+          <Loader centered size={NEB_LENGTH.px_024} color="blue" />
+        </Box>
+      ) : (
+        <>
+          <UpdatePasswordSection />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <UpdateEmailSection />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <ConnectToDiscordSection
+            userPlan={getUser.data.user.plan}
+            discordUserId={getUser.data.user.discordUserId}
+          />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <ConnectToGithubSection
+            userPlan={getUser.data.user.plan}
+            githubUsername={getUser.data.user.githubUsername}
+          />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <PaymentCancelSection
+            userEmail={getUser.data.user.email}
+            userPlan={getUser.data.user.plan}
+            handleCancelSuccess={() => {
+              window.scrollTo(0, 0)
+              getUser.sendRequest()
+            }}
+          />
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <AccountDeactivationSection
+            userEmail={getUser.data.user.email}
+            userPlan={getUser.data.user.plan}
+            handleDeactivateSuccess={() => {
+              window.scrollTo(0, 0)
+              getUser.sendRequest()
+            }}
+          />
+        </>
+      )}
     </Box>
   )
 }

@@ -1,5 +1,4 @@
-import { MarkerList, NEB_LENGTH, Spacer, Text } from 'lib/components'
-import { Section } from 'client/components/reusable/Section'
+import { Box, HorizontalRule, MarkerList, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 
 import { PaymentCancelForm } from './payment-cancel-form'
 
@@ -13,7 +12,21 @@ export const PaymentCancelSection = ({
   handleCancelSuccess: () => void
 }) => {
   return (
-    <Section heading="Subscription" variant="soft-outline" intent="primary" color="red">
+    <Box
+      drawable
+      borderMode="filled"
+      intent="tertiary"
+      color="amber"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h5" color="red">
+        Subscription
+      </Title>
+      <HorizontalRule color="red" marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text intent="neutral">
         This section allows you to cancel your active subscription and return to the free plan.
       </Text>
@@ -55,6 +68,6 @@ export const PaymentCancelSection = ({
         userPlan={userPlan}
         handleCancelSuccess={handleCancelSuccess}
       />
-    </Section>
+    </Box>
   )
 }
