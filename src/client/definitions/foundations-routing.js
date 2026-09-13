@@ -76,22 +76,7 @@ export const FOUNDATIONS_CATEGORIES = [
       {
         key: 'changelog',
         label: 'Changelog',
-        sections: [
-          { key: 'v0.11.0', label: 'v0.11.0' },
-          { key: 'v0.10.0', label: 'v0.10.0' },
-          { key: 'v0.9.0', label: 'v0.9.0' },
-          { key: 'v0.8.0', label: 'v0.8.0' },
-          { key: 'v0.7.0', label: 'v0.7.0' },
-          { key: 'v0.6.1', label: 'v0.6.1' },
-          { key: 'v0.6.0', label: 'v0.6.0' },
-          { key: 'v0.5.0', label: 'v0.5.0' },
-          { key: 'v0.4.3', label: 'v0.4.3' },
-          { key: 'v0.4.2', label: 'v0.4.2' },
-          { key: 'v0.4.1', label: 'v0.4.1' },
-          { key: 'v0.4.0', label: 'v0.4.0' },
-          { key: 'v0.3.0', label: 'v0.3.0' },
-          { key: 'v0.2.3', label: 'v0.2.3' },
-        ],
+        sections: [{ key: 'v0.12.0', label: 'v0.12.0' }],
       },
       {
         key: 'assets',
