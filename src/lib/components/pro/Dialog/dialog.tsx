@@ -120,14 +120,13 @@ export const Dialog = ({
                         }}
                         tagRef={tagRef || ref}
                         drawable
-                        // variant="outline"
+                        borderMode="filled"
                         maxInlineSize="95dvw"
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
-                        intent="primary"
+                        intent="strong"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
-                        borderRadius="var(--neb-border-radius)"
                       >
                         <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
                           {onClose ? (

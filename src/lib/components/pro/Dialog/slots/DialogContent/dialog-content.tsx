@@ -16,7 +16,6 @@ export const DialogContent = ({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      // variant="outline"
       intent={intent}
       paddingInline={padding}
       paddingBlock={`calc(${padding} / 1.25)`}
