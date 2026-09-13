@@ -1,6 +1,5 @@
-import { Box, NEB_LENGTH, Text } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { BoxColor } from 'lib/components/core/Box/types'
-import { Section } from 'client/components/reusable/Section'
 
 export const ListWithChips = ({
   heading,
@@ -11,8 +10,17 @@ export const ListWithChips = ({
   items: string[]
   color?: BoxColor
 }) => (
-  <Section heading={heading} size="sm">
-    <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
+  <Box
+    drawable
+    padding={NEB_LENGTH.px_016}
+    overflowX="auto"
+    overflowY="hidden"
+    maxInlineSize="100%"
+  >
+    <Title typography="h6">{heading}</Title>
+    <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+    <Spacer blockSize={NEB_LENGTH.px_004} />
+    <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_006}>
       {items.map((s, i) => (
         <Box
           key={i}
@@ -28,5 +36,5 @@ export const ListWithChips = ({
         </Box>
       ))}
     </Box>
-  </Section>
+  </Box>
 )
