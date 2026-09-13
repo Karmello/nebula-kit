@@ -45,7 +45,7 @@ const SingleExample = (
         <>
           <Box
             drawable
-            // variant="outline"
+            borderMode="filled"
             intent="tertiary"
             tagAttrs={{ style: { borderStyle: 'dashed' } }}
           >
