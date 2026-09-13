@@ -10,13 +10,7 @@ export const ListWithChips = ({
   items: string[]
   color?: BoxColor
 }) => (
-  <Box
-    drawable
-    padding={NEB_LENGTH.px_016}
-    overflowX="auto"
-    overflowY="hidden"
-    maxInlineSize="100%"
-  >
+  <Box overflowX="auto" overflowY="hidden" maxInlineSize="100%">
     <Title typography="h6">{heading}</Title>
     <HorizontalRule marginTop={NEB_LENGTH.px_004} />
     <Spacer blockSize={NEB_LENGTH.px_004} />

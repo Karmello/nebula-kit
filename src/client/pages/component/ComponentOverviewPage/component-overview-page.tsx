@@ -2,12 +2,13 @@ import { pascalCase } from 'change-case'
 
 import { Box } from 'lib/components/core/Box'
 import { Button } from 'lib/components/core/Button'
+import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Link } from 'lib/components/core/Link'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
 import { NEB_LENGTH } from 'lib/constants'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
-import { Section } from 'client/components/reusable/Section'
 import { DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
@@ -51,9 +52,12 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
         ) : null}
       </Box>
       {description ? (
-        <Section size="sm" heading="Description">
+        <Box overflowX="auto" overflowY="hidden" maxInlineSize="100%">
+          <Title typography="h6">Description</Title>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+          <Spacer blockSize={NEB_LENGTH.px_004} />
           <Text>{description}</Text>
-        </Section>
+        </Box>
       ) : null}
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
@@ -99,9 +103,19 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
   return (
     <>
       {name ? (
-        <Section size="lg" heading={name} variant="outline" intent="tertiary">
+        <Box
+          drawable
+          intent="tertiary"
+          padding={NEB_LENGTH.px_024}
+          overflowX="auto"
+          overflowY="hidden"
+          maxInlineSize="100%"
+        >
+          <Title typography="h4">{name}</Title>
+          <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+          <Spacer blockSize={NEB_LENGTH.px_016} />
           {content}
-        </Section>
+        </Box>
       ) : (
         content
       )}
