@@ -1,7 +1,16 @@
 import { useMemo } from 'react'
 
-import { Box, MarkerList, Markup, NEB_LENGTH, Spacer, Tabs, Text, Title } from 'lib/components'
-import { Section } from 'client/components/reusable/Section'
+import {
+  Box,
+  HorizontalRule,
+  MarkerList,
+  Markup,
+  NEB_LENGTH,
+  Spacer,
+  Tabs,
+  Text,
+  Title,
+} from 'lib/components'
 import { RELEASE_INFO, ReleaseVersion } from 'client/definitions'
 import meta from 'client/meta'
 
@@ -29,9 +38,13 @@ const Notes = ({ componentName, notes = [] }: { componentName?: string; notes: s
   }
 
   return (
-    <Section heading={componentName} color="blue" intent="primary" size="sm">
+    <Box>
+      <Text typography="h5" bold color="blue" intent="primary">
+        {componentName}
+      </Text>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
       {list}
-    </Section>
+    </Box>
   )
 }
 
