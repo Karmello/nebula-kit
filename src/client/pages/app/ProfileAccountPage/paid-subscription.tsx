@@ -1,8 +1,19 @@
 import { useLayoutEffect } from 'react'
 
-import { Box, Button, Callout, Link, Loader, NEB_LENGTH, Spacer, Table, Text } from 'lib/components'
+import {
+  Box,
+  Button,
+  Callout,
+  HorizontalRule,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Spacer,
+  Table,
+  Text,
+  Title,
+} from 'lib/components'
 import { useGetPaymentDetailsUrl, useGetPaymentInfo } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 import { useAppStore } from 'client/store'
 
 export default ({ enabled }: { enabled: boolean }) => {
@@ -21,7 +32,20 @@ export default ({ enabled }: { enabled: boolean }) => {
   if (!enabled) return null
 
   return (
-    <Section heading="Subscription" size="sm" intent="primary" color="blue">
+    <Box
+      drawable
+      intent="primary"
+      color="blue"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h6" color="blue">
+        Subscription
+      </Title>
+      <HorizontalRule color="blue" marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_004} />
       <Spacer blockSize={NEB_LENGTH.px_008} />
       {!getPaymentInfo.isMakingRequest ? (
         <>
@@ -118,6 +142,6 @@ export default ({ enabled }: { enabled: boolean }) => {
           <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
-    </Section>
+    </Box>
   )
 }

@@ -1,10 +1,20 @@
 import { useLayoutEffect } from 'react'
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Link, Loader, NEB_LENGTH, Spacer, Table, Text, Title } from 'lib/components'
+import {
+  Box,
+  Button,
+  HorizontalRule,
+  Link,
+  Loader,
+  NEB_LENGTH,
+  Spacer,
+  Table,
+  Text,
+  Title,
+} from 'lib/components'
 import { useGetUser } from 'client/api'
 import { CopyButton } from 'client/components/reusable/CopyButton'
-import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
@@ -40,7 +50,20 @@ export default () => {
     : '-'
 
   return (
-    <Section heading="Details" size="sm" intent="primary" color="blue">
+    <Box
+      drawable
+      intent="primary"
+      color="blue"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h6" color="blue">
+        Details
+      </Title>
+      <HorizontalRule color="blue" marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_004} />
       <Spacer blockSize={NEB_LENGTH.px_008} />
 
       {!getUser.isMakingRequest ? (
@@ -206,6 +229,6 @@ export default () => {
           <Loader centered active color="blue" size={NEB_LENGTH.px_024} />
         </Box>
       )}
-    </Section>
+    </Box>
   )
 }
