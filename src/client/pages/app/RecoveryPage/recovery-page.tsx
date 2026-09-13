@@ -11,10 +11,10 @@ import {
   PasswordInput,
   Spacer,
   Text,
+  Title,
   useSnackbar,
 } from 'lib/components'
 import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
-import { Section } from 'client/components/reusable/Section'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
@@ -67,125 +67,127 @@ export const RecoveryPage = () => {
   return (
     <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
-        <Section size="lg" heading="Password recovery" iconName="key-round">
-          <FormProvider {...form}>
-            <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
-              {!token ? (
-                <Controller
-                  name="email"
-                  control={form.control}
-                  rules={{
-                    required: 'is required',
-                    minLength: { value: 5, message: 'is too short' },
-                    maxLength: { value: 254, message: 'is too long' },
-                    validate: {
-                      email: value => EMAIL_REGEX.test(value) || 'has wrong format',
-                    },
-                  }}
-                  render={({ field, fieldState }) => {
-                    const labelErrPart = fieldState.error?.message
-                      ? ` - ${fieldState.error.message}`
-                      : ''
+        <Title typography="h4" iconName="key-round">
+          Password recovery
+        </Title>
+        <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+        <FormProvider {...form}>
+          <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
+            {!token ? (
+              <Controller
+                name="email"
+                control={form.control}
+                rules={{
+                  required: 'is required',
+                  minLength: { value: 5, message: 'is too short' },
+                  maxLength: { value: 254, message: 'is too long' },
+                  validate: {
+                    email: value => EMAIL_REGEX.test(value) || 'has wrong format',
+                  },
+                }}
+                render={({ field, fieldState }) => {
+                  const labelErrPart = fieldState.error?.message
+                    ? ` - ${fieldState.error.message}`
+                    : ''
 
-                    return (
-                      <>
-                        <Text
-                          color="red"
-                          intent={labelErrPart ? 'primary' : 'neutral'}
-                        >{`Email${labelErrPart}`}</Text>
-                        <Spacer blockSize={NEB_LENGTH.px_004} />
-                        <Input
-                          value={field.value}
-                          onChange={field.onChange}
-                          onBlur={e => {
-                            const trimmed = e.target.value.trim()
-                            if (trimmed !== e.target.value) field.onChange(trimmed)
-                            field.onBlur()
-                          }}
-                          disabled={isSubmitting}
-                          tagAttrs={{ autoComplete: 'off' }}
-                          placeholder="Enter email address"
-                        />
-                      </>
-                    )
-                  }}
-                />
-              ) : (
-                <Controller
-                  name="newPassword"
-                  control={form.control}
-                  rules={{
-                    required: 'is required',
-                    minLength: { value: 8, message: 'is too short' },
-                    maxLength: { value: 128, message: 'is too long' },
-                  }}
-                  render={({ field, fieldState }) => {
-                    const labelErrPart = fieldState.error?.message
-                      ? ` - ${fieldState.error.message}`
-                      : ''
+                  return (
+                    <>
+                      <Text
+                        color="red"
+                        intent={labelErrPart ? 'primary' : 'neutral'}
+                      >{`Email${labelErrPart}`}</Text>
+                      <Spacer blockSize={NEB_LENGTH.px_004} />
+                      <Input
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={e => {
+                          const trimmed = e.target.value.trim()
+                          if (trimmed !== e.target.value) field.onChange(trimmed)
+                          field.onBlur()
+                        }}
+                        disabled={isSubmitting}
+                        tagAttrs={{ autoComplete: 'off' }}
+                        placeholder="Enter email address"
+                      />
+                    </>
+                  )
+                }}
+              />
+            ) : (
+              <Controller
+                name="newPassword"
+                control={form.control}
+                rules={{
+                  required: 'is required',
+                  minLength: { value: 8, message: 'is too short' },
+                  maxLength: { value: 128, message: 'is too long' },
+                }}
+                render={({ field, fieldState }) => {
+                  const labelErrPart = fieldState.error?.message
+                    ? ` - ${fieldState.error.message}`
+                    : ''
 
-                    return (
-                      <>
-                        <Text
-                          color="red"
-                          intent={labelErrPart ? 'primary' : 'neutral'}
-                        >{`New password${labelErrPart}`}</Text>
-                        <Spacer blockSize={NEB_LENGTH.px_004} />
-                        <PasswordInput
-                          value={field.value}
-                          onChange={field.onChange}
-                          onBlur={e => {
-                            const trimmed = e.target.value.trim()
-                            if (trimmed !== e.target.value) field.onChange(trimmed)
-                            field.onBlur()
-                          }}
-                          disabled={isSubmitting}
-                          placeholder="Enter password"
-                          autoComplete="off"
-                        />
-                      </>
-                    )
-                  }}
-                />
-              )}
-              <Spacer blockSize={NEB_LENGTH.px_016} />
-              <Box display="flex">
-                <Box flex={{ base: '1', lg: '0' }}>
-                  <Button
-                    tagAttrs={{ type: 'submit' }}
-                    fullWidth
-                    color="blue"
-                    intent="primary"
-                    loading={isSubmitting}
-                  >
-                    {!token ? 'Recover' : 'Update'}
-                  </Button>
-                </Box>
+                  return (
+                    <>
+                      <Text
+                        color="red"
+                        intent={labelErrPart ? 'primary' : 'neutral'}
+                      >{`New password${labelErrPart}`}</Text>
+                      <Spacer blockSize={NEB_LENGTH.px_004} />
+                      <PasswordInput
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={e => {
+                          const trimmed = e.target.value.trim()
+                          if (trimmed !== e.target.value) field.onChange(trimmed)
+                          field.onBlur()
+                        }}
+                        disabled={isSubmitting}
+                        placeholder="Enter password"
+                        autoComplete="off"
+                      />
+                    </>
+                  )
+                }}
+              />
+            )}
+            <Spacer blockSize={NEB_LENGTH.px_016} />
+            <Box display="flex">
+              <Box flex={{ base: '1', lg: '0' }}>
+                <Button
+                  tagAttrs={{ type: 'submit' }}
+                  fullWidth
+                  color="blue"
+                  intent="primary"
+                  loading={isSubmitting}
+                >
+                  {!token ? 'Recover' : 'Update'}
+                </Button>
               </Box>
             </Box>
-          </FormProvider>
-          <Spacer blockSize={NEB_LENGTH.px_048} />
-          <HorizontalRule />
-          <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Box display="flex" justifyContent="center">
-            <Link
-              href={PageKey.authLogin}
-              onClick={() => {
-                navigateTo(PageKey.authLogin)
-              }}
-            >
-              <Button
-                variant="ghost"
-                color="blue"
-                intent="primary"
-                iconName="arrow-left"
-                disabled={recoverPassword.isMakingRequest || recoverPasswordConfirm.isMakingRequest}
-              >
-                Back
-              </Button>
-            </Link>
           </Box>
-        </Section>
+        </FormProvider>
+        <Spacer blockSize={NEB_LENGTH.px_048} />
+        <HorizontalRule />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
+        <Box display="flex" justifyContent="center">
+          <Link
+            href={PageKey.authLogin}
+            onClick={() => {
+              navigateTo(PageKey.authLogin)
+            }}
+          >
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-left"
+              disabled={recoverPassword.isMakingRequest || recoverPasswordConfirm.isMakingRequest}
+            >
+              Back
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </Box>
   )

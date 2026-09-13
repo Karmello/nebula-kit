@@ -1,4 +1,4 @@
-import { Box, HorizontalRule, NEB_LENGTH, Text, Title } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Title } from 'lib/components'
 
 import { ChatAssistant } from './ChatAssistant'
 

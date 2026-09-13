@@ -1,5 +1,4 @@
-import { Box, NEB_LENGTH, Reveal, Text } from 'lib/components'
-import { Section } from 'client/components/reusable/Section'
+import { Box, HorizontalRule, NEB_LENGTH, Reveal, Text, Title } from 'lib/components'
 
 import { FAQ } from './definitions'
 
@@ -20,17 +19,15 @@ export const FaqPage = () => {
       paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       maxInlineSize="75rem"
     >
-      <Section
-        size="lg"
-        heading="Frequently asked questions"
-        iconName="message-circle-question-mark"
-      >
-        <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_016}>
-          {FAQ.map(({ question, answer }, key) => (
-            <Question key={key} question={question} answer={answer} />
-          ))}
-        </Box>
-      </Section>
+      <Title typography="h4" iconName="message-circle-question-mark">
+        Frequently asked questions
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_016}>
+        {FAQ.map(({ question, answer }, key) => (
+          <Question key={key} question={question} answer={answer} />
+        ))}
+      </Box>
     </Box>
   )
 }

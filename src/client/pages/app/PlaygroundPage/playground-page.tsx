@@ -1,8 +1,7 @@
 import { useEffect } from 'react'
 
-import { Box, NEB_LENGTH, Spacer, SplitView } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, SplitView, Title } from 'lib/components'
 import { LIB_PREFIX } from 'lib/constants'
-import { Section } from 'client/components/reusable/Section'
 import { getInitialState, usePlaygroundStore } from 'client/store'
 
 import {
@@ -33,69 +32,71 @@ export const PlaygroundPage = () => {
       paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       overflowY="hidden"
     >
-      <Section size="lg" heading={`Playground (${activeComponent})`} iconName="flask-conical">
-        <Spacer blockSize={NEB_LENGTH.px_008} />
-        <SplitView sidePosition="right">
-          {({ mode, setSideOpen }) => {
-            return (
-              <>
-                <SplitView.Main>
-                  <SplitView.MainBar>
+      <Title typography="h4" iconName="flask-conical">
+        {`Playground (${activeComponent})`}
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+      <SplitView sidePosition="right">
+        {({ mode, setSideOpen }) => {
+          return (
+            <>
+              <SplitView.Main>
+                <SplitView.MainBar>
+                  <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
                     <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
-                      <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
-                        <TogglePropsButton />
-                        <PredefinedExamples />
-                      </Box>
-                      <DocsButton />
+                      <TogglePropsButton />
+                      <PredefinedExamples />
                     </Box>
-                  </SplitView.MainBar>
-                  <Spacer blockSize={NEB_LENGTH.px_024} />
-                  <RenderPanel />
-                  <Spacer blockSize={NEB_LENGTH.px_048} />
-                  <PropsViewer
-                    handleSideVisibility={() => {
-                      if (mode === 'overlay') setSideOpen(true)
-                    }}
-                  />
-                </SplitView.Main>
-                <SplitView.Side intent="neutral" inlineSize="320px">
+                    <DocsButton />
+                  </Box>
+                </SplitView.MainBar>
+                <Spacer blockSize={NEB_LENGTH.px_024} />
+                <RenderPanel />
+                <Spacer blockSize={NEB_LENGTH.px_048} />
+                <PropsViewer
+                  handleSideVisibility={() => {
+                    if (mode === 'overlay') setSideOpen(true)
+                  }}
+                />
+              </SplitView.Main>
+              <SplitView.Side intent="neutral" inlineSize="320px">
+                <Box
+                  padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
+                  paddingLeft={{ lg: NEB_LENGTH.px_032 }}
+                >
                   <Box
-                    padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
-                    paddingLeft={{ lg: NEB_LENGTH.px_032 }}
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="stretch"
+                    rowGap={NEB_LENGTH.px_024}
                   >
-                    <Box
-                      display="flex"
-                      flexDirection="column"
-                      alignItems="stretch"
-                      rowGap={NEB_LENGTH.px_024}
-                    >
-                      <Box>
-                        <ComponentSelect />
-                      </Box>
-                      <Box>
-                        <Box
-                          display="flex"
-                          flexDirection="column"
-                          alignItems="stretch"
-                          rowGap={NEB_LENGTH.px_008}
-                        >
-                          <Box>
-                            <PropSelect />
-                          </Box>
-                          <SwitchPropViewButton />
+                    <Box>
+                      <ComponentSelect />
+                    </Box>
+                    <Box>
+                      <Box
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="stretch"
+                        rowGap={NEB_LENGTH.px_008}
+                      >
+                        <Box>
+                          <PropSelect />
                         </Box>
+                        <SwitchPropViewButton />
                       </Box>
-                      <Box>
-                        <PropEditor />
-                      </Box>
+                    </Box>
+                    <Box>
+                      <PropEditor />
                     </Box>
                   </Box>
-                </SplitView.Side>
-              </>
-            )
-          }}
-        </SplitView>
-      </Section>
+                </Box>
+              </SplitView.Side>
+            </>
+          )
+        }}
+      </SplitView>
     </Box>
   )
 }
