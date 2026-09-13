@@ -1,5 +1,11 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
+  BOX_BG_MODE,
+  BOX_COLORS,
+  BOX_INTENTS,
+  BOX_SURFACE_DEPTHS,
+} from 'lib/components/core/Box/constants'
+import {
+  DEFAULT_HORIZONTAL_RULE_BG_MODE,
   DEFAULT_HORIZONTAL_RULE_INTENT,
   DEFAULT_HORIZONTAL_RULE_MARGIN_BLOCK,
   DEFAULT_HORIZONTAL_RULE_SURFACE_DEPTH,
@@ -8,6 +14,12 @@ import { HorizontalRuleProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const HORIZONTAL_RULE_PROPS: Record<keyof HorizontalRuleProps, DocProp> = {
+  bgMode: {
+    options: BOX_BG_MODE,
+    defaultValue: DEFAULT_HORIZONTAL_RULE_BG_MODE,
+    description:
+      "Controls how the component's background is painted - transparent for no fill, tinted for a fill that blends with whatever sits behind it, or filled for a solid, full-strength fill.",
+  },
   color: {
     options: BOX_COLORS,
     description: 'Color applied to the component.',

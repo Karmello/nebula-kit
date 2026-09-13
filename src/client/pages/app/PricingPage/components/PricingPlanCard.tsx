@@ -1,9 +1,8 @@
 import { ReactNode } from 'react'
 
-import { Box, Icon, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { Box, HorizontalRule, Icon, Link, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import type { BoxColor } from 'lib/components/core/Box/types'
 import type { IconName } from 'lib/components/core/Icon/types'
-import { Section } from 'client/components/reusable/Section'
 import { Plan } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 
@@ -47,20 +46,30 @@ export const PricingPlanCard = ({
   }
 
   return (
-    <Section
-      heading={title}
-      variant={plan === 'free' ? 'outline' : 'soft-outline'}
-      intent={plan === 'free' ? 'tertiary' : 'primary'}
-      color={color}
-      iconName={iconName}
+    <Box
       interactive
-      size="lg"
+      bgMode="tinted"
+      borderMode="tinted"
+      color={color}
+      intent="secondary"
+      padding={NEB_LENGTH.px_024}
     >
+      <Title typography="h4" intent="primary" color={color} iconName={iconName}>
+        {title}
+      </Title>
+      <HorizontalRule
+        marginBottom={NEB_LENGTH.px_024}
+        bgMode="tinted"
+        intent="secondary"
+        color={color}
+      />
       <Text intent="neutral" bold>
         {headline}
       </Text>
       <Spacer />
-      <Text typography="h5">{priceInfo}</Text>
+      <Text typography="h5" intent="primary" color={color}>
+        {priceInfo}
+      </Text>
       <Spacer />
       <Text intent="neutral">{description}</Text>
       <Spacer />
@@ -99,11 +108,16 @@ export const PricingPlanCard = ({
           <Text intent="neutral">{s}</Text>
         </OptionIncluded>
       ))}
-      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <HorizontalRule
+        marginBlock={NEB_LENGTH.px_024}
+        bgMode="tinted"
+        intent="secondary"
+        color={color}
+      />
       <Box display="flex" justifyContent="center">
         <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_016} />
-    </Section>
+    </Box>
   )
 }

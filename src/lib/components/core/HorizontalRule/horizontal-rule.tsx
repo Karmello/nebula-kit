@@ -2,6 +2,7 @@ import { NEB_LENGTH } from 'lib/constants'
 
 import { Box } from '../Box'
 import {
+  DEFAULT_HORIZONTAL_RULE_BG_MODE,
   DEFAULT_HORIZONTAL_RULE_INTENT,
   DEFAULT_HORIZONTAL_RULE_MARGIN_BLOCK,
   DEFAULT_HORIZONTAL_RULE_SURFACE_DEPTH,
@@ -12,6 +13,7 @@ export const HorizontalRule = ({
   // Box
   tagAttrs,
   tagRef,
+  bgMode = DEFAULT_HORIZONTAL_RULE_BG_MODE,
   color,
   intent = DEFAULT_HORIZONTAL_RULE_INTENT,
   marginBlock = DEFAULT_HORIZONTAL_RULE_MARGIN_BLOCK,
@@ -25,7 +27,7 @@ export const HorizontalRule = ({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      bgMode="filled"
+      bgMode={bgMode}
       surfaceDepth={surfaceDepth}
       color={color}
       intent={intent}

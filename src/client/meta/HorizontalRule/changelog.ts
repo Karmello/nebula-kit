@@ -5,6 +5,7 @@ export const HORIZONTAL_RULE_CHANGELOG: DocChangelog = {
     'renamed `Divider` to `HorizontalRule`',
     'removed `surface` prop',
     'changed `surface` prop to `surfaceDepth`',
+    'exposed `bgMode` prop via Box',
   ],
   '0.9.0': [
     'added support for predefined size scale values on margin-related props',
