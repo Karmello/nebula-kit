@@ -22,7 +22,7 @@ export const AccountDeactivationSection = ({
       overflowY="hidden"
       maxInlineSize="100%"
     >
-      <Title typography="h5" color="red">
+      <Title typography="h5" color="red" intent="primary">
         Account deactivation
       </Title>
       <HorizontalRule color="red" marginTop={NEB_LENGTH.px_004} />

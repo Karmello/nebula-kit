@@ -22,10 +22,10 @@ export const PaymentCancelSection = ({
       overflowY="hidden"
       maxInlineSize="100%"
     >
-      <Title typography="h5" color="red">
+      <Title typography="h5" color="amber" intent="primary">
         Subscription
       </Title>
-      <HorizontalRule color="red" marginTop={NEB_LENGTH.px_004} />
+      <HorizontalRule color="amber" marginTop={NEB_LENGTH.px_004} />
       <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text intent="neutral">
         This section allows you to cancel your active subscription and return to the free plan.
