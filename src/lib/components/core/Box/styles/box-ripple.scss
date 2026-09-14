@@ -13,7 +13,7 @@
     height: var(--neb-ripple-size, 0);
     border-radius: 50%;
     background-color: var(--ripple);
-    opacity: calc(var(--ripple-opacity) * var(--neb-ripple-factor));
+    opacity: var(--neb-ripple-opacity);
     transform: scale(0);
     pointer-events: none;
     will-change: transform, opacity;

@@ -3,6 +3,7 @@ html[data-theme='dark'],
   --neb-background: black;
   --neb-text: white;
   --neb-focus-ring-color: white;
+  --neb-ripple-opacity: 0.08;
 
   &[data-neb-box-intent='neutral'] {
     &[data-neb-box-surface-depth='base'] {

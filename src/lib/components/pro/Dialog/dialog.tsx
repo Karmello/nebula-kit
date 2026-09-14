@@ -125,7 +125,7 @@ export const Dialog = ({
                         maxBlockSize="90dvh"
                         position="relative"
                         overflowY="auto"
-                        intent="strong"
+                        intent="secondary"
                         inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                       >
                         <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">

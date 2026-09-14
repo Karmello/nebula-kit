@@ -13,6 +13,8 @@
   --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
   --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
 
+  --ripple: currentColor;
+
   &[data-neb-box-bg-mode='transparent'] {
     --bg: transparent;
     --bg-hover: transparent;
@@ -87,6 +89,7 @@
     --text-hover: var(--surface-hover);
     --text-active: var(--surface-active);
     --text-selection: var(--surface-selection);
+    --ripple: var(--neb-text);
 
     &[data-neb-box-intent='neutral'] {
       --text: var(--neb-text);

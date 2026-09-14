@@ -2,10 +2,9 @@ import { BOX_COLORS } from 'lib/components/core/Box'
 import {
   DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE,
   DEFAULT_NEBKIT_PROVIDER_BRAND,
-  DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
+  DEFAULT_NEBKIT_PROVIDER_RIPPLE,
   DEFAULT_NEBKIT_PROVIDER_THEME,
   NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
-  NEBKIT_PROVIDER_RIPPLE_MODES,
   NEBKIT_PROVIDER_THEMES,
 } from 'lib/components/core/NebkitProvider/constants'
 import type { NebkitProviderProps } from 'lib/components/core/NebkitProvider/types'
@@ -32,10 +31,10 @@ export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, DocProp> =
     description:
       'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
   },
-  rippleMode: {
-    options: NEBKIT_PROVIDER_RIPPLE_MODES,
-    defaultValue: DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE,
-    description: 'Controls how visible the ripple interaction effect is across components.',
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_RIPPLE),
+    description: 'Enables the ripple interaction effect across components by default.',
   },
   theme: {
     options: NEBKIT_PROVIDER_THEMES,

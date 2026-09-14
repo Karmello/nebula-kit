@@ -8,7 +8,6 @@ export const NEBKIT_PROVIDER_BORDER_RADIUS_SIZES = [
   'lg',
   'xl',
 ] as const satisfies TShirtSize[]
-export const NEBKIT_PROVIDER_RIPPLE_MODES = ['off', 'default', 'emphasized'] as const
 export const NEBKIT_PROVIDER_THEMES = ['light', 'dark'] as const
 
 export const NEBKIT_PROVIDER_SIZES_MAP: {
@@ -21,5 +20,4 @@ export const DEFAULT_NEBKIT_PROVIDER_THEME: (typeof NEBKIT_PROVIDER_THEMES)[numb
 export const DEFAULT_NEBKIT_PROVIDER_BRAND: (typeof BOX_COLORS)[number] = 'gray'
 export const DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE: (typeof NEBKIT_PROVIDER_BORDER_RADIUS_SIZES)[number] =
   'md'
-export const DEFAULT_NEBKIT_PROVIDER_RIPPLE_MODE: (typeof NEBKIT_PROVIDER_RIPPLE_MODES)[number] =
-  'default'
+export const DEFAULT_NEBKIT_PROVIDER_RIPPLE = false

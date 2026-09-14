@@ -14,7 +14,7 @@
 
 .neb-loader[data-neb-box-drawable='true']::before {
   border-color: var(--neb-text);
-  opacity: var(--neb-loader-opacity);
+  opacity: 0.1;
 }
 
 .neb-loader[data-neb-box-drawable='true']::after {

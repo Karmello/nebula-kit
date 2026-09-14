@@ -8,8 +8,7 @@ export const useRipple = (elemRef: RefObject<any>, active?: boolean) => {
   useEffect(() => {
     if (typeof document === 'undefined') return
 
-    const isGloballyEnabled = () =>
-      document.documentElement.getAttribute('data-ripple-mode') !== 'off'
+    const isGloballyEnabled = () => document.documentElement.getAttribute('data-ripple') === 'true'
 
     setGloballyEnabled(isGloballyEnabled())
 
@@ -19,7 +18,7 @@ export const useRipple = (elemRef: RefObject<any>, active?: boolean) => {
 
     observer.observe(document.documentElement, {
       attributes: true,
-      attributeFilter: ['data-ripple-mode'],
+      attributeFilter: ['data-ripple'],
     })
 
     return () => observer.disconnect()
