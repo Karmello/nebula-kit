@@ -3,9 +3,10 @@ html[data-theme='light'],
   --neb-background: white;
   --neb-text: black;
   --neb-focus-ring-color: black;
-  --neb-ripple-opacity: 0.06;
 
   &[data-neb-box-intent='neutral'] {
+    --ripple-opacity: 0.02;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: 2;
@@ -39,6 +40,8 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-intent='muted'] {
+    --ripple-opacity: 0.03;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: 2;
@@ -72,6 +75,8 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-intent='tertiary'] {
+    --ripple-opacity: 0.04;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: 3;
@@ -105,6 +110,8 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-intent='secondary'] {
+    --ripple-opacity: 0.05;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: 4;
@@ -138,6 +145,8 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-intent='primary'] {
+    --ripple-opacity: 0.06;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: 5;
@@ -171,6 +180,8 @@ html[data-theme='light'],
   }
 
   &[data-neb-box-intent='strong'] {
+    --ripple-opacity: 0.07;
+
     &[data-neb-box-surface-depth='base'] {
       --surface-base-offset: 0;
       --surface-hover-offset: -5;

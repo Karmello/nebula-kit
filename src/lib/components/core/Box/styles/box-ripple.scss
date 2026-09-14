@@ -12,8 +12,8 @@
     width: var(--neb-ripple-size, 0);
     height: var(--neb-ripple-size, 0);
     border-radius: 50%;
-    background-color: var(--ripple);
-    opacity: var(--neb-ripple-opacity);
+    background-color: var(--ripple, transparent);
+    opacity: var(--ripple-opacity, 0);
     transform: scale(0);
     pointer-events: none;
     will-change: transform, opacity;

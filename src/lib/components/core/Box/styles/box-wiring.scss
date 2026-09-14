@@ -33,6 +33,7 @@
       --text-hover: white;
       --text-active: white;
       --text-selection: white;
+      --ripple: white;
     }
 
     &[data-neb-box-intent='strong'] {
@@ -40,6 +41,7 @@
       --text-hover: var(--neb-background);
       --text-active: var(--neb-background);
       --text-selection: var(--neb-background);
+      --ripple: var(--neb-background);
     }
   }
 
@@ -54,6 +56,7 @@
       --text-hover: var(--color-primary);
       --text-active: var(--color-primary);
       --text-selection: var(--color-primary);
+      --ripple: var(--color-primary);
     }
   }
 
@@ -89,17 +92,19 @@
     --text-hover: var(--surface-hover);
     --text-active: var(--surface-active);
     --text-selection: var(--surface-selection);
-    --ripple: var(--neb-text);
+    --ripple: var(--surface);
 
     &[data-neb-box-intent='neutral'] {
       --text: var(--neb-text);
       --text-hover: var(--neb-text);
       --text-active: var(--neb-text);
       --text-selection: var(--neb-text);
+      --ripple: var(--neb-text);
     }
   }
 
   &[data-neb-box-text='default'] {
     --text: var(--neb-text);
+    --ripple: var(--neb-text);
   }
 }
