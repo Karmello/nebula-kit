@@ -22,6 +22,8 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
       overflowY="auto"
       padding={NEB_LENGTH.px_024}
       borderBottomWidth={NEB_LENGTH.px_000}
+      borderBottomLeftRadius={NEB_LENGTH.px_000}
+      borderBottomRightRadius={NEB_LENGTH.px_000}
     >
       <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_048}>
         {chatHistory.map(({ role, content }, key) =>

@@ -12,6 +12,7 @@ import {
   DEFAULT_TEXTAREA_RESIZE,
   DEFAULT_TEXTAREA_ROWS,
   DEFAULT_TEXTAREA_VARIANT,
+  TEXTAREA_VARIANT_MAP,
 } from './constants'
 import { TextareaProps } from './types'
 
@@ -75,7 +76,9 @@ export const Textarea = ({
       }}
       tagRef={tagRef}
       drawable
-      // variant={variant}
+      bgMode={TEXTAREA_VARIANT_MAP[variant].bgMode}
+      borderMode={TEXTAREA_VARIANT_MAP[variant].borderMode}
+      text={TEXTAREA_VARIANT_MAP[variant].text}
       color={color}
       intent={intent}
       disabled={disabled}
