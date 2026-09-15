@@ -7,7 +7,7 @@ import {
   DEFAULT_TABS_DEFAULT_VALUE,
   DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
-  DEFAULT_TABS_SIZE,
+  DEFAULT_TABS_SCALE,
 } from './constants'
 import type { TabsPanelProps } from './slots/TabsPanel/types'
 import type { TabsTabProps } from './slots/TabsTab/types'
@@ -22,7 +22,7 @@ export const Tabs = ({
   onChange,
   color,
   intent = DEFAULT_TABS_INTENT,
-  size = DEFAULT_TABS_SIZE,
+  scale = DEFAULT_TABS_SCALE,
   direction = DEFAULT_TABS_DIRECTION,
   stretch,
 }: TabsProps) => {
@@ -157,8 +157,8 @@ export const Tabs = ({
                         display="flex"
                         tagAttrs={{
                           style: {
-                            blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                            blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
                             minInlineSize,
                           },
                         }}
@@ -168,8 +168,8 @@ export const Tabs = ({
                         <Text
                           tag="span"
                           bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
+                          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+                          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
                         >
                           {tab}
                         </Text>
@@ -197,7 +197,7 @@ export const Tabs = ({
                   'aria-labelledby': `tab-${value}`,
                   hidden: !isSelected,
                 }}
-                padding={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                padding={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
               >
                 {panel}
               </Box>

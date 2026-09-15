@@ -8,7 +8,7 @@ export type CheckboxVariant = (typeof CHECKBOX_VARIANTS)[number]
 export type CheckboxProps = {
   // own
   variant?: CheckboxVariant
-  size?: TShirtSize
+  scale?: TShirtSize
   checked?: boolean
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void

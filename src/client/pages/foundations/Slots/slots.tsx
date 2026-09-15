@@ -31,7 +31,7 @@ export default () => {
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Callout
         variant="soft-outline"
-        size="sm"
+        scale="sm"
         content="Components that rely on slots automatically check for required ones during render.
 If a required slot is missing, NebulaKit logs a warning in the console to help you catch structural issues early.
 Optional slots are ignored when absent, so you can extend layouts without noise."

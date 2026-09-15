@@ -10,11 +10,11 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
     description: 'Different checkbox sizes in the outline variant.',
     jsx: (
       <Box display="flex" gap="8px" alignItems="center">
-        <Checkbox size="xs" variant="outline" />
-        <Checkbox size="sm" variant="outline" />
-        <Checkbox size="md" variant="outline" />
-        <Checkbox size="lg" variant="outline" />
-        <Checkbox size="xl" variant="outline" />
+        <Checkbox scale="xs" variant="outline" />
+        <Checkbox scale="sm" variant="outline" />
+        <Checkbox scale="md" variant="outline" />
+        <Checkbox scale="lg" variant="outline" />
+        <Checkbox scale="xl" variant="outline" />
       </Box>
     ),
   },
@@ -22,11 +22,11 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
     description: 'Different checkbox sizes in the soft-outline variant.',
     jsx: (
       <Box display="flex" gap="8px" alignItems="center">
-        <Checkbox size="xs" variant="soft-outline" />
-        <Checkbox size="sm" variant="soft-outline" />
-        <Checkbox size="md" variant="soft-outline" />
-        <Checkbox size="lg" variant="soft-outline" />
-        <Checkbox size="xl" variant="soft-outline" />
+        <Checkbox scale="xs" variant="soft-outline" />
+        <Checkbox scale="sm" variant="soft-outline" />
+        <Checkbox scale="md" variant="soft-outline" />
+        <Checkbox scale="lg" variant="soft-outline" />
+        <Checkbox scale="xl" variant="soft-outline" />
       </Box>
     ),
   },
@@ -34,11 +34,11 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
     description: 'Different checkbox sizes in the solid variant.',
     jsx: (
       <Box display="flex" gap="8px" alignItems="center">
-        <Checkbox size="xs" variant="solid" />
-        <Checkbox size="sm" variant="solid" />
-        <Checkbox size="md" variant="solid" />
-        <Checkbox size="lg" variant="solid" />
-        <Checkbox size="xl" variant="solid" />
+        <Checkbox scale="xs" variant="solid" />
+        <Checkbox scale="sm" variant="solid" />
+        <Checkbox scale="md" variant="solid" />
+        <Checkbox scale="lg" variant="solid" />
+        <Checkbox scale="xl" variant="solid" />
       </Box>
     ),
   },
@@ -46,11 +46,11 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
     description: 'Disabled selected checkboxes.',
     jsx: (
       <Box display="flex" gap="8px" alignItems="center">
-        <Checkbox size="xs" variant="solid" disabled defaultChecked />
-        <Checkbox size="sm" variant="solid" disabled defaultChecked />
-        <Checkbox size="md" variant="solid" disabled defaultChecked />
-        <Checkbox size="lg" variant="solid" disabled defaultChecked />
-        <Checkbox size="xl" variant="solid" disabled defaultChecked />
+        <Checkbox scale="xs" variant="solid" disabled defaultChecked />
+        <Checkbox scale="sm" variant="solid" disabled defaultChecked />
+        <Checkbox scale="md" variant="solid" disabled defaultChecked />
+        <Checkbox scale="lg" variant="solid" disabled defaultChecked />
+        <Checkbox scale="xl" variant="solid" disabled defaultChecked />
       </Box>
     ),
   },

@@ -5,7 +5,7 @@ export type PropsFromAvatarKey = (typeof PROPS_FROM_AVATAR)[number]
 export const PROPS_FROM_AVATAR = [
   'initials',
   'shape',
-  'size',
+  'scale',
   'src',
 ] as const satisfies readonly (keyof AvatarProps)[]
 

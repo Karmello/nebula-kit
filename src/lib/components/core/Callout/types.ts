@@ -11,7 +11,7 @@ export type CalloutProps<T extends CalloutTag = 'div'> = {
   // own
   content: string
   heading?: string
-  size?: TShirtSize
+  scale?: TShirtSize
   variant?: CalloutVariant
   status?: CalloutStatus
   // Box

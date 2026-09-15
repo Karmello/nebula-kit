@@ -1,3 +1,4 @@
+import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { TShirtSize } from 'lib/types'
 
 import type { BoxBgMode, BoxBorderMode, BoxColor, BoxIntent, BoxText } from '../Box/types'
@@ -8,19 +9,45 @@ export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const
 export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
 export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
 
-export const CALLOUT_SIZE_CONFIG: Record<
+export const CALLOUT_SCALE_CONFIG: Record<
   TShirtSize,
   {
     padding: string
     textTypography: TextTypography
+    contentFontSize: string
     spacerBlockSize: string
   }
 > = {
-  xs: { padding: '16px', textTypography: 'h6', spacerBlockSize: '8px' },
-  sm: { padding: '16px', textTypography: 'h6', spacerBlockSize: '8px' },
-  md: { padding: '24px', textTypography: 'h5', spacerBlockSize: '16px' },
-  lg: { padding: '32px', textTypography: 'h4', spacerBlockSize: '24px' },
-  xl: { padding: '48px', textTypography: 'h3', spacerBlockSize: '32px' },
+  xs: {
+    padding: '12px',
+    textTypography: 'h6',
+    contentFontSize: CONTROL_SCALE_MAP.xs.fontSize,
+    spacerBlockSize: '6px',
+  },
+  sm: {
+    padding: '16px',
+    textTypography: 'h6',
+    contentFontSize: CONTROL_SCALE_MAP.sm.fontSize,
+    spacerBlockSize: '8px',
+  },
+  md: {
+    padding: '24px',
+    textTypography: 'h5',
+    contentFontSize: CONTROL_SCALE_MAP.md.fontSize,
+    spacerBlockSize: '16px',
+  },
+  lg: {
+    padding: '32px',
+    textTypography: 'h4',
+    contentFontSize: CONTROL_SCALE_MAP.lg.fontSize,
+    spacerBlockSize: '24px',
+  },
+  xl: {
+    padding: '48px',
+    textTypography: 'h3',
+    contentFontSize: CONTROL_SCALE_MAP.xl.fontSize,
+    spacerBlockSize: '32px',
+  },
 }
 
 export const CALLOUT_CONFIG: Record<
@@ -33,7 +60,7 @@ export const CALLOUT_CONFIG: Record<
   error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
 }
 
-export const DEFAULT_CALLOUT_SIZE: TShirtSize = 'md'
+export const DEFAULT_CALLOUT_SCALE: TShirtSize = 'md'
 export const DEFAULT_CALLOUT_VARIANT: (typeof CALLOUT_VARIANTS)[number] = 'solid'
 export const DEFAULT_CALLOUT_INTENT: BoxIntent = 'primary'
 export const DEFAULT_CALLOUT_STATUS: (typeof CALLOUT_STATUSES)[number] = 'info'

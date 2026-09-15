@@ -16,7 +16,7 @@ export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = {
   tree: BreadcrumbNode[]
   defaultPath?: string[]
   path?: string[]
-  size?: TShirtSize
+  scale?: TShirtSize
   onChange?: (path: string[]) => void
   // Box
   tag?: BoxProps<T>['tag']

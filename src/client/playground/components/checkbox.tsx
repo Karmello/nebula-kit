@@ -7,7 +7,7 @@ export const PROPS_FROM_CHECKBOX = [
   'color',
   'disabled',
   'intent',
-  'size',
+  'scale',
   'variant',
 ] as const satisfies readonly (keyof CheckboxProps)[]
 

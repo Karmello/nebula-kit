@@ -6,7 +6,7 @@ export const PROPS_FROM_TABS = [
   'color',
   'direction',
   'intent',
-  'size',
+  'scale',
   'stretch',
 ] as const satisfies readonly (keyof TabsProps)[]
 

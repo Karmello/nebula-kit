@@ -83,7 +83,7 @@ export const Snackbar = ({
                 />
               </Box>
               <Callout
-                size="sm"
+                scale="sm"
                 content={snackbar?.content || ''}
                 heading={snackbar?.heading}
                 status={snackbar?.status}

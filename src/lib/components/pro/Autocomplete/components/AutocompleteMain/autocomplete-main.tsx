@@ -26,7 +26,7 @@ export const AutocompleteMain = ({
   tagRef,
   // own
   color,
-  size,
+  scale,
   intent,
   visibleItemsCount,
   noOptionsLabel,
@@ -56,7 +56,7 @@ export const AutocompleteMain = ({
 
   const triggerWidth = triggerRef.current?.offsetWidth
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale || 'md'].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveAutocompleteValues({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
@@ -152,7 +152,7 @@ export const AutocompleteMain = ({
               }}
               onFocus={() => setOpen(true)}
               placeholder={placeholder}
-              scale={size}
+              scale={scale}
               intent={intent}
               color={color}
               disabled={disabled}
@@ -174,7 +174,7 @@ export const AutocompleteMain = ({
               onClick={() => {
                 setOpen(prev => !prev)
               }}
-              scale={size}
+              scale={scale}
             />
           ) : null}
         </Box>
@@ -201,8 +201,8 @@ export const AutocompleteMain = ({
                   alignItems="center"
                   tagAttrs={{
                     style: {
-                      blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
-                      paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                      blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
+                      paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
                     },
                   }}
                 >
@@ -248,8 +248,8 @@ export const AutocompleteMain = ({
                           display="flex"
                           tagAttrs={{
                             style: {
-                              blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
-                              paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                              blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
+                              paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
                             },
                           }}
                           alignItems="center"

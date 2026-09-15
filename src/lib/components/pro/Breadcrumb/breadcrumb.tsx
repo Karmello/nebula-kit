@@ -11,7 +11,7 @@ import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
 
 import {
   DEFAULT_BREADCRUMB_INTENT,
-  DEFAULT_BREADCRUMB_SIZE,
+  DEFAULT_BREADCRUMB_SCALE,
   DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
 } from './constants'
 import { convertTreeToLevels, resolveBreadcrumbValues } from './helpers'
@@ -23,7 +23,7 @@ type BreadcrumbLevelProps = {
   onSelect: (value: string) => void
   color: BreadcrumbProps['color']
   intent: BreadcrumbProps['intent']
-  size: BreadcrumbProps['size']
+  scale: BreadcrumbProps['scale']
   isLast: boolean
 }
 
@@ -33,7 +33,7 @@ const BreadcrumbLevel = ({
   onSelect,
   color,
   intent,
-  size,
+  scale,
   isLast,
 }: BreadcrumbLevelProps) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -45,7 +45,7 @@ const BreadcrumbLevel = ({
   const selectedItemRef = useRef<HTMLButtonElement | null>(null)
 
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[size || 'md'].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale || 'md'].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveBreadcrumbValues({
     visibleItemsCount: DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
@@ -85,14 +85,14 @@ const BreadcrumbLevel = ({
           intent="primary"
           bgRole={open ? 'selection' : undefined}
           ripple={!open}
-          blockSize={CONTROL_SCALE_MAP[size || 'md'].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size || 'md'].paddingInline}
+          blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
         >
           <Text
             bold
             intent="primary"
-            fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
-            lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
+            fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
             noWrap
           >
             {currentLabel || 'Select ...'}
@@ -153,8 +153,8 @@ const BreadcrumbLevel = ({
                         display="flex"
                         tagAttrs={{
                           style: {
-                            blockSize: CONTROL_SCALE_MAP[size || 'md'].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[size || 'md'].paddingInline,
+                            blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
                           },
                         }}
                         alignItems="center"
@@ -162,8 +162,8 @@ const BreadcrumbLevel = ({
                       >
                         <Text
                           bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[size || 'md'].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[size || 'md'].lineHeight}
+                          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+                          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
                           textAlign="center"
                           noWrap
                         >
@@ -201,7 +201,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   tree,
   defaultPath,
   path,
-  size = DEFAULT_BREADCRUMB_SIZE,
+  scale = DEFAULT_BREADCRUMB_SCALE,
   onChange,
 }: BreadcrumbProps<T>) => {
   const [internalPath, setInternalPath] = useState<string[]>(defaultPath || [])
@@ -243,7 +243,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 onSelect={value => handleChange(index, value)}
                 color={color}
                 intent={intent}
-                size={size}
+                scale={scale}
                 isLast={index !== 0 && index === levels.length - 1}
               />
               {index < levels.length - 1 ? (
@@ -251,7 +251,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   name="chevron-right"
                   color={color}
                   intent="primary"
-                  size={CONTROL_SCALE_MAP[size || 'md'].fontSize}
+                  size={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
                 />
               ) : null}
             </Fragment>

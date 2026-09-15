@@ -11,7 +11,7 @@ export type TabsProps = {
   defaultValue?: string | number
   onChange?: (value: string | number) => void
   direction?: TabsDirection
-  size?: TShirtSize
+  scale?: TShirtSize
   stretch?: boolean
   // Box
   tagRef?: BoxProps['tagRef']

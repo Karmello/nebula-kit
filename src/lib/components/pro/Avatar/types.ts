@@ -7,7 +7,7 @@ export type AvatarShape = (typeof AVATAR_SHAPES)[number]
 
 export type AvatarProps = {
   // own
-  size?: TShirtSize
+  scale?: TShirtSize
   shape?: AvatarShape
   initials?: string
   // Image

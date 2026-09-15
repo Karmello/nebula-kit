@@ -5,10 +5,10 @@ import { Title } from 'lib/components/core/Title'
 import { Box } from '../Box'
 import {
   CALLOUT_CONFIG,
-  CALLOUT_SIZE_CONFIG,
+  CALLOUT_SCALE_CONFIG,
   CALLOUT_VARIANT_MAP,
   DEFAULT_CALLOUT_INTENT,
-  DEFAULT_CALLOUT_SIZE,
+  DEFAULT_CALLOUT_SCALE,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
 } from './constants'
@@ -19,7 +19,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
   tag,
   tagAttrs,
   tagRef,
-  size = DEFAULT_CALLOUT_SIZE,
+  scale = DEFAULT_CALLOUT_SCALE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,
   // own
@@ -39,20 +39,20 @@ export const Callout = <T extends CalloutTag = 'div'>({
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"
-      padding={CALLOUT_SIZE_CONFIG[size || 'md'].padding}
+      padding={CALLOUT_SCALE_CONFIG[scale || 'md'].padding}
     >
       <Title
-        typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography as any}
+        typography={CALLOUT_SCALE_CONFIG[scale || 'md'].textTypography as any}
         iconName={CALLOUT_CONFIG[status || 'info'].iconName}
       >
-        <Text typography={CALLOUT_SIZE_CONFIG[size || 'md'].textTypography}>
+        <Text typography={CALLOUT_SCALE_CONFIG[scale || 'md'].textTypography}>
           {heading || CALLOUT_CONFIG[status || 'info'].heading}
         </Text>
       </Title>
       {content ? (
         <>
-          <Spacer blockSize={CALLOUT_SIZE_CONFIG[size || 'md'].spacerBlockSize} />
-          <Text>{content}</Text>
+          <Spacer blockSize={CALLOUT_SCALE_CONFIG[scale || 'md'].spacerBlockSize} />
+          <Text fontSize={CALLOUT_SCALE_CONFIG[scale || 'md'].contentFontSize}>{content}</Text>
         </>
       ) : null}
     </Box>

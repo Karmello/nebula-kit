@@ -2,7 +2,7 @@ import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
-  DEFAULT_TABS_SIZE,
+  DEFAULT_TABS_SCALE,
   TABS_DIRECTION,
 } from 'lib/components/pro/Tabs/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
@@ -39,9 +39,9 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
     options: ['(value: string | number) => void'],
     description: 'Called when the active tab value changes.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_TABS_SIZE,
+    defaultValue: DEFAULT_TABS_SCALE,
     description: 'Sets the size of the tab items.',
   },
   stretch: {

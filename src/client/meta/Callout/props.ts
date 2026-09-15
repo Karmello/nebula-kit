@@ -3,7 +3,7 @@ import {
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
   DEFAULT_CALLOUT_INTENT,
-  DEFAULT_CALLOUT_SIZE,
+  DEFAULT_CALLOUT_SCALE,
   DEFAULT_CALLOUT_STATUS,
   DEFAULT_CALLOUT_VARIANT,
 } from 'lib/components/core/Callout/constants'
@@ -27,9 +27,9 @@ export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
     defaultValue: String(DEFAULT_CALLOUT_INTENT),
     description: "Color tone applied to the component's main color.",
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_CALLOUT_SIZE,
+    defaultValue: DEFAULT_CALLOUT_SCALE,
     description: 'Controls overall proportions - adjusting heading size and spacings.',
   },
   status: {

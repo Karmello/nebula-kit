@@ -3,7 +3,7 @@ import type { TShirtSize } from 'lib/types'
 
 import { BoxBgMode, BoxBorderMode, BoxIntent, BoxProps, BoxText } from '../Box'
 
-export const CHECKBOX_SIZE_MAP: Record<
+export const CHECKBOX_SCALE_MAP: Record<
   TShirtSize,
   { blockSize: BoxProps['blockSize']; iconSize: string }
 > = {
@@ -18,7 +18,7 @@ export const CHECKBOX_VARIANTS = ['solid', 'outline', 'soft-outline'] as const
 
 export const DEFAULT_CHECKBOX_VARIANT: (typeof CHECKBOX_VARIANTS)[number] = 'outline'
 export const DEFAULT_CHECKBOX_INTENT: BoxIntent = 'tertiary'
-export const DEFAULT_CHECKBOX_SIZE: TShirtSize = 'xs'
+export const DEFAULT_CHECKBOX_SCALE: TShirtSize = 'xs'
 
 export const CHECKBOX_VARIANT_MAP: Record<
   (typeof CHECKBOX_VARIANTS)[number],

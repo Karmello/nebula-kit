@@ -122,7 +122,7 @@ export default ({ enabled }: { enabled: boolean }) => {
             <>
               <Spacer blockSize={NEB_LENGTH.px_048} />
               <Callout
-                size="sm"
+                scale="sm"
                 status="error"
                 heading="Payment issue"
                 content="Your subscription renewal failed. Please update your

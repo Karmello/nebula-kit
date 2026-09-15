@@ -2,7 +2,7 @@ import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   CHECKBOX_VARIANTS,
   DEFAULT_CHECKBOX_INTENT,
-  DEFAULT_CHECKBOX_SIZE,
+  DEFAULT_CHECKBOX_SCALE,
   DEFAULT_CHECKBOX_VARIANT,
 } from 'lib/components/core/Checkbox/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
@@ -35,9 +35,9 @@ export const CHECKBOX_PROPS: Record<keyof CheckboxProps, DocProp> = {
     options: ['(checked: boolean) => void'],
     description: 'Called when the checked state changes. Receives the new checked value.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_CHECKBOX_SIZE,
+    defaultValue: DEFAULT_CHECKBOX_SCALE,
     description: 'Controls overall proportions, adjusting the checkbox and icon size.',
   },
   tagAttrs: {

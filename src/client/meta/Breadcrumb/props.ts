@@ -27,7 +27,7 @@ export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
     options: ['string[]'],
     description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },

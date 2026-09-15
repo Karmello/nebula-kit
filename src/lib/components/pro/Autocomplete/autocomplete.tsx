@@ -28,7 +28,7 @@ export const Autocomplete = ({
   value,
   onChange,
   onInputChange,
-  size = DEFAULT_TSHIRT_SIZE,
+  scale = DEFAULT_TSHIRT_SIZE,
   disableFiltering = DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING,
   debounceDelay,
   placeholder,
@@ -57,7 +57,7 @@ export const Autocomplete = ({
       tagRef={tagRef}
       intent={intent}
       color={color}
-      size={size}
+      scale={scale}
       visibleItemsCount={visibleItemsCount}
       noOptionsLabel={noOptionsLabel}
       inlineSize={inlineSize}

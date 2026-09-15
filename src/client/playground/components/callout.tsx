@@ -6,7 +6,7 @@ export const PROPS_FROM_CALLOUT = [
   'content',
   'heading',
   'intent',
-  'size',
+  'scale',
   'status',
   'variant',
 ] as const satisfies readonly (keyof CalloutProps)[]

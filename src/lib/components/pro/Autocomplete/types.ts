@@ -9,7 +9,7 @@ export type AutocompleteProps = {
   value?: string
   onChange?: (value: string) => void
   onInputChange?: (value: string) => void
-  size?: TShirtSize
+  scale?: TShirtSize
   disableFiltering?: boolean
   debounceDelay?: number
   placeholder?: string

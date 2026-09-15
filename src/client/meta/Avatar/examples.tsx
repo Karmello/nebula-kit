@@ -3,7 +3,7 @@ import { type DocExample } from 'client/definitions'
 
 export const AVATAR_EXAMPLES: DocExample[] = [
   {
-    code: '<Avatar src={src} size="sm" />',
+    code: '<Avatar src={src} scale="sm" />',
     skip: true,
   },
   {
@@ -12,11 +12,11 @@ export const AVATAR_EXAMPLES: DocExample[] = [
   },
   {
     description: 'The smallest size.',
-    jsx: <Avatar src="/imgs/mj23.webp" size="xs" />,
+    jsx: <Avatar src="/imgs/mj23.webp" scale="xs" />,
   },
   {
     description: 'The biggest size.',
-    jsx: <Avatar src="/imgs/mj23.webp" size="xl" />,
+    jsx: <Avatar src="/imgs/mj23.webp" scale="xl" />,
   },
   {
     description: 'Displaying initials as a fallback when the image cannot be loaded.',

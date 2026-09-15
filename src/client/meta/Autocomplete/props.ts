@@ -72,7 +72,7 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
     description: 'Controls whether the dropdown toggle is rendered next to the input.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },

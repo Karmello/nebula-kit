@@ -6,11 +6,11 @@ import { Loader } from 'lib/components/core/Loader'
 import { Text } from 'lib/components/core/Text'
 
 import {
-  AVATAR_SIZES_MAP,
+  AVATAR_SCALE_MAP,
   DEFAULT_AVATAR_OBJECT_FIT,
   DEFAULT_AVATAR_OBJECT_POSITION,
+  DEFAULT_AVATAR_SCALE,
   DEFAULT_AVATAR_SHAPE,
-  DEFAULT_AVATAR_SIZE,
   LOADER_DELAY,
   MIN_LOADER_VISIBLE_TIME,
 } from './constants'
@@ -31,7 +31,7 @@ export const Avatar = ({
   objectFit = DEFAULT_AVATAR_OBJECT_FIT,
   objectPosition = DEFAULT_AVATAR_OBJECT_POSITION,
   // own
-  size = DEFAULT_AVATAR_SIZE,
+  scale = DEFAULT_AVATAR_SCALE,
   shape = DEFAULT_AVATAR_SHAPE,
   initials,
 }: AvatarProps) => {
@@ -108,8 +108,8 @@ export const Avatar = ({
       bgMode="filled"
       intent="tertiary"
       color="gray"
-      blockSize={AVATAR_SIZES_MAP[size || 'md'].side}
-      inlineSize={AVATAR_SIZES_MAP[size || 'md'].side}
+      blockSize={AVATAR_SCALE_MAP[scale || 'md'].side}
+      inlineSize={AVATAR_SCALE_MAP[scale || 'md'].side}
       borderRadius={shape === 'round' ? '50%' : undefined}
       position="relative"
       overflow="hidden"
@@ -143,7 +143,7 @@ export const Avatar = ({
               transform: 'translate(-50%, -50%)',
             },
           }}
-          fontSize={AVATAR_SIZES_MAP[size || 'md'].fontSize}
+          fontSize={AVATAR_SCALE_MAP[scale || 'md'].fontSize}
           intent="primary"
           color="blue"
           bold

@@ -8,8 +8,8 @@ import {
 } from 'lib/components/core/Image/constants'
 import {
   AVATAR_SHAPES,
+  DEFAULT_AVATAR_SCALE,
   DEFAULT_AVATAR_SHAPE,
-  DEFAULT_AVATAR_SIZE,
 } from 'lib/components/pro/Avatar/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { AvatarProps } from 'lib/index.pro'
@@ -63,9 +63,9 @@ export const AVATAR_PROPS: Record<keyof AvatarProps, DocProp> = {
     description:
       "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_AVATAR_SIZE,
+    defaultValue: DEFAULT_AVATAR_SCALE,
     description: "Controls the avatar's overall dimensions using the predefined size scale.",
   },
   src: {
