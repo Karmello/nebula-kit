@@ -2,9 +2,9 @@ import { useEffect, useRef } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { IconButton } from 'lib/components/core/IconButton'
-import { FocusTrap } from 'lib/components/pro/FocusTrap'
 import { Portal } from 'lib/components/pro/Portal'
 import { Scale } from 'lib/components/pro/Scale'
+import { useFocusTrap } from 'lib/components/pro/useFocusTrap'
 import { WithSlots } from 'lib/components/shared'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 
@@ -35,6 +35,13 @@ export const Dialog = ({
 
   const { lock, unlock } = useGlobalScrollLock()
   const theme = useCurrentTheme()
+
+  useFocusTrap({
+    tagRef: tagRef || ref,
+    active: open,
+    onFocusEscape: onClose,
+    disableEscapeOnOutsideClick: true,
+  })
 
   useEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -97,56 +104,49 @@ export const Dialog = ({
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <FocusTrap
-                    tagRef={tagRef || ref}
-                    active={open}
-                    onFocusEscape={onClose}
-                    disableEscapeOnOutsideClick
+                  <Scale
+                    visible={open}
+                    easing={open ? 'ease-out' : 'ease-in'}
+                    duration={DIALOG_RESIZE_DURATION}
                   >
-                    <Scale
-                      visible={open}
-                      easing={open ? 'ease-out' : 'ease-in'}
-                      duration={DIALOG_RESIZE_DURATION}
+                    <Box
+                      tag="dialog"
+                      tagAttrs={{
+                        ...tagAttrs,
+                        role: 'dialog',
+                        'aria-modal': true,
+                        onClick: e => {
+                          e.stopPropagation()
+                        },
+                      }}
+                      tagRef={tagRef || ref}
+                      drawable
+                      borderMode="filled"
+                      maxInlineSize="95dvw"
+                      maxBlockSize="90dvh"
+                      position="relative"
+                      overflowY="auto"
+                      intent="secondary"
+                      inlineSize={DIALOG_SIZE_MAP[size || 'md']}
                     >
-                      <Box
-                        tag="dialog"
-                        tagAttrs={{
-                          ...tagAttrs,
-                          role: 'dialog',
-                          'aria-modal': true,
-                          onClick: e => {
-                            e.stopPropagation()
-                          },
-                        }}
-                        tagRef={tagRef || ref}
-                        drawable
-                        borderMode="filled"
-                        maxInlineSize="95dvw"
-                        maxBlockSize="90dvh"
-                        position="relative"
-                        overflowY="auto"
-                        intent="secondary"
-                        inlineSize={DIALOG_SIZE_MAP[size || 'md']}
-                      >
-                        <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
-                          {onClose ? (
-                            <Box position="absolute" top="8px" right="8px">
-                              <IconButton
-                                scale="xs"
-                                iconName="close"
-                                variant="outline"
-                                intent="tertiary"
-                                onClick={onClose}
-                              />
-                            </Box>
-                          ) : null}
-                          {slotsByName['Dialog.Header']}
-                          {slotsByName['Dialog.Content']}
-                          {slotsByName['Dialog.Footer']}
-                        </Box>
+                      <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
+                        {onClose ? (
+                          <Box position="absolute" top="8px" right="8px">
+                            <IconButton
+                              scale="xs"
+                              iconName="close"
+                              variant="outline"
+                              intent="tertiary"
+                              onClick={onClose}
+                            />
+                          </Box>
+                        ) : null}
+                        {slotsByName['Dialog.Header']}
+                        {slotsByName['Dialog.Content']}
+                        {slotsByName['Dialog.Footer']}
                       </Box>
-                    </Scale>
-                  </FocusTrap>
+                    </Box>
+                  </Scale>
                 </Box>
               </Box>
             </Portal>

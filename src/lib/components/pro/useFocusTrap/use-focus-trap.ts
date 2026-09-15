@@ -1,16 +1,15 @@
 import { useEffect, useRef } from 'react'
 
-import { DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from './constants'
+import { DEFAULT_USE_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK } from './constants'
 import { isInsideLogicalTree } from './helpers'
-import { type FocusTrapProps } from './types'
+import { type UseFocusTrapArgs } from './types'
 
-export const FocusTrap = ({
+export const useFocusTrap = ({
   active,
   tagRef,
-  children,
   onFocusEscape,
-  disableEscapeOnOutsideClick = DEFAULT_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
-}: FocusTrapProps) => {
+  disableEscapeOnOutsideClick = DEFAULT_USE_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
+}: UseFocusTrapArgs): void => {
   const triggerRef = useRef<HTMLElement | null>(null)
   const prevActiveRef = useRef(false)
   const hadTabIndexRef = useRef(false)
@@ -139,6 +138,4 @@ export const FocusTrap = ({
       }
     }
   }, [active, tagRef, onFocusEscape, disableEscapeOnOutsideClick])
-
-  return children
 }

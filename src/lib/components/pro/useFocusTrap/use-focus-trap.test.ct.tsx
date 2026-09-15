@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { FocusTrapHarness } from './focus-trap.stories.ct'
+import { FocusTrapHarness } from './use-focus-trap.stories.ct'
 
 test('keeps input focused while typing', async ({ mount }) => {
   const component = await mount(<FocusTrapHarness />)
@@ -22,7 +22,7 @@ test('keeps input focused while typing', async ({ mount }) => {
   await closeButton.click()
 })
 
-test('Escape closes FocusTrap', async ({ mount }) => {
+test('Escape closes useFocusTrap', async ({ mount }) => {
   const component = await mount(<FocusTrapHarness />)
 
   const openButton = component.getByRole('button', { name: 'open' })

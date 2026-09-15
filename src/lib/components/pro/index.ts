@@ -10,7 +10,6 @@ export {
 } from './Dialog'
 export { Fade, type FadeProps } from './Fade'
 export { Floating, type FloatingProps } from './Floating'
-export { FocusTrap, type FocusTrapProps } from './FocusTrap'
 export { Markup, type MarkupProps } from './Markup'
 export { MultiSelect, type MultiSelectOptionProps, type MultiSelectProps } from './MultiSelect'
 export { Pagination, type PaginationProps } from './Pagination'
@@ -41,4 +40,5 @@ export {
   type ToolbarStartProps,
 } from './Toolbar'
 export { Tooltip, type TooltipProps } from './Tooltip'
+export { useFocusTrap, type UseFocusTrapArgs } from './useFocusTrap'
 export { VirtualList, type VirtualListProps } from './VirtualList'

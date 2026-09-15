@@ -21,7 +21,6 @@ import { FADE_META } from './Fade'
 import { FLOATING_META } from './Floating'
 import { FLOATING_CONTENT_META } from './FloatingContent'
 import { FLOATING_TRIGGER_META } from './FloatingTrigger'
-import { FOCUS_TRAP_META } from './FocusTrap'
 import { HORIZONTAL_RULE_META } from './HorizontalRule'
 import { HTML_TAG_META } from './HtmlTag'
 import { ICON_META } from './Icon'
@@ -77,6 +76,7 @@ import { TOOLBAR_END_META } from './ToolbarEnd'
 import { TOOLBAR_MAIN_META } from './ToolbarMain'
 import { TOOLBAR_START_META } from './ToolbarStart'
 import { TOOLTIP_META } from './Tooltip'
+import { USE_FOCUS_TRAP_META } from './useFocusTrap'
 import { VIRTUAL_LIST_META } from './VirtualList'
 
 const META = {
@@ -122,9 +122,6 @@ const META = {
     Floating: FLOATING_META,
     FloatingTrigger: FLOATING_TRIGGER_META,
     FloatingContent: FLOATING_CONTENT_META,
-  },
-  FocusTrap: {
-    FocusTrap: FOCUS_TRAP_META,
   },
   HorizontalRule: {
     HorizontalRule: HORIZONTAL_RULE_META,
@@ -249,6 +246,9 @@ const META = {
   },
   Tooltip: {
     Tooltip: TOOLTIP_META,
+  },
+  UseFocusTrap: {
+    UseFocusTrap: USE_FOCUS_TRAP_META,
   },
   VirtualList: {
     VirtualList: VIRTUAL_LIST_META,

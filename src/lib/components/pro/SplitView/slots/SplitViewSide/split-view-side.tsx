@@ -4,7 +4,7 @@ import { Box } from 'lib/components/core/Box'
 import { IconButton } from 'lib/components/core/IconButton'
 import { Resize } from 'lib/components/core/Resize'
 import { StylingIsland } from 'lib/components/core/StylingIsland'
-import { FocusTrap } from 'lib/components/pro/FocusTrap'
+import { useFocusTrap } from 'lib/components/pro/useFocusTrap'
 
 import { useSplitViewContext } from '../../providers/SplitViewProvider'
 import {
@@ -35,6 +35,12 @@ export const SplitViewSide = ({
 
   const ref = useRef(null)
   const finalRef = tagRef || ref
+
+  useFocusTrap({
+    tagRef: finalRef,
+    active: mode == 'overlay' && sideOpen,
+    onFocusEscape: () => setSideOpen(false),
+  })
 
   return (
     <StylingIsland theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}>
@@ -81,43 +87,37 @@ export const SplitViewSide = ({
           overflowY={sideOpen ? 'auto' : 'hidden'}
           overflowX="hidden"
         >
-          <FocusTrap
-            tagRef={finalRef}
-            active={mode == 'overlay' && sideOpen}
-            onFocusEscape={() => setSideOpen(false)}
-          >
-            <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-              <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
-                <Box>
-                  {mode === 'overlay' ? (
-                    <Box display="flex" justifyContent="flex-end">
-                      <Box padding="4px" paddingRight="2px" paddingBottom="24px">
-                        <IconButton
-                          iconName="close"
-                          intent={intent || 'tertiary'}
-                          scale="xs"
-                          onClick={() => {
-                            setSideOpen(false)
-                          }}
-                        />
-                      </Box>
+          <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
+            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
+              <Box>
+                {mode === 'overlay' ? (
+                  <Box display="flex" justifyContent="flex-end">
+                    <Box padding="4px" paddingRight="2px" paddingBottom="24px">
+                      <IconButton
+                        iconName="close"
+                        intent={intent || 'tertiary'}
+                        scale="xs"
+                        onClick={() => {
+                          setSideOpen(false)
+                        }}
+                      />
                     </Box>
-                  ) : null}
-                  <Box
-                    padding={padding}
-                    paddingInline={paddingInline}
-                    paddingBlock={paddingBlock}
-                    paddingTop={paddingTop}
-                    paddingRight={paddingRight}
-                    paddingBottom={paddingBottom}
-                    paddingLeft={paddingLeft}
-                  >
-                    {children}
                   </Box>
+                ) : null}
+                <Box
+                  padding={padding}
+                  paddingInline={paddingInline}
+                  paddingBlock={paddingBlock}
+                  paddingTop={paddingTop}
+                  paddingRight={paddingRight}
+                  paddingBottom={paddingBottom}
+                  paddingLeft={paddingLeft}
+                >
+                  {children}
                 </Box>
               </Box>
-            </Resize>
-          </FocusTrap>
+            </Box>
+          </Resize>
         </Box>
       </Box>
     </StylingIsland>

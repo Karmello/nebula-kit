@@ -94,7 +94,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
       { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
       { key: 'portal', label: 'Portal', sections, bundle: 'pro' },
-      { key: 'focus-trap', label: 'FocusTrap', sections, bundle: 'pro' },
     ],
   },
   {
@@ -124,6 +123,11 @@ export const COMPONENT_CATEGORIES = [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
       { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
     ],
+  },
+  {
+    key: 'hooks',
+    label: 'Hooks',
+    items: [{ key: 'use-focus-trap', label: 'useFocusTrap', sections, bundle: 'pro' }],
   },
 ]
 

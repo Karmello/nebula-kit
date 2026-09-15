@@ -1,39 +1,21 @@
 import { useRef } from 'react'
-import { render, screen } from '@testing-library/react'
+import { render, renderHook } from '@testing-library/react'
 import { describe, expect, it } from 'vitest'
 
-import { FocusTrap } from './focus-trap'
+import { useFocusTrap } from './use-focus-trap'
 
-describe('FocusTrap', () => {
-  it('renders children', () => {
-    const ref = { current: document.createElement('div') }
-
-    render(
-      <FocusTrap tagRef={ref} active={true}>
-        <span>content</span>
-      </FocusTrap>
-    )
-
-    expect(screen.getByText('content')).toBeTruthy()
-  })
-
+describe('useFocusTrap', () => {
   it('adds tabindex to target when active and removes it on deactivate', () => {
     const ref = { current: document.createElement('div') }
     document.body.appendChild(ref.current)
 
-    const { rerender } = render(
-      <FocusTrap tagRef={ref} active={true}>
-        <div />
-      </FocusTrap>
-    )
+    const { rerender } = renderHook(({ active }) => useFocusTrap({ tagRef: ref, active }), {
+      initialProps: { active: true },
+    })
 
     expect(ref.current.hasAttribute('tabindex')).toBe(true)
 
-    rerender(
-      <FocusTrap tagRef={ref} active={false}>
-        <div />
-      </FocusTrap>
-    )
+    rerender({ active: false })
 
     expect(ref.current.hasAttribute('tabindex')).toBe(false)
   })
@@ -42,11 +24,7 @@ describe('FocusTrap', () => {
     const ref = { current: document.createElement('div') }
     const onEscape = vi.fn()
 
-    render(
-      <FocusTrap tagRef={ref} active={true} onFocusEscape={onEscape}>
-        <div />
-      </FocusTrap>
-    )
+    renderHook(() => useFocusTrap({ tagRef: ref, active: true, onFocusEscape: onEscape }))
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }))
     expect(onEscape).toHaveBeenCalled()
@@ -61,17 +39,16 @@ describe('FocusTrap', () => {
   }) => {
     const ref = useRef<HTMLDivElement | null>(null)
 
+    useFocusTrap({
+      tagRef: ref,
+      active: true,
+      onFocusEscape: onEscape,
+      disableEscapeOnOutsideClick,
+    })
+
     return (
       <div>
-        <FocusTrap
-          tagRef={ref}
-          active={true}
-          onFocusEscape={onEscape}
-          disableEscapeOnOutsideClick={disableEscapeOnOutsideClick}
-        >
-          <div ref={ref}>inside</div>
-        </FocusTrap>
-
+        <div ref={ref}>inside</div>
         {/* outside element */}
         <div data-testid="outside">outside</div>
       </div>
