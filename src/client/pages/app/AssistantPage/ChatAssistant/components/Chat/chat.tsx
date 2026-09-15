@@ -16,7 +16,7 @@ export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) =>
     <Box
       tagRef={tagRef}
       drawable
-      // variant="outline"
+      borderMode="filled"
       intent="muted"
       blockSize="100%"
       overflowY="auto"

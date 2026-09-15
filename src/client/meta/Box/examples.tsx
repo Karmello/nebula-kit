@@ -9,11 +9,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box
-        drawable
-        // variant="outline"
-        intent="primary"
-      >
+      <Box drawable bgMode="filled" intent="primary">
         Box is a block
       </Box>
     ),
@@ -21,12 +17,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box
-        drawable
-        // variant="outline"
-        intent="primary"
-        padding="20px"
-      >
+      <Box drawable bgMode="filled" intent="primary" padding="20px">
         Padded box
       </Box>
     ),
@@ -34,13 +25,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box
-        drawable
-        // variant="outline"
-        intent="primary"
-        padding="20px"
-        textAlign="center"
-      >
+      <Box drawable bgMode="filled" intent="primary" padding="20px" textAlign="center">
         Centered content
       </Box>
     ),
@@ -48,13 +33,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box
-        drawable
-        // variant="outline"
-        intent="primary"
-        padding="20px"
-        display="inline-block"
-      >
+      <Box drawable bgMode="filled" intent="primary" padding="20px" display="inline-block">
         Box as inline block
       </Box>
     ),

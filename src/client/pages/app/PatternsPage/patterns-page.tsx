@@ -79,9 +79,9 @@ export const PatternsPage = () => {
                     <Box
                       tagAttrs={{ style: { borderStyle: 'dashed' } }}
                       drawable
-                      // variant="outline"
+                      borderMode="filled"
                       intent="tertiary"
-                      // maxBlockSize="calc(100dvh - 275px)"
+                      maxBlockSize="calc(100dvh - 275px)"
                       padding={NEB_LENGTH.px_016}
                     >
                       <Component />

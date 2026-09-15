@@ -81,9 +81,10 @@ export default () => {
             </Text>
             <Box
               drawable
-              // variant="outline"
-              intent="muted"
+              borderMode="filled"
+              intent="tertiary"
               marginBottom={NEB_LENGTH.px_024}
+              padding={NEB_LENGTH.px_008}
             >
               <Text intent="neutral" typography={typography}>
                 {MAP[typography]}

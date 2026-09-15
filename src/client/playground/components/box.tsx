@@ -39,7 +39,7 @@ export const BOX_PRESETS = [
     props: {
       children: 'Drawable Box with solid variant, primary intent and green color applied.',
       drawable: true,
-      // variant: 'solid',
+      bgMode: 'filled',
       color: 'green',
       intent: 'primary',
       padding: '20px',
@@ -51,7 +51,7 @@ export const BOX_PRESETS = [
       children: 'Interactive Box with solid variant, primary intent and blue color applied.',
       drawable: true,
       interactive: true,
-      // variant: 'solid',
+      bgMode: 'filled',
       color: 'blue',
       intent: 'primary',
       padding: '20px',
