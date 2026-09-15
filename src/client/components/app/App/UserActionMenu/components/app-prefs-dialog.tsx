@@ -21,7 +21,7 @@ export const AppPrefsDialog = () => {
       onClose={() => {
         setShowAppSettings(false)
       }}
-      size="lg"
+      scale="lg"
       closeOnBackdropClick
     >
       <Dialog.Header>

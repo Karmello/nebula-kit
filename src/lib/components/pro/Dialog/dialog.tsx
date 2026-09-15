@@ -9,11 +9,11 @@ import { useCurrentTheme, useGlobalScrollLock, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
-  DEFAULT_DIALOG_SIZE,
+  DEFAULT_DIALOG_SCALE,
   DIALOG_INTENT,
   DIALOG_PADDING,
   DIALOG_RESIZE_DURATION,
-  DIALOG_SIZE_MAP,
+  DIALOG_SCALE_MAP,
 } from './constants'
 import { DialogProvider } from './providers/DialogProvider'
 import { type DialogProps } from './types'
@@ -27,7 +27,7 @@ export const Dialog = ({
   open,
   onClose,
   closeOnBackdropClick = DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
-  size = DEFAULT_DIALOG_SIZE,
+  scale = DEFAULT_DIALOG_SCALE,
 }: DialogProps) => {
   const ref = useRef(null)
   const canAnimateRef = useRef(false)
@@ -133,7 +133,7 @@ export const Dialog = ({
                 position="relative"
                 overflowY="auto"
                 intent="secondary"
-                inlineSize={DIALOG_SIZE_MAP[size || 'md']}
+                inlineSize={DIALOG_SCALE_MAP[scale || 'md']}
               >
                 <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
                   {onClose ? (

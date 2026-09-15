@@ -1,7 +1,7 @@
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
-  DEFAULT_DIALOG_SIZE,
-  DIALOG_SIZES,
+  DEFAULT_DIALOG_SCALE,
+  DIALOG_SCALES,
 } from 'lib/components/pro/Dialog/constants'
 import type { DialogProps } from 'lib/components/pro/Dialog/types'
 import type { DocProp } from 'client/definitions'
@@ -28,9 +28,9 @@ export const DIALOG_PROPS: Record<keyof DialogProps, DocProp> = {
     isRequired: true,
     description: 'Controls whether the dialog is open.',
   },
-  size: {
-    options: DIALOG_SIZES,
-    defaultValue: DEFAULT_DIALOG_SIZE,
+  scale: {
+    options: DIALOG_SCALES,
+    defaultValue: DEFAULT_DIALOG_SCALE,
     description: 'Defines the dialog width using predefined size presets.',
   },
   tagAttrs: {

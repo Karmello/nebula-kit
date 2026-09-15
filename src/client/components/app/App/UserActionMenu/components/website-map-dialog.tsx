@@ -59,7 +59,7 @@ export const WebsiteMapDialog = () => {
       onClose={() => {
         setShowWebsiteMap(false)
       }}
-      size="lg"
+      scale="lg"
       closeOnBackdropClick
     >
       <Dialog.Header>

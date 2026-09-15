@@ -1,14 +1,14 @@
 import type { BoxProps } from '../../core/Box/types'
-import { DIALOG_SIZES } from './constants'
+import { DIALOG_SCALES } from './constants'
 
-export type DialogSize = (typeof DIALOG_SIZES)[number]
+export type DialogScale = (typeof DIALOG_SCALES)[number]
 
 export type DialogProps = {
   // own
   open: boolean
   onClose?: () => void
   closeOnBackdropClick?: boolean
-  size?: DialogSize
+  scale?: DialogScale
   // Box
   tagAttrs?: BoxProps<'dialog'>['tagAttrs']
   tagRef?: BoxProps<'dialog'>['tagRef']
