@@ -1,21 +1,20 @@
 import { BoxColor, BoxIntent, BoxProps } from 'lib/components/core/Box'
+import type { SelectVariant } from 'lib/components/core/Select/types'
 import { TShirtSize } from 'lib/types'
 
-import { MULTI_SELECT_VARIANTS } from './constants'
-
-type MultiSelectVariant = (typeof MULTI_SELECT_VARIANTS)[number]
+export type MultiSelectVariant = SelectVariant
 
 export type MultiSelectProps = {
   // own
   defaultValue?: string[]
   value?: string[]
   onChange?: (value: string[]) => void
-  size?: TShirtSize
+  scale?: TShirtSize
   visibleItemsCount?: number
   staticLabel?: string
+  variant?: MultiSelectVariant
   // Box
   children: BoxProps['children']
-  variant?: MultiSelectVariant
   intent?: BoxIntent
   color?: BoxColor
   inlineSize?: BoxProps['inlineSize']

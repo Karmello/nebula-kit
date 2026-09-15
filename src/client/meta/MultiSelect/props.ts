@@ -43,7 +43,7 @@ export const MULTI_SELECT_PROPS: Record<keyof MultiSelectProps, DocProp> = {
     options: ['(value: string[]) => void'],
     description: 'Callback fired when the set of selected values changes.',
   },
-  size: {
+  scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
     description:

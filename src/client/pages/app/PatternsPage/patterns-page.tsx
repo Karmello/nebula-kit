@@ -100,7 +100,7 @@ export const PatternsPage = () => {
                 </Box>
               </SplitView.Main>
               <SplitView.Side inlineSize="350px" paddingRight={{ lg: NEB_LENGTH.px_024 }}>
-                <MultiSelect value={patternCategories} onChange={setPatternCategories} size="sm">
+                <MultiSelect value={patternCategories} onChange={setPatternCategories} scale="sm">
                   {PATTERN_CATEGORIES.map(c => (
                     <MultiSelect.Option key={c} value={c}>
                       {c}

@@ -1,11 +1,10 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
-import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
-import { Floating, FloatingProps } from 'lib/components/pro/Floating'
+import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
 import { useControlled, useSlots } from 'lib/hooks'
 
@@ -14,13 +13,12 @@ import {
   DEFAULT_MULTI_SELECT_INTENT,
   DEFAULT_MULTI_SELECT_VARIANT,
   DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT,
+  MULTI_SELECT_VARIANT_MAP,
 } from './constants'
-import { resolveMultiSelectValues } from './helpers'
-import { MultiSelectOptionProps } from './slots/MultiSelectOption/types'
-import { MultiSelectProps } from './types'
+import type { MultiSelectOptionProps } from './slots/MultiSelectOption/types'
+import type { MultiSelectProps } from './types'
 
 export const MultiSelectImpl = ({
-  variant = DEFAULT_MULTI_SELECT_VARIANT,
   intent = DEFAULT_MULTI_SELECT_INTENT,
   color,
   inlineSize = DEFAULT_MULTI_SELECT_INLINE_SIZE,
@@ -29,9 +27,10 @@ export const MultiSelectImpl = ({
   defaultValue,
   value,
   onChange,
-  size = DEFAULT_TSHIRT_SIZE,
+  scale = DEFAULT_TSHIRT_SIZE,
   visibleItemsCount = DEFAULT_MULTI_SELECT_VISIBLE_ITEMS_COUNT,
   staticLabel,
+  variant = DEFAULT_MULTI_SELECT_VARIANT,
   // extra
   optionSlots,
 }: MultiSelectProps & { optionSlots: ReactElement<MultiSelectOptionProps>[] }) => {
@@ -51,13 +50,10 @@ export const MultiSelectImpl = ({
     .map(slot => slot.props.children)
     .join(', ')
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[size].blockSize.replace('px', ''))
+  const optionBlockSize = parseInt(CONTROL_SCALE_MAP[scale].blockSize)
 
-  const { menuBlockSize } = resolveMultiSelectValues({
-    visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
-    optionBlockSize,
-    itemsCount: optionSlots.length,
-  })
+  const finalVisibleItemsCount = Math.min(optionSlots.length, visibleItemsCount)
+  const menuBlockSize = finalVisibleItemsCount * optionBlockSize
 
   const toggleValue = (optionValue: string) => {
     const nextValue = currentValue.includes(optionValue)
@@ -89,126 +85,137 @@ export const MultiSelectImpl = ({
       onPlacementChange={setPlacement}
       disabled={disabled}
     >
-      <Floating.Trigger display="block">
+      <Floating.Trigger display="block" inlineSize={inlineSize}>
         <Box
           tag="button"
           tagRef={triggerRef}
-          // variant={variant}
+          tagAttrs={{
+            style: {
+              userSelect: 'none',
+            },
+          }}
           intent={intent}
           color={color}
-          inlineSize={inlineSize}
-          blockSize={CONTROL_SCALE_MAP[size].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[size].paddingInline}
+          bgMode={MULTI_SELECT_VARIANT_MAP[variant].trigger.bgMode}
+          borderMode={MULTI_SELECT_VARIANT_MAP[variant].trigger.borderMode}
+          text={MULTI_SELECT_VARIANT_MAP[variant].trigger.text}
+          inlineSize="100%"
+          blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
           disabled={disabled}
-          bgRole={open ? 'selection' : undefined}
+          surfaceDepth={open ? 'raised' : undefined}
           cursor="pointer"
           ripple={!open}
-          interactive
+          drawable
+          interactive={!open}
           borderBottomLeftRadius={open && isOpenDownwards ? '0px' : undefined}
           borderBottomRightRadius={open && isOpenDownwards ? '0px' : undefined}
           borderTopLeftRadius={open && !isOpenDownwards ? '0px' : undefined}
           borderTopRightRadius={open && !isOpenDownwards ? '0px' : undefined}
+          display="inline-flex"
+          alignItems="center"
+          justifyContent="space-between"
+          columnGap={NEB_LENGTH.px_008}
         >
-          <Box
-            display="flex"
-            tag="span"
-            alignItems="center"
-            justifyContent="space-between"
-            columnGap={NEB_LENGTH.px_008}
+          <Text
+            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+            truncate
           >
-            <Text
-              fontSize={CONTROL_SCALE_MAP[size].fontSize}
-              lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-              truncate
-            >
-              {staticLabel ?? (currentLabel || 'Select...')}
-            </Text>
-            <Icon name="chevron-down" size={CONTROL_SCALE_MAP[size].fontSize} />
-          </Box>
+            {staticLabel ?? (currentLabel || 'Select...')}
+          </Text>
+          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
         </Box>
       </Floating.Trigger>
       <Floating.Content>
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
-          <Box
-            drawable
-            bgMode="filled"
-            intent={intent}
-            color={color}
-            inlineSize={`${triggerWidth}px`}
-            maxBlockSize={`${menuBlockSize}px`}
-            overflowY="auto"
-            borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
-            borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
-            borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
-            borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
-          >
-            <Box intent={intent} color={color} surfaceDepth="raised">
-              {optionSlots.map((slot, key) => {
-                const isSelected = currentValue.includes(slot.props.value)
+          <Box drawable bgMode="filled" intent="neutral" color={color}>
+            <Box
+              drawable
+              intent={intent}
+              color={color}
+              bgMode="tinted"
+              borderMode={MULTI_SELECT_VARIANT_MAP[variant].content.borderMode}
+              surfaceDepth="raised"
+              inlineSize={`${triggerWidth}px`}
+              maxBlockSize={`${menuBlockSize}px`}
+              overflowY="auto"
+              borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            >
+              <Box
+                display="inline-flex"
+                flexDirection="column"
+                drawable
+                bgMode="filled"
+                intent="neutral"
+                color={color}
+                inlineSize="100%"
+                borderRadius={NEB_LENGTH.px_000}
+              >
+                {optionSlots.map((slot, key) => {
+                  const isSelected = currentValue.includes(slot.props.value)
 
-                return (
-                  <Box key={key}>
-                    {isOpenDownwards ? (
-                      <HorizontalRule
-                        marginBlock={NEB_LENGTH.px_000}
-                        surfaceDepth="raised"
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
+                  return (
                     <Box
+                      key={key}
                       tag="button"
                       tagAttrs={{
                         onClick: () => {
                           toggleValue(slot.props.value)
                         },
+                        style: { backgroundClip: 'padding-box' },
                       }}
-                      drawable
+                      cursor="pointer"
                       interactive
-                      bgMode="filled"
-                      surfaceDepth="raised"
+                      inlineSize="100%"
+                      blockSize={
+                        key === 0
+                          ? !MULTI_SELECT_VARIANT_MAP[variant].removeFirstTopBorder
+                            ? optionBlockSize + 'px'
+                            : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
+                          : `${optionBlockSize}px`
+                      }
                       intent={intent}
                       color={color}
-                      cursor="pointer"
+                      bgMode={MULTI_SELECT_VARIANT_MAP[variant].item.bgMode}
+                      borderMode={MULTI_SELECT_VARIANT_MAP[variant].item.borderMode}
+                      borderRole="divider"
+                      surfaceDepth="raised"
                       bgRole={isSelected ? 'selection' : undefined}
-                      inlineSize="100%"
+                      text={MULTI_SELECT_VARIANT_MAP[variant].item.text}
+                      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                      borderWidth={NEB_LENGTH.px_000}
+                      borderTopWidth={
+                        MULTI_SELECT_VARIANT_MAP[variant].removeFirstTopBorder && key === 0
+                          ? NEB_LENGTH.px_000
+                          : NEB_LENGTH.px_002
+                      }
                       borderRadius={NEB_LENGTH.px_000}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="space-between"
+                      columnGap={NEB_LENGTH.px_008}
                     >
-                      <Box
-                        display="flex"
-                        tagAttrs={{
-                          style: {
-                            blockSize: CONTROL_SCALE_MAP[size].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[size].paddingInline,
-                          },
-                        }}
-                        alignItems="center"
-                        justifyContent="space-between"
-                        columnGap={NEB_LENGTH.px_008}
+                      <Text
+                        fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                        bold={isSelected}
+                        truncate
                       >
-                        <Text
-                          fontSize={CONTROL_SCALE_MAP[size].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[size].lineHeight}
-                          bold={isSelected}
-                        >
-                          {slot}
-                        </Text>
-                        {isSelected ? (
-                          <Icon name="check" size={CONTROL_SCALE_MAP[size].fontSize} />
-                        ) : null}
-                      </Box>
+                        {slot}
+                      </Text>
+                      {isSelected ? (
+                        <Icon name="check" size={CONTROL_SCALE_MAP[scale].fontSize} />
+                      ) : null}
                     </Box>
-                    {!isOpenDownwards ? (
-                      <HorizontalRule
-                        marginBlock={NEB_LENGTH.px_000}
-                        surfaceDepth="raised"
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
-                  </Box>
-                )
-              })}
+                  )
+                })}
+              </Box>
             </Box>
           </Box>
         </Resize>
