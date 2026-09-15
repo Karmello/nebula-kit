@@ -3,8 +3,8 @@ import { useEffect, useRef } from 'react'
 import { Box } from 'lib/components/core/Box'
 import { IconButton } from 'lib/components/core/IconButton'
 import { Portal } from 'lib/components/pro/Portal'
-import { Scale } from 'lib/components/pro/Scale'
 import { useFocusTrap } from 'lib/components/pro/useFocusTrap'
+import { useScale } from 'lib/components/pro/useScale'
 import { WithSlots } from 'lib/components/shared'
 import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
 
@@ -32,6 +32,7 @@ export const Dialog = ({
 }: DialogProps) => {
   const ref = useRef(null)
   const canAnimateRef = useRef(false)
+  const scaleRef = useRef<HTMLDivElement | null>(null)
 
   const { lock, unlock } = useGlobalScrollLock()
   const theme = useCurrentTheme()
@@ -41,6 +42,13 @@ export const Dialog = ({
     active: open,
     onFocusEscape: onClose,
     disableEscapeOnOutsideClick: true,
+  })
+
+  useScale({
+    ref: scaleRef,
+    visible: open,
+    easing: open ? 'ease-out' : 'ease-in',
+    duration: DIALOG_RESIZE_DURATION,
   })
 
   useEffect(() => {
@@ -104,11 +112,7 @@ export const Dialog = ({
                   justifyContent="center"
                   alignItems="center"
                 >
-                  <Scale
-                    visible={open}
-                    easing={open ? 'ease-out' : 'ease-in'}
-                    duration={DIALOG_RESIZE_DURATION}
-                  >
+                  <Box tagRef={scaleRef} display="inline-block">
                     <Box
                       tag="dialog"
                       tagAttrs={{
@@ -146,7 +150,7 @@ export const Dialog = ({
                         {slotsByName['Dialog.Footer']}
                       </Box>
                     </Box>
-                  </Scale>
+                  </Box>
                 </Box>
               </Box>
             </Portal>

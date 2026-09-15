@@ -14,7 +14,6 @@ export { MultiSelect, type MultiSelectOptionProps, type MultiSelectProps } from 
 export { Pagination, type PaginationProps } from './Pagination'
 export { PasswordInput, type PasswordInputProps } from './PasswordInput'
 export { Portal, type PortalProps } from './Portal'
-export { Scale, type ScaleProps } from './Scale'
 export {
   SideNav,
   type SideNavCategoryProps,
@@ -41,4 +40,5 @@ export {
 export { Tooltip, type TooltipProps } from './Tooltip'
 export { useFade, type UseFadeArgs } from './useFade'
 export { useFocusTrap, type UseFocusTrapArgs } from './useFocusTrap'
+export { useScale, type UseScaleArgs, type UseScaleAxis, type UseScaleOrigin } from './useScale'
 export { VirtualList, type VirtualListProps } from './VirtualList'

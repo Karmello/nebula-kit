@@ -108,7 +108,7 @@ export const Families = () => {
         heading="Motion"
         description="Motion components lets you add simple animations without a need for a third party library."
         iconName="orbit"
-        components={['Resize', 'Scale']}
+        components={['Resize', 'useScale']}
       />
     </Box>
   )

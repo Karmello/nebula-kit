@@ -1,12 +1,12 @@
-import { SCALE_ORIGIN_MAP } from './constants'
-import { ScaleProps } from './types'
+import { USE_SCALE_ORIGIN_MAP } from './constants'
+import { UseScaleArgs } from './types'
 
 const getScaleTransform = ({
   visible,
   axis,
   from,
   to,
-}: Pick<ScaleProps, 'visible' | 'axis' | 'from' | 'to'>) => {
+}: Pick<UseScaleArgs, 'visible' | 'axis' | 'from' | 'to'>) => {
   const value = visible ? to : from
 
   if (axis === 'x') {
@@ -21,22 +21,21 @@ const getScaleTransform = ({
 }
 
 export const syncScale = ({
-  finalRef,
+  ref,
   visible,
   axis,
   from,
   to,
   origin,
   transition,
-}: Pick<ScaleProps, 'visible' | 'axis' | 'from' | 'to' | 'origin'> & {
-  finalRef: ScaleProps['tagRef']
+}: Pick<UseScaleArgs, 'ref' | 'visible' | 'axis' | 'from' | 'to' | 'origin'> & {
   transition?: string
 }) => {
-  const el = finalRef?.current
+  const el = ref?.current as HTMLElement | null
 
   if (!el) return
 
-  el.style.transformOrigin = SCALE_ORIGIN_MAP[origin || 'center']
+  el.style.transformOrigin = USE_SCALE_ORIGIN_MAP[origin || 'center']
   el.style.transform = getScaleTransform({ visible, axis, from, to })
   el.style.transition = transition || ''
 }

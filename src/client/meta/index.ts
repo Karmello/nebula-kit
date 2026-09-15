@@ -39,7 +39,6 @@ import { PASSWORD_META } from './PasswordInput'
 import { PORTAL_META } from './Portal'
 import { RESIZE_META } from './Resize'
 import { REVEAL_META } from './Reveal'
-import { SCALE_META } from './Scale'
 import { SELECT_META } from './Select'
 import { SELECT_OPTION_META } from './SelectOption'
 import { SIDE_NAV_META } from './SideNav'
@@ -76,6 +75,7 @@ import { TOOLTIP_META } from './Tooltip'
 import { USE_FADE_META } from './useFade'
 import { USE_FOCUS_TRAP_META } from './useFocusTrap'
 import { USE_ROTATE_META } from './useRotate'
+import { USE_SCALE_META } from './useScale'
 import { USE_SLIDE_META } from './useSlide'
 import { VIRTUAL_LIST_META } from './VirtualList'
 
@@ -173,9 +173,6 @@ const META = {
   Reveal: {
     Reveal: REVEAL_META,
   },
-  Scale: {
-    Scale: SCALE_META,
-  },
   Select: {
     Select: SELECT_META,
     SelectOption: SELECT_OPTION_META,
@@ -246,6 +243,9 @@ const META = {
   },
   UseRotate: {
     UseRotate: USE_ROTATE_META,
+  },
+  UseScale: {
+    UseScale: USE_SCALE_META,
   },
   UseSlide: {
     UseSlide: USE_SLIDE_META,

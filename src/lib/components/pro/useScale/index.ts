@@ -1,3 +1,3 @@
 export * from './constants'
-export * from './scale'
 export * from './types'
+export * from './use-scale'

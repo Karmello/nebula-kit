@@ -10,7 +10,7 @@ export const DIALOG_OVERVIEW: DocOverview = {
     'includes an optional close button and configurable dismissal behavior',
     'automatically disables page scrolling while open',
   ],
-  composedOf: ['Box', 'IconButton', 'Portal', 'Scale', 'useFocusTrap'],
+  composedOf: ['Box', 'IconButton', 'Portal', 'useFocusTrap', 'useScale'],
   exposedTags: ['dialog'],
   slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
 }

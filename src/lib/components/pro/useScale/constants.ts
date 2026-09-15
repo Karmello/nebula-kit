@@ -1,4 +1,4 @@
-export const SCALE_ORIGIN = [
+export const USE_SCALE_ORIGIN = [
   'center',
   'top',
   'bottom',
@@ -10,7 +10,7 @@ export const SCALE_ORIGIN = [
   'bottom-right',
 ] as const
 
-export const SCALE_ORIGIN_MAP: Record<(typeof SCALE_ORIGIN)[number], string> = {
+export const USE_SCALE_ORIGIN_MAP: Record<(typeof USE_SCALE_ORIGIN)[number], string> = {
   center: 'center center',
   top: 'top center',
   bottom: 'bottom center',
@@ -22,4 +22,4 @@ export const SCALE_ORIGIN_MAP: Record<(typeof SCALE_ORIGIN)[number], string> = {
   'bottom-right': 'bottom right',
 }
 
-export const SCALE_AXIS = ['both', 'x', 'y'] as const
+export const USE_SCALE_AXIS = ['both', 'x', 'y'] as const
