@@ -24,12 +24,6 @@ export const COMPONENT_CATEGORIES = [
       { key: 'title', label: 'Title', sections, bundle: 'core' },
       { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
       { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
-    ],
-  },
-  {
-    key: 'layout',
-    label: 'Layout',
-    items: [
       { key: 'horizontal-rule', label: 'HorizontalRule', sections, bundle: 'core' },
       { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
     ],
