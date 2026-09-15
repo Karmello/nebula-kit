@@ -124,7 +124,7 @@ export const COMPONENT_CATEGORIES = [
     items: [
       { key: 'resize', label: 'Resize', sections, bundle: 'core' },
       { key: 'use-rotate', label: 'useRotate', sections, bundle: 'core' },
-      { key: 'slide', label: 'Slide', sections, bundle: 'core' },
+      { key: 'use-slide', label: 'useSlide', sections, bundle: 'core' },
       { key: 'use-fade', label: 'useFade', sections, bundle: 'pro' },
       { key: 'scale', label: 'Scale', sections, bundle: 'pro' },
     ],

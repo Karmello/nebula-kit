@@ -3,7 +3,7 @@ import { useCallback, useRef, useState } from 'react'
 import { Box } from 'lib/components/core/Box'
 import { Callout, CALLOUT_CONFIG } from 'lib/components/core/Callout'
 import { IconButton } from 'lib/components/core/IconButton'
-import { Slide } from 'lib/components/core/Slide'
+import { useSlide } from 'lib/components/core/useSlide'
 
 import {
   DEFAULT_SNACKBAR_AUTO_CLOSE_DELAY,
@@ -26,12 +26,20 @@ export const Snackbar = ({
   const [snackbar, setSnackbar] = useState<UseSnackbarShowArgs | null>(null)
   const [visible, setVisible] = useState<boolean>(false)
   const rootRef = useRef<HTMLDivElement | null>(null)
+  const slideRef = useRef<HTMLDivElement | null>(null)
 
   const handleClose = useCallback(() => {
     setVisible(false)
   }, [])
 
   const finalPlacement = snackbar?.placement || placement || 'bottom-right'
+
+  useSlide({
+    ref: slideRef,
+    from: finalPlacement.split('-')[0] as never,
+    visible,
+    easing: visible ? 'ease-out' : 'ease-in',
+  })
 
   return (
     <SnackbarProvider
@@ -56,11 +64,7 @@ export const Snackbar = ({
             },
           }}
         >
-          <Slide
-            from={finalPlacement.split('-')[0] as never}
-            visible={visible}
-            easing={visible ? 'ease-out' : 'ease-in'}
-          >
+          <Box tagRef={slideRef} display="inline-block">
             <Box
               key={snackbar?.status}
               position="relative"
@@ -85,7 +89,7 @@ export const Snackbar = ({
                 status={snackbar?.status}
               />
             </Box>
-          </Slide>
+          </Box>
         </Box>
       </Box>
       {children}

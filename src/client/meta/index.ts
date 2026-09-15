@@ -45,7 +45,6 @@ import { SELECT_OPTION_META } from './SelectOption'
 import { SIDE_NAV_META } from './SideNav'
 import { SIDE_NAV_CATEGORY_META } from './SideNavCategory'
 import { SIDE_NAV_ITEM_META } from './SideNavItem'
-import { SLIDE_META } from './Slide'
 import { SNACKBAR_META, USE_SNACKBAR_META } from './Snackbar'
 import { SPACER_META } from './Spacer'
 import { SPLIT_VIEW_META } from './SplitView'
@@ -77,6 +76,7 @@ import { TOOLTIP_META } from './Tooltip'
 import { USE_FADE_META } from './useFade'
 import { USE_FOCUS_TRAP_META } from './useFocusTrap'
 import { USE_ROTATE_META } from './useRotate'
+import { USE_SLIDE_META } from './useSlide'
 import { VIRTUAL_LIST_META } from './VirtualList'
 
 const META = {
@@ -185,9 +185,6 @@ const META = {
     SideNavItem: SIDE_NAV_ITEM_META,
     SideNavCategory: SIDE_NAV_CATEGORY_META,
   },
-  Slide: {
-    Slide: SLIDE_META,
-  },
   Snackbar: {
     Snackbar: SNACKBAR_META,
     useSnackbar: USE_SNACKBAR_META,
@@ -249,6 +246,9 @@ const META = {
   },
   UseRotate: {
     UseRotate: USE_ROTATE_META,
+  },
+  UseSlide: {
+    UseSlide: USE_SLIDE_META,
   },
   VirtualList: {
     VirtualList: VIRTUAL_LIST_META,

@@ -1,8 +1,8 @@
-import { useLayoutEffect, useState } from 'react'
+import { useLayoutEffect, useRef, useState } from 'react'
 import classNames from 'classnames'
 
 import { Box, BoxProps } from 'lib/components/core/Box'
-import { Slide } from 'lib/components/core/Slide'
+import { useSlide } from 'lib/components/core/useSlide'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 
@@ -30,6 +30,7 @@ export const Switch = ({
   const currentChecked = isControlled ? checked : internalChecked
 
   const [animatedChecked, setAnimatedChecked] = useState(currentChecked)
+  const thumbRef = useRef<HTMLDivElement | null>(null)
 
   useLayoutEffect(() => {
     const id = requestAnimationFrame(() => {
@@ -48,6 +49,13 @@ export const Switch = ({
 
   const thumbBlockSize =
     `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as BoxProps['blockSize']
+
+  useSlide({
+    ref: thumbRef,
+    from: 'left',
+    visible: animatedChecked,
+    easing: 'cubic-bezier(0.25, 0, 0.4, 1)',
+  })
 
   return (
     <Box
@@ -79,7 +87,8 @@ export const Switch = ({
         blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
         inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
-      <Slide
+      <Box
+        tagRef={thumbRef}
         tagAttrs={{
           className: withPrefix('switch-thumb'),
           style: {
@@ -87,9 +96,7 @@ export const Switch = ({
             left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
           },
         }}
-        from="left"
-        visible={animatedChecked}
-        easing="cubic-bezier(0.25, 0, 0.4, 1)"
+        display="inline-block"
       >
         <Box
           drawable
@@ -98,7 +105,7 @@ export const Switch = ({
           blockSize={thumbBlockSize}
           inlineSize={thumbBlockSize}
         />
-      </Slide>
+      </Box>
     </Box>
   )
 }

@@ -1,10 +1,10 @@
 import { RefObject } from 'react'
 
-import type { SlideProps } from './types'
+import type { UseSlideArgs } from './types'
 
 export const syncSlidePosition = (
-  ref: RefObject<HTMLDivElement | null>,
-  from: SlideProps['from'],
+  ref: RefObject<HTMLElement | null>,
+  from: UseSlideArgs['from'],
   visible: boolean,
   transition: string | null
 ) => {

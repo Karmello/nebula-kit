@@ -1,3 +1,3 @@
 import { type DocChangelog } from 'client/definitions'
 
-export const SLIDE_CHANGELOG: DocChangelog = {}
+export const USE_SLIDE_CHANGELOG: DocChangelog = {}
