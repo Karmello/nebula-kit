@@ -25,7 +25,6 @@ export const MarkerListItem = ({
       }}
       tagRef={tagRef}
       drawable
-      // variant="ghost"
       color={color || rootColor}
       intent={intent || rootIntent}
     >

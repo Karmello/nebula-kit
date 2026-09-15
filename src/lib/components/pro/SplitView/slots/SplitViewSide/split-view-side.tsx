@@ -51,7 +51,8 @@ export const SplitViewSide = ({
       tagRef={finalRef}
       drawable
       theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
-      // variant="outline"
+      borderMode="filled"
+      borderRole="edge"
       color={color}
       intent={intent}
       borderWidth="0px"
