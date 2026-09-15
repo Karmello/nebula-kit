@@ -1,5 +1,10 @@
 import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
-import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT } from 'lib/components/pro/Breadcrumb/constants'
+import {
+  BREADCRUMB_TAGS,
+  BREADCRUMB_VARIANTS,
+  DEFAULT_BREADCRUMB_INTENT,
+  DEFAULT_BREADCRUMB_VARIANT,
+} from 'lib/components/pro/Breadcrumb/constants'
 import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
 import { BreadcrumbProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
@@ -49,5 +54,10 @@ export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
     isRequired: true,
     description:
       'Hierarchical data source that defines the breadcrumb structure and available selections.',
+  },
+  variant: {
+    options: BREADCRUMB_VARIANTS,
+    defaultValue: DEFAULT_BREADCRUMB_VARIANT,
+    description: 'Visual style variant applied to the dropdown menu. The trigger is unaffected.',
   },
 }

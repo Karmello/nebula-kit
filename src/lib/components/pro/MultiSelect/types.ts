@@ -1,8 +1,9 @@
 import { BoxColor, BoxIntent, BoxProps } from 'lib/components/core/Box'
-import type { SelectVariant } from 'lib/components/core/Select/types'
 import { TShirtSize } from 'lib/types'
 
-export type MultiSelectVariant = SelectVariant
+import { MULTI_SELECT_VARIANTS } from './constants'
+
+export type MultiSelectVariant = (typeof MULTI_SELECT_VARIANTS)[number]
 
 export type MultiSelectProps = {
   // own

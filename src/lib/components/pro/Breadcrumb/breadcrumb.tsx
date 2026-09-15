@@ -2,7 +2,6 @@ import { useCallback, useEffect, useRef, useState } from 'react'
 import { Fragment } from 'react/jsx-runtime'
 
 import { Box } from 'lib/components/core/Box'
-import { HorizontalRule } from 'lib/components/core/HorizontalRule'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -11,12 +10,19 @@ import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
 import type { TShirtSize } from 'lib/types'
 
 import {
+  BREADCRUMB_VARIANT_MAP,
   DEFAULT_BREADCRUMB_INTENT,
   DEFAULT_BREADCRUMB_SCALE,
+  DEFAULT_BREADCRUMB_VARIANT,
   DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
 } from './constants'
-import { convertTreeToLevels, resolveBreadcrumbValues } from './helpers'
-import { type BreadcrumbNode, type BreadcrumbProps, type BreadcrumbTag } from './types'
+import { convertTreeToLevels } from './helpers'
+import {
+  type BreadcrumbNode,
+  type BreadcrumbProps,
+  type BreadcrumbTag,
+  type BreadcrumbVariant,
+} from './types'
 
 type BreadcrumbLevelProps = {
   nodes: BreadcrumbNode[]
@@ -25,6 +31,7 @@ type BreadcrumbLevelProps = {
   color: BreadcrumbProps['color']
   intent: BreadcrumbProps['intent']
   scale: TShirtSize
+  variant: BreadcrumbVariant
   isLast: boolean
 }
 
@@ -35,6 +42,7 @@ const BreadcrumbLevel = ({
   color,
   intent,
   scale,
+  variant,
   isLast,
 }: BreadcrumbLevelProps) => {
   const [open, setOpen] = useState<boolean>(false)
@@ -46,13 +54,10 @@ const BreadcrumbLevel = ({
   const selectedItemRef = useRef<HTMLButtonElement | null>(null)
 
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale].blockSize.replace('px', ''))
+  const optionBlockSize = parseInt(CONTROL_SCALE_MAP[scale].blockSize)
 
-  const { menuBlockSize } = resolveBreadcrumbValues({
-    visibleItemsCount: DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
-    optionBlockSize,
-    itemsCount: nodes.length,
-  })
+  const finalVisibleItemsCount = Math.min(nodes.length, DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT)
+  const menuBlockSize = finalVisibleItemsCount * optionBlockSize
 
   useEffect(() => {
     if (!open) return
@@ -82,7 +87,6 @@ const BreadcrumbLevel = ({
           tag="button"
           cursor="pointer"
           interactive
-          // variant="ghost"
           intent="primary"
           bgRole={open ? 'selection' : undefined}
           ripple={!open}
@@ -102,35 +106,41 @@ const BreadcrumbLevel = ({
       </Floating.Trigger>
       <Floating.Content>
         <Resize visible={visible} property="blockSize" easing={visible ? 'ease-out' : undefined}>
-          <Box
-            drawable
-            bgMode="filled"
-            intent={intent}
-            color={color}
-            minInlineSize="auto"
-            maxBlockSize={`${menuBlockSize}px`}
-            overflowY="auto"
-            overflowX="hidden"
-            borderTopLeftRadius={isOpenDownwards ? '0px' : undefined}
-            borderTopRightRadius={isOpenDownwards ? '0px' : undefined}
-            borderBottomLeftRadius={!isOpenDownwards ? '0px' : undefined}
-            borderBottomRightRadius={!isOpenDownwards ? '0px' : undefined}
-          >
-            <Box intent={intent} color={color} surfaceDepth="raised">
-              {nodes.map(node => {
-                const isSelected = node.value === currentValue
+          <Box drawable bgMode="filled" intent="neutral" color={color}>
+            <Box
+              drawable
+              intent={intent}
+              color={color}
+              bgMode="tinted"
+              borderMode={BREADCRUMB_VARIANT_MAP[variant].content.borderMode}
+              surfaceDepth="raised"
+              minInlineSize="auto"
+              maxBlockSize={`${menuBlockSize}px`}
+              overflowY="auto"
+              overflowX="hidden"
+              borderTopLeftRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopRightRadius={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomLeftRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomRightRadius={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderTopWidth={isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+              borderBottomWidth={!isOpenDownwards ? NEB_LENGTH.px_000 : undefined}
+            >
+              <Box
+                display="inline-flex"
+                flexDirection="column"
+                drawable
+                bgMode="filled"
+                intent="neutral"
+                color={color}
+                inlineSize="100%"
+                borderRadius={NEB_LENGTH.px_000}
+              >
+                {nodes.map((node, key) => {
+                  const isSelected = node.value === currentValue
 
-                return (
-                  <Box key={node.value}>
-                    {isOpenDownwards ? (
-                      <HorizontalRule
-                        marginBlock={NEB_LENGTH.px_000}
-                        surfaceDepth="raised"
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
+                  return (
                     <Box
+                      key={node.value}
                       tag="button"
                       tagRef={isSelected ? selectedItemRef : undefined}
                       tagAttrs={{
@@ -138,51 +148,51 @@ const BreadcrumbLevel = ({
                           onSelect(node.value)
                           setOpen(false)
                         },
+                        style: { backgroundClip: 'padding-box' },
                       }}
-                      drawable
+                      cursor="pointer"
                       interactive
-                      bgMode="filled"
-                      surfaceDepth="raised"
+                      inlineSize="100%"
+                      blockSize={
+                        key === 0
+                          ? !BREADCRUMB_VARIANT_MAP[variant].removeFirstTopBorder
+                            ? optionBlockSize + 'px'
+                            : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
+                          : `${optionBlockSize}px`
+                      }
                       intent={intent}
                       color={color}
-                      cursor="pointer"
+                      bgMode={BREADCRUMB_VARIANT_MAP[variant].item.bgMode}
+                      borderMode={BREADCRUMB_VARIANT_MAP[variant].item.borderMode}
+                      borderRole="divider"
+                      surfaceDepth="raised"
                       bgRole={isSelected ? 'selection' : undefined}
-                      inlineSize="100%"
+                      text={BREADCRUMB_VARIANT_MAP[variant].item.text}
+                      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                      borderWidth={NEB_LENGTH.px_000}
+                      borderTopWidth={
+                        BREADCRUMB_VARIANT_MAP[variant].removeFirstTopBorder && key === 0
+                          ? NEB_LENGTH.px_000
+                          : NEB_LENGTH.px_002
+                      }
                       borderRadius={NEB_LENGTH.px_000}
+                      display="flex"
+                      alignItems="center"
+                      justifyContent="center"
                     >
-                      <Box
-                        display="flex"
-                        tagAttrs={{
-                          style: {
-                            blockSize: CONTROL_SCALE_MAP[scale].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
-                          },
-                        }}
-                        alignItems="center"
-                        justifyContent="center"
+                      <Text
+                        bold={isSelected}
+                        fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                        lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
+                        textAlign="center"
+                        noWrap
                       >
-                        <Text
-                          bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-                          textAlign="center"
-                          noWrap
-                        >
-                          {node.label}
-                        </Text>
-                      </Box>
+                        {node.label}
+                      </Text>
                     </Box>
-                    {!isOpenDownwards ? (
-                      <HorizontalRule
-                        marginBlock={NEB_LENGTH.px_000}
-                        surfaceDepth="raised"
-                        color={color}
-                        intent={intent}
-                      />
-                    ) : null}
-                  </Box>
-                )
-              })}
+                  )
+                })}
+              </Box>
             </Box>
           </Box>
         </Resize>
@@ -203,6 +213,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   defaultPath,
   path,
   scale = DEFAULT_BREADCRUMB_SCALE,
+  variant = DEFAULT_BREADCRUMB_VARIANT,
   onChange,
 }: BreadcrumbProps<T>) => {
   const [internalPath, setInternalPath] = useState<string[]>(defaultPath || [])
@@ -245,6 +256,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                 color={color}
                 intent={intent}
                 scale={scale}
+                variant={variant}
                 isLast={index !== 0 && index === levels.length - 1}
               />
               {index < levels.length - 1 ? (
