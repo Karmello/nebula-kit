@@ -70,12 +70,10 @@ export const Checkbox = ({
         text={CHECKBOX_VARIANT_MAP[variant].text}
         intent={intent}
         color={color}
-        blockSize={CHECKBOX_SCALE_MAP[scale || 'xs'].blockSize}
-        inlineSize={CHECKBOX_SCALE_MAP[scale || 'xs'].blockSize}
+        blockSize={CHECKBOX_SCALE_MAP[scale].blockSize}
+        inlineSize={CHECKBOX_SCALE_MAP[scale].blockSize}
       />
-      {currentChecked ? (
-        <Icon name="check" size={CHECKBOX_SCALE_MAP[scale || 'xs'].iconSize} />
-      ) : null}
+      {currentChecked ? <Icon name="check" size={CHECKBOX_SCALE_MAP[scale].iconSize} /> : null}
     </Box>
   )
 }

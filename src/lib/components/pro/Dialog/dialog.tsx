@@ -133,7 +133,7 @@ export const Dialog = ({
                 position="relative"
                 overflowY="auto"
                 intent="secondary"
-                inlineSize={DIALOG_SCALE_MAP[scale || 'md']}
+                inlineSize={DIALOG_SCALE_MAP[scale]}
               >
                 <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
                   {onClose ? (

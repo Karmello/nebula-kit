@@ -108,8 +108,8 @@ export const Avatar = ({
       bgMode="filled"
       intent="tertiary"
       color="gray"
-      blockSize={AVATAR_SCALE_MAP[scale || 'md'].side}
-      inlineSize={AVATAR_SCALE_MAP[scale || 'md'].side}
+      blockSize={AVATAR_SCALE_MAP[scale].side}
+      inlineSize={AVATAR_SCALE_MAP[scale].side}
       borderRadius={shape === 'round' ? '50%' : undefined}
       position="relative"
       overflow="hidden"
@@ -143,7 +143,7 @@ export const Avatar = ({
               transform: 'translate(-50%, -50%)',
             },
           }}
-          fontSize={AVATAR_SCALE_MAP[scale || 'md'].fontSize}
+          fontSize={AVATAR_SCALE_MAP[scale].fontSize}
           intent="primary"
           color="blue"
           bold

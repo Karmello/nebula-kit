@@ -39,20 +39,20 @@ export const Callout = <T extends CalloutTag = 'div'>({
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"
-      padding={CALLOUT_SCALE_CONFIG[scale || 'md'].padding}
+      padding={CALLOUT_SCALE_CONFIG[scale].padding}
     >
       <Title
-        typography={CALLOUT_SCALE_CONFIG[scale || 'md'].textTypography as any}
+        typography={CALLOUT_SCALE_CONFIG[scale].textTypography as any}
         iconName={CALLOUT_CONFIG[status || 'info'].iconName}
       >
-        <Text typography={CALLOUT_SCALE_CONFIG[scale || 'md'].textTypography}>
+        <Text typography={CALLOUT_SCALE_CONFIG[scale].textTypography}>
           {heading || CALLOUT_CONFIG[status || 'info'].heading}
         </Text>
       </Title>
       {content ? (
         <>
-          <Spacer blockSize={CALLOUT_SCALE_CONFIG[scale || 'md'].spacerBlockSize} />
-          <Text fontSize={CALLOUT_SCALE_CONFIG[scale || 'md'].contentFontSize}>{content}</Text>
+          <Spacer blockSize={CALLOUT_SCALE_CONFIG[scale].spacerBlockSize} />
+          <Text fontSize={CALLOUT_SCALE_CONFIG[scale].contentFontSize}>{content}</Text>
         </>
       ) : null}
     </Box>

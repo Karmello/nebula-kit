@@ -157,8 +157,8 @@ export const Tabs = ({
                         display="flex"
                         tagAttrs={{
                           style: {
-                            blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
+                            blockSize: CONTROL_SCALE_MAP[scale].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
                             minInlineSize,
                           },
                         }}
@@ -168,8 +168,8 @@ export const Tabs = ({
                         <Text
                           tag="span"
                           bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
+                          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
                         >
                           {tab}
                         </Text>
@@ -197,7 +197,7 @@ export const Tabs = ({
                   'aria-labelledby': `tab-${value}`,
                   hidden: !isSelected,
                 }}
-                padding={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+                padding={CONTROL_SCALE_MAP[scale].fontSize}
               >
                 {panel}
               </Box>

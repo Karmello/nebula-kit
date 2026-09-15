@@ -8,6 +8,7 @@ import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
+import type { TShirtSize } from 'lib/types'
 
 import {
   DEFAULT_BREADCRUMB_INTENT,
@@ -23,7 +24,7 @@ type BreadcrumbLevelProps = {
   onSelect: (value: string) => void
   color: BreadcrumbProps['color']
   intent: BreadcrumbProps['intent']
-  scale: BreadcrumbProps['scale']
+  scale: TShirtSize
   isLast: boolean
 }
 
@@ -45,7 +46,7 @@ const BreadcrumbLevel = ({
   const selectedItemRef = useRef<HTMLButtonElement | null>(null)
 
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale || 'md'].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveBreadcrumbValues({
     visibleItemsCount: DEFAULT_BREADCRUMB_VISIBLE_ITEMS_COUNT,
@@ -85,14 +86,14 @@ const BreadcrumbLevel = ({
           intent="primary"
           bgRole={open ? 'selection' : undefined}
           ripple={!open}
-          blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-          paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
+          blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+          paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
         >
           <Text
             bold
             intent="primary"
-            fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
-            lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
+            fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+            lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
             noWrap
           >
             {currentLabel || 'Select ...'}
@@ -153,8 +154,8 @@ const BreadcrumbLevel = ({
                         display="flex"
                         tagAttrs={{
                           style: {
-                            blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
+                            blockSize: CONTROL_SCALE_MAP[scale].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
                           },
                         }}
                         alignItems="center"
@@ -162,8 +163,8 @@ const BreadcrumbLevel = ({
                       >
                         <Text
                           bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[scale || 'md'].lineHeight}
+                          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
                           textAlign="center"
                           noWrap
                         >
@@ -251,7 +252,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
                   name="chevron-right"
                   color={color}
                   intent="primary"
-                  size={CONTROL_SCALE_MAP[scale || 'md'].fontSize}
+                  size={CONTROL_SCALE_MAP[scale].fontSize}
                 />
               ) : null}
             </Fragment>

@@ -48,8 +48,8 @@ export const Input = ({
         className: classNames(withPrefix('input'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
-          fontSize: CONTROL_SCALE_MAP[scale || 'md'].fontSize,
-          lineHeight: CONTROL_SCALE_MAP[scale || 'md'].lineHeight,
+          fontSize: CONTROL_SCALE_MAP[scale].fontSize,
+          lineHeight: CONTROL_SCALE_MAP[scale].lineHeight,
         },
         value: currentValue,
         onChange: e => {
@@ -70,8 +70,8 @@ export const Input = ({
       inlineSize="100%"
       interactive
       activeOnFocus
-      blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-      paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
+      blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+      paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
     />
   )
 }

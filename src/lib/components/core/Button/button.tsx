@@ -62,7 +62,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   }, [bp, fullWidth])
 
   const icon = (
-    <Icon name={iconName} size={CONTROL_SCALE_MAP[scale || 'md'].iconSize}>
+    <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].iconSize}>
       {customSvgIcon}
     </Icon>
   )

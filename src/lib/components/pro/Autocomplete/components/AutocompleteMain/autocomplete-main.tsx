@@ -8,6 +8,7 @@ import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
+import type { TShirtSize } from 'lib/types'
 
 import { resolveAutocompleteValues } from '../../helpers'
 import { AutocompleteOptionProps } from '../../slots/AutocompleteOption/types'
@@ -15,8 +16,9 @@ import { AutocompleteProps } from '../../types'
 
 type AutocompleteMainProps = Omit<
   AutocompleteProps,
-  'children' | 'defaultValue' | 'value' | 'onChange'
+  'children' | 'defaultValue' | 'value' | 'onChange' | 'scale'
 > & {
+  scale: TShirtSize
   items: ReactNode[]
   currentValue?: string
   handleChange: (value: string) => void
@@ -56,7 +58,7 @@ export const AutocompleteMain = ({
 
   const triggerWidth = triggerRef.current?.offsetWidth
   const isOpenDownwards = placement?.startsWith('bottom')
-  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale || 'md'].blockSize.replace('px', ''))
+  const optionBlockSize = Number(CONTROL_SCALE_MAP[scale].blockSize.replace('px', ''))
 
   const { menuBlockSize } = resolveAutocompleteValues({
     visibleItemsCount: visibleItemsCount !== undefined ? visibleItemsCount : 5,
@@ -201,8 +203,8 @@ export const AutocompleteMain = ({
                   alignItems="center"
                   tagAttrs={{
                     style: {
-                      blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
-                      paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
+                      blockSize: CONTROL_SCALE_MAP[scale].blockSize,
+                      paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
                     },
                   }}
                 >
@@ -248,8 +250,8 @@ export const AutocompleteMain = ({
                           display="flex"
                           tagAttrs={{
                             style: {
-                              blockSize: CONTROL_SCALE_MAP[scale || 'md'].blockSize,
-                              paddingInline: CONTROL_SCALE_MAP[scale || 'md'].paddingInline,
+                              blockSize: CONTROL_SCALE_MAP[scale].blockSize,
+                              paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
                             },
                           }}
                           alignItems="center"

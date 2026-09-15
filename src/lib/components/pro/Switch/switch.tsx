@@ -45,7 +45,7 @@ export const Switch = ({
     onChange?.(checked)
   }
 
-  const resolvedBlockSize = CONTROL_SCALE_MAP[scale || 'md'].blockSize
+  const resolvedBlockSize = CONTROL_SCALE_MAP[scale].blockSize
 
   const thumbBlockSize =
     `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})` as BoxProps['blockSize']
@@ -84,7 +84,7 @@ export const Switch = ({
         bgMode="filled"
         intent={intent}
         color={color}
-        blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
+        blockSize={CONTROL_SCALE_MAP[scale].blockSize}
         inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Box

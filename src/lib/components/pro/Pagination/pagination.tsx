@@ -157,8 +157,8 @@ export const Pagination = ({
                 intent={intent}
                 color={color}
                 disabled
-                blockSize={CONTROL_SCALE_MAP[scale || 'md'].blockSize}
-                paddingInline={CONTROL_SCALE_MAP[scale || 'md'].paddingInline}
+                blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+                paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
               >
                 <Box
                   display="flex"
