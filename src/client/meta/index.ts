@@ -17,7 +17,6 @@ import { DIALOG_META } from './Dialog'
 import { DIALOG_CONTENT_META } from './DialogContent'
 import { DIALOG_FOOTER_META } from './DialogFooter'
 import { DIALOG_HEADER_META } from './DialogHeader'
-import { FADE_META } from './Fade'
 import { FLOATING_META } from './Floating'
 import { FLOATING_CONTENT_META } from './FloatingContent'
 import { FLOATING_TRIGGER_META } from './FloatingTrigger'
@@ -75,6 +74,7 @@ import { TOOLBAR_END_META } from './ToolbarEnd'
 import { TOOLBAR_MAIN_META } from './ToolbarMain'
 import { TOOLBAR_START_META } from './ToolbarStart'
 import { TOOLTIP_META } from './Tooltip'
+import { USE_FADE_META } from './useFade'
 import { USE_FOCUS_TRAP_META } from './useFocusTrap'
 import { USE_ROTATE_META } from './useRotate'
 import { VIRTUAL_LIST_META } from './VirtualList'
@@ -114,9 +114,6 @@ const META = {
     DialogHeader: DIALOG_HEADER_META,
     DialogContent: DIALOG_CONTENT_META,
     DialogFooter: DIALOG_FOOTER_META,
-  },
-  Fade: {
-    Fade: FADE_META,
   },
   Floating: {
     Floating: FLOATING_META,
@@ -243,6 +240,9 @@ const META = {
   },
   Tooltip: {
     Tooltip: TOOLTIP_META,
+  },
+  UseFade: {
+    UseFade: USE_FADE_META,
   },
   UseFocusTrap: {
     UseFocusTrap: USE_FOCUS_TRAP_META,

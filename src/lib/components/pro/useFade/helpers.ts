@@ -1,11 +1,11 @@
 import { RefObject } from 'react'
 
 export const syncFadeOpacity = (
-  ref: RefObject<HTMLSpanElement | null>,
+  ref: RefObject<HTMLElement | null>,
   visible: boolean,
   transition: string | null
 ) => {
-  const el = ref.current
+  const el = ref.current as HTMLElement | null
 
   if (!el) return
 

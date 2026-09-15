@@ -1,9 +1,9 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { Text } from 'lib/components/core/Text'
-import { Fade } from 'lib/components/pro/Fade'
 import { Floating } from 'lib/components/pro/Floating'
+import { useFade } from 'lib/components/pro/useFade'
 
 import {
   DEFAULT_TOOLTIP_INTENT,
@@ -14,6 +14,50 @@ import {
   TOOLTIP_VARIANT_MAP,
 } from './constants'
 import { TooltipProps } from './types'
+
+const TooltipContent = ({
+  variant,
+  intent,
+  color,
+  content,
+  minInlineSize,
+  maxInlineSize,
+  visible,
+}: Pick<TooltipProps, 'variant' | 'intent' | 'color' | 'content'> & {
+  minInlineSize?: number
+  maxInlineSize: number
+  visible: boolean
+}) => {
+  const contentRef = useRef<HTMLDivElement | null>(null)
+
+  useFade({ tagRef: contentRef, visible })
+
+  return (
+    <Box
+      tagRef={contentRef}
+      drawable
+      intent="neutral"
+      bgMode="filled"
+      color={color}
+      display="inline-block"
+    >
+      <Box
+        drawable
+        bgMode={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].bgMode}
+        borderMode={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].borderMode}
+        text={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].text}
+        intent={intent}
+        color={color}
+        paddingBlock="8px"
+        paddingInline="16px"
+        minInlineSize={`${minInlineSize}px`}
+        maxInlineSize={`${maxInlineSize}px`}
+      >
+        <Text>{content}</Text>
+      </Box>
+    </Box>
+  )
+}
 
 export const Tooltip = ({
   // Box
@@ -43,24 +87,15 @@ export const Tooltip = ({
         {children}
       </Floating.Trigger>
       <Floating.Content>
-        <Fade visible={visible}>
-          <Box drawable intent="neutral" bgMode="filled" color={color}>
-            <Box
-              drawable
-              bgMode={TOOLTIP_VARIANT_MAP[variant].bgMode}
-              borderMode={TOOLTIP_VARIANT_MAP[variant].borderMode}
-              text={TOOLTIP_VARIANT_MAP[variant].text}
-              intent={intent}
-              color={color}
-              paddingBlock="8px"
-              paddingInline="16px"
-              minInlineSize={`${minInlineSize}px`}
-              maxInlineSize={`${maxInlineSize}px`}
-            >
-              <Text>{content}</Text>
-            </Box>
-          </Box>
-        </Fade>
+        <TooltipContent
+          variant={variant}
+          intent={intent}
+          color={color}
+          content={content}
+          minInlineSize={minInlineSize}
+          maxInlineSize={maxInlineSize}
+          visible={visible}
+        />
       </Floating.Content>
     </Floating>
   )

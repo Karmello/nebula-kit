@@ -12,5 +12,6 @@ export const TOOLTIP_OVERVIEW: DocOverview = {
     'supports automatic dismissal via outside click and Escape key',
     'configurable placement and offset behavior',
   ],
-  composedOf: ['Box', 'Fade', 'Floating', 'Text'],
+  composedOf: ['Box', 'Floating', 'Text'],
+  hooks: ['useFade'],
 }

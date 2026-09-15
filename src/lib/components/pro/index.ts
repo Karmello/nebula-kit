@@ -8,7 +8,6 @@ export {
   type DialogHeaderProps,
   type DialogProps,
 } from './Dialog'
-export { Fade, type FadeProps } from './Fade'
 export { Floating, type FloatingProps } from './Floating'
 export { Markup, type MarkupProps } from './Markup'
 export { MultiSelect, type MultiSelectOptionProps, type MultiSelectProps } from './MultiSelect'
@@ -40,5 +39,6 @@ export {
   type ToolbarStartProps,
 } from './Toolbar'
 export { Tooltip, type TooltipProps } from './Tooltip'
+export { useFade, type UseFadeArgs } from './useFade'
 export { useFocusTrap, type UseFocusTrapArgs } from './useFocusTrap'
 export { VirtualList, type VirtualListProps } from './VirtualList'
