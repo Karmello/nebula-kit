@@ -11,6 +11,7 @@ import {
   DEFAULT_TOOLTIP_MODE,
   DEFAULT_TOOLTIP_PLACEMENT,
   DEFAULT_TOOLTIP_VARIANT,
+  TOOLTIP_VARIANT_MAP,
 } from './constants'
 import { TooltipProps } from './types'
 
@@ -43,21 +44,18 @@ export const Tooltip = ({
       </Floating.Trigger>
       <Floating.Content>
         <Fade visible={visible}>
-          <Box
-            drawable
-            // variant={variant}
-            intent={intent}
-            color={color}
-            minInlineSize={`${minInlineSize}px`}
-            maxInlineSize={`${maxInlineSize}px`}
-          >
+          <Box drawable intent="neutral" bgMode="filled" color={color}>
             <Box
               drawable
-              bgMode="filled"
-              intent={variant === 'outline' ? 'neutral' : intent}
+              bgMode={TOOLTIP_VARIANT_MAP[variant].bgMode}
+              borderMode={TOOLTIP_VARIANT_MAP[variant].borderMode}
+              text={TOOLTIP_VARIANT_MAP[variant].text}
+              intent={intent}
               color={color}
               paddingBlock="8px"
               paddingInline="16px"
+              minInlineSize={`${minInlineSize}px`}
+              maxInlineSize={`${maxInlineSize}px`}
             >
               <Text>{content}</Text>
             </Box>
