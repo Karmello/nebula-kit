@@ -7,16 +7,31 @@ const sections = [
 
 export const COMPONENT_CATEGORIES = [
   {
-    key: 'primitives',
-    label: 'Primitives',
+    key: 'base',
+    label: 'Base',
     items: [
-      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
+      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
+      { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'typography',
+    label: 'Typography',
+    items: [
       { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'icon', label: 'Icon', sections, bundle: 'core' },
-      { key: 'image', label: 'Image', sections, bundle: 'core' },
-      { key: 'table', label: 'Table', sections, bundle: 'core' },
+      { key: 'title', label: 'Title', sections, bundle: 'core' },
+      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
+      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'layout',
+    label: 'Layout',
+    items: [
       { key: 'horizontal-rule', label: 'HorizontalRule', sections, bundle: 'core' },
+      { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
     ],
   },
   {
@@ -26,22 +41,14 @@ export const COMPONENT_CATEGORIES = [
       { key: 'button', label: 'Button', sections, bundle: 'core' },
       { key: 'icon-button', label: 'IconButton', sections, bundle: 'core' },
       { key: 'link', label: 'Link', sections, bundle: 'core' },
-      { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
     ],
   },
   {
     key: 'images',
     label: 'Images',
-    items: [{ key: 'avatar', label: 'Avatar', sections, bundle: 'pro' }],
-  },
-  {
-    key: 'content',
-    label: 'Content',
     items: [
-      { key: 'title', label: 'Title', sections, bundle: 'core' },
-      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
-      { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
-      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
+      { key: 'image', label: 'Image', sections, bundle: 'core' },
+      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
     ],
   },
   {
@@ -61,7 +68,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'containers',
     label: 'Containers',
-    items: [{ key: 'reveal', label: 'Reveal', sections, bundle: 'core' }],
+    items: [
+      { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
+      { key: 'reveal', label: 'Reveal', sections, bundle: 'core' },
+    ],
   },
   {
     key: 'feedback',
@@ -84,7 +94,10 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'data',
     label: 'Data',
-    items: [{ key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' }],
+    items: [
+      { key: 'table', label: 'Table', sections, bundle: 'core' },
+      { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
+    ],
   },
   {
     key: 'overlays',
@@ -117,17 +130,12 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
-    key: 'providers',
-    label: 'Providers',
+    key: 'utility',
+    label: 'Utility',
     items: [
-      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
-      { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
+      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
+      { key: 'use-focus-trap', label: 'useFocusTrap', sections, bundle: 'pro' },
     ],
-  },
-  {
-    key: 'hooks',
-    label: 'Hooks',
-    items: [{ key: 'use-focus-trap', label: 'useFocusTrap', sections, bundle: 'pro' }],
   },
 ]
 
