@@ -1,6 +1,6 @@
-import { useNavigateTo } from 'client/hooks'
+import { Box, Button, HorizontalRule, Link, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Flex, Grid, Link, Section, Spacer, Text } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 import { CORE_DATA, PRO_DATA } from './definitions'
 
@@ -12,59 +12,79 @@ export const ComponentsBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (
-    <Box paddingTop="15px" paddingInline={{ base: '20px', lg: '50px' }}>
-      <Section
-        size="lg"
-        heading={bundle === 'core' ? `Core bundle (${CORE_DATA.length})` : `Pro bundle (${PRO_DATA.length})`}
-        iconName="package"
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+    >
+      <Title typography="h4" iconName="package">
+        {bundle === 'core'
+          ? `Core bundle (${CORE_DATA.length})`
+          : `Pro bundle (${PRO_DATA.length})`}
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <Box
+        display="flex"
+        alignItems="center"
+        columnGap={NEB_LENGTH.px_048}
+        flexWrap="wrap"
+        justifyContent="space-between"
       >
-        <Flex alignItems="center" columnGap="xl" flexWrap="wrap" justifyContent="space-between">
-          {bundle === 'core' ? <Text>All components available for free.</Text> : <Text>Comes with the paid plans.</Text>}
-          <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
-            <Button size="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
-              Back to Pricing page
-            </Button>
-          </Link>
-        </Flex>
-        <Spacer blockSize="lg" />
-        <Grid
-          gridTemplateColumns={{
-            base: '1fr',
-            md: 'repeat(2, 1fr)',
-            lg: 'repeat(3, 1fr)',
-            xl: 'repeat(4, 1fr)',
-          }}
-          gap="sm"
-        >
-          {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
-            <Section
-              key={item.name}
-              heading={item.name}
-              size="md"
-              variant="soft-outline"
-              color="blue"
-              intent="secondary"
-              headingIntent="primary"
-              iconName="box"
-            >
-              <Text intent="neutral">{item.title}</Text>
-            </Section>
-          ))}
-        </Grid>
-        <Spacer blockSize="lg" />
-        <Flex justifyContent="center">
-          <Link
-            href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
-            onClick={() => {
-              navigateTo(bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore)
-            }}
+        {bundle === 'core' ? (
+          <Text>All components available for free.</Text>
+        ) : (
+          <Text>Comes with the paid plans.</Text>
+        )}
+        <Link href={PageKey.pricing} onClick={() => navigateTo(PageKey.pricing)}>
+          <Button scale="sm" variant="ghost" intent="primary" color="blue" iconName="arrow-left">
+            Back to Pricing page
+          </Button>
+        </Link>
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Box
+        display="grid"
+        gridTemplateColumns={{
+          base: '1fr',
+          md: 'repeat(2, 1fr)',
+          lg: 'repeat(3, 1fr)',
+          xl: 'repeat(4, 1fr)',
+        }}
+        gap={NEB_LENGTH.px_016}
+      >
+        {(bundle === 'core' ? CORE_DATA : PRO_DATA).map(item => (
+          <Box
+            key={item.name}
+            drawable
+            borderMode="tinted"
+            intent="secondary"
+            color="blue"
+            padding={NEB_LENGTH.px_016}
+            overflowX="auto"
+            overflowY="hidden"
+            maxInlineSize="100%"
           >
-            <Button size="sm" color="amber" iconName="package">
-              {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
-            </Button>
-          </Link>
-        </Flex>
-      </Section>
+            <Title typography="h5" color="blue" intent="primary" iconName="box">
+              {item.name}
+            </Title>
+            <HorizontalRule color="blue" marginTop={NEB_LENGTH.px_004} />
+            <Spacer blockSize={NEB_LENGTH.px_008} />
+            <Text intent="neutral">{item.title}</Text>
+          </Box>
+        ))}
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_048} />
+      <Box display="flex" justifyContent="center">
+        <Link
+          href={bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore}
+          onClick={() => {
+            navigateTo(bundle === 'core' ? PageKey.pricingPro : PageKey.pricingCore)
+          }}
+        >
+          <Button scale="sm" color="amber" iconName="package">
+            {bundle === 'core' ? 'Pro bundle' : 'Core bundle'}
+          </Button>
+        </Link>
+      </Box>
     </Box>
   )
 }

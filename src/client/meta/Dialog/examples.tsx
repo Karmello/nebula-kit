@@ -1,7 +1,8 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Button, Dialog, DialogProps } from 'lib/components'
+import { Dialog } from 'lib/components/pro/Dialog'
+import { Button } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const DialogWrapper = () => {
   const [open, setOpen] = useState<boolean>(false)
@@ -26,7 +27,7 @@ const DialogWrapper = () => {
   )
 }
 
-const DIALOG_EXAMPLES_META: ComponentMeta<DialogProps>['examples'] = [
+export const DIALOG_EXAMPLES: DocExample[] = [
   {
     code: `<Dialog open={open}>
   <Dialog.Content>Dialog content</Dialog.Content>
@@ -43,5 +44,3 @@ const DIALOG_EXAMPLES_META: ComponentMeta<DialogProps>['examples'] = [
     description: 'Dialog with all three available slots present.',
   },
 ]
-
-export { DIALOG_EXAMPLES_META }

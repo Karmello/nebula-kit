@@ -1,6 +1,5 @@
-import { Button, Spacer, Table, Text, WithIcon } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { Button, NEB_LENGTH, Spacer, Table, Text, Title } from 'lib/components'
+import { usePlaygroundStore } from 'client/store'
 
 export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: () => void }) => {
   const components = usePlaygroundStore(state => state.components)
@@ -16,8 +15,13 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
   return (
     <>
       <Text bold>Props</Text>
-      <Spacer blockSize="xs" />
-      <Table layout="fixed" intent="neutral" paddingBlock="3xs" paddingInline="xs">
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+      <Table
+        layout="fixed"
+        intent="neutral"
+        paddingBlock={NEB_LENGTH.px_002}
+        paddingInline={NEB_LENGTH.px_008}
+      >
         <Table.Body intent="muted">
           {Object.keys(props)
             .sort()
@@ -25,7 +29,10 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
               let propValue = '-'
               const valueType = typeof props[propName].value
 
-              if (props[propName].value !== undefined && JSON.stringify(props[propName].value) != '{}') {
+              if (
+                props[propName].value !== undefined &&
+                JSON.stringify(props[propName].value) != '{}'
+              ) {
                 propValue =
                   valueType === 'object'
                     ? JSON.stringify(props[propName].value)
@@ -45,7 +52,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                       intent="primary"
                       color="blue"
                       bold={components[activeComponent].activeProp === propName}
-                      size="sm"
+                      scale="sm"
                       iconName={props[propName].isResponsive ? 'screen-share' : undefined}
                       iconPlacement="right"
                       onClick={() => {
@@ -72,9 +79,9 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
         </Table.Body>
       </Table>
       <Spacer />
-      <WithIcon iconName="screen-share">
+      <Title iconName="screen-share">
         <Text italic>= responsive prop</Text>
-      </WithIcon>
+      </Title>
     </>
   )
 }

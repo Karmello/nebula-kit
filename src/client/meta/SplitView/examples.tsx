@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, SplitView, SplitViewProps, Text } from 'lib/components'
+import { Box, Text } from 'lib/index.core'
+import { SplitView } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
+export const SPLIT_VIEW_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for SplitView.',
     jsx: (
@@ -22,8 +23,8 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
     jsx: (
       <Box blockSize="500px">
         <SplitView>
-          <SplitView.Side intent="secondary" inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
-            <Box margin="xs">
+          <SplitView.Side inlineSize={{ base: '300px', md: '500px', lg: '150px' }}>
+            <Box margin="8px">
               <Text noWrap>Side</Text>
             </Box>
           </SplitView.Side>
@@ -39,7 +40,8 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
   {
-    description: 'Using render function to access SplitView context and control its open state in overlay mode.',
+    description:
+      'Using render function to access SplitView context and control its open state in overlay mode.',
     code: `
 <SplitView>
   {({ setSideOpen, mode }) => (
@@ -70,5 +72,3 @@ const SPLIT_VIEW_EXAMPLES_META: ComponentMeta<SplitViewProps>['examples'] = [
     noSandBox: true,
   },
 ]
-
-export { SPLIT_VIEW_EXAMPLES_META }

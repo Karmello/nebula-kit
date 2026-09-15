@@ -1,0 +1,216 @@
+html[data-theme='light'],
+.neb-box[data-neb-box-theme='light'] {
+  --neb-background: white;
+  --neb-text: black;
+  --neb-focus-ring-color: black;
+
+  &[data-neb-box-intent='neutral'] {
+    --ripple-opacity: 0.02;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: 2;
+      --surface-active-offset: 5;
+      --surface-selection-offset: 5;
+      --surface-edge-offset: 5;
+      --surface-divider-offset: 2;
+
+      --tint-base-offset: 0%;
+      --tint-hover-offset: 2%;
+      --tint-active-offset: 5%;
+      --tint-selection-offset: 5%;
+      --tint-edge-offset: 5%;
+      --tint-divider-offset: 3%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: 3;
+      --surface-hover-offset: 5;
+      --surface-active-offset: 8;
+      --surface-selection-offset: 8;
+      --surface-edge-offset: 8;
+      --surface-divider-offset: 1;
+
+      --tint-base-offset: 3%;
+      --tint-hover-offset: 6%;
+      --tint-active-offset: 11%;
+      --tint-selection-offset: 11%;
+      --tint-edge-offset: 11%;
+      --tint-divider-offset: 0%;
+    }
+  }
+
+  &[data-neb-box-intent='muted'] {
+    --ripple-opacity: 0.03;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: 2;
+      --surface-active-offset: 5;
+      --surface-selection-offset: 5;
+      --surface-edge-offset: 5;
+      --surface-divider-offset: -2;
+
+      --tint-base-offset: 3%;
+      --tint-hover-offset: 6%;
+      --tint-active-offset: 10%;
+      --tint-selection-offset: 10%;
+      --tint-edge-offset: 9%;
+      --tint-divider-offset: 0%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: 3;
+      --surface-hover-offset: 5;
+      --surface-active-offset: 8;
+      --surface-selection-offset: 8;
+      --surface-edge-offset: 8;
+      --surface-divider-offset: 1;
+
+      --tint-base-offset: 8%;
+      --tint-hover-offset: 12%;
+      --tint-active-offset: 19%;
+      --tint-selection-offset: 19%;
+      --tint-edge-offset: 19%;
+      --tint-divider-offset: 4%;
+    }
+  }
+
+  &[data-neb-box-intent='tertiary'] {
+    --ripple-opacity: 0.04;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: 3;
+      --surface-active-offset: 7;
+      --surface-selection-offset: 7;
+      --surface-edge-offset: 7;
+      --surface-divider-offset: -2;
+
+      --tint-base-offset: 7%;
+      --tint-hover-offset: 11%;
+      --tint-active-offset: 16%;
+      --tint-selection-offset: 16%;
+      --tint-edge-offset: 16%;
+      --tint-divider-offset: 4%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: 5;
+      --surface-hover-offset: 8;
+      --surface-active-offset: 12;
+      --surface-selection-offset: 12;
+      --surface-edge-offset: 12;
+      --surface-divider-offset: 2;
+
+      --tint-base-offset: 16%;
+      --tint-hover-offset: 23%;
+      --tint-active-offset: 31%;
+      --tint-selection-offset: 31%;
+      --tint-edge-offset: 31%;
+      --tint-divider-offset: 11%;
+    }
+  }
+
+  &[data-neb-box-intent='secondary'] {
+    --ripple-opacity: 0.05;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: 4;
+      --surface-active-offset: 9;
+      --surface-selection-offset: 9;
+      --surface-edge-offset: 9;
+      --surface-divider-offset: -3;
+
+      --tint-base-offset: 12%;
+      --tint-hover-offset: 17%;
+      --tint-active-offset: 24%;
+      --tint-selection-offset: 24%;
+      --tint-edge-offset: 24%;
+      --tint-divider-offset: 8%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: 6;
+      --surface-hover-offset: 10;
+      --surface-active-offset: 15;
+      --surface-selection-offset: 15;
+      --surface-edge-offset: 15;
+      --surface-divider-offset: 2;
+
+      --tint-base-offset: 24%;
+      --tint-hover-offset: 33%;
+      --tint-active-offset: 41%;
+      --tint-selection-offset: 41%;
+      --tint-edge-offset: 41%;
+      --tint-divider-offset: 19%;
+    }
+  }
+
+  &[data-neb-box-intent='primary'] {
+    --ripple-opacity: 0.06;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: 5;
+      --surface-active-offset: 11;
+      --surface-selection-offset: 11;
+      --surface-edge-offset: 11;
+      --surface-divider-offset: -3;
+
+      --tint-base-offset: 18%;
+      --tint-hover-offset: 24%;
+      --tint-active-offset: 32%;
+      --tint-selection-offset: 32%;
+      --tint-edge-offset: 32%;
+      --tint-divider-offset: 12%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: 8;
+      --surface-hover-offset: 13;
+      --surface-active-offset: 19;
+      --surface-selection-offset: 19;
+      --surface-edge-offset: 19;
+      --surface-divider-offset: 4;
+
+      --tint-base-offset: 32%;
+      --tint-hover-offset: 42%;
+      --tint-active-offset: 51%;
+      --tint-selection-offset: 51%;
+      --tint-edge-offset: 51%;
+      --tint-divider-offset: 26%;
+    }
+  }
+
+  &[data-neb-box-intent='strong'] {
+    --ripple-opacity: 0.07;
+
+    &[data-neb-box-surface-depth='base'] {
+      --surface-base-offset: 0;
+      --surface-hover-offset: -5;
+      --surface-active-offset: -11;
+      --surface-selection-offset: -11;
+      --surface-edge-offset: -11;
+      --surface-divider-offset: -5;
+
+      --tint-base-offset: 25%;
+      --tint-hover-offset: 31%;
+      --tint-active-offset: 39%;
+      --tint-selection-offset: 39%;
+      --tint-edge-offset: 39%;
+      --tint-divider-offset: 18%;
+    }
+    &[data-neb-box-surface-depth='raised'] {
+      --surface-base-offset: -8;
+      --surface-hover-offset: -3;
+      --surface-active-offset: 3;
+      --surface-selection-offset: 3;
+      --surface-edge-offset: 3;
+      --surface-divider-offset: -11;
+
+      --tint-base-offset: 41%;
+      --tint-hover-offset: 51%;
+      --tint-active-offset: 60%;
+      --tint-selection-offset: 60%;
+      --tint-edge-offset: 60%;
+      --tint-divider-offset: 35%;
+    }
+  }
+}

@@ -1,15 +1,9 @@
-import path from 'path'
-import fs from 'fs'
-import { pathToFileURL } from 'node:url'
 import { kebabCase } from 'change-case'
+import fs from 'fs'
+import path from 'path'
+import { pathToFileURL } from 'node:url'
 
-import { CORE_PAGE_SECTIONS } from '../../src/client/definitions/core-page-routing.js'
-import { PRO_PAGE_SECTIONS } from '../../src/client/definitions/pro-page-routing.js'
-
-const SECTIONS = {
-  core: CORE_PAGE_SECTIONS,
-  pro: PRO_PAGE_SECTIONS,
-}
+import { COMPONENTS_PAGE_SECTIONS } from '../../src/client/definitions/components-page-routing.js'
 
 const bundle = process.env.TSUP_BUNDLE
 
@@ -76,12 +70,12 @@ for (const componentName of Object.keys(META)) {
 
   const { title } = overview
 
-  const section = SECTIONS[bundle].find(o => o.itemKey === kebabCase(componentName))
+  const section = COMPONENTS_PAGE_SECTIONS.find(o => o.itemKey === kebabCase(componentName))
 
   if (!section) continue
 
   const { categoryKey, itemKey } = section
-  const link = `https://nebulakit.dev/${bundle}/${categoryKey}/${itemKey}/overview`
+  const link = `https://nebulakit.dev/components/${categoryKey}/${itemKey}/overview`
 
   dts = injectComponentJsDoc(dts, componentName, title, link)
 }

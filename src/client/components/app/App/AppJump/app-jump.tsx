@@ -1,10 +1,10 @@
 import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 
+import { Autocomplete, Resize, Text, Title } from 'lib/components'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { Autocomplete, Resize, Text } from 'lib/components'
 
-import { RESIZE_DURATION, OPTIONS } from './definitions'
+import { OPTIONS, RESIZE_DURATION } from './definitions'
 
 export const AppJump = () => {
   const [query, setQuery] = useState<string>('')
@@ -59,7 +59,8 @@ export const AppJump = () => {
   useLayoutEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       const target = e.target as HTMLElement
-      const isTyping = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
+      const isTyping =
+        target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.isContentEditable
       if (isTyping) return
       if (e.key === '/') {
         e.preventDefault()
@@ -84,7 +85,7 @@ export const AppJump = () => {
       <Autocomplete
         key={String(showAppJump)}
         tagRef={autocompleteRef}
-        intent="muted"
+        intent="neutral"
         onChange={value => {
           setShowAppJump(false)
           setTimeout(() => {
@@ -99,8 +100,12 @@ export const AppJump = () => {
       >
         {filtered.map(({ label, href, iconName }) => {
           return (
-            <Autocomplete.Option key={href} value={href} label={href} iconName={iconName}>
-              <Text tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>{label}</Text>
+            <Autocomplete.Option key={href} value={href} label={href}>
+              <Title iconName={iconName}>
+                <Text tag="span" tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>
+                  {label}
+                </Text>
+              </Title>
             </Autocomplete.Option>
           )
         })}
@@ -109,7 +114,12 @@ export const AppJump = () => {
   }, [showAppJump, filtered])
 
   return (
-    <Resize property="blockSize" visible={showAppJump} duration={RESIZE_DURATION} easing="cubic-bezier(0.4, 0, 0.2, 1)">
+    <Resize
+      property="blockSize"
+      visible={showAppJump}
+      duration={RESIZE_DURATION}
+      easing="cubic-bezier(0.4, 0, 0.2, 1)"
+    >
       {autocomplete}
     </Resize>
   )

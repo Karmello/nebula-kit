@@ -1,23 +1,22 @@
-import { ComponentMeta } from 'client/definitions'
-import { Button, Icon, Tooltip, TooltipProps } from 'lib/components'
+import { Button, Icon } from 'lib/index.core'
+import { Tooltip } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const TOOLTIP_EXAMPLES_META: ComponentMeta<TooltipProps>['examples'] = [
+export const TOOLTIP_EXAMPLES: DocExample[] = [
   {
     description: 'Tooltip using hover mode (default).',
     jsx: (
-      <Tooltip content="This tooltip shows on hover." placement="right-center" minInlineSize={200} maxInlineSize={300}>
-        <Icon name="message-circle-question-mark" size="40px" />
+      <Tooltip content="This tooltip shows on hover." mode="hover">
+        <Icon name="message-circle-question-mark" size="24px" />
       </Tooltip>
     ),
   },
   {
     description: 'Tooltip using click mode.',
     jsx: (
-      <Tooltip content="This tooltip shows on click." minInlineSize={200} maxInlineSize={300} mode="click">
+      <Tooltip content="This tooltip shows on click." mode="click">
         <Button>Click me</Button>
       </Tooltip>
     ),
   },
 ]
-
-export { TOOLTIP_EXAMPLES_META }

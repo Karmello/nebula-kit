@@ -1,49 +1,158 @@
-import { useNavigateTo } from 'client/hooks'
+import { Box, Button, HorizontalRule, Icon, Link, NEB_LENGTH, Spacer, Text } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Link, Section, Spacer, Text, Grid } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
 
 export const Principles = () => {
   const navigateTo = useNavigateTo()
 
   return (
     <>
-      <Grid gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }} gap="lg">
-        <Section heading="JSX first" color="green" intent="primary" iconName="code">
+      <Box
+        display="grid"
+        gridTemplateColumns={{ base: '1fr', md: 'repeat(2, 1fr)', lg: '1fr' }}
+        gap={NEB_LENGTH.px_032}
+      >
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="code" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              JSX first
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            JSX is the primary development flow. Styling happens through structured props instead of constant CSS authoring, while
-            preserving familiar CSS concepts underneath.
+            JSX is the primary development flow. Styling happens through structured props instead of
+            constant CSS authoring, while preserving familiar CSS concepts underneath.
           </Text>
-        </Section>
-        <Section heading="Composition and inheritance" color="green" intent="primary" iconName="rectangle-circle">
+        </Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="rectangle-circle" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              Composition and inheritance
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            Pure composition drives all component behavior. Functionality is never duplicated. Composed functionality flows
-            through prop inheritance, not redefinition.
+            Pure composition drives all component behavior. Functionality is never duplicated.
+            Composed functionality flows through prop inheritance, not redefinition.
           </Text>
-        </Section>
-        <Section heading="Enforcing HTML semantics" color="green" intent="primary" iconName="file-code">
+        </Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="file-code" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              Enforcing HTML semantics
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            Semantic HTML is part of the component contract. Components preserve structure and meaning by default.
+            Semantic HTML is part of the component contract. Components preserve structure and
+            meaning by default.
           </Text>
-        </Section>
-        <Section heading="Orthogonal styling engine" color="green" intent="primary" iconName="atom">
+        </Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="atom" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              Orthogonal styling engine
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            Styling concerns are separated and scoped to prevent interference. Each styling dimension stays isolated. Performance
-            is a property of the architecture, not an added optimization.
+            Styling concerns are separated and scoped to prevent interference. Each styling
+            dimension stays isolated. Performance is a property of the architecture, not an added
+            optimization.
           </Text>
-        </Section>
-        <Section heading="Unified rendering models" color="green" intent="primary" iconName="paintbrush">
+        </Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="paintbrush" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              Unified rendering models
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            The mechanisms for drawing visual output and handling responsiveness are each driven by their own explicit model,
-            ensuring consistent behavior across the system.
+            The mechanisms for drawing visual output and handling responsiveness are each driven by
+            their own explicit model, ensuring consistent behavior across the system.
           </Text>
-        </Section>
-        <Section heading="Resistant to entropy" color="green" intent="primary" iconName="shield-check">
+        </Box>
+        <Box>
+          <Box
+            display="flex"
+            flexDirection="row"
+            flexWrap="nowrap"
+            alignItems="center"
+            columnGap="11px"
+          >
+            <Icon name="shield-check" color="green" intent="primary" size="22px" />
+            <Text typography="h5" bold color="green" intent="primary">
+              Resistant to entropy
+            </Text>
+          </Box>
+          <HorizontalRule
+            color="green"
+            marginTop={NEB_LENGTH.px_004}
+            marginBottom={NEB_LENGTH.px_008}
+          />
           <Text intent="neutral">
-            System constraints minimize UI entropy and optimize for long-term consistency, keeping products stable as they grow.
+            System constraints minimize UI entropy and optimize for long-term consistency, keeping
+            products stable as they grow.
           </Text>
-        </Section>
-      </Grid>
-      <Spacer blockSize="lg" />
+        </Box>
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box textAlign="center">
         <Link
           href={`${PageKey.foundations}/overview/philosophy/jsx-first`}
@@ -51,7 +160,7 @@ export const Principles = () => {
             navigateTo(`${PageKey.foundations}/overview/philosophy/jsx-first`)
           }}
         >
-          <Button size="sm" color="green" intent="primary">
+          <Button scale="sm" color="green" intent="primary">
             Read more
           </Button>
         </Link>

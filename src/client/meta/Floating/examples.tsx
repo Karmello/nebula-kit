@@ -1,43 +1,22 @@
-import { ComponentMeta } from 'client/definitions'
-import { FloatingProps } from 'lib/components'
+import { Box } from 'lib/components'
+import { Floating } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const FLOATING_EXAMPLES_META: ComponentMeta<FloatingProps>['examples'] = [
+export const FLOATING_EXAMPLES: DocExample[] = [
   {
-    description: 'Basic usage.',
-    noSandBox: true,
-    code: `const anchorRef = useRef<HTMLElement | null>(null)
-const [resolved, setResolved] = useState<FloatingResolved>()
-
-return (
-  <>
-    <Box tagRef={anchorRef}>Anchor</Box>
-    <Floating
-      anchorRef={anchorRef}
-      mode="project-both"
-      minInlineSize={120}
-      maxInlineSize={240}
-      onResolve={resolved => {
-        if (
-          resolved.placement !== floatingResolved?.placement ||
-          resolved.blockSize !== floatingResolved?.blockSize
-        ) {
-          setFloatingResolved(resolved)
-        }
-      }}
-    >
-      {resolved && (
-        <Portal
-          anchorRef={anchorRef}
-          placement={resolved.placement}
-        >
-          Floating content
-        </Portal>
-      )}
-    </Floating>
-  </>
-)
-`,
+    jsx: (
+      <Floating offset={10}>
+        <Floating.Trigger>
+          <Box drawable bgMode="filled" intent="primary" padding="16px">
+            Trigger
+          </Box>
+        </Floating.Trigger>
+        <Floating.Content>
+          <Box drawable bgMode="filled" intent="primary" padding="16px">
+            Content
+          </Box>
+        </Floating.Content>
+      </Floating>
+    ),
   },
 ]
-
-export { FLOATING_EXAMPLES_META }

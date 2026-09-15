@@ -1,16 +1,17 @@
 import { useState } from 'react'
 
-import { ComponentMeta } from 'client/definitions'
-import { Button, Input, InputProps } from 'lib/components'
+import { Input } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
 const InputControlled = () => {
   const [value, setValue] = useState<string>('value')
   return <Input value={value} onChange={setValue} />
 }
 
-const INPUT_EXAMPLES_META: ComponentMeta<InputProps>['examples'] = [
+export const INPUT_EXAMPLES: DocExample[] = [
   {
-    description: 'Input used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Input used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: <Input defaultValue="default value" />,
   },
   {
@@ -23,34 +24,8 @@ return (
 )`,
   },
   {
-    description: 'Input with interactive elements attached on the left and right.',
-    jsx: (
-      <Input
-        startAffix={props => <Button {...props} iconName="search" />}
-        endAffix={props => <Button {...props} iconName="eye" />}
-      />
-    ),
-    code: `<Input
-  startAffix={props => <Button {...props} iconName="search" />}
-  endAffix={props => <Button {...props} iconName="eye" />}
-/>`,
-  },
-  {
     description: 'Disabled Input.',
-    jsx: (
-      <Input
-        startAffix={props => <Button {...props} iconName="search" />}
-        endAffix={props => <Button {...props} iconName="eye" />}
-        disabled
-        value="value"
-      />
-    ),
-    code: `<Input
-  startAffix={props => <Button {...props} iconName="search" />}
-  endAffix={props => <Button {...props} iconName="eye" />}
-  disabled
-/>`,
+    jsx: <Input disabled value="value" />,
+    code: `<Input disabled />`,
   },
 ]
-
-export { INPUT_EXAMPLES_META }

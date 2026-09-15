@@ -1,26 +1,22 @@
 import { useEffect } from 'react'
 
-import { useAppStore } from 'client/store'
-import { Box, Flex, Section, Spacer, SplitView } from 'lib/components'
-import { LIB_PREFIX } from 'lib/definitions'
+import { Box, HorizontalRule, NEB_LENGTH, Spacer, SplitView, Title } from 'lib/components'
+import { LIB_PREFIX } from 'lib/constants'
+import { getInitialState, usePlaygroundStore } from 'client/store'
 
 import {
   ComponentSelect,
-  PropSelect,
-  PropEditor,
-  RenderPanel,
-  TogglePropsButton,
-  PropsViewer,
-  SwitchPropViewButton,
   DocsButton,
   PredefinedExamples,
+  PropEditor,
+  PropSelect,
+  PropsViewer,
+  RenderPanel,
+  SwitchPropViewButton,
+  TogglePropsButton,
 } from './components'
 
-import { getInitialState } from './store/get-initial-state'
-import { usePlaygroundStore } from './store'
-
 export const PlaygroundPage = () => {
-  const theme = useAppStore(state => state.theme)
   const activeComponent = usePlaygroundStore(state => state.activeComponent)
 
   useEffect(() => {
@@ -31,61 +27,76 @@ export const PlaygroundPage = () => {
   }, [])
 
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} overflowY="hidden">
-      <Section size="lg" heading={`Playground (${activeComponent})`} iconName="flask-conical">
-        <Spacer blockSize="xs" />
-        <SplitView sidePosition="right">
-          {({ mode, setSideOpen }) => {
-            return (
-              <>
-                <SplitView.Main>
-                  <SplitView.MainBar>
-                    <Flex flexWrap="wrap" gap="xs">
-                      <Flex flexWrap="wrap" gap="xs">
-                        <TogglePropsButton />
-                        <PredefinedExamples />
-                      </Flex>
-                      <DocsButton />
-                    </Flex>
-                  </SplitView.MainBar>
-                  <Spacer blockSize="md" />
-                  <RenderPanel />
-                  <Spacer blockSize="lg" />
-                  <PropsViewer
-                    handleSideVisibility={() => {
-                      if (mode === 'overlay') setSideOpen(true)
-                    }}
-                  />
-                </SplitView.Main>
-                <SplitView.Side
-                  theme={{ base: theme === 'light' ? 'dark' : 'light', lg: theme }}
-                  intent="neutral"
-                  inlineSize="320px"
-                >
-                  <Box padding={{ base: '10px', lg: '0px' }} paddingLeft={{ lg: '30px' }}>
-                    <Flex flexDirection="column" alignItems="stretch" rowGap="md">
-                      <Flex.Item>
-                        <ComponentSelect />
-                      </Flex.Item>
-                      <Flex.Item>
-                        <Flex flexDirection="column" alignItems="stretch" rowGap="xs">
-                          <Flex.Item>
-                            <PropSelect />
-                          </Flex.Item>
-                          <SwitchPropViewButton />
-                        </Flex>
-                      </Flex.Item>
-                      <Flex.Item>
-                        <PropEditor />
-                      </Flex.Item>
-                    </Flex>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      overflowY="hidden"
+    >
+      <Title typography="h4" iconName="flask-conical">
+        {`Playground (${activeComponent})`}
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+      <SplitView sidePosition="right">
+        {({ mode, setSideOpen }) => {
+          return (
+            <>
+              <SplitView.Main>
+                <SplitView.MainBar>
+                  <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+                    <Box display="flex" flexWrap="wrap" gap={NEB_LENGTH.px_008}>
+                      <TogglePropsButton />
+                      <PredefinedExamples />
+                    </Box>
+                    <DocsButton />
                   </Box>
-                </SplitView.Side>
-              </>
-            )
-          }}
-        </SplitView>
-      </Section>
+                </SplitView.MainBar>
+                <Spacer blockSize={NEB_LENGTH.px_024} />
+                <RenderPanel />
+                <Spacer blockSize={NEB_LENGTH.px_048} />
+                <PropsViewer
+                  handleSideVisibility={() => {
+                    if (mode === 'overlay') setSideOpen(true)
+                  }}
+                />
+              </SplitView.Main>
+              <SplitView.Side intent="neutral" inlineSize="320px">
+                <Box
+                  padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
+                  paddingLeft={{ lg: NEB_LENGTH.px_032 }}
+                >
+                  <Box
+                    display="flex"
+                    flexDirection="column"
+                    alignItems="stretch"
+                    rowGap={NEB_LENGTH.px_024}
+                  >
+                    <Box>
+                      <ComponentSelect />
+                    </Box>
+                    <Box>
+                      <Box
+                        display="flex"
+                        flexDirection="column"
+                        alignItems="stretch"
+                        rowGap={NEB_LENGTH.px_008}
+                      >
+                        <Box>
+                          <PropSelect />
+                        </Box>
+                        <SwitchPropViewButton />
+                      </Box>
+                    </Box>
+                    <Box>
+                      <PropEditor />
+                    </Box>
+                  </Box>
+                </Box>
+              </SplitView.Side>
+            </>
+          )
+        }}
+      </SplitView>
     </Box>
   )
 }

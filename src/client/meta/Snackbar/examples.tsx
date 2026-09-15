@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { Button, SnackbarProps, useSnackbar } from 'lib/components'
-import { CALLOUT_CONFIG, CalloutStatus } from 'lib/components/core/feedback/Callout'
-import { SnackbarPlacement } from 'lib/components/pro/feedback/Snackbar'
+import { CALLOUT_CONFIG, CalloutStatus } from 'lib/components/core/Callout'
+import { type SnackbarPlacement } from 'lib/components/pro/Snackbar/types'
+import { Button } from 'lib/index.core'
+import { useSnackbar } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
 const SnackbarWrapper = ({
   status,
@@ -31,7 +32,7 @@ const SnackbarWrapper = ({
   )
 }
 
-const SNACKBAR_EXAMPLES_META: ComponentMeta<SnackbarProps>['examples'] = [
+export const SNACKBAR_EXAMPLES: DocExample[] = [
   {
     code: `<Snackbar>
   <App />
@@ -42,7 +43,10 @@ const SNACKBAR_EXAMPLES_META: ComponentMeta<SnackbarProps>['examples'] = [
   {
     description: 'Informational snackbar at the bottom right (default).',
     jsx: (
-      <SnackbarWrapper status="info" content="This is an informational message that highlights something worth your attention." />
+      <SnackbarWrapper
+        status="info"
+        content="This is an informational message that highlights something worth your attention."
+      />
     ),
     code: `const { show } = useSnackbar()
     \r
@@ -148,4 +152,14 @@ show({
   },
 ]
 
-export { SNACKBAR_EXAMPLES_META }
+export const USE_SNACKBAR_EXAMPLES: DocExample[] = [
+  {
+    code: `const { show } = useSnackbar()
+
+show({
+  status: 'info',
+  content: 'This is an informational message that highlights something worth your attention.',
+})`,
+    skip: true,
+  },
+]

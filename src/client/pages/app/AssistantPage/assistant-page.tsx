@@ -1,13 +1,19 @@
-import { Box, Section } from 'lib/components'
+import { Box, HorizontalRule, NEB_LENGTH, Title } from 'lib/components'
 
 import { ChatAssistant } from './ChatAssistant'
 
 export const AssistantPage = () => {
   return (
-    <Box paddingTop="sm" paddingInline={{ base: 'md', lg: 'xl' }} maxInlineSize="75rem">
-      <Section size="lg" heading="Assistant" iconName="sparkles">
-        <ChatAssistant />
-      </Section>
+    <Box
+      paddingTop={NEB_LENGTH.px_016}
+      paddingInline={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
+      maxInlineSize="75rem"
+    >
+      <Title typography="h4" iconName="sparkles">
+        Assistant
+      </Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+      <ChatAssistant />
     </Box>
   )
 }

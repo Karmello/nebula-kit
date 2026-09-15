@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Callout, CalloutProps, Spacer } from 'lib/components'
+import { Callout, Spacer } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
+export const CALLOUT_EXAMPLES: DocExample[] = [
   {
     jsx: <Callout status="info" content="Callout text content" />,
     skip: true,
@@ -11,9 +11,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="outline" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="soft-outline" />
       </>
     ),
@@ -23,9 +23,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="success" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="outline" status="success" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="soft-outline" status="success" />
       </>
     ),
@@ -35,9 +35,9 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="warning" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="outline" status="warning" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="soft-outline" status="warning" />
       </>
     ),
@@ -47,13 +47,11 @@ const CALLOUT_EXAMPLES_META: ComponentMeta<CalloutProps>['examples'] = [
     jsx: (
       <>
         <Callout content="Callout text content" status="error" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="outline" status="error" />
-        <Spacer blockSize="md" />
+        <Spacer blockSize="24px" />
         <Callout content="Callout text content" variant="soft-outline" status="error" />
       </>
     ),
   },
 ]
-
-export { CALLOUT_EXAMPLES_META }

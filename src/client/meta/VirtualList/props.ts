@@ -1,22 +1,16 @@
-import { ComponentMeta } from 'client/definitions'
-import { VirtualListProps } from 'lib/components'
-
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN,
   DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX,
   VIRTUAL_LIST_SCROLL_ALIGN,
-} from 'lib/components/pro/layout/VirtualList'
+} from 'lib/components/pro/VirtualList/constants'
+import { VirtualListProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-
-const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
+export const VIRTUAL_LIST_PROPS: Record<keyof VirtualListProps, DocProp> = {
   color: {
-    ...BOX_PROPS_META.color,
+    options: BOX_COLORS,
     description: 'Color applied to the surface behind list items.',
-  },
-  elevated: {
-    ...BOX_PROPS_META.elevated,
-    description: 'Applies an elevated surface level behind the list items.',
   },
   ensureVisibleIndex: {
     options: ['number'],
@@ -24,10 +18,10 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
       'Index of the item that should be kept fully visible within the list viewport. When provided, the list scrolls only if needed to ensure this item remains in view.',
   },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: BOX_INTENTS,
     description: 'Color tone applied to the surface behind list items.',
   },
-  itemHeight: {
+  itemBlockSize: {
     options: ['number'],
     isRequired: true,
     description: 'Height of a single list item in pixels.',
@@ -50,20 +44,30 @@ const VIRTUAL_LIST_PROPS_META: ComponentMeta<VirtualListProps>['props'] = {
   scrollAlign: {
     options: VIRTUAL_LIST_SCROLL_ALIGN,
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_ALIGN),
-    description: 'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
+    description:
+      'Defines how the item targeted by the "scrollToIndex" prop is positioned within the scroll area.',
   },
   scrollToIndex: {
     options: ['number'],
     defaultValue: String(DEFAULT_VIRTUAL_LIST_SCROLL_TO_INDEX),
     description: 'Scrolls the list to the item at the given index on render.',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
+    description:
+      "Selects which depth tier the component's surface color is drawn from - base or raised - each with its own per-intent lightness and interaction states.",
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   visibleItemsCount: {
     options: ['number'],
     isRequired: true,
     description: 'Specifies the number of list items visible before scrolling is enabled.',
   },
 }
-
-export { VIRTUAL_LIST_PROPS_META }

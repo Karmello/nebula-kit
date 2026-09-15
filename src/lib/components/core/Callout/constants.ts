@@ -1,0 +1,75 @@
+import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { TShirtSize } from 'lib/types'
+
+import type { BoxBgMode, BoxBorderMode, BoxColor, BoxIntent, BoxText } from '../Box/types'
+import { type IconName } from '../Icon/types'
+import type { TextTypography } from '../Text/types'
+
+export const CALLOUT_VARIANTS = ['solid', 'outline', 'soft-outline'] as const
+export const CALLOUT_STATUSES = ['info', 'success', 'warning', 'error'] as const
+export const CALLOUT_TAGS = ['div', 'section', 'article', 'aside'] as const
+
+export const CALLOUT_SCALE_CONFIG: Record<
+  TShirtSize,
+  {
+    padding: string
+    textTypography: TextTypography
+    contentFontSize: string
+    spacerBlockSize: string
+  }
+> = {
+  xs: {
+    padding: '12px',
+    textTypography: 'h6',
+    contentFontSize: CONTROL_SCALE_MAP.xs.fontSize,
+    spacerBlockSize: '6px',
+  },
+  sm: {
+    padding: '16px',
+    textTypography: 'h6',
+    contentFontSize: CONTROL_SCALE_MAP.sm.fontSize,
+    spacerBlockSize: '8px',
+  },
+  md: {
+    padding: '24px',
+    textTypography: 'h5',
+    contentFontSize: CONTROL_SCALE_MAP.md.fontSize,
+    spacerBlockSize: '16px',
+  },
+  lg: {
+    padding: '32px',
+    textTypography: 'h4',
+    contentFontSize: CONTROL_SCALE_MAP.lg.fontSize,
+    spacerBlockSize: '24px',
+  },
+  xl: {
+    padding: '48px',
+    textTypography: 'h3',
+    contentFontSize: CONTROL_SCALE_MAP.xl.fontSize,
+    spacerBlockSize: '32px',
+  },
+}
+
+export const CALLOUT_CONFIG: Record<
+  (typeof CALLOUT_STATUSES)[number],
+  { color: BoxColor; heading: string; iconName: IconName }
+> = {
+  info: { color: 'blue', heading: 'Info', iconName: 'info' },
+  success: { color: 'green', heading: 'Success', iconName: 'check-circle' },
+  warning: { color: 'amber', heading: 'Warning', iconName: 'triangle-alert' },
+  error: { color: 'red', heading: 'Error', iconName: 'circle-alert' },
+}
+
+export const DEFAULT_CALLOUT_SCALE: TShirtSize = 'md'
+export const DEFAULT_CALLOUT_VARIANT: (typeof CALLOUT_VARIANTS)[number] = 'solid'
+export const DEFAULT_CALLOUT_INTENT: BoxIntent = 'primary'
+export const DEFAULT_CALLOUT_STATUS: (typeof CALLOUT_STATUSES)[number] = 'info'
+
+export const CALLOUT_VARIANT_MAP: Record<
+  (typeof CALLOUT_VARIANTS)[number],
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+> = {
+  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
+}

@@ -1,0 +1,144 @@
+const sections = [
+  { key: 'overview', label: 'Overview' },
+  { key: 'examples', label: 'Examples' },
+  { key: 'props', label: 'Props' },
+  { key: 'changelog', label: 'Changelog' },
+]
+
+export const COMPONENT_CATEGORIES = [
+  {
+    key: 'base',
+    label: 'Base',
+    items: [
+      { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
+      { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
+      { key: 'box', label: 'Box', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'typography',
+    label: 'Typography',
+    items: [
+      { key: 'text', label: 'Text', sections, bundle: 'core' },
+      { key: 'icon', label: 'Icon', sections, bundle: 'core' },
+      { key: 'title', label: 'Title', sections, bundle: 'core' },
+      { key: 'markup', label: 'Markup', sections, bundle: 'pro' },
+      { key: 'marker-list', label: 'MarkerList', sections, bundle: 'core' },
+      { key: 'horizontal-rule', label: 'HorizontalRule', sections, bundle: 'core' },
+      { key: 'spacer', label: 'Spacer', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'controls',
+    label: 'Controls',
+    items: [
+      { key: 'button', label: 'Button', sections, bundle: 'core' },
+      { key: 'icon-button', label: 'IconButton', sections, bundle: 'core' },
+      { key: 'link', label: 'Link', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'images',
+    label: 'Images',
+    items: [
+      { key: 'image', label: 'Image', sections, bundle: 'core' },
+      { key: 'avatar', label: 'Avatar', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'form',
+    label: 'Form',
+    items: [
+      { key: 'input', label: 'Input', sections, bundle: 'core' },
+      { key: 'password-input', label: 'PasswordInput', sections, bundle: 'pro' },
+      { key: 'textarea', label: 'Textarea', sections, bundle: 'core' },
+      { key: 'select', label: 'Select', sections, bundle: 'core' },
+      { key: 'multi-select', label: 'MultiSelect', sections, bundle: 'pro' },
+      { key: 'autocomplete', label: 'Autocomplete', sections, bundle: 'pro' },
+      { key: 'checkbox', label: 'Checkbox', sections, bundle: 'core' },
+      { key: 'switch', label: 'Switch', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'containers',
+    label: 'Containers',
+    items: [
+      { key: 'tabs', label: 'Tabs', sections, bundle: 'pro' },
+      { key: 'reveal', label: 'Reveal', sections, bundle: 'core' },
+    ],
+  },
+  {
+    key: 'feedback',
+    label: 'Feedback',
+    items: [
+      { key: 'loader', label: 'Loader', sections, bundle: 'core' },
+      { key: 'callout', label: 'Callout', sections, bundle: 'core' },
+      { key: 'snackbar', label: 'Snackbar', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'navigation',
+    label: 'Navigation',
+    items: [
+      { key: 'side-nav', label: 'SideNav', sections, bundle: 'pro' },
+      { key: 'breadcrumb', label: 'Breadcrumb', sections, bundle: 'pro' },
+      { key: 'pagination', label: 'Pagination', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'data',
+    label: 'Data',
+    items: [
+      { key: 'table', label: 'Table', sections, bundle: 'core' },
+      { key: 'virtual-list', label: 'VirtualList', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'overlays',
+    label: 'Overlays',
+    items: [
+      { key: 'dialog', label: 'Dialog', sections, bundle: 'pro' },
+      { key: 'tooltip', label: 'Tooltip', sections, bundle: 'pro' },
+      { key: 'floating', label: 'Floating', sections, bundle: 'pro' },
+      { key: 'portal', label: 'Portal', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'shells',
+    label: 'Shells',
+    items: [
+      { key: 'app-frame', label: 'AppFrame', sections, bundle: 'core' },
+      { key: 'split-view', label: 'SplitView', sections, bundle: 'pro' },
+      { key: 'toolbar', label: 'Toolbar', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'motion',
+    label: 'Motion',
+    items: [
+      { key: 'resize', label: 'Resize', sections, bundle: 'core' },
+      { key: 'use-rotate', label: 'useRotate', sections, bundle: 'core' },
+      { key: 'use-slide', label: 'useSlide', sections, bundle: 'core' },
+      { key: 'use-fade', label: 'useFade', sections, bundle: 'pro' },
+      { key: 'use-scale', label: 'useScale', sections, bundle: 'pro' },
+    ],
+  },
+  {
+    key: 'utility',
+    label: 'Utility',
+    items: [
+      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
+      { key: 'use-focus-trap', label: 'useFocusTrap', sections, bundle: 'pro' },
+    ],
+  },
+]
+
+export const COMPONENTS_PAGE_SECTIONS = []
+
+COMPONENT_CATEGORIES.forEach(c =>
+  c.items.forEach(i =>
+    i.sections.forEach(s => {
+      COMPONENTS_PAGE_SECTIONS.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
+    })
+  )
+)

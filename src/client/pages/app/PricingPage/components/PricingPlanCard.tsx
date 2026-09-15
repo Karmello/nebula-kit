@@ -1,10 +1,10 @@
 import { ReactNode } from 'react'
 
-import { useNavigateTo } from 'client/hooks'
+import { Box, HorizontalRule, Icon, Link, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
+import type { BoxColor } from 'lib/components/core/Box/types'
+import type { IconName } from 'lib/components/core/Icon/types'
 import { Plan } from 'client/definitions'
-import { Flex, Icon, Link, Section, Spacer, Text } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
-import { IconName } from 'lib/definitions'
+import { useNavigateTo } from 'client/hooks'
 
 import { PricingPlanButton } from './PricingPlanButton'
 
@@ -36,37 +36,47 @@ export const PricingPlanCard = ({
   const OptionIncluded = ({ children }: { children: ReactNode }) => {
     return (
       <>
-        <Flex alignItems="center" columnGap="sm">
-          <Icon name="check" intent="primary" color={color} size="sm" />
+        <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
+          <Icon name="check" intent="primary" color={color} size={NEB_LENGTH.px_024} />
           {children}
-        </Flex>
-        <Spacer blockSize="3xs" />
+        </Box>
+        <Spacer blockSize={NEB_LENGTH.px_002} />
       </>
     )
   }
 
   return (
-    <Section
-      heading={title}
-      variant={plan === 'free' ? 'outline' : 'soft-outline'}
-      intent={plan === 'free' ? 'tertiary' : 'primary'}
-      color={color}
-      iconName={iconName}
+    <Box
       interactive
-      size="lg"
+      bgMode="tinted"
+      borderMode="tinted"
+      color={color}
+      intent="secondary"
+      padding={NEB_LENGTH.px_024}
     >
+      <Title typography="h4" intent="primary" color={color} iconName={iconName}>
+        {title}
+      </Title>
+      <HorizontalRule
+        marginBottom={NEB_LENGTH.px_024}
+        bgMode="tinted"
+        intent="secondary"
+        color={color}
+      />
       <Text intent="neutral" bold>
         {headline}
       </Text>
       <Spacer />
-      <Text typography="h5">{priceInfo}</Text>
+      <Text typography="h5" intent="primary" color={color}>
+        {priceInfo}
+      </Text>
       <Spacer />
       <Text intent="neutral">{description}</Text>
       <Spacer />
       <Text intent="neutral" bold>
         What you get:
       </Text>
-      <Spacer blockSize="xs" />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <OptionIncluded>
         <Link
           href="/pricing/core"
@@ -98,11 +108,16 @@ export const PricingPlanCard = ({
           <Text intent="neutral">{s}</Text>
         </OptionIncluded>
       ))}
-      <Spacer blockSize="lg" />
-      <Flex justifyContent="center">
+      <HorizontalRule
+        marginBlock={NEB_LENGTH.px_024}
+        bgMode="tinted"
+        intent="secondary"
+        color={color}
+      />
+      <Box display="flex" justifyContent="center">
         <PricingPlanButton plan={plan} activePlan={activePlan} color={color} />
-      </Flex>
-      <Spacer blockSize="sm" />
-    </Section>
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_016} />
+    </Box>
   )
 }

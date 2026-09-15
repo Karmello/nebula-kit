@@ -1,53 +1,60 @@
-import { ComponentMeta } from 'client/definitions'
-import { SideNavProps } from 'lib/components'
-
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
-  DEFAULT_SIDE_NAV_SIZE,
+  DEFAULT_SIDE_NAV_SCALE,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
-} from 'lib/components/pro/navigation/SideNav'
+} from 'lib/components/pro/SideNav/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
+import { SideNavProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BUTTON_PROPS_META } from '../Button/props'
-import { FLEX_PROPS_META } from '../Flex/props'
-
-const SIDE_NAV_PROPS_META: ComponentMeta<SideNavProps>['props'] = {
+export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
     options: ['SideNav.Category', 'SideNav.Item'],
     isRequired: true,
     description: 'SideNav slots.',
   },
   color: {
-    ...BUTTON_PROPS_META.color,
+    options: BOX_COLORS,
     description: 'Color applied to all categories and items.',
   },
   expandMode: {
-    options: SIDE_NAV_EXPAND_MODES as unknown as string[],
+    options: SIDE_NAV_EXPAND_MODES,
     defaultValue: DEFAULT_SIDE_NAV_EXPAND_MODE,
-    description: 'Controls whether one or multiple categories can remain expanded at the same time.',
+    description:
+      'Controls whether one or multiple categories can remain expanded at the same time.',
   },
   gap: {
-    ...FLEX_PROPS_META.gap,
+    options: ['string'],
+    isResponsive: true,
+    link: true,
     defaultValue: String(DEFAULT_SIDE_NAV_GAP),
     description: 'Defines vertical spacing between items.',
   },
   intent: {
-    ...BUTTON_PROPS_META.intent,
+    options: BOX_INTENTS,
+    defaultValue: 'tertiary',
     description: 'Color tone applied to all categories and items.',
   },
-  size: {
-    ...BUTTON_PROPS_META.size,
-    defaultValue: DEFAULT_SIDE_NAV_SIZE,
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_SIDE_NAV_SCALE,
+    description:
+      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   variant: {
     options: SIDE_NAV_VARIANTS,
+    isResponsive: true,
     description: 'Visual style variant applied to all categories and items.',
   },
 }
-
-export { SIDE_NAV_PROPS_META }

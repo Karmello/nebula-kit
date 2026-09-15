@@ -3,9 +3,8 @@ import { writeFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
+import { COMPONENT_CATEGORIES } from '../../src/client/definitions/components-page-routing.js'
 import { FOUNDATIONS_CATEGORIES } from '../../src/client/definitions/foundations-routing.js'
-import { CORE_PAGE_CATEGORIES } from '../../src/client/definitions/core-page-routing.js'
-import { PRO_PAGE_CATEGORIES } from '../../src/client/definitions/pro-page-routing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -13,8 +12,7 @@ const domain = 'https://nebulakit.dev'
 
 const CATEGORY_SETS = [
   { basePath: 'foundations', categories: FOUNDATIONS_CATEGORIES },
-  { basePath: 'core', categories: CORE_PAGE_CATEGORIES },
-  { basePath: 'pro', categories: PRO_PAGE_CATEGORIES },
+  { basePath: 'components', categories: COMPONENT_CATEGORIES },
 ]
 
 // Convert categories → URLs
@@ -30,8 +28,6 @@ function extractRoutes(basePath, categories) {
       for (const section of item.sections) {
         const sectionKey = section.key
 
-        // URL format:
-        // /foundations/overview/introduction/why-nebula
         const url = `/${basePath}/${categoryKey}/${itemKey}/${sectionKey}`
 
         routes.push(url)
@@ -57,8 +53,7 @@ function generateSitemap() {
     '/playground',
     '/patterns',
     '/foundations',
-    '/core',
-    '/pro',
+    '/library',
     '/faq',
     '/blog',
     '/pricing',

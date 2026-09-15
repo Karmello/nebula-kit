@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { SideNavProps, SideNav } from 'lib/components'
+import { SideNav } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
+export const SIDE_NAV_EXAMPLES: DocExample[] = [
   {
     description: 'Basic render case for SideNav.',
     jsx: (
@@ -82,5 +82,3 @@ const SIDE_NAV_EXAMPLES_META: ComponentMeta<SideNavProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
 ]
-
-export { SIDE_NAV_EXAMPLES_META }

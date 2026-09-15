@@ -1,18 +1,34 @@
-import { Section, Button, Text, Spacer, Flex, WithIcon } from 'lib/components'
-
+import { Box, Button, HorizontalRule, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
 import { useConnectToDiscord } from 'client/api'
 
-export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan: string; discordUserId: string }) => {
+export const ConnectToDiscordSection = ({
+  userPlan,
+  discordUserId,
+}: {
+  userPlan: string
+  discordUserId: string
+}) => {
   const connectToDiscord = useConnectToDiscord()
 
   return (
-    <Section heading="Discord" variant="outline" intent="tertiary">
+    <Box
+      drawable
+      intent="tertiary"
+      borderMode="tinted"
+      padding={NEB_LENGTH.px_016}
+      overflowX="auto"
+      overflowY="hidden"
+      maxInlineSize="100%"
+    >
+      <Title typography="h5">Discord</Title>
+      <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+      <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
-        Connect your Discord account to receive your NebulaKit role and priority badge in the community. This helps us recognize
-        your plan and provide the right level of support.
+        Connect your Discord account to receive your NebulaKit role and priority badge in the
+        community. This helps us recognize your plan and provide the right level of support.
       </Text>
-      <Spacer blockSize="md" />
-      <Flex alignItems="center" columnGap="sm">
+      <Spacer blockSize={NEB_LENGTH.px_024} />
+      <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
         <Button
           tagAttrs={{
             onClick: async () => {
@@ -22,7 +38,7 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
               }
             },
           }}
-          size="sm"
+          scale="sm"
           intent="primary"
           color="blue"
           iconName="plug"
@@ -36,14 +52,14 @@ export const ConnectToDiscordSection = ({ userPlan, discordUserId }: { userPlan:
             * For paid users
           </Text>
         ) : discordUserId ? (
-          <WithIcon iconName="check" iconPlacement="right">
+          <Title iconName="check" iconPlacement="right">
             <Text intent="secondary" color="gray" italic>
               Done
             </Text>
-          </WithIcon>
+          </Title>
         ) : null}
-      </Flex>
-      <Spacer blockSize="xs" />
-    </Section>
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+    </Box>
   )
 }

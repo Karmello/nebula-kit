@@ -1,0 +1,10 @@
+import type { DocOverview } from 'client/definitions'
+
+export const APP_FRAME_MAIN_OVERVIEW: DocOverview = {
+  bundle: 'core',
+  name: 'AppFrame.Main',
+  title: 'Defines the central content region of AppFrame.',
+  features: ['holds the primary application content or view'],
+  composedOf: ['Box'],
+  exposedTags: ['main'],
+}

@@ -1,6 +1,5 @@
 import { Button } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { usePlaygroundStore } from 'client/store'
 
 export const TogglePropsButton = () => {
   const displayProps = usePlaygroundStore(state => state.displayProps)
@@ -8,7 +7,7 @@ export const TogglePropsButton = () => {
 
   return (
     <Button
-      size="xs"
+      scale="xs"
       tagAttrs={{
         onClick: () => setDisplayProps(!displayProps),
       }}

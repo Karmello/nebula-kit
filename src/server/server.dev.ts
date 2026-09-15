@@ -1,26 +1,18 @@
-import fs from 'node:fs'
-import path from 'node:path'
+import { createElement } from 'react'
 import express from 'express'
 import getPort from 'get-port'
-import { createServer as createViteServer, ViteDevServer } from 'vite'
-import { createElement } from 'react'
 import { renderToString } from 'react-dom/server'
+import { createServer as createViteServer, ViteDevServer } from 'vite'
+import fs from 'node:fs'
+import path from 'node:path'
 
 import { getFinalIndexHtml } from './helpers'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
-  const { HydrationGate } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
-  const { NebkitProvider } = await vite.ssrLoadModule('src/lib/components/core/index.ts')
-  const { App } = await vite.ssrLoadModule('src/client/components/index.ts')
+  const { Client } = await vite.ssrLoadModule('src/client/components/app/Client/client.tsx')
 
-  return renderToString(
-    createElement(
-      StaticRouter,
-      { location: url },
-      createElement(HydrationGate, null, createElement(NebkitProvider, { borderRadius: 5 }, createElement(App)))
-    )
-  )
+  return renderToString(createElement(StaticRouter, { location: url }, createElement(Client)))
 }
 
 const start = async () => {
@@ -42,7 +34,10 @@ const start = async () => {
 
       let indexHtml = fs.readFileSync(path.resolve(__dirname, '../../index.html'), 'utf-8')
       indexHtml = await vite.transformIndexHtml(url, indexHtml)
-      indexHtml = indexHtml.replace('</head>', `<style id='neb-ssr-dev-styles'>${css}</style></head>`)
+      indexHtml = indexHtml.replace(
+        '</head>',
+        `<style id='neb-ssr-dev-styles'>${css}</style></head>`
+      )
 
       const appHtml = await renderApp(vite, url)
       indexHtml = indexHtml.replace('<!--ssr-outlet-->', appHtml)

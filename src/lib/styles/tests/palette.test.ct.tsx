@@ -1,38 +1,45 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box, StylingIsland } from 'lib/components'
 
 test('Theme remaps palette steps for light and dark modes', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'light-box' }} theme="light" />
-      <Box tagAttrs={{ id: 'dark-box' }} theme="dark" />
+      <StylingIsland theme="light">
+        <Box tagAttrs={{ id: 'light-neutral' }} intent="neutral" />
+        <Box tagAttrs={{ id: 'light-strong' }} intent="strong" />
+      </StylingIsland>
+      <StylingIsland theme="dark">
+        <Box tagAttrs={{ id: 'dark-neutral' }} intent="neutral" />
+        <Box tagAttrs={{ id: 'dark-strong' }} intent="strong" />
+      </StylingIsland>
     </>
   )
 
   const result = await page.evaluate(() => {
-    const light = document.getElementById('light-box')!
-    const dark = document.getElementById('dark-box')!
-
-    const lightStyles = getComputedStyle(light)
-    const darkStyles = getComputedStyle(dark)
+    const lightNeutral = document.getElementById('light-neutral')!
+    const lightStrong = document.getElementById('light-strong')!
+    const darkNeutral = document.getElementById('dark-neutral')!
+    const darkStrong = document.getElementById('dark-strong')!
 
     return {
-      lightL0: lightStyles.getPropertyValue('--l-0').trim(),
-      lightL25: lightStyles.getPropertyValue('--l-25').trim(),
-      darkL0: darkStyles.getPropertyValue('--l-0').trim(),
-      darkL25: darkStyles.getPropertyValue('--l-25').trim(),
+      lightNeutral: getComputedStyle(lightNeutral).getPropertyValue('--color-base').trim(),
+      lightStrong: getComputedStyle(lightStrong).getPropertyValue('--color-base').trim(),
+      darkNeutral: getComputedStyle(darkNeutral).getPropertyValue('--color-base').trim(),
+      darkStrong: getComputedStyle(darkStrong).getPropertyValue('--color-base').trim(),
     }
   })
 
-  expect(result.lightL0).not.toBe('')
-  expect(result.lightL25).not.toBe('')
-  expect(result.darkL0).not.toBe('')
-  expect(result.darkL25).not.toBe('')
+  expect(result.lightNeutral).not.toBe('')
+  expect(result.lightStrong).not.toBe('')
+  expect(result.darkNeutral).not.toBe('')
+  expect(result.darkStrong).not.toBe('')
 
-  expect(result.lightL0).not.toBe(result.lightL25)
-  expect(result.darkL0).not.toBe(result.darkL25)
+  // steps differ within a theme
+  expect(result.lightNeutral).not.toBe(result.lightStrong)
+  expect(result.darkNeutral).not.toBe(result.darkStrong)
 
-  expect(result.lightL0).toBe(result.darkL25)
-  expect(result.lightL25).toBe(result.darkL0)
+  // theme remaps the same step to a different resolved value
+  expect(result.lightNeutral).not.toBe(result.darkNeutral)
+  expect(result.lightStrong).not.toBe(result.darkStrong)
 })

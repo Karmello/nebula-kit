@@ -1,21 +1,22 @@
 import { useEffect, useRef, useState } from 'react'
 
-import { Box, Flex, Segment, Spacer } from 'lib/components'
+import { Box, NEB_LENGTH, Spacer } from 'lib/components'
 import { useAskAssistant } from 'client/api'
 
-import { Chat, Prompt, ContextMenu, PromptToolbar } from './components'
-
+import { Chat, ContextMenu, Prompt, PromptToolbar } from './components'
 import {
+  CHAT_ASSISTANT_MAX_MESSAGES_SENT,
   CHAT_INTRO_TEXT,
   ChatHistory,
   PROMPT_MAX_HEIGHT_PX,
   PROMPT_MAX_LENGTH,
   PROMPT_ONGOING_REQUEST_TEXT,
-  CHAT_ASSISTANT_MAX_MESSAGES_SENT,
 } from './definitions'
 
 export const ChatAssistant = () => {
-  const [chatHistory, setChatHistory] = useState<ChatHistory>([{ role: 'assistant', content: CHAT_INTRO_TEXT }])
+  const [chatHistory, setChatHistory] = useState<ChatHistory>([
+    { role: 'assistant', content: CHAT_INTRO_TEXT },
+  ])
   const [prompt, setPrompt] = useState<string>('')
 
   const askAssistant = useAskAssistant()
@@ -87,43 +88,44 @@ export const ChatAssistant = () => {
 
   return (
     <Box blockSize={{ base: 'calc(100vh - 165px)', lg: 'calc(100vh - 195px)' }}>
-      <Flex justifyContent="flex-end">
+      <Box display="flex" justifyContent="flex-end">
         <ContextMenu onChange={handleContextMenuChange} disabled={askAssistant.isMakingRequest} />
-      </Flex>
-      <Spacer blockSize="sm" />
-      <Segment tagAttrs={{ style: { blockSize: 'calc(100% - 50px)' } }} flexDirection="column">
-        <Segment.Item flex="1" tagAttrs={{ style: { overflowY: 'hidden' } }}>
-          <Chat tagRef={chatScrollingAreaRef} chatHistory={chatHistory} handleQuestionClick={handleQuestionClick} />
-        </Segment.Item>
-        <Segment.Item>
-          <Prompt
-            tagRef={textareaRef}
-            tagAttrs={{
-              style: {
-                overflow: textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',
-                outline: 'none',
-                borderRadius: 0,
-              },
-              onKeyDown: handleKeyDown,
-            }}
-            value={prompt}
-            onChange={handleChange}
-            disabled={chatHistory.length === 0 || askAssistant.isMakingRequest}
-            focusAnchorRef={focusAnchorRef}
+      </Box>
+      <Spacer blockSize={NEB_LENGTH.px_016} />
+      <Box blockSize="calc(100% - 50px)" display="flex" flexDirection="column">
+        <Box flex="1" overflowY="hidden">
+          <Chat
+            tagRef={chatScrollingAreaRef}
+            chatHistory={chatHistory}
+            handleQuestionClick={handleQuestionClick}
           />
-        </Segment.Item>
-        <Segment.Item>
-          <PromptToolbar
-            loading={askAssistant.isMakingRequest}
-            disabled={!prompt && !askAssistant.isMakingRequest}
-            lengthStatus={`${prompt.length} / ${PROMPT_MAX_LENGTH}`}
-            handleSend={() => handleSubmit(prompt)}
-            handleCancel={() => {
-              askAssistant.cancelRequest()
-            }}
-          />
-        </Segment.Item>
-      </Segment>
+        </Box>
+        <Prompt
+          tagRef={textareaRef}
+          tagAttrs={{
+            style: {
+              overflow:
+                textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',
+              outline: 'none',
+              borderRadius: 0,
+            },
+            onKeyDown: handleKeyDown,
+          }}
+          value={prompt}
+          onChange={handleChange}
+          disabled={chatHistory.length === 0 || askAssistant.isMakingRequest}
+          focusAnchorRef={focusAnchorRef}
+        />
+        <PromptToolbar
+          loading={askAssistant.isMakingRequest}
+          disabled={!prompt && !askAssistant.isMakingRequest}
+          lengthStatus={`${prompt.length} / ${PROMPT_MAX_LENGTH}`}
+          handleSend={() => handleSubmit(prompt)}
+          handleCancel={() => {
+            askAssistant.cancelRequest()
+          }}
+        />
+      </Box>
     </Box>
   )
 }

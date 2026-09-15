@@ -1,9 +1,10 @@
-import { ComponentMeta } from 'client/definitions'
-import { Select, SelectProps } from 'lib/components'
+import { Select } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
+export const SELECT_EXAMPLES: DocExample[] = [
   {
-    description: 'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
+    description:
+      'Select used in uncontrolled mode with its initial value set via the "defaultValue" prop.',
     jsx: (
       <Select defaultValue="option-1">
         <Select.Option value="option-1">Option 1</Select.Option>
@@ -23,16 +24,6 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
     ),
   },
   {
-    description: 'Select configured to open above the trigger element.',
-    jsx: (
-      <Select defaultValue="option-1" inlineSize="200px" dropdownPlacement="top-start">
-        <Select.Option value="option-1">Option 1</Select.Option>
-        <Select.Option value="option-2">Option 2</Select.Option>
-        <Select.Option value="option-3">Option 3</Select.Option>
-      </Select>
-    ),
-  },
-  {
     description: 'Disabled Select.',
     jsx: (
       <Select defaultValue="option-1" inlineSize="200px" disabled>
@@ -43,5 +34,3 @@ const SELECT_EXAMPLES_META: ComponentMeta<SelectProps>['examples'] = [
     ),
   },
 ]
-
-export { SELECT_EXAMPLES_META }

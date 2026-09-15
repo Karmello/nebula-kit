@@ -1,9 +1,9 @@
+import { Box, Button, Link, NEB_LENGTH, Text, Title } from 'lib/components'
+import { BoxColor } from 'lib/components/core/Box/types'
+import { useCheckoutPaidPlan } from 'client/api'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import { useAppStore } from 'client/store'
-import { useCheckoutPaidPlan } from 'client/api'
-import { Box, Button, Link, Text, WithIcon } from 'lib/components'
-import { BoxColor } from 'lib/components/core/base/Box'
 
 type PricingPlanButtonProps = {
   plan: string
@@ -25,7 +25,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             navigateTo(`${PageKey.foundations}/overview/getting-started/installation`)
           }}
         >
-          <Button size="sm" color={color} intent="primary">
+          <Button scale="sm" color={color} intent="primary">
             Get started
           </Button>
         </Link>
@@ -42,7 +42,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
             navigateTo(PageKey.authRegister)
           }}
         >
-          <Button size="sm" intent="primary" color={color}>
+          <Button scale="sm" intent="primary" color={color}>
             Subscribe
           </Button>
         </Link>
@@ -56,7 +56,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
                 checkoutPaidPlan.sendRequest({ plan })
               },
             }}
-            size="sm"
+            scale="sm"
             intent="primary"
             color={color}
           >
@@ -66,10 +66,17 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
       } else {
         if (plan === activePlan) {
           return (
-            <Box drawable variant="solid" intent="secondary" color={color} paddingBlock="10px" paddingInline="14px">
-              <WithIcon iconName="check" iconPlacement="right">
+            <Box
+              drawable
+              bgMode="filled"
+              intent="secondary"
+              color={color}
+              paddingBlock={NEB_LENGTH.px_012}
+              paddingInline={NEB_LENGTH.px_012}
+            >
+              <Title iconName="check" iconPlacement="right">
                 <Text bold>This is the plan you are on</Text>
-              </WithIcon>
+              </Title>
             </Box>
           )
         } else {

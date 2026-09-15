@@ -1,9 +1,14 @@
 import { useLocation } from 'react-router'
 
-import { useNavigateTo } from 'client/hooks'
+import { Box, Button, Link, NEB_LENGTH } from 'lib/components'
 import { PageKey } from 'client/definitions'
-import { useAppStore, useCorePageStore, useProPageStore, useFoundationsPageStore } from 'client/store'
-import { Button, Flex, Link } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
+import {
+  useAppStore,
+  useComponentsPageStore,
+  useFoundationsPageStore,
+  usePatternsStore,
+} from 'client/store'
 
 type Props = {
   toolbarSlot: 'start' | 'main'
@@ -15,16 +20,15 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   const { pathname } = useLocation()
   const navigateTo = useNavigateTo()
   const user = useAppStore(state => state.user)
+  const activePatternId = usePatternsStore(state => state.activePatternId)
 
   const foundationsPageCategoryKey = useFoundationsPageStore(state => state.categoryKey)
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
-  const corePageCategoryKey = useCorePageStore(state => state.categoryKey)
-  const corePageItemKey = useCorePageStore(state => state.itemKey)
-  const corePageSectionKey = useCorePageStore(state => state.sectionKey)
-  const proPageCategoryKey = useProPageStore(state => state.categoryKey)
-  const proPageItemKey = useProPageStore(state => state.itemKey)
-  const proPageSectionKey = useProPageStore(state => state.sectionKey)
+
+  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
+  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
 
   const currentPageKey = `/${pathname.split('/')[1]}`
 
@@ -33,13 +37,14 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   }
 
   return (
-    <Flex
+    <Box
+      display="flex"
       flexDirection={toolbarSlot === 'start' ? 'row' : { base: 'column', md: 'row' }}
       flexWrap={{ base: 'nowrap', md: 'wrap' }}
       alignItems="stretch"
     >
       {toolbarSlot === 'start' ? (
-        <Flex.Item>
+        <Box>
           <Link
             href={PageKey.home}
             onClick={async () => {
@@ -56,49 +61,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               NebulaKit
             </Button>
           </Link>
-        </Flex.Item>
+        </Box>
       ) : null}
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', sm: toolbarSlot !== 'start' }}>
-        <Link
-          href={PageKey.patterns}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(PageKey.patterns)
-          }}
-        >
-          <Button
-            intent="muted"
-            selected={currentPageKey === PageKey.patterns}
-            bold={currentPageKey === PageKey.patterns}
-            iconName="pyramid"
-            fullWidth
-            minInlineSize="120px"
-          >
-            Patterns
-          </Button>
-        </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
-        <Link
-          href={PageKey.playground}
-          onClick={async () => {
-            if (mainOpen) await setMainOpen(false)
-            navigateTo(PageKey.playground)
-          }}
-        >
-          <Button
-            intent="muted"
-            selected={currentPageKey === PageKey.playground}
-            bold={currentPageKey === PageKey.playground}
-            iconName="flask-conical"
-            fullWidth
-            minInlineSize="140px"
-          >
-            Playground
-          </Button>
-        </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
@@ -119,48 +84,70 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Foundations
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
         <Link
-          href={`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`}
+          href={`${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.core}/${corePageCategoryKey}/${corePageItemKey}/${corePageSectionKey}`)
+            navigateTo(
+              `${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
+            )
           }}
         >
           <Button
             intent="muted"
-            selected={currentPageKey === PageKey.core}
-            bold={currentPageKey === PageKey.core}
+            selected={currentPageKey === PageKey.library}
+            bold={currentPageKey === PageKey.library}
             iconName="package"
             fullWidth
-            minInlineSize="90px"
+            minInlineSize="110px"
           >
-            Core
+            Library
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
         <Link
-          href={`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`}
+          href={`${PageKey.patterns}?id=${activePatternId}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
-            navigateTo(`${PageKey.pro}/${proPageCategoryKey}/${proPageItemKey}/${proPageSectionKey}`)
+            navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
           }}
         >
           <Button
             intent="muted"
-            selected={currentPageKey === PageKey.pro}
-            bold={currentPageKey === PageKey.pro}
-            iconName="star"
+            selected={currentPageKey === PageKey.patterns}
+            bold={currentPageKey === PageKey.patterns}
+            iconName="pyramid"
             fullWidth
-            minInlineSize="80px"
+            minInlineSize="120px"
           >
-            Pro
+            Patterns
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+        <Link
+          href={PageKey.playground}
+          onClick={async () => {
+            if (mainOpen) await setMainOpen(false)
+            navigateTo(PageKey.playground)
+          }}
+        >
+          <Button
+            intent="muted"
+            selected={currentPageKey === PageKey.playground}
+            bold={currentPageKey === PageKey.playground}
+            iconName="flask-conical"
+            fullWidth
+            minInlineSize="140px"
+          >
+            Playground
+          </Button>
+        </Link>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.faq}
           onClick={async () => {
@@ -179,8 +166,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             FAQ
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.blog}
           onClick={async () => {
@@ -194,14 +181,14 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             bold={currentPageKey === PageKey.blog}
             iconName="rss"
             fullWidth
-            minInlineSize="95px"
+            minInlineSize={NEB_LENGTH.px_096}
           >
             Blog
           </Button>
         </Link>
-      </Flex.Item>
+      </Box>
       {!user?.plan || user.plan === 'free' ? (
-        <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+        <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
           <Link
             href={PageKey.pricing}
             onClick={async () => {
@@ -220,9 +207,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
               Pricing
             </Button>
           </Link>
-        </Flex.Item>
+        </Box>
       ) : null}
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.feedback}
           onClick={async () => {
@@ -241,8 +228,8 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Feedback
           </Button>
         </Link>
-      </Flex.Item>
-      <Flex.Item hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      </Box>
+      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
         <Link
           href={PageKey.assistant}
           onClick={async () => {
@@ -261,7 +248,7 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
             Assistant
           </Button>
         </Link>
-      </Flex.Item>
-    </Flex>
+      </Box>
+    </Box>
   )
 }

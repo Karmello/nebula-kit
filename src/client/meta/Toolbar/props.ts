@@ -1,25 +1,28 @@
-import { ComponentMeta } from 'client/definitions'
-import { ToolbarProps } from 'lib/components'
-import { DEFAULT_SWITCH_AT, SWITCH_AT } from 'lib/definitions'
+import { DEFAULT_SWITCH_BREAKPOINT, SWITCH_BREAKPOINTS } from 'lib/constants'
+import { ToolbarProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const TOOLBAR_PROPS_META: ComponentMeta<ToolbarProps>['props'] = {
+export const TOOLBAR_PROPS: Record<keyof ToolbarProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
-    isRequired: true,
     options: ['Toolbar.Start', 'Toolbar.Main', 'Toolbar.End'],
-    description: 'Accepts slots directly or via a render function with access to the context argument.',
+    isRequired: true,
+    description:
+      'Accepts slots directly or via a render function with access to the context argument.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
   switchAt: {
-    options: SWITCH_AT as unknown as string[],
-    defaultValue: DEFAULT_SWITCH_AT,
+    options: SWITCH_BREAKPOINTS,
+    defaultValue: DEFAULT_SWITCH_BREAKPOINT,
     isRequired: false,
     isResponsive: false,
-    description: 'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
+    description:
+      'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
   },
 }
-
-export { TOOLBAR_PROPS_META }

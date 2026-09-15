@@ -1,7 +1,19 @@
-import { MarkerList, Markup, Section, Text } from 'lib/components'
+import {
+  Box,
+  HorizontalRule,
+  MarkerList,
+  Markup,
+  NEB_LENGTH,
+  Spacer,
+  Text,
+  Title,
+} from 'lib/components'
 
 export const ListWithHeading = ({ heading, items }: { heading: string; items: string[] }) => (
-  <Section heading={heading} size="sm">
+  <Box overflowX="auto" overflowY="hidden" maxInlineSize="100%">
+    <Title typography="h6">{heading}</Title>
+    <HorizontalRule marginTop={NEB_LENGTH.px_004} />
+    <Spacer blockSize={NEB_LENGTH.px_004} />
     <MarkerList>
       {items.map((s, i) => (
         <MarkerList.Item key={i}>
@@ -11,5 +23,5 @@ export const ListWithHeading = ({ heading, items }: { heading: string; items: st
         </MarkerList.Item>
       ))}
     </MarkerList>
-  </Section>
+  </Box>
 )

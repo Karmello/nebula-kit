@@ -1,57 +1,80 @@
-import { ComponentMeta } from 'client/definitions'
-import { TableProps } from 'lib/components'
-
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TABLE_INTENT,
   DEFAULT_TABLE_LAYOUT,
   DEFAULT_TABLE_PADDING_BLOCK,
   DEFAULT_TABLE_PADDING_INLINE,
   TABLE_LAYOUTS,
-} from 'lib/components/core/layout/Table'
+} from 'lib/components/core/Table/constants'
+import { CSS_TEXT_ALIGN } from 'lib/constants'
+import { TableProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-
-const TABLE_PROPS_META: ComponentMeta<TableProps>['props'] = {
+export const TABLE_PROPS: Record<keyof TableProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
     options: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
     isRequired: true,
     description: 'Table.Body is required, the rest optional.',
   },
   color: {
-    ...BOX_PROPS_META.color,
+    options: BOX_COLORS,
     description: "Color applied to the table's background surface.",
   },
-  inlineSize: BOX_PROPS_META.inlineSize,
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+  },
   intent: {
-    ...BOX_PROPS_META.intent,
+    options: BOX_INTENTS,
     defaultValue: String(DEFAULT_TABLE_INTENT),
     description: "Color tone applied to the table's background surface.",
   },
   layout: {
     options: TABLE_LAYOUTS,
     defaultValue: DEFAULT_TABLE_LAYOUT,
-    description: 'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
+    description:
+      'Defines the layout algorithm: "auto" sizes columns by content, "fixed" by table width and column widths.',
   },
-  maxInlineSize: BOX_PROPS_META.maxInlineSize,
-  minInlineSize: BOX_PROPS_META.minInlineSize,
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+  },
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+  },
   paddingBlock: {
-    ...BOX_PROPS_META.paddingBlock,
-    defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the top and bottom sides applied to every cell.',
+    link: true,
+    defaultValue: DEFAULT_TABLE_PADDING_BLOCK as never,
   },
   paddingInline: {
-    ...BOX_PROPS_META.paddingInline,
-    defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
+    options: ['string'],
+    isResponsive: true,
     description: 'Padding for the left and right sides applied to every cell.',
+    link: true,
+    defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+  },
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+  },
   textAlign: {
-    ...BOX_PROPS_META.textAlign,
+    options: CSS_TEXT_ALIGN,
+    isResponsive: true,
     description: 'Text alignment applied to every cell.',
+    link: true,
   },
 }
-
-export { TABLE_PROPS_META }
