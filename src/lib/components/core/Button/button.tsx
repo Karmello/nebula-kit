@@ -68,7 +68,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   )
 
   return (
-    <Box position="relative" display="inline">
+    <Box tag="span" position="relative" display="inline">
       <Box
         tag={tag}
         tagAttrs={{

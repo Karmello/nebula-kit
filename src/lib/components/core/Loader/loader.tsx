@@ -25,6 +25,7 @@ export const Loader = ({
 
   return (
     <Box
+      tag="span"
       tagAttrs={{
         ...tagAttrs,
         className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
