@@ -12,6 +12,7 @@ import {
   DEFAULT_ICON_BUTTON_RIPPLE,
   DEFAULT_ICON_BUTTON_SCALE,
   DEFAULT_ICON_BUTTON_VARIANT,
+  ICON_BUTTON_VARIANT_MAP,
 } from './constants'
 import { IconButtonProps, IconButtonTag } from './types'
 
@@ -54,7 +55,9 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      bgMode="filled"
+      bgMode={ICON_BUTTON_VARIANT_MAP[variant].bgMode}
+      borderMode={ICON_BUTTON_VARIANT_MAP[variant].borderMode}
+      text={ICON_BUTTON_VARIANT_MAP[variant].text}
       color={color}
       intent={intent}
       disabled={disabled || loading}

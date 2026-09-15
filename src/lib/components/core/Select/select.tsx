@@ -1,6 +1,6 @@
 import { ReactElement, useEffect, useRef, useState } from 'react'
 
-import { Box, BoxBgMode, BoxBorderMode, BoxText } from 'lib/components/core/Box'
+import { Box } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
@@ -14,44 +14,10 @@ import {
   DEFAULT_SELECT_INTENT,
   DEFAULT_SELECT_VARIANT,
   DEFAULT_SELECT_VISIBLE_ITEMS_COUNT,
+  SELECT_VARIANT_MAP,
 } from './constants'
 import type { SelectOptionProps } from './slots/SelectOption/types'
-import type { SelectProps, SelectVariant } from './types'
-
-const VARIANT_MAP: Record<
-  SelectVariant,
-  {
-    trigger: { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
-    content: { borderMode: BoxBorderMode }
-    item: { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
-    removeFirstTopBorder: boolean
-  }
-> = {
-  solid: {
-    trigger: { bgMode: 'filled', borderMode: 'none', text: 'default' },
-    content: { borderMode: 'none' },
-    item: { bgMode: 'filled', borderMode: 'filled', text: 'default' },
-    removeFirstTopBorder: false,
-  },
-  outline: {
-    trigger: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
-    content: { borderMode: 'tinted' },
-    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
-    removeFirstTopBorder: true,
-  },
-  'soft-outline': {
-    trigger: { bgMode: 'tinted', borderMode: 'filled', text: 'colored' },
-    content: { borderMode: 'filled' },
-    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
-    removeFirstTopBorder: true,
-  },
-  ghost: {
-    trigger: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
-    content: { borderMode: 'none' },
-    item: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
-    removeFirstTopBorder: false,
-  },
-}
+import type { SelectProps } from './types'
 
 export const SelectImpl = ({
   intent = DEFAULT_SELECT_INTENT,
@@ -118,9 +84,9 @@ export const SelectImpl = ({
           }}
           intent={intent}
           color={color}
-          bgMode={VARIANT_MAP[variant].trigger.bgMode}
-          borderMode={VARIANT_MAP[variant].trigger.borderMode}
-          text={VARIANT_MAP[variant].trigger.text}
+          bgMode={SELECT_VARIANT_MAP[variant].trigger.bgMode}
+          borderMode={SELECT_VARIANT_MAP[variant].trigger.borderMode}
+          text={SELECT_VARIANT_MAP[variant].trigger.text}
           inlineSize="100%"
           blockSize={CONTROL_SCALE_MAP[scale].blockSize}
           paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
@@ -157,7 +123,7 @@ export const SelectImpl = ({
               intent={intent}
               color={color}
               bgMode="tinted"
-              borderMode={VARIANT_MAP[variant].content.borderMode}
+              borderMode={SELECT_VARIANT_MAP[variant].content.borderMode}
               surfaceDepth="raised"
               inlineSize={`${triggerWidth}px`}
               maxBlockSize={`${menuBlockSize}px`}
@@ -198,23 +164,23 @@ export const SelectImpl = ({
                       inlineSize="100%"
                       blockSize={
                         key === 0
-                          ? !VARIANT_MAP[variant].removeFirstTopBorder
+                          ? !SELECT_VARIANT_MAP[variant].removeFirstTopBorder
                             ? optionBlockSize + 'px'
                             : optionBlockSize - parseInt(NEB_LENGTH.px_002) + 'px'
                           : `${optionBlockSize}px`
                       }
                       intent={intent}
                       color={color}
-                      bgMode={VARIANT_MAP[variant].item.bgMode}
-                      borderMode={VARIANT_MAP[variant].item.borderMode}
+                      bgMode={SELECT_VARIANT_MAP[variant].item.bgMode}
+                      borderMode={SELECT_VARIANT_MAP[variant].item.borderMode}
                       borderRole="divider"
                       surfaceDepth="raised"
                       bgRole={isSelected ? 'selection' : undefined}
-                      text={VARIANT_MAP[variant].item.text}
+                      text={SELECT_VARIANT_MAP[variant].item.text}
                       paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
                       borderWidth={NEB_LENGTH.px_000}
                       borderTopWidth={
-                        VARIANT_MAP[variant].removeFirstTopBorder && key === 0
+                        SELECT_VARIANT_MAP[variant].removeFirstTopBorder && key === 0
                           ? NEB_LENGTH.px_000
                           : NEB_LENGTH.px_002
                       }

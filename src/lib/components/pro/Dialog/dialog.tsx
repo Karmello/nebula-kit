@@ -134,7 +134,7 @@ export const Dialog = ({
                               <IconButton
                                 scale="xs"
                                 iconName="close"
-                                // variant="outline"
+                                variant="outline"
                                 intent="tertiary"
                                 onClick={onClose}
                               />
