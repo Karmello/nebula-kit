@@ -40,7 +40,6 @@ import { PASSWORD_META } from './PasswordInput'
 import { PORTAL_META } from './Portal'
 import { RESIZE_META } from './Resize'
 import { REVEAL_META } from './Reveal'
-import { ROTATE_META } from './Rotate'
 import { SCALE_META } from './Scale'
 import { SELECT_META } from './Select'
 import { SELECT_OPTION_META } from './SelectOption'
@@ -77,6 +76,7 @@ import { TOOLBAR_MAIN_META } from './ToolbarMain'
 import { TOOLBAR_START_META } from './ToolbarStart'
 import { TOOLTIP_META } from './Tooltip'
 import { USE_FOCUS_TRAP_META } from './useFocusTrap'
+import { USE_ROTATE_META } from './useRotate'
 import { VIRTUAL_LIST_META } from './VirtualList'
 
 const META = {
@@ -176,9 +176,6 @@ const META = {
   Reveal: {
     Reveal: REVEAL_META,
   },
-  Rotate: {
-    Rotate: ROTATE_META,
-  },
   Scale: {
     Scale: SCALE_META,
   },
@@ -249,6 +246,9 @@ const META = {
   },
   UseFocusTrap: {
     UseFocusTrap: USE_FOCUS_TRAP_META,
+  },
+  UseRotate: {
+    UseRotate: USE_ROTATE_META,
   },
   VirtualList: {
     VirtualList: VIRTUAL_LIST_META,

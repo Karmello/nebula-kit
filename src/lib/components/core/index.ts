@@ -23,7 +23,6 @@ export { MarkerList, type MarkerListItemProps, type MarkerListProps } from './Ma
 export { NebkitProvider, type NebkitProviderProps } from './NebkitProvider'
 export { Resize, type ResizeProps } from './Resize'
 export { Reveal, type RevealProps } from './Reveal'
-export { Rotate, type RotateProps } from './Rotate'
 export { Select, type SelectOptionProps, type SelectProps } from './Select'
 export { Slide, type SlideProps } from './Slide'
 export { Spacer, type SpacerProps } from './Spacer'
@@ -43,3 +42,4 @@ export {
 export { Text, type TextProps } from './Text'
 export { Textarea, type TextareaProps } from './Textarea'
 export { Title, type TitleProps } from './Title'
+export { useRotate, type UseRotateArgs } from './useRotate'

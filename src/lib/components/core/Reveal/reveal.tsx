@@ -1,9 +1,9 @@
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 
 import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
-import { Rotate } from 'lib/components/core/Rotate'
 import { Text } from 'lib/components/core/Text'
+import { useRotate } from 'lib/components/core/useRotate'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 
 import { Box } from '../Box'
@@ -26,6 +26,10 @@ export const Reveal = <T extends RevealTag = 'div'>({
   label,
 }: RevealProps<T>) => {
   const [open, setOpen] = useState<boolean>(false)
+
+  const chevronRef = useRef<HTMLSpanElement | null>(null)
+
+  useRotate({ tagRef: chevronRef, angle: !open ? 0 : 180 })
 
   return (
     <Box
@@ -73,9 +77,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
         >
           {label}
         </Text>
-        <Rotate angle={!open ? 0 : 180}>
-          <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} />
-        </Rotate>
+        <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} tagRef={chevronRef} />
       </Box>
       <Resize tagAttrs={{ inert: !open }} property="blockSize" visible={open}>
         {children}

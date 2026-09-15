@@ -123,7 +123,7 @@ export const COMPONENT_CATEGORIES = [
     label: 'Motion',
     items: [
       { key: 'resize', label: 'Resize', sections, bundle: 'core' },
-      { key: 'rotate', label: 'Rotate', sections, bundle: 'core' },
+      { key: 'use-rotate', label: 'useRotate', sections, bundle: 'core' },
       { key: 'slide', label: 'Slide', sections, bundle: 'core' },
       { key: 'fade', label: 'Fade', sections, bundle: 'pro' },
       { key: 'scale', label: 'Scale', sections, bundle: 'pro' },
