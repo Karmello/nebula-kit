@@ -5,9 +5,8 @@ import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
-import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
-import { useControlled } from 'lib/hooks'
+import { useControlled, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -206,18 +205,17 @@ export const SelectImpl = ({
 }
 
 export const Select = (props: SelectProps) => {
-  return (
-    <WithSlots<'Select.Option'>
-      childrenToVerify={props.children}
-      componentName="Select"
-      slotsConfig={[{ name: 'Select.Option', required: true, allowMultiple: true }]}
-    >
-      {({ slotsByName }) => {
-        const optionSlots = slotsByName['Select.Option'] as ReactElement<SelectOptionProps>[]
-        return <SelectImpl {...props} optionSlots={optionSlots} />
-      }}
-    </WithSlots>
-  )
+  const slots = useSlots<'Select.Option'>({
+    childrenToVerify: props.children,
+    componentName: 'Select',
+    slotsConfig: [{ name: 'Select.Option', required: true, allowMultiple: true }],
+  })
+
+  if (!slots) return null
+
+  const optionSlots = slots.slotsByName['Select.Option'] as ReactElement<SelectOptionProps>[]
+
+  return <SelectImpl {...props} optionSlots={optionSlots} />
 }
 
 Select.displayName = 'Select'

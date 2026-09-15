@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
-import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { useSlots } from 'lib/hooks'
 
 import { TableContext, useTableContext } from '../../TableContext'
 import { TableHeaderProps } from './types'
@@ -20,37 +20,35 @@ export const TableHeader = ({
 }: TableHeaderProps) => {
   const context = useTableContext()
 
+  const slots = useSlots<'Table.HeaderRow'>({
+    childrenToVerify: children,
+    componentName: 'Table.Header',
+    slotsConfig: [{ name: 'Table.HeaderRow', required: true, allowMultiple: true }],
+  })
+
+  if (!slots) return null
+
   return (
-    <WithSlots<'Table.HeaderRow'>
-      childrenToVerify={children}
-      componentName="Table.Header"
-      slotsConfig={[{ name: 'Table.HeaderRow', required: true, allowMultiple: true }]}
-    >
-      {({ slotsByName }) => {
-        return (
-          <TableContext
-            value={{
-              color: color || context.color,
-              intent: intent || context.intent,
-              paddingBlock: paddingBlock || context.paddingBlock,
-              paddingInline: paddingInline || context.paddingInline,
-              textAlign: textAlign || context.textAlign,
-            }}
-          >
-            <Box
-              tag="thead"
-              tagAttrs={{
-                ...tagAttrs,
-                className: classNames(withPrefix('table-header'), tagAttrs?.className),
-              }}
-              tagRef={tagRef}
-            >
-              {slotsByName['Table.HeaderRow']}
-            </Box>
-          </TableContext>
-        )
+    <TableContext
+      value={{
+        color: color || context.color,
+        intent: intent || context.intent,
+        paddingBlock: paddingBlock || context.paddingBlock,
+        paddingInline: paddingInline || context.paddingInline,
+        textAlign: textAlign || context.textAlign,
       }}
-    </WithSlots>
+    >
+      <Box
+        tag="thead"
+        tagAttrs={{
+          ...tagAttrs,
+          className: classNames(withPrefix('table-header'), tagAttrs?.className),
+        }}
+        tagRef={tagRef}
+      >
+        {slots.slotsByName['Table.HeaderRow']}
+      </Box>
+    </TableContext>
   )
 }
 

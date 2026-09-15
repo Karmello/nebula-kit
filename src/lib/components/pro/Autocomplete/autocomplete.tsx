@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
-import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_TSHIRT_SIZE } from 'lib/constants'
+import { useSlots } from 'lib/hooks'
 
 import { AutocompleteMain } from './components'
 import {
@@ -44,36 +44,34 @@ export const Autocomplete = ({
     onChange?.(value)
   }
 
+  const slots = useSlots<'Autocomplete.Option'>({
+    childrenToVerify: children,
+    componentName: 'Autocomplete',
+    slotsConfig: [{ name: 'Autocomplete.Option', allowMultiple: true }],
+  })
+
+  if (!slots) return null
+
   return (
-    <WithSlots<'Autocomplete.Option'>
-      childrenToVerify={children}
-      componentName="Autocomplete"
-      slotsConfig={[{ name: 'Autocomplete.Option', allowMultiple: true }]}
-    >
-      {({ slotsByName }) => {
-        return (
-          <AutocompleteMain
-            tagRef={tagRef}
-            intent={intent}
-            color={color}
-            size={size}
-            visibleItemsCount={visibleItemsCount}
-            noOptionsLabel={noOptionsLabel}
-            inlineSize={inlineSize}
-            disabled={disabled}
-            onInputChange={onInputChange}
-            disableFiltering={disableFiltering}
-            debounceDelay={debounceDelay}
-            placeholder={placeholder}
-            showToggle={showToggle}
-            // extra
-            items={slotsByName['Autocomplete.Option']}
-            currentValue={currentValue}
-            handleChange={handleChange}
-          />
-        )
-      }}
-    </WithSlots>
+    <AutocompleteMain
+      tagRef={tagRef}
+      intent={intent}
+      color={color}
+      size={size}
+      visibleItemsCount={visibleItemsCount}
+      noOptionsLabel={noOptionsLabel}
+      inlineSize={inlineSize}
+      disabled={disabled}
+      onInputChange={onInputChange}
+      disableFiltering={disableFiltering}
+      debounceDelay={debounceDelay}
+      placeholder={placeholder}
+      showToggle={showToggle}
+      // extra
+      items={slots.slotsByName['Autocomplete.Option']}
+      currentValue={currentValue}
+      handleChange={handleChange}
+    />
   )
 }
 

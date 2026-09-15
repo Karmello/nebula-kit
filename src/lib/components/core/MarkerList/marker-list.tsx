@@ -1,8 +1,8 @@
 import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
-import { WithSlots } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
+import { useSlots } from 'lib/hooks'
 
 import { DEFAULT_MARKER_LIST_GAP } from './constants'
 import { MarkerListProvider } from './providers/MarkerListProvider'
@@ -23,38 +23,36 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
   // own
   listStyle,
 }: MarkerListProps<T>) => {
+  const slots = useSlots<'MarkerList.Item'>({
+    componentName: 'MarkerList',
+    slotsConfig: [{ name: 'MarkerList.Item', required: true, allowMultiple: true }],
+    childrenToVerify: children,
+  })
+
+  if (!slots) return null
+
   return (
-    <WithSlots<'MarkerList.Item'>
-      componentName="MarkerList"
-      slotsConfig={[{ name: 'MarkerList.Item', required: true, allowMultiple: true }]}
-      childrenToVerify={children}
-    >
-      {({ slotsByName }) => {
-        return (
-          <MarkerListProvider color={color} intent={intent}>
-            <Box
-              display="flex"
-              tag={tag || 'ul'}
-              tagAttrs={{
-                ...tagAttrs,
-                className: classNames(withPrefix('marker-list'), tagAttrs?.className),
-                style: {
-                  ...tagAttrs?.style,
-                  listStyle,
-                  listStylePosition: 'outside',
-                },
-                role: 'list',
-              }}
-              tagRef={tagRef}
-              flexDirection="column"
-              gap={gap}
-            >
-              {slotsByName['MarkerList.Item']}
-            </Box>
-          </MarkerListProvider>
-        )
-      }}
-    </WithSlots>
+    <MarkerListProvider color={color} intent={intent}>
+      <Box
+        display="flex"
+        tag={tag || 'ul'}
+        tagAttrs={{
+          ...tagAttrs,
+          className: classNames(withPrefix('marker-list'), tagAttrs?.className),
+          style: {
+            ...tagAttrs?.style,
+            listStyle,
+            listStylePosition: 'outside',
+          },
+          role: 'list',
+        }}
+        tagRef={tagRef}
+        flexDirection="column"
+        gap={gap}
+      >
+        {slots.slotsByName['MarkerList.Item']}
+      </Box>
+    </MarkerListProvider>
   )
 }
 

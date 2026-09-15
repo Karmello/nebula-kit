@@ -11,8 +11,7 @@ import {
   useInteractions,
 } from '@floating-ui/react'
 
-import { WithSlots } from 'lib/components/shared'
-import { useControlled } from 'lib/hooks'
+import { useControlled, useSlots } from 'lib/hooks'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT } from './constants'
 import { focusTriggerChild } from './helpers'
@@ -95,44 +94,42 @@ export const Floating = ({
     }
   }, [internalOpen])
 
+  const slots = useSlots<'Floating.Trigger' | 'Floating.Content'>({
+    componentName: 'Floating',
+    slotsConfig: [
+      { name: 'Floating.Trigger', required: true },
+      { name: 'Floating.Content', required: true },
+    ],
+    someRequired: true,
+    childrenToVerify: children,
+  })
+
+  if (!slots) return null
+
+  const triggerSlot = slots.slotsByName['Floating.Trigger'][0]
+  const contentSlot = slots.slotsByName['Floating.Content'][0]
+
+  if (!triggerSlot || !contentSlot) return null
+
   return (
-    <WithSlots<'Floating.Trigger' | 'Floating.Content'>
-      componentName="Floating"
-      slotsConfig={[
-        { name: 'Floating.Trigger', required: true },
-        { name: 'Floating.Content', required: true },
-      ]}
-      someRequired
-      childrenToVerify={children}
-    >
-      {({ slotsByName }) => {
-        const triggerSlot = slotsByName['Floating.Trigger'][0]
-        const contentSlot = slotsByName['Floating.Content'][0]
-
-        if (!triggerSlot || !contentSlot) return null
-
-        return (
-          <>
-            {cloneElement(triggerSlot as any, {
-              tagRef: triggerRef,
-              tagAttrs: getReferenceProps(),
-            })}
-            {cloneElement(contentSlot as any, {
-              tagRef: refs.setFloating as unknown as RefObject<HTMLSpanElement>,
-              tagAttrs: {
-                style: {
-                  ...floatingStyles,
-                },
-                ...getFloatingProps(),
-              },
-              internalOpen,
-              setInternalOpen,
-              isOpeningDownwards,
-            })}
-          </>
-        )
-      }}
-    </WithSlots>
+    <>
+      {cloneElement(triggerSlot as any, {
+        tagRef: triggerRef,
+        tagAttrs: getReferenceProps(),
+      })}
+      {cloneElement(contentSlot as any, {
+        tagRef: refs.setFloating as unknown as RefObject<HTMLSpanElement>,
+        tagAttrs: {
+          style: {
+            ...floatingStyles,
+          },
+          ...getFloatingProps(),
+        },
+        internalOpen,
+        setInternalOpen,
+        isOpeningDownwards,
+      })}
+    </>
   )
 }
 

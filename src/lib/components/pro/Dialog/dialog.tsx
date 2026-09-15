@@ -5,8 +5,7 @@ import { IconButton } from 'lib/components/core/IconButton'
 import { Portal } from 'lib/components/pro/Portal'
 import { useFocusTrap } from 'lib/components/pro/useFocusTrap'
 import { useScale } from 'lib/components/pro/useScale'
-import { WithSlots } from 'lib/components/shared'
-import { useCurrentTheme, useGlobalScrollLock } from 'lib/hooks'
+import { useCurrentTheme, useGlobalScrollLock, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_DIALOG_CLOSE_ON_BACKDROP_CLICK,
@@ -68,96 +67,96 @@ export const Dialog = ({
     }
   }, [open])
 
+  const slots = useSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>({
+    componentName: 'Dialog',
+    childrenToVerify: children,
+    slotsConfig: [
+      { name: 'Dialog.Header' },
+      { name: 'Dialog.Content', required: true },
+      { name: 'Dialog.Footer' },
+    ],
+  })
+
+  if (!slots) return null
+
+  const { slotsByName } = slots
+
   return (
-    <WithSlots<'Dialog.Header' | 'Dialog.Content' | 'Dialog.Footer'>
-      componentName="Dialog"
-      childrenToVerify={children}
-      slotsConfig={[
-        { name: 'Dialog.Header' },
-        { name: 'Dialog.Content', required: true },
-        { name: 'Dialog.Footer' },
-      ]}
-    >
-      {({ slotsByName }) => {
-        return (
-          <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
-            <Portal
-              tagAttrs={{
-                style: {
-                  zIndex: 'var(--neb-z-dialog-portal)',
-                },
-              }}
-            >
+    <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
+      <Portal
+        tagAttrs={{
+          style: {
+            zIndex: 'var(--neb-z-dialog-portal)',
+          },
+        }}
+      >
+        <Box
+          tagAttrs={{
+            style: {
+              backgroundColor:
+                theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
+              transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
+            },
+            onClick: () => {
+              if (closeOnBackdropClick) onClose?.()
+            },
+          }}
+          position="fixed"
+          inset="0px"
+          opacity={open ? '1' : '0'}
+          pointerEvents={open ? 'auto' : 'none'}
+        >
+          <Box
+            display="flex"
+            tagAttrs={{
+              style: { blockSize: '100%', inlineSize: '100%' },
+            }}
+            justifyContent="center"
+            alignItems="center"
+          >
+            <Box tagRef={scaleRef} display="inline-block">
               <Box
+                tag="dialog"
                 tagAttrs={{
-                  style: {
-                    backgroundColor:
-                      theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
-                    transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
-                  },
-                  onClick: () => {
-                    if (closeOnBackdropClick) onClose?.()
+                  ...tagAttrs,
+                  role: 'dialog',
+                  'aria-modal': true,
+                  onClick: e => {
+                    e.stopPropagation()
                   },
                 }}
-                position="fixed"
-                inset="0px"
-                opacity={open ? '1' : '0'}
-                pointerEvents={open ? 'auto' : 'none'}
+                tagRef={tagRef || ref}
+                drawable
+                borderMode="filled"
+                maxInlineSize="95dvw"
+                maxBlockSize="90dvh"
+                position="relative"
+                overflowY="auto"
+                intent="secondary"
+                inlineSize={DIALOG_SIZE_MAP[size || 'md']}
               >
-                <Box
-                  display="flex"
-                  tagAttrs={{
-                    style: { blockSize: '100%', inlineSize: '100%' },
-                  }}
-                  justifyContent="center"
-                  alignItems="center"
-                >
-                  <Box tagRef={scaleRef} display="inline-block">
-                    <Box
-                      tag="dialog"
-                      tagAttrs={{
-                        ...tagAttrs,
-                        role: 'dialog',
-                        'aria-modal': true,
-                        onClick: e => {
-                          e.stopPropagation()
-                        },
-                      }}
-                      tagRef={tagRef || ref}
-                      drawable
-                      borderMode="filled"
-                      maxInlineSize="95dvw"
-                      maxBlockSize="90dvh"
-                      position="relative"
-                      overflowY="auto"
-                      intent="secondary"
-                      inlineSize={DIALOG_SIZE_MAP[size || 'md']}
-                    >
-                      <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
-                        {onClose ? (
-                          <Box position="absolute" top="8px" right="8px">
-                            <IconButton
-                              scale="xs"
-                              iconName="close"
-                              variant="outline"
-                              intent="tertiary"
-                              onClick={onClose}
-                            />
-                          </Box>
-                        ) : null}
-                        {slotsByName['Dialog.Header']}
-                        {slotsByName['Dialog.Content']}
-                        {slotsByName['Dialog.Footer']}
-                      </Box>
+                <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
+                  {onClose ? (
+                    <Box position="absolute" top="8px" right="8px">
+                      <IconButton
+                        scale="xs"
+                        iconName="close"
+                        variant="outline"
+                        intent="tertiary"
+                        onClick={onClose}
+                      />
                     </Box>
-                  </Box>
+                  ) : null}
+                  {slotsByName['Dialog.Header']}
+                  {slotsByName['Dialog.Content']}
+                  {slotsByName['Dialog.Footer']}
                 </Box>
               </Box>
-            </Portal>
-          </DialogProvider>
-        )
-      }}
-    </WithSlots>
+            </Box>
+          </Box>
+        </Box>
+      </Portal>
+    </DialogProvider>
   )
 }
 

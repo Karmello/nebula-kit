@@ -3,22 +3,15 @@ import { Fragment } from 'react/jsx-runtime'
 
 import { getLibMsg } from 'lib/helpers'
 
-import { WithSlotsProps } from './types'
+import type { UseSlotsArgs, UseSlotsResult } from './types'
 
-type ResolvedSlots<SlotName extends string> = {
-  slotsByName: Record<SlotName, ReactNode[]>
-  allValidSlots: ReactNode[]
-  allNonSlots: ReactNode[]
-}
-
-export const WithSlots = <SlotName extends string>({
+export const useSlots = <SlotName extends string>({
   componentName,
   childrenToVerify,
   slotsConfig,
   someRequired,
-  children,
-}: WithSlotsProps<SlotName>) => {
-  const resolved = useMemo<ResolvedSlots<SlotName> | null>(() => {
+}: UseSlotsArgs<SlotName>): UseSlotsResult<SlotName> => {
+  const resolved = useMemo<UseSlotsResult<SlotName>>(() => {
     if (!childrenToVerify) return null
 
     const finalChildrenToVerify =
@@ -113,7 +106,5 @@ export const WithSlots = <SlotName extends string>({
     }
   }, [resolved, someRequired, componentName, slotsConfig])
 
-  if (!resolved) return null
-
-  return children(resolved)
+  return resolved
 }

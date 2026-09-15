@@ -6,9 +6,8 @@ import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, FloatingProps } from 'lib/components/pro/Floating'
-import { WithSlots } from 'lib/components/shared'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
-import { useControlled } from 'lib/hooks'
+import { useControlled, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_MULTI_SELECT_INLINE_SIZE,
@@ -219,20 +218,19 @@ export const MultiSelectImpl = ({
 }
 
 export const MultiSelect = (props: MultiSelectProps) => {
-  return (
-    <WithSlots<'MultiSelect.Option'>
-      childrenToVerify={props.children}
-      componentName="MultiSelect"
-      slotsConfig={[{ name: 'MultiSelect.Option', required: true, allowMultiple: true }]}
-    >
-      {({ slotsByName }) => {
-        const optionSlots = slotsByName[
-          'MultiSelect.Option'
-        ] as ReactElement<MultiSelectOptionProps>[]
-        return <MultiSelectImpl {...props} optionSlots={optionSlots} />
-      }}
-    </WithSlots>
-  )
+  const slots = useSlots<'MultiSelect.Option'>({
+    childrenToVerify: props.children,
+    componentName: 'MultiSelect',
+    slotsConfig: [{ name: 'MultiSelect.Option', required: true, allowMultiple: true }],
+  })
+
+  if (!slots) return null
+
+  const optionSlots = slots.slotsByName[
+    'MultiSelect.Option'
+  ] as ReactElement<MultiSelectOptionProps>[]
+
+  return <MultiSelectImpl {...props} optionSlots={optionSlots} />
 }
 
 MultiSelect.displayName = 'MultiSelect'

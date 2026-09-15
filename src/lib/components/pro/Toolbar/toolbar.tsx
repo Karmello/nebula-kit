@@ -3,9 +3,9 @@ import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
-import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
+import { useSlots } from 'lib/hooks'
 
 import { ToolbarProvider, useToolbarContext } from './providers/ToolbarProvider'
 import { ToolbarToggle } from './ToolbarToggle'
@@ -30,35 +30,37 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
       ? children({ setMainOpen: setMainOpenAsync, mainOpen })
       : children
 
+  const slots = useSlots<'Toolbar.Start' | 'Toolbar.Main' | 'Toolbar.End'>({
+    componentName: 'Toolbar',
+    slotsConfig: [
+      { name: 'Toolbar.Start' },
+      { name: 'Toolbar.Main', required: true },
+      { name: 'Toolbar.End' },
+    ],
+    childrenToVerify: finalChildren,
+  })
+
+  if (!slots) return null
+
+  const { slotsByName } = slots
+
   return (
-    <WithSlots<'Toolbar.Start' | 'Toolbar.Main' | 'Toolbar.End'>
-      componentName="Toolbar"
-      slotsConfig={[
-        { name: 'Toolbar.Start' },
-        { name: 'Toolbar.Main', required: true },
-        { name: 'Toolbar.End' },
-      ]}
-      childrenToVerify={finalChildren}
+    <Box
+      display="grid"
+      tag="nav"
+      tagAttrs={{
+        ...tagAttrs,
+        className: classNames(withPrefix('toolbar'), tagAttrs?.className),
+      }}
+      tagRef={tagRef}
+      gridTemplateColumns="auto auto 1fr auto"
+      gridAutoFlow="row"
     >
-      {({ slotsByName }) => (
-        <Box
-          display="grid"
-          tag="nav"
-          tagAttrs={{
-            ...tagAttrs,
-            className: classNames(withPrefix('toolbar'), tagAttrs?.className),
-          }}
-          tagRef={tagRef}
-          gridTemplateColumns="auto auto 1fr auto"
-          gridAutoFlow="row"
-        >
-          <ToolbarToggle />
-          {slotsByName['Toolbar.Start']}
-          {slotsByName['Toolbar.Main']}
-          {slotsByName['Toolbar.End']}
-        </Box>
-      )}
-    </WithSlots>
+      <ToolbarToggle />
+      {slotsByName['Toolbar.Start']}
+      {slotsByName['Toolbar.Main']}
+      {slotsByName['Toolbar.End']}
+    </Box>
   )
 }
 

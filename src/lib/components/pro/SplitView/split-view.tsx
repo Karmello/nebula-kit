@@ -2,8 +2,8 @@ import { useCallback } from 'react'
 
 import { Box } from 'lib/components/core/Box'
 import { DEFAULT_RESIZE_DURATION } from 'lib/components/core/Resize'
-import { WithSlots } from 'lib/components/shared'
 import { DEFAULT_SWITCH_BREAKPOINT } from 'lib/constants'
+import { useSlots } from 'lib/hooks'
 
 import { SPLIT_VIEW_SIDE_POSITIONS } from './constants'
 import { SplitViewProvider, useSplitViewContext } from './providers/SplitViewProvider'
@@ -29,39 +29,37 @@ const SplitViewComponent = ({
   const finalChildren =
     typeof children === 'function' ? children({ setSideOpen: setSideOpenASync, mode }) : children
 
+  const slots = useSlots<'SplitView.Main' | 'SplitView.Side'>({
+    componentName: 'SplitView',
+    slotsConfig: [
+      { name: 'SplitView.Main', required: true },
+      { name: 'SplitView.Side', required: true },
+    ],
+    childrenToVerify: finalChildren,
+  })
+
+  if (!slots) return null
+
+  const { slotsByName } = slots
+
   return (
-    <WithSlots<'SplitView.Main' | 'SplitView.Side'>
-      componentName="SplitView"
-      slotsConfig={[
-        { name: 'SplitView.Main', required: true },
-        { name: 'SplitView.Side', required: true },
-      ]}
-      childrenToVerify={finalChildren}
-    >
-      {({ slotsByName }) => {
-        return (
-          <Box
-            display="grid"
-            tagRef={tagRef}
-            tagAttrs={{
-              ...tagAttrs,
-              style: {
-                ...tagAttrs?.style,
-                blockSize: '100%',
-              },
-            }}
-            gridTemplateColumns={
-              sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'
-            }
-            gridTemplateRows="1fr"
-          >
-            {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
-            {slotsByName['SplitView.Main']}
-            {sidePosition === 'right' ? slotsByName['SplitView.Side'] : null}
-          </Box>
-        )
+    <Box
+      display="grid"
+      tagRef={tagRef}
+      tagAttrs={{
+        ...tagAttrs,
+        style: {
+          ...tagAttrs?.style,
+          blockSize: '100%',
+        },
       }}
-    </WithSlots>
+      gridTemplateColumns={sidePosition === 'left' ? 'auto minmax(0, 1fr)' : 'minmax(0, 1fr) auto'}
+      gridTemplateRows="1fr"
+    >
+      {sidePosition === 'left' ? slotsByName['SplitView.Side'] : null}
+      {slotsByName['SplitView.Main']}
+      {sidePosition === 'right' ? slotsByName['SplitView.Side'] : null}
+    </Box>
   )
 }
 
