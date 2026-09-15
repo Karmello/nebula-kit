@@ -70,6 +70,20 @@ export const WebsiteMapDialog = () => {
       <Dialog.Content>
         <Box display="flex" flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_006}>
           <Item
+            description="Explanations of NebulaKit concepts, styling and architecture."
+            iconName="book-open-text"
+            onClick={() => handleClick(PageKey.foundations)}
+          >
+            Foundations
+          </Item>
+          <Item
+            description="Documentation for Core and Pro components."
+            iconName="package"
+            onClick={() => handleClick(PageKey.library)}
+          >
+            Library
+          </Item>
+          <Item
             description="Recommended composition and architectural patterns."
             iconName="pyramid"
             onClick={() => handleClick(PageKey.patterns)}
@@ -82,20 +96,6 @@ export const WebsiteMapDialog = () => {
             onClick={() => handleClick(PageKey.playground)}
           >
             Playground
-          </Item>
-          <Item
-            description="Explanations of NebulaKit concepts, styling and architecture."
-            iconName="book-open-text"
-            onClick={() => handleClick(PageKey.foundations)}
-          >
-            Foundations
-          </Item>
-          <Item
-            description="Documentation for Core and Pro components."
-            iconName="package"
-            onClick={() => handleClick(PageKey.library)}
-          >
-            Components
           </Item>
           <Item
             description="Answers to common questions about the system."
