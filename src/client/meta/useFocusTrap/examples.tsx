@@ -7,7 +7,7 @@ import { type DocExample } from 'client/definitions'
 const FocusTrapWrapper = () => {
   const ref = useRef(null)
 
-  useFocusTrap({ tagRef: ref, active: true })
+  useFocusTrap({ ref, active: true })
 
   return (
     <Box display="flex" tagRef={ref} gap="8px">
@@ -22,10 +22,10 @@ export const USE_FOCUS_TRAP_EXAMPLES: DocExample[] = [
   {
     description: 'Focus stays locked between the three buttons while the trap is active.',
     jsx: <FocusTrapWrapper />,
-    code: `// The tagRef must point to the same DOM element that visually contains the focusable content
+    code: `// ref must point to the same DOM element that visually contains the focusable content
 const ref = useRef(null)
 
-useFocusTrap({ tagRef: ref, active: true })
+useFocusTrap({ ref, active: true })
 
 return (
   <Box display="flex" tagRef={ref} gap="8px">

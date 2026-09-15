@@ -37,7 +37,7 @@ export const Dialog = ({
   const theme = useCurrentTheme()
 
   useFocusTrap({
-    tagRef: tagRef || ref,
+    ref: tagRef || ref,
     active: open,
     onFocusEscape: onClose,
     disableEscapeOnOutsideClick: true,

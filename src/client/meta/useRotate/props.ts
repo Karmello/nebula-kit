@@ -22,7 +22,7 @@ export const USE_ROTATE_PROPS: Record<keyof UseRotateArgs, DocProp> = {
     defaultValue: DEFAULT_USE_ROTATE_EASING,
     description: 'Timing function for the animation.',
   },
-  tagRef: {
+  ref: {
     options: ['RefObject'],
     isRequired: true,
     description: 'Ref to the DOM element to rotate.',

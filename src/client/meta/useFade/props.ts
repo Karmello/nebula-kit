@@ -16,7 +16,7 @@ export const USE_FADE_PROPS: Record<keyof UseFadeArgs, DocProp> = {
     defaultValue: DEFAULT_USE_FADE_EASING,
     description: 'CSS timing function used for the fade transition animation.',
   },
-  tagRef: {
+  ref: {
     options: ['RefObject'],
     isRequired: true,
     description: 'Ref to the DOM element to fade.',

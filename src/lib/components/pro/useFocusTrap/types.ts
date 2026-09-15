@@ -4,5 +4,5 @@ export type UseFocusTrapArgs = {
   active: boolean
   onFocusEscape?: () => void
   disableEscapeOnOutsideClick?: boolean
-  tagRef: HtmlTagProps<any>['tagRef']
+  ref: HtmlTagProps<any>['tagRef']
 }

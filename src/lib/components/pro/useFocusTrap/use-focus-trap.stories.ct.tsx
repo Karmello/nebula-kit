@@ -5,7 +5,7 @@ import { useFocusTrap } from './use-focus-trap'
 const TrappedContent = ({ onClose }: { onClose: () => void }) => {
   const trapRef = useRef<HTMLDivElement | null>(null)
 
-  useFocusTrap({ tagRef: trapRef, active: true, onFocusEscape: onClose })
+  useFocusTrap({ ref: trapRef, active: true, onFocusEscape: onClose })
 
   return (
     <div ref={trapRef}>

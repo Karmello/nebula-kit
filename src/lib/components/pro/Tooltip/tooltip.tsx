@@ -30,7 +30,7 @@ const TooltipContent = ({
 }) => {
   const contentRef = useRef<HTMLDivElement | null>(null)
 
-  useFade({ tagRef: contentRef, visible })
+  useFade({ ref: contentRef, visible })
 
   return (
     <Box

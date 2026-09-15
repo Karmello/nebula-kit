@@ -37,7 +37,7 @@ export const SplitViewSide = ({
   const finalRef = tagRef || ref
 
   useFocusTrap({
-    tagRef: finalRef,
+    ref: finalRef,
     active: mode == 'overlay' && sideOpen,
     onFocusEscape: () => setSideOpen(false),
   })

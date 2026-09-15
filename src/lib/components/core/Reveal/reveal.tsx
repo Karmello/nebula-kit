@@ -29,7 +29,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
 
   const chevronRef = useRef<HTMLSpanElement | null>(null)
 
-  useRotate({ tagRef: chevronRef, angle: !open ? 0 : 180 })
+  useRotate({ ref: chevronRef, angle: !open ? 0 : 180 })
 
   return (
     <Box

@@ -18,7 +18,7 @@ export const USE_FOCUS_TRAP_PROPS: Record<keyof UseFocusTrapArgs, DocProp> = {
     description:
       'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
   },
-  tagRef: {
+  ref: {
     options: ['RefObject'],
     isRequired: true,
     description: 'Ref to the DOM element that the trap should contain focus within.',

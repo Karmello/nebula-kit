@@ -9,12 +9,12 @@ export const DEFAULT_USE_FADE_DURATION: UseFadeArgs['duration'] = 200
 export const DEFAULT_USE_FADE_EASING: UseFadeArgs['easing'] = 'linear'
 
 export const useFade = ({
-  tagRef,
+  ref,
   visible,
   duration = DEFAULT_USE_FADE_DURATION,
   easing = DEFAULT_USE_FADE_EASING,
 }: UseFadeArgs): void => {
-  const elementRef = tagRef as RefObject<HTMLElement | null>
+  const elementRef = ref as RefObject<HTMLElement | null>
 
   const transition = buildTransition({ property: 'opacity', duration, easing })
 

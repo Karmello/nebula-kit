@@ -8,13 +8,13 @@ export const DEFAULT_USE_ROTATE_DURATION: UseRotateArgs['duration'] = 200
 export const DEFAULT_USE_ROTATE_EASING: UseRotateArgs['easing'] = 'linear'
 
 export const useRotate = ({
-  tagRef,
+  ref,
   angle,
   duration = DEFAULT_USE_ROTATE_DURATION,
   easing = DEFAULT_USE_ROTATE_EASING,
 }: UseRotateArgs): void => {
   useEffect(() => {
-    const target = tagRef?.current as HTMLElement | null
+    const target = ref?.current as HTMLElement | null
 
     if (!target) return
 
@@ -23,5 +23,5 @@ export const useRotate = ({
     target.style.lineHeight = '0'
     target.style.transition = buildTransition({ property: 'transform', duration, easing })
     target.style.transform = `rotate(${angle}deg)`
-  }, [tagRef, angle, duration, easing])
+  }, [ref, angle, duration, easing])
 }

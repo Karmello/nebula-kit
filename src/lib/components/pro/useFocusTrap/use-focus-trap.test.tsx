@@ -9,7 +9,7 @@ describe('useFocusTrap', () => {
     const ref = { current: document.createElement('div') }
     document.body.appendChild(ref.current)
 
-    const { rerender } = renderHook(({ active }) => useFocusTrap({ tagRef: ref, active }), {
+    const { rerender } = renderHook(({ active }) => useFocusTrap({ ref, active }), {
       initialProps: { active: true },
     })
 
@@ -24,7 +24,7 @@ describe('useFocusTrap', () => {
     const ref = { current: document.createElement('div') }
     const onEscape = vi.fn()
 
-    renderHook(() => useFocusTrap({ tagRef: ref, active: true, onFocusEscape: onEscape }))
+    renderHook(() => useFocusTrap({ ref, active: true, onFocusEscape: onEscape }))
 
     document.dispatchEvent(new KeyboardEvent('keydown', { key: 'Escape' }))
     expect(onEscape).toHaveBeenCalled()
@@ -40,7 +40,7 @@ describe('useFocusTrap', () => {
     const ref = useRef<HTMLDivElement | null>(null)
 
     useFocusTrap({
-      tagRef: ref,
+      ref,
       active: true,
       onFocusEscape: onEscape,
       disableEscapeOnOutsideClick,

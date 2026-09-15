@@ -6,7 +6,7 @@ import { type UseFocusTrapArgs } from './types'
 
 export const useFocusTrap = ({
   active,
-  tagRef,
+  ref,
   onFocusEscape,
   disableEscapeOnOutsideClick = DEFAULT_USE_FOCUS_TRAP_DISABLE_ESCAPE_ON_OUTSIDE_CLICK,
 }: UseFocusTrapArgs): void => {
@@ -32,7 +32,7 @@ export const useFocusTrap = ({
   }, [active])
 
   useEffect(() => {
-    const target = tagRef?.current as HTMLElement
+    const target = ref?.current as HTMLElement
 
     if (!active || !target) return
 
@@ -137,5 +137,5 @@ export const useFocusTrap = ({
         target.removeAttribute('tabindex')
       }
     }
-  }, [active, tagRef, onFocusEscape, disableEscapeOnOutsideClick])
+  }, [active, ref, onFocusEscape, disableEscapeOnOutsideClick])
 }

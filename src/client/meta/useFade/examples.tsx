@@ -6,7 +6,7 @@ import { type DocExample } from 'client/definitions'
 
 const FadeWrapper = () => {
   const [visible, setVisible] = useState<boolean>(false)
-  const tagRef = useRef<HTMLDivElement | null>(null)
+  const ref = useRef<HTMLDivElement | null>(null)
 
   useEffect(() => {
     setVisible(visible => !visible)
@@ -18,10 +18,10 @@ const FadeWrapper = () => {
     return () => clearInterval(interval)
   }, [])
 
-  useFade({ tagRef, visible, duration: 1000 })
+  useFade({ ref, visible, duration: 1000 })
 
   return (
-    <Box tagRef={tagRef} drawable borderMode="filled" intent="primary" padding="20px">
+    <Box tagRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
       Fade content
     </Box>
   )
@@ -31,12 +31,12 @@ export const USE_FADE_EXAMPLES: DocExample[] = [
   {
     description: 'Fade transition controlled by the `visible` argument.',
     jsx: <FadeWrapper />,
-    code: `const tagRef = useRef(null)
+    code: `const ref = useRef(null)
 
-useFade({ tagRef, visible })
+useFade({ ref, visible })
 
 return (
-  <Box tagRef={tagRef} drawable borderMode="filled" intent="primary" padding="20px">
+  <Box tagRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
     Fade content
   </Box>
 )`,
