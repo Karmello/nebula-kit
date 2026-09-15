@@ -105,7 +105,9 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
       {name ? (
         <Box
           drawable
-          intent="tertiary"
+          intent="muted"
+          bgMode="tinted"
+          borderMode="tinted"
           padding={NEB_LENGTH.px_024}
           overflowX="auto"
           overflowY="hidden"
@@ -119,7 +121,7 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
       ) : (
         content
       )}
-      <Spacer blockSize={NEB_LENGTH.px_064} />
+      <Spacer blockSize={NEB_LENGTH.px_048} />
     </>
   )
 }
