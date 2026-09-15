@@ -10,6 +10,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'primitives',
     label: 'Primitives',
     items: [
+      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
       { key: 'box', label: 'Box', sections, bundle: 'core' },
       { key: 'text', label: 'Text', sections, bundle: 'core' },
       { key: 'icon', label: 'Icon', sections, bundle: 'core' },
@@ -117,12 +118,11 @@ export const COMPONENT_CATEGORIES = [
     ],
   },
   {
-    key: 'other',
-    label: 'Other',
+    key: 'providers',
+    label: 'Providers',
     items: [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
       { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
-      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
     ],
   },
 ]
