@@ -18,7 +18,6 @@ export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
   },
   name: {
     options: ['IconName'],
-    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   size: {

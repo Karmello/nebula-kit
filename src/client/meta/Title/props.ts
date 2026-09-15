@@ -25,7 +25,6 @@ export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
   },
   iconName: {
     options: ['IconName'],
-    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   iconPlacement: {

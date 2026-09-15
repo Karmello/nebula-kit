@@ -49,7 +49,6 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   },
   iconName: {
     options: ['IconName'],
-    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   iconPlacement: {

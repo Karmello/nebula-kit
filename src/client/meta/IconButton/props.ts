@@ -26,7 +26,6 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
   },
   iconName: {
     options: ['IconName'],
-    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   intent: {

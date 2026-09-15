@@ -38,7 +38,6 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
   },
   iconName: {
     options: ['IconName'],
-    isResponsive: true,
     description: 'Name of the icon to render.',
   },
   iconPlacement: {

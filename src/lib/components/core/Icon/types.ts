@@ -1,5 +1,4 @@
 import { ICON_NAMES } from 'lib/constants'
-import type { RespValue } from 'lib/types'
 
 import type { BoxProps } from '../Box/types'
 
@@ -7,7 +6,7 @@ export type IconName = (typeof ICON_NAMES)[number]
 
 export type IconProps = {
   // own
-  name?: RespValue<IconName>
+  name?: IconName
   size?: string
   // Box
   tagAttrs?: BoxProps<'span'>['tagAttrs']
