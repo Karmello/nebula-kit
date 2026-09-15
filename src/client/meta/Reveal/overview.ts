@@ -9,6 +9,5 @@ export const REVEAL_OVERVIEW: DocOverview = {
     'animates expand and collapse using measured height for smooth transitions',
   ],
   exposedTags: REVEAL_TAGS,
-  composedOf: ['Box', 'Icon', 'Resize', 'Text'],
-  hooks: ['useRotate'],
+  composedOf: ['Box', 'Icon', 'Resize', 'Text', 'useRotate'],
 }
