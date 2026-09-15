@@ -3,6 +3,7 @@ import { useRef } from 'react'
 import { Box } from 'lib/components/core/Box'
 import { IconButton } from 'lib/components/core/IconButton'
 import { Resize } from 'lib/components/core/Resize'
+import { StylingIsland } from 'lib/components/core/StylingIsland'
 import { FocusTrap } from 'lib/components/pro/FocusTrap'
 
 import { useSplitViewContext } from '../../providers/SplitViewProvider'
@@ -36,90 +37,90 @@ export const SplitViewSide = ({
   const finalRef = tagRef || ref
 
   return (
-    <Box
-      tag="aside"
-      tagAttrs={{
-        ...tagAttrs,
-        inert: !sideOpen,
-        role: mode === 'overlay' ? 'dialog' : 'complementary',
-        'aria-modal': mode === 'overlay' ? true : undefined,
-        style: {
-          ...tagAttrs?.style,
-          zIndex: mode === 'overlay' ? 'var(--neb-z-split-view-side)' : undefined,
-        },
-      }}
-      tagRef={finalRef}
-      drawable
-      theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
-      borderMode="filled"
-      borderRole="edge"
-      color={color}
-      intent={intent}
-      borderWidth="0px"
-      borderRadius="0px"
-      borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? '2px' : '0px'}
-      borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? '2px' : '0px'}
-      left={sidePosition === 'left' ? '0px' : undefined}
-      right={sidePosition === 'right' ? '0px' : undefined}
-      maxInlineSize={mode === 'inline' ? inlineSize : '100%'}
-      blockSize={blockSize}
-      overflowX="hidden"
-      pointerEvents="auto"
-      position={mode === 'overlay' ? 'fixed' : undefined}
-      top={mode === 'overlay' ? '0px' : undefined}
-      bottom={mode === 'overlay' ? '0px' : undefined}
-      overflowY={mode === 'overlay' ? 'auto' : 'hidden'}
-    >
+    <StylingIsland theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}>
       <Box
+        tag="aside"
+        tagAttrs={{
+          ...tagAttrs,
+          inert: !sideOpen,
+          role: mode === 'overlay' ? 'dialog' : 'complementary',
+          'aria-modal': mode === 'overlay' ? true : undefined,
+          style: {
+            ...tagAttrs?.style,
+            zIndex: mode === 'overlay' ? 'var(--neb-z-split-view-side)' : undefined,
+          },
+        }}
+        tagRef={finalRef}
         drawable
-        borderRadius="0px"
-        theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}
-        bgMode="filled"
+        borderMode="filled"
+        borderRole="edge"
         color={color}
         intent={intent}
-        blockSize="100%"
-        overflowY={sideOpen ? 'auto' : 'hidden'}
+        borderWidth="0px"
+        borderRadius="0px"
+        borderLeftWidth={mode === 'overlay' && sidePosition === 'right' && sideOpen ? '2px' : '0px'}
+        borderRightWidth={mode === 'overlay' && sidePosition === 'left' && sideOpen ? '2px' : '0px'}
+        left={sidePosition === 'left' ? '0px' : undefined}
+        right={sidePosition === 'right' ? '0px' : undefined}
+        maxInlineSize={mode === 'inline' ? inlineSize : '100%'}
+        blockSize={blockSize}
         overflowX="hidden"
+        pointerEvents="auto"
+        position={mode === 'overlay' ? 'fixed' : undefined}
+        top={mode === 'overlay' ? '0px' : undefined}
+        bottom={mode === 'overlay' ? '0px' : undefined}
+        overflowY={mode === 'overlay' ? 'auto' : 'hidden'}
       >
-        <FocusTrap
-          tagRef={finalRef}
-          active={mode == 'overlay' && sideOpen}
-          onFocusEscape={() => setSideOpen(false)}
+        <Box
+          drawable
+          borderRadius="0px"
+          bgMode="filled"
+          color={color}
+          intent={intent}
+          blockSize="100%"
+          overflowY={sideOpen ? 'auto' : 'hidden'}
+          overflowX="hidden"
         >
-          <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
-            <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
-              <Box>
-                {mode === 'overlay' ? (
-                  <Box display="flex" justifyContent="flex-end">
-                    <Box padding="4px" paddingRight="2px" paddingBottom="24px">
-                      <IconButton
-                        iconName="close"
-                        intent={intent || 'tertiary'}
-                        scale="xs"
-                        onClick={() => {
-                          setSideOpen(false)
-                        }}
-                      />
+          <FocusTrap
+            tagRef={finalRef}
+            active={mode == 'overlay' && sideOpen}
+            onFocusEscape={() => setSideOpen(false)}
+          >
+            <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
+              <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
+                <Box>
+                  {mode === 'overlay' ? (
+                    <Box display="flex" justifyContent="flex-end">
+                      <Box padding="4px" paddingRight="2px" paddingBottom="24px">
+                        <IconButton
+                          iconName="close"
+                          intent={intent || 'tertiary'}
+                          scale="xs"
+                          onClick={() => {
+                            setSideOpen(false)
+                          }}
+                        />
+                      </Box>
                     </Box>
+                  ) : null}
+                  <Box
+                    padding={padding}
+                    paddingInline={paddingInline}
+                    paddingBlock={paddingBlock}
+                    paddingTop={paddingTop}
+                    paddingRight={paddingRight}
+                    paddingBottom={paddingBottom}
+                    paddingLeft={paddingLeft}
+                  >
+                    {children}
                   </Box>
-                ) : null}
-                <Box
-                  padding={padding}
-                  paddingInline={paddingInline}
-                  paddingBlock={paddingBlock}
-                  paddingTop={paddingTop}
-                  paddingRight={paddingRight}
-                  paddingBottom={paddingBottom}
-                  paddingLeft={paddingLeft}
-                >
-                  {children}
                 </Box>
               </Box>
-            </Box>
-          </Resize>
-        </FocusTrap>
+            </Resize>
+          </FocusTrap>
+        </Box>
       </Box>
-    </Box>
+    </StylingIsland>
   )
 }
 

@@ -1,6 +1,6 @@
 import { ReactElement, useLayoutEffect, useRef } from 'react'
 
-import { BrandProvider, ThemeProvider } from 'lib/components/shared'
+import { StylingIsland } from 'lib/components/core/StylingIsland'
 import { useGlobalScrollLock } from 'lib/hooks'
 
 import {
@@ -93,9 +93,9 @@ export const NebkitProvider = ({
   }, [theme, brand, borderRadiusSize, ripple])
 
   return (
-    <ThemeProvider theme={theme}>
-      <BrandProvider brand={brand}>{children}</BrandProvider>
-    </ThemeProvider>
+    <StylingIsland theme={theme} brand={brand}>
+      {children}
+    </StylingIsland>
   )
 }
 

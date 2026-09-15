@@ -60,9 +60,7 @@ export const COMPONENT_CATEGORIES = [
   {
     key: 'containers',
     label: 'Containers',
-    items: [
-      { key: 'reveal', label: 'Reveal', sections, bundle: 'core' },
-    ],
+    items: [{ key: 'reveal', label: 'Reveal', sections, bundle: 'core' }],
   },
   {
     key: 'feedback',
@@ -123,6 +121,7 @@ export const COMPONENT_CATEGORIES = [
     label: 'Other',
     items: [
       { key: 'nebkit-provider', label: 'NebkitProvider', sections, bundle: 'core' },
+      { key: 'styling-island', label: 'StylingIsland', sections, bundle: 'core' },
       { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
     ],
   },

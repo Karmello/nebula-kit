@@ -1,9 +1,4 @@
-import {
-  BOX_COLORS,
-  BOX_INTENTS,
-  BOX_SURFACE_DEPTHS,
-  BOX_THEMES,
-} from 'lib/components/core/Box/constants'
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   BUTTON_ALIGNS,
   BUTTON_ICON_PLACEMENTS,
@@ -126,12 +121,6 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   tagRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-  },
-  theme: {
-    options: BOX_THEMES,
-    isResponsive: true,
-    description:
-      'Sets a local theme boundary for the component and its drawable descendants. Supports explicit themes, the global application theme or the opposite of the global application theme.',
   },
   variant: {
     options: BUTTON_VARIANTS,

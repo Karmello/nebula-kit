@@ -3,6 +3,7 @@ import { pascalCase } from 'change-case'
 import { Box } from 'lib/components/core/Box'
 import { Reveal } from 'lib/components/core/Reveal'
 import { Spacer } from 'lib/components/core/Spacer'
+import { StylingIsland } from 'lib/components/core/StylingIsland'
 import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
 import { Markup } from 'lib/components/pro/Markup'
@@ -49,8 +50,7 @@ const SingleExample = (
             intent="tertiary"
             tagAttrs={{ style: { borderStyle: 'dashed' } }}
           >
-            <Box
-              drawable
+            <StylingIsland
               theme={
                 !hideExamplesThemeToggle
                   ? flipGlobalThemeOnExamples
@@ -58,13 +58,17 @@ const SingleExample = (
                     : theme
                   : undefined
               }
-              bgMode="filled"
-              intent="neutral"
-              padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
-              borderRadius={NEB_LENGTH.px_000}
             >
-              {jsx}
-            </Box>
+              <Box
+                drawable
+                bgMode="filled"
+                intent="neutral"
+                padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+                borderRadius={NEB_LENGTH.px_000}
+              >
+                {jsx}
+              </Box>
+            </StylingIsland>
           </Box>
           <Spacer blockSize={NEB_LENGTH.px_008} />
         </>

@@ -1,14 +1,18 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box, StylingIsland } from 'lib/components'
 
 test('Theme remaps palette steps for light and dark modes', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'light-neutral' }} theme="light" intent="neutral" />
-      <Box tagAttrs={{ id: 'light-strong' }} theme="light" intent="strong" />
-      <Box tagAttrs={{ id: 'dark-neutral' }} theme="dark" intent="neutral" />
-      <Box tagAttrs={{ id: 'dark-strong' }} theme="dark" intent="strong" />
+      <StylingIsland theme="light">
+        <Box tagAttrs={{ id: 'light-neutral' }} intent="neutral" />
+        <Box tagAttrs={{ id: 'light-strong' }} intent="strong" />
+      </StylingIsland>
+      <StylingIsland theme="dark">
+        <Box tagAttrs={{ id: 'dark-neutral' }} intent="neutral" />
+        <Box tagAttrs={{ id: 'dark-strong' }} intent="strong" />
+      </StylingIsland>
     </>
   )
 

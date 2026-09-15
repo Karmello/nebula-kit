@@ -10,8 +10,6 @@ import {
 import classNames from 'classnames'
 
 import { HtmlTag } from 'lib/components/core/HtmlTag'
-import { BrandProvider } from 'lib/components/shared/BrandProvider'
-import { ThemeProvider } from 'lib/components/shared/ThemeProvider'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
@@ -39,8 +37,6 @@ export const Box = <T extends ElementType = 'div'>({
   bgRole = DEFAULT_BOX_BG_ROLE,
   borderMode = DEFAULT_BOX_BORDER_MODE,
   text = DEFAULT_BOX_TEXT,
-  theme,
-  brand,
   color,
   intent,
   interactive,
@@ -131,7 +127,7 @@ export const Box = <T extends ElementType = 'div'>({
 
   const { bp } = useScreen()
 
-  const resolvedAppearance = useResolveAppearance({ theme, brand, color })
+  const resolvedAppearance = useResolveAppearance({ color })
 
   useTransitionLifecycle(finalRef as RefObject<HTMLElement>)
 
@@ -295,39 +291,35 @@ export const Box = <T extends ElementType = 'div'>({
   useRipple(finalRef, usesRipple)
 
   return (
-    <ThemeProvider theme={resolvedAppearance.theme}>
-      <BrandProvider brand={resolvedAppearance.brand}>
-        <HtmlTag
-          tag={tag}
-          tagAttrs={
-            {
-              ...tagAttrs,
-              className: classNames(withPrefix('box'), tagAttrs?.className || ''),
-              style: { ...tagAttrs?.style, pointerEvents, cursor },
-              disabled,
-              ...buildStaticDataset('Box', {
-                drawable: drawable || interactive,
-                interactive,
-                surfaceDepth,
-                disabled,
-                borderMode,
-                borderRole,
-                activeOnFocus,
-                ripple: usesRipple,
-                color: resolvedAppearance.color,
-                bgMode,
-                bgRole,
-                text,
-                intent,
-              }),
-            } as PropsWithoutRef<ComponentProps<T>>
-          }
-          tagRef={finalRef}
-        >
-          {children}
-        </HtmlTag>
-      </BrandProvider>
-    </ThemeProvider>
+    <HtmlTag
+      tag={tag}
+      tagAttrs={
+        {
+          ...tagAttrs,
+          className: classNames(withPrefix('box'), tagAttrs?.className || ''),
+          style: { ...tagAttrs?.style, pointerEvents, cursor },
+          disabled,
+          ...buildStaticDataset('Box', {
+            drawable: drawable || interactive,
+            interactive,
+            surfaceDepth,
+            disabled,
+            borderMode,
+            borderRole,
+            activeOnFocus,
+            ripple: usesRipple,
+            color: resolvedAppearance.color,
+            bgMode,
+            bgRole,
+            text,
+            intent,
+          }),
+        } as PropsWithoutRef<ComponentProps<T>>
+      }
+      tagRef={finalRef}
+    >
+      {children}
+    </HtmlTag>
   )
 }
 

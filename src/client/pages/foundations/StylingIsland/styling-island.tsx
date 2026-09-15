@@ -12,14 +12,14 @@ export default () => {
       <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_032}>
         <Box>
           <Text typography="h5" bold color="blue" intent="primary">
-            Box can act as a local styling island
+            StylingIsland establishes a local styling boundary
           </Text>
           <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
           <Text>
-            When theme or brand is set, the Box creates a scoped styling context for all its
-            descendants without affecting the rest of the app. Under the hood, a styling island
-            provides both Theme and Brand context. All drawable descendants resolve their colors
-            using the nearest styling island.
+            Wrapping a subtree in StylingIsland creates a scoped theme and brand context for all its
+            descendants without affecting the rest of the app. Under the hood, it provides both
+            Theme and Brand context. All drawable Box descendants resolve their colors using the
+            nearest StylingIsland.
           </Text>
           <Spacer />
           <Text>Theme and brand follow the same rules:</Text>
@@ -53,9 +53,11 @@ export default () => {
           <Spacer blockSize={NEB_LENGTH.px_008} />
           <CodeSnippet
             lang="tsx"
-            code={`<Box theme="dark" drawable bgMode="filled" intent="neutral">
-  ...
-</Box>`}
+            code={`<StylingIsland theme="dark">
+  <Box drawable bgMode="filled" intent="neutral">
+    ...
+  </Box>
+</StylingIsland>`}
             description="Recommended pattern"
           />
           <Spacer />

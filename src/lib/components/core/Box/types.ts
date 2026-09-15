@@ -46,8 +46,6 @@ export type BoxText = (typeof BOX_TEXT)[number]
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
-  theme?: RespValue<BoxTheme>
-  brand?: BoxColor
   drawable?: boolean
   color?: BoxColor
   intent?: BoxIntent

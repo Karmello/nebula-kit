@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box, StylingIsland } from 'lib/components'
 
 test('Box does not write semantic dataset attribute when prop is absent', async ({
   mount,
@@ -29,9 +29,9 @@ test('responsive semantic dataset updates with breakpoint changes', async ({ mou
   await page.setViewportSize({ width: 375, height: 800 }) // base
 
   await mount(
-    <Box tagAttrs={{ id: 'box' }} theme={{ base: 'light', md: 'dark' }}>
-      Responsive
-    </Box>
+    <StylingIsland theme={{ base: 'light', md: 'dark' }}>
+      <Box tagAttrs={{ id: 'box' }}>Responsive</Box>
+    </StylingIsland>
   )
 
   const box = page.locator('#box')

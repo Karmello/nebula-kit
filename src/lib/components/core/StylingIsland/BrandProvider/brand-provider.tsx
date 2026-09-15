@@ -1,14 +1,10 @@
 import { createContext, useContext, useMemo } from 'react'
 
-import type { BoxProps } from '../../core/Box/types'
+import type { BrandContextValue, BrandProviderProps } from './types'
 
-type BrandContextValue = {
-  brand?: BoxProps['color']
-}
+const BrandContext = createContext<BrandContextValue | null>(null)
 
-type BrandProviderProps = BrandContextValue & {
-  children: React.ReactNode
-}
+export const useBrandContext = () => useContext(BrandContext)
 
 export const BrandProvider = ({ children, brand }: BrandProviderProps) => {
   const parent = useBrandContext()
@@ -21,6 +17,4 @@ export const BrandProvider = ({ children, brand }: BrandProviderProps) => {
   return <BrandContext.Provider value={value}>{children}</BrandContext.Provider>
 }
 
-const BrandContext = createContext<BrandContextValue | null>(null)
-
-export const useBrandContext = () => useContext(BrandContext)
+BrandProvider.displayName = 'BrandProvider'

@@ -1,7 +1,7 @@
 import type { BoxTheme } from 'lib/components/core/Box/types'
 import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
-import { useBrandContext } from 'lib/components/shared/BrandProvider'
-import { useThemeContext } from 'lib/components/shared/ThemeProvider'
+import { useBrandContext } from 'lib/components/core/StylingIsland/BrandProvider'
+import { useThemeContext } from 'lib/components/core/StylingIsland/ThemeProvider'
 import { useCurrentTheme } from 'lib/hooks'
 import { RespValue } from 'lib/types'
 
@@ -26,22 +26,19 @@ export const resolveThemeValue = (
 }
 
 export const resolveTheme = (
-  theme: BoxProps['theme'],
-  inheritedTheme: BoxProps['theme'],
+  inheritedTheme: BoxTheme | RespValue<BoxTheme> | undefined,
   globalTheme: NebkitProviderTheme
 ): RespValue<NebkitProviderTheme> => {
-  const resolvedTheme = theme ?? inheritedTheme
-
-  if (!resolvedTheme) {
-    return resolvedTheme as unknown as RespValue<NebkitProviderTheme>
+  if (!inheritedTheme) {
+    return globalTheme
   }
 
-  if (typeof resolvedTheme === 'string') {
-    return resolveThemeValue(resolvedTheme, globalTheme)
+  if (typeof inheritedTheme === 'string') {
+    return resolveThemeValue(inheritedTheme, globalTheme)
   }
 
   return Object.fromEntries(
-    Object.entries(resolvedTheme).map(([breakpoint, value]) => [
+    Object.entries(inheritedTheme).map(([breakpoint, value]) => [
       breakpoint,
       resolveThemeValue(value, globalTheme),
     ])
@@ -49,12 +46,10 @@ export const resolveTheme = (
 }
 
 export const useResolveAppearance = ({
-  theme,
-  brand,
   color,
-}: Pick<BoxProps, 'theme' | 'brand' | 'color'>): { theme: RespValue<NebkitProviderTheme> } & Pick<
+}: Pick<BoxProps, 'color'>): { theme: RespValue<NebkitProviderTheme> } & Pick<
   BoxProps,
-  'brand' | 'color'
+  'color'
 > => {
   const globalTheme = useCurrentTheme()
 
@@ -62,15 +57,13 @@ export const useResolveAppearance = ({
   const brandCtx = useBrandContext()
 
   const inheritedTheme = themeCtx?.theme
-  const finalTheme = resolveTheme(theme, inheritedTheme, globalTheme)
+  const finalTheme = resolveTheme(inheritedTheme, globalTheme)
 
-  const ctxBrand = brandCtx?.brand
-  const finalBrand = brand ?? ctxBrand
+  const finalBrand = brandCtx?.brand
   const finalColor = color ?? finalBrand
 
   return {
     theme: finalTheme,
-    brand: finalBrand,
     color: finalColor,
   }
 }

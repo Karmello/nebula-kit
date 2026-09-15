@@ -1,6 +1,6 @@
 import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box, StylingIsland } from 'lib/components'
 
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
@@ -12,16 +12,11 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       blockSize="200px"
       padding="16px"
     >
-      <Box
-        tagAttrs={{ id: 'child' }}
-        drawable
-        bgMode="filled"
-        intent="primary"
-        brand="green"
-        blockSize="100px"
-      >
-        Child
-      </Box>
+      <StylingIsland brand="green">
+        <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+          Child
+        </Box>
+      </StylingIsland>
     </Box>,
     {
       hooksConfig: {
@@ -74,19 +69,20 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
 
 test('Child Box inherits brand when no local brand is set', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'parent' }}
-      drawable
-      bgMode="filled"
-      intent="primary"
-      brand="green"
-      blockSize="200px"
-      padding="16px"
-    >
-      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
-        Child
+    <StylingIsland brand="green">
+      <Box
+        tagAttrs={{ id: 'parent' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        blockSize="200px"
+        padding="16px"
+      >
+        <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+          Child
+        </Box>
       </Box>
-    </Box>
+    </StylingIsland>
   )
 
   const result = await page.evaluate(() => {
@@ -128,26 +124,28 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
 
 test('Brand survives theme islands (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box
-      tagAttrs={{ id: 'dark-parent' }}
-      drawable
-      bgMode="filled"
-      intent="primary"
-      theme="dark"
-      blockSize="200px"
-      padding="16px"
-    >
+    <StylingIsland theme="dark">
       <Box
-        tagAttrs={{ id: 'light-child' }}
+        tagAttrs={{ id: 'dark-parent' }}
         drawable
         bgMode="filled"
         intent="primary"
-        theme="light"
-        blockSize="100px"
+        blockSize="200px"
+        padding="16px"
       >
-        Child
+        <StylingIsland theme="light">
+          <Box
+            tagAttrs={{ id: 'light-child' }}
+            drawable
+            bgMode="filled"
+            intent="primary"
+            blockSize="100px"
+          >
+            Child
+          </Box>
+        </StylingIsland>
       </Box>
-    </Box>,
+    </StylingIsland>,
     {
       hooksConfig: {
         brand: 'green',

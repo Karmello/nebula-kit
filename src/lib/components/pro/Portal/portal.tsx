@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import classNames from 'classnames'
 
 import { Box } from 'lib/components/core/Box'
-import { useBrandContext, useThemeContext } from 'lib/components/shared'
 import { withPrefix } from 'lib/helpers'
 
 import { useAnchoredPosition } from './hooks'
@@ -29,9 +28,6 @@ export const Portal = ({
     placement,
     offset,
   })
-
-  const themeContext = useThemeContext()
-  const brandContext = useBrandContext()
 
   useLayoutEffect(() => {
     const div = document.createElement('div')
@@ -61,8 +57,6 @@ export const Portal = ({
           ...tagAttrs?.style,
         },
       }}
-      theme={themeContext?.theme}
-      brand={brandContext?.brand}
       position="absolute"
       pointerEvents="auto"
       top={position.top !== undefined ? `${position.top}px` : '0px'}

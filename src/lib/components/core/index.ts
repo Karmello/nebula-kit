@@ -27,6 +27,7 @@ export { Rotate, type RotateProps } from './Rotate'
 export { Select, type SelectOptionProps, type SelectProps } from './Select'
 export { Slide, type SlideProps } from './Slide'
 export { Spacer, type SpacerProps } from './Spacer'
+export { StylingIsland, type StylingIslandProps } from './StylingIsland'
 export {
   Table,
   type TableBodyProps,

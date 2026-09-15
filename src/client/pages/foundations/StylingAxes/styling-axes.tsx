@@ -19,7 +19,7 @@ export default () => {
               <Text>Global theme is set via NebkitProvider</Text>
             </MarkerList.Item>
             <MarkerList.Item>
-              <Text>Local theme can be set on any Box</Text>
+              <Text>Local theme can be set via StylingIsland</Text>
             </MarkerList.Item>
             <MarkerList.Item>
               <Text>Themes are scoped and inherited by descendants</Text>
@@ -46,7 +46,7 @@ export default () => {
               <Text>Global brand is set via NebkitProvider</Text>
             </MarkerList.Item>
             <MarkerList.Item>
-              <Text>Local brand can be set on any Box</Text>
+              <Text>Local brand can be set via StylingIsland</Text>
             </MarkerList.Item>
             <MarkerList.Item>
               <Text>Brand acts as a default, not an override</Text>

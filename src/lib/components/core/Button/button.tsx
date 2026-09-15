@@ -36,7 +36,6 @@ export const Button = <T extends ButtonTag = 'button'>({
   tag = 'button' as T,
   tagAttrs,
   tagRef,
-  theme,
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,
@@ -80,7 +79,6 @@ export const Button = <T extends ButtonTag = 'button'>({
           'aria-disabled': disabled || undefined,
         }}
         tagRef={finalRef}
-        theme={theme}
         bgMode={BUTTON_VARIANT_MAP[variant].bgMode}
         borderMode={BUTTON_VARIANT_MAP[variant].borderMode}
         text={BUTTON_VARIANT_MAP[variant].text}

@@ -8,7 +8,6 @@ import {
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
   BOX_TEXT,
-  BOX_THEMES,
   DEFAULT_BOX_BG_MODE,
   DEFAULT_BOX_BG_ROLE,
   DEFAULT_BOX_BORDER_MODE,
@@ -61,18 +60,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     group: 'base',
   },
   // surface
-  theme: {
-    options: BOX_THEMES,
-    isResponsive: true,
-    description:
-      'Sets a local theme boundary for the component and its drawable descendants. Supports explicit themes, the global application theme or the opposite of the global application theme.',
-    group: 'surface',
-  },
-  brand: {
-    options: BOX_COLORS,
-    description: 'Default surface color context for the component and its descendants.',
-    group: 'surface',
-  },
   drawable: {
     options: ['boolean'],
     description:

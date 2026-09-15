@@ -25,7 +25,6 @@ export type ButtonProps<T extends ButtonTag = 'button'> = {
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
-  theme?: BoxProps<T>['theme']
   variant?: ButtonVariant
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']

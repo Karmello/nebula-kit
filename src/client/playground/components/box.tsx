@@ -10,7 +10,6 @@ export const PROPS_FROM_BOX = [
   'borderRadius',
   'borderRole',
   'borderWidth',
-  'brand',
   'children',
   'color',
   'cursor',
@@ -23,7 +22,6 @@ export const PROPS_FROM_BOX = [
   'padding',
   'surfaceDepth',
   'text',
-  'theme',
   'visibility',
 ] as const satisfies readonly (keyof BoxProps)[]
 

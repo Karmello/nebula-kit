@@ -12,9 +12,8 @@ export const BOX_OVERVIEW: DocOverview = {
   ],
   guidelines: [
     'use `drawable` prop to turn Box into a surface that paints colors',
-    'use `theme` prop to establish a new theme context for wrapping Box and its children',
-    'use `brand` prop to apply a brand context to wrapping Box and its children',
     'use `surfaceDepth` prop to control the depth style of the component',
+    'wrap Box in `StylingIsland` to give it and its descendants a local theme or brand context',
   ],
   composedOf: ['HtmlTag'],
 }

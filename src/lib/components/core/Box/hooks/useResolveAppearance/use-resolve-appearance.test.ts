@@ -37,34 +37,29 @@ describe('resolveThemeValue', () => {
 })
 
 describe('resolveTheme', () => {
-  it('returns undefined when theme and inheritedTheme are undefined', () => {
-    expect(resolveTheme(undefined, undefined, 'light')).toBeUndefined()
+  it('falls back to the global theme when no inherited theme is present', () => {
+    expect(resolveTheme(undefined, 'light')).toBe('light')
   })
 
-  it('inherits light theme when theme is undefined', () => {
-    expect(resolveTheme(undefined, 'light', 'dark')).toBe('light')
+  it('resolves inherited light theme', () => {
+    expect(resolveTheme('light', 'dark')).toBe('light')
   })
 
-  it('inherits dark theme when theme is undefined', () => {
-    expect(resolveTheme(undefined, 'dark', 'light')).toBe('dark')
+  it('resolves inherited dark theme', () => {
+    expect(resolveTheme('dark', 'light')).toBe('dark')
   })
 
-  it('prefers explicit theme over inherited theme', () => {
-    expect(resolveTheme('light', 'dark', 'dark')).toBe('light')
+  it('resolves inherited global theme', () => {
+    expect(resolveTheme('global', 'light')).toBe('light')
   })
 
-  it('resolves explicit global theme', () => {
-    expect(resolveTheme('global', 'dark', 'light')).toBe('light')
+  it('resolves inherited global-flipped theme', () => {
+    expect(resolveTheme('global-flipped', 'light')).toBe('dark')
   })
 
-  it('resolves explicit global-flipped theme', () => {
-    expect(resolveTheme('global-flipped', 'dark', 'light')).toBe('dark')
-  })
-
-  it('inherits responsive theme when theme is undefined', () => {
+  it('resolves responsive inherited theme', () => {
     expect(
       resolveTheme(
-        undefined,
         {
           base: 'light',
           lg: 'dark',
@@ -77,33 +72,13 @@ describe('resolveTheme', () => {
     })
   })
 
-  it('prefers explicit responsive theme over inherited theme', () => {
-    expect(
-      resolveTheme(
-        {
-          base: 'dark',
-          lg: 'light',
-        },
-        {
-          base: 'light',
-          lg: 'dark',
-        },
-        'light'
-      )
-    ).toEqual({
-      base: 'dark',
-      lg: 'light',
-    })
-  })
-
-  it('resolves global values inside responsive theme', () => {
+  it('resolves global values inside responsive inherited theme', () => {
     expect(
       resolveTheme(
         {
           base: 'global',
           lg: 'dark',
         },
-        undefined,
         'light'
       )
     ).toEqual({
@@ -112,14 +87,13 @@ describe('resolveTheme', () => {
     })
   })
 
-  it('resolves global-flipped values inside responsive theme', () => {
+  it('resolves global-flipped values inside responsive inherited theme', () => {
     expect(
       resolveTheme(
         {
           base: 'global-flipped',
           lg: 'light',
         },
-        undefined,
         'light'
       )
     ).toEqual({
@@ -128,7 +102,7 @@ describe('resolveTheme', () => {
     })
   })
 
-  it('resolves mixed responsive theme values', () => {
+  it('resolves mixed responsive inherited theme values', () => {
     expect(
       resolveTheme(
         {
@@ -136,7 +110,6 @@ describe('resolveTheme', () => {
           md: 'global-flipped',
           lg: 'dark',
         },
-        undefined,
         'light'
       )
     ).toEqual({
