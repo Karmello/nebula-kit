@@ -6,6 +6,7 @@ import { Box } from '../Box'
 import {
   CALLOUT_CONFIG,
   CALLOUT_SIZE_CONFIG,
+  CALLOUT_VARIANT_MAP,
   DEFAULT_CALLOUT_INTENT,
   DEFAULT_CALLOUT_SIZE,
   DEFAULT_CALLOUT_STATUS,
@@ -32,7 +33,9 @@ export const Callout = <T extends CalloutTag = 'div'>({
       tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
-      // variant={variant}
+      bgMode={CALLOUT_VARIANT_MAP[variant].bgMode}
+      borderMode={CALLOUT_VARIANT_MAP[variant].borderMode}
+      text={CALLOUT_VARIANT_MAP[variant].text}
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"

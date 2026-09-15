@@ -1,6 +1,6 @@
 import { TShirtSize } from 'lib/types'
 
-import type { BoxColor, BoxIntent } from '../Box/types'
+import type { BoxBgMode, BoxBorderMode, BoxColor, BoxIntent, BoxText } from '../Box/types'
 import { type IconName } from '../Icon/types'
 import type { TextTypography } from '../Text/types'
 
@@ -37,3 +37,12 @@ export const DEFAULT_CALLOUT_SIZE: TShirtSize = 'md'
 export const DEFAULT_CALLOUT_VARIANT: (typeof CALLOUT_VARIANTS)[number] = 'solid'
 export const DEFAULT_CALLOUT_INTENT: BoxIntent = 'primary'
 export const DEFAULT_CALLOUT_STATUS: (typeof CALLOUT_STATUSES)[number] = 'info'
+
+export const CALLOUT_VARIANT_MAP: Record<
+  (typeof CALLOUT_VARIANTS)[number],
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+> = {
+  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
+}
