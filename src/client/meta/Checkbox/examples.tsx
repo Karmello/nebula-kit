@@ -14,6 +14,7 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
         <Checkbox size="sm" variant="outline" />
         <Checkbox size="md" variant="outline" />
         <Checkbox size="lg" variant="outline" />
+        <Checkbox size="xl" variant="outline" />
       </Box>
     ),
   },
@@ -25,6 +26,7 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
         <Checkbox size="sm" variant="soft-outline" />
         <Checkbox size="md" variant="soft-outline" />
         <Checkbox size="lg" variant="soft-outline" />
+        <Checkbox size="xl" variant="soft-outline" />
       </Box>
     ),
   },
@@ -36,6 +38,7 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
         <Checkbox size="sm" variant="solid" />
         <Checkbox size="md" variant="solid" />
         <Checkbox size="lg" variant="solid" />
+        <Checkbox size="xl" variant="solid" />
       </Box>
     ),
   },
@@ -47,6 +50,7 @@ export const CHECKBOX_EXAMPLES: DocExample[] = [
         <Checkbox size="sm" variant="solid" disabled defaultChecked />
         <Checkbox size="md" variant="solid" disabled defaultChecked />
         <Checkbox size="lg" variant="solid" disabled defaultChecked />
+        <Checkbox size="xl" variant="solid" disabled defaultChecked />
       </Box>
     ),
   },

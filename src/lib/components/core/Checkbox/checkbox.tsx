@@ -7,6 +7,7 @@ import { withPrefix } from 'lib/helpers'
 import { Box } from '../Box'
 import {
   CHECKBOX_SIZE_MAP,
+  CHECKBOX_VARIANT_MAP,
   DEFAULT_CHECKBOX_INTENT,
   DEFAULT_CHECKBOX_SIZE,
   DEFAULT_CHECKBOX_VARIANT,
@@ -47,7 +48,7 @@ export const Checkbox = ({
       }}
       tagRef={tagRef}
       drawable
-      // variant={variant}
+      text={CHECKBOX_VARIANT_MAP[variant].text}
       intent={intent}
       color={color}
       disabled={disabled}
@@ -64,22 +65,16 @@ export const Checkbox = ({
         drawable
         interactive
         disabled={disabled}
-        // variant={variant}
+        bgMode={CHECKBOX_VARIANT_MAP[variant].bgMode}
+        borderMode={CHECKBOX_VARIANT_MAP[variant].borderMode}
+        text={CHECKBOX_VARIANT_MAP[variant].text}
         intent={intent}
         color={color}
         blockSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
         inlineSize={CHECKBOX_SIZE_MAP[size || 'xs'].blockSize}
       />
       {currentChecked ? (
-        <Icon
-          tagAttrs={{
-            style: {
-              blockSize: CHECKBOX_SIZE_MAP[size || 'xs'].iconSize,
-              inlineSize: CHECKBOX_SIZE_MAP[size || 'xs'].iconSize,
-            },
-          }}
-          name="check"
-        />
+        <Icon name="check" size={CHECKBOX_SIZE_MAP[size || 'xs'].iconSize} />
       ) : null}
     </Box>
   )

@@ -1,7 +1,7 @@
 import { CONTROL_SCALE_MAP } from 'lib/constants'
 import type { TShirtSize } from 'lib/types'
 
-import { BoxIntent, BoxProps } from '../Box'
+import { BoxBgMode, BoxBorderMode, BoxIntent, BoxProps, BoxText } from '../Box'
 
 export const CHECKBOX_SIZE_MAP: Record<
   TShirtSize,
@@ -19,3 +19,12 @@ export const CHECKBOX_VARIANTS = ['solid', 'outline', 'soft-outline'] as const
 export const DEFAULT_CHECKBOX_VARIANT: (typeof CHECKBOX_VARIANTS)[number] = 'outline'
 export const DEFAULT_CHECKBOX_INTENT: BoxIntent = 'tertiary'
 export const DEFAULT_CHECKBOX_SIZE: TShirtSize = 'xs'
+
+export const CHECKBOX_VARIANT_MAP: Record<
+  (typeof CHECKBOX_VARIANTS)[number],
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+> = {
+  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
+}
