@@ -23,14 +23,16 @@ export default () => {
             <Box
               elemAttrs={{ style: { lineHeight: 0 } }}
               drawable
+              bgMode="tinted"
               borderMode="filled"
-              intent="tertiary"
+              intent="muted"
+              color="amber"
               padding={NEB_LENGTH.px_016}
             >
               <Icon
                 name={iconName as IconName}
                 size={NEB_LENGTH.px_032}
-                intent="primary"
+                intent="strong"
                 color="blue"
               />
             </Box>

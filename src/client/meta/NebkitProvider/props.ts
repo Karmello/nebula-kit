@@ -11,34 +11,44 @@ import type { NebkitProviderProps } from 'lib/components/core/NebkitProvider/typ
 import type { DocProp } from 'client/definitions'
 
 export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, DocProp> = {
-  borderRadiusSize: {
-    options: NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
-    description: 'Global border radius size applied across all components.',
+  // base
+  children: {
+    options: ['ReactElement'],
+    isRequired: true,
+    description: 'Application component to be wrapped by the provider.',
+    group: 'base',
+  },
+  // theme
+  theme: {
+    options: NEBKIT_PROVIDER_THEMES,
+    defaultValue: DEFAULT_NEBKIT_PROVIDER_THEME,
+    description: 'Global theme.',
+    group: 'theme',
   },
   brand: {
     options: BOX_COLORS,
     defaultValue: DEFAULT_NEBKIT_PROVIDER_BRAND,
     description: 'Global brand color used as the primary accent across components.',
+    group: 'theme',
   },
-  children: {
-    options: ['ReactElement'],
-    isRequired: true,
-    description: 'Application component to be wrapped by the provider.',
+  borderRadiusSize: {
+    options: NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
+    description: 'Global border radius size applied across all components.',
+    group: 'theme',
   },
-  lockGlobalScroll: {
-    options: ['boolean'],
-    description:
-      'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
-  },
+  // interaction
   ripple: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_RIPPLE),
     description: 'Enables the ripple interaction effect across components by default.',
+    group: 'interaction',
   },
-  theme: {
-    options: NEBKIT_PROVIDER_THEMES,
-    defaultValue: DEFAULT_NEBKIT_PROVIDER_THEME,
-    description: 'Global theme.',
+  // behavior
+  lockGlobalScroll: {
+    options: ['boolean'],
+    description:
+      'Locks global document scrolling while preserving layout by compensating for scrollbar width.',
+    group: 'behavior',
   },
 }
