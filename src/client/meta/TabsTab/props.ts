@@ -10,12 +10,6 @@ export const TABS_TAB_PROPS: Record<keyof TabsTabProps, DocProp> = {
   disabled: {
     options: ['boolean'],
   },
-  minInlineSize: {
-    options: ['string'],
-    isResponsive: false,
-    description: 'Minimum logical width.',
-    link: true,
-  },
   value: {
     options: ['string', 'number'],
     isRequired: true,

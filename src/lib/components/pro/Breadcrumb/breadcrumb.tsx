@@ -96,6 +96,7 @@ const BreadcrumbLevel = ({
           <Text
             bold
             intent="primary"
+            color={color}
             fontSize={CONTROL_SCALE_MAP[scale].fontSize}
             lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
             noWrap

@@ -13,6 +13,7 @@ export const CatalogPageBreadcrumb = ({
 
   return (
     <Breadcrumb
+      color="blue"
       tree={TREE}
       path={[pageKey, categoryKey, itemKey, sectionKey]}
       onChange={path => {

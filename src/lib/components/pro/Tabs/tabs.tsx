@@ -1,6 +1,6 @@
 import { Box } from 'lib/components/core/Box'
 import { Text } from 'lib/components/core/Text'
-import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
 import { useControlled, useSlots } from 'lib/hooks'
 
 import {
@@ -32,35 +32,6 @@ export const Tabs = ({
     onChange,
   })
 
-  const attach = direction === 'row' ? 'block' : ('inline' as any)
-
-  let zeroTopLeft = false
-  let zeroTopRight = false
-  let zeroBottomLeft = false
-  let zeroBottomRight = false
-
-  if (attach === 'top' || attach === 'block') {
-    zeroTopLeft = true
-    zeroTopRight = true
-  }
-
-  if (attach === 'right' || attach === 'inline') {
-    zeroTopRight = true
-    zeroBottomRight = true
-  }
-
-  if (attach === 'bottom' || attach === 'block') {
-    zeroBottomLeft = true
-    zeroBottomRight = true
-  }
-
-  if (attach === 'left' || attach === 'inline') {
-    zeroBottomLeft = true
-    zeroTopLeft = true
-  }
-
-  const gap = '2px'
-
   const slots = useSlots<'Tabs.Tab' | 'Tabs.Panel'>({
     childrenToVerify: children,
     componentName: 'Tabs',
@@ -81,130 +52,111 @@ export const Tabs = ({
       drawable
       color={color}
       intent={intent}
-      // variant="outline"
-      borderTopWidth={direction === 'row' ? '0px' : undefined}
-      borderLeftWidth={direction === 'column' ? '0px' : undefined}
+      bgMode="filled"
+      borderMode="filled"
+      borderRole="edge"
       overflow="clip"
+      display="flex"
+      flexDirection={direction === 'column' ? 'row' : 'column'}
+      alignItems="stretch"
     >
       <Box
-        display="flex"
-        flexDirection={direction === 'column' ? 'row' : 'column'}
-        alignItems="stretch"
+        tagAttrs={{
+          role: 'tablist',
+          'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical',
+        }}
+        flexDirection={direction}
+        display={stretch ? 'flex' : 'inline-flex'}
       >
-        <Box overflowX="auto">
-          <Box
-            tagAttrs={{
-              ...tagAttrs,
-              role: 'tablist',
-              'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical',
-            }}
-            color={color}
-            intent={intent}
-            tagRef={tagRef}
-            drawable
-            bgMode="filled"
-            inlineSize="max-content"
-            minInlineSize="100%"
-            overflow="clip"
-            borderTopLeftRadius={zeroTopLeft ? '0px' : undefined}
-            borderTopRightRadius={zeroTopRight ? '0px' : undefined}
-            borderBottomRightRadius={zeroBottomRight ? '0px' : undefined}
-            borderBottomLeftRadius={zeroBottomLeft ? '0px' : undefined}
-            paddingTop={attach === 'top' || attach === 'block' ? gap : undefined}
-            paddingRight={attach === 'right' || attach === 'inline' ? gap : undefined}
-            paddingBottom={attach === 'bottom' || attach === 'block' ? gap : undefined}
-            paddingLeft={attach === 'left' || attach === 'inline' ? gap : undefined}
-          >
+        {slotsByName['Tabs.Tab'].map((tab, index) => {
+          const { value, disabled } = (tab as any).props as TabsTabProps
+          const isSelected = currentValue === value
+
+          return (
             <Box
-              flexDirection={direction}
-              alignItems="stretch"
-              display={stretch ? 'flex' : 'inline-flex'}
-              gap={gap}
+              key={index}
+              tag="button"
+              tagAttrs={{
+                id: `tab-${value}`,
+                role: 'tab',
+                'aria-selected': isSelected,
+                'aria-controls': `panel-${value}`,
+              }}
+              onClick={() => {
+                setCurrentValue(value)
+              }}
+              interactive
+              ripple
+              disabled={disabled}
+              color={color}
+              intent={intent}
+              bgMode="filled"
+              bgRole={isSelected ? 'selection' : undefined}
+              borderMode="filled"
+              borderRole="divider"
+              borderTopWidth={NEB_LENGTH.px_000}
+              borderBottomWidth={
+                direction === 'column' && index === slotsByName['Tabs.Tab'].length - 1
+                  ? NEB_LENGTH.px_000
+                  : undefined
+              }
+              borderLeftWidth={NEB_LENGTH.px_000}
+              borderRightWidth={
+                direction === 'row' && index === slotsByName['Tabs.Tab'].length - 1
+                  ? NEB_LENGTH.px_000
+                  : undefined
+              }
+              borderRadius={NEB_LENGTH.px_000}
+              cursor="pointer"
+              display="flex"
+              flex={stretch ? '1 0 auto' : undefined}
+              justifyContent="center"
+              alignItems="center"
+              blockSize={CONTROL_SCALE_MAP[scale].blockSize}
+              paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
             >
-              {slotsByName['Tabs.Tab'].map((tab, index) => {
-                const { value, disabled, minInlineSize } = (tab as any).props as TabsTabProps
-                const isSelected = currentValue === value
-
-                return (
-                  <Box
-                    key={index}
-                    onClick={() => {
-                      setCurrentValue(value)
-                    }}
-                    tagAttrs={{
-                      id: `tab-${value}`,
-                      role: 'tab',
-                      'aria-selected': isSelected,
-                      'aria-controls': `panel-${value}`,
-                    }}
-                    flex={stretch ? '1 0 auto' : undefined}
-                    bgRole={isSelected ? 'selection' : undefined}
-                    disabled={disabled}
-                  >
-                    <Box
-                      drawable
-                      color={color}
-                      intent={intent}
-                      bgRole={isSelected ? 'selection' : undefined}
-                      disabled={disabled}
-                      minInlineSize="100%"
-                      interactive
-                      cursor="pointer"
-                      bgMode="filled"
-                      borderRadius="0px"
-                    >
-                      <Box
-                        display="flex"
-                        tagAttrs={{
-                          style: {
-                            blockSize: CONTROL_SCALE_MAP[scale].blockSize,
-                            paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
-                            minInlineSize,
-                          },
-                        }}
-                        justifyContent="center"
-                        alignItems="center"
-                      >
-                        <Text
-                          tag="span"
-                          bold={isSelected}
-                          fontSize={CONTROL_SCALE_MAP[scale].fontSize}
-                          lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
-                        >
-                          {tab}
-                        </Text>
-                      </Box>
-                    </Box>
-                  </Box>
-                )
-              })}
-            </Box>
-          </Box>
-        </Box>
-        <Box flex={direction === 'column' ? '1' : undefined}>
-          {slotsByName['Tabs.Panel'].map((panel, index) => {
-            const { value } = (panel as any).props as TabsPanelProps
-            const isSelected = currentValue === value
-
-            if (!isSelected) return null
-
-            return (
-              <Box
-                key={index}
+              <Text
+                tag="span"
                 tagAttrs={{
-                  role: 'tabpanel',
-                  id: `panel-${value}`,
-                  'aria-labelledby': `tab-${value}`,
-                  hidden: !isSelected,
+                  style: {
+                    WebkitTextStrokeWidth: isSelected ? '1px' : undefined,
+                  },
                 }}
-                padding={CONTROL_SCALE_MAP[scale].fontSize}
+                fontSize={CONTROL_SCALE_MAP[scale].fontSize}
+                lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
               >
-                {panel}
-              </Box>
-            )
-          })}
-        </Box>
+                {tab}
+              </Text>
+            </Box>
+          )
+        })}
       </Box>
+      {slotsByName['Tabs.Panel'].map((panel, index) => {
+        const { value } = (panel as any).props as TabsPanelProps
+        const isSelected = currentValue === value
+
+        if (!isSelected) return null
+
+        return (
+          <Box
+            key={index}
+            tagAttrs={{
+              role: 'tabpanel',
+              id: `panel-${value}`,
+              'aria-labelledby': `tab-${value}`,
+              hidden: !isSelected,
+            }}
+            drawable
+            intent="neutral"
+            bgMode="filled"
+            borderRadius={NEB_LENGTH.px_000}
+            flex={direction === 'column' ? '1' : undefined}
+            padding={CONTROL_SCALE_MAP[scale].paddingInline}
+          >
+            {panel}
+          </Box>
+        )
+      })}
     </Box>
   )
 }

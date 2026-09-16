@@ -30,21 +30,11 @@ export const TABS_PRESETS = [
 
 export const TabsTemplate = (props: any) => (
   <Tabs {...props}>
-    <Tabs.Tab value={1} minInlineSize="100px">
-      First
-    </Tabs.Tab>
-    <Tabs.Tab value={2} minInlineSize="100px">
-      Second
-    </Tabs.Tab>
-    <Tabs.Tab value={3} minInlineSize="100px">
-      Third
-    </Tabs.Tab>
-    <Tabs.Tab value={4} minInlineSize="100px">
-      Fourth
-    </Tabs.Tab>
-    <Tabs.Tab value={5} minInlineSize="100px">
-      Fifth
-    </Tabs.Tab>
+    <Tabs.Tab value={1}>First</Tabs.Tab>
+    <Tabs.Tab value={2}>Second</Tabs.Tab>
+    <Tabs.Tab value={3}>Third</Tabs.Tab>
+    <Tabs.Tab value={4}>Fourth</Tabs.Tab>
+    <Tabs.Tab value={5}>Fifth</Tabs.Tab>
     <Tabs.Panel value={1}>This is the first tab content.</Tabs.Panel>
     <Tabs.Panel value={2}>This is the second tab content.</Tabs.Panel>
     <Tabs.Panel value={3}>This is the third tab content.</Tabs.Panel>
