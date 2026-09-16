@@ -235,20 +235,20 @@ const META = {
   Tooltip: {
     Tooltip: TOOLTIP_META,
   },
-  UseFade: {
-    UseFade: USE_FADE_META,
+  useFade: {
+    useFade: USE_FADE_META,
   },
-  UseFocusTrap: {
-    UseFocusTrap: USE_FOCUS_TRAP_META,
+  useFocusTrap: {
+    useFocusTrap: USE_FOCUS_TRAP_META,
   },
-  UseRotate: {
-    UseRotate: USE_ROTATE_META,
+  useRotate: {
+    useRotate: USE_ROTATE_META,
   },
-  UseScale: {
-    UseScale: USE_SCALE_META,
+  useScale: {
+    useScale: USE_SCALE_META,
   },
-  UseSlide: {
-    UseSlide: USE_SLIDE_META,
+  useSlide: {
+    useSlide: USE_SLIDE_META,
   },
   VirtualList: {
     VirtualList: VIRTUAL_LIST_META,

@@ -142,3 +142,15 @@ COMPONENT_CATEGORIES.forEach(c =>
     })
   )
 )
+
+// Maps each item's kebab-case route key (e.g. 'use-scale') to its correctly-cased
+// display/meta key (e.g. 'useScale'). This is the single source of truth for that
+// casing - never re-derive it with pascalCase(), which would wrongly capitalize hooks.
+/** @type {Record<string, string>} */
+export const COMPONENT_ITEM_LABEL_BY_KEY = {}
+
+COMPONENT_CATEGORIES.forEach(c =>
+  c.items.forEach(i => {
+    COMPONENT_ITEM_LABEL_BY_KEY[i.key] = i.label
+  })
+)

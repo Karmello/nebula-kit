@@ -1,4 +1,4 @@
-import { noCase, pascalCase } from 'change-case'
+import { noCase } from 'change-case'
 
 import { type IconName } from 'lib/components/core/Icon/types'
 import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
@@ -33,7 +33,7 @@ FOUNDATIONS_CATEGORIES.forEach(c =>
 COMPONENT_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      const label = `${PageKey.library.replace('/', '')} / ${noCase(c.key)} / ${pascalCase(i.key)} / ${noCase(s.key)}`
+      const label = `${PageKey.library.replace('/', '')} / ${noCase(c.key)} / ${i.label} / ${noCase(s.key)}`
       OPTIONS.push({
         label,
         tokens: label.toLowerCase().split(/\s+/),

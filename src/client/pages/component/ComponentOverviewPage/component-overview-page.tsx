@@ -1,5 +1,3 @@
-import { pascalCase } from 'change-case'
-
 import { Box } from 'lib/components/core/Box'
 import { Button } from 'lib/components/core/Button'
 import { HorizontalRule } from 'lib/components/core/HorizontalRule'
@@ -9,7 +7,7 @@ import { Text } from 'lib/components/core/Text'
 import { Title } from 'lib/components/core/Title'
 import { NEB_LENGTH } from 'lib/constants'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
-import { DocMeta } from 'client/definitions'
+import { COMPONENT_ITEM_LABEL_BY_KEY, DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
@@ -129,16 +127,16 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
 export const ComponentOverviewPage = () => {
   const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
+  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
 
-  if (!meta[itemKeyPascal]) return null
+  if (!meta[itemLabel]) return null
 
-  const metaKeys = Object.keys(meta[itemKeyPascal])
+  const metaKeys = Object.keys(meta[itemLabel])
 
   return (
     <Box maxInlineSize="55rem">
       {metaKeys.map(key => (
-        <SingleOverview key={key} meta={meta[itemKeyPascal][key]} />
+        <SingleOverview key={key} meta={meta[itemLabel][key]} />
       ))}
     </Box>
   )

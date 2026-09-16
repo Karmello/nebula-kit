@@ -1,5 +1,3 @@
-import { pascalCase } from 'change-case'
-
 import { Box } from 'lib/components/core/Box'
 import { Reveal } from 'lib/components/core/Reveal'
 import { Spacer } from 'lib/components/core/Spacer'
@@ -11,7 +9,7 @@ import { Switch } from 'lib/components/pro/Switch'
 import { NEB_LENGTH } from 'lib/constants'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
-import { DocMeta } from 'client/definitions'
+import { COMPONENT_ITEM_LABEL_BY_KEY, DocMeta } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import meta from 'client/meta'
 import { useAppStore, useComponentsPageStore } from 'client/store'
@@ -106,11 +104,11 @@ export const ComponentExamplesPage = () => {
 
   const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
+  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
 
-  if (!meta[itemKeyPascal]) return null
+  if (!meta[itemLabel]) return null
 
-  const hideExamplesThemeToggle = meta[itemKeyPascal][itemKeyPascal].hideExamplesThemeToggle
+  const hideExamplesThemeToggle = meta[itemLabel][itemLabel].hideExamplesThemeToggle
 
   return (
     <Box maxInlineSize="55rem">
@@ -130,8 +128,8 @@ export const ComponentExamplesPage = () => {
         </>
       ) : null}
       <Box display="flex" flexDirection="column" alignItems="stretch">
-        {Object.keys(meta[itemKeyPascal] || []).map(key => {
-          return (meta[itemKeyPascal][key].examples || [])
+        {Object.keys(meta[itemLabel] || []).map(key => {
+          return (meta[itemLabel][key].examples || [])
             .filter(example => !example.skip)
             .map((example, i) => (
               <SingleExample

@@ -1,8 +1,8 @@
 import { Fragment } from 'react'
-import { pascalCase } from 'change-case'
 
 import { NEB_LENGTH } from 'lib/constants'
 import { Spacer } from 'lib/index.core'
+import { COMPONENT_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 
@@ -11,18 +11,18 @@ import { PropsTable } from './PropsTable'
 export const ComponentPropsPage = () => {
   const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
+  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
 
-  if (!meta[itemKeyPascal]) return null
+  if (!meta[itemLabel]) return null
 
-  const metaKeys = Object.keys(meta[itemKeyPascal] || [])
+  const metaKeys = Object.keys(meta[itemLabel] || [])
 
   return metaKeys.map(key =>
-    meta[itemKeyPascal][key].props ? (
+    meta[itemLabel][key].props ? (
       <Fragment key={key}>
         <PropsTable
-          data={meta[itemKeyPascal][key].props}
-          category={metaKeys.length > 1 ? meta[itemKeyPascal][key].overview.name : undefined}
+          data={meta[itemLabel][key].props}
+          category={metaKeys.length > 1 ? meta[itemLabel][key].overview.name : undefined}
         />
         <Spacer blockSize={NEB_LENGTH.px_048} />
       </Fragment>

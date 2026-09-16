@@ -1,5 +1,3 @@
-import { pascalCase } from 'change-case'
-
 import {
   Box,
   HorizontalRule,
@@ -10,17 +8,18 @@ import {
   Text,
   Title,
 } from 'lib/components'
+import { COMPONENT_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import meta from 'client/meta'
 import { useComponentsPageStore } from 'client/store'
 
 export const ComponentChangelogPage = () => {
   const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
 
-  const itemKeyPascal = pascalCase(componentsPageItemKey || '')
+  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
 
-  if (!meta[itemKeyPascal]) return null
+  if (!meta[itemLabel]) return null
 
-  const changelog = meta[itemKeyPascal][itemKeyPascal]?.changelog || {}
+  const changelog = meta[itemLabel][itemLabel]?.changelog || {}
   const versionKeys = Object.keys(changelog)
 
   return (
