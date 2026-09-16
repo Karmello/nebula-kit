@@ -7,13 +7,13 @@ import {
   BOX_COLORS,
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
-  BOX_TEXT,
+  BOX_TEXT_MODE,
   DEFAULT_BOX_BG_MODE,
   DEFAULT_BOX_BG_ROLE,
   DEFAULT_BOX_BORDER_MODE,
   DEFAULT_BOX_BORDER_ROLE,
   DEFAULT_BOX_SURFACE_DEPTH,
-  DEFAULT_BOX_TEXT,
+  DEFAULT_BOX_TEXT_MODE,
 } from 'lib/components/core/Box/constants'
 import {
   CSS_ALIGN_CONTENT,
@@ -111,9 +111,9 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
       'Controls what the border is for - surface is the basic border, divider acts as a separator between items, and edge wraps the whole element as its outer boundary.',
     group: 'surface',
   },
-  text: {
-    options: BOX_TEXT,
-    defaultValue: DEFAULT_BOX_TEXT,
+  textMode: {
+    options: BOX_TEXT_MODE,
+    defaultValue: DEFAULT_BOX_TEXT_MODE,
     description:
       "Controls how the component's text color is resolved - default to inherit the surrounding text color, or colored to use the component's own intent/color.",
     group: 'surface',

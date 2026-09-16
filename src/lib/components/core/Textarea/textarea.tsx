@@ -78,7 +78,7 @@ export const Textarea = ({
       drawable
       bgMode={TEXTAREA_VARIANT_MAP[variant].bgMode}
       borderMode={TEXTAREA_VARIANT_MAP[variant].borderMode}
-      text={TEXTAREA_VARIANT_MAP[variant].text}
+      textMode={TEXTAREA_VARIANT_MAP[variant].textMode}
       color={color}
       intent={intent}
       disabled={disabled}

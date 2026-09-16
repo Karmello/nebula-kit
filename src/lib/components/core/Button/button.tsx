@@ -81,7 +81,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         tagRef={finalRef}
         bgMode={BUTTON_VARIANT_MAP[variant].bgMode}
         borderMode={BUTTON_VARIANT_MAP[variant].borderMode}
-        text={BUTTON_VARIANT_MAP[variant].text}
+        textMode={BUTTON_VARIANT_MAP[variant].textMode}
         color={color}
         intent={intent}
         disabled={disabled || loading}

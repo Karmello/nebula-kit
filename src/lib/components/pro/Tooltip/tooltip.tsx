@@ -45,7 +45,7 @@ const TooltipContent = ({
         drawable
         bgMode={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].bgMode}
         borderMode={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].borderMode}
-        text={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].text}
+        textMode={TOOLTIP_VARIANT_MAP[variant || DEFAULT_TOOLTIP_VARIANT].textMode}
         intent={intent}
         color={color}
         paddingBlock="8px"

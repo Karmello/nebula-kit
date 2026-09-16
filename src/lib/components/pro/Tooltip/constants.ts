@@ -1,6 +1,6 @@
 import { Placement } from '@floating-ui/react'
 
-import { BoxBgMode, BoxBorderMode, BoxIntent, BoxText } from 'lib/components/core/Box'
+import { BoxBgMode, BoxBorderMode, BoxIntent, BoxTextMode } from 'lib/components/core/Box'
 
 export const TOOLTIP_PLACEMENTS = [
   'top',
@@ -35,9 +35,9 @@ export const DEFAULT_TOOLTIP_MAX_INLINE_SIZE = 250
 
 export const TOOLTIP_VARIANT_MAP: Record<
   (typeof TOOLTIP_VARIANTS)[number],
-  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; textMode: BoxTextMode }
 > = {
-  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
-  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
-  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
+  solid: { bgMode: 'filled', borderMode: 'none', textMode: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', textMode: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', textMode: 'colored' },
 }

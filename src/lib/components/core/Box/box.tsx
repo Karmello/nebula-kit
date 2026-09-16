@@ -20,7 +20,7 @@ import {
   DEFAULT_BOX_BORDER_MODE,
   DEFAULT_BOX_BORDER_ROLE,
   DEFAULT_BOX_SURFACE_DEPTH,
-  DEFAULT_BOX_TEXT,
+  DEFAULT_BOX_TEXT_MODE,
 } from './constants'
 import { useResolveAppearance, useRipple, useTransitionLifecycle } from './hooks'
 import { BoxProps } from './types'
@@ -36,7 +36,7 @@ export const Box = <T extends ElementType = 'div'>({
   bgMode = DEFAULT_BOX_BG_MODE,
   bgRole = DEFAULT_BOX_BG_ROLE,
   borderMode = DEFAULT_BOX_BORDER_MODE,
-  text = DEFAULT_BOX_TEXT,
+  textMode = DEFAULT_BOX_TEXT_MODE,
   color,
   intent,
   interactive,
@@ -313,7 +313,7 @@ export const Box = <T extends ElementType = 'div'>({
             color: resolvedAppearance.color,
             bgMode,
             bgRole,
-            text,
+            textMode,
             intent,
           }),
         } as PropsWithoutRef<ComponentProps<T>>

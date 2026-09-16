@@ -55,10 +55,10 @@ describe('<Box />', () => {
       expect(el).toHaveAttribute('data-neb-box-border-role', 'edge')
     })
 
-    it('adds data attr for text', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} text="colored" />)
+    it('adds data attr for textMode', () => {
+      render(<Box tagAttrs={{ 'data-testid': 'elem' }} textMode="colored" />)
       const el = screen.getByTestId('elem')
-      expect(el).toHaveAttribute('data-neb-box-text', 'colored')
+      expect(el).toHaveAttribute('data-neb-box-text-mode', 'colored')
     })
   })
 })

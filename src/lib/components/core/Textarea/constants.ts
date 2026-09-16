@@ -1,4 +1,4 @@
-import type { BoxBgMode, BoxBorderMode, BoxIntent, BoxText } from '../Box'
+import type { BoxBgMode, BoxBorderMode, BoxIntent, BoxTextMode } from '../Box'
 
 export const TEXTAREA_RESIZE = ['none', 'vertical', 'horizontal', 'both'] as const
 export const TEXTAREA_VARIANTS = ['solid', 'outline', 'soft-outline', 'ghost'] as const
@@ -12,10 +12,10 @@ export const DEFAULT_TEXTAREA_MAX_INLINE_SIZE = '100%'
 
 export const TEXTAREA_VARIANT_MAP: Record<
   (typeof TEXTAREA_VARIANTS)[number],
-  { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+  { bgMode: BoxBgMode; borderMode: BoxBorderMode; textMode: BoxTextMode }
 > = {
-  solid: { bgMode: 'filled', borderMode: 'none', text: 'default' },
-  outline: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
-  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
-  ghost: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
+  solid: { bgMode: 'filled', borderMode: 'none', textMode: 'default' },
+  outline: { bgMode: 'tinted', borderMode: 'tinted', textMode: 'default' },
+  'soft-outline': { bgMode: 'tinted', borderMode: 'tinted', textMode: 'colored' },
+  ghost: { bgMode: 'transparent', borderMode: 'none', textMode: 'colored' },
 }

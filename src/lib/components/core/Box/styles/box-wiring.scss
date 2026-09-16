@@ -51,7 +51,7 @@
     --bg-active: var(--tint-active);
     --bg-selection: var(--tint-selection);
 
-    &[data-neb-box-text='colored'] {
+    &[data-neb-box-text-mode='colored'] {
       --text: var(--color-primary);
       --text-hover: var(--color-primary);
       --text-active: var(--color-primary);
@@ -87,7 +87,7 @@
     --border-divider: var(--tint-divider);
   }
 
-  &[data-neb-box-text='colored'] {
+  &[data-neb-box-text-mode='colored'] {
     --text: var(--surface);
     --text-hover: var(--surface-hover);
     --text-active: var(--surface-active);
@@ -103,7 +103,7 @@
     }
   }
 
-  &[data-neb-box-text='default'] {
+  &[data-neb-box-text-mode='default'] {
     --text: var(--neb-text);
     --ripple: var(--neb-text);
   }

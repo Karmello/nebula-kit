@@ -1,6 +1,6 @@
 import type { TShirtSize } from 'lib/types'
 
-import type { BoxBgMode, BoxBorderMode, BoxIntent, BoxText } from '../../core/Box/types'
+import type { BoxBgMode, BoxBorderMode, BoxIntent, BoxTextMode } from '../../core/Box/types'
 
 export const BREADCRUMB_TAGS = ['div', 'nav', 'section'] as const
 
@@ -10,28 +10,28 @@ export const BREADCRUMB_VARIANT_MAP: Record<
   (typeof BREADCRUMB_VARIANTS)[number],
   {
     content: { borderMode: BoxBorderMode }
-    item: { bgMode: BoxBgMode; borderMode: BoxBorderMode; text: BoxText }
+    item: { bgMode: BoxBgMode; borderMode: BoxBorderMode; textMode: BoxTextMode }
     removeFirstTopBorder: boolean
   }
 > = {
   solid: {
     content: { borderMode: 'none' },
-    item: { bgMode: 'filled', borderMode: 'filled', text: 'default' },
+    item: { bgMode: 'filled', borderMode: 'filled', textMode: 'default' },
     removeFirstTopBorder: false,
   },
   outline: {
     content: { borderMode: 'tinted' },
-    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'default' },
+    item: { bgMode: 'tinted', borderMode: 'tinted', textMode: 'default' },
     removeFirstTopBorder: false,
   },
   'soft-outline': {
     content: { borderMode: 'tinted' },
-    item: { bgMode: 'tinted', borderMode: 'tinted', text: 'colored' },
+    item: { bgMode: 'tinted', borderMode: 'tinted', textMode: 'colored' },
     removeFirstTopBorder: false,
   },
   ghost: {
     content: { borderMode: 'none' },
-    item: { bgMode: 'transparent', borderMode: 'none', text: 'colored' },
+    item: { bgMode: 'transparent', borderMode: 'none', textMode: 'colored' },
     removeFirstTopBorder: false,
   },
 }

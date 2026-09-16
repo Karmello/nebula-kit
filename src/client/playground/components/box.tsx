@@ -21,7 +21,7 @@ export const PROPS_FROM_BOX = [
   'margin',
   'padding',
   'surfaceDepth',
-  'text',
+  'textMode',
   'visibility',
 ] as const satisfies readonly (keyof BoxProps)[]
 

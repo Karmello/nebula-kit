@@ -35,7 +35,7 @@ export const Callout = <T extends CalloutTag = 'div'>({
       drawable
       bgMode={CALLOUT_VARIANT_MAP[variant].bgMode}
       borderMode={CALLOUT_VARIANT_MAP[variant].borderMode}
-      text={CALLOUT_VARIANT_MAP[variant].text}
+      textMode={CALLOUT_VARIANT_MAP[variant].textMode}
       color={CALLOUT_CONFIG[status || 'info'].color}
       intent={intent}
       borderRadius="var(--neb-border-radius)"

@@ -30,7 +30,7 @@ import {
   BOX_COLORS,
   BOX_INTENTS,
   BOX_SURFACE_DEPTHS,
-  BOX_TEXT,
+  BOX_TEXT_MODE,
   BOX_THEMES,
 } from './constants'
 
@@ -42,7 +42,7 @@ export type BoxBorderRole = (typeof BOX_BORDER_ROLES)[number]
 export type BoxBorderMode = (typeof BOX_BORDER_MODE)[number]
 export type BoxBgMode = (typeof BOX_BG_MODE)[number]
 export type BoxBgRole = (typeof BOX_BG_ROLES)[number]
-export type BoxText = (typeof BOX_TEXT)[number]
+export type BoxTextMode = (typeof BOX_TEXT_MODE)[number]
 
 export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   // surface
@@ -54,7 +54,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   bgRole?: BoxBgRole
   borderMode?: BoxBorderMode
   borderRole?: BoxBorderRole
-  text?: BoxText
+  textMode?: BoxTextMode
   // interaction
   interactive?: boolean
   ripple?: boolean

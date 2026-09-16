@@ -60,7 +60,7 @@ export const Text = <T extends TextTag = 'p'>({
         } as PropsWithoutRef<ComponentProps<T>>
       }
       drawable
-      text="colored"
+      textMode="colored"
       interactive={resolvedTag === 'a'}
       {...boxProps}
     >

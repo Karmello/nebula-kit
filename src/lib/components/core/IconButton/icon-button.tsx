@@ -57,7 +57,7 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       }
       bgMode={ICON_BUTTON_VARIANT_MAP[variant].bgMode}
       borderMode={ICON_BUTTON_VARIANT_MAP[variant].borderMode}
-      text={ICON_BUTTON_VARIANT_MAP[variant].text}
+      textMode={ICON_BUTTON_VARIANT_MAP[variant].textMode}
       color={color}
       intent={intent}
       disabled={disabled || loading}

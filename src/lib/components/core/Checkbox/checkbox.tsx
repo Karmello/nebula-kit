@@ -48,7 +48,7 @@ export const Checkbox = ({
       }}
       tagRef={tagRef}
       drawable
-      text={CHECKBOX_VARIANT_MAP[variant].text}
+      textMode={CHECKBOX_VARIANT_MAP[variant].textMode}
       intent={intent}
       color={color}
       disabled={disabled}
@@ -67,7 +67,7 @@ export const Checkbox = ({
         disabled={disabled}
         bgMode={CHECKBOX_VARIANT_MAP[variant].bgMode}
         borderMode={CHECKBOX_VARIANT_MAP[variant].borderMode}
-        text={CHECKBOX_VARIANT_MAP[variant].text}
+        textMode={CHECKBOX_VARIANT_MAP[variant].textMode}
         intent={intent}
         color={color}
         blockSize={CHECKBOX_SCALE_MAP[scale].blockSize}
