@@ -1,6 +1,6 @@
 export * from './api'
 export * from './app'
-export * from './library-routing'
 export * from './foundations-routing'
+export * from './library-routing'
 export * from './meta'
 export * from './release'

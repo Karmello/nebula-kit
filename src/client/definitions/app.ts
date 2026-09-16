@@ -1,5 +1,5 @@
-import { LIBRARY_SECTIONS } from './library-routing'
 import { FOUNDATIONS_SECTIONS } from './foundations-routing'
+import { LIBRARY_SECTIONS } from './library-routing'
 
 export enum PageKey {
   authLogin = '/auth/log-in',
