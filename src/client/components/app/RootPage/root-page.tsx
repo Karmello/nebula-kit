@@ -6,55 +6,82 @@ import { PageKey } from 'client/definitions'
 
 import styles from './root-page.module.scss'
 
-const HomePage = lazy(() =>
+const importHomePage = () =>
   import('client/pages/app/HomePage').then(m => ({ default: m.HomePage }))
-)
-const PatternsPage = lazy(() =>
+const importPatternsPage = () =>
   import('client/pages/app/PatternsPage').then(m => ({ default: m.PatternsPage }))
-)
-const PlaygroundPage = lazy(() =>
+const importPlaygroundPage = () =>
   import('client/pages/app/PlaygroundPage').then(m => ({ default: m.PlaygroundPage }))
-)
-const FoundationsPage = lazy(() =>
+const importFoundationsPage = () =>
   import('client/pages/app/FoundationsPage').then(m => ({ default: m.FoundationsPage }))
-)
-const LibraryPage = lazy(() =>
+const importLibraryPage = () =>
   import('client/pages/app/LibraryPage').then(m => ({ default: m.LibraryPage }))
-)
-const FaqPage = lazy(() => import('client/pages/app/FaqPage').then(m => ({ default: m.FaqPage })))
-const BlogPage = lazy(() =>
+const importFaqPage = () => import('client/pages/app/FaqPage').then(m => ({ default: m.FaqPage }))
+const importBlogPage = () =>
   import('client/pages/app/BlogPage').then(m => ({ default: m.BlogPage }))
-)
-const PricingPage = lazy(() =>
+const importPricingPage = () =>
   import('client/pages/app/PricingPage').then(m => ({ default: m.PricingPage }))
-)
-const LibraryBundlePage = lazy(() =>
+const importLibraryBundlePage = () =>
   import('client/pages/app/LibraryBundlePage').then(m => ({ default: m.LibraryBundlePage }))
-)
-const FeedbackPage = lazy(() =>
+const importFeedbackPage = () =>
   import('client/pages/app/FeedbackPage').then(m => ({ default: m.FeedbackPage }))
-)
-const AssistantPage = lazy(() =>
+const importAssistantPage = () =>
   import('client/pages/app/AssistantPage').then(m => ({ default: m.AssistantPage }))
-)
-const LoginPage = lazy(() =>
+const importLoginPage = () =>
   import('client/pages/app/LoginPage').then(m => ({ default: m.LoginPage }))
-)
-const RegisterPage = lazy(() =>
+const importRegisterPage = () =>
   import('client/pages/app/RegisterPage').then(m => ({ default: m.RegisterPage }))
-)
-const RecoveryPage = lazy(() =>
+const importRecoveryPage = () =>
   import('client/pages/app/RecoveryPage').then(m => ({ default: m.RecoveryPage }))
-)
-const ProfileAccountPage = lazy(() =>
+const importProfileAccountPage = () =>
   import('client/pages/app/ProfileAccountPage').then(m => ({ default: m.ProfileAccountPage }))
-)
-const ProfileSettingsPage = lazy(() =>
+const importProfileSettingsPage = () =>
   import('client/pages/app/ProfileSettingsPage').then(m => ({ default: m.ProfileSettingsPage }))
-)
-const ConfirmActionPage = lazy(() =>
+const importConfirmActionPage = () =>
   import('client/pages/app/ConfirmActionPage').then(m => ({ default: m.ConfirmActionPage }))
-)
+
+// Single source of truth for every lazy-loaded page's dynamic import.
+// The server calls each of these once at startup (see warmPageImports) so
+// Node's module cache is already populated by request time - otherwise
+// React.lazy() suspends on first render and renderToString (which never
+// waits for Suspense) would emit the fallback instead of real page content.
+export const PAGE_IMPORTS = [
+  importHomePage,
+  importPatternsPage,
+  importPlaygroundPage,
+  importFoundationsPage,
+  importLibraryPage,
+  importFaqPage,
+  importBlogPage,
+  importPricingPage,
+  importLibraryBundlePage,
+  importFeedbackPage,
+  importAssistantPage,
+  importLoginPage,
+  importRegisterPage,
+  importRecoveryPage,
+  importProfileAccountPage,
+  importProfileSettingsPage,
+  importConfirmActionPage,
+]
+
+const HomePage = lazy(importHomePage)
+const PatternsPage = lazy(importPatternsPage)
+const PlaygroundPage = lazy(importPlaygroundPage)
+const FoundationsPage = lazy(importFoundationsPage)
+const LibraryPage = lazy(importLibraryPage)
+const FaqPage = lazy(importFaqPage)
+const BlogPage = lazy(importBlogPage)
+const PricingPage = lazy(importPricingPage)
+const LibraryBundlePage = lazy(importLibraryBundlePage)
+const FeedbackPage = lazy(importFeedbackPage)
+const AssistantPage = lazy(importAssistantPage)
+const LoginPage = lazy(importLoginPage)
+const RegisterPage = lazy(importRegisterPage)
+const RecoveryPage = lazy(importRecoveryPage)
+const ProfileAccountPage = lazy(importProfileAccountPage)
+const ProfileSettingsPage = lazy(importProfileSettingsPage)
+const ConfirmActionPage = lazy(importConfirmActionPage)
 
 export const RootPage = () => {
   return (

@@ -141,7 +141,7 @@ export const App = () => {
             follow updates, ask questions and join the community through the channels below.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
+          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_006}>
             <Link href="https://x.com/captainnebula" target="_blank">
               <Button
                 color="gray"
@@ -176,7 +176,7 @@ export const App = () => {
             UI architecture and system consistency.
           </Text>
           <Spacer blockSize={NEB_LENGTH.px_016} />
-          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_004}>
+          <Box display="flex" flexDirection="row" flexWrap="wrap" gap={NEB_LENGTH.px_006}>
             <Link href="https://www.linkedin.com/in/nogakamil" target="_blank">
               <Button
                 color="blue"

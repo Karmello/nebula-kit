@@ -1,18 +1,18 @@
 import { createElement } from 'react'
 import express from 'express'
 import getPort from 'get-port'
-import { renderToString } from 'react-dom/server'
 import { createServer as createViteServer, ViteDevServer } from 'vite'
 import fs from 'node:fs'
 import path from 'node:path'
 
 import { getFinalIndexHtml } from './helpers'
+import { renderAppToString } from './helpers/render-app-to-string'
 
 const renderApp = async (vite: ViteDevServer, url: string) => {
   const { StaticRouter } = await vite.ssrLoadModule('react-router')
   const { Client } = await vite.ssrLoadModule('src/client/components/app/Client/client.tsx')
 
-  return renderToString(createElement(StaticRouter, { location: url }, createElement(Client)))
+  return renderAppToString(createElement(StaticRouter, { location: url }, createElement(Client)))
 }
 
 const start = async () => {
@@ -25,6 +25,13 @@ const start = async () => {
   })
 
   const css: string = (await vite.ssrLoadModule('/src/server/ssr-dev-styles.scss?inline')).default
+
+  // Warms the module cache for every lazily-loaded page so the first real
+  // request for each page doesn't pay for a cold dynamic import.
+  const { PAGE_IMPORTS } = await vite.ssrLoadModule(
+    'src/client/components/app/RootPage/root-page.tsx'
+  )
+  await Promise.all(PAGE_IMPORTS.map((importPage: () => Promise<unknown>) => importPage()))
 
   app.use(vite.middlewares)
 
