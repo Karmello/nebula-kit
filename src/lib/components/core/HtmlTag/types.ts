@@ -8,5 +8,6 @@ export type HtmlTagProps<T extends ElementType = 'div'> = {
   tag?: T
   tagAttrs?: ComponentPropsWithoutRef<T> & DataAttrs
   tagRef?: RefObject<ComponentRef<T> | null>
+  className?: string
   children?: ReactNode
 }

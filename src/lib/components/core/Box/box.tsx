@@ -32,6 +32,7 @@ export const Box = <T extends ElementType = 'div'>({
   tag,
   tagAttrs,
   tagRef,
+  className,
   drawable,
   bgMode = DEFAULT_BOX_BG_MODE,
   bgRole = DEFAULT_BOX_BG_ROLE,
@@ -287,10 +288,10 @@ export const Box = <T extends ElementType = 'div'>({
   return (
     <HtmlTag
       tag={tag}
+      className={classNames(withPrefix('box'), className, tagAttrs?.className)}
       tagAttrs={
         {
           ...tagAttrs,
-          className: classNames(withPrefix('box'), tagAttrs?.className || ''),
           style: {
             ...tagAttrs?.style,
             ...(pointerEvents !== undefined ? { pointerEvents } : {}),

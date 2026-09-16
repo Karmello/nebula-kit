@@ -43,6 +43,11 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Content rendered.',
     group: 'base',
   },
+  className: {
+    options: ['string'],
+    description: 'CSS class applied to the root tag.',
+    group: 'base',
+  },
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',

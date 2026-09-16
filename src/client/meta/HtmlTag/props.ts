@@ -8,6 +8,10 @@ export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = 
     options: ['ReactNode'],
     description: 'Content rendered.',
   },
+  className: {
+    options: ['string'],
+    description: 'CSS class applied to the root tag.',
+  },
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',
