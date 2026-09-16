@@ -10,72 +10,94 @@ import { InputProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
-  autoComplete: {
-    options: ['HTMLInputAutoCompleteAttribute'],
-    description: 'Controls the browser autocomplete behavior for the input field.',
+  // base
+  tagRef: {
+    options: ['RefObject'],
+    description: 'Reference to the root HTML tag.',
+    group: 'base',
+  },
+  tagAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the root tag.',
+    group: 'base',
+  },
+  // surface
+  variant: {
+    options: INPUT_VARIANTS,
+    defaultValue: String(DEFAULT_INPUT_VARIANT),
+    description: 'Visual style variant.',
+    group: 'surface',
   },
   color: {
     options: BOX_COLORS,
     description: 'Color applied to the component.',
-  },
-  defaultValue: {
-    options: ['string'],
-    description: 'Initial value displayed when the component is used in uncontrolled mode.',
-  },
-  disabled: {
-    options: ['boolean'],
-    description: 'Disables the component and its interactions.',
+    group: 'surface',
   },
   intent: {
     options: BOX_INTENTS,
     defaultValue: String(DEFAULT_INPUT_INTENT),
     description: "Color tone applied to the component's main color.",
+    group: 'surface',
   },
-  maxLength: {
-    options: ['number'],
-    description: 'Maximum number of characters allowed for the input value.',
+  // value
+  defaultValue: {
+    options: ['string'],
+    description: 'Initial value displayed when the component is used in uncontrolled mode.',
+    group: 'value',
   },
-  onBlur: {
-    options: ['e => void'],
-    description: 'Callback fired when the input loses focus.',
+  value: {
+    options: ['string'],
+    description: 'Current value displayed when the component is used in controlled mode.',
+    group: 'value',
   },
   onChange: {
     options: ['(value: string) => void'],
     description: 'Callback fired when the value changes.',
+    group: 'value',
   },
-  onFocus: {
-    options: ['e => void'],
-    description: 'Callback fired when the input receives focus.',
-  },
+  // input
   placeholder: {
     options: ['string'],
     description: 'Hint text displayed when the input has no value.',
+    group: 'input',
   },
   readOnly: {
     options: ['boolean'],
     description: 'Prevents editing the value while keeping the field focusable.',
+    group: 'input',
   },
+  maxLength: {
+    options: ['number'],
+    description: 'Maximum number of characters allowed for the input value.',
+    group: 'input',
+  },
+  autoComplete: {
+    options: ['HTMLInputAutoCompleteAttribute'],
+    description: 'Controls the browser autocomplete behavior for the input field.',
+    group: 'input',
+  },
+  // interaction
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  onFocus: {
+    options: ['e => void'],
+    description: 'Callback fired when the input receives focus.',
+    group: 'interaction',
+  },
+  onBlur: {
+    options: ['e => void'],
+    description: 'Callback fired when the input loses focus.',
+    group: 'interaction',
+  },
+  // size
   scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_INPUT_SCALE,
     description:
       'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
-  },
-  tagAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
-  },
-  tagRef: {
-    options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
-  },
-  value: {
-    options: ['string'],
-    description: 'Current value displayed when the component is used in controlled mode.',
-  },
-  variant: {
-    options: INPUT_VARIANTS,
-    defaultValue: String(DEFAULT_INPUT_VARIANT),
-    description: 'Visual style variant.',
+    group: 'size',
   },
 }
