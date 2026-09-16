@@ -46,7 +46,6 @@ export const Box = <T extends ElementType = 'div'>({
   borderRole = DEFAULT_BOX_BORDER_ROLE,
   activeOnFocus,
   cursor,
-  hidden,
   opacity,
   visibility,
   textAlign,
@@ -278,10 +277,9 @@ export const Box = <T extends ElementType = 'div'>({
   useLayoutEffect(() => {
     syncRespDataset('Box', finalRef, bp, {
       theme: resolvedAppearance.theme,
-      hidden,
       flexDirection,
     })
-  }, [bp, tag, resolvedAppearance.theme, hidden, flexDirection])
+  }, [bp, tag, resolvedAppearance.theme, flexDirection])
 
   const usesRipple = ripple && interactive && !disabled
   useRipple(finalRef, usesRipple)

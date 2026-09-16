@@ -145,12 +145,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Controls the mouse cursor shown when hovering over the element.',
     group: 'interaction',
   },
-  hidden: {
-    options: ['boolean'],
-    isResponsive: true,
-    description: 'Controls whether the element is hidden and removed from layout.',
-    group: 'interaction',
-  },
   pointerEvents: {
     options: CSS_POINTER_EVENTS,
     description: 'Controls whether the element can receive pointer interactions.',

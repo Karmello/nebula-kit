@@ -61,7 +61,6 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   disabled?: boolean
   activeOnFocus?: boolean
   cursor?: CssCursor
-  hidden?: RespValue<boolean>
   pointerEvents?: CssPointerEvents
   // appearance
   opacity?: RespValue<string>

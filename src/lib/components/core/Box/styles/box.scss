@@ -54,10 +54,6 @@
   user-select: none;
 }
 
-.neb-box[data-neb-box-hidden='true'] {
-  display: none !important;
-}
-
 .neb-box::placeholder {
   color: inherit;
 }

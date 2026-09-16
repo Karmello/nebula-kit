@@ -63,7 +63,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Link>
         </Box>
       ) : null}
-      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          md: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={`${PageKey.foundations}/${foundationsPageCategoryKey}/${foundationsPageItemKey}/${foundationsPageSectionKey}`}
           onClick={async () => {
@@ -85,7 +90,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          lg: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={`${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
           onClick={async () => {
@@ -107,7 +117,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', md: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          md: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={`${PageKey.patterns}?id=${activePatternId}`}
           onClick={async () => {
@@ -127,7 +142,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', lg: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          lg: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={PageKey.playground}
           onClick={async () => {
@@ -147,7 +167,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          xl: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={PageKey.faq}
           onClick={async () => {
@@ -167,7 +192,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          xl: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={PageKey.blog}
           onClick={async () => {
@@ -188,7 +218,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         </Link>
       </Box>
       {!user?.plan || user.plan === 'free' ? (
-        <Box hidden={{ base: toolbarSlot === 'start', xl: toolbarSlot !== 'start' }}>
+        <Box
+          display={{
+            base: toolbarSlot === 'start' ? 'none' : 'block',
+            xl: toolbarSlot !== 'start' ? 'none' : 'block',
+          }}
+        >
           <Link
             href={PageKey.pricing}
             onClick={async () => {
@@ -209,7 +244,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Link>
         </Box>
       ) : null}
-      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          xxl: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={PageKey.feedback}
           onClick={async () => {
@@ -229,7 +269,12 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
           </Button>
         </Link>
       </Box>
-      <Box hidden={{ base: toolbarSlot === 'start', xxl: toolbarSlot !== 'start' }}>
+      <Box
+        display={{
+          base: toolbarSlot === 'start' ? 'none' : 'block',
+          xxl: toolbarSlot !== 'start' ? 'none' : 'block',
+        }}
+      >
         <Link
           href={PageKey.assistant}
           onClick={async () => {
