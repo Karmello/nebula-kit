@@ -49,9 +49,9 @@ export const Portal = ({
   return createPortal(
     <Box
       tagRef={rootRef}
+      className={classNames(withPrefix('portal'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('portal'), tagAttrs?.className),
         style: {
           transition: 'none',
           ...tagAttrs?.style,

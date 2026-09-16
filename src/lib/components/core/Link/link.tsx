@@ -45,8 +45,8 @@ export const Link = ({
     return (
       <HtmlTag
         tag="a"
+        className={withPrefix('link')}
         tagAttrs={{
-          className: withPrefix('link'),
           href,
           target,
           onClick: finalOnClick,

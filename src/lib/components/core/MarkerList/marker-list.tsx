@@ -36,9 +36,9 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
       <Box
         display="flex"
         tag={tag || 'ul'}
+        className={classNames(withPrefix('marker-list'), tagAttrs?.className)}
         tagAttrs={{
           ...tagAttrs,
-          className: classNames(withPrefix('marker-list'), tagAttrs?.className),
           style: {
             ...tagAttrs?.style,
             listStyle,

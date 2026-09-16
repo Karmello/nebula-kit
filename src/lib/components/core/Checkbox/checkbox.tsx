@@ -42,10 +42,8 @@ export const Checkbox = ({
 
   return (
     <Box
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('checkbox'), tagAttrs?.className),
-      }}
+      className={classNames(withPrefix('checkbox'), tagAttrs?.className)}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       textMode={CHECKBOX_VARIANT_MAP[variant].textMode}

@@ -61,9 +61,9 @@ export const SideNavItem = ({
         }
         cursor="pointer"
         columnGap={CONTROL_SCALE_MAP[scale].gap}
+        className={classNames(withPrefix('side-nav-item'), tagAttrs?.className || '')}
         tagAttrs={{
           ...tagAttrs,
-          className: classNames(withPrefix('side-nav-item'), tagAttrs?.className || ''),
           tabIndex: expandedCategories[categoryId] === false ? -1 : undefined,
           'aria-expanded': expandedCategories[categoryId],
         }}

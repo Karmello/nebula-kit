@@ -40,10 +40,8 @@ export const TableHeader = ({
     >
       <Box
         tag="thead"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('table-header'), tagAttrs?.className),
-        }}
+        className={classNames(withPrefix('table-header'), tagAttrs?.className)}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
       >
         {slots.slotsByName['Table.HeaderRow']}

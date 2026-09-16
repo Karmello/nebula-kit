@@ -71,9 +71,9 @@ export const Button = <T extends ButtonTag = 'button'>({
     <Box tag="span" position="relative" display="inline">
       <Box
         tag={tag}
+        className={classNames(withPrefix('button'), tagAttrs?.className)}
         tagAttrs={{
           ...tagAttrs,
-          className: classNames(withPrefix('button'), tagAttrs?.className),
           ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
           onClick: onClick || tagAttrs?.onClick,
           'aria-disabled': disabled || undefined,

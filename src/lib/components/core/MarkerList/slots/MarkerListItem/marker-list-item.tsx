@@ -18,9 +18,9 @@ export const MarkerListItem = ({
   return (
     <Box
       tag="li"
+      className={classNames(withPrefix('marker-list-item'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('marker-list-item'), tagAttrs?.className),
         role: 'listitem',
       }}
       tagRef={tagRef}

@@ -60,10 +60,8 @@ export const Switch = ({
   return (
     <Box
       key={String(scale)}
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('switch'), tagAttrs?.className),
-      }}
+      className={classNames(withPrefix('switch'), tagAttrs?.className)}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       display="inline-block"
       overflow="clip"
@@ -89,8 +87,8 @@ export const Switch = ({
       />
       <Box
         tagRef={thumbRef}
+        className={withPrefix('switch-thumb')}
         tagAttrs={{
-          className: withPrefix('switch-thumb'),
           style: {
             top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
             left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,

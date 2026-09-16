@@ -44,10 +44,10 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
     <Box
       tag={tag}
       tagRef={finalRef}
+      className={classNames(withPrefix('icon-button'), tagAttrs?.className)}
       tagAttrs={
         {
           ...tagAttrs,
-          className: classNames(withPrefix('icon-button'), tagAttrs?.className),
           ...(tag === 'button'
             ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
             : {}),

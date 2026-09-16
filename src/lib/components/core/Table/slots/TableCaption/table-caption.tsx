@@ -23,10 +23,8 @@ export const TableCaption = ({
   return (
     <Box
       tag="caption"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('table-caption'), tagAttrs?.className),
-      }}
+      className={classNames(withPrefix('table-caption'), tagAttrs?.className)}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       color={color}

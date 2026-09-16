@@ -41,10 +41,8 @@ export const TableFooter = ({
     >
       <Box
         tag="tfoot"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('table-footer'), tagAttrs?.className),
-        }}
+        className={classNames(withPrefix('table-footer'), tagAttrs?.className)}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
       >
         {slots.slotsByName['Table.Row']}

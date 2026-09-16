@@ -26,9 +26,9 @@ export const TableHeaderCell = ({
   return (
     <Box
       tag="th"
+      className={classNames(withPrefix('table-header-cell'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('table-header-cell'), tagAttrs?.className),
         colSpan,
         rowSpan,
       }}

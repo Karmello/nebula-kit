@@ -28,9 +28,9 @@ export const Icon = memo(
       <Box
         tag="span"
         tagRef={tagRef}
+        className={classNames(withPrefix('icon'), tagAttrs?.className)}
         tagAttrs={{
           ...tagAttrs,
-          className: classNames(withPrefix('icon'), tagAttrs?.className),
           style: {
             lineHeight: 0,
             ...tagAttrs?.style,

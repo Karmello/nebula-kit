@@ -40,9 +40,9 @@ export const Image = ({
   return (
     <Box
       tag="img"
+      className={classNames(withPrefix('image'), boxProps.tagAttrs?.className)}
       tagAttrs={{
         ...boxProps.tagAttrs,
-        className: classNames(withPrefix('image'), boxProps.tagAttrs?.className),
         src,
         alt,
         title,

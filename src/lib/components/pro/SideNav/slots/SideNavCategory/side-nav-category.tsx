@@ -67,10 +67,8 @@ export const SideNavCategory = ({
   return (
     <Box
       tag="ul"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('side-nav-category'), tagAttrs?.className || ''),
-      }}
+      className={classNames(withPrefix('side-nav-category'), tagAttrs?.className || '')}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       inlineSize="100%"
     >

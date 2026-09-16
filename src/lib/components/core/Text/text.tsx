@@ -37,10 +37,10 @@ export const Text = <T extends TextTag = 'p'>({
     <Box
       tag={resolvedTag}
       tagRef={tagRef as any}
+      className={classNames(withPrefix('text'), tagAttrs?.className)}
       tagAttrs={
         {
           ...tagAttrs,
-          className: classNames(withPrefix('text'), tagAttrs?.className),
           style: {
             fontSize: fontSize ?? TYPOGRAPHY_MAP[typography].fontSize,
             lineHeight: lineHeight ?? TYPOGRAPHY_MAP[typography].lineHeight,

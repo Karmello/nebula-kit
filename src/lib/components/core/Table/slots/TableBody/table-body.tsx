@@ -40,10 +40,8 @@ export const TableBody = ({
     >
       <Box
         tag="tbody"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('table-body'), tagAttrs?.className),
-        }}
+        className={classNames(withPrefix('table-body'), tagAttrs?.className)}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
       >
         {slots.slotsByName['Table.Row']}

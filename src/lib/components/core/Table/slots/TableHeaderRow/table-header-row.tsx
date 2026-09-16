@@ -38,10 +38,8 @@ export const TableHeaderRow = ({
     >
       <Box
         tag="tr"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('table-header-row'), tagAttrs?.className),
-        }}
+        className={classNames(withPrefix('table-header-row'), tagAttrs?.className)}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
       >
         {slots.slotsByName['Table.HeaderCell']}

@@ -48,10 +48,8 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
     <Box
       display="grid"
       tag="nav"
-      tagAttrs={{
-        ...tagAttrs,
-        className: classNames(withPrefix('toolbar'), tagAttrs?.className),
-      }}
+      className={classNames(withPrefix('toolbar'), tagAttrs?.className)}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       gridTemplateColumns="auto auto 1fr auto"
       gridAutoFlow="row"

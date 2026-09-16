@@ -26,9 +26,9 @@ export const Loader = ({
   return (
     <Box
       tag="span"
+      className={classNames(withPrefix('loader'), tagAttrs?.className || '')}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('loader'), tagAttrs?.className || ''),
         style: {
           ...tagAttrs?.style,
           '--neb-loader-color': color ? 'var(--color-primary)' : 'var(--neb-text)',

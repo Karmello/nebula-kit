@@ -44,10 +44,8 @@ export const TableRow = ({
     >
       <Box
         tag="tr"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('table-row'), tagAttrs?.className),
-        }}
+        className={classNames(withPrefix('table-row'), tagAttrs?.className)}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
       >
         {slots.allValidSlots.map((slot: any) => {

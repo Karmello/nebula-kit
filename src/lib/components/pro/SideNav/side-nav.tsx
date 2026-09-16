@@ -54,10 +54,8 @@ export const SideNav = ({
       <Box
         display="flex"
         tag="nav"
-        tagAttrs={{
-          ...tagAttrs,
-          className: classNames(withPrefix('side-nav'), tagAttrs?.className || ''),
-        }}
+        className={classNames(withPrefix('side-nav'), tagAttrs?.className || '')}
+        tagAttrs={tagAttrs}
         tagRef={tagRef}
         flexDirection="column"
         gap={gap}

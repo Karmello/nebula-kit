@@ -43,9 +43,9 @@ export const Input = ({
   return (
     <Box
       tag="input"
+      className={classNames(withPrefix('input'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('input'), tagAttrs?.className),
         style: {
           ...tagAttrs?.style,
           fontSize: CONTROL_SCALE_MAP[scale].fontSize,

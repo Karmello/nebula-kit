@@ -48,16 +48,16 @@ export const Table = ({
 
   return (
     <Box
-      tagAttrs={{ className: withPrefix('table-container') }}
+      className={withPrefix('table-container')}
       inlineSize={inlineSize}
       minInlineSize={minInlineSize}
       maxInlineSize={maxInlineSize}
     >
       <Box
         tag="table"
+        className={classNames(withPrefix('table'), tagAttrs?.className)}
         tagAttrs={{
           ...tagAttrs,
-          className: classNames(withPrefix('table'), tagAttrs?.className),
           style: {
             tableLayout: layout,
             ...(tagAttrs?.style || {}),

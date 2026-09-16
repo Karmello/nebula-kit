@@ -54,9 +54,9 @@ export const Textarea = ({
   return (
     <Box
       tag="textarea"
+      className={classNames(withPrefix('textarea'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('textarea'), tagAttrs?.className),
         style: {
           fontSize: TYPOGRAPHY_MAP.body.fontSize,
           lineHeight: TYPOGRAPHY_MAP.body.lineHeight,

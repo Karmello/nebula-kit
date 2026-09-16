@@ -26,9 +26,9 @@ export const TableCell = ({
   return (
     <Box
       tag="td"
+      className={classNames(withPrefix('table-cell'), tagAttrs?.className)}
       tagAttrs={{
         ...tagAttrs,
-        className: classNames(withPrefix('table-cell'), tagAttrs?.className),
         colSpan,
         rowSpan,
       }}
