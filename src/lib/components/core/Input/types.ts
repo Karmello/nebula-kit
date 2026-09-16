@@ -12,8 +12,6 @@ export type InputProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  onFocus?: React.FocusEventHandler<HTMLInputElement>
-  onBlur?: React.FocusEventHandler<HTMLInputElement>
   scale?: TShirtSize
   placeholder?: string
   readOnly?: boolean
@@ -22,6 +20,8 @@ export type InputProps = {
   // Box
   tagAttrs?: BoxProps<'input'>['tagAttrs']
   tagRef?: BoxProps<'input'>['tagRef']
+  onFocus?: BoxProps<'input'>['onFocus']
+  onBlur?: BoxProps<'input'>['onBlur']
   variant?: InputVariant
   color?: BoxProps<'input'>['color']
   intent?: BoxProps<'input'>['intent']

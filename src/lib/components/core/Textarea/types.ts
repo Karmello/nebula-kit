@@ -9,8 +9,6 @@ export type TextareaProps = {
   defaultValue?: string
   value?: string
   onChange?: (value: string) => void
-  onFocus?: React.FocusEventHandler<HTMLTextAreaElement>
-  onBlur?: React.FocusEventHandler<HTMLTextAreaElement>
   rows?: number
   resize?: TextareaResize
   placeholder?: string
@@ -19,6 +17,8 @@ export type TextareaProps = {
   // Box
   tagAttrs?: BoxProps<'textarea'>['tagAttrs']
   tagRef?: BoxProps<'textarea'>['tagRef']
+  onFocus?: BoxProps<'textarea'>['onFocus']
+  onBlur?: BoxProps<'textarea'>['onBlur']
   variant?: TextareaVariant
   color?: BoxProps<'textarea'>['color']
   intent?: BoxProps<'textarea'>['intent']

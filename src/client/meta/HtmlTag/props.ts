@@ -16,6 +16,18 @@ export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = 
     options: ['e => void'],
     description: 'Click event handler for the root tag.',
   },
+  onFocus: {
+    options: ['e => void'],
+    description: 'Focus event handler for the root tag.',
+  },
+  onBlur: {
+    options: ['e => void'],
+    description: 'Blur event handler for the root tag.',
+  },
+  onKeyDown: {
+    options: ['e => void'],
+    description: 'Key down event handler for the root tag.',
+  },
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',

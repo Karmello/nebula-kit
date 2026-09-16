@@ -161,6 +161,21 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'Click event handler for the root tag.',
     group: 'interaction',
   },
+  onFocus: {
+    options: ['e => void'],
+    description: 'Focus event handler for the root tag.',
+    group: 'interaction',
+  },
+  onBlur: {
+    options: ['e => void'],
+    description: 'Blur event handler for the root tag.',
+    group: 'interaction',
+  },
+  onKeyDown: {
+    options: ['e => void'],
+    description: 'Key down event handler for the root tag.',
+    group: 'interaction',
+  },
   // layout
   display: {
     options: CSS_DISPLAY,

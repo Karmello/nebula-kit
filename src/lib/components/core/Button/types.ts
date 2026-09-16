@@ -1,5 +1,3 @@
-import { ComponentPropsWithoutRef } from 'react'
-
 import { BoxProps } from 'lib/components/core/Box'
 import { IconProps } from 'lib/components/core/Icon'
 import { RespValue, TShirtSize } from 'lib/types'
@@ -19,12 +17,12 @@ export type ButtonProps<T extends ButtonTag = 'button'> = {
   align?: RespValue<ButtonAlign>
   loading?: boolean
   selected?: boolean
-  onClick?: ComponentPropsWithoutRef<T>['onClick']
   iconPlacement?: ButtonIconPlacement
   // Box
   tag?: BoxProps<T>['tag']
   tagAttrs?: BoxProps<T>['tagAttrs']
   tagRef?: BoxProps<T>['tagRef']
+  onClick?: BoxProps<T>['onClick']
   variant?: ButtonVariant
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']

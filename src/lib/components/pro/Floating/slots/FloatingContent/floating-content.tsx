@@ -14,15 +14,13 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
       <Box
         tag="span"
         tagRef={tagRef}
-        tagAttrs={{
-          ...tagAttrs,
-          onKeyDown: e => {
-            if (e.key === 'Esc' || e.key === 'Tab') {
-              e.preventDefault()
-              setInternalOpen(false)
-            }
-          },
+        onKeyDown={e => {
+          if (e.key === 'Esc' || e.key === 'Tab') {
+            e.preventDefault()
+            setInternalOpen(false)
+          }
         }}
+        tagAttrs={tagAttrs}
       >
         {children}
       </Box>

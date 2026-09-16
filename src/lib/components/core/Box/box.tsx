@@ -34,6 +34,9 @@ export const Box = <T extends ElementType = 'div'>({
   tagRef,
   className,
   onClick,
+  onFocus,
+  onBlur,
+  onKeyDown,
   drawable,
   bgMode = DEFAULT_BOX_BG_MODE,
   bgRole = DEFAULT_BOX_BG_ROLE,
@@ -291,6 +294,9 @@ export const Box = <T extends ElementType = 'div'>({
       tag={tag}
       className={classNames(withPrefix('box'), className, tagAttrs?.className)}
       onClick={onClick}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      onKeyDown={onKeyDown}
       tagAttrs={
         {
           ...tagAttrs,

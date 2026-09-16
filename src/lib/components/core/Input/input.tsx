@@ -14,6 +14,8 @@ export const Input = ({
   // Box
   tagAttrs,
   tagRef,
+  onFocus,
+  onBlur,
   variant = DEFAULT_INPUT_VARIANT,
   color,
   intent = DEFAULT_INPUT_INTENT,
@@ -22,8 +24,6 @@ export const Input = ({
   defaultValue,
   value,
   onChange,
-  onFocus,
-  onBlur,
   scale = DEFAULT_INPUT_SCALE,
   placeholder,
   readOnly,
@@ -44,6 +44,8 @@ export const Input = ({
     <Box
       tag="input"
       className={classNames(withPrefix('input'), tagAttrs?.className)}
+      onFocus={onFocus}
+      onBlur={onBlur}
       tagAttrs={{
         ...tagAttrs,
         style: {
@@ -55,8 +57,6 @@ export const Input = ({
         onChange: e => {
           handleChange((e.target as HTMLInputElement).value)
         },
-        onFocus,
-        onBlur,
         placeholder,
         readOnly,
         maxLength,

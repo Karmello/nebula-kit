@@ -14,6 +14,9 @@ export const HtmlTag = <T extends ElementType = 'div'>({
   tagRef,
   className,
   onClick,
+  onFocus,
+  onBlur,
+  onKeyDown,
 }: HtmlTagProps<T>) => {
   const Tag = (tag ?? 'div') as any
 
@@ -23,6 +26,9 @@ export const HtmlTag = <T extends ElementType = 'div'>({
       ref={tagRef}
       className={classNames(withPrefix('html-tag'), className ?? tagAttrs?.className)}
       onClick={onClick ?? tagAttrs?.onClick}
+      onFocus={onFocus ?? tagAttrs?.onFocus}
+      onBlur={onBlur ?? tagAttrs?.onBlur}
+      onKeyDown={onKeyDown ?? tagAttrs?.onKeyDown}
     >
       {children}
     </Tag>

@@ -22,6 +22,8 @@ export const Textarea = ({
   // Box
   tagAttrs,
   tagRef,
+  onFocus,
+  onBlur,
   variant = DEFAULT_TEXTAREA_VARIANT,
   color,
   intent = DEFAULT_TEXTAREA_INTENT,
@@ -33,8 +35,6 @@ export const Textarea = ({
   defaultValue,
   value,
   onChange,
-  onFocus,
-  onBlur,
   rows = DEFAULT_TEXTAREA_ROWS,
   resize = DEFAULT_TEXTAREA_RESIZE,
   placeholder,
@@ -55,6 +55,8 @@ export const Textarea = ({
     <Box
       tag="textarea"
       className={classNames(withPrefix('textarea'), tagAttrs?.className)}
+      onFocus={onFocus}
+      onBlur={onBlur}
       tagAttrs={{
         ...tagAttrs,
         style: {
@@ -67,8 +69,6 @@ export const Textarea = ({
         onChange: e => {
           handleChange((e.target as HTMLTextAreaElement).value)
         },
-        onFocus,
-        onBlur,
         rows,
         placeholder,
         readOnly,
