@@ -1,6 +1,26 @@
+import { defineConfig } from 'tsup'
+import { readFileSync } from 'node:fs'
 import fs from 'node:fs/promises'
 import path from 'node:path'
-import { defineConfig } from 'tsup'
+
+const pkg = JSON.parse(readFileSync('package.json', 'utf8'))
+
+// tsup already auto-externalizes everything in dependencies/peerDependencies,
+// so listing those here is redundant but kept explicit for clarity. The real
+// reason this list exists is packages the app imports directly that aren't
+// themselves declared dependencies - qs, object-inspect and side-channel are
+// transitive deps of express, and react-router is a transitive dep of the
+// declared react-router-dom (the app imports the base package directly for
+// SSR). Dockerfile.prod copies the full node_modules alongside build/ at
+// runtime, so all of these are safe to leave external instead of bundling.
+const external = [
+  ...Object.keys(pkg.dependencies ?? {}),
+  ...Object.keys(pkg.peerDependencies ?? {}),
+  'qs',
+  'object-inspect',
+  'side-channel',
+  'react-router',
+]
 
 const rawLoaderPlugin = {
   name: 'raw-loader',
@@ -26,7 +46,7 @@ export default defineConfig({
   format: ['esm'],
   outDir: 'build/server',
   sourcemap: false,
-  external: ['react', 'react-dom', 'qs', 'object-inspect', 'side-channel'],
+  external,
   loader: {
     '.scss': 'text',
   },
