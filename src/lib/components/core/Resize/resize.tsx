@@ -1,4 +1,4 @@
-import { useEffect, useRef } from 'react'
+import { useLayoutEffect, useRef } from 'react'
 
 import { Box } from '../Box'
 import {
@@ -30,7 +30,7 @@ export const Resize = ({
 
   const transitionStyle = buildSizeTransition({ duration, easing })
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = finalRef.current
     const content = contentRef.current
 
@@ -54,7 +54,7 @@ export const Resize = ({
     return () => observer.disconnect()
   }, [finalRef, property, visible])
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     const container = finalRef.current
 
     if (!container) return
