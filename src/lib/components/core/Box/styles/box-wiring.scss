@@ -28,6 +28,7 @@
     --bg-active: var(--surface-active);
     --bg-selection: var(--surface-selection);
 
+    &[data-neb-box-intent='secondary'],
     &[data-neb-box-intent='primary'] {
       --text: white;
       --text-hover: white;

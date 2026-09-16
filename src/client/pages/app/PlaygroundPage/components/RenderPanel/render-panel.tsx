@@ -30,9 +30,11 @@ export const RenderPanel = () => {
       <Box
         tagAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable
+        bgMode="tinted"
         borderMode="filled"
-        intent="tertiary"
-        padding={NEB_LENGTH.px_024}
+        intent="muted"
+        color="amber"
+        padding={NEB_LENGTH.px_064}
         overflowX="auto"
       >
         <Component {...getPropValues(activeComponent)} />

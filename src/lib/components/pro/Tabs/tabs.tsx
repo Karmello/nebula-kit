@@ -67,6 +67,16 @@ export const Tabs = ({
         }}
         flexDirection={direction}
         display={stretch ? 'flex' : 'inline-flex'}
+        drawable
+        borderMode="filled"
+        borderRole="edge"
+        intent={intent}
+        color={color}
+        borderRadius={NEB_LENGTH.px_000}
+        borderLeftWidth={NEB_LENGTH.px_000}
+        borderTopWidth={NEB_LENGTH.px_000}
+        borderRightWidth={direction === 'row' ? NEB_LENGTH.px_000 : undefined}
+        borderBottomWidth={direction === 'column' ? NEB_LENGTH.px_000 : undefined}
       >
         {slotsByName['Tabs.Tab'].map((tab, index) => {
           const { value, disabled } = (tab as any).props as TabsTabProps
@@ -96,13 +106,13 @@ export const Tabs = ({
               borderRole="divider"
               borderTopWidth={NEB_LENGTH.px_000}
               borderBottomWidth={
-                direction === 'column' && index === slotsByName['Tabs.Tab'].length - 1
+                direction === 'row' || index === slotsByName['Tabs.Tab'].length - 1
                   ? NEB_LENGTH.px_000
                   : undefined
               }
               borderLeftWidth={NEB_LENGTH.px_000}
               borderRightWidth={
-                direction === 'row' && index === slotsByName['Tabs.Tab'].length - 1
+                direction === 'column' || index === slotsByName['Tabs.Tab'].length - 1
                   ? NEB_LENGTH.px_000
                   : undefined
               }
