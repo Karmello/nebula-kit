@@ -17,13 +17,7 @@ export const AppFrameHeader = ({
   return (
     <Box
       tag="header"
-      tagAttrs={{
-        ...tagAttrs,
-        style: {
-          ...tagAttrs?.style,
-          zIndex: stickyHeader ? 'var(--neb-z-app-frame-header)' : undefined,
-        },
-      }}
+      tagAttrs={tagAttrs}
       tagRef={tagRef}
       drawable
       bgMode="filled"
@@ -37,6 +31,7 @@ export const AppFrameHeader = ({
       intent={intent}
       position={stickyHeader ? 'sticky' : undefined}
       top={stickyHeader ? '0px' : undefined}
+      zIndex={stickyHeader ? 'var(--neb-z-app-frame-header)' : undefined}
     >
       {children}
     </Box>

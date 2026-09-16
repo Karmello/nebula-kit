@@ -58,11 +58,7 @@ export const Snackbar = ({
           left={finalPlacement.includes('left') ? '0px' : 'unset'}
           right={finalPlacement.includes('right') ? '0px' : 'unset'}
           pointerEvents={!visible ? 'none' : undefined}
-          tagAttrs={{
-            style: {
-              zIndex: 'var(--neb-z-snackbar)',
-            },
-          }}
+          zIndex="var(--neb-z-snackbar)"
         >
           <Box tagRef={slideRef} display="inline-block">
             <Box

@@ -63,7 +63,7 @@ export const PropsTable = ({ data, category }: Props) => {
           ) : null}
 
           <Table
-            color="blue"
+            color="green"
             intent="neutral"
             paddingBlock={NEB_LENGTH.px_008}
             paddingInline={NEB_LENGTH.px_016}

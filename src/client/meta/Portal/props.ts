@@ -1,4 +1,4 @@
-import { PORTAL_PLACEMENTS } from 'lib/components/pro/Portal/constants'
+import { DEFAULT_PORTAL_Z_INDEX, PORTAL_PLACEMENTS } from 'lib/components/pro/Portal/constants'
 import { DEFAULT_PORTAL_PLACEMENT } from 'lib/components/pro/Portal/portal'
 import type { PortalProps } from 'lib/components/pro/Portal/types'
 import type { DocProp } from 'client/definitions'
@@ -31,5 +31,10 @@ export const PORTAL_PROPS: Record<keyof PortalProps, DocProp> = {
   tagRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
+  },
+  zIndex: {
+    options: ['number', 'string'],
+    defaultValue: String(DEFAULT_PORTAL_Z_INDEX),
+    description: 'Controls the stacking order of the portaled content.',
   },
 }

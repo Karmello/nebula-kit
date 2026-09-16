@@ -68,8 +68,8 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
   visibility?: RespValue<CssVisibility>
   textAlign?: RespValue<CssTextAlign>
   aspectRatio?: RespValue<string>
-  transform?: RespValue<string>
-  zIndex?: RespValue<number>
+  transform?: string
+  zIndex?: string | number
   // border
   borderWidth?: RespValue<string>
   borderTopWidth?: RespValue<string>

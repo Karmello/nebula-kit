@@ -83,13 +83,7 @@ export const Dialog = ({
 
   return (
     <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
-      <Portal
-        tagAttrs={{
-          style: {
-            zIndex: 'var(--neb-z-dialog-portal)',
-          },
-        }}
-      >
+      <Portal zIndex="var(--neb-z-dialog-portal)">
         <Box
           tagAttrs={{
             style: {

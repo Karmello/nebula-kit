@@ -125,11 +125,7 @@ export const VirtualList = <T,>({
       borderRadius="0px"
     >
       <Box blockSize={`${totalHeight}px`}>
-        <Box
-          tagAttrs={{
-            style: { transform: `translateY(${offsetY}px)` },
-          }}
-        >
+        <Box transform={`translateY(${offsetY}px)`}>
           {visibleItems.map((item, i) => (
             <Box key={i}>{renderItem(item, startIndex + i)}</Box>
           ))}

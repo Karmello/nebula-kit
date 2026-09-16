@@ -260,14 +260,12 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   },
   transform: {
     options: ['string'],
-    isResponsive: true,
     description: 'Applies a CSS transform for positional adjustment.',
     link: true,
     group: 'appearance',
   },
   zIndex: {
-    options: ['number'],
-    isResponsive: true,
+    options: ['number', 'string'],
     description: 'Controls the stacking order.',
     link: true,
     group: 'appearance',

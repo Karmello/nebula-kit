@@ -51,10 +51,6 @@ export const SplitViewSide = ({
           inert: !sideOpen,
           role: mode === 'overlay' ? 'dialog' : 'complementary',
           'aria-modal': mode === 'overlay' ? true : undefined,
-          style: {
-            ...tagAttrs?.style,
-            zIndex: mode === 'overlay' ? 'var(--neb-z-split-view-side)' : undefined,
-          },
         }}
         tagRef={finalRef}
         drawable
@@ -76,6 +72,7 @@ export const SplitViewSide = ({
         top={mode === 'overlay' ? '0px' : undefined}
         bottom={mode === 'overlay' ? '0px' : undefined}
         overflowY={mode === 'overlay' ? 'auto' : 'hidden'}
+        zIndex={mode === 'overlay' ? 'var(--neb-z-split-view-side)' : undefined}
       >
         <Box
           drawable

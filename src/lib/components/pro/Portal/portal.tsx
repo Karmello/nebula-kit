@@ -5,6 +5,7 @@ import classNames from 'classnames'
 import { Box } from 'lib/components/core/Box'
 import { withPrefix } from 'lib/helpers'
 
+import { DEFAULT_PORTAL_Z_INDEX } from './constants'
 import { useAnchoredPosition } from './hooks'
 import { type PortalProps } from './types'
 
@@ -17,6 +18,7 @@ export const Portal = ({
   anchorRef,
   placement = DEFAULT_PORTAL_PLACEMENT,
   offset,
+  zIndex = DEFAULT_PORTAL_Z_INDEX,
 }: PortalProps) => {
   const [container, setContainer] = useState<HTMLElement | null>(null)
 
@@ -52,13 +54,13 @@ export const Portal = ({
         className: classNames(withPrefix('portal'), tagAttrs?.className),
         style: {
           transition: 'none',
-          transform: position.transform,
-          zIndex: 'var(--neb-z-portal)',
           ...tagAttrs?.style,
         },
       }}
       position="absolute"
       pointerEvents="auto"
+      transform={position.transform}
+      zIndex={zIndex}
       top={position.top !== undefined ? `${position.top}px` : '0px'}
       left={position.left !== undefined ? `${position.left}px` : '0px'}
     >

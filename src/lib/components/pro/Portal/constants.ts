@@ -1,3 +1,7 @@
+import type { PortalProps } from './types'
+
+export const DEFAULT_PORTAL_Z_INDEX: PortalProps['zIndex'] = 'var(--neb-z-portal)'
+
 export const PORTAL_PLACEMENTS = [
   'top-start',
   'top-center',

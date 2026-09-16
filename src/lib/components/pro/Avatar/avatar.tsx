@@ -134,22 +134,11 @@ export const Avatar = ({
       {showLoader ? (
         <Loader centered active={showLoader} color="blue" />
       ) : initials && fetchStatus !== 'pending' && fetchStatus !== 'success' ? (
-        <Text
-          tagAttrs={{
-            style: {
-              position: 'absolute',
-              top: '50%',
-              left: '50%',
-              transform: 'translate(-50%, -50%)',
-            },
-          }}
-          fontSize={AVATAR_SCALE_MAP[scale].fontSize}
-          intent="primary"
-          color="blue"
-          bold
-        >
-          {initials.trim().slice(0, 2).toUpperCase()}
-        </Text>
+        <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)">
+          <Text fontSize={AVATAR_SCALE_MAP[scale].fontSize} intent="primary" color="blue" bold>
+            {initials.trim().slice(0, 2).toUpperCase()}
+          </Text>
+        </Box>
       ) : null}
     </Box>
   )
