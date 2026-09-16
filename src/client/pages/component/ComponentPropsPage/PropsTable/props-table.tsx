@@ -48,26 +48,26 @@ export const PropsTable = ({ data, category }: Props) => {
     <>
       {category ? (
         <>
-          <Text typography="h5">{category}</Text>
+          <Text typography="h4">{category}</Text>
           <HorizontalRule marginBlock={NEB_LENGTH.px_008} />
         </>
       ) : null}
 
       {sections.map(([groupName, names]) => (
         <Fragment key={groupName || 'ungrouped'}>
-          {groupName ? (
-            <>
-              <Text typography="h5">{capitalCase(groupName)}</Text>
-              <Spacer />
-            </>
-          ) : null}
-
           <Table
             color="green"
             intent="neutral"
             paddingBlock={NEB_LENGTH.px_008}
             paddingInline={NEB_LENGTH.px_016}
           >
+            {groupName ? (
+              <Table.Caption>
+                <Text typography="h6" underline intent="secondary" color="amber">
+                  {capitalCase(groupName)}
+                </Text>
+              </Table.Caption>
+            ) : null}
             <Table.Header>
               <Table.HeaderRow>
                 <Table.HeaderCell>Name</Table.HeaderCell>
@@ -115,12 +115,7 @@ export const PropsTable = ({ data, category }: Props) => {
 
                     <Table.Cell>
                       {shouldShowTooltip ? (
-                        <Tooltip
-                          content={options.join(', ')}
-                          placement="top"
-                          minInlineSize={200}
-                          maxInlineSize={350}
-                        >
+                        <Tooltip content={options.join(', ')} placement="top">
                           <Text>
                             {visibleOptions}
                             <Text elemTag="span" noWrap>
@@ -178,7 +173,7 @@ export const PropsTable = ({ data, category }: Props) => {
               })}
             </Table.Body>
           </Table>
-          <Spacer blockSize={NEB_LENGTH.px_048} />
+          <Spacer blockSize={NEB_LENGTH.px_032} />
         </Fragment>
       ))}
     </>

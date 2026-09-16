@@ -50,8 +50,9 @@ const TooltipContent = ({
         color={color}
         paddingBlock="8px"
         paddingInline="16px"
-        minInlineSize={`${minInlineSize}px`}
-        maxInlineSize={`${maxInlineSize}px`}
+        minInlineSize={minInlineSize !== undefined ? `${minInlineSize}px` : undefined}
+        maxInlineSize={maxInlineSize !== undefined ? `${maxInlineSize}px` : undefined}
+        inlineSize="max-content"
       >
         <Text>{content}</Text>
       </Box>
