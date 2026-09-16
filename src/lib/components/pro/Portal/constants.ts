@@ -1,6 +1,6 @@
-import type { PortalProps } from './types'
+import type { BoxProps } from '../../core/Box/types'
 
-export const DEFAULT_PORTAL_Z_INDEX: PortalProps['zIndex'] = 'var(--neb-z-portal)'
+export const DEFAULT_PORTAL_Z_INDEX: BoxProps['zIndex'] = 'var(--neb-z-portal)'
 
 export const PORTAL_PLACEMENTS = [
   'top-start',
