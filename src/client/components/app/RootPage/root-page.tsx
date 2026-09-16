@@ -90,8 +90,8 @@ export const RootPage = () => {
     <div className={styles.RootPage}>
       <Suspense
         fallback={
-          <Box textAlign="center" marginTop="300px">
-            <Loader size={NEB_LENGTH.px_032} />
+          <Box display="flex" justifyContent="center" marginTop={NEB_LENGTH.px_128}>
+            <Loader />
           </Box>
         }
       >
