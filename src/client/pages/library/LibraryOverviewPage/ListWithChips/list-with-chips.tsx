@@ -19,9 +19,10 @@ export const ListWithChips = ({
         <Box
           key={i}
           drawable
-          bgMode="filled"
+          bgMode="tinted"
+          textMode="colored"
           color={color}
-          intent="muted"
+          intent="tertiary"
           paddingInline={NEB_LENGTH.px_012}
           paddingBlock={NEB_LENGTH.px_004}
           borderRadius={NEB_LENGTH.px_012}
