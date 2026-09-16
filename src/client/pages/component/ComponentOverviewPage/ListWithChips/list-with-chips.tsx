@@ -21,7 +21,7 @@ export const ListWithChips = ({
           drawable
           bgMode="filled"
           color={color}
-          intent="tertiary"
+          intent="muted"
           paddingInline={NEB_LENGTH.px_012}
           paddingBlock={NEB_LENGTH.px_004}
           borderRadius={NEB_LENGTH.px_012}
