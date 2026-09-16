@@ -2,19 +2,19 @@ import { useLayoutEffect } from 'react'
 import { useLocation } from 'react-router'
 
 import { CatalogPageTemplate } from 'client/components/reusable/CatalogPageTemplate'
-import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
-import { useComponentsPageStore } from 'client/store'
+import { LIBRARY_CATEGORIES, PageKey } from 'client/definitions'
+import { useLibraryPageStore } from 'client/store'
 
-export const ComponentsPage = () => {
+export const LibraryPage = () => {
   const { pathname } = useLocation()
 
-  const categoryKey = useComponentsPageStore(state => state.categoryKey)
-  const itemKey = useComponentsPageStore(state => state.itemKey)
-  const sectionKey = useComponentsPageStore(state => state.sectionKey)
+  const categoryKey = useLibraryPageStore(state => state.categoryKey)
+  const itemKey = useLibraryPageStore(state => state.itemKey)
+  const sectionKey = useLibraryPageStore(state => state.sectionKey)
 
-  const setCategoryKey = useComponentsPageStore(state => state.setCategoryKey)
-  const setItemKey = useComponentsPageStore(state => state.setItemKey)
-  const setSectionKey = useComponentsPageStore(state => state.setSectionKey)
+  const setCategoryKey = useLibraryPageStore(state => state.setCategoryKey)
+  const setItemKey = useLibraryPageStore(state => state.setItemKey)
+  const setSectionKey = useLibraryPageStore(state => state.setSectionKey)
 
   useLayoutEffect(() => {
     const [, categoryKey, itemKey, sectionKey] = pathname.split('/').filter(s => s)
@@ -23,7 +23,7 @@ export const ComponentsPage = () => {
     setSectionKey(sectionKey)
   }, [pathname])
 
-  const activeCategoryObj = COMPONENT_CATEGORIES?.find(c => c.key === categoryKey)
+  const activeCategoryObj = LIBRARY_CATEGORIES?.find(c => c.key === categoryKey)
   const activeItemObj = activeCategoryObj?.items.find(i => i.key === itemKey)
   const activeSectionObj = activeItemObj?.sections.find(s => s.key === sectionKey)
 
@@ -31,7 +31,7 @@ export const ComponentsPage = () => {
     <CatalogPageTemplate
       pathname={pathname}
       pageKey={PageKey.library}
-      data={COMPONENT_CATEGORIES}
+      data={LIBRARY_CATEGORIES}
       activeCategoryObj={activeCategoryObj}
       activeItemObj={activeItemObj}
       activeSectionObj={activeSectionObj}

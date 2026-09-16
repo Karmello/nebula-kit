@@ -1,7 +1,7 @@
 import { noCase } from 'change-case'
 
 import { type IconName } from 'lib/components/core/Icon/types'
-import { COMPONENT_CATEGORIES, FOUNDATIONS_CATEGORIES, PageKey } from 'client/definitions'
+import { FOUNDATIONS_CATEGORIES, LIBRARY_CATEGORIES, PageKey } from 'client/definitions'
 
 type Option = {
   label: string
@@ -30,7 +30,7 @@ FOUNDATIONS_CATEGORIES.forEach(c =>
   )
 )
 
-COMPONENT_CATEGORIES.forEach(c =>
+LIBRARY_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
       const label = `${PageKey.library.replace('/', '')} / ${noCase(c.key)} / ${i.label} / ${noCase(s.key)}`

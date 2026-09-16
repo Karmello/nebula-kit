@@ -9,10 +9,10 @@ import { Switch } from 'lib/components/pro/Switch'
 import { NEB_LENGTH } from 'lib/constants'
 import { useCurrentTheme } from 'lib/hooks'
 import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
-import { COMPONENT_ITEM_LABEL_BY_KEY, DocMeta } from 'client/definitions'
+import { DocMeta, LIBRARY_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import { convertElemToString } from 'client/helpers'
 import meta from 'client/meta'
-import { useAppStore, useComponentsPageStore } from 'client/store'
+import { useAppStore, useLibraryPageStore } from 'client/store'
 
 const SingleExample = (
   props: DocMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
@@ -98,13 +98,13 @@ const SingleExample = (
   )
 }
 
-export const ComponentExamplesPage = () => {
+export const LibraryExamplesPage = () => {
   const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
   const setFlipGlobalThemeOnExamples = useAppStore(state => state.setFlipGlobalThemeOnExamples)
 
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
 
-  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
+  const itemLabel = LIBRARY_ITEM_LABEL_BY_KEY[libraryPageItemKey] || ''
 
   if (!meta[itemLabel]) return null
 

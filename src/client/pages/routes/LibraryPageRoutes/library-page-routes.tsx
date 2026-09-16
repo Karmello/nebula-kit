@@ -4,36 +4,36 @@ import { Navigate, Route, Routes } from 'react-router'
 import { Spacer } from 'lib/components/core/Spacer'
 import { NEB_LENGTH } from 'lib/constants'
 import { NextPageButton } from 'client/components/reusable/NextPageButton'
-import { COMPONENT_CATEGORIES, PageKey } from 'client/definitions'
+import { LIBRARY_CATEGORIES, PageKey } from 'client/definitions'
 import {
-  ComponentChangelogPage,
-  ComponentExamplesPage,
-  ComponentOverviewPage,
-  ComponentPropsPage,
-} from 'client/pages/component'
+  LibraryChangelogPage,
+  LibraryExamplesPage,
+  LibraryOverviewPage,
+  LibraryPropsPage,
+} from 'client/pages/library'
 
 const PageResolver = ({ sectionKey }: { sectionKey: string }) => {
   switch (sectionKey) {
     case 'overview':
-      return <ComponentOverviewPage />
+      return <LibraryOverviewPage />
     case 'props':
-      return <ComponentPropsPage />
+      return <LibraryPropsPage />
     case 'examples':
-      return <ComponentExamplesPage />
+      return <LibraryExamplesPage />
     case 'changelog':
-      return <ComponentChangelogPage />
+      return <LibraryChangelogPage />
     default:
       return null
   }
 }
 
-export const ComponentsPageRoutes = ({
+export const LibraryPageRoutes = ({
   pageKey,
 }: {
   pageKey: PageKey.foundations | PageKey.library
 }) => {
   const ROUTES = useMemo(() => {
-    return COMPONENT_CATEGORIES.map(({ key: categoryKey, items }) =>
+    return LIBRARY_CATEGORIES.map(({ key: categoryKey, items }) =>
       items.map(({ key: itemKey, sections }) =>
         sections.map(({ key: sectionKey }) => {
           return (
@@ -65,7 +65,7 @@ export const ComponentsPageRoutes = ({
             return (
               <Navigate
                 to={{
-                  pathname: `${pageKey}/${COMPONENT_CATEGORIES[0].key}/${COMPONENT_CATEGORIES[0].items[0].key}/${COMPONENT_CATEGORIES[0].items[0].sections[0].key}`,
+                  pathname: `${pageKey}/${LIBRARY_CATEGORIES[0].key}/${LIBRARY_CATEGORIES[0].items[0].key}/${LIBRARY_CATEGORIES[0].items[0].sections[0].key}`,
                 }}
                 replace
               />

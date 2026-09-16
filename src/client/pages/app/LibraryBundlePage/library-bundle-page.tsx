@@ -8,7 +8,7 @@ type Props = {
   bundle: 'core' | 'pro'
 }
 
-export const ComponentsBundlePage = ({ bundle }: Props) => {
+export const LibraryBundlePage = ({ bundle }: Props) => {
   const navigateTo = useNavigateTo()
 
   return (

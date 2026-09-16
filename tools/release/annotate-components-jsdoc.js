@@ -3,7 +3,7 @@ import fs from 'fs'
 import path from 'path'
 import { pathToFileURL } from 'node:url'
 
-import { COMPONENTS_PAGE_SECTIONS } from '../../src/client/definitions/components-page-routing.js'
+import { LIBRARY_SECTIONS } from '../../src/client/definitions/library-routing.js'
 
 const bundle = process.env.TSUP_BUNDLE
 
@@ -70,12 +70,12 @@ for (const componentName of Object.keys(META)) {
 
   const { title } = overview
 
-  const section = COMPONENTS_PAGE_SECTIONS.find(o => o.itemKey === kebabCase(componentName))
+  const section = LIBRARY_SECTIONS.find(o => o.itemKey === kebabCase(componentName))
 
   if (!section) continue
 
   const { categoryKey, itemKey } = section
-  const link = `https://nebulakit.dev/components/${categoryKey}/${itemKey}/overview`
+  const link = `https://nebulakit.dev/library/${categoryKey}/${itemKey}/overview`
 
   dts = injectComponentJsDoc(dts, componentName, title, link)
 }

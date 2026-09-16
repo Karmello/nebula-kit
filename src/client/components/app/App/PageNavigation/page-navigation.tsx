@@ -5,8 +5,8 @@ import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import {
   useAppStore,
-  useComponentsPageStore,
   useFoundationsPageStore,
+  useLibraryPageStore,
   usePatternsStore,
 } from 'client/store'
 
@@ -26,9 +26,9 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
 
-  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
-  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
+  const libraryPageCategoryKey = useLibraryPageStore(state => state.categoryKey)
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
+  const libraryPageSectionKey = useLibraryPageStore(state => state.sectionKey)
 
   const currentPageKey = `/${pathname.split('/')[1]}`
 
@@ -97,11 +97,11 @@ export const PageNavigation = ({ toolbarSlot, mainOpen, setMainOpen }: Props) =>
         }}
       >
         <Link
-          href={`${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`}
+          href={`${PageKey.library}/${libraryPageCategoryKey}/${libraryPageItemKey}/${libraryPageSectionKey}`}
           onClick={async () => {
             if (mainOpen) await setMainOpen(false)
             navigateTo(
-              `${PageKey.library}/${componentsPageCategoryKey}/${componentsPageItemKey}/${componentsPageSectionKey}`
+              `${PageKey.library}/${libraryPageCategoryKey}/${libraryPageItemKey}/${libraryPageSectionKey}`
             )
           }}
         >

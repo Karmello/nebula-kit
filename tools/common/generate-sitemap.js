@@ -3,8 +3,8 @@ import { writeFileSync } from 'fs'
 import path from 'path'
 import { fileURLToPath } from 'url'
 
-import { COMPONENT_CATEGORIES } from '../../src/client/definitions/components-page-routing.js'
 import { FOUNDATIONS_CATEGORIES } from '../../src/client/definitions/foundations-routing.js'
+import { LIBRARY_CATEGORIES } from '../../src/client/definitions/library-routing.js'
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 
@@ -12,7 +12,7 @@ const domain = 'https://nebulakit.dev'
 
 const CATEGORY_SETS = [
   { basePath: 'foundations', categories: FOUNDATIONS_CATEGORIES },
-  { basePath: 'components', categories: COMPONENT_CATEGORIES },
+  { basePath: 'library', categories: LIBRARY_CATEGORIES },
 ]
 
 // Convert categories → URLs

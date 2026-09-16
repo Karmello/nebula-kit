@@ -5,7 +5,7 @@ const sections = [
   { key: 'changelog', label: 'Changelog' },
 ]
 
-export const COMPONENT_CATEGORIES = [
+export const LIBRARY_CATEGORIES = [
   {
     key: 'base',
     label: 'Base',
@@ -133,12 +133,12 @@ export const COMPONENT_CATEGORIES = [
   },
 ]
 
-export const COMPONENTS_PAGE_SECTIONS = []
+export const LIBRARY_SECTIONS = []
 
-COMPONENT_CATEGORIES.forEach(c =>
+LIBRARY_CATEGORIES.forEach(c =>
   c.items.forEach(i =>
     i.sections.forEach(s => {
-      COMPONENTS_PAGE_SECTIONS.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
+      LIBRARY_SECTIONS.push({ categoryKey: c.key, itemKey: i.key, sectionKey: s.key })
     })
   )
 )
@@ -147,10 +147,10 @@ COMPONENT_CATEGORIES.forEach(c =>
 // display/meta key (e.g. 'useScale'). This is the single source of truth for that
 // casing - never re-derive it with pascalCase(), which would wrongly capitalize hooks.
 /** @type {Record<string, string>} */
-export const COMPONENT_ITEM_LABEL_BY_KEY = {}
+export const LIBRARY_ITEM_LABEL_BY_KEY = {}
 
-COMPONENT_CATEGORIES.forEach(c =>
+LIBRARY_CATEGORIES.forEach(c =>
   c.items.forEach(i => {
-    COMPONENT_ITEM_LABEL_BY_KEY[i.key] = i.label
+    LIBRARY_ITEM_LABEL_BY_KEY[i.key] = i.label
   })
 )

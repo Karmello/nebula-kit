@@ -2,16 +2,16 @@ import { Fragment } from 'react'
 
 import { NEB_LENGTH } from 'lib/constants'
 import { Spacer } from 'lib/index.core'
-import { COMPONENT_ITEM_LABEL_BY_KEY } from 'client/definitions'
+import { LIBRARY_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import meta from 'client/meta'
-import { useComponentsPageStore } from 'client/store'
+import { useLibraryPageStore } from 'client/store'
 
 import { PropsTable } from './PropsTable'
 
-export const ComponentPropsPage = () => {
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+export const LibraryPropsPage = () => {
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
 
-  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
+  const itemLabel = LIBRARY_ITEM_LABEL_BY_KEY[libraryPageItemKey] || ''
 
   if (!meta[itemLabel]) return null
 

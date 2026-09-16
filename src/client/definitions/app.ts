@@ -1,4 +1,4 @@
-import { COMPONENTS_PAGE_SECTIONS } from './components-page-routing'
+import { LIBRARY_SECTIONS } from './library-routing'
 import { FOUNDATIONS_SECTIONS } from './foundations-routing'
 
 export enum PageKey {
@@ -24,5 +24,5 @@ export enum PageKey {
 
 export const PAGE_SECTIONS = [
   ...FOUNDATIONS_SECTIONS.map(o => ({ ...o, pageKey: PageKey.foundations.replace('/', '') })),
-  ...COMPONENTS_PAGE_SECTIONS.map(o => ({ ...o, pageKey: PageKey.library.replace('/', '') })),
+  ...LIBRARY_SECTIONS.map(o => ({ ...o, pageKey: PageKey.library.replace('/', '') })),
 ]

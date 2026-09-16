@@ -4,13 +4,13 @@ import { PageKey } from 'client/definitions'
 import {
   AssistantPage,
   BlogPage,
-  ComponentsBundlePage,
-  ComponentsPage,
   ConfirmActionPage,
   FaqPage,
   FeedbackPage,
   FoundationsPage,
   HomePage,
+  LibraryBundlePage,
+  LibraryPage,
   LoginPage,
   PatternsPage,
   PlaygroundPage,
@@ -31,12 +31,12 @@ export const RootPage = () => {
         <Route path={PageKey.patterns} Component={PatternsPage} />
         <Route path={PageKey.playground} Component={PlaygroundPage} />
         <Route path={`${PageKey.foundations}/*`} Component={FoundationsPage} />
-        <Route path={`${PageKey.library}/*`} Component={ComponentsPage} />
+        <Route path={`${PageKey.library}/*`} Component={LibraryPage} />
         <Route path={PageKey.faq} Component={FaqPage} />
         <Route path={PageKey.blog} Component={BlogPage} />
         <Route path={PageKey.pricing} Component={PricingPage} />
-        <Route path={PageKey.pricingCore} element={<ComponentsBundlePage bundle="core" />} />
-        <Route path={PageKey.pricingPro} element={<ComponentsBundlePage bundle="pro" />} />
+        <Route path={PageKey.pricingCore} element={<LibraryBundlePage bundle="core" />} />
+        <Route path={PageKey.pricingPro} element={<LibraryBundlePage bundle="pro" />} />
         <Route path={PageKey.feedback} Component={FeedbackPage} />
         <Route path={PageKey.assistant} Component={AssistantPage} />
         <Route path={PageKey.authLogin} Component={LoginPage} />

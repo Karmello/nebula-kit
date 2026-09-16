@@ -12,8 +12,8 @@ import { NEB_LENGTH } from 'lib/constants'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
 import meta from 'client/meta'
-import { ComponentsPageRoutes } from 'client/pages/routes/ComponentsPageRoutes'
 import { FoundationsPageRoutes } from 'client/pages/routes/FoundationsPageRoutes'
+import { LibraryPageRoutes } from 'client/pages/routes/LibraryPageRoutes'
 import { PLAYGROUND_PROPS_MAP } from 'client/playground'
 import { usePlaygroundStore } from 'client/store'
 
@@ -182,7 +182,7 @@ export const CatalogPageTemplate = memo(
                       {pageKey === PageKey.foundations.toString() ? (
                         <FoundationsPageRoutes />
                       ) : (
-                        <ComponentsPageRoutes pageKey={pageKey as never} />
+                        <LibraryPageRoutes pageKey={pageKey as never} />
                       )}
                     </SplitView.Main>
                   </>

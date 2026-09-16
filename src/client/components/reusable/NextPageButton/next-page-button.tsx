@@ -1,9 +1,9 @@
 import { useLayoutEffect, useState } from 'react'
 
 import { Box, Button, Link } from 'lib/components'
-import { COMPONENTS_PAGE_SECTIONS, FOUNDATIONS_SECTIONS, PageKey } from 'client/definitions'
+import { FOUNDATIONS_SECTIONS, LIBRARY_SECTIONS, PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { useComponentsPageStore, useFoundationsPageStore } from 'client/store'
+import { useFoundationsPageStore, useLibraryPageStore } from 'client/store'
 
 export type NextPageButtonProps = {
   pageKey: PageKey.foundations | PageKey.library
@@ -20,9 +20,9 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
   const foundationsPageItemKey = useFoundationsPageStore(state => state.itemKey)
   const foundationsPageSectionKey = useFoundationsPageStore(state => state.sectionKey)
 
-  const componentsPageCategoryKey = useComponentsPageStore(state => state.categoryKey)
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
-  const componentsPageSectionKey = useComponentsPageStore(state => state.sectionKey)
+  const libraryPageCategoryKey = useLibraryPageStore(state => state.categoryKey)
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
+  const libraryPageSectionKey = useLibraryPageStore(state => state.sectionKey)
 
   const MAP = {
     [PageKey.foundations]: {
@@ -34,11 +34,11 @@ export const NextPageButton = ({ pageKey }: NextPageButtonProps) => {
       },
     },
     [PageKey.library]: {
-      sections: COMPONENTS_PAGE_SECTIONS,
+      sections: LIBRARY_SECTIONS,
       keys: {
-        categoryKey: componentsPageCategoryKey,
-        itemKey: componentsPageItemKey,
-        sectionKey: componentsPageSectionKey,
+        categoryKey: libraryPageCategoryKey,
+        itemKey: libraryPageItemKey,
+        sectionKey: libraryPageSectionKey,
       },
     },
   }

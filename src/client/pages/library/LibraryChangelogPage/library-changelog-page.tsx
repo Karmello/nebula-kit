@@ -8,14 +8,14 @@ import {
   Text,
   Title,
 } from 'lib/components'
-import { COMPONENT_ITEM_LABEL_BY_KEY } from 'client/definitions'
+import { LIBRARY_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import meta from 'client/meta'
-import { useComponentsPageStore } from 'client/store'
+import { useLibraryPageStore } from 'client/store'
 
-export const ComponentChangelogPage = () => {
-  const componentsPageItemKey = useComponentsPageStore(state => state.itemKey)
+export const LibraryChangelogPage = () => {
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
 
-  const itemLabel = COMPONENT_ITEM_LABEL_BY_KEY[componentsPageItemKey] || ''
+  const itemLabel = LIBRARY_ITEM_LABEL_BY_KEY[libraryPageItemKey] || ''
 
   if (!meta[itemLabel]) return null
 
