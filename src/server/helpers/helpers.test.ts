@@ -31,17 +31,24 @@ describe('server / helpers / getHtmlMetaData', () => {
     })
   })
 
-  it('path /core/base/box/overview', () => {
-    expect(getHtmlMetaData('/core/base/box/overview')).toEqual({
-      title: 'NebulaKit | Core | Base | Box | Overview',
+  it('path /library/base/box/overview', () => {
+    expect(getHtmlMetaData('/library/base/box/overview')).toEqual({
+      title: 'NebulaKit | Library | Base | Box | Overview',
       description: META.Box.Box.overview.title,
     })
   })
 
-  it('path /pro/navigation/side-nav/props', () => {
-    expect(getHtmlMetaData('/pro/navigation/side-nav/props')).toEqual({
-      title: 'NebulaKit | Pro | Navigation | SideNav | Props',
+  it('path /library/navigation/side-nav/props', () => {
+    expect(getHtmlMetaData('/library/navigation/side-nav/props')).toEqual({
+      title: 'NebulaKit | Library | Navigation | SideNav | Props',
       description: META.SideNav.SideNav.overview.title,
+    })
+  })
+
+  it('path /library/motion/use-scale/props', () => {
+    expect(getHtmlMetaData('/library/motion/use-scale/props')).toEqual({
+      title: 'NebulaKit | Library | Motion | useScale | Props',
+      description: META.useScale.useScale.overview.title,
     })
   })
 })
