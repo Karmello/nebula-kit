@@ -15,8 +15,8 @@ export type CalloutProps<T extends CalloutTag = 'div'> = {
   variant?: CalloutVariant
   status?: CalloutStatus
   // Box
-  tag?: BoxProps<T>['tag']
-  tagAttrs?: BoxProps<T>['tagAttrs']
-  tagRef?: BoxProps<T>['tagRef']
+  elemTag?: BoxProps<T>['elemTag']
+  elemAttrs?: BoxProps<T>['elemAttrs']
+  elemRef?: BoxProps<T>['elemRef']
   intent?: BoxProps<T>['intent']
 }

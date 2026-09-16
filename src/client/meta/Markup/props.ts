@@ -8,11 +8,11 @@ export const MARKUP_PROPS: Record<keyof MarkupProps, DocProp> = {
     description:
       'Text content rendered and processed for supported inline markup. Direct Text children are recommended.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

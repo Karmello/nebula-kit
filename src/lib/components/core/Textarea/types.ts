@@ -15,8 +15,8 @@ export type TextareaProps = {
   readOnly?: boolean
   maxLength?: number
   // Box
-  tagAttrs?: BoxProps<'textarea'>['tagAttrs']
-  tagRef?: BoxProps<'textarea'>['tagRef']
+  elemAttrs?: BoxProps<'textarea'>['elemAttrs']
+  elemRef?: BoxProps<'textarea'>['elemRef']
   onFocus?: BoxProps<'textarea'>['onFocus']
   onBlur?: BoxProps<'textarea'>['onBlur']
   variant?: TextareaVariant

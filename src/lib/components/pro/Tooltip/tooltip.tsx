@@ -34,7 +34,7 @@ const TooltipContent = ({
 
   return (
     <Box
-      tagRef={contentRef}
+      elemRef={contentRef}
       drawable
       intent="neutral"
       bgMode="filled"

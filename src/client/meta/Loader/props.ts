@@ -25,11 +25,11 @@ export const LOADER_PROPS: Record<keyof LoaderProps, DocProp> = {
     defaultValue: String(DEFAULT_LOADER_SIZE),
     description: 'Controls the diameter of the loader.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

@@ -6,7 +6,7 @@ export type LoaderProps = {
   size?: string
   centered?: boolean
   // Box
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   color?: BoxProps['color']
 }

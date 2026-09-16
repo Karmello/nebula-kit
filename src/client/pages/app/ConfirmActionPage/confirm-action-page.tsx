@@ -39,7 +39,7 @@ export const ConfirmActionPage = () => {
     >
       <Box display="flex" justifyContent="center">
         <Button
-          tagAttrs={{
+          elemAttrs={{
             onClick: () => {
               setLoading(true)
               if (url) window.location.href = url

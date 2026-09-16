@@ -87,9 +87,9 @@ export const MultiSelectImpl = ({
     >
       <Floating.Trigger display="block" inlineSize={inlineSize}>
         <Box
-          tag="button"
-          tagRef={triggerRef}
-          tagAttrs={{
+          elemTag="button"
+          elemRef={triggerRef}
+          elemAttrs={{
             style: {
               userSelect: 'none',
             },
@@ -163,11 +163,11 @@ export const MultiSelectImpl = ({
                   return (
                     <Box
                       key={key}
-                      tag="button"
+                      elemTag="button"
                       onClick={() => {
                         toggleValue(slot.props.value)
                       }}
-                      tagAttrs={{
+                      elemAttrs={{
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"

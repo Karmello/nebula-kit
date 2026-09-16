@@ -11,8 +11,8 @@ import { TableFooterProps } from './types'
 export const TableFooter = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_TABLE_FOOTER_INTENT,
   paddingBlock,
@@ -40,10 +40,10 @@ export const TableFooter = ({
       }}
     >
       <Box
-        tag="tfoot"
-        className={classNames(withPrefix('table-footer'), tagAttrs?.className)}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="tfoot"
+        className={classNames(withPrefix('table-footer'), elemAttrs?.className)}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
       >
         {slots.slotsByName['Table.Row']}
       </Box>

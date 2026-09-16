@@ -3,12 +3,12 @@ import { NEB_LENGTH } from 'lib/constants'
 
 import { type AppFrameMainProps } from './types'
 
-export const AppFrameMain = ({ children, tagAttrs, tagRef, ...paddings }: AppFrameMainProps) => {
+export const AppFrameMain = ({ children, elemAttrs, elemRef, ...paddings }: AppFrameMainProps) => {
   return (
     <Box
-      tag="main"
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="main"
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       borderRadius={NEB_LENGTH.px_000}
       minBlockSize={NEB_LENGTH.px_000}

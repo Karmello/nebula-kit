@@ -17,8 +17,8 @@ export type VirtualListProps<T = any> = {
   overscan?: number
   ensureVisibleIndex?: number
   // Box
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   intent?: BoxProps['intent']
   color?: BoxProps['color']
   surfaceDepth?: BoxProps['surfaceDepth']

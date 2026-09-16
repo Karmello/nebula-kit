@@ -45,11 +45,11 @@ export const SIDE_NAV_CATEGORY_PROPS: Record<keyof SideNavCategoryProps, DocProp
     isRequired: true,
     description: 'Text label for the category.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

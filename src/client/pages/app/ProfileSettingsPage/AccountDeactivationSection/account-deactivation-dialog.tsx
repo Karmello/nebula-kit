@@ -24,14 +24,14 @@ export const AccountDeactivationDialog = ({
       </Dialog.Header>
       <Dialog.Content>
         Are you sure you want to deactivate the account for
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           {userEmail}
         </Text>
         ? Confirm in order to obtain deactivation link.
       </Dialog.Content>
       <Dialog.Footer>
         <Button
-          tagAttrs={{
+          elemAttrs={{
             style: {
               borderTopRightRadius: NEB_LENGTH.px_000,
               borderBottomRightRadius: NEB_LENGTH.px_000,
@@ -56,7 +56,7 @@ export const AccountDeactivationDialog = ({
         </Button>
         <Button
           scale="sm"
-          tagAttrs={{
+          elemAttrs={{
             onClick: handleClose,
             style: {
               borderTopLeftRadius: NEB_LENGTH.px_000,

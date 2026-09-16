@@ -48,7 +48,7 @@ export const SPLIT_VIEW_EXAMPLES: DocExample[] = [
     <>
       <SplitView.Side>
         <Button
-          tagAttrs={{
+          elemAttrs={{
             onClick: () => {
               // auto-close side panel on button click
               if (mode === 'overlay') {

@@ -43,11 +43,11 @@ export const TABLE_CELL_PROPS: Record<keyof TableCellProps, DocProp> = {
     options: ['number'],
     description: 'Specifies how many rows the cell should span vertically within the table.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

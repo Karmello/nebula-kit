@@ -19,7 +19,7 @@ export type MarkupPart =
     }
 
 export type MarkupProps = {
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   children: BoxProps['children']
 }

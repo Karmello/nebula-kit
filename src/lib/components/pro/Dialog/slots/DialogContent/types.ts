@@ -1,7 +1,7 @@
 import { BoxProps } from 'lib/components/core/Box'
 
 export type DialogContentProps = {
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   children: BoxProps<'dialog'>['children']
 }

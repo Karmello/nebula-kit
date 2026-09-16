@@ -49,7 +49,7 @@ export const FeedbackPage = () => {
       <Text>Help shape the future of NebulaKit. All feedback submitted here is anonymous.</Text>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <FormProvider {...form}>
-        <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
+        <Box elemTag="form" elemAttrs={{ onSubmit: handleSubmit }}>
           <Controller
             name="message"
             control={form.control}
@@ -82,7 +82,7 @@ export const FeedbackPage = () => {
           />
           <Spacer blockSize={NEB_LENGTH.px_016} />
           <Button
-            tagAttrs={{ type: 'submit' }}
+            elemAttrs={{ type: 'submit' }}
             color="blue"
             intent="primary"
             loading={isSubmitting}

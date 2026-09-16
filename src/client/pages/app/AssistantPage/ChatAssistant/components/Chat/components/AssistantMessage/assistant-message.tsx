@@ -24,7 +24,7 @@ export const AssistantMessage = ({ content, handleQuestionClick }: AssistantMess
           code({ children }) {
             return (
               <Box
-                tag="code"
+                elemTag="code"
                 display="inline-block"
                 drawable
                 bgMode="filled"

@@ -31,11 +31,11 @@ export const TABLE_BODY_PROPS: Record<keyof TableBodyProps, DocProp> = {
     link: true,
     description: 'Padding for the left and right sides applied to every cell.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

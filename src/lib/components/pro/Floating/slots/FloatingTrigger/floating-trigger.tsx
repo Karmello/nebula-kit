@@ -10,13 +10,13 @@ export const FloatingTrigger = ({
   inlineSize,
   ...internalProps
 }: FloatingTriggerProps) => {
-  const { tagRef, tagAttrs } = internalProps as FloatingTriggerInternalProps
+  const { elemRef, elemAttrs } = internalProps as FloatingTriggerInternalProps
 
   return (
     <Box
-      tag="span"
-      tagRef={tagRef}
-      tagAttrs={tagAttrs}
+      elemTag="span"
+      elemRef={elemRef}
+      elemAttrs={elemAttrs}
       display={display}
       cursor={cursor}
       inlineSize={inlineSize}

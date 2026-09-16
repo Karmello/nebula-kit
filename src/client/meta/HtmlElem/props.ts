@@ -1,9 +1,9 @@
 import { ElementType } from 'react'
 
-import { HtmlTagProps } from 'lib/components'
+import { HtmlElemProps } from 'lib/components'
 import type { DocProp } from 'client/definitions'
 
-export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = {
+export const HTML_ELEM_PROPS: Record<keyof HtmlElemProps<ElementType>, DocProp> = {
   // base
   children: {
     options: ['ReactNode'],
@@ -15,18 +15,18 @@ export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = 
     description: 'CSS class applied to the root tag.',
     group: 'base',
   },
-  tag: {
+  elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
     group: 'base',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
     group: 'base',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
     group: 'base',

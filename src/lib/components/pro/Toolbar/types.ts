@@ -12,7 +12,7 @@ export type ToolbarProps = {
   // own
   switchAt?: SwitchBreakpoint
   // Box
-  tagAttrs?: BoxProps<'nav'>['tagAttrs']
-  tagRef?: BoxProps<'nav'>['tagRef']
+  elemAttrs?: BoxProps<'nav'>['elemAttrs']
+  elemRef?: BoxProps<'nav'>['elemRef']
   children: BoxProps<'nav'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }

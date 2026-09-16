@@ -15,8 +15,8 @@ import type { TabsProps } from './types'
 
 export const Tabs = ({
   children,
-  tagRef,
-  tagAttrs,
+  elemRef,
+  elemAttrs,
   value,
   defaultValue = DEFAULT_TABS_DEFAULT_VALUE,
   onChange,
@@ -47,8 +47,8 @@ export const Tabs = ({
 
   return (
     <Box
-      tagRef={tagRef}
-      tagAttrs={tagAttrs}
+      elemRef={elemRef}
+      elemAttrs={elemAttrs}
       drawable
       color={color}
       intent={intent}
@@ -61,7 +61,7 @@ export const Tabs = ({
       alignItems="stretch"
     >
       <Box
-        tagAttrs={{
+        elemAttrs={{
           role: 'tablist',
           'aria-orientation': orientation,
         }}
@@ -85,8 +85,8 @@ export const Tabs = ({
           return (
             <Box
               key={index}
-              tag="button"
-              tagAttrs={{
+              elemTag="button"
+              elemAttrs={{
                 id: `tab-${value}`,
                 role: 'tab',
                 'aria-selected': isSelected,
@@ -126,8 +126,8 @@ export const Tabs = ({
               paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
             >
               <Text
-                tag="span"
-                tagAttrs={{
+                elemTag="span"
+                elemAttrs={{
                   style: {
                     WebkitTextStrokeWidth: isSelected ? '1px' : undefined,
                   },
@@ -150,7 +150,7 @@ export const Tabs = ({
         return (
           <Box
             key={index}
-            tagAttrs={{
+            elemAttrs={{
               role: 'tabpanel',
               id: `panel-${value}`,
               'aria-labelledby': `tab-${value}`,

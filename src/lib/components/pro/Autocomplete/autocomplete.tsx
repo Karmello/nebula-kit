@@ -15,7 +15,7 @@ import { AutocompleteProps } from './types'
 
 export const Autocomplete = ({
   children,
-  tagRef,
+  elemRef,
   // own
   color,
   intent = DEFAULT_AUTOCOMPLETE_INTENT,
@@ -54,7 +54,7 @@ export const Autocomplete = ({
 
   return (
     <AutocompleteMain
-      tagRef={tagRef}
+      elemRef={elemRef}
       intent={intent}
       color={color}
       scale={scale}

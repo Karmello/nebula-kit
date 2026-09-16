@@ -9,8 +9,8 @@ import { type AppFrameFooterProps } from './types'
 
 export const AppFrameFooter = ({
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_APP_FRAME_FOOTER_INTENT,
   footerStackBreakpoint = DEFAULT_SWITCH_BREAKPOINT,
@@ -27,9 +27,9 @@ export const AppFrameFooter = ({
 
   return (
     <Box
-      tag="footer"
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="footer"
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       bgMode="filled"
       borderMode="filled"

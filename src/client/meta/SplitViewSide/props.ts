@@ -80,11 +80,11 @@ export const SPLIT_VIEW_SIDE_PROPS: Record<keyof SplitViewSideProps, DocProp> = 
     link: true,
     description: 'Padding for the top side.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

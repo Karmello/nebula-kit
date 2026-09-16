@@ -20,8 +20,8 @@ import './textarea.scss'
 
 export const Textarea = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   onFocus,
   onBlur,
   variant = DEFAULT_TEXTAREA_VARIANT,
@@ -53,17 +53,17 @@ export const Textarea = ({
 
   return (
     <Box
-      tag="textarea"
-      className={classNames(withPrefix('textarea'), tagAttrs?.className)}
+      elemTag="textarea"
+      className={classNames(withPrefix('textarea'), elemAttrs?.className)}
       onFocus={onFocus}
       onBlur={onBlur}
-      tagAttrs={{
-        ...tagAttrs,
+      elemAttrs={{
+        ...elemAttrs,
         style: {
           fontSize: TYPOGRAPHY_MAP.body.fontSize,
           lineHeight: TYPOGRAPHY_MAP.body.lineHeight,
           resize,
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
         },
         value: currentValue,
         onChange: e => {
@@ -74,7 +74,7 @@ export const Textarea = ({
         readOnly,
         maxLength,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       bgMode={TEXTAREA_VARIANT_MAP[variant].bgMode}
       borderMode={TEXTAREA_VARIANT_MAP[variant].borderMode}

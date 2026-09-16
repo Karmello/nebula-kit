@@ -6,19 +6,19 @@ import { Box } from '../box'
 describe('<Box />', () => {
   describe('basic rendering', () => {
     it('renders as <div> by default', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} />)
       const el = screen.getByTestId('elem')
       expect(el.tagName.toLowerCase()).toBe('div')
     })
 
     it('renders as <a> tag', () => {
-      render(<Box tag="a" tagAttrs={{ 'data-testid': 'elem' }} />)
+      render(<Box elemTag="a" elemAttrs={{ 'data-testid': 'elem' }} />)
       const el = screen.getByTestId('elem')
       expect(el.tagName.toLowerCase()).toBe('a')
     })
 
     it('renders as <button> tag', () => {
-      render(<Box tag="button" tagAttrs={{ 'data-testid': 'elem' }} />)
+      render(<Box elemTag="button" elemAttrs={{ 'data-testid': 'elem' }} />)
       const el = screen.getByTestId('elem')
       expect(el.tagName.toLowerCase()).toBe('button')
     })
@@ -26,37 +26,37 @@ describe('<Box />', () => {
 
   describe('data attrs', () => {
     it('adds data attr for intent', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} intent="primary" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} intent="primary" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-intent', 'primary')
     })
 
     it('adds data attr for bgMode', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} bgMode="filled" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} bgMode="filled" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-bg-mode', 'filled')
     })
 
     it('adds data attr for bgRole', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} bgRole="selection" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} bgRole="selection" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-bg-role', 'selection')
     })
 
     it('adds data attr for borderMode', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} borderMode="filled" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} borderMode="filled" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-border-mode', 'filled')
     })
 
     it('adds data attr for borderRole', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} borderRole="edge" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} borderRole="edge" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-border-role', 'edge')
     })
 
     it('adds data attr for textMode', () => {
-      render(<Box tagAttrs={{ 'data-testid': 'elem' }} textMode="colored" />)
+      render(<Box elemAttrs={{ 'data-testid': 'elem' }} textMode="colored" />)
       const el = screen.getByTestId('elem')
       expect(el).toHaveAttribute('data-neb-box-text-mode', 'colored')
     })

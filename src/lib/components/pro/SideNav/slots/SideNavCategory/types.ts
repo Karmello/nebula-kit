@@ -12,8 +12,8 @@ export type SideNavCategoryProps = {
   align?: SideNavCategoryAlign
   bold?: boolean
   // Box
-  tagAttrs?: BoxProps<'ul'>['tagAttrs']
-  tagRef?: BoxProps<'ul'>['tagRef']
+  elemAttrs?: BoxProps<'ul'>['elemAttrs']
+  elemRef?: BoxProps<'ul'>['elemRef']
   color?: BoxProps<'ul'>['color']
   intent?: BoxProps<'ul'>['intent']
   children: BoxProps<'ul'>['children']

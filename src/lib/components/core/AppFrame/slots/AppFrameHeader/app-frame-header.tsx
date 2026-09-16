@@ -6,8 +6,8 @@ import { type AppFrameHeaderInternalProps, type AppFrameHeaderProps } from './ty
 
 export const AppFrameHeader = ({
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_APP_FRAME_HEADER_INTENT,
   ...internalProps
@@ -16,9 +16,9 @@ export const AppFrameHeader = ({
 
   return (
     <Box
-      tag="header"
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="header"
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       bgMode="filled"
       borderMode="filled"

@@ -16,9 +16,9 @@ import { CalloutProps, CalloutTag } from './types'
 
 export const Callout = <T extends CalloutTag = 'div'>({
   // Box
-  tag,
-  tagAttrs,
-  tagRef,
+  elemTag,
+  elemAttrs,
+  elemRef,
   scale = DEFAULT_CALLOUT_SCALE,
   variant = DEFAULT_CALLOUT_VARIANT,
   intent = DEFAULT_CALLOUT_INTENT,
@@ -29,9 +29,9 @@ export const Callout = <T extends CalloutTag = 'div'>({
 }: CalloutProps<T>) => {
   return (
     <Box
-      tag={tag}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag={elemTag}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       bgMode={CALLOUT_VARIANT_MAP[variant].bgMode}
       borderMode={CALLOUT_VARIANT_MAP[variant].borderMode}

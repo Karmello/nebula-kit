@@ -11,8 +11,8 @@ export const Title = ({
   typography = DEFAULT_TITLE_TYPOGRAPHY,
   iconPlacement = DEFAULT_TITLE_ICON_PLACEMENT,
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent,
   // Text
@@ -36,10 +36,10 @@ export const Title = ({
   const isPlainText = typeof children === 'string' || typeof children === 'number'
 
   return (
-    <Box tag="span" tagAttrs={tagAttrs} tagRef={tagRef} color={color} intent={intent}>
+    <Box elemTag="span" elemAttrs={elemAttrs} elemRef={elemRef} color={color} intent={intent}>
       <Box
         display="flex"
-        tag="span"
+        elemTag="span"
         flexDirection="row"
         flexWrap="nowrap"
         alignItems="center"

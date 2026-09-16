@@ -24,11 +24,11 @@ export const PORTAL_PROPS: Record<keyof PortalProps, DocProp> = {
     defaultValue: DEFAULT_PORTAL_PLACEMENT,
     description: 'Defines the position of the portal content relative to the anchor element.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

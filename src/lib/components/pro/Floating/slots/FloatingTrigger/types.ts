@@ -13,6 +13,6 @@ export type FloatingTriggerProps = {
 }
 
 export type FloatingTriggerInternalProps = {
-  tagRef?: BoxProps<'span'>['tagRef']
-  tagAttrs?: BoxProps<'span'>['tagAttrs']
+  elemRef?: BoxProps<'span'>['elemRef']
+  elemAttrs?: BoxProps<'span'>['elemAttrs']
 }

@@ -67,7 +67,7 @@ export const PropsViewer = ({ handleSideVisibility }: { handleSideVisibility: ()
                   </Table.Cell>
                   <Table.Cell>
                     <Text
-                      tagAttrs={{ style: { wordBreak: 'break-all', textAlign: 'center' } }}
+                      elemAttrs={{ style: { wordBreak: 'break-all', textAlign: 'center' } }}
                       bold={components[activeComponent].activeProp === propName}
                     >
                       {propValue}

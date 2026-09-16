@@ -6,12 +6,12 @@ test('Theme remaps palette steps for light and dark modes', async ({ mount, page
   await mount(
     <>
       <StylingIsland theme="light">
-        <Box tagAttrs={{ id: 'light-neutral' }} intent="neutral" />
-        <Box tagAttrs={{ id: 'light-strong' }} intent="strong" />
+        <Box elemAttrs={{ id: 'light-neutral' }} intent="neutral" />
+        <Box elemAttrs={{ id: 'light-strong' }} intent="strong" />
       </StylingIsland>
       <StylingIsland theme="dark">
-        <Box tagAttrs={{ id: 'dark-neutral' }} intent="neutral" />
-        <Box tagAttrs={{ id: 'dark-strong' }} intent="strong" />
+        <Box elemAttrs={{ id: 'dark-neutral' }} intent="neutral" />
+        <Box elemAttrs={{ id: 'dark-strong' }} intent="strong" />
       </StylingIsland>
     </>
   )

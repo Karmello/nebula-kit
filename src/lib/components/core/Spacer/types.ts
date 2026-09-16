@@ -1,7 +1,7 @@
 import type { BoxProps } from '../Box'
 
 export type SpacerProps = {
-  tagAttrs?: BoxProps<'div'>['tagAttrs']
-  tagRef?: BoxProps<'div'>['tagRef']
+  elemAttrs?: BoxProps<'div'>['elemAttrs']
+  elemRef?: BoxProps<'div'>['elemRef']
   blockSize?: BoxProps<'div'>['blockSize']
 }

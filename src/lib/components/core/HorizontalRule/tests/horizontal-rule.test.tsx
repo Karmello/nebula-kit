@@ -5,7 +5,7 @@ import { HorizontalRule } from '..'
 
 describe('<HorizontalRule />', () => {
   it('renders as hr', () => {
-    render(<HorizontalRule tagAttrs={{ 'data-testid': 'elem' }} />)
+    render(<HorizontalRule elemAttrs={{ 'data-testid': 'elem' }} />)
     const el = screen.getByTestId('elem')
     expect(el).toBeInTheDocument()
     expect(el.tagName.toLowerCase()).toBe('hr')

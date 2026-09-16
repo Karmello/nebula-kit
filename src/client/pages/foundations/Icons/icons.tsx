@@ -21,7 +21,7 @@ export default () => {
         {Object.keys(ICONS).map(iconName => (
           <Tooltip key={iconName} content={iconName} minInlineSize={0} maxInlineSize={300}>
             <Box
-              tagAttrs={{ style: { lineHeight: 0 } }}
+              elemAttrs={{ style: { lineHeight: 0 } }}
               drawable
               borderMode="filled"
               intent="tertiary"

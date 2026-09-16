@@ -11,7 +11,7 @@ export type AppFrameFooterProps = {
   color?: BoxColor
   intent?: BoxIntent
   // Box
-  tagAttrs?: BoxProps<'footer'>['tagAttrs']
-  tagRef?: BoxProps<'footer'>['tagRef']
+  elemAttrs?: BoxProps<'footer'>['elemAttrs']
+  elemRef?: BoxProps<'footer'>['elemRef']
   children: BoxProps<'footer'>['children']
 }

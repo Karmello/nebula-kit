@@ -19,7 +19,7 @@ const SnackbarWrapper = ({
 
   return (
     <Button
-      tagAttrs={{
+      elemAttrs={{
         onClick: () => {
           show({ status, content, heading, placement })
         },

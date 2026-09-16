@@ -13,8 +13,8 @@ export type CheckboxProps = {
   defaultChecked?: boolean
   onChange?: (checked: boolean) => void
   // Box
-  tagAttrs?: BoxProps<'input'>['tagAttrs']
-  tagRef?: BoxProps<'input'>['tagRef']
+  elemAttrs?: BoxProps<'input'>['elemAttrs']
+  elemRef?: BoxProps<'input'>['elemRef']
   intent?: BoxProps<'input'>['intent']
   color?: BoxProps<'input'>['color']
   disabled?: BoxProps<'input'>['disabled']

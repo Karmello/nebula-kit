@@ -6,7 +6,7 @@ export default () => {
       <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           When you see a NebulaKit component rendered on the screen, you can be certain that the
-          <Text tag="span" bold space="both">
+          <Text elemTag="span" bold space="both">
             Box
           </Text>
           component is doing the work under the hood. Every visible surface is drawn through this
@@ -14,7 +14,7 @@ export default () => {
           component and resolved in one place.
         </Text>
         <Text>
-          <Text tag="span" bold space="end">
+          <Text elemTag="span" bold space="end">
             Box
           </Text>
           acts like a rectangle on a canvas. It is a single, unified mechanism responsible for

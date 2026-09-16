@@ -35,16 +35,16 @@ export const MARKER_LIST_PROPS: Record<keyof MarkerListProps, DocProp> = {
     isResponsive: false,
     description: 'Defines the marker style used for list items.',
   },
-  tag: {
+  elemTag: {
     options: MARKER_LIST_TAGS,
     defaultValue: 'ul',
     description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

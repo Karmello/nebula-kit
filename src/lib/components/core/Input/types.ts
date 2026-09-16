@@ -18,8 +18,8 @@ export type InputProps = {
   maxLength?: number
   autoComplete?: InputHTMLAttributes<HTMLInputElement>['autoComplete']
   // Box
-  tagAttrs?: BoxProps<'input'>['tagAttrs']
-  tagRef?: BoxProps<'input'>['tagRef']
+  elemAttrs?: BoxProps<'input'>['elemAttrs']
+  elemRef?: BoxProps<'input'>['elemRef']
   onFocus?: BoxProps<'input'>['onFocus']
   onBlur?: BoxProps<'input'>['onBlur']
   variant?: InputVariant

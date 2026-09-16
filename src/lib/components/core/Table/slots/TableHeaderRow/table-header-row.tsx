@@ -10,8 +10,8 @@ import { TableHeaderRowProps } from './types'
 export const TableHeaderRow = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent,
   textAlign,
@@ -37,10 +37,10 @@ export const TableHeaderRow = ({
       }}
     >
       <Box
-        tag="tr"
-        className={classNames(withPrefix('table-header-row'), tagAttrs?.className)}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="tr"
+        className={classNames(withPrefix('table-header-row'), elemAttrs?.className)}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
       >
         {slots.slotsByName['Table.HeaderCell']}
       </Box>

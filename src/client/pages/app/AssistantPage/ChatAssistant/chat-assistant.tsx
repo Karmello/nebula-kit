@@ -95,14 +95,14 @@ export const ChatAssistant = () => {
       <Box blockSize="calc(100% - 50px)" display="flex" flexDirection="column">
         <Box flex="1" overflowY="hidden">
           <Chat
-            tagRef={chatScrollingAreaRef}
+            elemRef={chatScrollingAreaRef}
             chatHistory={chatHistory}
             handleQuestionClick={handleQuestionClick}
           />
         </Box>
         <Prompt
-          tagRef={textareaRef}
-          tagAttrs={{
+          elemRef={textareaRef}
+          elemAttrs={{
             style: {
               overflow:
                 textareaRef.current?.scrollHeight > PROMPT_MAX_HEIGHT_PX ? 'visible' : 'hidden',

@@ -9,8 +9,8 @@ export type IconProps = {
   name?: IconName
   size?: string
   // Box
-  tagAttrs?: BoxProps<'span'>['tagAttrs']
-  tagRef?: BoxProps<'span'>['tagRef']
+  elemAttrs?: BoxProps<'span'>['elemAttrs']
+  elemRef?: BoxProps<'span'>['elemRef']
   intent?: BoxProps<'span'>['intent']
   color?: BoxProps<'span'>['color']
   children?: BoxProps<'span'>['children']

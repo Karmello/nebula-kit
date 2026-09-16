@@ -17,7 +17,7 @@ const Item = ({
 }) => {
   return (
     <Box
-      tag="button"
+      elemTag="button"
       onClick={onClick}
       display="flex"
       justifyContent="space-between"

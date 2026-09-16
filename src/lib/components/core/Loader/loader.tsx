@@ -11,8 +11,8 @@ import './loader.scss'
 
 export const Loader = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   // own
   active = DEFAULT_LOADER_ACTIVE,
@@ -25,16 +25,16 @@ export const Loader = ({
 
   return (
     <Box
-      tag="span"
-      className={classNames(withPrefix('loader'), tagAttrs?.className || '')}
-      tagAttrs={{
-        ...tagAttrs,
+      elemTag="span"
+      className={classNames(withPrefix('loader'), elemAttrs?.className || '')}
+      elemAttrs={{
+        ...elemAttrs,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           '--neb-loader-color': color ? 'var(--color-primary)' : 'var(--neb-text)',
         } as CSSProperties,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       blockSize={size}
       inlineSize={size}

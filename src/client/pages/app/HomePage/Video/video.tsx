@@ -5,8 +5,8 @@ export const Video = () => {
     <Box maxInlineSize="700px" margin={{ base: '0 auto', lg: NEB_LENGTH.px_000 }}>
       <Spacer blockSize={NEB_LENGTH.px_048} />
       <Box
-        tag="iframe"
-        tagAttrs={{
+        elemTag="iframe"
+        elemAttrs={{
           src: 'https://www.youtube-nocookie.com/embed/WBTCswhSz6g?list=PLucbUGAh96p7hH87OY-C50iiCA7LAv_Ci',
           title: 'Responsive UI, driven by props',
           allow:

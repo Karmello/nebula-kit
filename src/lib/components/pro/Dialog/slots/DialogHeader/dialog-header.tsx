@@ -6,15 +6,15 @@ import { DialogHeaderProps } from './types'
 export const DialogHeader = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
 }: DialogHeaderProps) => {
   const { intent, padding } = useDialogContext()
 
   return (
     <Box
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       borderMode="tinted"
       intent={intent}

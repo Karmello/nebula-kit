@@ -22,7 +22,7 @@ const SlideWrapper = ({ from }: { from: UseSlideFrom }) => {
   useSlide({ ref, from, visible, duration: 1000 })
 
   return (
-    <Box tagRef={ref} display="inline-block">
+    <Box elemRef={ref} display="inline-block">
       <Text>Animated content.</Text>
     </Box>
   )
@@ -37,7 +37,7 @@ export const USE_SLIDE_EXAMPLES: DocExample[] = [
 useSlide({ ref, from: 'left', visible, duration: 1000 })
 
 return (
-  <Box tagRef={ref} display="inline-block">
+  <Box elemRef={ref} display="inline-block">
     <Text>Animated content.</Text>
   </Box>
 )`,
@@ -57,7 +57,7 @@ return (
 useSlide({ ref, from: 'right', visible, duration: 1000 })
 
 return (
-  <Box tagRef={ref} display="inline-block">
+  <Box elemRef={ref} display="inline-block">
     <Text>Animated content.</Text>
   </Box>
 )`,
@@ -75,7 +75,7 @@ return (
 useSlide({ ref, from: 'top', visible, duration: 1000 })
 
 return (
-  <Box tagRef={ref} display="inline-block">
+  <Box elemRef={ref} display="inline-block">
     <Text>Animated content.</Text>
   </Box>
 )`,

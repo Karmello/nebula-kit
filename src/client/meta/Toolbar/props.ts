@@ -17,11 +17,11 @@ export const TOOLBAR_PROPS: Record<keyof ToolbarProps, DocProp> = {
     description:
       'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

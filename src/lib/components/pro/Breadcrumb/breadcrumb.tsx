@@ -84,7 +84,7 @@ const BreadcrumbLevel = ({
     >
       <Floating.Trigger display="block">
         <Box
-          tag="button"
+          elemTag="button"
           cursor="pointer"
           interactive
           intent="primary"
@@ -142,13 +142,13 @@ const BreadcrumbLevel = ({
                   return (
                     <Box
                       key={node.value}
-                      tag="button"
-                      tagRef={isSelected ? selectedItemRef : undefined}
+                      elemTag="button"
+                      elemRef={isSelected ? selectedItemRef : undefined}
                       onClick={() => {
                         onSelect(node.value)
                         setOpen(false)
                       }}
-                      tagAttrs={{
+                      elemAttrs={{
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"
@@ -203,10 +203,10 @@ const BreadcrumbLevel = ({
 }
 
 export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
-  // HtmlTag
-  tag,
-  tagAttrs,
-  tagRef,
+  // HtmlElem
+  elemTag,
+  elemAttrs,
+  elemRef,
   // own
   color,
   intent = DEFAULT_BREADCRUMB_INTENT,
@@ -245,7 +245,7 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   const levels = convertTreeToLevels(tree, currentPath)
 
   return (
-    <Box tag={tag} tagAttrs={tagAttrs} tagRef={tagRef} overflowX="auto">
+    <Box elemTag={elemTag} elemAttrs={elemAttrs} elemRef={elemRef} overflowX="auto">
       <Box display="flex" gap="8px" alignItems="center">
         {levels.slice(0, currentPath.length + 1).map((level, index) => {
           return (

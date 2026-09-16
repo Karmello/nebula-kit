@@ -26,21 +26,21 @@ export const Text = <T extends TextTag = 'p'>({
   space,
   // Box
   children,
-  tag,
-  tagAttrs,
-  tagRef,
+  elemTag,
+  elemAttrs,
+  elemRef,
   ...boxProps
 }: TextProps<T>) => {
-  const resolvedTag = tag || TYPOGRAPHY_MAP[typography].tag
+  const resolvedTag = elemTag || TYPOGRAPHY_MAP[typography].tag
 
   return (
     <Box
-      tag={resolvedTag}
-      tagRef={tagRef as any}
-      className={classNames(withPrefix('text'), tagAttrs?.className)}
-      tagAttrs={
+      elemTag={resolvedTag}
+      elemRef={elemRef as any}
+      className={classNames(withPrefix('text'), elemAttrs?.className)}
+      elemAttrs={
         {
-          ...tagAttrs,
+          ...elemAttrs,
           style: {
             fontSize: fontSize ?? TYPOGRAPHY_MAP[typography].fontSize,
             lineHeight: lineHeight ?? TYPOGRAPHY_MAP[typography].lineHeight,
@@ -54,7 +54,7 @@ export const Text = <T extends TextTag = 'p'>({
                   borderRadius: 0,
                 }
               : {}),
-            ...(tagAttrs?.style || {}),
+            ...(elemAttrs?.style || {}),
           },
           ...buildStaticDataset('Text', { typography, bold, italic, underline, noWrap, truncate }),
         } as PropsWithoutRef<ComponentProps<T>>

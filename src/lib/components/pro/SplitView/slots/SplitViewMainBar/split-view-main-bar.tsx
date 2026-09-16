@@ -2,9 +2,9 @@ import { Box } from 'lib/components/core/Box'
 
 import { type SplitViewMainBarProps } from './types'
 
-export const SplitViewMainBar = ({ children, tagAttrs, tagRef }: SplitViewMainBarProps) => {
+export const SplitViewMainBar = ({ children, elemAttrs, elemRef }: SplitViewMainBarProps) => {
   return (
-    <Box tagRef={tagRef} tagAttrs={tagAttrs} inlineSize="100%">
+    <Box elemRef={elemRef} elemAttrs={elemAttrs} inlineSize="100%">
       {children}
     </Box>
   )

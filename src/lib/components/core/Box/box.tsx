@@ -9,7 +9,7 @@ import {
 } from 'react'
 import classNames from 'classnames'
 
-import { HtmlTag } from 'lib/components/core/HtmlTag'
+import { HtmlElem } from 'lib/components/core/HtmlElem'
 import { withPrefix } from 'lib/helpers'
 import { useScreen } from 'lib/hooks'
 import { buildStaticDataset, syncRespDataset, syncRespStyle } from 'lib/internals/dom'
@@ -29,9 +29,9 @@ import './styles/box.scss'
 
 export const Box = <T extends ElementType = 'div'>({
   children,
-  tag,
-  tagAttrs,
-  tagRef,
+  elemTag,
+  elemAttrs,
+  elemRef,
   className,
   onClick,
   onFocus,
@@ -127,7 +127,7 @@ export const Box = <T extends ElementType = 'div'>({
   justifySelf,
 }: BoxProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-  const finalRef = tagRef || ref
+  const finalRef = elemRef || ref
 
   const { bp } = useScreen()
 
@@ -208,7 +208,7 @@ export const Box = <T extends ElementType = 'div'>({
     })
   }, [
     bp,
-    tag,
+    elemTag,
     opacity,
     visibility,
     aspectRatio,
@@ -284,24 +284,24 @@ export const Box = <T extends ElementType = 'div'>({
       theme: resolvedAppearance.theme,
       flexDirection,
     })
-  }, [bp, tag, resolvedAppearance.theme, flexDirection])
+  }, [bp, elemTag, resolvedAppearance.theme, flexDirection])
 
   const usesRipple = ripple && interactive && !disabled
   useRipple(finalRef, usesRipple)
 
   return (
-    <HtmlTag
-      tag={tag}
-      className={classNames(withPrefix('box'), className, tagAttrs?.className)}
+    <HtmlElem
+      elemTag={elemTag}
+      className={classNames(withPrefix('box'), className, elemAttrs?.className)}
       onClick={onClick}
       onFocus={onFocus}
       onBlur={onBlur}
       onKeyDown={onKeyDown}
-      tagAttrs={
+      elemAttrs={
         {
-          ...tagAttrs,
+          ...elemAttrs,
           style: {
-            ...tagAttrs?.style,
+            ...elemAttrs?.style,
             ...(pointerEvents !== undefined ? { pointerEvents } : {}),
             ...(cursor !== undefined ? { cursor } : {}),
             ...(zIndex !== undefined ? { zIndex } : {}),
@@ -325,10 +325,10 @@ export const Box = <T extends ElementType = 'div'>({
           }),
         } as PropsWithoutRef<ComponentProps<T>>
       }
-      tagRef={finalRef}
+      elemRef={finalRef}
     >
       {children}
-    </HtmlTag>
+    </HtmlElem>
   )
 }
 

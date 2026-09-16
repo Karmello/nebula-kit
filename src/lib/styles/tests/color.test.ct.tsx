@@ -5,7 +5,7 @@ import { Box } from 'lib/components'
 test('Box color prop overrides resolved brand color', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'box' }}
+      elemAttrs={{ id: 'box' }}
       drawable
       bgMode="filled"
       intent="primary"
@@ -51,7 +51,7 @@ test('Box color prop overrides resolved brand color', async ({ mount, page }) =>
 test('Child Box color overrides parent color', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'parent' }}
+      elemAttrs={{ id: 'parent' }}
       drawable
       bgMode="filled"
       intent="primary"
@@ -60,7 +60,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
       padding="16px"
     >
       <Box
-        tagAttrs={{ id: 'child' }}
+        elemAttrs={{ id: 'child' }}
         drawable
         bgMode="filled"
         intent="primary"
@@ -112,7 +112,7 @@ test('Child Box color overrides parent color', async ({ mount, page }) => {
 test('Parent color does not leak into child Box without color', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'parent' }}
+      elemAttrs={{ id: 'parent' }}
       drawable
       bgMode="filled"
       intent="primary"
@@ -120,7 +120,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+      <Box elemAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -168,7 +168,7 @@ test('Parent color does not leak into child Box without color', async ({ mount, 
 test('Color does not inherit to child Box', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'parent' }}
+      elemAttrs={{ id: 'parent' }}
       drawable
       bgMode="filled"
       intent="primary"
@@ -176,7 +176,7 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+      <Box elemAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>,
@@ -232,7 +232,7 @@ test('Color does not inherit to child Box', async ({ mount, page }) => {
 test('Explicit color overrides brand', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'box' }}
+      elemAttrs={{ id: 'box' }}
       drawable
       bgMode="filled"
       intent="primary"

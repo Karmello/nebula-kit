@@ -19,7 +19,7 @@ const RotateWrapper = () => {
   useRotate({ ref, angle })
 
   return (
-    <Text tag="span" tagRef={ref}>
+    <Text elemTag="span" elemRef={ref}>
       Text
     </Text>
   )
@@ -34,7 +34,7 @@ export const USE_ROTATE_EXAMPLES: DocExample[] = [
 useRotate({ ref, angle })
 
 return (
-  <Text tag="span" tagRef={ref}>
+  <Text elemTag="span" elemRef={ref}>
     Text
   </Text>
 )`,

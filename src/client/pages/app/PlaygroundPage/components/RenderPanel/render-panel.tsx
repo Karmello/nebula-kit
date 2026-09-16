@@ -28,7 +28,7 @@ export const RenderPanel = () => {
       </Title>
       <Spacer blockSize={NEB_LENGTH.px_004} />
       <Box
-        tagAttrs={{ style: { borderStyle: 'dashed' } }}
+        elemAttrs={{ style: { borderStyle: 'dashed' } }}
         drawable
         bgMode="tinted"
         borderMode="filled"

@@ -33,9 +33,9 @@ export const Button = <T extends ButtonTag = 'button'>({
   onClick,
   iconPlacement = DEFAULT_BUTTON_ICON_PLACEMENT,
   // Box
-  tag = 'button' as T,
-  tagAttrs,
-  tagRef,
+  elemTag = 'button' as T,
+  elemAttrs,
+  elemRef,
   variant = DEFAULT_BUTTON_VARIANT,
   color,
   intent = DEFAULT_BUTTON_INTENT,
@@ -53,7 +53,7 @@ export const Button = <T extends ButtonTag = 'button'>({
   customSvgIcon,
 }: ButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-  const finalRef = tagRef || ref
+  const finalRef = elemRef || ref
 
   const { bp } = useScreen()
 
@@ -68,17 +68,17 @@ export const Button = <T extends ButtonTag = 'button'>({
   )
 
   return (
-    <Box tag="span" position="relative" display="inline">
+    <Box elemTag="span" position="relative" display="inline">
       <Box
-        tag={tag}
-        className={classNames(withPrefix('button'), tagAttrs?.className)}
-        onClick={onClick || tagAttrs?.onClick}
-        tagAttrs={{
-          ...tagAttrs,
-          ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
+        elemTag={elemTag}
+        className={classNames(withPrefix('button'), elemAttrs?.className)}
+        onClick={onClick || elemAttrs?.onClick}
+        elemAttrs={{
+          ...elemAttrs,
+          ...(elemTag === 'button' ? { type: elemAttrs?.type || 'button' } : {}),
           'aria-disabled': disabled || undefined,
         }}
-        tagRef={finalRef}
+        elemRef={finalRef}
         bgMode={BUTTON_VARIANT_MAP[variant].bgMode}
         borderMode={BUTTON_VARIANT_MAP[variant].borderMode}
         textMode={BUTTON_VARIANT_MAP[variant].textMode}
@@ -97,8 +97,8 @@ export const Button = <T extends ButtonTag = 'button'>({
         cursor="pointer"
       >
         <Box
-          tag="span"
-          tagAttrs={{
+          elemTag="span"
+          elemAttrs={{
             style: { inlineSize: '100%' },
           }}
           display="flex"
@@ -110,7 +110,7 @@ export const Button = <T extends ButtonTag = 'button'>({
         >
           {iconPlacement === 'left' ? icon : null}
           <Text
-            tag="span"
+            elemTag="span"
             fontSize={CONTROL_SCALE_MAP[scale].fontSize}
             lineHeight={CONTROL_SCALE_MAP[scale].lineHeight}
             bold={bold}

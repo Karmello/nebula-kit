@@ -10,6 +10,6 @@ export const LINK_OVERVIEW: DocOverview = {
     'merge mode avoids invalid nested interactive elements by taking over the child tag',
     'supports href and target for standard link behavior',
   ],
-  composedOf: ['HtmlTag'],
+  composedOf: ['HtmlElem'],
   exposedTags: ['a'],
 }

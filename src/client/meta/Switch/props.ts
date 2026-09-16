@@ -39,11 +39,11 @@ export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
     defaultValue: DEFAULT_SWITCH_SCALE,
     description: 'Controls overall proportions.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

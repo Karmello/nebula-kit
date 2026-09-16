@@ -13,8 +13,8 @@ export const DEFAULT_RESIZE_DURATION: ResizeProps['duration'] = 200
 export const DEFAULT_RESIZE_EASING: ResizeProps['easing'] = 'linear'
 
 export const Resize = ({
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   children,
   property,
   visible,
@@ -24,7 +24,7 @@ export const Resize = ({
   const containerRef = useRef<HTMLDivElement>(null)
   const contentRef = useRef<HTMLDivElement>(null)
 
-  const finalRef = tagRef || containerRef
+  const finalRef = elemRef || containerRef
 
   const sizes = useRef<MeasuredSizes>({ blockSize: '', inlineSize: '' })
 
@@ -69,18 +69,18 @@ export const Resize = ({
 
   return (
     <Box
-      tagAttrs={{
-        ...tagAttrs,
+      elemAttrs={{
+        ...elemAttrs,
         inert: !visible,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           ...transitionStyle,
         },
       }}
-      tagRef={finalRef}
+      elemRef={finalRef}
       overflow="hidden"
     >
-      <Box tagRef={contentRef}>{children}</Box>
+      <Box elemRef={contentRef}>{children}</Box>
     </Box>
   )
 }

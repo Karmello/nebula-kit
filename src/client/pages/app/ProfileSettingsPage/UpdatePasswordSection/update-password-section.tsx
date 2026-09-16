@@ -66,7 +66,7 @@ export const UpdatePasswordSection = () => {
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Box maxInlineSize={{ md: '350px' }}>
         <FormProvider {...form}>
-          <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
+          <Box elemTag="form" elemAttrs={{ onSubmit: handleSubmit }}>
             <Controller
               name="currentPassword"
               control={form.control}
@@ -144,7 +144,7 @@ export const UpdatePasswordSection = () => {
             <Box display="flex">
               <Box flex={{ base: '1', md: '0' }}>
                 <Button
-                  tagAttrs={{ type: 'submit' }}
+                  elemAttrs={{ type: 'submit' }}
                   fullWidth
                   color="blue"
                   intent="primary"

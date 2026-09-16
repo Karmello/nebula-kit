@@ -6,15 +6,15 @@ import { ChatHistory } from '../../definitions'
 import { AssistantMessage, UserMessage } from './components'
 
 type ChatProps = {
-  tagRef: RefObject<HTMLDivElement>
+  elemRef: RefObject<HTMLDivElement>
   chatHistory: ChatHistory
   handleQuestionClick: (question: string) => void
 }
 
-export const Chat = ({ tagRef, chatHistory, handleQuestionClick }: ChatProps) => {
+export const Chat = ({ elemRef, chatHistory, handleQuestionClick }: ChatProps) => {
   return (
     <Box
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       borderMode="filled"
       intent="muted"

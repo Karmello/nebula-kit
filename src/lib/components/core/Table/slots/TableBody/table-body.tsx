@@ -10,8 +10,8 @@ import { TableBodyProps } from './types'
 
 export const TableBody = ({
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_TABLE_BODY_INTENT,
   paddingBlock,
@@ -39,10 +39,10 @@ export const TableBody = ({
       }}
     >
       <Box
-        tag="tbody"
-        className={classNames(withPrefix('table-body'), tagAttrs?.className)}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="tbody"
+        className={classNames(withPrefix('table-body'), elemAttrs?.className)}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
       >
         {slots.slotsByName['Table.Row']}
       </Box>

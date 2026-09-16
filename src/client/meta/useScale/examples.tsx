@@ -13,7 +13,7 @@ const Example1 = () => {
   return (
     <>
       <Button onClick={() => setVisible(value => !value)}>Toggle scale</Button>
-      <Box tagRef={ref} display="inline-block">
+      <Box elemRef={ref} display="inline-block">
         <Box drawable bgMode="filled" intent="primary" padding="24px">
           Scaled content
         </Box>
@@ -31,7 +31,7 @@ export const USE_SCALE_EXAMPLES: DocExample[] = [
 useScale({ ref, visible })
 
 return (
-  <Box tagRef={ref} display="inline-block">
+  <Box elemRef={ref} display="inline-block">
     <Box drawable bgMode="filled" intent="primary" padding="24px">
       Scaled content
     </Box>

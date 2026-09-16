@@ -30,7 +30,7 @@ export const ConnectToGithubSection = ({
       <Spacer blockSize={NEB_LENGTH.px_024} />
       <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
         <Button
-          tagAttrs={{
+          elemAttrs={{
             onClick: async () => {
               const res = await connectToGithub.sendRequest()
               if (res.ok) {

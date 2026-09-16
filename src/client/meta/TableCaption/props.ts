@@ -31,11 +31,11 @@ export const TABLE_CAPTION_PROPS: Record<keyof TableCaptionProps, DocProp> = {
     link: true,
     description: 'Padding for the left and right sides.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

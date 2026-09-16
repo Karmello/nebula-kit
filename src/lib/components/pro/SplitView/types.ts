@@ -18,7 +18,7 @@ export type SplitViewProps = {
   sidePosition?: SplitViewSidePosition
   switchAt?: SwitchBreakpoint
   // Box
-  tagAttrs?: BoxProps<'div'>['tagAttrs']
-  tagRef?: BoxProps<'div'>['tagRef']
+  elemAttrs?: BoxProps<'div'>['elemAttrs']
+  elemRef?: BoxProps<'div'>['elemRef']
   children: BoxProps<'div'>['children'] | ((args: ChildrenAsFuncArgs) => JSX.Element)
 }

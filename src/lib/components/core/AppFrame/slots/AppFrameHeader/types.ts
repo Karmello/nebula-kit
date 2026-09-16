@@ -6,8 +6,8 @@ export type AppFrameHeaderProps = {
   color?: BoxColor
   intent?: BoxIntent
   // Box
-  tagAttrs?: BoxProps<'header'>['tagAttrs']
-  tagRef?: BoxProps<'header'>['tagRef']
+  elemAttrs?: BoxProps<'header'>['elemAttrs']
+  elemRef?: BoxProps<'header'>['elemRef']
   children: BoxProps<'header'>['children']
 }
 

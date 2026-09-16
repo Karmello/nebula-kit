@@ -10,8 +10,8 @@ import { SplitViewMainProps } from './types'
 export const SplitViewMain = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   padding,
   paddingInline,
   paddingBlock,
@@ -34,9 +34,9 @@ export const SplitViewMain = ({
 
   return (
     <Box
-      tag="section"
-      tagRef={tagRef}
-      tagAttrs={tagAttrs}
+      elemTag="section"
+      elemRef={elemRef}
+      elemAttrs={elemAttrs}
       padding={padding}
       paddingInline={paddingInline}
       paddingBlock={paddingBlock}
@@ -55,14 +55,14 @@ export const SplitViewMain = ({
       >
         <Box>
           <IconButton
-            tagAttrs={{ 'aria-expanded': sideOpen }}
+            elemAttrs={{ 'aria-expanded': sideOpen }}
             iconName={getToggleIconName(sidePosition, sideOpen)}
             intent="tertiary"
             scale="xs"
             onClick={() => setSideOpen(!sideOpen)}
           />
         </Box>
-        <Box flex="1" tagAttrs={{ style: { minInlineSize: '0px' } }}>
+        <Box flex="1" elemAttrs={{ style: { minInlineSize: '0px' } }}>
           {slotsByName['SplitView.MainBar']}
         </Box>
       </Box>

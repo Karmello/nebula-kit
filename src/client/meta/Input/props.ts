@@ -11,12 +11,12 @@ import type { DocProp } from 'client/definitions'
 
 export const INPUT_PROPS: Record<keyof InputProps, DocProp> = {
   // base
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
     group: 'base',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
     group: 'base',

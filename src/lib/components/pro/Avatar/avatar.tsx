@@ -18,8 +18,8 @@ import { AvatarProps } from './types'
 
 export const Avatar = ({
   // Image
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   src,
   alt,
   title,
@@ -102,8 +102,8 @@ export const Avatar = ({
 
   return (
     <Box
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       bgMode="filled"
       intent="tertiary"
@@ -116,7 +116,7 @@ export const Avatar = ({
     >
       {fetchStatus !== 'error' ? (
         <Image
-          tagRef={imgRef}
+          elemRef={imgRef}
           src={src}
           alt={alt}
           title={title}

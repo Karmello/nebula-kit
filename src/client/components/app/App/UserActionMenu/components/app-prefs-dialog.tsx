@@ -45,7 +45,7 @@ export const AppPrefsDialog = () => {
               <Button
                 intent={theme === 'light' ? 'strong' : 'tertiary'}
                 scale="xs"
-                tagAttrs={{
+                elemAttrs={{
                   onClick: () => setTheme('light'),
                   style: {
                     borderTopRightRadius: NEB_LENGTH.px_000,
@@ -58,7 +58,7 @@ export const AppPrefsDialog = () => {
               <Button
                 intent={theme === 'dark' ? 'strong' : 'tertiary'}
                 scale="xs"
-                tagAttrs={{
+                elemAttrs={{
                   onClick: () => setTheme('dark'),
                   style: {
                     borderTopLeftRadius: NEB_LENGTH.px_000,
@@ -77,7 +77,7 @@ export const AppPrefsDialog = () => {
               <Button
                 intent={ripple ? 'strong' : 'tertiary'}
                 scale="xs"
-                tagAttrs={{
+                elemAttrs={{
                   onClick: () => setRipple(true),
                   style: {
                     borderTopRightRadius: NEB_LENGTH.px_000,
@@ -90,7 +90,7 @@ export const AppPrefsDialog = () => {
               <Button
                 intent={!ripple ? 'strong' : 'tertiary'}
                 scale="xs"
-                tagAttrs={{
+                elemAttrs={{
                   onClick: () => setRipple(false),
                   style: {
                     borderTopLeftRadius: NEB_LENGTH.px_000,

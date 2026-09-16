@@ -81,11 +81,11 @@ export const TEXT_EXAMPLES: DocExample[] = [
     jsx: (
       <Text>
         This paragraph combines different text styles like
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           bold emphasis
         </Text>
         and
-        <Text tag="span" italic space="both">
+        <Text elemTag="span" italic space="both">
           italic highlights
         </Text>
         within the same line to demonstrate how inline formatting behaves in longer text blocks.

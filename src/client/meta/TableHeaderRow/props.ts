@@ -17,11 +17,11 @@ export const TABLE_HEADER_ROW_PROPS: Record<keyof TableHeaderRowProps, DocProp> 
     options: BOX_INTENTS,
     description: 'Color tone applied to every cell.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

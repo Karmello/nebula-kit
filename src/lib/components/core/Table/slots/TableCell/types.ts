@@ -5,8 +5,8 @@ export type TableCellProps = {
   colSpan?: number
   rowSpan?: number
   // Box
-  tagAttrs?: BoxProps<'td'>['tagAttrs']
-  tagRef?: BoxProps<'td'>['tagRef']
+  elemAttrs?: BoxProps<'td'>['elemAttrs']
+  elemRef?: BoxProps<'td'>['elemRef']
   minInlineSize?: BoxProps<'td'>['minInlineSize']
   maxInlineSize?: BoxProps<'td'>['maxInlineSize']
   blockSize?: BoxProps<'td'>['blockSize']

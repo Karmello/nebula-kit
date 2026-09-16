@@ -74,8 +74,8 @@ export const UpdateEmailSection = () => {
       <Box maxInlineSize={{ md: '500px' }}>
         <FormProvider {...form}>
           <Box
-            tag="form"
-            tagAttrs={{ onSubmit: handleSubmit }}
+            elemTag="form"
+            elemAttrs={{ onSubmit: handleSubmit }}
             display="flex"
             flexDirection={{ base: 'column', md: 'row' }}
             flexWrap={{ md: 'wrap' }}
@@ -117,7 +117,7 @@ export const UpdateEmailSection = () => {
                         }}
                         disabled={isSubmitting}
                         placeholder="Enter email address"
-                        tagAttrs={{ autoComplete: 'off' }}
+                        elemAttrs={{ autoComplete: 'off' }}
                       />
                     </>
                   )
@@ -126,7 +126,7 @@ export const UpdateEmailSection = () => {
             </Box>
             <Box flex={{ base: '1', md: '0' }}>
               <Button
-                tagAttrs={{ type: 'submit' }}
+                elemAttrs={{ type: 'submit' }}
                 fullWidth
                 color="blue"
                 intent="primary"

@@ -18,8 +18,8 @@ import './checkbox.scss'
 
 export const Checkbox = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_CHECKBOX_INTENT,
   disabled,
@@ -42,9 +42,9 @@ export const Checkbox = ({
 
   return (
     <Box
-      className={classNames(withPrefix('checkbox'), tagAttrs?.className)}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      className={classNames(withPrefix('checkbox'), elemAttrs?.className)}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       textMode={CHECKBOX_VARIANT_MAP[variant].textMode}
       intent={intent}
@@ -54,8 +54,8 @@ export const Checkbox = ({
       borderWidth="0px"
     >
       <Box
-        tag="input"
-        tagAttrs={{
+        elemTag="input"
+        elemAttrs={{
           type: 'checkbox',
           ...(isControlled ? { checked: currentChecked } : { defaultChecked: currentChecked }),
           onChange: e => handleChange((e.target as HTMLInputElement).checked),

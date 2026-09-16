@@ -12,8 +12,8 @@ import { DEFAULT_SIDE_NAV_ITEM_ALIGN, DEFAULT_SIDE_NAV_ITEM_ICON_PLACEMENT } fro
 import { SideNavItemProps } from './types'
 
 export const SideNavItem = ({
-  tagRef,
-  tagAttrs,
+  elemRef,
+  elemAttrs,
   children,
   variant,
   color,
@@ -51,8 +51,8 @@ export const SideNavItem = ({
   return (
     <Link href={href} onClick={onClick}>
       <Box
-        tag="button"
-        tagRef={tagRef}
+        elemTag="button"
+        elemRef={elemRef}
         interactive
         display="flex"
         alignItems="center"
@@ -61,9 +61,9 @@ export const SideNavItem = ({
         }
         cursor="pointer"
         columnGap={CONTROL_SCALE_MAP[scale].gap}
-        className={classNames(withPrefix('side-nav-item'), tagAttrs?.className || '')}
-        tagAttrs={{
-          ...tagAttrs,
+        className={classNames(withPrefix('side-nav-item'), elemAttrs?.className || '')}
+        elemAttrs={{
+          ...elemAttrs,
           tabIndex: expandedCategories[categoryId] === false ? -1 : undefined,
           'aria-expanded': expandedCategories[categoryId],
         }}

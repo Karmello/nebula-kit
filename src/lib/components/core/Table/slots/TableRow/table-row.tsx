@@ -12,8 +12,8 @@ import { TableRowProps } from './types'
 export const TableRow = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent,
   textAlign,
@@ -43,15 +43,15 @@ export const TableRow = ({
       }}
     >
       <Box
-        tag="tr"
-        className={classNames(withPrefix('table-row'), tagAttrs?.className)}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="tr"
+        className={classNames(withPrefix('table-row'), elemAttrs?.className)}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
       >
         {slots.allValidSlots.map((slot: any) => {
           if (slot.type.displayName === 'Table.HeaderCell') {
             return cloneElement<TableHeaderCellProps>(slot, {
-              tagAttrs: { ...slot.props.tagAttrs, scope: 'row' },
+              elemAttrs: { ...slot.props.elemAttrs, scope: 'row' },
             })
           } else {
             return slot

@@ -7,11 +7,11 @@ export const TOOLBAR_END_PROPS: Record<keyof ToolbarEndProps, DocProp> = {
     isRequired: true,
     description: 'Content rendered.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

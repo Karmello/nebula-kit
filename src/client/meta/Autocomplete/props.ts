@@ -76,7 +76,7 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

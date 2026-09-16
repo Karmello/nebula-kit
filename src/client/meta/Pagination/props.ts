@@ -68,11 +68,11 @@ export const PAGINATION_PROPS: Record<keyof PaginationProps, DocProp> = {
     defaultValue: String(DEFAULT_PAGINATION_SIBLING_COUNT),
     description: 'Number of page items shown adjacent to the current page.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

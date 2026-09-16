@@ -36,7 +36,7 @@ export const CodeSnippet = ({
       display="flex"
       flexDirection="column"
       alignItems="stretch"
-      tagAttrs={{
+      elemAttrs={{
         style: {
           borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
         },
@@ -45,7 +45,7 @@ export const CodeSnippet = ({
       <Box
         drawable
         bgMode="filled"
-        tagAttrs={{
+        elemAttrs={{
           style: {
             backgroundColor: fullBg ? 'var(--color-muted)' : undefined,
           },
@@ -59,7 +59,7 @@ export const CodeSnippet = ({
                   <Text
                     bold={boldDescription}
                     intent="neutral"
-                    tagAttrs={{ style: { lineHeight: 1.25 } }}
+                    elemAttrs={{ style: { lineHeight: 1.25 } }}
                   >
                     {description}
                   </Text>
@@ -70,7 +70,7 @@ export const CodeSnippet = ({
           <CopyButton text={code} />
         </Box>
         <Box
-          tagAttrs={{
+          elemAttrs={{
             style: {
               borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
               backgroundColor: 'var(--color-muted)',
@@ -81,9 +81,9 @@ export const CodeSnippet = ({
           drawable
           bgMode="filled"
         >
-          <Box display="flex" tag="pre">
+          <Box display="flex" elemTag="pre">
             <Box
-              tag="code"
+              elemTag="code"
               paddingInline={NEB_LENGTH.px_016}
               paddingBlock={fullBg ? '0px' : '16px'}
               paddingBottom={NEB_LENGTH.px_016}
@@ -92,14 +92,14 @@ export const CodeSnippet = ({
                 const isEmpty = token.length === 0
 
                 return (
-                  <Box key={i} tag="span" tagAttrs={{ style: { display: 'block' } }}>
+                  <Box key={i} elemTag="span" elemAttrs={{ style: { display: 'block' } }}>
                     {isEmpty
                       ? ' '
                       : token.map(({ content, color }, j) => (
                           <Text
                             key={j}
-                            tag="span"
-                            tagAttrs={{
+                            elemTag="span"
+                            elemAttrs={{
                               style: {
                                 display: 'inline',
                                 color,

@@ -4,7 +4,7 @@ export type AppFrameProps = {
   // own
   stickyHeader?: boolean
   // Box
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   children: BoxProps['children']
 }

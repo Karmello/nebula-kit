@@ -21,7 +21,7 @@ const FadeWrapper = () => {
   useFade({ ref, visible, duration: 1000 })
 
   return (
-    <Box tagRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
+    <Box elemRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
       Fade content
     </Box>
   )
@@ -36,7 +36,7 @@ export const USE_FADE_EXAMPLES: DocExample[] = [
 useFade({ ref, visible })
 
 return (
-  <Box tagRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
+  <Box elemRef={ref} drawable borderMode="filled" intent="primary" padding="20px">
     Fade content
   </Box>
 )`,

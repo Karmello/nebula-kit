@@ -72,7 +72,7 @@ export const RecoveryPage = () => {
         </Title>
         <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
         <FormProvider {...form}>
-          <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
+          <Box elemTag="form" elemAttrs={{ onSubmit: handleSubmit }}>
             {!token ? (
               <Controller
                 name="email"
@@ -106,7 +106,7 @@ export const RecoveryPage = () => {
                           field.onBlur()
                         }}
                         disabled={isSubmitting}
-                        tagAttrs={{ autoComplete: 'off' }}
+                        elemAttrs={{ autoComplete: 'off' }}
                         placeholder="Enter email address"
                       />
                     </>
@@ -155,7 +155,7 @@ export const RecoveryPage = () => {
             <Box display="flex">
               <Box flex={{ base: '1', lg: '0' }}>
                 <Button
-                  tagAttrs={{ type: 'submit' }}
+                  elemAttrs={{ type: 'submit' }}
                   fullWidth
                   color="blue"
                   intent="primary"

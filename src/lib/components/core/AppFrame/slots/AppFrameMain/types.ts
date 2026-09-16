@@ -1,8 +1,8 @@
 import type { BoxProps } from '../../../Box/types'
 
 export type AppFrameMainProps = {
-  tagAttrs?: BoxProps<'main'>['tagAttrs']
-  tagRef?: BoxProps<'main'>['tagRef']
+  elemAttrs?: BoxProps<'main'>['elemAttrs']
+  elemRef?: BoxProps<'main'>['elemRef']
   padding?: BoxProps<'main'>['padding']
   paddingInline?: BoxProps<'main'>['paddingInline']
   paddingBlock?: BoxProps<'main'>['paddingBlock']

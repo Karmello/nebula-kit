@@ -13,9 +13,9 @@ import './marker-list.scss'
 export const MarkerList = <T extends MarkerListTag = 'ul'>({
   // Flex
   children,
-  tag,
-  tagAttrs,
-  tagRef,
+  elemTag,
+  elemAttrs,
+  elemRef,
   gap = DEFAULT_MARKER_LIST_GAP,
   // Box
   color,
@@ -35,18 +35,18 @@ export const MarkerList = <T extends MarkerListTag = 'ul'>({
     <MarkerListProvider color={color} intent={intent}>
       <Box
         display="flex"
-        tag={tag || 'ul'}
-        className={classNames(withPrefix('marker-list'), tagAttrs?.className)}
-        tagAttrs={{
-          ...tagAttrs,
+        elemTag={elemTag || 'ul'}
+        className={classNames(withPrefix('marker-list'), elemAttrs?.className)}
+        elemAttrs={{
+          ...elemAttrs,
           style: {
-            ...tagAttrs?.style,
+            ...elemAttrs?.style,
             listStyle,
             listStylePosition: 'outside',
           },
           role: 'list',
         }}
-        tagRef={tagRef}
+        elemRef={elemRef}
         flexDirection="column"
         gap={gap}
       >

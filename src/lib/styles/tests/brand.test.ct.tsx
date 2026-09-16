@@ -5,7 +5,7 @@ import { Box, StylingIsland } from 'lib/components'
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'parent' }}
+      elemAttrs={{ id: 'parent' }}
       drawable
       bgMode="filled"
       intent="primary"
@@ -13,7 +13,13 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       padding="16px"
     >
       <StylingIsland brand="green">
-        <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+        <Box
+          elemAttrs={{ id: 'child' }}
+          drawable
+          bgMode="filled"
+          intent="primary"
+          blockSize="100px"
+        >
           Child
         </Box>
       </StylingIsland>
@@ -71,14 +77,20 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
   await mount(
     <StylingIsland brand="green">
       <Box
-        tagAttrs={{ id: 'parent' }}
+        elemAttrs={{ id: 'parent' }}
         drawable
         bgMode="filled"
         intent="primary"
         blockSize="200px"
         padding="16px"
       >
-        <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+        <Box
+          elemAttrs={{ id: 'child' }}
+          drawable
+          bgMode="filled"
+          intent="primary"
+          blockSize="100px"
+        >
           Child
         </Box>
       </Box>
@@ -126,7 +138,7 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
   await mount(
     <StylingIsland theme="dark">
       <Box
-        tagAttrs={{ id: 'dark-parent' }}
+        elemAttrs={{ id: 'dark-parent' }}
         drawable
         bgMode="filled"
         intent="primary"
@@ -135,7 +147,7 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       >
         <StylingIsland theme="light">
           <Box
-            tagAttrs={{ id: 'light-child' }}
+            elemAttrs={{ id: 'light-child' }}
             drawable
             bgMode="filled"
             intent="primary"

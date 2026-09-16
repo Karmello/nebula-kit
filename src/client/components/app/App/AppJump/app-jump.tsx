@@ -84,7 +84,7 @@ export const AppJump = () => {
     return (
       <Autocomplete
         key={String(showAppJump)}
-        tagRef={autocompleteRef}
+        elemRef={autocompleteRef}
         intent="neutral"
         onChange={value => {
           setShowAppJump(false)
@@ -102,7 +102,7 @@ export const AppJump = () => {
           return (
             <Autocomplete.Option key={href} value={href} label={href}>
               <Title iconName={iconName}>
-                <Text tag="span" tagAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>
+                <Text elemTag="span" elemAttrs={{ style: { whiteSpace: 'wrap', lineHeight: 1.1 } }}>
                   {label}
                 </Text>
               </Title>

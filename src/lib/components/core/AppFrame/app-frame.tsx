@@ -5,7 +5,7 @@ import { useSlots } from 'lib/hooks'
 
 import { type AppFrameProps } from './types'
 
-export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: AppFrameProps) => {
+export const AppFrame = ({ children, elemAttrs, elemRef, stickyHeader = false }: AppFrameProps) => {
   const slots = useSlots<'AppFrame.Header' | 'AppFrame.Main' | 'AppFrame.Footer'>({
     componentName: 'AppFrame',
     slotsConfig: [
@@ -25,11 +25,11 @@ export const AppFrame = ({ children, tagAttrs, tagRef, stickyHeader = false }: A
   return (
     <Box
       display="grid"
-      tagRef={tagRef}
-      tagAttrs={{
-        ...tagAttrs,
+      elemRef={elemRef}
+      elemAttrs={{
+        ...elemAttrs,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           minInlineSize: '100%',
           minBlockSize: '100dvh',
         },

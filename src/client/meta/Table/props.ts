@@ -63,11 +63,11 @@ export const TABLE_PROPS: Record<keyof TableProps, DocProp> = {
     link: true,
     defaultValue: DEFAULT_TABLE_PADDING_INLINE as never,
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

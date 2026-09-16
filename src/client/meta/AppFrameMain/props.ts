@@ -49,11 +49,11 @@ export const APP_FRAME_MAIN_PROPS: Record<keyof AppFrameMainProps, DocProp> = {
     description: 'Padding for the top side.',
     link: true,
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

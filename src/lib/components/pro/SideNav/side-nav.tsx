@@ -18,8 +18,8 @@ import './side-nav.scss'
 export const SideNav = ({
   // Flex
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   gap = DEFAULT_SIDE_NAV_GAP,
   color,
   intent,
@@ -53,10 +53,10 @@ export const SideNav = ({
     >
       <Box
         display="flex"
-        tag="nav"
-        className={classNames(withPrefix('side-nav'), tagAttrs?.className || '')}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="nav"
+        className={classNames(withPrefix('side-nav'), elemAttrs?.className || '')}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
         flexDirection="column"
         gap={gap}
       >

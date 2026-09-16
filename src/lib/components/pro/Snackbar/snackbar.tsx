@@ -50,7 +50,7 @@ export const Snackbar = ({
       autoCloseDelay={autoCloseDelay}
       closeOnOutsideClick={closeOnOutsideClick}
     >
-      <Box display="flex" tagRef={rootRef} justifyContent="center">
+      <Box display="flex" elemRef={rootRef} justifyContent="center">
         <Box
           position="fixed"
           top={finalPlacement.includes('top') ? '0px' : 'unset'}
@@ -60,7 +60,7 @@ export const Snackbar = ({
           pointerEvents={!visible ? 'none' : undefined}
           zIndex="var(--neb-z-snackbar)"
         >
-          <Box tagRef={slideRef} display="inline-block">
+          <Box elemRef={slideRef} display="inline-block">
             <Box
               key={snackbar?.status}
               position="relative"

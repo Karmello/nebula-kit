@@ -77,7 +77,7 @@ export const PatternsPage = () => {
                 >
                   <Box flex="1">
                     <Box
-                      tagAttrs={{ style: { borderStyle: 'dashed' } }}
+                      elemAttrs={{ style: { borderStyle: 'dashed' } }}
                       drawable
                       borderMode="filled"
                       intent="tertiary"

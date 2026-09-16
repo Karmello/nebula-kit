@@ -34,8 +34,8 @@ export type ImageProps = {
   onLoad?: (e: SyntheticEvent<HTMLImageElement>) => void
   onError?: (e: SyntheticEvent<HTMLImageElement>) => void
   // Box
-  tagAttrs?: BoxProps<'img'>['tagAttrs']
-  tagRef?: BoxProps<'img'>['tagRef']
+  elemAttrs?: BoxProps<'img'>['elemAttrs']
+  elemRef?: BoxProps<'img'>['elemRef']
   inlineSize?: BoxProps<'img'>['inlineSize']
   minInlineSize?: BoxProps<'img'>['minInlineSize']
   maxInlineSize?: BoxProps<'img'>['maxInlineSize']

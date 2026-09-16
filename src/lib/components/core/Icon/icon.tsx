@@ -12,8 +12,8 @@ export const Icon = memo(
   ({
     // Box
     children,
-    tagAttrs,
-    tagRef,
+    elemAttrs,
+    elemRef,
     intent,
     color,
     // own
@@ -26,14 +26,14 @@ export const Icon = memo(
 
     return (
       <Box
-        tag="span"
-        tagRef={tagRef}
-        className={classNames(withPrefix('icon'), tagAttrs?.className)}
-        tagAttrs={{
-          ...tagAttrs,
+        elemTag="span"
+        elemRef={elemRef}
+        className={classNames(withPrefix('icon'), elemAttrs?.className)}
+        elemAttrs={{
+          ...elemAttrs,
           style: {
             lineHeight: 0,
-            ...tagAttrs?.style,
+            ...elemAttrs?.style,
           },
         }}
         drawable

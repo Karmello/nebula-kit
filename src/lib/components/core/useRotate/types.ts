@@ -1,7 +1,7 @@
-import { type HtmlTagProps } from '../HtmlTag/types'
+import { type HtmlElemProps } from '../HtmlElem/types'
 
 export type UseRotateArgs = {
-  ref: HtmlTagProps<any>['tagRef']
+  ref: HtmlElemProps<any>['elemRef']
   angle: number
   duration?: number
   easing?: string

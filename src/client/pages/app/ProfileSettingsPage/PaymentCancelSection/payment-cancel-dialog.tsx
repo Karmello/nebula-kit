@@ -24,14 +24,14 @@ export const PaymentCancelDialog = ({
       </Dialog.Header>
       <Dialog.Content>
         Are you sure you want to cancel the subscription for
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           {userEmail}
         </Text>
         ? This action takes effect immediately.
       </Dialog.Content>
       <Dialog.Footer>
         <Button
-          tagAttrs={{
+          elemAttrs={{
             onClick: async () => {
               const res = await cancelPaidPlan.sendRequest()
               handleClose()

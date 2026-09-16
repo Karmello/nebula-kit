@@ -4,10 +4,10 @@ type DataAttrs = {
   [K in `data-${string}`]?: unknown
 }
 
-export type HtmlTagProps<T extends ElementType = 'div'> = {
-  tag?: T
-  tagAttrs?: ComponentPropsWithoutRef<T> & DataAttrs
-  tagRef?: RefObject<ComponentRef<T> | null>
+export type HtmlElemProps<T extends ElementType = 'div'> = {
+  elemTag?: T
+  elemAttrs?: ComponentPropsWithoutRef<T> & DataAttrs
+  elemRef?: RefObject<ComponentRef<T> | null>
   className?: string
   onClick?: ComponentPropsWithoutRef<T>['onClick']
   onFocus?: ComponentPropsWithoutRef<T>['onFocus']

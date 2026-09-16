@@ -74,9 +74,9 @@ export const SelectImpl = ({
     >
       <Floating.Trigger display="block" inlineSize={inlineSize}>
         <Box
-          tag="button"
-          tagRef={triggerRef}
-          tagAttrs={{
+          elemTag="button"
+          elemRef={triggerRef}
+          elemAttrs={{
             style: {
               userSelect: 'none',
             },
@@ -150,12 +150,12 @@ export const SelectImpl = ({
                   return (
                     <Box
                       key={key}
-                      tag="button"
+                      elemTag="button"
                       onClick={() => {
                         setCurrentValue(slot.props.value)
                         setOpen(false)
                       }}
-                      tagAttrs={{
+                      elemAttrs={{
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"

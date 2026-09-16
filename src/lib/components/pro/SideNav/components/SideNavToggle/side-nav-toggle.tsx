@@ -18,7 +18,7 @@ export const SideNavToggle = () => {
     <>
       <Box padding="10px">
         <IconButton
-          tagAttrs={{
+          elemAttrs={{
             'aria-expanded': isAnyCategoryExpanded,
           }}
           iconName={isAnyCategoryExpanded ? 'list-chevrons-down-up' : 'list-chevrons-up-down'}

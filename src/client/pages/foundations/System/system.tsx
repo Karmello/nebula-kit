@@ -5,7 +5,7 @@ export default () => {
     <Box maxInlineSize="55rem">
       <Text>
         NebulaKit is a system where
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           components
         </Text>
         are built from multiple layers. This page shows how those layers fit together at a high

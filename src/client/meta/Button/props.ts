@@ -22,18 +22,18 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description: 'Label rendered.',
     group: 'base',
   },
-  tag: {
+  elemTag: {
     options: BUTTON_TAGS,
     defaultValue: 'button',
     description: 'The HTML tag to be rendered as the container.',
     group: 'base',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
     group: 'base',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
     group: 'base',

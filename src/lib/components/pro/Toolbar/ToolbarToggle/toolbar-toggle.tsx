@@ -9,7 +9,7 @@ export const ToolbarToggle = () => {
   return (
     <Box display={{ [String(switchAt)]: 'none' }}>
       <IconButton
-        tagAttrs={{
+        elemAttrs={{
           'aria-expanded': isSwitchAtHit || mainOpen,
         }}
         variant="ghost"

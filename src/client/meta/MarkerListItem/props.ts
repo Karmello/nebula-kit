@@ -16,11 +16,11 @@ export const MARKER_LIST_ITEM_PROPS: Record<keyof MarkerListItemProps, DocProp> 
     options: BOX_INTENTS,
     description: 'Color tone applied to each item individually.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

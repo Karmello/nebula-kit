@@ -25,7 +25,7 @@ type AutocompleteMainProps = Omit<
 }
 
 export const AutocompleteMain = ({
-  tagRef,
+  elemRef,
   // own
   color,
   scale,
@@ -54,7 +54,7 @@ export const AutocompleteMain = ({
   const [placement, setPlacement] = useState<FloatingProps['placement']>('bottom-start')
 
   const internalRef = useRef<HTMLDivElement | null>(null)
-  const triggerRef = tagRef || internalRef
+  const triggerRef = elemRef || internalRef
 
   const triggerWidth = triggerRef.current?.offsetWidth
   const isOpenDownwards = placement?.startsWith('bottom')
@@ -128,7 +128,7 @@ export const AutocompleteMain = ({
     >
       <Floating.Trigger display="block">
         <Box
-          tagRef={triggerRef}
+          elemRef={triggerRef}
           display="flex"
           inlineSize={inlineSize}
           disabled={disabled}
@@ -141,7 +141,7 @@ export const AutocompleteMain = ({
             }}
           >
             <Input
-              tagAttrs={{
+              elemAttrs={{
                 style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 },
               }}
               value={inputValue}
@@ -160,7 +160,7 @@ export const AutocompleteMain = ({
           </Box>
           {showToggle ? (
             <IconButton
-              tagAttrs={{
+              elemAttrs={{
                 onFocus: (e: { stopPropagation: () => void }) => {
                   e.stopPropagation()
                 },
@@ -199,7 +199,7 @@ export const AutocompleteMain = ({
                 <Box
                   display="flex"
                   alignItems="center"
-                  tagAttrs={{
+                  elemAttrs={{
                     style: {
                       blockSize: CONTROL_SCALE_MAP[scale].blockSize,
                       paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
@@ -224,7 +224,7 @@ export const AutocompleteMain = ({
                         />
                       ) : null}
                       <Box
-                        tag="button"
+                        elemTag="button"
                         onClick={() => {
                           setInputValue(slotProps.label)
                           setQueryValue(slotProps.label)
@@ -244,7 +244,7 @@ export const AutocompleteMain = ({
                       >
                         <Box
                           display="flex"
-                          tagAttrs={{
+                          elemAttrs={{
                             style: {
                               blockSize: CONTROL_SCALE_MAP[scale].blockSize,
                               paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,

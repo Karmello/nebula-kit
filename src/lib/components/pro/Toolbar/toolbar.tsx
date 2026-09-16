@@ -13,7 +13,7 @@ import { ToolbarProps } from './types'
 
 import './toolbar.scss'
 
-const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
+const ToolbarComponent = ({ children, elemAttrs, elemRef }: ToolbarProps) => {
   const { mainOpen, setMainOpen } = useToolbarContext()
 
   const setMainOpenAsync = useCallback(
@@ -47,10 +47,10 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
   return (
     <Box
       display="grid"
-      tag="nav"
-      className={classNames(withPrefix('toolbar'), tagAttrs?.className)}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="nav"
+      className={classNames(withPrefix('toolbar'), elemAttrs?.className)}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       gridTemplateColumns="auto auto 1fr auto"
       gridAutoFlow="row"
     >
@@ -64,13 +64,13 @@ const ToolbarComponent = ({ children, tagAttrs, tagRef }: ToolbarProps) => {
 
 export const Toolbar = ({
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   switchAt = DEFAULT_SWITCH_BREAKPOINT,
 }: ToolbarProps) => {
   return (
     <ToolbarProvider switchAt={switchAt}>
-      <ToolbarComponent tagAttrs={tagAttrs} tagRef={tagRef} switchAt={switchAt}>
+      <ToolbarComponent elemAttrs={elemAttrs} elemRef={elemRef} switchAt={switchAt}>
         {children}
       </ToolbarComponent>
     </ToolbarProvider>

@@ -8,9 +8,9 @@ export type MarkerListProps<T extends MarkerListTag = 'ul'> = {
   // own
   listStyle?: MarkerListStyle
   // Box
-  tag?: BoxProps<T>['tag']
-  tagAttrs?: BoxProps<T>['tagAttrs']
-  tagRef?: BoxProps<T>['tagRef']
+  elemTag?: BoxProps<T>['elemTag']
+  elemAttrs?: BoxProps<T>['elemAttrs']
+  elemRef?: BoxProps<T>['elemRef']
   children?: BoxProps<T>['children']
   gap?: BoxProps<T>['gap']
   color?: BoxProps<T>['color']

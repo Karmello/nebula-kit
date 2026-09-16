@@ -6,11 +6,11 @@ import { MarkupProps } from './types'
 export const Markup = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
 }: MarkupProps) => {
   return (
-    <Box tag="div" tagAttrs={tagAttrs} tagRef={tagRef}>
+    <Box elemTag="div" elemAttrs={elemAttrs} elemRef={elemRef}>
       {transformChildren(children)}
     </Box>
   )

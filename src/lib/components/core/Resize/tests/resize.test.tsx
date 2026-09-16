@@ -7,7 +7,7 @@ describe('<Resize />', () => {
   describe('basic rendering', () => {
     it('renders as <div> by default', () => {
       render(
-        <Resize property="blockSize" visible={false} tagAttrs={{ 'data-testid': 'elem' }}>
+        <Resize property="blockSize" visible={false} elemAttrs={{ 'data-testid': 'elem' }}>
           children
         </Resize>
       )

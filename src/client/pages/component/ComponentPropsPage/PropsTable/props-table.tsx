@@ -123,7 +123,7 @@ export const PropsTable = ({ data, category }: Props) => {
                         >
                           <Text>
                             {visibleOptions}
-                            <Text tag="span" noWrap>
+                            <Text elemTag="span" noWrap>
                               {' '}
                               . . .
                             </Text>
@@ -134,7 +134,7 @@ export const PropsTable = ({ data, category }: Props) => {
                       )}
                     </Table.Cell>
 
-                    <Table.Cell tagAttrs={{ style: { whiteSpace: 'nowrap' } }}>
+                    <Table.Cell elemAttrs={{ style: { whiteSpace: 'nowrap' } }}>
                       <Text textAlign="center">
                         {defaultValue !== undefined ? defaultValue : '-'}
                       </Text>

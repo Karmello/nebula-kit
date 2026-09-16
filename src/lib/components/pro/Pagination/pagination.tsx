@@ -21,8 +21,8 @@ import { PaginationProps } from './types'
 
 export const Pagination = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   disabled,
   intent = DEFAULT_PAGINATION_INTENT,
@@ -74,9 +74,9 @@ export const Pagination = ({
 
   return (
     <Box
-      tag="nav"
-      tagAttrs={{ 'aria-label': 'Pagination', ...tagAttrs }}
-      tagRef={tagRef}
+      elemTag="nav"
+      elemAttrs={{ 'aria-label': 'Pagination', ...elemAttrs }}
+      elemRef={elemRef}
       display="flex"
       flexDirection="row"
       flexWrap="nowrap"
@@ -95,14 +95,14 @@ export const Pagination = ({
         }) => {
           const control = (
             <Box
-              tag="button"
+              elemTag="button"
               interactive
               display="flex"
               justifyContent="center"
               alignItems="center"
               cursor="pointer"
               onClick={() => handleChange(item.page)}
-              tagAttrs={{
+              elemAttrs={{
                 type: 'button',
                 'aria-current': active ? 'page' : undefined,
               }}
@@ -151,7 +151,7 @@ export const Pagination = ({
           >
             {item.type === 'ellipsis' && (
               <Box
-                tagAttrs={{ 'aria-hidden': true }}
+                elemAttrs={{ 'aria-hidden': true }}
                 drawable
                 // variant={variant}
                 intent={intent}
@@ -162,7 +162,7 @@ export const Pagination = ({
               >
                 <Box
                   display="flex"
-                  tagAttrs={{ style: { blockSize: 'inherit' } }}
+                  elemAttrs={{ style: { blockSize: 'inherit' } }}
                   alignItems="center"
                 >
                   <Icon name="ellipsis" />

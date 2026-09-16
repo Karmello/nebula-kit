@@ -20,11 +20,11 @@ export const APP_FRAME_HEADER_PROPS: Record<keyof AppFrameHeaderProps, DocProp> 
     description: "Color tone applied to the component's main color.",
     isResponsive: false,
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

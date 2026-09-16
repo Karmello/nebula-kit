@@ -1,7 +1,7 @@
-import { type HtmlTagProps } from 'lib/components/core/HtmlTag/types'
+import { type HtmlElemProps } from 'lib/components/core/HtmlElem/types'
 
 export type UseFadeArgs = {
-  ref: HtmlTagProps<any>['tagRef']
+  ref: HtmlElemProps<any>['elemRef']
   visible: boolean
   duration?: number
   easing?: string

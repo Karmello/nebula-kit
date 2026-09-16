@@ -4,7 +4,7 @@ import { Portal } from 'lib/components/pro/Portal'
 import { FloatingContentInternalProps, FloatingContentProps } from './types'
 
 export const FloatingContent = ({ children, ...internalProps }: FloatingContentProps) => {
-  const { tagRef, tagAttrs, internalOpen, setInternalOpen } =
+  const { elemRef, elemAttrs, internalOpen, setInternalOpen } =
     internalProps as FloatingContentInternalProps
 
   if (!internalOpen) return null
@@ -12,15 +12,15 @@ export const FloatingContent = ({ children, ...internalProps }: FloatingContentP
   return (
     <Portal>
       <Box
-        tag="span"
-        tagRef={tagRef}
+        elemTag="span"
+        elemRef={elemRef}
         onKeyDown={e => {
           if (e.key === 'Esc' || e.key === 'Tab') {
             e.preventDefault()
             setInternalOpen(false)
           }
         }}
-        tagAttrs={tagAttrs}
+        elemAttrs={elemAttrs}
       >
         {children}
       </Box>

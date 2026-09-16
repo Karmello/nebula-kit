@@ -6,15 +6,15 @@ import { DialogContentProps } from './types'
 export const DialogContent = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
 }: DialogContentProps) => {
   const { intent, padding } = useDialogContext()
 
   return (
     <Box
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       intent={intent}
       paddingInline={padding}

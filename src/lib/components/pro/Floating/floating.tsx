@@ -114,12 +114,12 @@ export const Floating = ({
   return (
     <>
       {cloneElement(triggerSlot as any, {
-        tagRef: triggerRef,
-        tagAttrs: getReferenceProps(),
+        elemRef: triggerRef,
+        elemAttrs: getReferenceProps(),
       })}
       {cloneElement(contentSlot as any, {
-        tagRef: refs.setFloating as unknown as RefObject<HTMLSpanElement>,
-        tagAttrs: {
+        elemRef: refs.setFloating as unknown as RefObject<HTMLSpanElement>,
+        elemAttrs: {
           style: {
             ...floatingStyles,
           },

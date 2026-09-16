@@ -51,7 +51,7 @@ export const PricingPlanButton = ({ plan, activePlan, color }: PricingPlanButton
       if (activePlan === 'free') {
         return (
           <Button
-            tagAttrs={{
+            elemAttrs={{
               onClick: () => {
                 checkoutPaidPlan.sendRequest({ plan })
               },

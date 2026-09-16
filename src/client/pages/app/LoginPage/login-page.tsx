@@ -99,7 +99,7 @@ export const LoginPage = () => {
         </Title>
         <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
         <FormProvider {...form}>
-          <Box tag="form" tagAttrs={{ onSubmit: handleSubmit }}>
+          <Box elemTag="form" elemAttrs={{ onSubmit: handleSubmit }}>
             <Controller
               name="email"
               control={form.control}
@@ -177,7 +177,7 @@ export const LoginPage = () => {
             <Box display="flex">
               <Box flex={{ base: '1', lg: '0' }}>
                 <Button
-                  tagAttrs={{ type: 'submit' }}
+                  elemAttrs={{ type: 'submit' }}
                   fullWidth
                   color="blue"
                   intent="primary"

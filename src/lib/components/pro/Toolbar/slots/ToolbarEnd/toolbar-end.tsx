@@ -2,17 +2,17 @@ import { Box } from 'lib/components/core/Box'
 
 import type { ToolbarEndProps } from './types'
 
-export const ToolbarEnd = ({ children, tagAttrs, tagRef }: ToolbarEndProps) => {
+export const ToolbarEnd = ({ children, elemAttrs, elemRef }: ToolbarEndProps) => {
   return (
     <Box
-      tagAttrs={{
-        ...tagAttrs,
+      elemAttrs={{
+        ...elemAttrs,
         style: {
           minInlineSize: 0,
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
         },
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       gridRow="1 / 2"
       gridColumn="4 / 5"
       alignSelf="center"

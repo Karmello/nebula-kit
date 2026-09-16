@@ -21,8 +21,8 @@ import { SideNavCategoryProps } from './types'
 
 export const SideNavCategory = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   children,
   variant = DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
   color,
@@ -66,15 +66,15 @@ export const SideNavCategory = ({
 
   return (
     <Box
-      tag="ul"
-      className={classNames(withPrefix('side-nav-category'), tagAttrs?.className || '')}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="ul"
+      className={classNames(withPrefix('side-nav-category'), elemAttrs?.className || '')}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       inlineSize="100%"
     >
-      <Box tag="li">
+      <Box elemTag="li">
         <Box
-          tag="button"
+          elemTag="button"
           interactive
           display="flex"
           justifyContent={
@@ -93,7 +93,7 @@ export const SideNavCategory = ({
               )
             }
           }}
-          tagAttrs={{
+          elemAttrs={{
             type: 'button',
             'aria-expanded': expandedCategories[id],
           }}
@@ -117,12 +117,12 @@ export const SideNavCategory = ({
           </Text>
         </Box>
       </Box>
-      <Box tag="li">
+      <Box elemTag="li">
         <Resize property="blockSize" visible={expandedCategories[id]}>
           <Spacer blockSize={gap} />
-          <Box display="flex" tag="ul" flexDirection="column" gap={gap}>
+          <Box display="flex" elemTag="ul" flexDirection="column" gap={gap}>
             {slots.slotsByName['SideNav.Item'].map((slot, key) => (
-              <Box key={key} tag="li" inlineSize="100%">
+              <Box key={key} elemTag="li" inlineSize="100%">
                 {cloneElement(slot as any, { categoryId: id })}
               </Box>
             ))}

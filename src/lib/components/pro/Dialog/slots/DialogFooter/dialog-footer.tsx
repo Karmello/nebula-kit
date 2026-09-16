@@ -6,15 +6,15 @@ import { DialogFooterProps } from './types'
 export const DialogFooter = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
 }: DialogFooterProps) => {
   const { intent, padding } = useDialogContext()
 
   return (
     <Box
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       borderMode="tinted"
       intent={intent}

@@ -14,8 +14,8 @@ export type TabsProps = {
   scale?: TShirtSize
   stretch?: boolean
   // Box
-  tagRef?: BoxProps['tagRef']
-  tagAttrs?: BoxProps['tagAttrs']
+  elemRef?: BoxProps['elemRef']
+  elemAttrs?: BoxProps['elemAttrs']
   children: BoxProps['children']
   color?: BoxColor
   intent?: BoxIntent

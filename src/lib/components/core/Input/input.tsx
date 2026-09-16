@@ -12,8 +12,8 @@ import './input.scss'
 
 export const Input = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   onFocus,
   onBlur,
   variant = DEFAULT_INPUT_VARIANT,
@@ -42,14 +42,14 @@ export const Input = ({
 
   return (
     <Box
-      tag="input"
-      className={classNames(withPrefix('input'), tagAttrs?.className)}
+      elemTag="input"
+      className={classNames(withPrefix('input'), elemAttrs?.className)}
       onFocus={onFocus}
       onBlur={onBlur}
-      tagAttrs={{
-        ...tagAttrs,
+      elemAttrs={{
+        ...elemAttrs,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           fontSize: CONTROL_SCALE_MAP[scale].fontSize,
           lineHeight: CONTROL_SCALE_MAP[scale].lineHeight,
         },
@@ -62,7 +62,7 @@ export const Input = ({
         maxLength,
         autoComplete,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       bgMode="filled"
       color={color}
       intent={intent}

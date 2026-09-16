@@ -29,7 +29,7 @@ export const Image = ({
 }: ImageProps) => {
   const ref = useRef<HTMLImageElement>(null)
 
-  const finalRef = boxProps.tagRef || ref
+  const finalRef = boxProps.elemRef || ref
 
   const { bp } = useScreen()
 
@@ -39,10 +39,10 @@ export const Image = ({
 
   return (
     <Box
-      tag="img"
-      className={classNames(withPrefix('image'), boxProps.tagAttrs?.className)}
-      tagAttrs={{
-        ...boxProps.tagAttrs,
+      elemTag="img"
+      className={classNames(withPrefix('image'), boxProps.elemAttrs?.className)}
+      elemAttrs={{
+        ...boxProps.elemAttrs,
         src,
         alt,
         title,
@@ -55,7 +55,7 @@ export const Image = ({
         onError,
       }}
       {...boxProps}
-      tagRef={finalRef}
+      elemRef={finalRef}
     />
   )
 }

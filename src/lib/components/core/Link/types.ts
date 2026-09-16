@@ -1,6 +1,6 @@
 import { MouseEventHandler } from 'react'
 
-import { HtmlTagProps } from 'lib/components/core/HtmlTag'
+import { HtmlElemProps } from 'lib/components/core/HtmlElem'
 
 import { LINK_COMPOSE_MODES, LINK_TARGETS } from './constants'
 
@@ -13,6 +13,6 @@ export type LinkProps = {
   target?: LinkTarget
   onClick?: MouseEventHandler<HTMLAnchorElement>
   composeMode?: LinkComposeMode
-  // HtmlTag
-  children: HtmlTagProps<'a'>['children']
+  // HtmlElem
+  children: HtmlElemProps<'a'>['children']
 }

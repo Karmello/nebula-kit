@@ -14,11 +14,11 @@ export const APP_FRAME_PROPS: Record<keyof AppFrameProps, DocProp> = {
     isResponsive: false,
     description: 'Keeps the header fixed at the top of the viewport.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

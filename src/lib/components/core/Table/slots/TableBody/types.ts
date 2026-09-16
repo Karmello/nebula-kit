@@ -1,8 +1,8 @@
 import { BoxProps } from 'lib/components/core/Box'
 
 export type TableBodyProps = {
-  tagAttrs?: BoxProps<'tbody'>['tagAttrs']
-  tagRef?: BoxProps<'tbody'>['tagRef']
+  elemAttrs?: BoxProps<'tbody'>['elemAttrs']
+  elemRef?: BoxProps<'tbody'>['elemRef']
   color?: BoxProps<'tbody'>['color']
   intent?: BoxProps<'tbody'>['intent']
   paddingBlock?: BoxProps<'tbody'>['paddingBlock']

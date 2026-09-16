@@ -17,8 +17,8 @@ import './table.scss'
 
 export const Table = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   children,
   inlineSize,
   minInlineSize,
@@ -54,16 +54,16 @@ export const Table = ({
       maxInlineSize={maxInlineSize}
     >
       <Box
-        tag="table"
-        className={classNames(withPrefix('table'), tagAttrs?.className)}
-        tagAttrs={{
-          ...tagAttrs,
+        elemTag="table"
+        className={classNames(withPrefix('table'), elemAttrs?.className)}
+        elemAttrs={{
+          ...elemAttrs,
           style: {
             tableLayout: layout,
-            ...(tagAttrs?.style || {}),
+            ...(elemAttrs?.style || {}),
           },
         }}
-        tagRef={tagRef}
+        elemRef={elemRef}
         drawable
         bgMode="filled"
         color={color}

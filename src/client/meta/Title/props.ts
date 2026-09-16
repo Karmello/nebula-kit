@@ -38,11 +38,11 @@ export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
     options: BOX_INTENTS,
     description: "Color tone applied to the component's main color.",
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

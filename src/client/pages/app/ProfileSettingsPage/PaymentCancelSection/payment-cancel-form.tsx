@@ -44,7 +44,7 @@ export const PaymentCancelForm = ({
         <Box position="relative" blockSize={NEB_LENGTH.px_048}>
           <Box position="absolute">
             <Button
-              tagAttrs={{
+              elemAttrs={{
                 onClick: () => {
                   setEnableInput(true)
                 },
@@ -61,7 +61,7 @@ export const PaymentCancelForm = ({
             <Resize property="inlineSize" visible={enableInput}>
               <Box display="flex" inlineSize="400px" paddingRight={NEB_LENGTH.px_024}>
                 <IconButton
-                  tagAttrs={{
+                  elemAttrs={{
                     style: {
                       borderTopRightRadius: 0,
                       borderBottomRightRadius: 0,
@@ -78,7 +78,7 @@ export const PaymentCancelForm = ({
                 />
                 <Input
                   placeholder="Enter your email"
-                  tagAttrs={{
+                  elemAttrs={{
                     autoComplete: 'off',
                     style: {
                       borderRadius: 0,
@@ -96,7 +96,7 @@ export const PaymentCancelForm = ({
                   variant="solid"
                   intent="tertiary"
                   color="red"
-                  tagAttrs={{
+                  elemAttrs={{
                     onClick: () => {
                       setOpenDialog(true)
                     },

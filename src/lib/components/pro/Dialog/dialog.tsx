@@ -19,10 +19,10 @@ import { DialogProvider } from './providers/DialogProvider'
 import { type DialogProps } from './types'
 
 export const Dialog = ({
-  // HtmlTag
+  // HtmlElem
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   // own
   open,
   onClose,
@@ -37,7 +37,7 @@ export const Dialog = ({
   const theme = useCurrentTheme()
 
   useFocusTrap({
-    ref: tagRef || ref,
+    ref: elemRef || ref,
     active: open,
     onFocusEscape: onClose,
     disableEscapeOnOutsideClick: true,
@@ -88,7 +88,7 @@ export const Dialog = ({
           onClick={() => {
             if (closeOnBackdropClick) onClose?.()
           }}
-          tagAttrs={{
+          elemAttrs={{
             style: {
               backgroundColor:
                 theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
@@ -102,24 +102,24 @@ export const Dialog = ({
         >
           <Box
             display="flex"
-            tagAttrs={{
+            elemAttrs={{
               style: { blockSize: '100%', inlineSize: '100%' },
             }}
             justifyContent="center"
             alignItems="center"
           >
-            <Box tagRef={scaleRef} display="inline-block">
+            <Box elemRef={scaleRef} display="inline-block">
               <Box
-                tag="dialog"
+                elemTag="dialog"
                 onClick={e => {
                   e.stopPropagation()
                 }}
-                tagAttrs={{
-                  ...tagAttrs,
+                elemAttrs={{
+                  ...elemAttrs,
                   role: 'dialog',
                   'aria-modal': true,
                 }}
-                tagRef={tagRef || ref}
+                elemRef={elemRef || ref}
                 drawable
                 borderMode="filled"
                 maxInlineSize="95dvw"

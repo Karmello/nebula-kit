@@ -19,9 +19,9 @@ export type ButtonProps<T extends ButtonTag = 'button'> = {
   selected?: boolean
   iconPlacement?: ButtonIconPlacement
   // Box
-  tag?: BoxProps<T>['tag']
-  tagAttrs?: BoxProps<T>['tagAttrs']
-  tagRef?: BoxProps<T>['tagRef']
+  elemTag?: BoxProps<T>['elemTag']
+  elemAttrs?: BoxProps<T>['elemAttrs']
+  elemRef?: BoxProps<T>['elemRef']
   onClick?: BoxProps<T>['onClick']
   variant?: ButtonVariant
   color?: BoxProps<T>['color']

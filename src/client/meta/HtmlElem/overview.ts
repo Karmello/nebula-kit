@@ -1,6 +1,6 @@
 import type { DocOverview } from 'client/definitions'
 
-export const HTML_TAG_OVERVIEW: DocOverview = {
+export const HTML_ELEM_OVERVIEW: DocOverview = {
   bundle: 'core',
   title: 'Low-level component that renders an HTML tag.',
   features: [

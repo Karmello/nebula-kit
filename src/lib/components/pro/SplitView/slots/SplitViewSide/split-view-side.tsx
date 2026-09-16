@@ -17,8 +17,8 @@ import type { SplitViewSideProps } from './types'
 export const SplitViewSide = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_SPLIT_VIEW_SIDE_INTENT,
   inlineSize = DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE,
@@ -34,7 +34,7 @@ export const SplitViewSide = ({
   const { sideOpen, setSideOpen, sidePosition, mode, switchAt } = useSplitViewContext()
 
   const ref = useRef(null)
-  const finalRef = tagRef || ref
+  const finalRef = elemRef || ref
 
   useFocusTrap({
     ref: finalRef,
@@ -45,14 +45,14 @@ export const SplitViewSide = ({
   return (
     <StylingIsland theme={{ base: 'global-flipped', [switchAt || 'lg']: 'global' }}>
       <Box
-        tag="aside"
-        tagAttrs={{
-          ...tagAttrs,
+        elemTag="aside"
+        elemAttrs={{
+          ...elemAttrs,
           inert: !sideOpen,
           role: mode === 'overlay' ? 'dialog' : 'complementary',
           'aria-modal': mode === 'overlay' ? true : undefined,
         }}
-        tagRef={finalRef}
+        elemRef={finalRef}
         drawable
         borderMode="filled"
         borderRole="edge"

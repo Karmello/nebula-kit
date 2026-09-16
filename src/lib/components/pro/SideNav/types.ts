@@ -12,8 +12,8 @@ export type SideNavProps = {
   scale?: TShirtSize
   variant?: SideNavVariant
   // Box
-  tagAttrs?: BoxProps<'nav'>['tagAttrs']
-  tagRef?: BoxProps<'nav'>['tagRef']
+  elemAttrs?: BoxProps<'nav'>['elemAttrs']
+  elemRef?: BoxProps<'nav'>['elemRef']
   gap?: BoxProps<'nav'>['gap']
   color?: BoxProps<'nav'>['color']
   intent?: BoxProps<'nav'>['intent']

@@ -7,8 +7,8 @@ export type TableProps = {
   // own
   layout?: TableLayout
   // Box
-  tagAttrs?: BoxProps<'table'>['tagAttrs']
-  tagRef?: BoxProps<'table'>['tagRef']
+  elemAttrs?: BoxProps<'table'>['elemAttrs']
+  elemRef?: BoxProps<'table'>['elemRef']
   inlineSize?: BoxProps<'table'>['inlineSize']
   minInlineSize?: BoxProps<'table'>['minInlineSize']
   maxInlineSize?: BoxProps<'table'>['maxInlineSize']

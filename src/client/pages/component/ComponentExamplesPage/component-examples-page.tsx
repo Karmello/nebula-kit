@@ -48,7 +48,7 @@ const SingleExample = (
             drawable
             borderMode="filled"
             intent="tertiary"
-            tagAttrs={{ style: { borderStyle: 'dashed' } }}
+            elemAttrs={{ style: { borderStyle: 'dashed' } }}
           >
             <StylingIsland
               theme={

@@ -21,7 +21,7 @@ import { FLOATING_META } from './Floating'
 import { FLOATING_CONTENT_META } from './FloatingContent'
 import { FLOATING_TRIGGER_META } from './FloatingTrigger'
 import { HORIZONTAL_RULE_META } from './HorizontalRule'
-import { HTML_TAG_META } from './HtmlTag'
+import { HTML_ELEM_META } from './HtmlElem'
 import { ICON_META } from './Icon'
 import { ICON_BUTTON_META } from './IconButton'
 import { IMAGE_META } from './Image'
@@ -123,8 +123,8 @@ const META = {
   HorizontalRule: {
     HorizontalRule: HORIZONTAL_RULE_META,
   },
-  HtmlTag: {
-    HtmlTag: HTML_TAG_META,
+  HtmlElem: {
+    HtmlElem: HTML_ELEM_META,
   },
   IconButton: {
     IconButton: ICON_BUTTON_META,

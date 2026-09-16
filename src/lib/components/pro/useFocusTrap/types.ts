@@ -1,8 +1,8 @@
-import { type HtmlTagProps } from '../../core/HtmlTag/types'
+import { type HtmlElemProps } from '../../core/HtmlElem/types'
 
 export type UseFocusTrapArgs = {
   active: boolean
   onFocusEscape?: () => void
   disableEscapeOnOutsideClick?: boolean
-  ref: HtmlTagProps<any>['tagRef']
+  ref: HtmlElemProps<any>['elemRef']
 }

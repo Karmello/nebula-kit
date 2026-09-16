@@ -36,16 +36,16 @@ export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TSHIRT_SIZE,
   },
-  tag: {
+  elemTag: {
     options: BREADCRUMB_TAGS,
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

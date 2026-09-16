@@ -16,7 +16,7 @@ export const AppFrameFooterSection = ({
 
   return (
     <Box
-      tag="section"
+      elemTag="section"
       drawable
       intent={intent}
       color={color}

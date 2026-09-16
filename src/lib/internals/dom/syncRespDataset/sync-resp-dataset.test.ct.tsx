@@ -6,7 +6,7 @@ test('Box does not write semantic dataset attribute when prop is absent', async 
   mount,
   page,
 }) => {
-  await mount(<Box tagAttrs={{ id: 'box' }}>Test</Box>)
+  await mount(<Box elemAttrs={{ id: 'box' }}>Test</Box>)
 
   const box = page.locator('#box')
   await expect(box).not.toHaveAttribute('data-neb-box-intent')
@@ -14,7 +14,7 @@ test('Box does not write semantic dataset attribute when prop is absent', async 
 
 test('Box writes semantic dataset attribute to DOM', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} intent="primary">
+    <Box elemAttrs={{ id: 'box' }} intent="primary">
       Test
     </Box>
   )
@@ -30,7 +30,7 @@ test('responsive semantic dataset updates with breakpoint changes', async ({ mou
 
   await mount(
     <StylingIsland theme={{ base: 'light', md: 'dark' }}>
-      <Box tagAttrs={{ id: 'box' }}>Responsive</Box>
+      <Box elemAttrs={{ id: 'box' }}>Responsive</Box>
     </StylingIsland>
   )
 

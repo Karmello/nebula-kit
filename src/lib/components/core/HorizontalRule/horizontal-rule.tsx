@@ -11,8 +11,8 @@ import { HorizontalRuleProps } from './types'
 
 export const HorizontalRule = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   bgMode = DEFAULT_HORIZONTAL_RULE_BG_MODE,
   color,
   intent = DEFAULT_HORIZONTAL_RULE_INTENT,
@@ -23,9 +23,9 @@ export const HorizontalRule = ({
 }: HorizontalRuleProps) => {
   return (
     <Box
-      tag="hr"
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="hr"
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       bgMode={bgMode}
       surfaceDepth={surfaceDepth}

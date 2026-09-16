@@ -6,7 +6,7 @@ import { MarkerList } from '..'
 describe('<MarkerList />', () => {
   it('renders as ul by default', () => {
     render(
-      <MarkerList tagAttrs={{ 'data-testid': 'elem' }}>
+      <MarkerList elemAttrs={{ 'data-testid': 'elem' }}>
         <MarkerList.Item>Item</MarkerList.Item>
       </MarkerList>
     )

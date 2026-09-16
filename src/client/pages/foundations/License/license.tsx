@@ -71,7 +71,7 @@ export default () => {
           <MarkerList gap={NEB_LENGTH.px_008}>
             <MarkerList.Item>
               <Text>
-                <Text tag="span" bold space="end">
+                <Text elemTag="span" bold space="end">
                   Core
                 </Text>
                 - publicly available
@@ -79,10 +79,10 @@ export default () => {
             </MarkerList.Item>
             <MarkerList.Item>
               <Text>
-                <Text tag="span" bold space="end">
+                <Text elemTag="span" bold space="end">
                   Pro
                 </Text>
-                <Text tag="span" space="end">
+                <Text elemTag="span" space="end">
                   - includes additional components and features and requires an active subscription
                   and a valid license key, pricing details are available on
                 </Text>

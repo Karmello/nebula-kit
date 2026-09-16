@@ -1,7 +1,7 @@
 import { BoxProps } from 'lib/components/core/Box'
 
 export type ToolbarEndProps = {
-  tagAttrs?: BoxProps<'div'>['tagAttrs']
-  tagRef?: BoxProps<'div'>['tagRef']
+  elemAttrs?: BoxProps<'div'>['elemAttrs']
+  elemRef?: BoxProps<'div'>['elemRef']
   children: BoxProps<'div'>['children']
 }

@@ -4,15 +4,15 @@ import { type SpacerProps } from './types'
 
 export const Spacer = ({
   // Box
-  tagRef,
-  tagAttrs,
+  elemRef,
+  elemAttrs,
   blockSize = DEFAULT_SPACER_BLOCK_SIZE,
 }: SpacerProps) => {
   return (
     <Box
-      tagRef={tagRef}
-      tagAttrs={{
-        ...tagAttrs,
+      elemRef={elemRef}
+      elemAttrs={{
+        ...elemAttrs,
         role: 'presentation',
         'aria-hidden': 'true',
       }}

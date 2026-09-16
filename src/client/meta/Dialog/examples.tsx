@@ -15,7 +15,7 @@ const DialogWrapper = () => {
         <Dialog.Footer>Dialog footer</Dialog.Footer>
       </Dialog>
       <Button
-        tagAttrs={{
+        elemAttrs={{
           onClick: () => {
             setOpen(true)
           },

@@ -9,8 +9,8 @@ import { TableHeaderCellProps } from './types'
 export const TableHeaderCell = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   minInlineSize,
   maxInlineSize,
   blockSize,
@@ -25,14 +25,14 @@ export const TableHeaderCell = ({
 
   return (
     <Box
-      tag="th"
-      className={classNames(withPrefix('table-header-cell'), tagAttrs?.className)}
-      tagAttrs={{
-        ...tagAttrs,
+      elemTag="th"
+      className={classNames(withPrefix('table-header-cell'), elemAttrs?.className)}
+      elemAttrs={{
+        ...elemAttrs,
         colSpan,
         rowSpan,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       bgMode="filled"
       color={color || context.color}

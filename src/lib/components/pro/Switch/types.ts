@@ -12,8 +12,8 @@ export type SwitchProps = {
   onChange?: (checked: boolean) => void
   scale?: TShirtSize
   // Box
-  tagAttrs?: BoxProps['tagAttrs']
-  tagRef?: BoxProps['tagRef']
+  elemAttrs?: BoxProps['elemAttrs']
+  elemRef?: BoxProps['elemRef']
   disabled?: BoxProps['disabled']
   color?: BoxProps['color']
   intent?: SwitchIntent

@@ -4,21 +4,21 @@ import { Resize } from 'lib/components/core/Resize'
 import { useToolbarContext } from '../../providers/ToolbarProvider'
 import type { ToolbarMainProps } from './types'
 
-export const ToolbarMain = ({ children, tagAttrs, tagRef }: ToolbarMainProps) => {
+export const ToolbarMain = ({ children, elemAttrs, elemRef }: ToolbarMainProps) => {
   const { switchAt, mainOpen, isSwitchAtHit } = useToolbarContext()
 
   return (
     <Box
-      tagAttrs={{
-        ...tagAttrs,
+      elemAttrs={{
+        ...elemAttrs,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           minInlineSize: 0,
           maxInlineSize: '100vw',
         },
         inert: !isSwitchAtHit && !mainOpen,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       gridRow={{ base: '2 / 3', [String(switchAt)]: '1 / 2' }}
       gridColumn={{ base: '1 / -1', [String(switchAt)]: '3 / 4' }}
       alignSelf="center"

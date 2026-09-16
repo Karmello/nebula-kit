@@ -21,7 +21,7 @@ import type {
   RespValue,
 } from 'lib/types'
 
-import { type HtmlTagProps } from '../HtmlTag/types'
+import { type HtmlElemProps } from '../HtmlElem/types'
 import {
   BOX_BG_MODE,
   BOX_BG_ROLES,
@@ -44,7 +44,7 @@ export type BoxBgMode = (typeof BOX_BG_MODE)[number]
 export type BoxBgRole = (typeof BOX_BG_ROLES)[number]
 export type BoxTextMode = (typeof BOX_TEXT_MODE)[number]
 
-export type BoxProps<T extends ElementType = 'div'> = HtmlTagProps<T> & {
+export type BoxProps<T extends ElementType = 'div'> = HtmlElemProps<T> & {
   // surface
   drawable?: boolean
   color?: BoxColor

@@ -48,18 +48,18 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     description: 'CSS class applied to the root tag.',
     group: 'base',
   },
-  tag: {
+  elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
     group: 'base',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
     group: 'base',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
     group: 'base',

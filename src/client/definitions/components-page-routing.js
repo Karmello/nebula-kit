@@ -127,7 +127,7 @@ export const COMPONENT_CATEGORIES = [
     key: 'utility',
     label: 'Utility',
     items: [
-      { key: 'html-tag', label: 'HtmlTag', sections, bundle: 'core' },
+      { key: 'html-elem', label: 'HtmlElem', sections, bundle: 'core' },
       { key: 'use-focus-trap', label: 'useFocusTrap', sections, bundle: 'pro' },
     ],
   },

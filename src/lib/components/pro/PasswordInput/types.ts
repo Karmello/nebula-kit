@@ -13,8 +13,8 @@ export type PasswordInputProps = {
   placeholder?: InputProps['placeholder']
   readOnly?: InputProps['readOnly']
   scale?: InputProps['scale']
-  tagAttrs?: InputProps['tagAttrs']
-  tagRef?: InputProps['tagRef']
+  elemAttrs?: InputProps['elemAttrs']
+  elemRef?: InputProps['elemRef']
   value?: InputProps['value']
   variant?: InputProps['variant']
 }

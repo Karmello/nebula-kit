@@ -16,7 +16,7 @@ export type AutocompleteProps = {
   showToggle?: boolean
   visibleItemsCount?: number
   noOptionsLabel?: string
-  tagRef?: RefObject<HTMLDivElement | null>
+  elemRef?: RefObject<HTMLDivElement | null>
   // Box
   children: BoxProps['children']
   intent?: BoxIntent

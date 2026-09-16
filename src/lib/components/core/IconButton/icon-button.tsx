@@ -27,9 +27,9 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
   iconName,
   customSvgIcon,
   // Box
-  tag = 'button' as T,
-  tagAttrs,
-  tagRef,
+  elemTag = 'button' as T,
+  elemAttrs,
+  elemRef,
   variant = DEFAULT_ICON_BUTTON_VARIANT,
   color,
   intent = DEFAULT_ICON_BUTTON_INTENT,
@@ -38,19 +38,19 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
   ripple = DEFAULT_ICON_BUTTON_RIPPLE,
 }: IconButtonProps<T>) => {
   const ref = useRef<ComponentRef<T>>(null)
-  const finalRef = tagRef || ref
+  const finalRef = elemRef || ref
 
   return (
     <Box
-      tag={tag}
-      tagRef={finalRef}
-      className={classNames(withPrefix('icon-button'), tagAttrs?.className)}
-      onClick={onClick || tagAttrs?.onClick}
-      tagAttrs={
+      elemTag={elemTag}
+      elemRef={finalRef}
+      className={classNames(withPrefix('icon-button'), elemAttrs?.className)}
+      onClick={onClick || elemAttrs?.onClick}
+      elemAttrs={
         {
-          ...tagAttrs,
-          ...(tag === 'button'
-            ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
+          ...elemAttrs,
+          ...(elemTag === 'button'
+            ? { type: (elemAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
             : {}),
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>

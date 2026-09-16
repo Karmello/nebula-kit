@@ -15,5 +15,5 @@ export const BOX_OVERVIEW: DocOverview = {
     'use `surfaceDepth` prop to control the depth style of the component',
     'wrap Box in `StylingIsland` to give it and its descendants a local theme or brand context',
   ],
-  composedOf: ['HtmlTag'],
+  composedOf: ['HtmlElem'],
 }

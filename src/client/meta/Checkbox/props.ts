@@ -40,11 +40,11 @@ export const CHECKBOX_PROPS: Record<keyof CheckboxProps, DocProp> = {
     defaultValue: DEFAULT_CHECKBOX_SCALE,
     description: 'Controls overall proportions, adjusting the checkbox and icon size.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

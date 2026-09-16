@@ -15,9 +15,9 @@ export const Reveal = <T extends RevealTag = 'div'>({
   // Resize
   children,
   // Box
-  tag = 'div' as T,
-  tagAttrs,
-  tagRef,
+  elemTag = 'div' as T,
+  elemAttrs,
+  elemRef,
   intent = DEFAULT_REVEAL_INTENT,
   color,
   disabled,
@@ -33,9 +33,9 @@ export const Reveal = <T extends RevealTag = 'div'>({
 
   return (
     <Box
-      tag={tag}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag={elemTag}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       borderMode="filled"
       color={color}
@@ -48,7 +48,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
       alignItems="stretch"
     >
       <Box
-        tag="button"
+        elemTag="button"
         interactive
         display="flex"
         justifyContent="space-between"
@@ -57,7 +57,7 @@ export const Reveal = <T extends RevealTag = 'div'>({
         onClick={() => {
           setOpen(!open)
         }}
-        tagAttrs={{
+        elemAttrs={{
           type: 'button',
           style: { borderRadius: 0 },
         }}
@@ -77,9 +77,9 @@ export const Reveal = <T extends RevealTag = 'div'>({
         >
           {label}
         </Text>
-        <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} tagRef={chevronRef} />
+        <Icon name="chevron-down" size={CONTROL_SCALE_MAP[scale].fontSize} elemRef={chevronRef} />
       </Box>
-      <Resize tagAttrs={{ inert: !open }} property="blockSize" visible={open}>
+      <Resize elemAttrs={{ inert: !open }} property="blockSize" visible={open}>
         {children}
       </Resize>
     </Box>

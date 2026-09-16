@@ -9,8 +9,8 @@ import { PasswordInputProps } from './types'
 
 export const PasswordInput = ({
   // Input
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   defaultValue,
   disabled,
@@ -32,8 +32,8 @@ export const PasswordInput = ({
     <Box display="flex">
       <Box flex="1">
         <Input
-          tagAttrs={{
-            ...tagAttrs,
+          elemAttrs={{
+            ...elemAttrs,
             type: hidePassword ? 'password' : 'text',
             autoComplete,
             style: {
@@ -41,7 +41,7 @@ export const PasswordInput = ({
               borderBottomRightRadius: 0,
             },
           }}
-          tagRef={tagRef}
+          elemRef={elemRef}
           color={color}
           defaultValue={defaultValue}
           disabled={disabled}
@@ -59,7 +59,7 @@ export const PasswordInput = ({
         />
       </Box>
       <IconButton
-        tagAttrs={{
+        elemAttrs={{
           style: {
             borderTopLeftRadius: 0,
             borderBottomLeftRadius: 0,

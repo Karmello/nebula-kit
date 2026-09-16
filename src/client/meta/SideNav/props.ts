@@ -44,11 +44,11 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
     description:
       'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

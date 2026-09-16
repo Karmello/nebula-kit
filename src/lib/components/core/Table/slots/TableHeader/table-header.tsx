@@ -10,8 +10,8 @@ import { TableHeaderProps } from './types'
 export const TableHeader = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent,
   paddingBlock,
@@ -39,10 +39,10 @@ export const TableHeader = ({
       }}
     >
       <Box
-        tag="thead"
-        className={classNames(withPrefix('table-header'), tagAttrs?.className)}
-        tagAttrs={tagAttrs}
-        tagRef={tagRef}
+        elemTag="thead"
+        className={classNames(withPrefix('table-header'), elemAttrs?.className)}
+        elemAttrs={elemAttrs}
+        elemRef={elemRef}
       >
         {slots.slotsByName['Table.HeaderRow']}
       </Box>

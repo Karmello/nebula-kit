@@ -13,8 +13,8 @@ export const DEFAULT_PORTAL_PLACEMENT: PortalProps['placement'] = 'bottom-start'
 
 export const Portal = ({
   children,
-  tagRef,
-  tagAttrs,
+  elemRef,
+  elemAttrs,
   anchorRef,
   placement = DEFAULT_PORTAL_PLACEMENT,
   offset,
@@ -23,7 +23,7 @@ export const Portal = ({
   const [container, setContainer] = useState<HTMLElement | null>(null)
 
   const ref = useRef<HTMLDivElement | null>(null)
-  const rootRef = tagRef || ref
+  const rootRef = elemRef || ref
 
   const position = useAnchoredPosition({
     anchorRef,
@@ -48,13 +48,13 @@ export const Portal = ({
 
   return createPortal(
     <Box
-      tagRef={rootRef}
-      className={classNames(withPrefix('portal'), tagAttrs?.className)}
-      tagAttrs={{
-        ...tagAttrs,
+      elemRef={rootRef}
+      className={classNames(withPrefix('portal'), elemAttrs?.className)}
+      elemAttrs={{
+        ...elemAttrs,
         style: {
           transition: 'none',
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
         },
       }}
       position="absolute"

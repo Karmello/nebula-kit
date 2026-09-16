@@ -18,8 +18,8 @@ export type SideNavItemProps = {
   surfaceDepth?: BoxProps<'button'>['surfaceDepth']
   selected?: boolean
   // Box
-  tagRef?: BoxProps<'button'>['tagRef']
-  tagAttrs?: BoxProps<'button'>['tagAttrs']
+  elemRef?: BoxProps<'button'>['elemRef']
+  elemAttrs?: BoxProps<'button'>['elemAttrs']
   color?: BoxProps<'button'>['color']
   intent?: BoxProps<'button'>['intent']
   children: BoxProps<'button'>['children']

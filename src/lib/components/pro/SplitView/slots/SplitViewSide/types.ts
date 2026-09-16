@@ -1,8 +1,8 @@
 import { BoxColor, BoxIntent, BoxProps } from 'lib/components/core/Box'
 
 export type SplitViewSideProps = {
-  tagAttrs?: BoxProps<'aside'>['tagAttrs']
-  tagRef?: BoxProps<'aside'>['tagRef']
+  elemAttrs?: BoxProps<'aside'>['elemAttrs']
+  elemRef?: BoxProps<'aside'>['elemRef']
   inlineSize?: BoxProps<'aside'>['inlineSize']
   blockSize?: BoxProps<'aside'>['blockSize']
   padding?: BoxProps<'aside'>['padding']

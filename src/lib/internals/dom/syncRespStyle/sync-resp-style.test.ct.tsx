@@ -6,7 +6,7 @@ test('responsive inline style is applied on initial mount', async ({ mount, page
   await page.setViewportSize({ width: 375, height: 800 }) // base
 
   await mount(
-    <Box tagAttrs={{ id: 'box' }} padding="12px">
+    <Box elemAttrs={{ id: 'box' }} padding="12px">
       Box
     </Box>
   )
@@ -22,7 +22,7 @@ test('responsive inline styles update with breakpoint changes', async ({ mount, 
   await page.setViewportSize({ width: 375, height: 800 })
 
   await mount(
-    <Box tagAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
+    <Box elemAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
       Responsive
     </Box>
   )
@@ -43,7 +43,7 @@ test('responsive inline styles update with breakpoint changes', async ({ mount, 
 
 test('user inline style overrides system style on mount', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
+    <Box elemAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
       Box
     </Box>
   )
@@ -57,7 +57,10 @@ test('user inline style persists across responsive updates', async ({ mount, pag
   await page.setViewportSize({ width: 375, height: 800 })
 
   await mount(
-    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding={{ base: '8px', md: '16px' }}>
+    <Box
+      elemAttrs={{ id: 'box', style: { padding: '20px' } }}
+      padding={{ base: '8px', md: '16px' }}
+    >
       Box
     </Box>
   )
@@ -76,7 +79,7 @@ test('system styles still update when no user override exists', async ({ mount, 
   await page.setViewportSize({ width: 375, height: 800 })
 
   await mount(
-    <Box tagAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
+    <Box elemAttrs={{ id: 'box' }} padding={{ base: '8px', md: '16px' }}>
       Box
     </Box>
   )
@@ -91,7 +94,7 @@ test('system styles still update when no user override exists', async ({ mount, 
 
 test('removing system prop does not remove user inline style', async ({ mount, page }) => {
   const component = await mount(
-    <Box tagAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
+    <Box elemAttrs={{ id: 'box', style: { padding: '20px' } }} padding="8px">
       Box
     </Box>
   )
@@ -100,7 +103,7 @@ test('removing system prop does not remove user inline style', async ({ mount, p
 
   await expect(box).toHaveCSS('padding', '20px')
 
-  await component.update(<Box tagAttrs={{ id: 'box', style: { padding: '20px' } }}>Box</Box>)
+  await component.update(<Box elemAttrs={{ id: 'box', style: { padding: '20px' } }}>Box</Box>)
 
   await expect(box).toHaveCSS('padding', '20px')
 })

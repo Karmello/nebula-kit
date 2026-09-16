@@ -10,8 +10,8 @@ import { TableCaptionProps } from './types'
 export const TableCaption = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent = DEFAULT_TABLE_CAPTION_INTENT,
   paddingBlock,
@@ -22,10 +22,10 @@ export const TableCaption = ({
 
   return (
     <Box
-      tag="caption"
-      className={classNames(withPrefix('table-caption'), tagAttrs?.className)}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      elemTag="caption"
+      className={classNames(withPrefix('table-caption'), elemAttrs?.className)}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       drawable
       color={color}
       intent={intent}

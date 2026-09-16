@@ -5,8 +5,8 @@ export type TableHeaderCellProps = {
   colSpan?: number
   rowSpan?: number
   // Box
-  tagAttrs?: BoxProps<'th'>['tagAttrs']
-  tagRef?: BoxProps<'th'>['tagRef']
+  elemAttrs?: BoxProps<'th'>['elemAttrs']
+  elemRef?: BoxProps<'th'>['elemRef']
   minInlineSize?: BoxProps<'th'>['minInlineSize']
   maxInlineSize?: BoxProps<'th'>['maxInlineSize']
   blockSize?: BoxProps<'th'>['blockSize']

@@ -25,11 +25,11 @@ export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
     defaultValue: String(DEFAULT_ICON_SIZE),
     description: 'Size of the icon.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

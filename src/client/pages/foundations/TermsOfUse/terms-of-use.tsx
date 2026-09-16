@@ -44,7 +44,7 @@ export default () => {
       </Text>
       <Spacer blockSize={NEB_LENGTH.px_008} />
       <Text>
-        <Text tag="span" space="end">
+        <Text elemTag="span" space="end">
           For full legal terms, see the
         </Text>
         <Link

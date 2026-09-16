@@ -120,7 +120,7 @@ describe('syncRespStyle', () => {
 
   it('does not override initial inline styles (user ownership)', () => {
     const el = document.createElement('div')
-    el.style.padding = '20px' // simulate tagAttrs.style
+    el.style.padding = '20px' // simulate elemAttrs.style
 
     const ref = { current: el }
 

@@ -10,8 +10,8 @@ import { VirtualListProps } from './types'
 
 export const VirtualList = <T,>({
   // Box
-  tagRef,
-  tagAttrs,
+  elemRef,
+  elemAttrs,
   intent,
   color,
   surfaceDepth,
@@ -26,7 +26,7 @@ export const VirtualList = <T,>({
   ensureVisibleIndex,
 }: VirtualListProps<T>) => {
   const internalRef = useRef<HTMLDivElement | null>(null)
-  const resolvedRef = tagRef || internalRef
+  const resolvedRef = elemRef || internalRef
 
   const [scrollTop, setScrollTop] = useState<number>(0)
 
@@ -105,13 +105,13 @@ export const VirtualList = <T,>({
 
   return (
     <Box
-      tagRef={resolvedRef}
-      tagAttrs={{
-        ...tagAttrs,
+      elemRef={resolvedRef}
+      elemAttrs={{
+        ...elemAttrs,
         onScroll: (e: UIEvent<HTMLDivElement, globalThis.UIEvent>) => {
           const next = e.currentTarget.scrollTop
           setScrollTop(next)
-          tagAttrs?.onScroll?.(e)
+          elemAttrs?.onScroll?.(e)
         },
       }}
       drawable

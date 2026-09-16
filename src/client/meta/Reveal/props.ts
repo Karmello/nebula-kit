@@ -37,16 +37,16 @@ export const REVEAL_PROPS: Record<keyof RevealProps, DocProp> = {
     defaultValue: DEFAULT_REVEAL_SCALE,
     description: 'Size of the reveal button.',
   },
-  tag: {
+  elemTag: {
     options: REVEAL_TAGS,
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

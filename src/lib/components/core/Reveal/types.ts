@@ -13,9 +13,9 @@ export type RevealProps<T extends RevealTag = 'div'> = {
   // Resize
   children: ResizeProps['children']
   // Box
-  tag?: BoxProps<T>['tag']
-  tagAttrs?: BoxProps<T>['tagAttrs']
-  tagRef?: BoxProps<T>['tagRef']
+  elemTag?: BoxProps<T>['elemTag']
+  elemAttrs?: BoxProps<T>['elemAttrs']
+  elemRef?: BoxProps<T>['elemRef']
   color?: BoxProps<T>['color']
   intent?: BoxProps<T>['intent']
   disabled?: BoxProps<T>['disabled']

@@ -21,9 +21,9 @@ export type BreadcrumbProps<T extends BreadcrumbTag = 'div'> = {
   variant?: BreadcrumbVariant
   onChange?: (path: string[]) => void
   // Box
-  tag?: BoxProps<T>['tag']
-  tagAttrs?: BoxProps<T>['tagAttrs']
-  tagRef?: BoxProps<T>['tagRef']
+  elemTag?: BoxProps<T>['elemTag']
+  elemAttrs?: BoxProps<T>['elemAttrs']
+  elemRef?: BoxProps<T>['elemRef']
   color?: BoxColor
   intent?: BoxIntent
 }

@@ -9,23 +9,23 @@ export default () => {
       <Box display="flex" flexDirection="column" gap={NEB_LENGTH.px_016}>
         <Text>
           NebulaKit resolves visual styles using five orthogonal axes:
-          <Text tag="span" bold space="start">
+          <Text elemTag="span" bold space="start">
             theme
           </Text>
           ,
-          <Text tag="span" bold space="start">
+          <Text elemTag="span" bold space="start">
             brand
           </Text>
           ,
-          <Text tag="span" bold space="start">
+          <Text elemTag="span" bold space="start">
             color
           </Text>
           ,
-          <Text tag="span" bold space="both">
+          <Text elemTag="span" bold space="both">
             variant
           </Text>
           and
-          <Text tag="span" bold space="start">
+          <Text elemTag="span" bold space="start">
             intent
           </Text>
           . Theme and brand define the visual environment. They can be applied globally or locally.

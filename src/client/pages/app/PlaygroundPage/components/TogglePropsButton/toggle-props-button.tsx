@@ -8,7 +8,7 @@ export const TogglePropsButton = () => {
   return (
     <Button
       scale="xs"
-      tagAttrs={{
+      elemAttrs={{
         onClick: () => setDisplayProps(!displayProps),
       }}
     >

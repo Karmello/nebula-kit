@@ -57,14 +57,14 @@ export const PropValueControl = ({ bp }: { bp?: Breakpoint }) => {
         <Box display="flex">
           <Box flex="1">
             <Input
-              tagAttrs={{ style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 } }}
+              elemAttrs={{ style: { borderTopRightRadius: 0, borderBottomRightRadius: 0 } }}
               placeholder="..."
               value={value}
               onChange={onChange}
             />
           </Box>
           <IconButton
-            tagAttrs={{ style: { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } }}
+            elemAttrs={{ style: { borderTopLeftRadius: 0, borderBottomLeftRadius: 0 } }}
             iconName="close"
             onClick={() => onChange('')}
             scale="md"

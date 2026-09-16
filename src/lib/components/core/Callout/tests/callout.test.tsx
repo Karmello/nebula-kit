@@ -6,7 +6,7 @@ import { Callout } from '../callout'
 describe('<Callout />', () => {
   describe('basic rendering', () => {
     it('renders as <div> by default', () => {
-      render(<Callout content="Content" tagAttrs={{ 'data-testid': 'elem' }} />)
+      render(<Callout content="Content" elemAttrs={{ 'data-testid': 'elem' }} />)
       const el = screen.getByTestId('elem')
       expect(el.tagName.toLowerCase()).toBe('div')
     })

@@ -10,11 +10,11 @@ export const SPACER_PROPS: Record<keyof SpacerProps, DocProp> = {
     defaultValue: String(DEFAULT_SPACER_BLOCK_SIZE),
     description: 'Controls the spacer vertical size.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

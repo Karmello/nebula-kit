@@ -5,7 +5,7 @@ import { Icon } from '..'
 
 describe('<Icon />', () => {
   it('renders Icon component', () => {
-    render(<Icon tagAttrs={{ 'data-testid': 'icon' }} name="search" />)
+    render(<Icon elemAttrs={{ 'data-testid': 'icon' }} name="search" />)
     const icon = screen.getByTestId('icon')
     expect(icon).toBeInTheDocument()
   })

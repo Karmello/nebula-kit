@@ -10,7 +10,7 @@ export type DialogProps = {
   closeOnBackdropClick?: boolean
   scale?: DialogScale
   // Box
-  tagAttrs?: BoxProps<'dialog'>['tagAttrs']
-  tagRef?: BoxProps<'dialog'>['tagRef']
+  elemAttrs?: BoxProps<'dialog'>['elemAttrs']
+  elemRef?: BoxProps<'dialog'>['elemRef']
   children: BoxProps<'dialog'>['children']
 }

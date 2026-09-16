@@ -26,20 +26,20 @@ export default () => {
       <Spacer blockSize={NEB_LENGTH.px_016} />
       <Text>
         Any property typed as
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           RespValue
         </Text>
         and marked as responsive in the props table can accept either a single value or an object of
         breakpoint-specific values, like in the above example where
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           padding
         </Text>
         changes between the
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           base
         </Text>
         and
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           md
         </Text>
         breakpoints.
@@ -63,12 +63,12 @@ export default () => {
       <Text>
         When combining responsive and non-responsive props, the more specific one wins. In the above
         example,
-        <Text tag="span" bold space="both">
+        <Text elemTag="span" bold space="both">
           paddingBottom
         </Text>
         isn't a breakpoint object, so it applies to all breakpoints by default. Because it's more
         specific than
-        <Text tag="span" bold space="start">
+        <Text elemTag="span" bold space="start">
           padding
         </Text>
         , its value overrides the final bottom padding at every breakpoint.

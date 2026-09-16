@@ -15,7 +15,7 @@ export const UserMessage = ({ content }: UserMessageProps) => {
         paddingInline={NEB_LENGTH.px_012}
         paddingBlock={NEB_LENGTH.px_008}
       >
-        <Text tagAttrs={{ style: { whiteSpace: 'pre-wrap' } }} typography="small">
+        <Text elemAttrs={{ style: { whiteSpace: 'pre-wrap' } }} typography="small">
           {content}
         </Text>
       </Box>

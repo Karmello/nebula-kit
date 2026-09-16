@@ -31,11 +31,11 @@ export const TABLE_FOOTER_PROPS: Record<keyof TableFooterProps, DocProp> = {
     description: 'Padding for the left and right sides applied to every cell.',
     link: true,
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

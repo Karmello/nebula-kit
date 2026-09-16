@@ -9,8 +9,8 @@ import { TableCellProps } from './types'
 export const TableCell = ({
   // Box
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   minInlineSize,
   maxInlineSize,
   blockSize,
@@ -25,14 +25,14 @@ export const TableCell = ({
 
   return (
     <Box
-      tag="td"
-      className={classNames(withPrefix('table-cell'), tagAttrs?.className)}
-      tagAttrs={{
-        ...tagAttrs,
+      elemTag="td"
+      className={classNames(withPrefix('table-cell'), elemAttrs?.className)}
+      elemAttrs={{
+        ...elemAttrs,
         colSpan,
         rowSpan,
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       bgMode="filled"
       color={color || context.color}

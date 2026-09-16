@@ -26,7 +26,7 @@ export const MARKUP_EXAMPLES: DocExample[] = [
       <Markup>
         <Text>
           This paragraph contains nested
-          <Text tag="span" color="blue" intent="primary" space="both">
+          <Text elemTag="span" color="blue" intent="primary" space="both">
             `inline`
           </Text>
           formatting inside another Text component.

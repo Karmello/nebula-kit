@@ -8,8 +8,8 @@ import { MarkerListItemProps } from './types'
 
 export const MarkerListItem = ({
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   color,
   intent,
 }: MarkerListItemProps) => {
@@ -17,13 +17,13 @@ export const MarkerListItem = ({
 
   return (
     <Box
-      tag="li"
-      className={classNames(withPrefix('marker-list-item'), tagAttrs?.className)}
-      tagAttrs={{
-        ...tagAttrs,
+      elemTag="li"
+      className={classNames(withPrefix('marker-list-item'), elemAttrs?.className)}
+      elemAttrs={{
+        ...elemAttrs,
         role: 'listitem',
       }}
-      tagRef={tagRef}
+      elemRef={elemRef}
       drawable
       color={color || rootColor}
       intent={intent || rootIntent}

@@ -12,8 +12,8 @@ export type TitleProps = {
   typography?: TitleTypography
   iconPlacement?: TitleIconPlacement
   // Box
-  tagAttrs?: BoxProps<'span'>['tagAttrs']
-  tagRef?: BoxProps<'span'>['tagRef']
+  elemAttrs?: BoxProps<'span'>['elemAttrs']
+  elemRef?: BoxProps<'span'>['elemRef']
   color?: BoxProps<'span'>['color']
   intent?: BoxProps<'span'>['intent']
   // Text

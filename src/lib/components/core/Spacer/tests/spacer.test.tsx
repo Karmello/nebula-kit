@@ -5,7 +5,7 @@ import { Spacer } from '..'
 
 describe('Spacer', () => {
   it('renders as <div> by default', () => {
-    render(<Spacer tagAttrs={{ 'data-testid': 'elem' }} />)
+    render(<Spacer elemAttrs={{ 'data-testid': 'elem' }} />)
     const el = screen.getByTestId('elem')
     expect(el.tagName.toLowerCase()).toBe('div')
   })

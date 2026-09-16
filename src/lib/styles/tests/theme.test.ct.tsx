@@ -4,7 +4,7 @@ import { Box, StylingIsland } from 'lib/components'
 
 test('Box resolves default primary solid styling', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'box' }} drawable bgMode="filled" intent="primary" blockSize="200px">
+    <Box elemAttrs={{ id: 'box' }} drawable bgMode="filled" intent="primary" blockSize="200px">
       Box
     </Box>
   )
@@ -33,14 +33,14 @@ test('Box resolves default primary solid styling', async ({ mount, page }) => {
 test('Nested Box resolves same primary solid styling as parent', async ({ mount, page }) => {
   await mount(
     <Box
-      tagAttrs={{ id: 'parent' }}
+      elemAttrs={{ id: 'parent' }}
       drawable
       bgMode="filled"
       intent="primary"
       blockSize="200px"
       padding="16px"
     >
-      <Box tagAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
+      <Box elemAttrs={{ id: 'child' }} drawable bgMode="filled" intent="primary" blockSize="100px">
         Child
       </Box>
     </Box>
@@ -91,7 +91,7 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
     <>
       <StylingIsland theme="dark">
         <Box
-          tagAttrs={{ id: 'local-dark' }}
+          elemAttrs={{ id: 'local-dark' }}
           drawable
           bgMode="filled"
           intent="primary"
@@ -102,7 +102,7 @@ test('Local dark theme produces same result as global dark theme', async ({ moun
       </StylingIsland>
 
       <Box
-        tagAttrs={{ id: 'global-dark' }}
+        elemAttrs={{ id: 'global-dark' }}
         drawable
         bgMode="filled"
         intent="primary"
@@ -159,7 +159,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
   await mount(
     <StylingIsland theme="dark">
       <Box
-        tagAttrs={{ id: 'dark-parent' }}
+        elemAttrs={{ id: 'dark-parent' }}
         drawable
         bgMode="filled"
         intent="secondary"
@@ -168,7 +168,7 @@ test('Nested theme islands reset correctly (dark → light)', async ({ mount, pa
       >
         <StylingIsland theme="light">
           <Box
-            tagAttrs={{ id: 'light-child' }}
+            elemAttrs={{ id: 'light-child' }}
             drawable
             bgMode="filled"
             intent="secondary"
@@ -235,7 +235,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
   await mount(
     <StylingIsland theme="dark">
       <Box
-        tagAttrs={{ id: 'dark-1' }}
+        elemAttrs={{ id: 'dark-1' }}
         drawable
         bgMode="filled"
         intent="secondary"
@@ -244,7 +244,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
       >
         <StylingIsland theme="light">
           <Box
-            tagAttrs={{ id: 'light-1' }}
+            elemAttrs={{ id: 'light-1' }}
             drawable
             bgMode="filled"
             intent="secondary"
@@ -253,7 +253,7 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
           >
             <StylingIsland theme="dark">
               <Box
-                tagAttrs={{ id: 'dark-2' }}
+                elemAttrs={{ id: 'dark-2' }}
                 drawable
                 bgMode="filled"
                 intent="secondary"
@@ -328,11 +328,11 @@ test('Nested theme islands rebind correctly across multiple boundaries (dark →
 test('Global dark theme resolves primary solid styling consistently', async ({ mount, page }) => {
   await mount(
     <>
-      <Box tagAttrs={{ id: 'box-1' }} drawable bgMode="filled" intent="primary" blockSize="200px">
+      <Box elemAttrs={{ id: 'box-1' }} drawable bgMode="filled" intent="primary" blockSize="200px">
         One
       </Box>
 
-      <Box tagAttrs={{ id: 'box-2' }} drawable bgMode="filled" intent="primary" blockSize="200px">
+      <Box elemAttrs={{ id: 'box-2' }} drawable bgMode="filled" intent="primary" blockSize="200px">
         Two
       </Box>
     </>,

@@ -26,13 +26,13 @@ const Article = ({ title, date, platform, href, iconName }: ArticleProps) => {
       <HorizontalRule marginTop={NEB_LENGTH.px_004} />
       <Spacer blockSize={NEB_LENGTH.px_004} />
       <Box display="flex" columnGap={NEB_LENGTH.px_008} flexWrap="wrap">
-        <Text tag="span" noWrap>
+        <Text elemTag="span" noWrap>
           {`${new Date(date).toDateString()} |`}
         </Text>
-        <Text tag="span">{`${platform} |`}</Text>
+        <Text elemTag="span">{`${platform} |`}</Text>
         <Title iconName="external-link" iconPlacement="right" intent="primary" color="blue">
           <Link href={href} target="_blank">
-            <Text tag="span" intent="primary" color="blue">
+            <Text elemTag="span" intent="primary" color="blue">
               Open
             </Text>
           </Link>

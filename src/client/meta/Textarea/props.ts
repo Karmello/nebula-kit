@@ -80,11 +80,11 @@ export const TEXTAREA_PROPS: Record<keyof TextareaProps, DocProp> = {
     defaultValue: DEFAULT_TEXTAREA_ROWS as never,
     description: 'Initial number of text rows to display.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

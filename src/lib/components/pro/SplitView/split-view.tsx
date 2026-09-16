@@ -12,8 +12,8 @@ import { type SplitViewProps } from './types'
 const SplitViewComponent = ({
   // Grid
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
 }: SplitViewProps) => {
   const { mode, setSideOpen, sidePosition } = useSplitViewContext()
 
@@ -45,11 +45,11 @@ const SplitViewComponent = ({
   return (
     <Box
       display="grid"
-      tagRef={tagRef}
-      tagAttrs={{
-        ...tagAttrs,
+      elemRef={elemRef}
+      elemAttrs={{
+        ...elemAttrs,
         style: {
-          ...tagAttrs?.style,
+          ...elemAttrs?.style,
           blockSize: '100%',
         },
       }}
@@ -66,15 +66,15 @@ const SplitViewComponent = ({
 export const SplitView = ({
   // Grid
   children,
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   // own
   sidePosition = SPLIT_VIEW_SIDE_POSITIONS[0],
   switchAt = DEFAULT_SWITCH_BREAKPOINT,
 }: SplitViewProps) => {
   return (
     <SplitViewProvider sidePosition={sidePosition} switchAt={switchAt}>
-      <SplitViewComponent tagAttrs={tagAttrs} tagRef={tagRef}>
+      <SplitViewComponent elemAttrs={elemAttrs} elemRef={elemRef}>
         {children}
       </SplitViewComponent>
     </SplitViewProvider>

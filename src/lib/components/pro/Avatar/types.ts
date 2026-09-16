@@ -11,8 +11,8 @@ export type AvatarProps = {
   shape?: AvatarShape
   initials?: string
   // Image
-  tagAttrs?: ImageProps['tagAttrs']
-  tagRef?: ImageProps['tagRef']
+  elemAttrs?: ImageProps['elemAttrs']
+  elemRef?: ImageProps['elemRef']
   src?: ImageProps['src']
   alt?: ImageProps['alt']
   title?: ImageProps['title']

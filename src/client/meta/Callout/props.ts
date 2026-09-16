@@ -37,16 +37,16 @@ export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
   },
-  tag: {
+  elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
   },
-  tagAttrs: {
+  elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
   },
-  tagRef: {
+  elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
   },

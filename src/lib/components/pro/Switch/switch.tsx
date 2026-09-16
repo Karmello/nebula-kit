@@ -13,8 +13,8 @@ import './switch.scss'
 
 export const Switch = ({
   // Box
-  tagAttrs,
-  tagRef,
+  elemAttrs,
+  elemRef,
   disabled,
   color,
   intent = DEFAULT_SWITCH_INTENT,
@@ -60,15 +60,15 @@ export const Switch = ({
   return (
     <Box
       key={String(scale)}
-      className={classNames(withPrefix('switch'), tagAttrs?.className)}
-      tagAttrs={tagAttrs}
-      tagRef={tagRef}
+      className={classNames(withPrefix('switch'), elemAttrs?.className)}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
       display="inline-block"
       overflow="clip"
     >
       <Box
-        tag="input"
-        tagAttrs={{
+        elemTag="input"
+        elemAttrs={{
           type: 'checkbox',
           role: 'switch',
           ...(isControlled ? { checked: currentChecked } : { defaultChecked: currentChecked }),
@@ -86,9 +86,9 @@ export const Switch = ({
         inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
       />
       <Box
-        tagRef={thumbRef}
+        elemRef={thumbRef}
         className={withPrefix('switch-thumb')}
-        tagAttrs={{
+        elemAttrs={{
           style: {
             top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
             left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
