@@ -38,7 +38,7 @@ export const ComponentChangelogPage = () => {
               overflowY="hidden"
               maxInlineSize="100%"
             >
-              <Title typography="h6" color="blue">{`v${vKey}`}</Title>
+              <Title typography="h6" color="blue" intent="primary">{`v${vKey}`}</Title>
               <HorizontalRule color="blue" marginTop={NEB_LENGTH.px_004} />
               <Spacer blockSize={NEB_LENGTH.px_004} />
               <MarkerList>

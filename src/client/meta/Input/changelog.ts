@@ -1,3 +1,5 @@
 import { type DocChangelog } from 'client/definitions'
 
-export const INPUT_CHANGELOG: DocChangelog = {}
+export const INPUT_CHANGELOG: DocChangelog = {
+  '0.2.3': ['released'],
+}
