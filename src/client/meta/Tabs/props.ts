@@ -1,9 +1,9 @@
 import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
-  DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
+  DEFAULT_TABS_ORIENTATION,
   DEFAULT_TABS_SCALE,
-  TABS_DIRECTION,
+  TABS_ORIENTATION,
 } from 'lib/components/pro/Tabs/constants'
 import { TSHIRT_SIZES } from 'lib/constants'
 import { TabsProps } from 'lib/index.pro'
@@ -24,11 +24,6 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
     options: ['string', 'number'],
     description: 'Sets the initial active tab in uncontrolled mode.',
   },
-  direction: {
-    options: TABS_DIRECTION,
-    defaultValue: DEFAULT_TABS_DIRECTION,
-    description: 'Sets whether tab items are arranged horizontally or vertically.',
-  },
   intent: {
     options: BOX_INTENTS,
     defaultValue: DEFAULT_TABS_INTENT,
@@ -39,6 +34,11 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
     options: ['(value: string | number) => void'],
     description: 'Called when the active tab value changes.',
   },
+  orientation: {
+    options: TABS_ORIENTATION,
+    defaultValue: DEFAULT_TABS_ORIENTATION,
+    description: 'Sets whether tab items are arranged horizontally or vertically.',
+  },
   scale: {
     options: TSHIRT_SIZES,
     defaultValue: DEFAULT_TABS_SCALE,
@@ -46,6 +46,7 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
   },
   stretch: {
     options: ['boolean'],
+    description: 'Expands tab items to share the available space equally.',
   },
   tagAttrs: {
     options: ['HTML tag attributes'],

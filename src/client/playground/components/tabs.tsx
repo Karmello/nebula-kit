@@ -4,8 +4,8 @@ export type PropsFromTabsKey = (typeof PROPS_FROM_TABS)[number]
 
 export const PROPS_FROM_TABS = [
   'color',
-  'direction',
   'intent',
+  'orientation',
   'scale',
   'stretch',
 ] as const satisfies readonly (keyof TabsProps)[]

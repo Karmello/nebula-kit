@@ -5,8 +5,8 @@ import { useControlled, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_TABS_DEFAULT_VALUE,
-  DEFAULT_TABS_DIRECTION,
   DEFAULT_TABS_INTENT,
+  DEFAULT_TABS_ORIENTATION,
   DEFAULT_TABS_SCALE,
 } from './constants'
 import type { TabsPanelProps } from './slots/TabsPanel/types'
@@ -23,7 +23,7 @@ export const Tabs = ({
   color,
   intent = DEFAULT_TABS_INTENT,
   scale = DEFAULT_TABS_SCALE,
-  direction = DEFAULT_TABS_DIRECTION,
+  orientation = DEFAULT_TABS_ORIENTATION,
   stretch,
 }: TabsProps) => {
   const [currentValue, setCurrentValue] = useControlled<string | number>({
@@ -57,15 +57,15 @@ export const Tabs = ({
       borderRole="edge"
       overflow="clip"
       display="flex"
-      flexDirection={direction === 'column' ? 'row' : 'column'}
+      flexDirection={orientation === 'vertical' ? 'row' : 'column'}
       alignItems="stretch"
     >
       <Box
         tagAttrs={{
           role: 'tablist',
-          'aria-orientation': direction === 'row' ? 'horizontal' : 'vertical',
+          'aria-orientation': orientation,
         }}
-        flexDirection={direction}
+        flexDirection={orientation === 'horizontal' ? 'row' : 'column'}
         display={stretch ? 'flex' : 'inline-flex'}
         drawable
         borderMode="filled"
@@ -75,8 +75,8 @@ export const Tabs = ({
         borderRadius={NEB_LENGTH.px_000}
         borderLeftWidth={NEB_LENGTH.px_000}
         borderTopWidth={NEB_LENGTH.px_000}
-        borderRightWidth={direction === 'row' ? NEB_LENGTH.px_000 : undefined}
-        borderBottomWidth={direction === 'column' ? NEB_LENGTH.px_000 : undefined}
+        borderRightWidth={orientation === 'horizontal' ? NEB_LENGTH.px_000 : undefined}
+        borderBottomWidth={orientation === 'vertical' ? NEB_LENGTH.px_000 : undefined}
       >
         {slotsByName['Tabs.Tab'].map((tab, index) => {
           const { value, disabled } = (tab as any).props as TabsTabProps
@@ -106,13 +106,13 @@ export const Tabs = ({
               borderRole="divider"
               borderTopWidth={NEB_LENGTH.px_000}
               borderBottomWidth={
-                direction === 'row' || index === slotsByName['Tabs.Tab'].length - 1
+                orientation === 'horizontal' || index === slotsByName['Tabs.Tab'].length - 1
                   ? NEB_LENGTH.px_000
                   : undefined
               }
               borderLeftWidth={NEB_LENGTH.px_000}
               borderRightWidth={
-                direction === 'column' || index === slotsByName['Tabs.Tab'].length - 1
+                orientation === 'vertical' || index === slotsByName['Tabs.Tab'].length - 1
                   ? NEB_LENGTH.px_000
                   : undefined
               }
@@ -160,7 +160,7 @@ export const Tabs = ({
             intent="neutral"
             bgMode="filled"
             borderRadius={NEB_LENGTH.px_000}
-            flex={direction === 'column' ? '1' : undefined}
+            flex={orientation === 'vertical' ? '1' : undefined}
             padding={CONTROL_SCALE_MAP[scale].paddingInline}
           >
             {panel}

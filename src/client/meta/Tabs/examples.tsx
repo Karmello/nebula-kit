@@ -18,7 +18,7 @@ export const TABS_EXAMPLES: DocExample[] = [
   {
     description: 'Horizontal tab arrangement.',
     jsx: (
-      <Tabs>
+      <Tabs color="blue">
         <Tabs.Tab value={1}>First</Tabs.Tab>
         <Tabs.Tab value={2}>Second</Tabs.Tab>
         <Tabs.Tab value={3}>Third</Tabs.Tab>
@@ -35,7 +35,7 @@ export const TABS_EXAMPLES: DocExample[] = [
   {
     description: 'Horizontal tab arrangement with stretched tabs.',
     jsx: (
-      <Tabs stretch>
+      <Tabs color="red" intent="secondary" stretch>
         <Tabs.Tab value={1}>First</Tabs.Tab>
         <Tabs.Tab value={2}>Second</Tabs.Tab>
         <Tabs.Tab value={3}>Third</Tabs.Tab>
@@ -52,7 +52,7 @@ export const TABS_EXAMPLES: DocExample[] = [
   {
     description: 'Vertical tab arrangement.',
     jsx: (
-      <Tabs direction="column">
+      <Tabs color="amber" intent="strong" orientation="vertical">
         <Tabs.Tab value={1}>First</Tabs.Tab>
         <Tabs.Tab value={2}>Second</Tabs.Tab>
         <Tabs.Tab value={3}>Third</Tabs.Tab>
