@@ -1,9 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router'
 
-import { Box } from 'lib/components/core/Box'
 import { Loader } from 'lib/components/core/Loader'
-import { NEB_LENGTH } from 'lib/constants'
 import { PageKey } from 'client/definitions'
 
 import styles from './root-page.module.scss'
@@ -88,13 +86,7 @@ const ConfirmActionPage = lazy(importConfirmActionPage)
 export const RootPage = () => {
   return (
     <div className={styles.RootPage}>
-      <Suspense
-        fallback={
-          <Box position="fixed" inset="0px">
-            <Loader centered size={NEB_LENGTH.px_032} />
-          </Box>
-        }
-      >
+      <Suspense fallback={<Loader centered />}>
         <Routes>
           <Route path={PageKey.home} Component={HomePage} />
           <Route path={PageKey.patterns} Component={PatternsPage} />
