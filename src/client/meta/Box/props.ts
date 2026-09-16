@@ -156,6 +156,11 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     link: true,
     group: 'interaction',
   },
+  onClick: {
+    options: ['e => void'],
+    description: 'Click event handler for the root tag.',
+    group: 'interaction',
+  },
   // layout
   display: {
     options: CSS_DISPLAY,

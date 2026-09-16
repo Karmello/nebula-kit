@@ -101,10 +101,10 @@ export const Pagination = ({
               justifyContent="center"
               alignItems="center"
               cursor="pointer"
+              onClick={() => handleChange(item.page)}
               tagAttrs={{
                 type: 'button',
                 'aria-current': active ? 'page' : undefined,
-                onClick: () => handleChange(item.page),
               }}
               disabled={disabled}
               // variant={variant}

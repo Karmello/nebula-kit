@@ -46,10 +46,10 @@ export const Link = ({
       <HtmlTag
         tag="a"
         className={withPrefix('link')}
+        onClick={finalOnClick}
         tagAttrs={{
           href,
           target,
-          onClick: finalOnClick,
         }}
       >
         {children}

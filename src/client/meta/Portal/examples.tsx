@@ -11,7 +11,7 @@ const PortalWrapper = ({ placement }: Partial<PortalProps>) => {
 
   return (
     <>
-      <Button tagRef={buttonRef} tagAttrs={{ onClick: () => setVisible(!visible) }}>
+      <Button tagRef={buttonRef} onClick={() => setVisible(!visible)}>
         Toggle portal
       </Button>
       {visible ? (
@@ -32,7 +32,7 @@ const buttonRef = useRef<HTMLButtonElement>(null)
 
 return (
   <>
-    <Button tagRef={buttonRef} tagAttrs={{ onClick: () => setVisible(!visible) }}>
+    <Button tagRef={buttonRef} onClick={() => setVisible(!visible)}>
       Toggle portal
     </Button>
     {visible ? (

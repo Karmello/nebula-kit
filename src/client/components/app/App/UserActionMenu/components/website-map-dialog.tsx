@@ -18,7 +18,7 @@ const Item = ({
   return (
     <Box
       tag="button"
-      tagAttrs={{ onClick }}
+      onClick={onClick}
       display="flex"
       justifyContent="space-between"
       alignItems="center"

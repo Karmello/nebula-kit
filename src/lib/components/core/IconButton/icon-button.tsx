@@ -45,13 +45,13 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       tag={tag}
       tagRef={finalRef}
       className={classNames(withPrefix('icon-button'), tagAttrs?.className)}
+      onClick={onClick || tagAttrs?.onClick}
       tagAttrs={
         {
           ...tagAttrs,
           ...(tag === 'button'
             ? { type: (tagAttrs as ComponentProps<'button'> | undefined)?.type || 'button' }
             : {}),
-          onClick: onClick || tagAttrs?.onClick,
           'aria-disabled': disabled || undefined,
         } as PropsWithoutRef<ComponentProps<T>>
       }

@@ -31,7 +31,7 @@ export default () => {
 const buttonRef = useRef<HTMLButtonElement>(null)
 
 return <>
-  <Button tagRef={buttonRef} tagAttrs={{ onClick: () => setVisible(!visible) }}>Toggle portal</Button>
+  <Button tagRef={buttonRef} onClick={() => setVisible(!visible)}>Toggle portal</Button>
   <Portal anchorRef={buttonRef} placement="top">This is Portal content</Portal>
 </>`}
         description="Example"

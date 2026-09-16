@@ -54,12 +54,12 @@ export const Reveal = <T extends RevealTag = 'div'>({
         justifyContent="space-between"
         alignItems="center"
         cursor="pointer"
+        onClick={() => {
+          setOpen(!open)
+        }}
         tagAttrs={{
           type: 'button',
           style: { borderRadius: 0 },
-          onClick: () => {
-            setOpen(!open)
-          },
         }}
         disabled={disabled}
         color={color}

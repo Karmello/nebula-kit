@@ -72,10 +72,10 @@ export const Button = <T extends ButtonTag = 'button'>({
       <Box
         tag={tag}
         className={classNames(withPrefix('button'), tagAttrs?.className)}
+        onClick={onClick || tagAttrs?.onClick}
         tagAttrs={{
           ...tagAttrs,
           ...(tag === 'button' ? { type: tagAttrs?.type || 'button' } : {}),
-          onClick: onClick || tagAttrs?.onClick,
           'aria-disabled': disabled || undefined,
         }}
         tagRef={finalRef}

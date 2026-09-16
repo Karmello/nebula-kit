@@ -85,14 +85,14 @@ export const Dialog = ({
     <DialogProvider intent={DIALOG_INTENT} padding={DIALOG_PADDING}>
       <Portal zIndex="var(--neb-z-dialog-portal)">
         <Box
+          onClick={() => {
+            if (closeOnBackdropClick) onClose?.()
+          }}
           tagAttrs={{
             style: {
               backgroundColor:
                 theme === 'light' ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.7)',
               transition: canAnimateRef.current ? 'opacity 0.4s ease-out' : 'none',
-            },
-            onClick: () => {
-              if (closeOnBackdropClick) onClose?.()
             },
           }}
           position="fixed"
@@ -111,13 +111,13 @@ export const Dialog = ({
             <Box tagRef={scaleRef} display="inline-block">
               <Box
                 tag="dialog"
+                onClick={e => {
+                  e.stopPropagation()
+                }}
                 tagAttrs={{
                   ...tagAttrs,
                   role: 'dialog',
                   'aria-modal': true,
-                  onClick: e => {
-                    e.stopPropagation()
-                  },
                 }}
                 tagRef={tagRef || ref}
                 drawable

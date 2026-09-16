@@ -151,11 +151,11 @@ export const SelectImpl = ({
                     <Box
                       key={key}
                       tag="button"
+                      onClick={() => {
+                        setCurrentValue(slot.props.value)
+                        setOpen(false)
+                      }}
                       tagAttrs={{
-                        onClick: () => {
-                          setCurrentValue(slot.props.value)
-                          setOpen(false)
-                        },
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"

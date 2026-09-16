@@ -143,11 +143,11 @@ const BreadcrumbLevel = ({
                       key={node.value}
                       tag="button"
                       tagRef={isSelected ? selectedItemRef : undefined}
+                      onClick={() => {
+                        onSelect(node.value)
+                        setOpen(false)
+                      }}
                       tagAttrs={{
-                        onClick: () => {
-                          onSelect(node.value)
-                          setOpen(false)
-                        },
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"

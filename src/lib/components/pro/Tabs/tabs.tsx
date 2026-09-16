@@ -128,14 +128,14 @@ export const Tabs = ({
                 return (
                   <Box
                     key={index}
+                    onClick={() => {
+                      setCurrentValue(value)
+                    }}
                     tagAttrs={{
                       id: `tab-${value}`,
                       role: 'tab',
                       'aria-selected': isSelected,
                       'aria-controls': `panel-${value}`,
-                      onClick: () => {
-                        setCurrentValue(value)
-                      },
                     }}
                     flex={stretch ? '1 0 auto' : undefined}
                     bgRole={isSelected ? 'selection' : undefined}

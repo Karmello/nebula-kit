@@ -164,10 +164,10 @@ export const MultiSelectImpl = ({
                     <Box
                       key={key}
                       tag="button"
+                      onClick={() => {
+                        toggleValue(slot.props.value)
+                      }}
                       tagAttrs={{
-                        onClick: () => {
-                          toggleValue(slot.props.value)
-                        },
                         style: { backgroundClip: 'padding-box' },
                       }}
                       cursor="pointer"

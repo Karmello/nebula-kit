@@ -13,6 +13,7 @@ export const HtmlTag = <T extends ElementType = 'div'>({
   tagAttrs,
   tagRef,
   className,
+  onClick,
 }: HtmlTagProps<T>) => {
   const Tag = (tag ?? 'div') as any
 
@@ -21,6 +22,7 @@ export const HtmlTag = <T extends ElementType = 'div'>({
       {...tagAttrs}
       ref={tagRef}
       className={classNames(withPrefix('html-tag'), className ?? tagAttrs?.className)}
+      onClick={onClick ?? tagAttrs?.onClick}
     >
       {children}
     </Tag>

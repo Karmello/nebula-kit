@@ -9,5 +9,6 @@ export type HtmlTagProps<T extends ElementType = 'div'> = {
   tagAttrs?: ComponentPropsWithoutRef<T> & DataAttrs
   tagRef?: RefObject<ComponentRef<T> | null>
   className?: string
+  onClick?: ComponentPropsWithoutRef<T>['onClick']
   children?: ReactNode
 }

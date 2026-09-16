@@ -82,19 +82,19 @@ export const SideNavCategory = ({
           }
           alignItems="center"
           cursor="pointer"
+          onClick={() => {
+            if (expandMode === 'multiple') {
+              setExpandedCategories(state => ({ ...state, [id]: !state[id] }))
+            } else {
+              setExpandedCategories(state =>
+                Object.fromEntries(
+                  Object.keys(state).map(_id => [_id, _id === id ? !state[id] : false])
+                )
+              )
+            }
+          }}
           tagAttrs={{
             type: 'button',
-            onClick: () => {
-              if (expandMode === 'multiple') {
-                setExpandedCategories(state => ({ ...state, [id]: !state[id] }))
-              } else {
-                setExpandedCategories(state =>
-                  Object.fromEntries(
-                    Object.keys(state).map(_id => [_id, _id === id ? !state[id] : false])
-                  )
-                )
-              }
-            },
             'aria-expanded': expandedCategories[id],
           }}
           // variant={variant || rootVariant}

@@ -12,6 +12,10 @@ export const HTML_TAG_PROPS: Record<keyof HtmlTagProps<ElementType>, DocProp> = 
     options: ['string'],
     description: 'CSS class applied to the root tag.',
   },
+  onClick: {
+    options: ['e => void'],
+    description: 'Click event handler for the root tag.',
+  },
   tag: {
     options: ['HTML tag'],
     defaultValue: 'div',

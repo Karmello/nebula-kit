@@ -50,11 +50,7 @@ export const PaymentCancelDialog = ({
         >
           Cancel now
         </Button>
-        <Button
-          scale="sm"
-          tagAttrs={{ onClick: handleClose }}
-          disabled={cancelPaidPlan.isMakingRequest}
-        >
+        <Button scale="sm" onClick={handleClose} disabled={cancelPaidPlan.isMakingRequest}>
           Keep plan
         </Button>
       </Dialog.Footer>

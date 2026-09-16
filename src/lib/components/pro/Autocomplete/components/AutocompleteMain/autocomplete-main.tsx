@@ -136,10 +136,8 @@ export const AutocompleteMain = ({
         >
           <Box
             flex="1"
-            tagAttrs={{
-              onClick: (e: { stopPropagation: () => void }) => {
-                e.stopPropagation()
-              },
+            onClick={(e: { stopPropagation: () => void }) => {
+              e.stopPropagation()
             }}
           >
             <Input
@@ -227,13 +225,11 @@ export const AutocompleteMain = ({
                       ) : null}
                       <Box
                         tag="button"
-                        tagAttrs={{
-                          onClick: () => {
-                            setInputValue(slotProps.label)
-                            setQueryValue(slotProps.label)
-                            handleChange(slotProps.value)
-                            setOpen(false)
-                          },
+                        onClick={() => {
+                          setInputValue(slotProps.label)
+                          setQueryValue(slotProps.label)
+                          handleChange(slotProps.value)
+                          setOpen(false)
                         }}
                         drawable
                         interactive
