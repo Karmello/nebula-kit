@@ -10,22 +10,18 @@ import { TabsProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
 export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
-  // base
   children: {
     options: ['Tabs.Tab', 'Tabs.Panel'],
     isRequired: true,
     description: 'Available slots.',
-    group: 'base',
   },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // surface
   color: {

@@ -10,28 +10,23 @@ import { TextProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
-  // base
   children: {
     options: ['ReactNode'],
     isRequired: true,
     description: 'Content rendered.',
-    group: 'base',
   },
   elemTag: {
     options: ['HTML tag'],
     defaultValue: 'p',
     description: 'The HTML tag to be rendered as the container.',
-    group: 'base',
   },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // surface
   color: {

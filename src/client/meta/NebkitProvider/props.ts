@@ -11,12 +11,10 @@ import type { NebkitProviderProps } from 'lib/components/core/NebkitProvider/typ
 import type { DocProp } from 'client/definitions'
 
 export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, DocProp> = {
-  // base
   children: {
     options: ['ReactElement'],
     isRequired: true,
     description: 'Application component to be wrapped by the provider.',
-    group: 'base',
   },
   // theme
   theme: {

@@ -16,16 +16,13 @@ import { AvatarProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
 export const AVATAR_PROPS: Record<keyof AvatarProps, DocProp> = {
-  // base
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // source
   src: {

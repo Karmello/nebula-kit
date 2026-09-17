@@ -11,16 +11,13 @@ import { ImageProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const IMAGE_PROPS: Record<keyof ImageProps, DocProp> = {
-  // base
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // source
   src: {

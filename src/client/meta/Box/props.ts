@@ -37,32 +37,26 @@ import {
 import type { DocProp } from 'client/definitions'
 
 export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
-  // base
   children: {
     options: ['ReactNode'],
     description: 'Content rendered.',
-    group: 'base',
   },
   className: {
     options: ['string'],
     description: 'CSS class applied to the root tag.',
-    group: 'base',
   },
   elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
-    group: 'base',
   },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // surface
   drawable: {

@@ -15,28 +15,23 @@ import { ButtonProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
-  // base
   children: {
     options: ['ReactNode'],
     isRequired: true,
     description: 'Label rendered.',
-    group: 'base',
   },
   elemTag: {
     options: BUTTON_TAGS,
     defaultValue: 'button',
     description: 'The HTML tag to be rendered as the container.',
-    group: 'base',
   },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // surface
   variant: {

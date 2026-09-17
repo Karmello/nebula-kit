@@ -12,22 +12,18 @@ import { IconButtonProps } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
-  // base
   elemTag: {
     options: ICON_BUTTON_TAGS,
     defaultValue: 'div',
     description: 'The HTML tag to be rendered as the container.',
-    group: 'base',
   },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the root HTML tag.',
-    group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the root tag.',
-    group: 'base',
   },
   // surface
   variant: {
