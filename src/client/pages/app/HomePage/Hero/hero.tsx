@@ -1,9 +1,16 @@
 import { Box, Button, Image, Link, NEB_LENGTH, Spacer, Text, Tooltip } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
+import { useLibraryPageStore } from 'client/store'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
+
+  const libraryPageCategoryKey = useLibraryPageStore(state => state.categoryKey)
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
+  const libraryPageSectionKey = useLibraryPageStore(state => state.sectionKey)
+
+  const libraryHref = `${PageKey.library}/${libraryPageCategoryKey}/${libraryPageItemKey}/${libraryPageSectionKey}`
 
   return (
     <Box
@@ -28,9 +35,9 @@ export const Hero = () => {
           justifyContent={{ base: 'center', md: 'flex-start' }}
         >
           <Link
-            href={PageKey.library}
+            href={libraryHref}
             onClick={() => {
-              navigateTo(PageKey.library)
+              navigateTo(libraryHref)
             }}
           >
             <Button

@@ -1,4 +1,4 @@
-export { NEB_LENGTH } from '../../constants'
+export { NEB_FONT_SIZE, NEB_LENGTH, NEB_LINE_HEIGHT } from '../../constants'
 export {
   AppFrame,
   type AppFrameFooterProps,
