@@ -9,5 +9,5 @@ export const SPACER_OVERVIEW: DocOverview = {
     'supports responsive spacing for adaptive layouts',
   ],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

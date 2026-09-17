@@ -8,6 +8,6 @@ export const REVEAL_OVERVIEW: DocOverview = {
     'provides a labeled control for toggling content visibility',
     'animates expand and collapse using measured height for smooth transitions',
   ],
-  exposedTags: REVEAL_TAGS,
+  rendersAs: REVEAL_TAGS,
   composedOf: ['Box', 'Icon', 'Resize', 'Text', 'useRotate'],
 }

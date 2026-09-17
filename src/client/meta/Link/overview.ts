@@ -11,5 +11,5 @@ export const LINK_OVERVIEW: DocOverview = {
     'supports href and target for standard link behavior',
   ],
   composedOf: ['HtmlElem'],
-  exposedTags: ['a'],
+  rendersAs: ['a'],
 }

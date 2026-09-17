@@ -10,5 +10,5 @@ export const SPLIT_VIEW_SIDE_OVERVIEW: DocOverview = {
   ],
   guidelines: ['typically used for navigation, menus or supplementary content'],
   composedOf: ['Box', 'IconButton', 'Resize', 'useFocusTrap'],
-  exposedTags: ['aside'],
+  rendersAs: ['aside'],
 }

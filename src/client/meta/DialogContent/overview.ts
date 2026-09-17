@@ -5,5 +5,5 @@ export const DIALOG_CONTENT_OVERVIEW: DocOverview = {
   name: 'Dialog.Content',
   title: 'Primary content area of the dialog.',
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

@@ -11,5 +11,5 @@ export const FLOATING_TRIGGER_OVERVIEW: DocOverview = {
     'preserves the rendered child structure without applying visual styling',
   ],
   composedOf: ['Box'],
-  exposedTags: ['span'],
+  rendersAs: ['span'],
 }

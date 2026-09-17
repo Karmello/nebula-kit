@@ -10,5 +10,5 @@ export const IMAGE_OVERVIEW: DocOverview = {
     'serves as a base for composed image components',
   ],
   composedOf: ['Box'],
-  exposedTags: ['img'],
+  rendersAs: ['img'],
 }

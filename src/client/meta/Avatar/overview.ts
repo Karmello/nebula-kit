@@ -10,5 +10,4 @@ export const AVATAR_OVERVIEW: DocOverview = {
     'built-in loading indicator with delay and minimum display time',
   ],
   composedOf: ['Box', 'Image', 'Loader', 'Text'],
-  exposedTags: ['div'],
 }

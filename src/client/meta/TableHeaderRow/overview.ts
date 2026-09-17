@@ -8,6 +8,6 @@ export const TABLE_HEADER_ROW_OVERVIEW: DocOverview = {
     "should be use within Table.Head to group header cells and define the table's column labels.",
   ],
   composedOf: ['Box'],
-  exposedTags: ['tr'],
+  rendersAs: ['tr'],
   slots: ['Table.HeaderCell'],
 }

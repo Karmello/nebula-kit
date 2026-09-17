@@ -13,5 +13,5 @@ export const BREADCRUMB_OVERVIEW: DocOverview = {
     'keeps application logic and navigation policy outside the component',
   ],
   composedOf: ['Box', 'Floating', 'Icon', 'Resize', 'Text'],
-  exposedTags: ['div', 'nav', 'section'],
+  rendersAs: ['div', 'nav', 'section'],
 }

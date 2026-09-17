@@ -6,5 +6,5 @@ export const DIALOG_FOOTER_OVERVIEW: DocOverview = {
   title: 'Footer area of the dialog.',
   features: ['for actions'],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

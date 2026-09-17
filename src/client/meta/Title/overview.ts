@@ -13,5 +13,4 @@ export const TITLE_OVERVIEW: DocOverview = {
     'allows custom content when children are not plain text',
   ],
   composedOf: ['Box', 'Icon', 'Text'],
-  exposedTags: ['span'],
 }

@@ -5,5 +5,5 @@ export const INPUT_OVERVIEW: DocOverview = {
   title: 'Form control for entering or editing text.',
   features: ['supports both controlled and uncontrolled modes'],
   composedOf: ['Box'],
-  exposedTags: ['input'],
+  rendersAs: ['input'],
 }

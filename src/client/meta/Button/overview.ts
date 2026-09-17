@@ -12,5 +12,5 @@ export const BUTTON_OVERVIEW: DocOverview = {
     'supports full-width layout to span the entire container',
   ],
   composedOf: ['Box', 'Icon', 'Loader', 'Text'],
-  exposedTags: BUTTON_TAGS,
+  rendersAs: BUTTON_TAGS,
 }

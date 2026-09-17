@@ -11,5 +11,5 @@ export const FLOATING_CONTENT_OVERVIEW: DocOverview = {
     'closes on outside press, Escape and Tab navigation',
   ],
   composedOf: ['Box', 'Portal'],
-  exposedTags: ['span'],
+  rendersAs: ['span'],
 }

@@ -12,5 +12,5 @@ export const APP_FRAME_FOOTER_SECTION_OVERVIEW: DocOverview = {
     'keeps footer content structure explicit without requiring custom wrappers',
   ],
   composedOf: ['Box'],
-  exposedTags: ['section'],
+  rendersAs: ['section'],
 }

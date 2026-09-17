@@ -14,6 +14,6 @@ export const SPLIT_VIEW_OVERVIEW: DocOverview = {
   guidelines: [
     'typically used for side navigation layouts, settings pages or documentation interfaces',
   ],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
   slots: ['SplitView.Side', 'SplitView.Main'],
 }

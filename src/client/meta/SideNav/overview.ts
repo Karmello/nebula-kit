@@ -14,6 +14,6 @@ export const SIDE_NAV_OVERVIEW: DocOverview = {
     'does not manage selected state internally - active items should be derived from the current route, pathname or query parameters',
   ],
   composedOf: ['Box'],
-  exposedTags: ['nav'],
+  rendersAs: ['nav'],
   slots: ['SideNav.Item', 'SideNav.Category'],
 }

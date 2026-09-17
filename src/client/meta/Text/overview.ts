@@ -10,5 +10,5 @@ export const TEXT_OVERVIEW: DocOverview = {
     'provides common text styling and formatting options',
   ],
   composedOf: ['Box'],
-  exposedTags: TEXT_TAGS,
+  rendersAs: TEXT_TAGS,
 }

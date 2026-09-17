@@ -9,6 +9,6 @@ export const APP_FRAME_FOOTER_OVERVIEW: DocOverview = {
     'AppFrame.FooterSection slot is optional, when no footer sections are provided, AppFrame.Footer renders its children directly',
   ],
   composedOf: ['Box'],
-  exposedTags: ['footer'],
+  rendersAs: ['footer'],
   slots: ['AppFrame.FooterSection'],
 }

@@ -12,6 +12,6 @@ export const TOOLBAR_OVERVIEW: DocOverview = {
     'often paired with ButtonGroup rendered inside the main section',
   ],
   composedOf: ['Box'],
-  exposedTags: ['nav'],
+  rendersAs: ['nav'],
   slots: ['Toolbar.Main', 'Toolbar.Start', 'Toolbar.End'],
 }

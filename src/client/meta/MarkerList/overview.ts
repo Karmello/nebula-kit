@@ -9,6 +9,6 @@ export const MARKER_LIST_OVERVIEW: DocOverview = {
     'use ol tag with numeric marker styles and ul with bullet marker styles for correct semantics',
   ],
   composedOf: ['Box'],
-  exposedTags: MARKER_LIST_TAGS,
+  rendersAs: MARKER_LIST_TAGS,
   slots: ['MarkerList.Item'],
 }

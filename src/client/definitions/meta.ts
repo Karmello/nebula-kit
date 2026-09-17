@@ -10,7 +10,7 @@ export type DocOverview = {
   features?: string[]
   guidelines?: string[]
   composedOf?: string[]
-  exposedTags?: readonly string[]
+  rendersAs?: readonly string[]
   slots?: string[]
   hooks?: string[]
   readMoreLink?: {

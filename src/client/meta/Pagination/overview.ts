@@ -13,5 +13,5 @@ export const PAGINATION_OVERVIEW: DocOverview = {
     'routing support via hrefBuilder for URL-based pagination and deep linking',
   ],
   composedOf: ['Box', 'Icon', 'Link', 'Text'],
-  exposedTags: ['nav'],
+  rendersAs: ['nav'],
 }

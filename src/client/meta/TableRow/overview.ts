@@ -6,6 +6,6 @@ export const TABLE_ROW_OVERVIEW: DocOverview = {
   title: 'Represents a single row within the table structure.',
   guidelines: ['should be placed inside Table.Body or Table.Footer to define individual data rows'],
   composedOf: ['Box'],
-  exposedTags: ['tr'],
+  rendersAs: ['tr'],
   slots: ['Table.Cell', 'Table.HeaderCell'],
 }

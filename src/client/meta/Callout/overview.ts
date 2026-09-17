@@ -8,5 +8,5 @@ export const CALLOUT_OVERVIEW: DocOverview = {
     'used to draw attention to important information, confirmations, warnings or errors within a page',
   ],
   composedOf: ['Box', 'Spacer', 'Text', 'Title'],
-  exposedTags: CALLOUT_TAGS,
+  rendersAs: CALLOUT_TAGS,
 }

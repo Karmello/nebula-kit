@@ -10,5 +10,5 @@ export const SIDE_NAV_ITEM_OVERVIEW: DocOverview = {
     'can be nested inside SideNav.Category to participate in hierarchical navigation',
   ],
   composedOf: ['Box', 'Icon', 'Link', 'Text'],
-  exposedTags: ['a'],
+  rendersAs: ['a'],
 }

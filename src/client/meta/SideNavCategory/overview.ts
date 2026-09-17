@@ -13,6 +13,6 @@ export const SIDE_NAV_CATEGORY_OVERVIEW: DocOverview = {
     'expects only SideNav.Item elements as children',
   ],
   composedOf: ['Box', 'Icon', 'Resize', 'Spacer', 'Text'],
-  exposedTags: ['ul'],
+  rendersAs: ['ul'],
   slots: ['SideNav.Item'],
 }

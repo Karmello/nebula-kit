@@ -6,5 +6,5 @@ export const APP_FRAME_HEADER_OVERVIEW: DocOverview = {
   title: 'Defines the top region of AppFrame.',
   guidelines: ['typically used for navigation, branding or other global actions'],
   composedOf: ['Box'],
-  exposedTags: ['header'],
+  rendersAs: ['header'],
 }

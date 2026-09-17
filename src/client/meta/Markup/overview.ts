@@ -20,5 +20,4 @@ export const MARKUP_OVERVIEW: DocOverview = {
     'Markup can process nested string children recursively when they appear inside Text-based structures',
   ],
   composedOf: ['Box'],
-  exposedTags: ['div'],
 }

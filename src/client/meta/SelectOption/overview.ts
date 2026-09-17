@@ -7,5 +7,5 @@ export const SELECT_OPTION_OVERVIEW: DocOverview = {
   description:
     'Select.Option defines an available choice within a Select component. Each option provides a value used for selection and renders the content displayed to the user inside the dropdown list.',
   composedOf: ['Box', 'HorizontalRule', 'Text'],
-  exposedTags: ['button'],
+  rendersAs: ['button'],
 }

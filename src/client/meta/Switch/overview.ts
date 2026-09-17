@@ -5,5 +5,5 @@ export const SWITCH_OVERVIEW: DocOverview = {
   title: 'Form control for toggling a binary on/off state.',
   features: ['supports both controlled and uncontrolled modes'],
   composedOf: ['Box', 'useSlide'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

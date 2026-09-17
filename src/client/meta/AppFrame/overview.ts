@@ -13,6 +13,6 @@ export const APP_FRAME_OVERVIEW: DocOverview = {
     'supports footer sections that can stack or align horizontally across breakpoints',
   ],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
   slots: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer', 'AppFrame.FooterSection'],
 }

@@ -7,5 +7,5 @@ export const SPLIT_VIEW_MAIN_BAR_OVERVIEW: DocOverview = {
   features: ['can contain any custom content, such as breadcrumbs or other controls'],
   guidelines: ['should be placed inside SplitView.Main slot'],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

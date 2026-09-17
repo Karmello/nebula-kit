@@ -27,7 +27,7 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
       features,
       guidelines,
       composedOf,
-      exposedTags,
+      rendersAs,
       slots,
       hooks,
       readMoreLink,
@@ -60,12 +60,8 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
       {features ? <ListWithHeading heading="Features" items={features} /> : null}
       {guidelines ? <ListWithHeading heading="Guidelines" items={guidelines} /> : null}
       {composedOf ? <ListWithChips heading="Composed of" items={composedOf} color="red" /> : null}
-      {exposedTags ? (
-        <ListWithChips
-          heading={exposedTags.length > 1 ? 'Exposed tags' : 'Exposed tag'}
-          items={exposedTags as string[]}
-          color="amber"
-        />
+      {rendersAs ? (
+        <ListWithChips heading="Renders as" items={rendersAs as string[]} color="amber" />
       ) : null}
       {props ? (
         <ListWithChips

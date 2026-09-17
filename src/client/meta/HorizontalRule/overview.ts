@@ -8,5 +8,5 @@ export const HORIZONTAL_RULE_OVERVIEW: DocOverview = {
     'marks a thematic break between related blocks of content',
   ],
   composedOf: ['Box'],
-  exposedTags: ['hr'],
+  rendersAs: ['hr'],
 }

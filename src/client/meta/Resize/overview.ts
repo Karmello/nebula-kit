@@ -11,5 +11,5 @@ export const RESIZE_OVERVIEW: DocOverview = {
     'keeps layout motion explicit without hard-coded sizes',
   ],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

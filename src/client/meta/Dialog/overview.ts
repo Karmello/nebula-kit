@@ -11,6 +11,6 @@ export const DIALOG_OVERVIEW: DocOverview = {
     'automatically disables page scrolling while open',
   ],
   composedOf: ['Box', 'IconButton', 'Portal', 'useFocusTrap', 'useScale'],
-  exposedTags: ['dialog'],
+  rendersAs: ['dialog'],
   slots: ['Dialog.Header', 'Dialog.Content', 'Dialog.Footer'],
 }

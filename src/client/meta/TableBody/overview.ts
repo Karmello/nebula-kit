@@ -6,6 +6,6 @@ export const TABLE_BODY_OVERVIEW: DocOverview = {
   title: 'Main data rows of the table.',
   guidelines: ['expects Table.Row as children', 'this slot can be used multiple times'],
   composedOf: ['Box'],
-  exposedTags: ['tbody'],
+  rendersAs: ['tbody'],
   slots: ['Table.Row'],
 }

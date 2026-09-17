@@ -16,5 +16,5 @@ export const ICON_BUTTON_OVERVIEW: DocOverview = {
     'keeps interaction geometry consistent with the global control sizing system',
   ],
   composedOf: ['Box', 'Icon', 'Loader'],
-  exposedTags: ICON_BUTTON_TAGS,
+  rendersAs: ICON_BUTTON_TAGS,
 }

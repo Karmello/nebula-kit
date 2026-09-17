@@ -5,5 +5,5 @@ export const MARKER_LIST_ITEM_OVERVIEW: DocOverview = {
   name: 'MarkerList.Item',
   title: 'Single item inside MarkerList.',
   composedOf: ['Box'],
-  exposedTags: ['li'],
+  rendersAs: ['li'],
 }

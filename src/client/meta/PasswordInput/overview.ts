@@ -11,5 +11,5 @@ export const PASSWORD_OVERVIEW: DocOverview = {
     'supports both controlled and uncontrolled modes',
   ],
   composedOf: ['Box', 'IconButton', 'Input'],
-  exposedTags: ['input'],
+  rendersAs: ['input'],
 }

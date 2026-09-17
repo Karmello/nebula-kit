@@ -6,5 +6,5 @@ export const TABS_TAB_OVERVIEW: DocOverview = {
   title: 'Selectable tab item within a Tabs component.',
   features: ['activates the panel with the matching value', 'inherits visual styling from Button'],
   composedOf: ['Text'],
-  exposedTags: ['button'],
+  rendersAs: ['button'],
 }

@@ -11,6 +11,6 @@ export const TABLE_OVERVIEW: DocOverview = {
     'always renders with square corners and does not inherit the global border radius',
   ],
   composedOf: ['Box'],
-  exposedTags: ['table'],
+  rendersAs: ['table'],
   slots: ['Table.Body', 'Table.Header', 'Table.Footer', 'Table.Caption'],
 }

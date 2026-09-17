@@ -6,5 +6,5 @@ export const TABS_PANEL_OVERVIEW: DocOverview = {
   title: 'Content panel associated with a tab.',
   features: ['displayed when its corresponding tab is active'],
   composedOf: ['Box'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
 }

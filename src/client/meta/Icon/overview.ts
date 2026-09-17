@@ -8,7 +8,7 @@ export const ICON_OVERVIEW: DocOverview = {
     'allows rendering a custom SVG icon via children while preserving semantic styling',
   ],
   composedOf: ['Box'],
-  exposedTags: ['span'],
+  rendersAs: ['svg'],
   readMoreLink: {
     label: 'See all available icons',
     href: '/foundations/resources/assets/icons',

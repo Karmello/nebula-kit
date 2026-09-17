@@ -12,6 +12,6 @@ export const AUTOCOMPLETE_OVERVIEW: DocOverview = {
     'renders its dropdown without animation for maximum responsiveness',
   ],
   composedOf: ['Box', 'Floating', 'HorizontalRule', 'IconButton', 'Input', 'Resize', 'Text'],
-  exposedTags: ['div'],
+  rendersAs: ['div'],
   slots: ['Autocomplete.Option'],
 }

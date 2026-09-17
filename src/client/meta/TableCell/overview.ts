@@ -6,5 +6,5 @@ export const TABLE_CELL_OVERVIEW: DocOverview = {
   title: 'Represents a single cell within a table row.',
   guidelines: ['should be used inside Table.Row'],
   composedOf: ['Box'],
-  exposedTags: ['td'],
+  rendersAs: ['td'],
 }

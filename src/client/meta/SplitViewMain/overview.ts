@@ -6,6 +6,6 @@ export const SPLIT_VIEW_MAIN_OVERVIEW: DocOverview = {
   title: 'Defines the main content region of the SplitView layout.',
   features: ['holds the primary content region of the SplitView layout'],
   composedOf: ['Box', 'IconButton', 'Spacer'],
-  exposedTags: ['section'],
+  rendersAs: ['section'],
   slots: ['SplitView.MainBar'],
 }

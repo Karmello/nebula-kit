@@ -6,6 +6,6 @@ export const TABLE_HEADER_OVERVIEW: DocOverview = {
   title: 'Column headers of the table.',
   guidelines: ['expects Table.HeaderRow as children'],
   composedOf: ['Box'],
-  exposedTags: ['thead'],
+  rendersAs: ['thead'],
   slots: ['Table.HeaderRow'],
 }
