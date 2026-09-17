@@ -3,6 +3,11 @@ import type { UseFocusTrapArgs } from 'lib/components/pro/useFocusTrap/types'
 import type { DocProp } from 'client/definitions'
 
 export const USE_FOCUS_TRAP_PROPS: Record<keyof UseFocusTrapArgs, DocProp> = {
+  ref: {
+    options: ['RefObject'],
+    isRequired: true,
+    description: 'Ref to the DOM element that the trap should contain focus within.',
+  },
   active: {
     options: ['boolean'],
     isRequired: true,
@@ -17,10 +22,5 @@ export const USE_FOCUS_TRAP_PROPS: Record<keyof UseFocusTrapArgs, DocProp> = {
     options: ['() => void'],
     description:
       'Called when the user attempts to exit the trapped region (ESC key or clicking outside).',
-  },
-  ref: {
-    options: ['RefObject'],
-    isRequired: true,
-    description: 'Ref to the DOM element that the trap should contain focus within.',
   },
 }

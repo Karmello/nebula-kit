@@ -10,39 +10,47 @@ export const TABLE_CAPTION_PROPS: Record<keyof TableCaptionProps, DocProp> = {
     isRequired: true,
     description: 'Content rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // surface
   intent: {
     options: BOX_INTENTS,
     defaultValue: String(DEFAULT_TABLE_CAPTION_INTENT),
     description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // padding
+  paddingInline: {
+    options: ['string'],
+    isResponsive: true,
+    link: true,
+    description: 'Padding for the left and right sides.',
+    group: 'padding',
   },
   paddingBlock: {
     options: ['string'],
     isResponsive: true,
     link: true,
     description: 'Padding for the top and bottom sides.',
+    group: 'padding',
   },
-  paddingInline: {
-    options: ['string'],
-    isResponsive: true,
-    link: true,
-    description: 'Padding for the left and right sides.',
-  },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
-  },
+  // appearance
   textAlign: {
     options: CSS_TEXT_ALIGN,
     isResponsive: true,
     link: true,
     description: 'Text alignment within the component.',
+    group: 'appearance',
   },
 }

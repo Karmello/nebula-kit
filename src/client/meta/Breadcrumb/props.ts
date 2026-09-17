@@ -10,44 +10,18 @@ import { BreadcrumbProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
 export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-  },
-  defaultPath: {
-    options: ['string[]'],
-    description:
-      'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
-    description: 'Color tone applied to the list.',
-  },
-  onChange: {
-    options: ['(path: string[]) => void'],
-    description: 'Called when the user selects a value, receiving the updated breadcrumb path.',
-  },
-  path: {
-    options: ['string[]'],
-    description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
-  },
-  scale: {
-    options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_TSHIRT_SIZE,
-  },
   elemTag: {
     options: BREADCRUMB_TAGS,
     defaultValue: 'div',
     description: 'The HTML tag to be rendered.',
   },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
   tree: {
     options: ['object[]'],
@@ -55,9 +29,45 @@ export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
     description:
       'Hierarchical data source that defines the breadcrumb structure and available selections.',
   },
+  // value
+  path: {
+    options: ['string[]'],
+    description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
+    group: 'value',
+  },
+  defaultPath: {
+    options: ['string[]'],
+    description:
+      'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
+    group: 'value',
+  },
+  onChange: {
+    options: ['(path: string[]) => void'],
+    description: 'Called when the user selects a value, receiving the updated breadcrumb path.',
+    group: 'value',
+  },
+  // surface
   variant: {
     options: BREADCRUMB_VARIANTS,
     defaultValue: DEFAULT_BREADCRUMB_VARIANT,
     description: 'Visual style variant applied to the dropdown menu. The trigger is unaffected.',
+    group: 'surface',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
+    description: 'Color tone applied to the list.',
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
+    group: 'size',
   },
 }

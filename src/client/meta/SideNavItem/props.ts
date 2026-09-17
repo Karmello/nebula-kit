@@ -65,13 +65,13 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     description:
       "Selects which depth tier the component's surface color is drawn from - base or raised - each with its own per-intent lightness and interaction states.",
   },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
   variant: {
     options: SIDE_NAV_VARIANTS,

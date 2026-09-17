@@ -11,29 +11,34 @@ export const APP_FRAME_FOOTER_PROPS: Record<keyof AppFrameFooterProps, DocProp> 
     description:
       'Footer content. Can be AppFrame.FooterSection slots or any regular React content when section grouping is not needed.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    isResponsive: false,
-  },
-  footerStackBreakpoint: {
-    options: SWITCH_BREAKPOINTS,
-    defaultValue: DEFAULT_SWITCH_BREAKPOINT,
-    description:
-      'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
-    description: "Color tone applied to the component's main color.",
-    isResponsive: false,
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_APP_FRAME_FOOTER_INTENT),
+    description: "Color tone applied to the component's main color.",
+    isResponsive: false,
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    isResponsive: false,
+    group: 'surface',
+  },
+  // layout
+  footerStackBreakpoint: {
+    options: SWITCH_BREAKPOINTS,
+    defaultValue: DEFAULT_SWITCH_BREAKPOINT,
+    description:
+      'Defines the breakpoint from which the footer switches from a stacked vertical layout to a horizontal layout.',
+    group: 'layout',
   },
 }

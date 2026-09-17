@@ -19,15 +19,15 @@ export const USE_SLIDE_PROPS: Record<keyof UseSlideDocArgs, DocProp> = {
     isRequired: true,
     description: 'Ref to the DOM element to slide.',
   },
-  from: {
-    options: USE_SLIDE_FROM,
-    isRequired: true,
-    description: 'Edge from which the content slides when becoming visible.',
-  },
   visible: {
     options: ['boolean'],
     isRequired: true,
     description: 'Toggles the visibility of the content.',
+  },
+  from: {
+    options: USE_SLIDE_FROM,
+    isRequired: true,
+    description: 'Edge from which the content slides when becoming visible.',
   },
   duration: {
     options: ['number'],

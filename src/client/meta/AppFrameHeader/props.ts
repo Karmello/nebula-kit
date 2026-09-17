@@ -9,23 +9,26 @@ export const APP_FRAME_HEADER_PROPS: Record<keyof AppFrameHeaderProps, DocProp> 
     isRequired: true,
     description: 'Content rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    isResponsive: false,
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
-    description: "Color tone applied to the component's main color.",
-    isResponsive: false,
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_APP_FRAME_HEADER_INTENT),
+    description: "Color tone applied to the component's main color.",
+    isResponsive: false,
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    isResponsive: false,
+    group: 'surface',
   },
 }

@@ -8,22 +8,41 @@ import type { SplitViewSideProps } from 'lib/components/pro/SplitView/slots/Spli
 import type { DocProp } from 'client/definitions'
 
 export const SPLIT_VIEW_SIDE_PROPS: Record<keyof SplitViewSideProps, DocProp> = {
+  children: {
+    options: ['ReactNode'],
+    isRequired: true,
+    description: 'Content rendered.',
+  },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_SPLIT_VIEW_SIDE_INTENT),
+    isResponsive: false,
+    description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    isResponsive: false,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // size
   blockSize: {
     options: ['string'],
     isResponsive: true,
     link: true,
     defaultValue: String(DEFAULT_SPLIT_VIEW_SIDE_BLOCK_SIZE),
     description: 'Logical height.',
-  },
-  children: {
-    options: ['ReactNode'],
-    isRequired: true,
-    description: 'Content rendered.',
-  },
-  color: {
-    options: BOX_COLORS,
-    isResponsive: false,
-    description: 'Color applied to the component.',
+    group: 'size',
   },
   inlineSize: {
     options: ['string'],
@@ -31,61 +50,56 @@ export const SPLIT_VIEW_SIDE_PROPS: Record<keyof SplitViewSideProps, DocProp> = 
     link: true,
     defaultValue: String(DEFAULT_SPLIT_VIEW_SIDE_INLINE_SIZE),
     description: 'Logical width.',
+    group: 'size',
   },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: String(DEFAULT_SPLIT_VIEW_SIDE_INTENT),
-    isResponsive: false,
-    description: "Color tone applied to the component's main color.",
-  },
+  // padding
   padding: {
     options: ['string'],
     isResponsive: true,
     link: true,
     description: 'Padding for all sides.',
-  },
-  paddingBlock: {
-    options: ['string'],
-    isResponsive: true,
-    link: true,
-    description: 'Padding for the top and bottom sides.',
-  },
-  paddingBottom: {
-    options: ['string'],
-    isResponsive: true,
-    link: true,
-    description: 'Padding for the bottom side.',
+    group: 'padding',
   },
   paddingInline: {
     options: ['string'],
     isResponsive: true,
     link: true,
     description: 'Padding for the left and right sides.',
+    group: 'padding',
   },
-  paddingLeft: {
+  paddingBlock: {
     options: ['string'],
     isResponsive: true,
     link: true,
-    description: 'Padding for the left side.',
-  },
-  paddingRight: {
-    options: ['string'],
-    isResponsive: true,
-    link: true,
-    description: 'Padding for the right side.',
+    description: 'Padding for the top and bottom sides.',
+    group: 'padding',
   },
   paddingTop: {
     options: ['string'],
     isResponsive: true,
     link: true,
     description: 'Padding for the top side.',
+    group: 'padding',
   },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
+  paddingRight: {
+    options: ['string'],
+    isResponsive: true,
+    link: true,
+    description: 'Padding for the right side.',
+    group: 'padding',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  paddingBottom: {
+    options: ['string'],
+    isResponsive: true,
+    link: true,
+    description: 'Padding for the bottom side.',
+    group: 'padding',
+  },
+  paddingLeft: {
+    options: ['string'],
+    isResponsive: true,
+    link: true,
+    description: 'Padding for the left side.',
+    group: 'padding',
   },
 }

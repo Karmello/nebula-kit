@@ -10,23 +10,26 @@ export const SPLIT_VIEW_PROPS: Record<keyof SplitViewProps, DocProp> = {
     description:
       'Accepts slots directly or via a render function with access to the SplitView context.',
   },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // layout
   sidePosition: {
     options: SPLIT_VIEW_SIDE_POSITIONS as unknown as string[],
     defaultValue: SPLIT_VIEW_SIDE_POSITIONS[0],
     description: 'Controls which horizontal side the side panel is attached to.',
+    group: 'layout',
   },
   switchAt: {
     options: SWITCH_BREAKPOINTS,
     defaultValue: DEFAULT_SWITCH_BREAKPOINT,
     description:
       'Defines the breakpoint at which the side panel switches from overlay to inline layout mode.',
-  },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+    group: 'layout',
   },
 }

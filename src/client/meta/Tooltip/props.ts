@@ -19,50 +19,63 @@ export const TOOLTIP_PROPS: Record<keyof TooltipProps, DocProp> = {
     isRequired: true,
     description: 'Trigger element.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    isResponsive: false,
-  },
+  // content
   content: {
     options: ['string'],
     isRequired: true,
     description: 'The text content displayed inside the tooltip.',
+    group: 'content',
+  },
+  // surface
+  variant: {
+    options: TOOLTIP_VARIANTS,
+    defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
+    description: 'Visual style variant.',
+    isResponsive: false,
+    group: 'surface',
   },
   intent: {
     options: TOOLTIP_INTENTS,
     defaultValue: String(DEFAULT_TOOLTIP_INTENT),
     description: "Color tone applied to the component's main color.",
     isResponsive: false,
+    group: 'surface',
   },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    isResponsive: false,
+    group: 'surface',
+  },
+  // interaction
+  mode: {
+    options: TOOLTIP_MODES,
+    defaultValue: DEFAULT_TOOLTIP_MODE,
+    description: 'Controls which interaction opens the tooltip.',
+    group: 'interaction',
+  },
+  // layout
+  placement: {
+    options: TOOLTIP_PLACEMENTS,
+    defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
+    description:
+      'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
+    group: 'layout',
+  },
+  // size
   maxInlineSize: {
     options: ['number'],
     defaultValue: String(DEFAULT_TOOLTIP_MAX_INLINE_SIZE),
     isResponsive: false,
     description: 'Maximum logical width.',
     link: true,
+    group: 'size',
   },
   minInlineSize: {
     options: ['number'],
     isResponsive: false,
     description: 'Minimum logical width.',
     link: true,
-  },
-  mode: {
-    options: TOOLTIP_MODES,
-    defaultValue: DEFAULT_TOOLTIP_MODE,
-    description: 'Controls which interaction opens the tooltip.',
-  },
-  placement: {
-    options: TOOLTIP_PLACEMENTS,
-    defaultValue: DEFAULT_TOOLTIP_PLACEMENT,
-    description:
-      'Preferred position of the tooltip relative to its trigger element. The position gets auto-adjusted so the tooltip stays visible.',
-  },
-  variant: {
-    options: TOOLTIP_VARIANTS,
-    defaultValue: String(DEFAULT_TOOLTIP_VARIANT),
-    description: 'Visual style variant.',
-    isResponsive: false,
+    group: 'size',
   },
 }

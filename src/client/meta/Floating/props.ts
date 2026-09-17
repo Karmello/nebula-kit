@@ -13,35 +13,46 @@ export const FLOATING_PROPS: Record<keyof FloatingProps, DocProp> = {
     isRequired: true,
     description: 'Floating.Trigger + Floating.Content slots.',
   },
-  disabled: {
+  // state
+  open: {
     options: ['boolean'],
-    description:
-      'Disables the floating interaction, preventing the floating content from opening through trigger hover or click behavior.',
+    description: 'Controls whether the floating content is currently visible.',
+    group: 'state',
   },
-  mode: {
-    options: FLOATING_MODE,
-    defaultValue: DEFAULT_FLOATING_MODE,
-    description: 'Defines which interaction opens the floating content.',
-  },
-  offset: {
-    options: ['number'],
-    description: 'Sets the distance between the trigger and floating content.',
-  },
+  // events
   onOpenChange: {
     options: ['(open: boolean) => void'],
     description: 'Callback fired when the floating content requests to open or close.',
+    group: 'events',
   },
   onPlacementChange: {
     options: ['placement => void'],
     description: 'Callback fired when the resolved placement changes.',
+    group: 'events',
   },
-  open: {
+  // interaction
+  mode: {
+    options: FLOATING_MODE,
+    defaultValue: DEFAULT_FLOATING_MODE,
+    description: 'Defines which interaction opens the floating content.',
+    group: 'interaction',
+  },
+  disabled: {
     options: ['boolean'],
-    description: 'Controls whether the floating content is currently visible.',
+    description:
+      'Disables the floating interaction, preventing the floating content from opening through trigger hover or click behavior.',
+    group: 'interaction',
   },
+  // layout
   placement: {
     options: FLOATING_PLACEMENT,
     defaultValue: DEFAULT_FLOATING_PLACEMENT,
     description: 'Defines the preferred position of the floating content relative to the trigger.',
+    group: 'layout',
+  },
+  offset: {
+    options: ['number'],
+    description: 'Sets the distance between the trigger and floating content.',
+    group: 'layout',
   },
 }

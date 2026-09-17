@@ -8,23 +8,27 @@ export const APP_FRAME_FOOTER_SECTION_PROPS: Record<keyof AppFrameFooterSectionP
     isRequired: true,
     description: 'Content rendered.',
   },
+  // padding
   padding: {
     options: ['string'],
     isResponsive: true,
     description: 'Padding for all sides.',
     link: true,
     defaultValue: String(DEFAULT_APP_FRAME_FOOTER_SECTION_PADDING),
-  },
-  paddingBlock: {
-    options: ['string'],
-    isResponsive: true,
-    description: 'Padding for the top and bottom sides.',
-    link: true,
+    group: 'padding',
   },
   paddingInline: {
     options: ['string'],
     isResponsive: true,
     description: 'Padding for the left and right sides.',
     link: true,
+    group: 'padding',
+  },
+  paddingBlock: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Padding for the top and bottom sides.',
+    link: true,
+    group: 'padding',
   },
 }

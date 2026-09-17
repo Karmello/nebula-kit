@@ -7,12 +7,12 @@ export const DIALOG_HEADER_PROPS: Record<keyof DialogHeaderProps, DocProp> = {
     isRequired: true,
     description: 'Content rendered.',
   },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
 }

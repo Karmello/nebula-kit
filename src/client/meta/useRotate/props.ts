@@ -6,6 +6,11 @@ import { UseRotateArgs } from 'lib/index.core'
 import type { DocProp } from 'client/definitions'
 
 export const USE_ROTATE_PROPS: Record<keyof UseRotateArgs, DocProp> = {
+  ref: {
+    options: ['RefObject'],
+    isRequired: true,
+    description: 'Ref to the DOM element to rotate.',
+  },
   angle: {
     options: ['number'],
     isRequired: true,
@@ -21,10 +26,5 @@ export const USE_ROTATE_PROPS: Record<keyof UseRotateArgs, DocProp> = {
     options: ['string'],
     defaultValue: DEFAULT_USE_ROTATE_EASING,
     description: 'Timing function for the animation.',
-  },
-  ref: {
-    options: ['RefObject'],
-    isRequired: true,
-    description: 'Ref to the DOM element to rotate.',
   },
 }

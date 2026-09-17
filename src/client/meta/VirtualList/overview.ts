@@ -14,5 +14,4 @@ export const VIRTUAL_LIST_OVERVIEW: DocOverview = {
     'suitable for dropdowns menus and command palettes',
   ],
   composedOf: ['Box'],
-  rendersAs: ['div'],
 }

@@ -9,26 +9,31 @@ export const TABLE_ROW_PROPS: Record<keyof TableRowProps, DocProp> = {
     isRequired: true,
     description: 'Cell slot.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to every cell.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    description: 'Color tone applied to every cell.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    description: 'Color tone applied to every cell.',
+    group: 'surface',
   },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to every cell.',
+    group: 'surface',
+  },
+  // appearance
   textAlign: {
     options: CSS_TEXT_ALIGN,
     isResponsive: true,
     description: 'Text alignment applied to every cell.',
     link: true,
+    group: 'appearance',
   },
 }

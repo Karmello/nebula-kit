@@ -12,5 +12,4 @@ export const PORTAL_OVERVIEW: DocOverview = {
     'serves as the foundation for dropdowns modals tooltips and other overlay components',
   ],
   composedOf: ['Box'],
-  rendersAs: ['div'],
 }

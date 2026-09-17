@@ -9,6 +9,15 @@ export const TOOLBAR_PROPS: Record<keyof ToolbarProps, DocProp> = {
     description:
       'Accepts slots directly or via a render function with access to the context argument.',
   },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // layout
   switchAt: {
     options: SWITCH_BREAKPOINTS,
     defaultValue: DEFAULT_SWITCH_BREAKPOINT,
@@ -16,13 +25,6 @@ export const TOOLBAR_PROPS: Record<keyof ToolbarProps, DocProp> = {
     isResponsive: false,
     description:
       'Defines the breakpoint at which the main section switches between collapsed and inline layout.',
-  },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
-  },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+    group: 'layout',
   },
 }

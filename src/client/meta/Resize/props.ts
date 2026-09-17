@@ -9,32 +9,37 @@ export const RESIZE_PROPS: Record<keyof ResizeProps, DocProp> = {
     isRequired: true,
     description: 'Content animated.',
   },
-  duration: {
-    options: ['number'],
-    defaultValue: String(DEFAULT_RESIZE_DURATION),
-    description: 'Animation duration in milliseconds.',
-  },
-  easing: {
-    options: ['string'],
-    defaultValue: DEFAULT_RESIZE_EASING,
-    description: 'Timing function for the animation.',
-  },
-  property: {
-    options: RESIZE_PROPERTIES,
-    isRequired: true,
-    description: 'Property to animate (logical size only).',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
-  },
+  // animation
   visible: {
     options: ['boolean'],
     isRequired: true,
     description: 'Toggles the visibility of the content.',
+    group: 'animation',
+  },
+  property: {
+    options: RESIZE_PROPERTIES,
+    isRequired: true,
+    description: 'Property to animate (logical size only).',
+    group: 'animation',
+  },
+  duration: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_RESIZE_DURATION),
+    description: 'Animation duration in milliseconds.',
+    group: 'animation',
+  },
+  easing: {
+    options: ['string'],
+    defaultValue: DEFAULT_RESIZE_EASING,
+    description: 'Timing function for the animation.',
+    group: 'animation',
   },
 }
