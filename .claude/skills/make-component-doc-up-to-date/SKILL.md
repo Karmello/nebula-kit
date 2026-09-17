@@ -56,6 +56,37 @@ effect the user needs to plan around.
 Before writing a `description` or `features` bullet, ask: would a user need to know this to use the
 component correctly, or does it only matter to someone reading the source? If the latter, cut it.
 
+## 2b. `title`, `description`, `features` and `guidelines` each do a different job
+
+First attempt on `StylingIsland` wrote a two-sentence `description` that fully restated what the
+`features` bullets said again, just in different words - `description` said "gives it its own theme
+and brand context, independent of the rest of the app" and "falls back to the global configuration",
+while `features` repeated both of those as separate bullets. Nothing in `features` added anything
+`description` hadn't already said, and `guidelines`' first bullet ("wrap a subtree that should render
+in a different theme or brand than its surroundings") was itself just a paraphrase of the
+description - not usage guidance.
+
+Each field has exactly one job. Before writing any of the four, check it against the other three - if
+a sentence or bullet could be deleted without losing information found nowhere else in the overview,
+it's redundant; cut it or rewrite it to add something new.
+
+- **`title`** answers **"what is it?"** - the component's identity in one line, a noun phrase (e.g.
+  `Loader`'s "Circular indicator for loading states.", not "Indicates that something is loading.").
+  A title phrased as a verb/action ("Establishes a local theme and brand boundary...") is answering
+  "what does it do" instead - rephrase it as identity.
+- **`description`** starts with the component's own name, states what it does, and adds the one
+  thing `title` didn't already say, in one sentence - never a second summary of the whole component.
+  Not every component needs one - `Dialog`'s overview has none and is complete without it.
+- **`features`** goes one level deeper than `description` - concrete, specific behaviors a user can
+  observe (e.g. "the nearest StylingIsland always wins when islands are nested", "falls back to the
+  global theme and brand set by NebkitProvider when a prop is left unset"). This is where the real
+  mechanics live, not a restatement of the description in bullet form.
+- **`guidelines`** is usage guidance: what to do with the component, what not to do, and how -
+  grounded in concrete scenarios, not an abstract paraphrase of what the component is. Not "wrap a
+  subtree that should render differently" but "wrap a dark panel inside a light app, a promo banner
+  with its own brand, an embedded widget that must keep a fixed look regardless of the host theme."
+  Include hard constraints the user must follow (e.g. "must wrap the application root").
+
 ## 3. `composedOf` and `hooks`: public API only, verified, not guessed
 
 Both fields exist to tell a user "here's what else you could also reach for." That guarantee is
@@ -91,7 +122,7 @@ First attempt on `NebkitProvider` got both fields wrong this way:
   elsewhere in `lib/hooks/`, never qualifies, however central it is to what the component does.
 
 If nothing clears this bar, leave the field out entirely - an absent `composedOf`/`hooks` is a
-valid, correct state (`Floating`, `FocusTrap`, and a few others intentionally have no `composedOf` -
+valid, correct state (`Floating`, `FocusTrap` and a few others intentionally have no `composedOf` -
 see section 3b for how to tell intentional absence from a real gap).
 
 ## 3b. Cross-check `composedOf` with the heuristic scanner
@@ -143,14 +174,11 @@ currently being worked on as a cross-link. Stay inside the one named component. 
 Go through every `DocOverview` field and decide deliberately (skip fields with nothing genuine to
 add - don't pad):
 
-- **`title`**: one line, what it is. Usually already fine; only touch if inaccurate.
-- **`description`**: one sentence, outcome-level, only if `title` alone leaves out something a
-  user needs (see the `description` example above). Not every component needs one - `Dialog`'s
-  overview has none and is complete without it.
-- **`features`**: bullet list of real, user-observable capabilities or guarantees. Each bullet must
-  survive the section 2 test.
-- **`guidelines`**: hard constraints/usage rules the user must follow (e.g. "must wrap the
-  application root", "must be used within a Snackbar provider context").
+- **`title`**, **`description`**, **`features`**, **`guidelines`**: see section 2b - each field
+  answers a different question ("what is it" / name + one new thing / concrete mechanics / usage
+  do's-and-don'ts-and-how) and none of them should restate another. Each `features`/`description`
+  bullet must also survive the section 2 outcomes-not-internals test. Not every component needs a
+  `description` - `Dialog`'s overview has none and is complete without it.
 - **`composedOf`**: see sections 3 and 3b. Verified-public only, cross-checked against the scanner.
 - **`rendersAs`**: only if the component's polymorphic tag prop genuinely resolves to **more than
   one** real HTML tag (backed by a multi-value `*_TAGS` constant, e.g. `BUTTON_TAGS`, `TEXT_TAGS`,
@@ -243,7 +271,7 @@ recurring set rather than inventing a new name for a concept one of these alread
   prop that picks which interaction opens something.
 - **`state`** - open/close lifecycle props that are more than a plain controlled value: `open`,
   `onClose`, `closeOnBackdropClick` on `Dialog`; `open`/`onOpenChange` on `Floating`.
-- **`animation`** - `duration`, `easing`, `property`, and an animation hook/component's own
+- **`animation`** - `duration`, `easing`, `property` and an animation hook/component's own
   transform props (`axis`, `from`, `to`, `origin` on `useScale`); the hook's `visible` toggle goes
   first in this group when the whole hook exists to drive that one transition.
 - **`span`** - table cell spanning: `colSpan`, `rowSpan`.
