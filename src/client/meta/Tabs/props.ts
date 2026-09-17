@@ -24,17 +24,17 @@ export const TABS_PROPS: Record<keyof TabsProps, DocProp> = {
     description: 'Additional HTML attributes applied to the element.',
   },
   // surface
-  color: {
-    options: BOX_COLORS,
-    isResponsive: false,
-    description: 'Color applied to the component.',
-    group: 'surface',
-  },
   intent: {
     options: BOX_INTENTS,
     defaultValue: DEFAULT_TABS_INTENT,
     isResponsive: false,
     description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    isResponsive: false,
+    description: 'Color applied to the component.',
     group: 'surface',
   },
   // value

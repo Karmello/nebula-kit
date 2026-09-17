@@ -5,5 +5,4 @@ export const LOADER_OVERVIEW: DocOverview = {
   title: 'Circular indicator for loading states.',
   features: ['displays a minimal circular spinner to indicate an ongoing operation'],
   composedOf: ['Box'],
-  rendersAs: ['div'],
 }

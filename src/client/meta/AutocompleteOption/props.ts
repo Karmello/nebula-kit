@@ -6,15 +6,15 @@ export const AUTOCOMPLETE_OPTION_PROPS: Record<keyof AutocompleteOptionProps, Do
     options: ['ReactNode'],
     description: 'Content rendered.',
   },
+  value: {
+    options: ['string'],
+    isRequired: true,
+    description: 'Defines value for the option.',
+  },
   label: {
     options: ['string'],
     isRequired: true,
     description:
       'Text label used to display the option and to match against user input when filtering. This value is shown in the input when the option is selected.',
-  },
-  value: {
-    options: ['string'],
-    isRequired: true,
-    description: 'Defines value for the option.',
   },
 }

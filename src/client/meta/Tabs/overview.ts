@@ -10,6 +10,5 @@ export const TABS_OVERVIEW: DocOverview = {
     'manages selection state without unmounting content',
   ],
   composedOf: ['Box', 'Text'],
-  rendersAs: ['div'],
   slots: ['Tabs.Tab', 'Tabs.Panel'],
 }

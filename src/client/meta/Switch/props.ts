@@ -9,42 +9,53 @@ import { SwitchProps } from 'lib/index.pro'
 import type { DocProp } from 'client/definitions'
 
 export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
-  checked: {
-    options: ['boolean'],
-    description: 'Controls the checked state in controlled mode.',
-  },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-  },
-  defaultChecked: {
-    options: ['boolean'],
-    description: 'Sets the initial checked state for uncontrolled usage.',
-  },
-  disabled: {
-    options: ['boolean'],
-    description: 'Disables the component and its interactions.',
-  },
-  intent: {
-    options: SWITCH_INTENTS,
-    defaultValue: String(DEFAULT_SWITCH_INTENT),
-    description: "Color tone applied to the component's main color.",
-  },
-  onChange: {
-    options: ['(checked: boolean) => void'],
-    description: 'Called when the checked state changes. Receives the new checked value.',
-  },
-  scale: {
-    options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_SWITCH_SCALE,
-    description: 'Controls overall proportions.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // value
+  checked: {
+    options: ['boolean'],
+    description: 'Controls the checked state in controlled mode.',
+    group: 'value',
+  },
+  defaultChecked: {
+    options: ['boolean'],
+    description: 'Sets the initial checked state for uncontrolled usage.',
+    group: 'value',
+  },
+  onChange: {
+    options: ['(checked: boolean) => void'],
+    description: 'Called when the checked state changes. Receives the new checked value.',
+    group: 'value',
+  },
+  // surface
+  intent: {
+    options: SWITCH_INTENTS,
+    defaultValue: String(DEFAULT_SWITCH_INTENT),
+    description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // interaction
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_SWITCH_SCALE,
+    description: 'Controls overall proportions.',
+    group: 'size',
   },
 }

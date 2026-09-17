@@ -15,28 +15,92 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     isRequired: true,
     description: 'Option slots rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
-  debounceDelay: {
-    options: ['number'],
-    description:
-      'Time in milliseconds to wait after typing before updating the results. The debounce applies only while the list is open and is flushed when it closes.',
+  // value
+  value: {
+    options: ['string'],
+    description: 'Current selected item value when the component is used in controlled mode.',
+    group: 'value',
   },
   defaultValue: {
     options: ['string'],
     description: 'Initial selected item value when the component is used in uncontrolled mode.',
+    group: 'value',
+  },
+  onChange: {
+    options: ['(value: string) => void'],
+    description: 'Callback fired when the selected value changes.',
+    group: 'value',
+  },
+  onInputChange: {
+    options: ['(value: string) => void'],
+    description: 'Callback fired when the text input value changes.',
+    group: 'value',
+  },
+  // content
+  placeholder: {
+    options: ['string'],
+    description:
+      'Placeholder text displayed in the input when no value is selected and the input is empty.',
+    group: 'content',
+  },
+  noOptionsLabel: {
+    options: ['string'],
+    description:
+      'When provided, displays a disabled item with the given label if the current search query yields no matching options.',
+    group: 'content',
+  },
+  visibleItemsCount: {
+    options: ['number'],
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT),
+    description: 'Specifies the number of list items visible before scrolling is enabled.',
+    group: 'content',
+  },
+  // filtering
+  debounceDelay: {
+    options: ['number'],
+    description:
+      'Time in milliseconds to wait after typing before updating the results. The debounce applies only while the list is open and is flushed when it closes.',
+    group: 'filtering',
   },
   disableFiltering: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_AUTOCOMPLETE_DISABLE_FILTERING),
     description:
       'Disables internal label-based filtering. Use when options are filtered externally.',
+    group: 'filtering',
   },
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    description: 'Color tone applied to the component.',
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  showToggle: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
+    description: 'Controls whether the dropdown toggle is rendered next to the input.',
+    group: 'surface',
+  },
+  // interaction
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
+    group: 'size',
   },
   inlineSize: {
     options: ['string'],
@@ -44,49 +108,6 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
     description: 'Logical width.',
     link: true,
     defaultValue: String(DEFAULT_AUTOCOMPLETE_INLINE_SIZE),
-  },
-  intent: {
-    options: BOX_INTENTS,
-    description: 'Color tone applied to the component.',
-  },
-  noOptionsLabel: {
-    options: ['string'],
-    description:
-      'When provided, displays a disabled item with the given label if the current search query yields no matching options.',
-  },
-  onChange: {
-    options: ['(value: string) => void'],
-    description: 'Callback fired when the selected value changes.',
-  },
-  onInputChange: {
-    options: ['(value: string) => void'],
-    description: 'Callback fired when the text input value changes.',
-  },
-  placeholder: {
-    options: ['string'],
-    description:
-      'Placeholder text displayed in the input when no value is selected and the input is empty.',
-  },
-  showToggle: {
-    options: ['boolean'],
-    defaultValue: String(DEFAULT_AUTOCOMPLETE_SHOW_TOGGLE),
-    description: 'Controls whether the dropdown toggle is rendered next to the input.',
-  },
-  scale: {
-    options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_TSHIRT_SIZE,
-  },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
-  },
-  value: {
-    options: ['string'],
-    description: 'Current selected item value when the component is used in controlled mode.',
-  },
-  visibleItemsCount: {
-    options: ['number'],
-    defaultValue: String(DEFAULT_AUTOCOMPLETE_VISIBLE_ITEMS_COUNT),
-    description: 'Specifies the number of list items visible before scrolling is enabled.',
+    group: 'size',
   },
 }
