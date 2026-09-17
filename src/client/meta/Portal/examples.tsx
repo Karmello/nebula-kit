@@ -44,7 +44,7 @@ return (
     ) : null}
   </>
 )`,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Positioned above the anchor element, aligned to its left edge.',

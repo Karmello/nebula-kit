@@ -4,7 +4,7 @@ import { type DocExample } from 'client/definitions'
 export const CHECKBOX_EXAMPLES: DocExample[] = [
   {
     code: '<Checkbox checked={checked} />',
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Different checkbox sizes in the outline variant.',

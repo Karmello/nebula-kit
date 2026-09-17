@@ -12,7 +12,7 @@ export const SIDE_NAV_EXAMPLES: DocExample[] = [
       </SideNav>
     ),
     noSandBox: true,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Flat navigation.',

@@ -12,7 +12,7 @@ export const TABLE_EXAMPLES: DocExample[] = [
         </Table.Body>
       </Table>
     ),
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Default Table displaying only data rows.',

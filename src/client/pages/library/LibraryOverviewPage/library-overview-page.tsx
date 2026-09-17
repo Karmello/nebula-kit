@@ -36,15 +36,17 @@ const SingleOverview = ({ meta }: { meta: DocMeta<object> }) => {
     props,
   } = meta
 
+  const overviewExample = examples?.find(example => example.isOverviewSnippet) || examples?.[0]
+
   const content = (
     <Box display="flex" flexDirection="column" alignItems="stretch" gap={NEB_LENGTH.px_032}>
       <Box>
         <Text typography="lead">{title}</Text>
-        {examples?.[0] ? (
+        {overviewExample ? (
           <Box marginBlock={NEB_LENGTH.px_016}>
             <CodeSnippet
               lang="tsx"
-              code={examples[0].code || convertElemToString(examples[0].jsx)}
+              code={overviewExample.code || convertElemToString(overviewExample.jsx)}
             />
           </Box>
         ) : null}

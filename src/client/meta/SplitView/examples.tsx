@@ -15,7 +15,7 @@ export const SPLIT_VIEW_EXAMPLES: DocExample[] = [
       </SplitView>
     ),
     noSandBox: true,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description:

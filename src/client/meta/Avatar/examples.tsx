@@ -4,7 +4,7 @@ import { type DocExample } from 'client/definitions'
 export const AVATAR_EXAMPLES: DocExample[] = [
   {
     code: '<Avatar src={src} scale="sm" />',
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Defalt medium size.',

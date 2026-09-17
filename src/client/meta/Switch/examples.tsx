@@ -4,7 +4,7 @@ import { type DocExample } from 'client/definitions'
 export const SWITCH_EXAMPLES: DocExample[] = [
   {
     jsx: <Switch />,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Default Switch.',

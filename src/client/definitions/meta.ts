@@ -30,13 +30,20 @@ export type DocProp = {
 }
 
 export type DocExample = {
+  // Live element rendered in the sandbox preview; also the fallback source for the code snippet when `code` is not set.
   jsx?: JSX.Element
+  // Source code shown in the code snippet; falls back to a stringified `jsx` when omitted.
   code?: string
+  // Caption shown above the sandbox, or folded into the code snippet's own heading when `noSandBox` is set.
   description?: string
+  // Hides the live sandbox preview, showing only the code snippet.
   noSandBox?: boolean
+  // Hides the code snippet, showing only the live sandbox preview.
   noCode?: boolean
+  // Removes the sandbox's inner padding so the preview renders edge-to-edge.
   sandBoxWithNoPadding?: boolean
-  skip?: boolean
+  // Marks this example as the one shown on the component's Overview page.
+  isOverviewSnippet?: boolean
 }
 
 export type DocChangelog = Partial<Record<ReleaseVersion, string[]>>

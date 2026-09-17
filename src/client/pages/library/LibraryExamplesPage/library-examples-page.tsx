@@ -129,15 +129,13 @@ export const LibraryExamplesPage = () => {
       ) : null}
       <Box display="flex" flexDirection="column" alignItems="stretch">
         {Object.keys(meta[itemLabel] || []).map(key => {
-          return (meta[itemLabel][key].examples || [])
-            .filter(example => !example.skip)
-            .map((example, i) => (
-              <SingleExample
-                key={`${key}_${i}`}
-                {...example}
-                hideExamplesThemeToggle={hideExamplesThemeToggle}
-              />
-            ))
+          return (meta[itemLabel][key].examples || []).map((example, i) => (
+            <SingleExample
+              key={`${key}_${i}`}
+              {...example}
+              hideExamplesThemeToggle={hideExamplesThemeToggle}
+            />
+          ))
         })}
       </Box>
     </Box>

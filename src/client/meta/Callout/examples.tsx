@@ -4,7 +4,7 @@ import { type DocExample } from 'client/definitions'
 export const CALLOUT_EXAMPLES: DocExample[] = [
   {
     jsx: <Callout status="info" content="Callout text content" />,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Highlights neutral or contextual information for the user.',

@@ -12,5 +12,6 @@ export const HTML_ELEM_EXAMPLES: DocExample[] = [
       'Choosing the <a> tag, makes its all attributes available on the elemAttrs property.',
     jsx: <HtmlElem elemTag="a" elemAttrs={{ href: 'https://google.com' }} />,
     noSandBox: true,
+    isOverviewSnippet: true,
   },
 ]

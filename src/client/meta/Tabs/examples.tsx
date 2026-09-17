@@ -3,7 +3,7 @@ import { type DocExample } from 'client/definitions'
 
 export const TABS_EXAMPLES: DocExample[] = [
   {
-    skip: true,
+    isOverviewSnippet: true,
     jsx: (
       <Tabs>
         <Tabs.Tab value={1}>First</Tabs.Tab>

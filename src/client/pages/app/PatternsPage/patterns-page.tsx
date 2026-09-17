@@ -107,7 +107,13 @@ export const PatternsPage = () => {
                   ))}
                 </MultiSelect>
                 <Spacer blockSize={NEB_LENGTH.px_016} />
-                <SideNav scale="xl" gap={NEB_LENGTH.px_002}>
+                <SideNav
+                  scale="md"
+                  gap={NEB_LENGTH.px_002}
+                  variant="ghost"
+                  intent="primary"
+                  color="blue"
+                >
                   {PATTERNS.filter(p => patternCategories.includes(p.category)).map(
                     ({ id, title }) => {
                       const href = `/patterns?id=${id}`
@@ -121,7 +127,6 @@ export const PatternsPage = () => {
                             navigateTo(href)
                           }}
                           selected={pattern.id === id}
-                          // description={category}
                           bold
                           align="start"
                         >

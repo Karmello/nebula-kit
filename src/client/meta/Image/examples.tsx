@@ -5,7 +5,7 @@ import { type DocExample } from 'client/definitions'
 export const IMAGE_EXAMPLES: DocExample[] = [
   {
     jsx: <Image />,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Basic image rendering with a defined size.',

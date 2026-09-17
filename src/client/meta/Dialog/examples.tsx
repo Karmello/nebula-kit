@@ -32,7 +32,7 @@ export const DIALOG_EXAMPLES: DocExample[] = [
     code: `<Dialog open={open}>
   <Dialog.Content>Dialog content</Dialog.Content>
 </Dialog>`,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     jsx: <DialogWrapper />,

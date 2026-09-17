@@ -13,7 +13,7 @@ export const TOOLBAR_EXAMPLES: DocExample[] = [
       </Toolbar>
     ),
     noSandBox: true,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description:

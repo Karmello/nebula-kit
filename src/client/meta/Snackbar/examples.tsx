@@ -38,7 +38,7 @@ export const SNACKBAR_EXAMPLES: DocExample[] = [
   <App />
 </Snackbar>
 `,
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Informational snackbar at the bottom right (default).',
@@ -160,6 +160,6 @@ show({
   status: 'info',
   content: 'This is an informational message that highlights something worth your attention.',
 })`,
-    skip: true,
+    isOverviewSnippet: true,
   },
 ]

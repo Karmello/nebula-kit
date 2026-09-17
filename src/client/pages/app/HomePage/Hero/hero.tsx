@@ -1,11 +1,9 @@
 import { Box, Button, Image, Link, NEB_LENGTH, Spacer, Text, Tooltip } from 'lib/components'
 import { PageKey } from 'client/definitions'
 import { useNavigateTo } from 'client/hooks'
-import { usePatternsStore } from 'client/store'
 
 export const Hero = () => {
   const navigateTo = useNavigateTo()
-  const activePatternId = usePatternsStore(state => state.activePatternId)
 
   return (
     <Box
@@ -30,25 +28,26 @@ export const Hero = () => {
           justifyContent={{ base: 'center', md: 'flex-start' }}
         >
           <Link
-            href={`${PageKey.foundations}/overview/introduction/about-nebula-kit`}
+            href={PageKey.library}
             onClick={() => {
-              navigateTo(`${PageKey.foundations}/overview/introduction/about-nebula-kit`)
+              navigateTo(PageKey.library)
             }}
           >
             <Button
+              variant="solid"
               color="blue"
               intent="primary"
               iconName="arrow-right"
               iconPlacement="right"
               scale="md"
             >
-              Read more
+              Library
             </Button>
           </Link>
           <Link
-            href={`${PageKey.patterns}?id=${activePatternId}`}
+            href={`${PageKey.foundations}/overview/introduction/about-nebula-kit`}
             onClick={() => {
-              navigateTo(`${PageKey.patterns}?id=${activePatternId}`)
+              navigateTo(`${PageKey.foundations}/overview/introduction/about-nebula-kit`)
             }}
           >
             <Button
@@ -59,7 +58,7 @@ export const Hero = () => {
               iconPlacement="right"
               scale="md"
             >
-              Patterns
+              Read more
             </Button>
           </Link>
         </Box>
