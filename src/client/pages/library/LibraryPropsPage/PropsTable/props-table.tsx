@@ -40,7 +40,7 @@ export const PropsTable = ({ data, category }: Props) => {
     }
   }
 
-  const sections = [...Object.entries(groupedNames), ['', ungroupedNames] as const].filter(
+  const sections = [['', ungroupedNames] as const, ...Object.entries(groupedNames)].filter(
     ([, names]) => names.length > 0
   )
 
