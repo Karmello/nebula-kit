@@ -30,70 +30,55 @@ export const AVATAR_PROPS: Record<keyof AvatarProps, DocProp> = {
     description: 'Source URL of the image.',
     group: 'source',
   },
-  alt: {
-    options: ['string'],
-    description: 'Alternative text describing the image for accessibility.',
-    group: 'source',
-  },
-  title: {
-    options: ['string'],
-    description: 'Supplementary text associated with the image.',
-    group: 'source',
-  },
-  initials: {
-    options: ['string'],
-    description:
-      'Text displayed as a fallback when the image fails to load or src is not provided.',
-    group: 'source',
-  },
-  // loading
   loading: {
     options: IMAGE_LOADING,
     description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
-    group: 'loading',
+    group: 'source',
   },
   decoding: {
     options: IMAGE_DECODING,
     description: 'Hints how the browser should decode the image.',
-    group: 'loading',
+    group: 'source',
   },
   fetchPriority: {
     options: IMAGE_FETCH_PRIORITY,
     description: 'Hints the browser about the relative priority of fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
   crossOrigin: {
     options: IMAGE_CROSS_ORIGIN,
     description: 'Controls the CORS mode used when fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
   referrerPolicy: {
     options: IMAGE_REFERRER_POLICY,
     description: 'Controls which referrer information is sent when fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
-  // object
-  objectFit: {
-    options: IMAGE_OBJECT_FIT,
-    isResponsive: true,
-    description: 'Defines how the image is resized to fit its container.',
-    link: true,
-    group: 'object',
-  },
-  objectPosition: {
+  // content
+  initials: {
     options: ['string'],
-    isResponsive: true,
-    description: 'Sets the alignment of the image within its container.',
-    link: true,
-    group: 'object',
+    description:
+      'Text displayed as a fallback when the image fails to load or src is not provided.',
+    group: 'content',
   },
-  // surface
+  alt: {
+    options: ['string'],
+    description: 'Alternative text describing the image for accessibility.',
+    group: 'content',
+  },
+  title: {
+    options: ['string'],
+    description: 'Supplementary text associated with the image.',
+    group: 'content',
+  },
+  // appearance
   shape: {
     options: AVATAR_SHAPES as never,
     defaultValue: DEFAULT_AVATAR_SHAPE,
     description:
       "Controls the avatar's outer shape. Use round for a circular avatar or square for a rectangular one.",
-    group: 'surface',
+    group: 'appearance',
   },
   // size
   scale: {
@@ -101,5 +86,20 @@ export const AVATAR_PROPS: Record<keyof AvatarProps, DocProp> = {
     defaultValue: DEFAULT_AVATAR_SCALE,
     description: "Controls the avatar's overall dimensions using the predefined size scale.",
     group: 'size',
+  },
+  // layout
+  objectFit: {
+    options: IMAGE_OBJECT_FIT,
+    isResponsive: true,
+    description: 'Defines how the image is resized to fit its container.',
+    link: true,
+    group: 'layout',
+  },
+  objectPosition: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Sets the alignment of the image within its container.',
+    link: true,
+    group: 'layout',
   },
 }
