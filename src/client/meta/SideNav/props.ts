@@ -18,34 +18,6 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
     isRequired: true,
     description: 'SideNav slots.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to all categories and items.',
-  },
-  expandMode: {
-    options: SIDE_NAV_EXPAND_MODES,
-    defaultValue: DEFAULT_SIDE_NAV_EXPAND_MODE,
-    description:
-      'Controls whether one or multiple categories can remain expanded at the same time.',
-  },
-  gap: {
-    options: ['string'],
-    isResponsive: true,
-    link: true,
-    defaultValue: String(DEFAULT_SIDE_NAV_GAP),
-    description: 'Defines vertical spacing between items.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: DEFAULT_SIDE_NAV_INTENT,
-    description: 'Color tone applied to all categories and items.',
-  },
-  scale: {
-    options: TSHIRT_SIZES,
-    defaultValue: DEFAULT_SIDE_NAV_SCALE,
-    description:
-      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
-  },
   elemRef: {
     options: ['RefObject'],
     description: 'Reference to the element.',
@@ -54,9 +26,47 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
+  // behavior
+  expandMode: {
+    options: SIDE_NAV_EXPAND_MODES,
+    defaultValue: DEFAULT_SIDE_NAV_EXPAND_MODE,
+    description:
+      'Controls whether one or multiple categories can remain expanded at the same time.',
+    group: 'behavior',
+  },
+  // surface
   variant: {
     options: SIDE_NAV_VARIANTS,
     defaultValue: DEFAULT_SIDE_NAV_VARIANT,
     description: 'Visual style variant applied to all categories and items.',
+    group: 'surface',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: DEFAULT_SIDE_NAV_INTENT,
+    description: 'Color tone applied to all categories and items.',
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to all categories and items.',
+    group: 'surface',
+  },
+  // layout
+  gap: {
+    options: ['string'],
+    isResponsive: true,
+    link: true,
+    defaultValue: String(DEFAULT_SIDE_NAV_GAP),
+    description: 'Defines vertical spacing between items.',
+    group: 'layout',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_SIDE_NAV_SCALE,
+    description:
+      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
+    group: 'size',
   },
 }
