@@ -12,7 +12,7 @@ export const HTML_ELEM_PROPS: Record<keyof HtmlElemProps<ElementType>, DocProp> 
   },
   className: {
     options: ['string'],
-    description: 'CSS class applied to the root tag.',
+    description: 'CSS class applied to the tag.',
     group: 'base',
   },
   elemTag: {
@@ -23,33 +23,33 @@ export const HTML_ELEM_PROPS: Record<keyof HtmlElemProps<ElementType>, DocProp> 
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the HTML tag.',
     group: 'base',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the tag.',
     group: 'base',
   },
   // interaction
   onClick: {
     options: ['e => void'],
-    description: 'Click event handler for the root tag.',
+    description: 'Click event handler for the tag.',
     group: 'interaction',
   },
   onFocus: {
     options: ['e => void'],
-    description: 'Focus event handler for the root tag.',
+    description: 'Focus event handler for the tag.',
     group: 'interaction',
   },
   onBlur: {
     options: ['e => void'],
-    description: 'Blur event handler for the root tag.',
+    description: 'Blur event handler for the tag.',
     group: 'interaction',
   },
   onKeyDown: {
     options: ['e => void'],
-    description: 'Key down event handler for the root tag.',
+    description: 'Key down event handler for the tag.',
     group: 'interaction',
   },
 }

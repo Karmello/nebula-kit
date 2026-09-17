@@ -6,6 +6,7 @@ export const HTML_ELEM_OVERVIEW: DocOverview = {
   features: [
     'renders the specified HTML tag',
     'forwards the relevant attributes for the tag',
+    'when both an explicit prop (e.g. `className`, `onClick`) and the equivalent field on `elemAttrs` are given, the explicit prop wins',
     'passes through the ref',
     'polymorphic design lets you swap the underlying element while still receiving the correct props, ensuring the component resolves to a predictable, semantic element',
     'intentionally minimal - higher-level primitives usually fit better',
