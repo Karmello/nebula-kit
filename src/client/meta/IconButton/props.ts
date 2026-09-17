@@ -25,6 +25,10 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
+  onClick: {
+    options: ['e => void'],
+    description: 'Click event handler for the element.',
+  },
   // surface
   variant: {
     options: ICON_BUTTON_VARIANTS,
@@ -32,15 +36,15 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     description: 'Visual style variant.',
     group: 'surface',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    group: 'surface',
-  },
   intent: {
     options: BOX_INTENTS,
     defaultValue: String(DEFAULT_ICON_BUTTON_INTENT),
     description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     group: 'surface',
   },
   surfaceDepth: {
@@ -55,20 +59,15 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
     description: 'Disables the component and its interactions.',
     group: 'interaction',
   },
-  ripple: {
-    options: ['boolean'],
-    defaultValue: String(DEFAULT_ICON_BUTTON_RIPPLE),
-    description: 'Toggles the ripple effect on pointer interaction.',
-    group: 'interaction',
-  },
   loading: {
     options: ['boolean'],
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
     group: 'interaction',
   },
-  onClick: {
-    options: ['e => void'],
-    description: 'Click event handler for the element.',
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_ICON_BUTTON_RIPPLE),
+    description: 'Toggles the ripple effect on pointer interaction.',
     group: 'interaction',
   },
   // size

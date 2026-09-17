@@ -25,66 +25,52 @@ export const IMAGE_PROPS: Record<keyof ImageProps, DocProp> = {
     description: 'Source URL of the image.',
     group: 'source',
   },
-  alt: {
-    options: ['string'],
-    description: 'Alternative text describing the image for accessibility.',
-    group: 'source',
-  },
-  title: {
-    options: ['string'],
-    description: 'Supplementary text associated with the image.',
-    group: 'source',
-  },
-  // loading
   loading: {
     options: IMAGE_LOADING,
     description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
-    group: 'loading',
+    group: 'source',
   },
   decoding: {
     options: IMAGE_DECODING,
     description: 'Hints how the browser should decode the image.',
-    group: 'loading',
+    group: 'source',
   },
   fetchPriority: {
     options: IMAGE_FETCH_PRIORITY,
     description: 'Hints the browser about the relative priority of fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
   crossOrigin: {
     options: IMAGE_CROSS_ORIGIN,
     description: 'Controls the CORS mode used when fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
   referrerPolicy: {
     options: IMAGE_REFERRER_POLICY,
     description: 'Controls which referrer information is sent when fetching the image.',
-    group: 'loading',
+    group: 'source',
   },
+  // events
   onLoad: {
     options: ['e => void'],
     description: 'Called when the underlying img element fires a load event.',
-    group: 'loading',
+    group: 'events',
   },
   onError: {
     options: ['e => void'],
     description: 'Called when the underlying img element fires an error event.',
-    group: 'loading',
+    group: 'events',
   },
-  // object
-  objectFit: {
-    options: IMAGE_OBJECT_FIT,
-    isResponsive: true,
-    description: 'Defines how the image is resized to fit its container.',
-    link: true,
-    group: 'object',
-  },
-  objectPosition: {
+  // content
+  alt: {
     options: ['string'],
-    isResponsive: true,
-    description: 'Sets the alignment of the image within its container.',
-    link: true,
-    group: 'object',
+    description: 'Alternative text describing the image for accessibility.',
+    group: 'content',
+  },
+  title: {
+    options: ['string'],
+    description: 'Supplementary text associated with the image.',
+    group: 'content',
   },
   // appearance
   aspectRatio: {
@@ -134,6 +120,20 @@ export const IMAGE_PROPS: Record<keyof ImageProps, DocProp> = {
     options: CSS_OVERFLOW,
     isResponsive: true,
     description: 'Overflow behavior on the vertical axis.',
+    link: true,
+    group: 'layout',
+  },
+  objectFit: {
+    options: IMAGE_OBJECT_FIT,
+    isResponsive: true,
+    description: 'Defines how the image is resized to fit its container.',
+    link: true,
+    group: 'layout',
+  },
+  objectPosition: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Sets the alignment of the image within its container.',
     link: true,
     group: 'layout',
   },

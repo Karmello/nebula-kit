@@ -146,7 +146,7 @@ export const CatalogPageTemplate = memo(
                             <Box
                               drawable
                               bgMode="filled"
-                              intent="muted"
+                              intent="strong"
                               color="amber"
                               borderRadius={NEB_LENGTH.px_012}
                               paddingBlock={NEB_LENGTH.px_006}

@@ -65,14 +65,14 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
       'Enables visual rendering. When true, the Box can draw a surface using bg and intent. When false, it is structural and has no visual styling.',
     group: 'surface',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    group: 'surface',
-  },
   intent: {
     options: BOX_INTENTS,
     description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     group: 'surface',
   },
   surfaceDepth: {
@@ -124,11 +124,6 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
       'Enables visual interaction affordances such as hover and active styling. Sets drawable to true automatically.',
     group: 'interaction',
   },
-  ripple: {
-    options: ['boolean'],
-    description: 'Toggles the ripple effect on pointer interaction.',
-    group: 'interaction',
-  },
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
@@ -150,25 +145,31 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     link: true,
     group: 'interaction',
   },
+  ripple: {
+    options: ['boolean'],
+    description: 'Toggles the ripple effect on pointer interaction.',
+    group: 'interaction',
+  },
+  // events
   onClick: {
     options: ['e => void'],
     description: 'Click event handler for the root tag.',
-    group: 'interaction',
+    group: 'events',
   },
   onFocus: {
     options: ['e => void'],
     description: 'Focus event handler for the root tag.',
-    group: 'interaction',
+    group: 'events',
   },
   onBlur: {
     options: ['e => void'],
     description: 'Blur event handler for the root tag.',
-    group: 'interaction',
+    group: 'events',
   },
   onKeyDown: {
     options: ['e => void'],
     description: 'Key down event handler for the root tag.',
-    group: 'interaction',
+    group: 'events',
   },
   // layout
   display: {

@@ -22,14 +22,14 @@ export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
     description: 'Name of the icon to render.',
     group: 'appearance',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the icon.',
-    group: 'appearance',
-  },
   intent: {
     options: BOX_INTENTS,
     description: 'Color tone applied to the icon.',
+    group: 'appearance',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the icon.',
     group: 'appearance',
   },
   size: {

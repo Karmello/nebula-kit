@@ -33,6 +33,10 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
+  onClick: {
+    options: ['e => void'],
+    description: 'Click event handler for the button element.',
+  },
   // surface
   variant: {
     options: BUTTON_VARIANTS,
@@ -40,15 +44,15 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     defaultValue: String(DEFAULT_BUTTON_VARIANT),
     group: 'surface',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    group: 'surface',
-  },
   intent: {
     options: BOX_INTENTS,
     description: "Color tone applied to the component's main color.",
     defaultValue: String(DEFAULT_BUTTON_INTENT),
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     group: 'surface',
   },
   surfaceDepth: {
@@ -63,12 +67,6 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description: 'Disables the component and its interactions.',
     group: 'interaction',
   },
-  ripple: {
-    options: ['boolean'],
-    description: 'Toggles the ripple effect on pointer interaction.',
-    defaultValue: String(DEFAULT_BUTTON_RIPPLE),
-    group: 'interaction',
-  },
   selected: {
     options: ['boolean'],
     description:
@@ -80,9 +78,10 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description: 'Activates the loading state, shows a spinner and prevents interaction.',
     group: 'interaction',
   },
-  onClick: {
-    options: ['e => void'],
-    description: 'Click event handler for the button element.',
+  ripple: {
+    options: ['boolean'],
+    description: 'Toggles the ripple effect on pointer interaction.',
+    defaultValue: String(DEFAULT_BUTTON_RIPPLE),
     group: 'interaction',
   },
   // size
@@ -128,16 +127,16 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description: 'Controls how inner content is arranged within the container.',
     group: 'layout',
   },
+  // formatting
+  bold: {
+    options: ['boolean'],
+    description: 'Toggles bold styling.',
+    group: 'formatting',
+  },
   // icon
   iconName: {
     options: ['IconName'],
     description: 'Name of the icon to render.',
-    group: 'icon',
-  },
-  iconPlacement: {
-    options: BUTTON_ICON_PLACEMENTS,
-    defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
-    description: 'Icon placement relative to label.',
     group: 'icon',
   },
   customSvgIcon: {
@@ -145,10 +144,10 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
     description: 'Custom SVG icon rendered when not using name prop.',
     group: 'icon',
   },
-  // formatting
-  bold: {
-    options: ['boolean'],
-    description: 'Toggles bold styling.',
-    group: 'formatting',
+  iconPlacement: {
+    options: BUTTON_ICON_PLACEMENTS,
+    defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
+    description: 'Icon placement relative to label.',
+    group: 'icon',
   },
 }

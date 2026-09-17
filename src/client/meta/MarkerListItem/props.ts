@@ -8,20 +8,23 @@ export const MARKER_LIST_ITEM_PROPS: Record<keyof MarkerListItemProps, DocProp> 
     isRequired: true,
     description: 'Content rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to each item individually.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    description: 'Color tone applied to each item individually.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // appearance
+  intent: {
+    options: BOX_INTENTS,
+    description: 'Color tone applied to each item individually.',
+    group: 'appearance',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to each item individually.',
+    group: 'appearance',
   },
 }

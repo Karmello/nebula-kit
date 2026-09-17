@@ -13,39 +13,45 @@ export const MARKER_LIST_PROPS: Record<keyof MarkerListProps, DocProp> = {
     isRequired: true,
     description: 'Any number of MarkerList.Item slots.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to all items at once.',
+  elemTag: {
+    options: MARKER_LIST_TAGS,
+    defaultValue: 'ul',
+    description: 'The HTML tag to be rendered.',
   },
-  gap: {
-    options: ['string'],
-    defaultValue: String(DEFAULT_MARKER_LIST_GAP),
-    isResponsive: true,
-    description: 'Defines vertical spacing between rows of children.',
-    link: true,
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
-  intent: {
-    options: BOX_INTENTS,
-    description: 'Color tone applied to all items at once.',
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
+  // appearance
   listStyle: {
     options: MARKER_LIST_STYLES,
     defaultValue: MARKER_LIST_STYLES[0],
     isRequired: false,
     isResponsive: false,
     description: 'Defines the marker style used for list items.',
+    group: 'appearance',
   },
-  elemTag: {
-    options: MARKER_LIST_TAGS,
-    defaultValue: 'ul',
-    description: 'The HTML tag to be rendered.',
+  intent: {
+    options: BOX_INTENTS,
+    description: 'Color tone applied to all items at once.',
+    group: 'appearance',
   },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to all items at once.',
+    group: 'appearance',
   },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the element.',
+  // layout
+  gap: {
+    options: ['string'],
+    defaultValue: String(DEFAULT_MARKER_LIST_GAP),
+    isResponsive: true,
+    description: 'Defines vertical spacing between rows of children.',
+    link: true,
+    group: 'layout',
   },
 }

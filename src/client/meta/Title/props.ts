@@ -31,14 +31,14 @@ export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
       'Typography style used for plain text children and for deriving the icon size and spacing.',
     group: 'appearance',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-    group: 'appearance',
-  },
   intent: {
     options: BOX_INTENTS,
     description: "Color tone applied to the component's main color.",
+    group: 'appearance',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
     group: 'appearance',
   },
   // icon
