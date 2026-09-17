@@ -1,4 +1,5 @@
 import { Box } from 'lib/components/core/Box/box'
+import { NEB_LENGTH } from 'lib/constants'
 import { type DocExample } from 'client/definitions'
 
 export const BOX_EXAMPLES: DocExample[] = [
@@ -9,7 +10,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable bgMode="filled" intent="primary">
+      <Box drawable bgMode="filled" intent="primary" color="blue">
         Box is a block
       </Box>
     ),
@@ -17,7 +18,7 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable bgMode="filled" intent="primary" padding="20px">
+      <Box drawable bgMode="filled" intent="primary" color="blue" padding={NEB_LENGTH.px_024}>
         Padded box
       </Box>
     ),
@@ -25,7 +26,14 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable bgMode="filled" intent="primary" padding="20px" textAlign="center">
+      <Box
+        drawable
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+        textAlign="center"
+      >
         Centered content
       </Box>
     ),
@@ -33,7 +41,14 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box drawable bgMode="filled" intent="primary" padding="20px" display="inline-block">
+      <Box
+        drawable
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+        display="inline-block"
+      >
         Box as inline block
       </Box>
     ),
@@ -41,15 +56,23 @@ export const BOX_EXAMPLES: DocExample[] = [
   },
   {
     jsx: (
-      <Box interactive bgMode="filled" intent="primary" padding="20px">
+      <Box interactive bgMode="filled" intent="primary" color="blue" padding={NEB_LENGTH.px_024}>
         Interactive Box
       </Box>
     ),
     description: 'Box with interactive behavior.',
+    isOverviewSnippet: true,
   },
   {
     jsx: (
-      <Box interactive disabled bgMode="filled" intent="primary" padding="20px">
+      <Box
+        interactive
+        disabled
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+      >
         Disabled Box
       </Box>
     ),

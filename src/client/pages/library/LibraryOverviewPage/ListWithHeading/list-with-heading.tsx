@@ -14,11 +14,11 @@ export const ListWithHeading = ({ heading, items }: { heading: string; items: st
     <Title typography="h6">{heading}</Title>
     <HorizontalRule marginTop={NEB_LENGTH.px_004} />
     <Spacer blockSize={NEB_LENGTH.px_004} />
-    <MarkerList>
+    <MarkerList gap={NEB_LENGTH.px_008}>
       {items.map((s, i) => (
         <MarkerList.Item key={i}>
           <Markup>
-            <Text>{s}</Text>
+            <Text lineHeight={1.6}>{s}</Text>
           </Markup>
         </MarkerList.Item>
       ))}
