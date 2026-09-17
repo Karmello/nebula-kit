@@ -1,15 +1,15 @@
-import { Pattern } from './definitions'
-import { Test } from './jsx/test'
-import testCode from './jsx/test.tsx?raw'
+import { Pattern as PatternDef } from './definitions'
+import { Pattern as StylingIsland } from './jsx/styling-island'
+import stylingIslandCode from './jsx/styling-island.tsx?raw'
 
-export const PATTERNS: Array<Pattern> = [
+export const PATTERNS: Array<PatternDef> = [
   {
-    id: 'test',
+    id: 'styling-island',
     category: 'Basic',
-    title: 'Test',
-    description: 'Test pattern.',
-    component: Test,
-    code: testCode,
+    title: 'Styling Island',
+    description: 'A region with its own theme and brand that all descendants follow automatically.',
+    component: StylingIsland,
+    code: stylingIslandCode,
   },
 ]
 

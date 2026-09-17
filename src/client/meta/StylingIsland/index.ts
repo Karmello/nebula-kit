@@ -10,6 +10,6 @@ export const STYLING_ISLAND_META = {
   overview: STYLING_ISLAND_OVERVIEW,
   props: STYLING_ISLAND_PROPS,
   examples: STYLING_ISLAND_EXAMPLES,
-  hideExamplesThemeToggle: true,
   changelog: STYLING_ISLAND_CHANGELOG,
+  hideExamplesThemeToggle: true,
 } satisfies DocMeta<StylingIslandProps>

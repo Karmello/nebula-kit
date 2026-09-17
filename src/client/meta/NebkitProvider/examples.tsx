@@ -14,5 +14,6 @@ export const NEBKIT_PROVIDER_EXAMPLES: DocExample[] = [
   <App />
 </NebkitProvider>`,
     noSandBox: true,
+    isOverviewSnippet: true,
   },
 ]
