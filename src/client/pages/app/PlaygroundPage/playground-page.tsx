@@ -64,32 +64,27 @@ export const PlaygroundPage = () => {
                 <Box
                   padding={{ base: NEB_LENGTH.px_012, lg: NEB_LENGTH.px_000 }}
                   paddingLeft={{ lg: NEB_LENGTH.px_032 }}
+                  display="flex"
+                  flexDirection="column"
+                  alignItems="stretch"
+                  rowGap={NEB_LENGTH.px_024}
                 >
+                  <Box>
+                    <ComponentSelect />
+                  </Box>
                   <Box
                     display="flex"
                     flexDirection="column"
                     alignItems="stretch"
-                    rowGap={NEB_LENGTH.px_024}
+                    rowGap={NEB_LENGTH.px_008}
                   >
                     <Box>
-                      <ComponentSelect />
+                      <PropSelect />
                     </Box>
-                    <Box>
-                      <Box
-                        display="flex"
-                        flexDirection="column"
-                        alignItems="stretch"
-                        rowGap={NEB_LENGTH.px_008}
-                      >
-                        <Box>
-                          <PropSelect />
-                        </Box>
-                        <SwitchPropViewButton />
-                      </Box>
-                    </Box>
-                    <Box>
-                      <PropEditor />
-                    </Box>
+                    <SwitchPropViewButton />
+                  </Box>
+                  <Box>
+                    <PropEditor />
                   </Box>
                 </Box>
               </SplitView.Side>

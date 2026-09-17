@@ -36,29 +36,29 @@ export const ConfirmActionPage = () => {
     <Box
       padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}
       paddingTop={NEB_LENGTH.px_096}
+      display="flex"
+      justifyContent="center"
     >
-      <Box display="flex" justifyContent="center">
-        <Button
-          elemAttrs={{
-            onClick: () => {
-              setLoading(true)
-              if (url) window.location.href = url
-            },
-          }}
-          intent="primary"
-          color={
-            action && BUTTON_LABEL_MAP[action as never]
-              ? BUTTON_LABEL_MAP[action as never].color
-              : 'blue'
-          }
-          loading={loading}
-          disabled={!url}
-        >
-          {action && BUTTON_LABEL_MAP[action as never]
-            ? BUTTON_LABEL_MAP[action as never].label
-            : 'Confirm'}
-        </Button>
-      </Box>
+      <Button
+        elemAttrs={{
+          onClick: () => {
+            setLoading(true)
+            if (url) window.location.href = url
+          },
+        }}
+        intent="primary"
+        color={
+          action && BUTTON_LABEL_MAP[action as never]
+            ? BUTTON_LABEL_MAP[action as never].color
+            : 'blue'
+        }
+        loading={loading}
+        disabled={!url}
+      >
+        {action && BUTTON_LABEL_MAP[action as never]
+          ? BUTTON_LABEL_MAP[action as never].label
+          : 'Confirm'}
+      </Button>
     </Box>
   )
 }

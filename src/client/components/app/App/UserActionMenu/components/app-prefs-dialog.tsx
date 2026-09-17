@@ -30,93 +30,93 @@ export const AppPrefsDialog = () => {
         </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Box padding={NEB_LENGTH.px_024} paddingBottom={NEB_LENGTH.px_048}>
-          <Box
-            display="flex"
-            flexWrap="wrap"
-            columnGap={NEB_LENGTH.px_016}
-            rowGap={NEB_LENGTH.px_024}
-          >
-            <Box>
-              <Text bold typography="small">
-                Theme
-              </Text>
-              <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Button
-                intent={theme === 'light' ? 'strong' : 'tertiary'}
-                scale="xs"
-                elemAttrs={{
-                  onClick: () => setTheme('light'),
-                  style: {
-                    borderTopRightRadius: NEB_LENGTH.px_000,
-                    borderBottomRightRadius: NEB_LENGTH.px_000,
-                  },
-                }}
-              >
-                {sentenceCase('Light')}
-              </Button>
-              <Button
-                intent={theme === 'dark' ? 'strong' : 'tertiary'}
-                scale="xs"
-                elemAttrs={{
-                  onClick: () => setTheme('dark'),
-                  style: {
-                    borderTopLeftRadius: NEB_LENGTH.px_000,
-                    borderBottomLeftRadius: NEB_LENGTH.px_000,
-                  },
-                }}
-              >
-                {sentenceCase('Dark')}
-              </Button>
-            </Box>
-            <Box>
-              <Text bold typography="small">
-                Ripple
-              </Text>
-              <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Button
-                intent={ripple ? 'strong' : 'tertiary'}
-                scale="xs"
-                elemAttrs={{
-                  onClick: () => setRipple(true),
-                  style: {
-                    borderTopRightRadius: NEB_LENGTH.px_000,
-                    borderBottomRightRadius: NEB_LENGTH.px_000,
-                  },
-                }}
-              >
-                {sentenceCase('On')}
-              </Button>
-              <Button
-                intent={!ripple ? 'strong' : 'tertiary'}
-                scale="xs"
-                elemAttrs={{
-                  onClick: () => setRipple(false),
-                  style: {
-                    borderTopLeftRadius: NEB_LENGTH.px_000,
-                    borderBottomLeftRadius: NEB_LENGTH.px_000,
-                  },
-                }}
-              >
-                {sentenceCase('Off')}
-              </Button>
-            </Box>
-            <Box>
-              <Text bold typography="small">
-                Border radius
-              </Text>
-              <Spacer blockSize={NEB_LENGTH.px_002} />
-              <Select
-                value={borderRadiusSize}
-                onChange={setBorderRadiusSize}
-                inlineSize="150px"
-                scale="xs"
-              >
-                {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
-                  <Select.Option value={n}>{n}</Select.Option>
-                ))}
-              </Select>
-            </Box>
+        <Box
+          padding={NEB_LENGTH.px_024}
+          paddingBottom={NEB_LENGTH.px_048}
+          display="flex"
+          flexWrap="wrap"
+          columnGap={NEB_LENGTH.px_016}
+          rowGap={NEB_LENGTH.px_024}
+        >
+          <Box>
+            <Text bold typography="small">
+              Theme
+            </Text>
+            <Spacer blockSize={NEB_LENGTH.px_002} />
+            <Button
+              intent={theme === 'light' ? 'strong' : 'tertiary'}
+              scale="xs"
+              elemAttrs={{
+                onClick: () => setTheme('light'),
+                style: {
+                  borderTopRightRadius: NEB_LENGTH.px_000,
+                  borderBottomRightRadius: NEB_LENGTH.px_000,
+                },
+              }}
+            >
+              {sentenceCase('Light')}
+            </Button>
+            <Button
+              intent={theme === 'dark' ? 'strong' : 'tertiary'}
+              scale="xs"
+              elemAttrs={{
+                onClick: () => setTheme('dark'),
+                style: {
+                  borderTopLeftRadius: NEB_LENGTH.px_000,
+                  borderBottomLeftRadius: NEB_LENGTH.px_000,
+                },
+              }}
+            >
+              {sentenceCase('Dark')}
+            </Button>
+          </Box>
+          <Box>
+            <Text bold typography="small">
+              Ripple
+            </Text>
+            <Spacer blockSize={NEB_LENGTH.px_002} />
+            <Button
+              intent={ripple ? 'strong' : 'tertiary'}
+              scale="xs"
+              elemAttrs={{
+                onClick: () => setRipple(true),
+                style: {
+                  borderTopRightRadius: NEB_LENGTH.px_000,
+                  borderBottomRightRadius: NEB_LENGTH.px_000,
+                },
+              }}
+            >
+              {sentenceCase('On')}
+            </Button>
+            <Button
+              intent={!ripple ? 'strong' : 'tertiary'}
+              scale="xs"
+              elemAttrs={{
+                onClick: () => setRipple(false),
+                style: {
+                  borderTopLeftRadius: NEB_LENGTH.px_000,
+                  borderBottomLeftRadius: NEB_LENGTH.px_000,
+                },
+              }}
+            >
+              {sentenceCase('Off')}
+            </Button>
+          </Box>
+          <Box>
+            <Text bold typography="small">
+              Border radius
+            </Text>
+            <Spacer blockSize={NEB_LENGTH.px_002} />
+            <Select
+              value={borderRadiusSize}
+              onChange={setBorderRadiusSize}
+              inlineSize="150px"
+              scale="xs"
+            >
+              {NEBKIT_PROVIDER_BORDER_RADIUS_SIZES.map(n => (
+                <Select.Option value={n}>{n}</Select.Option>
+              ))}
+            </Select>
           </Box>
         </Box>
       </Dialog.Content>

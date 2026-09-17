@@ -86,32 +86,30 @@ export const SplitViewSide = ({
         >
           <Resize property="inlineSize" visible={sideOpen} easing="cubic-bezier(0.4, 0, 0.2, 1)">
             <Box inlineSize={inlineSize} maxInlineSize="100dvw" paddingRight="2px">
-              <Box>
-                {mode === 'overlay' ? (
-                  <Box display="flex" justifyContent="flex-end">
-                    <Box padding="4px" paddingRight="2px" paddingBottom="24px">
-                      <IconButton
-                        iconName="close"
-                        intent={intent || 'tertiary'}
-                        scale="xs"
-                        onClick={() => {
-                          setSideOpen(false)
-                        }}
-                      />
-                    </Box>
+              {mode === 'overlay' ? (
+                <Box display="flex" justifyContent="flex-end">
+                  <Box padding="4px" paddingRight="2px" paddingBottom="24px">
+                    <IconButton
+                      iconName="close"
+                      intent={intent || 'tertiary'}
+                      scale="xs"
+                      onClick={() => {
+                        setSideOpen(false)
+                      }}
+                    />
                   </Box>
-                ) : null}
-                <Box
-                  padding={padding}
-                  paddingInline={paddingInline}
-                  paddingBlock={paddingBlock}
-                  paddingTop={paddingTop}
-                  paddingRight={paddingRight}
-                  paddingBottom={paddingBottom}
-                  paddingLeft={paddingLeft}
-                >
-                  {children}
                 </Box>
+              ) : null}
+              <Box
+                padding={padding}
+                paddingInline={paddingInline}
+                paddingBlock={paddingBlock}
+                paddingTop={paddingTop}
+                paddingRight={paddingRight}
+                paddingBottom={paddingBottom}
+                paddingLeft={paddingLeft}
+              >
+                {children}
               </Box>
             </Box>
           </Resize>

@@ -99,52 +99,46 @@ export const Dialog = ({
           inset="0px"
           opacity={open ? '1' : '0'}
           pointerEvents={open ? 'auto' : 'none'}
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
         >
-          <Box
-            display="flex"
-            elemAttrs={{
-              style: { blockSize: '100%', inlineSize: '100%' },
-            }}
-            justifyContent="center"
-            alignItems="center"
-          >
-            <Box elemRef={scaleRef} display="inline-block">
-              <Box
-                elemTag="dialog"
-                onClick={e => {
-                  e.stopPropagation()
-                }}
-                elemAttrs={{
-                  ...elemAttrs,
-                  role: 'dialog',
-                  'aria-modal': true,
-                }}
-                elemRef={elemRef || ref}
-                drawable
-                borderMode="filled"
-                maxInlineSize="95dvw"
-                maxBlockSize="90dvh"
-                position="relative"
-                overflowY="auto"
-                intent="secondary"
-                inlineSize={DIALOG_SCALE_MAP[scale]}
-              >
-                <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
-                  {onClose ? (
-                    <Box position="absolute" top="8px" right="8px">
-                      <IconButton
-                        scale="xs"
-                        iconName="close"
-                        variant="outline"
-                        intent="tertiary"
-                        onClick={onClose}
-                      />
-                    </Box>
-                  ) : null}
-                  {slotsByName['Dialog.Header']}
-                  {slotsByName['Dialog.Content']}
-                  {slotsByName['Dialog.Footer']}
-                </Box>
+          <Box elemRef={scaleRef} display="inline-block">
+            <Box
+              elemTag="dialog"
+              onClick={e => {
+                e.stopPropagation()
+              }}
+              elemAttrs={{
+                ...elemAttrs,
+                role: 'dialog',
+                'aria-modal': true,
+              }}
+              elemRef={elemRef || ref}
+              drawable
+              borderMode="filled"
+              maxInlineSize="95dvw"
+              maxBlockSize="90dvh"
+              position="relative"
+              overflowY="auto"
+              intent="secondary"
+              inlineSize={DIALOG_SCALE_MAP[scale]}
+            >
+              <Box drawable bgMode="filled" intent="neutral" borderRadius="0px">
+                {onClose ? (
+                  <Box position="absolute" top="8px" right="8px">
+                    <IconButton
+                      scale="xs"
+                      iconName="close"
+                      variant="outline"
+                      intent="tertiary"
+                      onClick={onClose}
+                    />
+                  </Box>
+                ) : null}
+                {slotsByName['Dialog.Header']}
+                {slotsByName['Dialog.Content']}
+                {slotsByName['Dialog.Footer']}
               </Box>
             </Box>
           </Box>

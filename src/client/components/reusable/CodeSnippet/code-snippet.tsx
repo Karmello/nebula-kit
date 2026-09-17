@@ -36,86 +36,79 @@ export const CodeSnippet = ({
       display="flex"
       flexDirection="column"
       alignItems="stretch"
+      drawable
+      bgMode="filled"
       elemAttrs={{
         style: {
           borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+          backgroundColor: fullBg ? 'var(--color-muted)' : undefined,
         },
       }}
     >
+      <Box display="flex" alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
+        <Box flex="1">
+          {description ? (
+            <Box paddingBlock={NEB_LENGTH.px_012}>
+              <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
+                <Text
+                  bold={boldDescription}
+                  intent="neutral"
+                  elemAttrs={{ style: { lineHeight: 1.25 } }}
+                >
+                  {description}
+                </Text>
+              </Title>
+            </Box>
+          ) : null}
+        </Box>
+        <CopyButton text={code} />
+      </Box>
       <Box
-        drawable
-        bgMode="filled"
+        elemTag="pre"
         elemAttrs={{
           style: {
-            backgroundColor: fullBg ? 'var(--color-muted)' : undefined,
+            borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
+            backgroundColor: 'var(--color-muted)',
           },
         }}
+        overflowY="auto"
+        maxBlockSize={maxBlockSize}
+        drawable
+        bgMode="filled"
+        display="flex"
       >
-        <Box display="flex" alignItems="flex-end" columnGap={NEB_LENGTH.px_008}>
-          <Box flex="1">
-            {description ? (
-              <Box paddingBlock={NEB_LENGTH.px_012}>
-                <Title iconName={descriptionIcon ? 'arrow-down' : undefined}>
-                  <Text
-                    bold={boldDescription}
-                    intent="neutral"
-                    elemAttrs={{ style: { lineHeight: 1.25 } }}
-                  >
-                    {description}
-                  </Text>
-                </Title>
-              </Box>
-            ) : null}
-          </Box>
-          <CopyButton text={code} />
-        </Box>
         <Box
-          elemAttrs={{
-            style: {
-              borderRadius: borderRadius ? 'var(--neb-border-radius)' : undefined,
-              backgroundColor: 'var(--color-muted)',
-            },
-          }}
-          overflowY="auto"
-          maxBlockSize={maxBlockSize}
-          drawable
-          bgMode="filled"
+          elemTag="code"
+          paddingInline={NEB_LENGTH.px_016}
+          paddingBlock={fullBg ? '0px' : '16px'}
+          paddingBottom={NEB_LENGTH.px_016}
         >
-          <Box display="flex" elemTag="pre">
-            <Box
-              elemTag="code"
-              paddingInline={NEB_LENGTH.px_016}
-              paddingBlock={fullBg ? '0px' : '16px'}
-              paddingBottom={NEB_LENGTH.px_016}
-            >
-              {data.tokens.map((token, i) => {
-                const isEmpty = token.length === 0
+          {data.tokens.map((token, i) => {
+            const isEmpty = token.length === 0
 
-                return (
-                  <Box key={i} elemTag="span" elemAttrs={{ style: { display: 'block' } }}>
-                    {isEmpty
-                      ? ' '
-                      : token.map(({ content, color }, j) => (
-                          <Text
-                            key={j}
-                            elemTag="span"
-                            elemAttrs={{
-                              style: {
-                                display: 'inline',
-                                color,
-                                fontSize: '13px',
-                                letterSpacing: '0px',
-                              },
-                            }}
-                          >
-                            {content}
-                          </Text>
-                        ))}
-                  </Box>
-                )
-              })}
-            </Box>
-          </Box>
+            return (
+              <Box key={i} elemTag="span" elemAttrs={{ style: { display: 'block' } }}>
+                {isEmpty
+                  ? ' '
+                  : token.map(({ content, color }, j) => (
+                      <Text
+                        key={j}
+                        elemTag="span"
+                        elemAttrs={{
+                          style: {
+                            display: 'inline',
+                            color,
+                            fontSize: '13px',
+                            letterSpacing: '0px',
+                          },
+                        }}
+                      >
+                        {content}
+                      </Text>
+                    ))}
+              </Box>
+            )
+          })}
         </Box>
       </Box>
     </Box>

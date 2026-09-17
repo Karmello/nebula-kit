@@ -241,19 +241,16 @@ export const AutocompleteMain = ({
                         bgRole={isSelected ? 'selection' : undefined}
                         inlineSize="100%"
                         borderRadius={NEB_LENGTH.px_000}
+                        display="flex"
+                        elemAttrs={{
+                          style: {
+                            blockSize: CONTROL_SCALE_MAP[scale].blockSize,
+                            paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
+                          },
+                        }}
+                        alignItems="center"
                       >
-                        <Box
-                          display="flex"
-                          elemAttrs={{
-                            style: {
-                              blockSize: CONTROL_SCALE_MAP[scale].blockSize,
-                              paddingInline: CONTROL_SCALE_MAP[scale].paddingInline,
-                            },
-                          }}
-                          alignItems="center"
-                        >
-                          <Text bold={isSelected}>{slot}</Text>
-                        </Box>
+                        <Text bold={isSelected}>{slot}</Text>
                       </Box>
                       {!isOpenDownwards ? (
                         <HorizontalRule

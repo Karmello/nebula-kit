@@ -75,17 +75,16 @@ export const PatternsPage = () => {
                   flexDirection="column"
                   alignItems="stretch"
                 >
-                  <Box flex="1">
-                    <Box
-                      elemAttrs={{ style: { borderStyle: 'dashed' } }}
-                      drawable
-                      borderMode="filled"
-                      intent="tertiary"
-                      maxBlockSize="calc(100dvh - 275px)"
-                      padding={NEB_LENGTH.px_016}
-                    >
-                      <Component />
-                    </Box>
+                  <Box
+                    flex="1"
+                    elemAttrs={{ style: { borderStyle: 'dashed' } }}
+                    drawable
+                    borderMode="filled"
+                    intent="tertiary"
+                    maxBlockSize="calc(100dvh - 275px)"
+                    padding={NEB_LENGTH.px_016}
+                  >
+                    <Component />
                   </Box>
                   {pattern?.code ? (
                     <Box flex="1">

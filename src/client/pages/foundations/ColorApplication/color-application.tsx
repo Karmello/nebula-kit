@@ -71,33 +71,32 @@ export default () => {
         </Box>
       </Box>
       <Spacer blockSize={NEB_LENGTH.px_048} />
-      <Box overflowX="auto">
-        <Box
-          display="grid"
-          gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`}
-          gap={NEB_LENGTH.px_008}
-        >
-          {BOX_COLORS.map(color => {
-            return BOX_INTENTS.map(intent => {
-              return (
-                <Box key={`${color}_${intent}`}>
-                  <Button
-                    color={color}
-                    variant={variant}
-                    intent={intent}
-                    fullWidth
-                    surfaceDepth={surfaceDepth !== 'base' ? surfaceDepth : undefined}
-                    selected={state === 'selected'}
-                    disabled={state === 'disabled'}
-                    loading={state === 'loading'}
-                  >
-                    {intent} {color}
-                  </Button>
-                </Box>
-              )
-            })
-          })}
-        </Box>
+      <Box
+        overflowX="auto"
+        display="grid"
+        gridTemplateColumns={`repeat(${BOX_INTENTS.length}, 1fr)`}
+        gap={NEB_LENGTH.px_008}
+      >
+        {BOX_COLORS.map(color => {
+          return BOX_INTENTS.map(intent => {
+            return (
+              <Box key={`${color}_${intent}`}>
+                <Button
+                  color={color}
+                  variant={variant}
+                  intent={intent}
+                  fullWidth
+                  surfaceDepth={surfaceDepth !== 'base' ? surfaceDepth : undefined}
+                  selected={state === 'selected'}
+                  disabled={state === 'disabled'}
+                  loading={state === 'loading'}
+                >
+                  {intent} {color}
+                </Button>
+              </Box>
+            )
+          })
+        })}
       </Box>
     </>
   )

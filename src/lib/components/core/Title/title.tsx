@@ -36,25 +36,27 @@ export const Title = ({
   const isPlainText = typeof children === 'string' || typeof children === 'number'
 
   return (
-    <Box elemTag="span" elemAttrs={elemAttrs} elemRef={elemRef} color={color} intent={intent}>
-      <Box
-        display="flex"
-        elemTag="span"
-        flexDirection="row"
-        flexWrap="nowrap"
-        alignItems="center"
-        columnGap={TYPOGRAPHY_MAP[typography || 'h6'].gap}
-      >
-        {iconPlacement === 'left' ? icon : null}
-        {isPlainText ? (
-          <Text typography={typography} color={color} intent={intent}>
-            {children}
-          </Text>
-        ) : (
-          children
-        )}
-        {iconPlacement === 'right' ? icon : null}
-      </Box>
+    <Box
+      elemTag="span"
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
+      color={color}
+      intent={intent}
+      display="flex"
+      flexDirection="row"
+      flexWrap="nowrap"
+      alignItems="center"
+      columnGap={TYPOGRAPHY_MAP[typography || 'h6'].gap}
+    >
+      {iconPlacement === 'left' ? icon : null}
+      {isPlainText ? (
+        <Text typography={typography} color={color} intent={intent}>
+          {children}
+        </Text>
+      ) : (
+        children
+      )}
+      {iconPlacement === 'right' ? icon : null}
     </Box>
   )
 }

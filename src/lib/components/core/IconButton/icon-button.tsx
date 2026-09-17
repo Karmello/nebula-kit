@@ -69,13 +69,14 @@ export const IconButton = <T extends IconButtonTag = 'button'>({
       interactive
       cursor="pointer"
       position="relative"
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
     >
-      <Box display="flex" justifyContent="center" alignItems="center" blockSize="100%">
-        <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].fontSize}>
-          {customSvgIcon}
-        </Icon>
-        {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[scale].fontSize} /> : null}
-      </Box>
+      <Icon name={iconName} size={CONTROL_SCALE_MAP[scale].fontSize}>
+        {customSvgIcon}
+      </Icon>
+      {loading && !disabled ? <Loader centered size={CONTROL_SCALE_MAP[scale].fontSize} /> : null}
     </Box>
   )
 }

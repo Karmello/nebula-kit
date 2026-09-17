@@ -245,33 +245,39 @@ export const Breadcrumb = <T extends BreadcrumbTag = 'div'>({
   const levels = convertTreeToLevels(tree, currentPath)
 
   return (
-    <Box elemTag={elemTag} elemAttrs={elemAttrs} elemRef={elemRef} overflowX="auto">
-      <Box display="flex" gap="8px" alignItems="center">
-        {levels.slice(0, currentPath.length + 1).map((level, index) => {
-          return (
-            <Fragment key={index}>
-              <BreadcrumbLevel
-                nodes={level}
-                currentValue={currentPath[index]}
-                onSelect={value => handleChange(index, value)}
+    <Box
+      elemTag={elemTag}
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
+      overflowX="auto"
+      display="flex"
+      gap="8px"
+      alignItems="center"
+    >
+      {levels.slice(0, currentPath.length + 1).map((level, index) => {
+        return (
+          <Fragment key={index}>
+            <BreadcrumbLevel
+              nodes={level}
+              currentValue={currentPath[index]}
+              onSelect={value => handleChange(index, value)}
+              color={color}
+              intent={intent}
+              scale={scale}
+              variant={variant}
+              isLast={index !== 0 && index === levels.length - 1}
+            />
+            {index < levels.length - 1 ? (
+              <Icon
+                name="chevron-right"
                 color={color}
-                intent={intent}
-                scale={scale}
-                variant={variant}
-                isLast={index !== 0 && index === levels.length - 1}
+                intent="primary"
+                size={CONTROL_SCALE_MAP[scale].fontSize}
               />
-              {index < levels.length - 1 ? (
-                <Icon
-                  name="chevron-right"
-                  color={color}
-                  intent="primary"
-                  size={CONTROL_SCALE_MAP[scale].fontSize}
-                />
-              ) : null}
-            </Fragment>
-          )
-        })}
-      </Box>
+            ) : null}
+          </Fragment>
+        )
+      })}
     </Box>
   )
 }

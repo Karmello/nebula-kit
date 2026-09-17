@@ -24,20 +24,17 @@ export const Chat = ({ elemRef, chatHistory, handleQuestionClick }: ChatProps) =
       borderBottomWidth={NEB_LENGTH.px_000}
       borderBottomLeftRadius={NEB_LENGTH.px_000}
       borderBottomRightRadius={NEB_LENGTH.px_000}
+      display="flex"
+      flexDirection="column"
+      rowGap={NEB_LENGTH.px_048}
     >
-      <Box display="flex" flexDirection="column" rowGap={NEB_LENGTH.px_048}>
-        {chatHistory.map(({ role, content }, key) =>
-          role === 'assistant' ? (
-            <AssistantMessage
-              key={key}
-              content={content}
-              handleQuestionClick={handleQuestionClick}
-            />
-          ) : (
-            <UserMessage key={key} content={content} />
-          )
-        )}
-      </Box>
+      {chatHistory.map(({ role, content }, key) =>
+        role === 'assistant' ? (
+          <AssistantMessage key={key} content={content} handleQuestionClick={handleQuestionClick} />
+        ) : (
+          <UserMessage key={key} content={content} />
+        )
+      )}
     </Box>
   )
 }

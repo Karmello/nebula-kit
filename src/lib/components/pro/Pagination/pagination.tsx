@@ -159,14 +159,10 @@ export const Pagination = ({
                 disabled
                 blockSize={CONTROL_SCALE_MAP[scale].blockSize}
                 paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}
+                display="flex"
+                alignItems="center"
               >
-                <Box
-                  display="flex"
-                  elemAttrs={{ style: { blockSize: 'inherit' } }}
-                  alignItems="center"
-                >
-                  <Icon name="ellipsis" />
-                </Box>
+                <Icon name="ellipsis" />
               </Box>
             )}
             {item.type === 'page' &&
