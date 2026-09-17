@@ -67,11 +67,11 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   variant: {
     options: SIDE_NAV_VARIANTS,

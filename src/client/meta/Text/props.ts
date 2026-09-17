@@ -18,15 +18,15 @@ export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
   elemTag: {
     options: ['HTML tag'],
     defaultValue: 'p',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   // surface
   color: {

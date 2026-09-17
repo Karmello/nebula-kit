@@ -78,7 +78,7 @@ export const AUTOCOMPLETE_PROPS: Record<keyof AutocompleteProps, DocProp> = {
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   value: {
     options: ['string'],

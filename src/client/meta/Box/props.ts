@@ -43,20 +43,20 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
   },
   className: {
     options: ['string'],
-    description: 'CSS class applied to the root tag.',
+    description: 'CSS class applied to the element.',
   },
   elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   // surface
   drawable: {

@@ -14,9 +14,11 @@ export const STYLING_ISLAND_PROPS: Record<keyof StylingIslandProps, DocProp> = {
     isResponsive: true,
     description:
       'Sets a local theme boundary for the subtree. Supports explicit themes, the global application theme or the opposite of the global application theme.',
+    group: 'appearance',
   },
   brand: {
     options: BOX_COLORS,
     description: 'Sets a local brand color context for the subtree.',
+    group: 'appearance',
   },
 }

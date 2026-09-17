@@ -10,40 +10,40 @@ export const HTML_ELEM_PROPS: Record<keyof HtmlElemProps<ElementType>, DocProp> 
   },
   className: {
     options: ['string'],
-    description: 'CSS class applied to the tag.',
+    description: 'CSS class applied to the element.',
   },
   elemTag: {
     options: ['HTML tag'],
     defaultValue: 'div',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the HTML tag.',
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   // events
   onClick: {
     options: ['e => void'],
-    description: 'Click event handler for the tag.',
+    description: 'Click event handler.',
     group: 'events',
   },
   onFocus: {
     options: ['e => void'],
-    description: 'Focus event handler for the tag.',
+    description: 'Focus event handler.',
     group: 'events',
   },
   onBlur: {
     options: ['e => void'],
-    description: 'Blur event handler for the tag.',
+    description: 'Blur event handler.',
     group: 'events',
   },
   onKeyDown: {
     options: ['e => void'],
-    description: 'Key down event handler for the tag.',
+    description: 'Key down event handler.',
     group: 'events',
   },
 }

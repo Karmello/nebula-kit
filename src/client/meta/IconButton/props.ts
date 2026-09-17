@@ -15,15 +15,15 @@ export const ICON_BUTTON_PROPS: Record<keyof IconButtonProps, DocProp> = {
   elemTag: {
     options: ICON_BUTTON_TAGS,
     defaultValue: 'div',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   // surface
   variant: {

@@ -9,10 +9,10 @@ export const DIALOG_FOOTER_PROPS: Record<keyof DialogFooterProps, DocProp> = {
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
 }

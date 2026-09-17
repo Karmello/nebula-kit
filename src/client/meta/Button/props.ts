@@ -23,15 +23,15 @@ export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
   elemTag: {
     options: BUTTON_TAGS,
     defaultValue: 'button',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   // surface
   variant: {

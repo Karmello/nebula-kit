@@ -16,31 +16,30 @@ export const NEBKIT_PROVIDER_PROPS: Record<keyof NebkitProviderProps, DocProp> =
     isRequired: true,
     description: 'Application component to be wrapped by the provider.',
   },
-  // theme
+  // appearance
   theme: {
     options: NEBKIT_PROVIDER_THEMES,
     defaultValue: DEFAULT_NEBKIT_PROVIDER_THEME,
     description: 'Global theme.',
-    group: 'theme',
+    group: 'appearance',
   },
   brand: {
     options: BOX_COLORS,
     defaultValue: DEFAULT_NEBKIT_PROVIDER_BRAND,
     description: 'Global brand color used as the primary accent across components.',
-    group: 'theme',
+    group: 'appearance',
+  },
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_RIPPLE),
+    description: 'Enables the ripple interaction effect across components by default.',
+    group: 'appearance',
   },
   borderRadiusSize: {
     options: NEBKIT_PROVIDER_BORDER_RADIUS_SIZES,
     defaultValue: String(DEFAULT_NEBKIT_PROVIDER_BORDER_RADIUS_SIZE),
     description: 'Global border radius size applied across all components.',
-    group: 'theme',
-  },
-  // interaction
-  ripple: {
-    options: ['boolean'],
-    defaultValue: String(DEFAULT_NEBKIT_PROVIDER_RIPPLE),
-    description: 'Enables the ripple interaction effect across components by default.',
-    group: 'interaction',
+    group: 'appearance',
   },
   // behavior
   lockGlobalScroll: {

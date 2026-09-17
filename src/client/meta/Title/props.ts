@@ -15,17 +15,42 @@ export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
     description:
       'Content rendered as the title. Plain string or number children are wrapped in Text using the selected typography. Custom React nodes are rendered directly.',
   },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // appearance
+  typography: {
+    options: TITLE_TYPOGRAPHY,
+    defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
+    description:
+      'Typography style used for plain text children and for deriving the icon size and spacing.',
+    group: 'appearance',
+  },
   color: {
     options: BOX_COLORS,
     description: 'Color applied to the component.',
+    group: 'appearance',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    description: "Color tone applied to the component's main color.",
+    group: 'appearance',
+  },
+  // icon
+  iconName: {
+    options: ['IconName'],
+    description: 'Name of the icon to render.',
+    group: 'icon',
   },
   customSvgIcon: {
     options: ['ReactNode'],
     description: 'Custom SVG icon rendered when not using name prop.',
-  },
-  iconName: {
-    options: ['IconName'],
-    description: 'Name of the icon to render.',
+    group: 'icon',
   },
   iconPlacement: {
     options: TITLE_ICON_PLACEMENTS as unknown as string[],
@@ -33,23 +58,6 @@ export const TITLE_PROPS: Record<keyof TitleProps, DocProp> = {
     isRequired: false,
     isResponsive: false,
     description: 'Icon placement relative to children.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    description: "Color tone applied to the component's main color.",
-  },
-  elemAttrs: {
-    options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
-  },
-  elemRef: {
-    options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
-  },
-  typography: {
-    options: TITLE_TYPOGRAPHY,
-    defaultValue: DEFAULT_TITLE_TYPOGRAPHY,
-    description:
-      'Typography style used for plain text children and for deriving the icon size and spacing.',
+    group: 'icon',
   },
 }

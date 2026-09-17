@@ -40,14 +40,14 @@ export const REVEAL_PROPS: Record<keyof RevealProps, DocProp> = {
   elemTag: {
     options: REVEAL_TAGS,
     defaultValue: 'div',
-    description: 'The HTML tag to be rendered as the container.',
+    description: 'The HTML tag to be rendered.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
 }

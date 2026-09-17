@@ -33,11 +33,11 @@ export const TABLE_FOOTER_PROPS: Record<keyof TableFooterProps, DocProp> = {
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the root tag.',
+    description: 'Additional HTML attributes applied to the element.',
   },
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the root HTML tag.',
+    description: 'Reference to the element.',
   },
   textAlign: {
     options: CSS_TEXT_ALIGN,
