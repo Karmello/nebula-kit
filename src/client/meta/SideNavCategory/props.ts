@@ -1,9 +1,5 @@
-import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
-import { SIDE_NAV_VARIANTS } from 'lib/components/pro/SideNav/constants'
 import {
   DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
-  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
-  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
   SIDE_NAV_CATEGORY_ALIGNS,
 } from 'lib/components/pro/SideNav/slots/SideNavCategory/constants'
 import type { SideNavCategoryProps } from 'lib/components/pro/SideNav/slots/SideNavCategory/types'
@@ -25,20 +21,11 @@ export const SIDE_NAV_CATEGORY_PROPS: Record<keyof SideNavCategoryProps, DocProp
     isRequired: true,
     description: 'SideNav.Item slots rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-  },
   expanded: {
     options: ['boolean'],
     defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_EXPANDED),
     description:
       'Controls whether the category is expanded. When provided, the expansion state is controlled externally.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_INTENT),
-    description: "Color tone applied to the component's main color.",
   },
   label: {
     options: ['string'],
@@ -52,10 +39,5 @@ export const SIDE_NAV_CATEGORY_PROPS: Record<keyof SideNavCategoryProps, DocProp
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
-  },
-  variant: {
-    options: SIDE_NAV_VARIANTS,
-    defaultValue: String(DEFAULT_SIDE_NAV_CATEGORY_VARIANT),
-    description: 'Visual style variant.',
   },
 }

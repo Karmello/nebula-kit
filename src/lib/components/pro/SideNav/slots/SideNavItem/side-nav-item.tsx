@@ -4,7 +4,7 @@ import { Box } from 'lib/components/core/Box'
 import { Icon } from 'lib/components/core/Icon'
 import { Link } from 'lib/components/core/Link'
 import { Text } from 'lib/components/core/Text'
-import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 
 import { useSideNavContext } from '../../providers/SideNavProvider'
@@ -15,9 +15,6 @@ export const SideNavItem = ({
   elemRef,
   elemAttrs,
   children,
-  variant,
-  color,
-  intent,
   // own
   align = DEFAULT_SIDE_NAV_ITEM_ALIGN,
   bold,
@@ -67,11 +64,13 @@ export const SideNavItem = ({
           tabIndex: expandedCategories[categoryId] === false ? -1 : undefined,
           'aria-expanded': expandedCategories[categoryId],
         }}
-        // variant={variant || rootVariant}
-        color={color || rootColor}
-        intent={intent || rootIntent}
+        bgMode={rootVariant === 'solid' ? 'filled' : 'transparent'}
+        textMode={rootVariant === 'solid' ? 'default' : 'colored'}
+        color={rootColor}
+        intent={rootIntent}
         surfaceDepth={surfaceDepth}
         bgRole={selected ? 'selection' : undefined}
+        borderRadius={NEB_LENGTH.px_000}
         inlineSize="100%"
         blockSize={CONTROL_SCALE_MAP[scale].blockSize}
         paddingInline={CONTROL_SCALE_MAP[scale].paddingInline}

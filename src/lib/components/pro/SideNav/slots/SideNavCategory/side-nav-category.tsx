@@ -6,17 +6,12 @@ import { Icon } from 'lib/components/core/Icon'
 import { Resize } from 'lib/components/core/Resize'
 import { Spacer } from 'lib/components/core/Spacer'
 import { Text } from 'lib/components/core/Text'
-import { CONTROL_SCALE_MAP } from 'lib/constants'
+import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
 import { withPrefix } from 'lib/helpers'
 import { useSlots } from 'lib/hooks'
 
 import { useSideNavContext } from '../../providers/SideNavProvider'
-import {
-  DEFAULT_SIDE_NAV_CATEGORY_ALIGN,
-  DEFAULT_SIDE_NAV_CATEGORY_EXPANDED,
-  DEFAULT_SIDE_NAV_CATEGORY_INTENT,
-  DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-} from './constants'
+import { DEFAULT_SIDE_NAV_CATEGORY_ALIGN, DEFAULT_SIDE_NAV_CATEGORY_EXPANDED } from './constants'
 import { SideNavCategoryProps } from './types'
 
 export const SideNavCategory = ({
@@ -24,9 +19,6 @@ export const SideNavCategory = ({
   elemAttrs,
   elemRef,
   children,
-  variant = DEFAULT_SIDE_NAV_CATEGORY_VARIANT,
-  color,
-  intent = DEFAULT_SIDE_NAV_CATEGORY_INTENT,
   // own
   align = DEFAULT_SIDE_NAV_CATEGORY_ALIGN,
   bold,
@@ -75,6 +67,10 @@ export const SideNavCategory = ({
       <Box elemTag="li">
         <Box
           elemTag="button"
+          elemAttrs={{
+            type: 'button',
+            'aria-expanded': expandedCategories[id],
+          }}
           interactive
           display="flex"
           justifyContent={
@@ -93,13 +89,11 @@ export const SideNavCategory = ({
               )
             }
           }}
-          elemAttrs={{
-            type: 'button',
-            'aria-expanded': expandedCategories[id],
-          }}
-          // variant={variant || rootVariant}
-          color={color || rootColor}
-          intent={intent || rootIntent}
+          bgMode={rootVariant === 'solid' ? 'filled' : 'transparent'}
+          textMode={rootVariant === 'solid' ? 'default' : 'colored'}
+          borderRadius={NEB_LENGTH.px_000}
+          color={rootColor}
+          intent={rootIntent}
           ripple={!expandedCategories[id]}
           inlineSize="100%"
           columnGap={CONTROL_SCALE_MAP[scale].gap}

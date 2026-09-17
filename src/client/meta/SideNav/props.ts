@@ -2,7 +2,9 @@ import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
+  DEFAULT_SIDE_NAV_INTENT,
   DEFAULT_SIDE_NAV_SCALE,
+  DEFAULT_SIDE_NAV_VARIANT,
   SIDE_NAV_EXPAND_MODES,
   SIDE_NAV_VARIANTS,
 } from 'lib/components/pro/SideNav/constants'
@@ -35,7 +37,7 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
   },
   intent: {
     options: BOX_INTENTS,
-    defaultValue: 'tertiary',
+    defaultValue: DEFAULT_SIDE_NAV_INTENT,
     description: 'Color tone applied to all categories and items.',
   },
   scale: {
@@ -54,7 +56,7 @@ export const SIDE_NAV_PROPS: Record<keyof SideNavProps, DocProp> = {
   },
   variant: {
     options: SIDE_NAV_VARIANTS,
-    isResponsive: true,
+    defaultValue: DEFAULT_SIDE_NAV_VARIANT,
     description: 'Visual style variant applied to all categories and items.',
   },
 }

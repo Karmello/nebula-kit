@@ -2,7 +2,6 @@ import { BoxProps } from 'lib/components/core/Box'
 import { IconProps } from 'lib/components/core/Icon'
 import { LinkProps } from 'lib/components/core/Link'
 
-import { SideNavVariant } from '../../types'
 import { SIDE_NAV_ITEM_ALIGNS, SIDE_NAV_ITEM_ICON_PLACEMENTS } from './constants'
 
 export type SideNavItemAlign = (typeof SIDE_NAV_ITEM_ALIGNS)[number]
@@ -20,10 +19,7 @@ export type SideNavItemProps = {
   // Box
   elemRef?: BoxProps<'button'>['elemRef']
   elemAttrs?: BoxProps<'button'>['elemAttrs']
-  color?: BoxProps<'button'>['color']
-  intent?: BoxProps<'button'>['intent']
   children: BoxProps<'button'>['children']
-  variant?: SideNavVariant
   // Link
   href: LinkProps['href']
   onClick?: LinkProps['onClick']

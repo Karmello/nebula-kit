@@ -49,14 +49,13 @@ export const CatalogPageTemplate = memo(
               inlineSize={{ base: '275px', lg: '225px' }}
               blockSize={{ lg: 'calc(100dvh - 125px)' }}
             >
-              <SideNav expandMode="single">
+              <SideNav expandMode="single" intent={mode === 'inline' ? 'neutral' : 'muted'}>
                 {data.map(({ key: categoryKey, label, items }) => {
                   const isCategorySelected = activeCategoryObj?.key === categoryKey
                   return (
                     <SideNav.Category
                       key={categoryKey}
                       label={label}
-                      variant="ghost"
                       expanded={isCategorySelected}
                       align="start"
                       bold={isCategorySelected}
@@ -102,7 +101,7 @@ export const CatalogPageTemplate = memo(
                 {({ mode, setSideOpen }) => (
                   <>
                     <SplitView.Side inlineSize={{ base: '275px', lg: '225px' }}>
-                      <SideNav>
+                      <SideNav intent={mode === 'inline' ? 'neutral' : 'muted'}>
                         {data
                           .find(c => c.key === activeCategoryObj?.key)
                           ?.items.find(i => i.key === activeItemObj?.key)

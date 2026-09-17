@@ -8,7 +8,9 @@ import { SideNavToggle } from './components'
 import {
   DEFAULT_SIDE_NAV_EXPAND_MODE,
   DEFAULT_SIDE_NAV_GAP,
+  DEFAULT_SIDE_NAV_INTENT,
   DEFAULT_SIDE_NAV_SCALE,
+  DEFAULT_SIDE_NAV_VARIANT,
 } from './constants'
 import { SideNavProvider } from './providers/SideNavProvider'
 import { SideNavProps } from './types'
@@ -16,17 +18,15 @@ import { SideNavProps } from './types'
 import './side-nav.scss'
 
 export const SideNav = ({
-  // Flex
   children,
   elemAttrs,
   elemRef,
-  gap = DEFAULT_SIDE_NAV_GAP,
+  variant = DEFAULT_SIDE_NAV_VARIANT,
+  intent = DEFAULT_SIDE_NAV_INTENT,
   color,
-  intent,
-  // own
   scale = DEFAULT_SIDE_NAV_SCALE,
+  gap = DEFAULT_SIDE_NAV_GAP,
   expandMode = DEFAULT_SIDE_NAV_EXPAND_MODE,
-  variant,
 }: SideNavProps) => {
   const slots = useSlots<'SideNav.Category' | 'SideNav.Item'>({
     componentName: 'SideNav',

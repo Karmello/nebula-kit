@@ -1,5 +1,4 @@
-import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
-import { SIDE_NAV_VARIANTS } from 'lib/components/pro/SideNav/constants'
+import { BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
   SIDE_NAV_ITEM_ALIGNS,
   SIDE_NAV_ITEM_ICON_PLACEMENTS,
@@ -23,10 +22,6 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     isRequired: true,
     description: 'Label rendered.',
   },
-  color: {
-    options: BOX_COLORS,
-    description: 'Color applied to the component.',
-  },
   customSvgIcon: {
     options: ['ReactNode'],
     description: 'Custom SVG icon rendered when not using name prop.',
@@ -44,11 +39,6 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
     options: SIDE_NAV_ITEM_ICON_PLACEMENTS,
     defaultValue: 'left',
     description: 'Icon placement relative to label.',
-  },
-  intent: {
-    options: BOX_INTENTS,
-    defaultValue: 'tertiary',
-    description: "Color tone applied to the component's main color.",
   },
   onClick: {
     options: ['e => void'],
@@ -72,10 +62,5 @@ export const SIDE_NAV_ITEM_PROPS: Record<keyof SideNavItemProps, DocProp> = {
   elemAttrs: {
     options: ['HTML tag attributes'],
     description: 'Additional HTML attributes applied to the element.',
-  },
-  variant: {
-    options: SIDE_NAV_VARIANTS,
-    defaultValue: 'solid',
-    description: 'Visual style variant.',
   },
 }
