@@ -8,6 +8,7 @@ export const SWITCH_INTENTS = [
   'tertiary',
   'secondary',
   'primary',
+  'strong',
 ] as const satisfies BoxIntent[]
 
 export const DEFAULT_SWITCH_SCALE: TShirtSize = 'xs'

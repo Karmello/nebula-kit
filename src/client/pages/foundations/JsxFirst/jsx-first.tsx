@@ -14,7 +14,7 @@ export default () => {
         NebulaKit does not aim to replace CSS knowledge. Layout, spacing, positioning and
         responsiveness still follow the same core concepts used by the platform itself. Props on
         primitives intentionally map closely to native CSS behavior, so developers who understand
-        CSS can transfer that knowledge directly into JSX without learning a separate abstraction
+        CSS can transfer that knowledge directly into JSX without using a separate abstraction
         language. The goal is not to hide how the web works, but to make working with it more
         compositional.
       </Text>

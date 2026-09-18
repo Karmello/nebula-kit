@@ -1,7 +1,7 @@
 import { Box } from 'lib/components/core/Box'
 import { Text } from 'lib/components/core/Text'
 import { CONTROL_SCALE_MAP, NEB_LENGTH } from 'lib/constants'
-import { useControlled, useSlots } from 'lib/hooks'
+import { useControlledValue, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_TABS_DEFAULT_VALUE,
@@ -26,7 +26,7 @@ export const Tabs = ({
   orientation = DEFAULT_TABS_ORIENTATION,
   stretch,
 }: TabsProps) => {
-  const [currentValue, setCurrentValue] = useControlled<string | number>({
+  const [currentValue, setCurrentValue] = useControlledValue<string | number>({
     value,
     defaultValue,
     onChange,

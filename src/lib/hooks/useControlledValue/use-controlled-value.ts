@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export const useControlled = <T>({
+export const useControlledValue = <T>({
   value,
   defaultValue,
   onChange,
@@ -8,7 +8,7 @@ export const useControlled = <T>({
   value?: T
   defaultValue?: T
   onChange?: (value: T) => void
-}): [T | undefined, (value: T) => void] => {
+}): [T | undefined, (value: T) => void, boolean] => {
   const [internalValue, setInternalValue] = useState<T | undefined>(defaultValue)
 
   const isControlled = value !== undefined
@@ -23,5 +23,5 @@ export const useControlled = <T>({
     onChange?.(nextValue)
   }
 
-  return [currentValue, setValue]
+  return [currentValue, setValue, isControlled]
 }

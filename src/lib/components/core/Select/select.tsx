@@ -6,7 +6,7 @@ import { Resize } from 'lib/components/core/Resize'
 import { Text } from 'lib/components/core/Text'
 import { Floating, type FloatingProps } from 'lib/components/pro/Floating'
 import { CONTROL_SCALE_MAP, DEFAULT_TSHIRT_SIZE, NEB_LENGTH } from 'lib/constants'
-import { useControlled, useSlots } from 'lib/hooks'
+import { useControlledValue, useSlots } from 'lib/hooks'
 
 import {
   DEFAULT_SELECT_INLINE_SIZE,
@@ -38,7 +38,7 @@ export const SelectImpl = ({
   const [visible, setVisible] = useState<boolean>(false)
   const [placement, setPlacement] = useState<FloatingProps['placement']>('bottom-start')
 
-  const [currentValue, setCurrentValue] = useControlled({ value, defaultValue, onChange })
+  const [currentValue, setCurrentValue] = useControlledValue({ value, defaultValue, onChange })
   const triggerRef = useRef<HTMLButtonElement | null>(null)
   const selectedItemRef = useRef<HTMLButtonElement | null>(null)
 

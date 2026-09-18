@@ -4,13 +4,13 @@ export default () => {
   return (
     <Box maxInlineSize="55rem" display="flex" flexDirection="column" gap={NEB_LENGTH.px_032}>
       <Text typography="lead" intent="primary">
-        Here is a short introduction to NebulaKit, so you can quickly tell if this is what you're
-        looking for in your next project.
+        Here is a short explanation that can help you decide if this is actually the right tool for
+        your next project.
       </Text>
       <Box>
         <StylingIsland brand="red">
           <Text typography="h5" intent="strong">
-            What is it not?
+            What is NebulaKit not?
           </Text>
           <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_016} />
           <MarkerList gap={NEB_LENGTH.px_012}>

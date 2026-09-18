@@ -1,4 +1,4 @@
-export * from './useControlled'
+export * from './useControlledValue'
 export * from './useCurrentTheme'
 export * from './useGlobalScrollLock'
 export * from './useOutsideClick'

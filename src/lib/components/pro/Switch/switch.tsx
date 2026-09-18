@@ -1,33 +1,32 @@
 import { useLayoutEffect, useRef, useState } from 'react'
-import classNames from 'classnames'
 
 import { Box, BoxProps } from 'lib/components/core/Box'
 import { useSlide } from 'lib/components/core/useSlide'
 import { CONTROL_SCALE_MAP } from 'lib/constants'
-import { withPrefix } from 'lib/helpers'
+import { useControlledValue } from 'lib/hooks'
 
 import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SCALE, SWITCH_BORDER_MULTIPLIER } from './constants'
 import type { SwitchProps } from './types'
 
-import './switch.scss'
-
 export const Switch = ({
   // Box
-  elemAttrs,
   elemRef,
+  elemAttrs,
   disabled,
   color,
-  intent = DEFAULT_SWITCH_INTENT,
   // own
   checked,
   defaultChecked,
   onChange,
+  intent = DEFAULT_SWITCH_INTENT,
   scale = DEFAULT_SWITCH_SCALE,
 }: SwitchProps) => {
-  const [internalChecked, setInternalChecked] = useState<boolean>(defaultChecked ?? false)
-
-  const isControlled = checked !== undefined
-  const currentChecked = isControlled ? checked : internalChecked
+  const [rawChecked, setCurrentChecked, isControlled] = useControlledValue<boolean>({
+    value: checked,
+    defaultValue: defaultChecked ?? false,
+    onChange,
+  })
+  const currentChecked = rawChecked ?? false
 
   const [animatedChecked, setAnimatedChecked] = useState(currentChecked)
   const thumbRef = useRef<HTMLDivElement | null>(null)
@@ -39,11 +38,6 @@ export const Switch = ({
 
     return () => cancelAnimationFrame(id)
   }, [currentChecked])
-
-  const handleChange = (checked: boolean) => {
-    if (!isControlled) setInternalChecked(checked)
-    onChange?.(checked)
-  }
 
   const resolvedBlockSize = CONTROL_SCALE_MAP[scale].blockSize
 
@@ -59,10 +53,10 @@ export const Switch = ({
 
   return (
     <Box
-      key={String(scale)}
-      className={classNames(withPrefix('switch'), elemAttrs?.className)}
+      elemTag="span"
       elemAttrs={elemAttrs}
       elemRef={elemRef}
+      position="relative"
       display="inline-block"
       overflow="clip"
     >
@@ -72,34 +66,39 @@ export const Switch = ({
           type: 'checkbox',
           role: 'switch',
           ...(isControlled ? { checked: currentChecked } : { defaultChecked: currentChecked }),
-          onChange: e => handleChange((e.target as HTMLInputElement).checked),
+          onChange: e => setCurrentChecked((e.target as HTMLInputElement).checked),
+          style: {
+            appearance: 'none',
+            WebkitAppearance: 'none',
+            MozAppearance: 'none',
+            WebkitTapHighlightColor: 'transparent',
+          },
         }}
         drawable
-        interactive
-        surfaceDepth={animatedChecked && !disabled ? 'raised' : undefined}
-        bgRole={animatedChecked && !disabled ? 'selection' : undefined}
         disabled={disabled}
-        bgMode="filled"
+        bgMode={currentChecked ? 'filled' : 'tinted'}
         intent={intent}
         color={color}
         blockSize={CONTROL_SCALE_MAP[scale].blockSize}
         inlineSize={`calc(${resolvedBlockSize} * 2 - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER * 2})`}
+        cursor="pointer"
       />
       <Box
+        elemTag="span"
         elemRef={thumbRef}
-        className={withPrefix('switch-thumb')}
-        elemAttrs={{
-          style: {
-            top: `calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
-            left: `calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`,
-          },
-        }}
+        position="absolute"
+        top={`calc(var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`}
+        left={`calc(${resolvedBlockSize} - var(--neb-border-width) * ${SWITCH_BORDER_MULTIPLIER})`}
         display="inline-block"
+        pointerEvents="none"
       >
         <Box
+          elemTag="span"
           drawable
           bgMode="filled"
           intent="neutral"
+          color={color}
+          disabled={disabled}
           blockSize={thumbBlockSize}
           inlineSize={thumbBlockSize}
         />

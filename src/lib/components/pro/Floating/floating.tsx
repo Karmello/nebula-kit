@@ -11,7 +11,7 @@ import {
   useInteractions,
 } from '@floating-ui/react'
 
-import { useControlled, useSlots } from 'lib/hooks'
+import { useControlledValue, useSlots } from 'lib/hooks'
 
 import { DEFAULT_FLOATING_MODE, DEFAULT_FLOATING_PLACEMENT } from './constants'
 import { focusTriggerChild } from './helpers'
@@ -27,13 +27,13 @@ export const Floating = ({
   onOpenChange,
   onPlacementChange,
 }: FloatingProps) => {
-  const [internalOpen, setInternalOpen] = useControlled({
+  const [internalOpen, setInternalOpen] = useControlledValue({
     value: open,
     defaultValue: false,
     onChange: onOpenChange,
   })
 
-  const [internalPlacement, setInternalPlacement] = useControlled({
+  const [internalPlacement, setInternalPlacement] = useControlledValue({
     value: placement,
     defaultValue: DEFAULT_FLOATING_PLACEMENT,
     onChange: onPlacementChange,
