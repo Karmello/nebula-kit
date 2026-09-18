@@ -30,8 +30,14 @@ export const Switch = ({
 
   const [animatedChecked, setAnimatedChecked] = useState(currentChecked)
   const thumbRef = useRef<HTMLDivElement | null>(null)
+  const isMountedRef = useRef(false)
 
   useLayoutEffect(() => {
+    if (!isMountedRef.current) {
+      isMountedRef.current = true
+      return
+    }
+
     const id = requestAnimationFrame(() => {
       setAnimatedChecked(currentChecked)
     })
@@ -53,6 +59,7 @@ export const Switch = ({
 
   return (
     <Box
+      key={String(scale)}
       elemTag="span"
       elemAttrs={elemAttrs}
       elemRef={elemRef}

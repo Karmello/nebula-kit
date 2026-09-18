@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
 export const useControlledValue = <T>({
   value,
@@ -12,6 +12,12 @@ export const useControlledValue = <T>({
   const [internalValue, setInternalValue] = useState<T | undefined>(defaultValue)
 
   const isControlled = value !== undefined
+
+  useEffect(() => {
+    if (isControlled) {
+      setInternalValue(value)
+    }
+  }, [isControlled, value])
 
   const currentValue = isControlled ? value : internalValue
 

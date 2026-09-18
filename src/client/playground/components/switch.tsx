@@ -3,6 +3,7 @@ import { type SwitchProps } from 'lib/index.pro'
 export type PropsFromSwitchKey = (typeof PROPS_FROM_SWITCH)[number]
 
 export const PROPS_FROM_SWITCH = [
+  'checked',
   'color',
   'disabled',
   'intent',
