@@ -7,6 +7,7 @@ export const PROPS_FROM_SWITCH = [
   'color',
   'disabled',
   'intent',
+  'ripple',
   'scale',
 ] as const satisfies readonly (keyof SwitchProps)[]
 

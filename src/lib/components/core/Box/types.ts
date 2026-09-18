@@ -68,6 +68,7 @@ export type BoxProps<T extends ElementType = 'div'> = HtmlElemProps<T> & {
   textAlign?: RespValue<CssTextAlign>
   aspectRatio?: RespValue<string>
   transform?: string
+  transition?: string
   zIndex?: string | number
   // border
   borderWidth?: RespValue<string>

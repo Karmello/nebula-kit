@@ -278,6 +278,12 @@ export const BOX_PROPS: Record<keyof BoxProps, DocProp> = {
     link: true,
     group: 'appearance',
   },
+  transition: {
+    options: ['string'],
+    description: 'Applies a CSS transition for animating property changes.',
+    link: true,
+    group: 'appearance',
+  },
   zIndex: {
     options: ['number', 'string'],
     description: 'Controls the stacking order.',

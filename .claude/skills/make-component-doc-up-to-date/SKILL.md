@@ -1,7 +1,6 @@
 ---
 name: make-component-doc-up-to-date
-description: Read a component's real implementation and bring its whole DocOverview (src/client/meta/<Name>/overview.ts) up to date - fill in missing-but-crucial fields and verify existing ones (composedOf included) against what the component actually does. Requires a component name argument. Invoke manually; not something Claude should trigger on its own.
-disable-model-invocation: true
+description: Read a component's real implementation and bring its whole DocOverview (src/client/meta/<Name>/overview.ts) up to date - fill in missing-but-crucial fields and verify existing ones (composedOf included) against what the component actually does. Requires a component name argument.
 argument-hint: '<ComponentName>'
 ---
 

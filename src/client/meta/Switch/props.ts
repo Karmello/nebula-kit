@@ -1,6 +1,7 @@
 import { BOX_COLORS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_SWITCH_INTENT,
+  DEFAULT_SWITCH_RIPPLE,
   DEFAULT_SWITCH_SCALE,
   SWITCH_INTENTS,
 } from 'lib/components/pro/Switch/constants'
@@ -11,11 +12,11 @@ import type { DocProp } from 'client/definitions'
 export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
   elemRef: {
     options: ['RefObject'],
-    description: 'Reference to the element.',
+    description: 'Reference to the native input element.',
   },
   elemAttrs: {
     options: ['HTML tag attributes'],
-    description: 'Additional HTML attributes applied to the element.',
+    description: 'Additional HTML attributes applied to the native input element.',
   },
   // value
   checked: {
@@ -49,6 +50,12 @@ export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
   disabled: {
     options: ['boolean'],
     description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_SWITCH_RIPPLE),
+    description: 'Toggles the ripple effect on pointer interaction.',
     group: 'interaction',
   },
   // size

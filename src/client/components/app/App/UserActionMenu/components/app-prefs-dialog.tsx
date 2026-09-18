@@ -1,6 +1,16 @@
 import { sentenceCase } from 'change-case'
 
-import { Box, Button, Dialog, NEB_LENGTH, Select, Spacer, Text, Title } from 'lib/components'
+import {
+  Box,
+  Button,
+  Dialog,
+  NEB_LENGTH,
+  Select,
+  Spacer,
+  Switch,
+  Text,
+  Title,
+} from 'lib/components'
 import { NEBKIT_PROVIDER_BORDER_RADIUS_SIZES } from 'lib/components/core/NebkitProvider/constants'
 import { useAppStore } from 'client/store'
 
@@ -75,32 +85,7 @@ export const AppPrefsDialog = () => {
               Ripple
             </Text>
             <Spacer blockSize={NEB_LENGTH.px_002} />
-            <Button
-              intent={ripple ? 'strong' : 'tertiary'}
-              scale="xs"
-              elemAttrs={{
-                onClick: () => setRipple(true),
-                style: {
-                  borderTopRightRadius: NEB_LENGTH.px_000,
-                  borderBottomRightRadius: NEB_LENGTH.px_000,
-                },
-              }}
-            >
-              {sentenceCase('On')}
-            </Button>
-            <Button
-              intent={!ripple ? 'strong' : 'tertiary'}
-              scale="xs"
-              elemAttrs={{
-                onClick: () => setRipple(false),
-                style: {
-                  borderTopLeftRadius: NEB_LENGTH.px_000,
-                  borderBottomLeftRadius: NEB_LENGTH.px_000,
-                },
-              }}
-            >
-              {sentenceCase('Off')}
-            </Button>
+            <Switch checked={ripple} onChange={setRipple} scale="xs" intent="strong" color="blue" />
           </Box>
           <Box>
             <Text bold typography="small">

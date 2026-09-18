@@ -58,6 +58,7 @@ export const Box = <T extends ElementType = 'div'>({
   pointerEvents,
   aspectRatio,
   transform,
+  transition,
   borderWidth,
   borderTopWidth,
   borderRightWidth,
@@ -306,6 +307,7 @@ export const Box = <T extends ElementType = 'div'>({
             ...(cursor !== undefined ? { cursor } : {}),
             ...(zIndex !== undefined ? { zIndex } : {}),
             ...(transform !== undefined ? { transform } : {}),
+            ...(transition !== undefined ? { transition } : {}),
           },
           disabled,
           ...buildStaticDataset('Box', {
