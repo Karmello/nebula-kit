@@ -1,6 +1,3 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { ImageProps } from 'lib/components'
-
 import {
   IMAGE_CROSS_ORIGIN,
   IMAGE_DECODING,
@@ -8,79 +5,186 @@ import {
   IMAGE_LOADING,
   IMAGE_OBJECT_FIT,
   IMAGE_REFERRER_POLICY,
-} from 'lib/components/core/base/Image'
+} from 'lib/components/core/Image/constants'
+import { CSS_DISPLAY, CSS_OVERFLOW, CSS_POINTER_EVENTS } from 'lib/constants'
+import { ImageProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-
-const IMAGE_PROPS_META: ComponentMeta<ImageProps>['props'] = {
-  alt: {
-    options: ['string'],
-    description: 'Alternative text describing the image for accessibility.',
+export const IMAGE_PROPS: Record<keyof ImageProps, DocProp> = {
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
-  aspectRatio: BOX_PROPS_META.aspectRatio,
-  blockSize: BOX_PROPS_META.blockSize,
-  borderRadius: BOX_PROPS_META.borderRadius,
-  crossOrigin: {
-    options: IMAGE_CROSS_ORIGIN,
-    description: 'Controls the CORS mode used when fetching the image.',
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // source
+  src: {
+    options: ['string'],
+    description: 'Source URL of the image.',
+    group: 'source',
+  },
+  loading: {
+    options: IMAGE_LOADING,
+    description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
+    group: 'source',
   },
   decoding: {
     options: IMAGE_DECODING,
     description: 'Hints how the browser should decode the image.',
+    group: 'source',
   },
-  display: BOX_PROPS_META.display,
   fetchPriority: {
     options: IMAGE_FETCH_PRIORITY,
     description: 'Hints the browser about the relative priority of fetching the image.',
+    group: 'source',
   },
-  inlineSize: BOX_PROPS_META.inlineSize,
-  loading: {
-    options: IMAGE_LOADING,
-    description: 'Controls whether the image is loaded eagerly or lazily by the browser.',
+  crossOrigin: {
+    options: IMAGE_CROSS_ORIGIN,
+    description: 'Controls the CORS mode used when fetching the image.',
+    group: 'source',
   },
-  maxBlockSize: BOX_PROPS_META.maxBlockSize,
-  maxInlineSize: BOX_PROPS_META.maxInlineSize,
-  minBlockSize: BOX_PROPS_META.minBlockSize,
-  minInlineSize: BOX_PROPS_META.minInlineSize,
+  referrerPolicy: {
+    options: IMAGE_REFERRER_POLICY,
+    description: 'Controls which referrer information is sent when fetching the image.',
+    group: 'source',
+  },
+  // events
+  onLoad: {
+    options: ['e => void'],
+    description: 'Called when the underlying img element fires a load event.',
+    group: 'events',
+  },
+  onError: {
+    options: ['e => void'],
+    description: 'Called when the underlying img element fires an error event.',
+    group: 'events',
+  },
+  // content
+  alt: {
+    options: ['string'],
+    description: 'Alternative text describing the image for accessibility.',
+    group: 'content',
+  },
+  title: {
+    options: ['string'],
+    description: 'Supplementary text associated with the image.',
+    group: 'content',
+  },
+  // appearance
+  aspectRatio: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Defines the preferred width-to-height ratio of the component.',
+    link: true,
+    group: 'appearance',
+  },
+  opacity: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Transparency level, from fully visible to fully transparent.',
+    link: true,
+    group: 'appearance',
+  },
+  borderRadius: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Sets border radius overriding global value set by NebkitProvider.',
+    link: true,
+    group: 'appearance',
+  },
+  // layout
+  display: {
+    options: CSS_DISPLAY,
+    isResponsive: true,
+    description: 'Display type controlling how the component is laid out.',
+    link: true,
+    group: 'layout',
+  },
+  overflow: {
+    options: CSS_OVERFLOW,
+    isResponsive: true,
+    description: 'Overflow behavior for both axes.',
+    link: true,
+    group: 'layout',
+  },
+  overflowX: {
+    options: CSS_OVERFLOW,
+    isResponsive: true,
+    description: 'Overflow behavior on the horizontal axis.',
+    link: true,
+    group: 'layout',
+  },
+  overflowY: {
+    options: CSS_OVERFLOW,
+    isResponsive: true,
+    description: 'Overflow behavior on the vertical axis.',
+    link: true,
+    group: 'layout',
+  },
   objectFit: {
     options: IMAGE_OBJECT_FIT,
     isResponsive: true,
     description: 'Defines how the image is resized to fit its container.',
     link: true,
+    group: 'layout',
   },
   objectPosition: {
-    options: [DOCS_CSS_LABEL],
+    options: ['string'],
     isResponsive: true,
     description: 'Sets the alignment of the image within its container.',
     link: true,
+    group: 'layout',
   },
-  onError: {
-    options: ['e => void'],
-    description: 'Called when the underlying img element fires an error event.',
+  // interaction
+  pointerEvents: {
+    options: CSS_POINTER_EVENTS,
+    description: 'Controls whether the element can receive pointer interactions.',
+    link: true,
+    group: 'interaction',
   },
-  onLoad: {
-    options: ['e => void'],
-    description: 'Called when the underlying img element fires a load event.',
-  },
-  opacity: BOX_PROPS_META.opacity,
-  overflow: BOX_PROPS_META.overflow,
-  overflowX: BOX_PROPS_META.overflowX,
-  overflowY: BOX_PROPS_META.overflowY,
-  pointerEvents: BOX_PROPS_META.pointerEvents,
-  referrerPolicy: {
-    options: IMAGE_REFERRER_POLICY,
-    description: 'Controls which referrer information is sent when fetching the image.',
-  },
-  src: {
+  // size
+  blockSize: {
     options: ['string'],
-    description: 'Source URL of the image.',
+    isResponsive: true,
+    description: 'Logical height.',
+    link: true,
+    group: 'size',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
-  title: {
+  minBlockSize: {
     options: ['string'],
-    description: 'Supplementary text associated with the image.',
+    isResponsive: true,
+    description: 'Minimum logical height.',
+    link: true,
+    group: 'size',
+  },
+  maxBlockSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical height.',
+    link: true,
+    group: 'size',
+  },
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+    group: 'size',
+  },
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+    group: 'size',
+  },
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+    group: 'size',
   },
 }
-
-export { IMAGE_PROPS_META }

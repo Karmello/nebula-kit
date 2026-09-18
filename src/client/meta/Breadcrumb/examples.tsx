@@ -1,5 +1,5 @@
-import { ComponentMeta } from 'client/definitions'
-import { BreadcrumbProps, Breadcrumb } from 'lib/components'
+import { Breadcrumb } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
 const tree = [
   {
@@ -48,7 +48,7 @@ const tree = [
   },
 ]
 
-const BREADCRUMB_EXAMPLES_META: ComponentMeta<BreadcrumbProps>['examples'] = [
+export const BREADCRUMB_EXAMPLES: DocExample[] = [
   {
     jsx: <Breadcrumb tree={tree} />,
     description:
@@ -56,5 +56,3 @@ const BREADCRUMB_EXAMPLES_META: ComponentMeta<BreadcrumbProps>['examples'] = [
     sandBoxWithNoPadding: true,
   },
 ]
-
-export { BREADCRUMB_EXAMPLES_META }

@@ -1,45 +1,73 @@
-import { ComponentMeta } from 'client/definitions'
-import { BreadcrumbProps } from 'lib/components'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import {
+  BREADCRUMB_TAGS,
+  BREADCRUMB_VARIANTS,
+  DEFAULT_BREADCRUMB_INTENT,
+  DEFAULT_BREADCRUMB_VARIANT,
+} from 'lib/components/pro/Breadcrumb/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { BreadcrumbProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BREADCRUMB_TAGS, DEFAULT_BREADCRUMB_INTENT, DEFAULT_BREADCRUMB_SIZE } from 'lib/components/pro/navigation/Breadcrumb'
-
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { DROPDOWN_LIST_PROPS_META } from '../DropdownList/props'
-
-const BREADCRUMB_PROPS_META: ComponentMeta<BreadcrumbProps>['props'] = {
-  color: DROPDOWN_LIST_PROPS_META.color,
+export const BREADCRUMB_PROPS: Record<keyof BreadcrumbProps, DocProp> = {
+  elemTag: {
+    options: BREADCRUMB_TAGS,
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered.',
+  },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  tree: {
+    options: ['object[]'],
+    isRequired: true,
+    description:
+      'Hierarchical data source that defines the breadcrumb structure and available selections.',
+  },
+  // value
+  path: {
+    options: ['string[]'],
+    description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
+    group: 'value',
+  },
   defaultPath: {
     options: ['string[]'],
-    description: 'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
-  },
-  intent: {
-    ...DROPDOWN_LIST_PROPS_META.intent,
-    defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
-    description: 'Color tone applied to the list.',
+    description:
+      'Initial breadcrumb path applied once to seed internal state when the component is uncontrolled.',
+    group: 'value',
   },
   onChange: {
     options: ['(path: string[]) => void'],
     description: 'Called when the user selects a value, receiving the updated breadcrumb path.',
+    group: 'value',
   },
-  path: {
-    options: ['string[]'],
-    description: 'Controls the active breadcrumb path, enabling fully controlled behavior.',
+  // surface
+  variant: {
+    options: BREADCRUMB_VARIANTS,
+    defaultValue: DEFAULT_BREADCRUMB_VARIANT,
+    description: 'Visual style variant applied to the dropdown menu. The trigger is unaffected.',
+    group: 'surface',
   },
-  size: {
-    ...DROPDOWN_LIST_PROPS_META.size,
-    defaultValue: DEFAULT_BREADCRUMB_SIZE,
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_BREADCRUMB_INTENT),
+    description: 'Color tone applied to the list.',
+    group: 'surface',
   },
-  tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: BREADCRUMB_TAGS as never,
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
-  tree: {
-    options: ['object[]'],
-    isRequired: true,
-    description: 'Hierarchical data source that defines the breadcrumb structure and available selections.',
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
+    group: 'size',
   },
 }
-
-export { BREADCRUMB_PROPS_META }

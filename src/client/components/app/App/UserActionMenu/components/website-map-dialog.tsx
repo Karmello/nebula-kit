@@ -1,29 +1,50 @@
-import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/hooks'
-import { Dialog, Text, WithIcon, Button, ButtonProps, Flex, Icon, IconProps } from 'lib/components'
+import { Box, Dialog, Icon, NEB_LENGTH, Spacer, Text, Title } from 'lib/components'
+import { IconName } from 'lib/components/core/Icon'
 import { PageKey } from 'client/definitions'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
+
+const Item = ({
+  children,
+  description,
+  iconName,
+  onClick,
+}: {
+  children: string
+  description: string
+  iconName: IconName
+  onClick: () => void
+}) => {
+  return (
+    <Box
+      elemTag="button"
+      onClick={onClick}
+      display="flex"
+      justifyContent="space-between"
+      alignItems="center"
+      padding={NEB_LENGTH.px_016}
+      columnGap={NEB_LENGTH.px_024}
+      interactive
+      cursor="pointer"
+      color="blue"
+      bgMode="filled"
+      intent="muted"
+    >
+      <Box>
+        <Text typography="h6">{children}</Text>
+        <Spacer blockSize={NEB_LENGTH.px_004} />
+        <Text typography="small">{description}</Text>
+      </Box>
+      <Icon name={iconName} color="blue" intent="primary" size={NEB_LENGTH.px_032} />
+    </Box>
+  )
+}
 
 export const WebsiteMapDialog = () => {
   const showWebsiteMap = useAppStore(state => state.showWebsiteMap)
   const setShowWebsiteMap = useAppStore(state => state.setShowWebsiteMap)
 
   const navigateTo = useNavigateTo()
-
-  const commonButtonProps = {
-    size: 'xl',
-    bold: true,
-    fullWidth: true,
-    iconPlacement: 'right',
-    align: 'split',
-    color: 'blue',
-    intent: 'muted',
-  } as ButtonProps
-
-  const commonIconProps = {
-    color: 'blue',
-    intent: 'primary',
-    size: '27px',
-  } as IconProps
 
   const handleClick = (pageKey: PageKey) => {
     setShowWebsiteMap(false)
@@ -38,97 +59,80 @@ export const WebsiteMapDialog = () => {
       onClose={() => {
         setShowWebsiteMap(false)
       }}
-      size="lg"
+      scale="lg"
       closeOnBackdropClick
     >
       <Dialog.Header>
-        <WithIcon iconName="compass">
+        <Title iconName="compass">
           <Text bold>Website map</Text>
-        </WithIcon>
+        </Title>
       </Dialog.Header>
       <Dialog.Content>
-        <Flex flexDirection="column" alignItems="stretch" rowGap="2xs">
-          <Button
-            {...commonButtonProps}
-            description="Recommended composition and architectural patterns."
-            customSvgIcon={<Icon {...commonIconProps} name="pyramid" />}
-            onClick={() => handleClick(PageKey.patterns)}
-          >
-            Patterns
-          </Button>
-          <Button
-            {...commonButtonProps}
-            description="Interactive environment for testing components and props in isolation."
-            customSvgIcon={<Icon {...commonIconProps} name="flask-conical" />}
-            onClick={() => handleClick(PageKey.playground)}
-          >
-            Playground
-          </Button>
-          <Button
-            {...commonButtonProps}
+        <Box display="flex" flexDirection="column" alignItems="stretch" rowGap={NEB_LENGTH.px_006}>
+          <Item
             description="Explanations of NebulaKit concepts, styling and architecture."
-            customSvgIcon={<Icon {...commonIconProps} name="book-open-text" />}
+            iconName="book-open-text"
             onClick={() => handleClick(PageKey.foundations)}
           >
             Foundations
-          </Button>
-          <Button
-            {...commonButtonProps}
-            description="Documentation for free components."
-            customSvgIcon={<Icon {...commonIconProps} name="package" />}
-            onClick={() => handleClick(PageKey.core)}
+          </Item>
+          <Item
+            description="Documentation for Core and Pro components."
+            iconName="package"
+            onClick={() => handleClick(PageKey.library)}
           >
-            Core
-          </Button>
-          <Button
-            {...commonButtonProps}
-            description="Documentation for paid components."
-            customSvgIcon={<Icon {...commonIconProps} name="star" />}
-            onClick={() => handleClick(PageKey.pro)}
+            Library
+          </Item>
+          <Item
+            description="Recommended composition and architectural patterns."
+            iconName="pyramid"
+            onClick={() => handleClick(PageKey.patterns)}
           >
-            Pro
-          </Button>
-          <Button
-            {...commonButtonProps}
+            Patterns
+          </Item>
+          <Item
+            description="Interactive environment for testing components and props in isolation."
+            iconName="flask-conical"
+            onClick={() => handleClick(PageKey.playground)}
+          >
+            Playground
+          </Item>
+          <Item
             description="Answers to common questions about the system."
-            customSvgIcon={<Icon {...commonIconProps} name="message-circle-question-mark" />}
+            iconName="message-circle-question-mark"
             onClick={() => handleClick(PageKey.faq)}
           >
             FAQ
-          </Button>
-          <Button
-            {...commonButtonProps}
+          </Item>
+          <Item
             description="Articles, thoughts and deeper technical discussions."
-            customSvgIcon={<Icon {...commonIconProps} name="rss" />}
+            iconName="rss"
             onClick={() => handleClick(PageKey.blog)}
           >
             Blog
-          </Button>
-          <Button
-            {...commonButtonProps}
+          </Item>
+          <Item
             description="Subscription plans and bundle information."
-            customSvgIcon={<Icon {...commonIconProps} name="credit-card" />}
+            iconName="credit-card"
             onClick={() => handleClick(PageKey.pricing)}
           >
             Pricing
-          </Button>
-          <Button
-            {...commonButtonProps}
+          </Item>
+          <Item
             description="Ideas, suggestions and user feedback."
-            customSvgIcon={<Icon {...commonIconProps} name="mail" />}
+            iconName="mail"
             onClick={() => handleClick(PageKey.feedback)}
           >
             Feedback
-          </Button>
-          <Button
-            {...commonButtonProps}
+          </Item>
+          <Item
             description="AI-powered helper for understanding NebulaKit concepts."
-            customSvgIcon={<Icon {...commonIconProps} name="sparkles" />}
+            iconName="sparkles"
             onClick={() => handleClick(PageKey.assistant)}
           >
             Assistant
-          </Button>
-        </Flex>
+          </Item>
+        </Box>
       </Dialog.Content>
     </Dialog>
   )

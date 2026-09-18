@@ -1,7 +1,8 @@
-import { ComponentMeta } from 'client/definitions'
-import { Box, BoxProps } from 'lib/components'
+import { Box } from 'lib/components/core/Box/box'
+import { NEB_LENGTH } from 'lib/constants'
+import { type DocExample } from 'client/definitions'
 
-const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
+export const BOX_EXAMPLES: DocExample[] = [
   {
     jsx: <Box>Default box</Box>,
     description:
@@ -9,7 +10,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary">
+      <Box drawable bgMode="filled" intent="primary" color="blue">
         Box is a block
       </Box>
     ),
@@ -17,7 +18,7 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px">
+      <Box drawable bgMode="filled" intent="primary" color="blue" padding={NEB_LENGTH.px_024}>
         Padded box
       </Box>
     ),
@@ -25,7 +26,14 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" textAlign="center">
+      <Box
+        drawable
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+        textAlign="center"
+      >
         Centered content
       </Box>
     ),
@@ -33,7 +41,14 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable variant="outline" intent="primary" padding="20px" display="inline-block">
+      <Box
+        drawable
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+        display="inline-block"
+      >
         Box as inline block
       </Box>
     ),
@@ -41,20 +56,26 @@ const BOX_EXAMPLES_META: ComponentMeta<BoxProps>['examples'] = [
   },
   {
     jsx: (
-      <Box drawable interactive variant="solid" intent="primary" padding="20px">
+      <Box interactive bgMode="filled" intent="primary" color="blue" padding={NEB_LENGTH.px_024}>
         Interactive Box
       </Box>
     ),
     description: 'Box with interactive behavior.',
+    isOverviewSnippet: true,
   },
   {
     jsx: (
-      <Box drawable interactive disabled variant="solid" intent="primary" padding="20px">
+      <Box
+        interactive
+        disabled
+        bgMode="filled"
+        intent="primary"
+        color="blue"
+        padding={NEB_LENGTH.px_024}
+      >
         Disabled Box
       </Box>
     ),
     description: 'Interactive Box in disabled state.',
   },
 ]
-
-export { BOX_EXAMPLES_META }

@@ -1,37 +1,41 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-import { IconProps } from 'lib/components'
-import { DEFAULT_ICON_SIZE, ICON_SIZES } from 'lib/components/core/elements/Icon'
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
+import { DEFAULT_ICON_SIZE } from 'lib/components/core/Icon/constants'
+import type { IconProps } from 'lib/components/core/Icon/types'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-
-const ICON_PROPS_META: ComponentMeta<IconProps>['props'] = {
+export const ICON_PROPS: Record<keyof IconProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
-    description: 'Custom SVG icon.',
+    options: ['ReactNode'],
+    description: 'Custom SVG icon rendered when not using name prop.',
   },
-  color: {
-    ...BOX_PROPS_META.color,
-    description: 'Color applied to the icon.',
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
-  intent: {
-    ...BOX_PROPS_META.intent,
-    description: 'Color tone applied to the icon.',
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
+  // appearance
   name: {
     options: ['IconName'],
-    isRequired: true,
-    isResponsive: true,
     description: 'Name of the icon to render.',
+    group: 'appearance',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    description: 'Color tone applied to the icon.',
+    group: 'appearance',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the icon.',
+    group: 'appearance',
   },
   size: {
-    options: [...ICON_SIZES, DOCS_CSS_LABEL],
+    options: ['string'],
     defaultValue: String(DEFAULT_ICON_SIZE),
-    isResponsive: true,
     description: 'Size of the icon.',
+    group: 'appearance',
   },
-  tagAttrs: HTML_TAG_PROPS_META['tagAttrs'],
-  tagRef: HTML_TAG_PROPS_META['tagRef'],
 }
-
-export { ICON_PROPS_META }

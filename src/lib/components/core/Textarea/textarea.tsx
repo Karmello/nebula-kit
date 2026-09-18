@@ -1,0 +1,95 @@
+import { useState } from 'react'
+import classNames from 'classnames'
+
+import { CONTROL_SCALE_MAP, TYPOGRAPHY_MAP } from 'lib/constants'
+import { withPrefix } from 'lib/helpers'
+
+import { Box } from '../Box'
+import {
+  DEFAULT_TEXTAREA_INLINE_SIZE,
+  DEFAULT_TEXTAREA_INTENT,
+  DEFAULT_TEXTAREA_MAX_INLINE_SIZE,
+  DEFAULT_TEXTAREA_RESIZE,
+  DEFAULT_TEXTAREA_ROWS,
+  DEFAULT_TEXTAREA_VARIANT,
+  TEXTAREA_VARIANT_MAP,
+} from './constants'
+import { TextareaProps } from './types'
+
+import './textarea.scss'
+
+export const Textarea = ({
+  // Box
+  elemAttrs,
+  elemRef,
+  onFocus,
+  onBlur,
+  variant = DEFAULT_TEXTAREA_VARIANT,
+  color,
+  intent = DEFAULT_TEXTAREA_INTENT,
+  disabled,
+  inlineSize = DEFAULT_TEXTAREA_INLINE_SIZE,
+  minInlineSize,
+  maxInlineSize = DEFAULT_TEXTAREA_MAX_INLINE_SIZE,
+  // own
+  defaultValue,
+  value,
+  onChange,
+  rows = DEFAULT_TEXTAREA_ROWS,
+  resize = DEFAULT_TEXTAREA_RESIZE,
+  placeholder,
+  readOnly,
+  maxLength,
+}: TextareaProps) => {
+  const [internalValue, setInternalValue] = useState<string | undefined>(defaultValue)
+
+  const isControlled = value !== undefined
+  const currentValue = isControlled ? value : internalValue
+
+  const handleChange = (value: string) => {
+    if (!isControlled) setInternalValue(value)
+    onChange?.(value)
+  }
+
+  return (
+    <Box
+      elemTag="textarea"
+      className={classNames(withPrefix('textarea'), elemAttrs?.className)}
+      onFocus={onFocus}
+      onBlur={onBlur}
+      elemAttrs={{
+        ...elemAttrs,
+        style: {
+          fontSize: TYPOGRAPHY_MAP.body.fontSize,
+          lineHeight: TYPOGRAPHY_MAP.body.lineHeight,
+          resize,
+          ...elemAttrs?.style,
+        },
+        value: currentValue,
+        onChange: e => {
+          handleChange((e.target as HTMLTextAreaElement).value)
+        },
+        rows,
+        placeholder,
+        readOnly,
+        maxLength,
+      }}
+      elemRef={elemRef}
+      drawable
+      bgMode={TEXTAREA_VARIANT_MAP[variant].bgMode}
+      borderMode={TEXTAREA_VARIANT_MAP[variant].borderMode}
+      textMode={TEXTAREA_VARIANT_MAP[variant].textMode}
+      color={color}
+      intent={intent}
+      disabled={disabled}
+      inlineSize={inlineSize}
+      minInlineSize={minInlineSize}
+      maxInlineSize={maxInlineSize}
+      padding={CONTROL_SCALE_MAP.md.fontSize}
+      interactive
+      activeOnFocus
+    />
+  )
+}
+
+Textarea.displayName = 'Textarea'

@@ -18,4 +18,7 @@ RUN yarn install --immutable
 ENV NODE_ENV=development
 ENV CHROMIUM_PATH=/usr/bin/chromium
 
+RUN chmod +x /usr/src/nebula-kit/docker-entrypoint.sh
+
+ENTRYPOINT ["/usr/src/nebula-kit/docker-entrypoint.sh"]
 CMD ["yarn", "dev", ";", "tail", "-f", "/dev/null"]

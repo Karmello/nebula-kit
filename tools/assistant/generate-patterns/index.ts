@@ -1,7 +1,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 
-import { PATTERNS } from '../../../src/client/definitions/patterns'
+import { PATTERNS } from '../../../src/client/patterns'
 import { generatePatterns } from './helpers/generate-patterns'
 
 const outputDir = path.resolve(process.cwd(), '../assistant')

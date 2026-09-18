@@ -1,8 +1,7 @@
 import { Fragment } from 'react'
 
-import { Box, Grid, Spacer, Table, Text } from 'lib/components'
-import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/base/Text'
-import { TEXT_TYPOGRAPHY_MAP } from 'lib/definitions'
+import { Box, NEB_LENGTH, Spacer, Text } from 'lib/components'
+import { TEXT_TYPOGRAPHY, TextTypography } from 'lib/components/core/Text'
 
 const MAP: Record<TextTypography, string> = {
   body: 'Default text for reading and general content. Balanced for legibility and rhythm across devices.',
@@ -23,68 +22,38 @@ export default () => {
   return (
     <Box maxInlineSize="55rem">
       <Text>
-        Typography defines the set of semantic text styles used across the system. Each typography preset combines font size, line
-        height and structural intent to create consistent reading rhythm and visual hierarchy throughout the UI. Typography values
-        are exposed as reusable CSS custom properties, allowing the same styles to be referenced directly in custom layouts,
-        markdown content and external components outside the NebulaKit primitives.
+        Typography defines the set of semantic text styles used across the system. Each typography
+        preset combines font size, line height and structural intent to create consistent reading
+        rhythm and visual hierarchy throughout the UI.
       </Text>
-      <Spacer blockSize="xl" />
-      <Table paddingBlock="10px" paddingInline="15px">
-        <Table.Header>
-          <Table.HeaderRow>
-            <Table.HeaderCell>Typography</Table.HeaderCell>
-            <Table.HeaderCell>CSS token names</Table.HeaderCell>
-            <Table.HeaderCell>Resolved value</Table.HeaderCell>
-          </Table.HeaderRow>
-        </Table.Header>
-        <Table.Body>
-          {Object.keys(TEXT_TYPOGRAPHY_MAP).map(key => {
-            const fontSize: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).fontSize
-            const lineHeight: string = (TEXT_TYPOGRAPHY_MAP[key as never] as any).lineHeight
-
-            return (
-              <Table.Row key={key}>
-                <Table.Cell>
-                  <Text bold intent="primary">
-                    {key}
-                  </Text>
-                </Table.Cell>
-                <Table.Cell>
-                  <Text italic noWrap>
-                    {`--neb-typography-${key}-font-size`},
-                  </Text>
-                  <Text italic noWrap>{`--neb-typography-${key}-line-height`}</Text>
-                </Table.Cell>
-                <Table.Cell>
-                  <Text>{fontSize},</Text>
-                  <Text>{lineHeight}</Text>
-                </Table.Cell>
-              </Table.Row>
-            )
-          })}
-        </Table.Body>
-      </Table>
-      <Spacer blockSize="3xl" />
-      <Grid
+      <Spacer blockSize={NEB_LENGTH.px_064} />
+      <Box
+        display="grid"
         gridTemplateColumns={{
           base: '1fr',
           md: 'max-content minmax(0, 1fr)',
         }}
-        columnGap="lg"
+        columnGap={NEB_LENGTH.px_048}
       >
         {TEXT_TYPOGRAPHY.map(typography => (
           <Fragment key={typography}>
             <Text intent="primary" bold>
               {typography}
             </Text>
-            <Box drawable variant="outline" intent="muted" marginBottom="md">
+            <Box
+              drawable
+              borderMode="filled"
+              intent="tertiary"
+              marginBottom={NEB_LENGTH.px_024}
+              padding={NEB_LENGTH.px_008}
+            >
               <Text intent="neutral" typography={typography}>
                 {MAP[typography]}
               </Text>
             </Box>
           </Fragment>
         ))}
-      </Grid>
+      </Box>
     </Box>
   )
 }

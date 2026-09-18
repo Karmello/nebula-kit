@@ -23,7 +23,8 @@ export const PRICING_DATA = {
       title: 'Business',
       headline: 'For small teams up to 10 members.',
       price: '$99 / month',
-      description: 'Ideal for small teams building together under one license. Includes everything from the Premium plan.',
+      description:
+        'Ideal for small teams building together under one license. Includes everything from the Premium plan.',
       whatYouGet: ['Discord access with chat support', 'GitHub roadmap access'],
     },
     enterprise: {
@@ -33,7 +34,10 @@ export const PRICING_DATA = {
       price: 'From $499 / month',
       description:
         'Tailored for large organizations and specialized use cases that need flexible agreements. Includes everything from the Business plan.',
-      whatYouGet: ['Discord access with high priority chat support', 'GitHub roadmap access + elevated input consideration'],
+      whatYouGet: [
+        'Discord access with high priority chat support',
+        'GitHub roadmap access + elevated input consideration',
+      ],
     },
   },
   additionalInfo: [

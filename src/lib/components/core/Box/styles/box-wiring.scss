@@ -1,0 +1,111 @@
+.neb-box[data-neb-box-drawable='true'][data-neb-box-intent] {
+  --surface: oklch(from var(--color-base) calc(l - var(--surface-base-offset) / 100) c h);
+  --surface-hover: oklch(from var(--color-base) calc(l - var(--surface-hover-offset) / 100) c h);
+  --surface-active: oklch(from var(--color-base) calc(l - var(--surface-active-offset) / 100) c h);
+  --surface-selection: oklch(from var(--color-base) calc(l - var(--surface-selection-offset) / 100) c h);
+  --surface-edge: oklch(from var(--color-base) calc(l - var(--surface-edge-offset) / 100) c h);
+  --surface-divider: oklch(from var(--color-base) calc(l - var(--surface-divider-offset) / 100) c h);
+
+  --tint: color-mix(in srgb, var(--color-primary) var(--tint-base-offset), transparent);
+  --tint-hover: color-mix(in srgb, var(--color-primary) var(--tint-hover-offset), transparent);
+  --tint-active: color-mix(in srgb, var(--color-primary) var(--tint-active-offset), transparent);
+  --tint-selection: color-mix(in srgb, var(--color-primary) var(--tint-selection-offset), transparent);
+  --tint-edge: color-mix(in srgb, var(--color-primary) var(--tint-edge-offset), transparent);
+  --tint-divider: color-mix(in srgb, var(--color-primary) var(--tint-divider-offset), transparent);
+
+  --ripple: currentColor;
+
+  &[data-neb-box-bg-mode='transparent'] {
+    --bg: transparent;
+    --bg-hover: transparent;
+    --bg-active: transparent;
+    --bg-selection: transparent;
+  }
+
+  &[data-neb-box-bg-mode='filled'] {
+    --bg: var(--surface);
+    --bg-hover: var(--surface-hover);
+    --bg-active: var(--surface-active);
+    --bg-selection: var(--surface-selection);
+
+    &[data-neb-box-intent='secondary'],
+    &[data-neb-box-intent='primary'] {
+      --text: white;
+      --text-hover: white;
+      --text-active: white;
+      --text-selection: white;
+      --ripple: white;
+    }
+
+    &[data-neb-box-intent='strong'] {
+      --text: var(--neb-background);
+      --text-hover: var(--neb-background);
+      --text-active: var(--neb-background);
+      --text-selection: var(--neb-background);
+      --ripple: var(--neb-background);
+    }
+  }
+
+  &[data-neb-box-bg-mode='tinted'] {
+    --bg: var(--tint);
+    --bg-hover: var(--tint-hover);
+    --bg-active: var(--tint-active);
+    --bg-selection: var(--tint-selection);
+
+    &[data-neb-box-text-mode='colored'] {
+      --text: var(--color-primary);
+      --text-hover: var(--color-primary);
+      --text-active: var(--color-primary);
+      --text-selection: var(--color-primary);
+      --ripple: var(--color-primary);
+    }
+  }
+
+  &[data-neb-box-border-mode='none'] {
+    --border: transparent;
+    --border-hover: transparent;
+    --border-active: transparent;
+    --border-selection: transparent;
+    --border-edge: transparent;
+    --border-divider: transparent;
+  }
+
+  &[data-neb-box-border-mode='filled'] {
+    --border: var(--surface);
+    --border-hover: var(--surface-hover);
+    --border-active: var(--surface-active);
+    --border-selection: var(--surface-selection);
+    --border-edge: var(--surface-edge);
+    --border-divider: var(--surface-divider);
+  }
+
+  &[data-neb-box-border-mode='tinted'] {
+    --border: var(--tint);
+    --border-hover: var(--tint-hover);
+    --border-active: var(--tint-active);
+    --border-selection: var(--tint-selection);
+    --border-edge: var(--tint-edge);
+    --border-divider: var(--tint-divider);
+  }
+
+  &[data-neb-box-text-mode='colored'] {
+    --text: var(--surface);
+    --text-hover: var(--surface-hover);
+    --text-active: var(--surface-active);
+    --text-selection: var(--surface-selection);
+    --ripple: var(--surface);
+
+    &[data-neb-box-intent='neutral'] {
+      --text: var(--neb-text);
+      --text-hover: var(--neb-text);
+      --text-active: var(--neb-text);
+      --text-selection: var(--neb-text);
+      --ripple: var(--neb-text);
+    }
+  }
+
+  &[data-neb-box-text-mode='default'] {
+    --text: var(--neb-text);
+    --ripple: var(--neb-text);
+  }
+}

@@ -1,8 +1,8 @@
+import { vitePluginErrorOverlay } from '@hiogawa/vite-plugin-error-overlay'
+import react from '@vitejs/plugin-react-swc'
 import path from 'path'
 import { defineConfig } from 'vite'
 import tsconfigPaths from 'vite-tsconfig-paths'
-import react from '@vitejs/plugin-react-swc'
-import { vitePluginErrorOverlay } from '@hiogawa/vite-plugin-error-overlay'
 
 export default defineConfig(({ mode }) => ({
   plugins: [tsconfigPaths(), react(), vitePluginErrorOverlay()],

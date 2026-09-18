@@ -1,7 +1,6 @@
-import { PLAYGROUND_PRESETS } from 'client/definitions'
 import { Select } from 'lib/components'
-
-import { usePlaygroundStore } from '../../store'
+import { PLAYGROUND_PRESETS } from 'client/playground'
+import { usePlaygroundStore } from 'client/store'
 
 export const PredefinedExamples = () => {
   const components = usePlaygroundStore(state => state.components)
@@ -14,7 +13,7 @@ export const PredefinedExamples = () => {
 
   return (
     <Select
-      size="xs"
+      scale="xs"
       staticLabel="Presets"
       inlineSize="140px"
       value=""

@@ -1,44 +1,37 @@
-import { capitalCase, pascalCase } from 'change-case'
+import { capitalCase } from 'change-case'
 
+import { LIBRARY_ITEM_LABEL_BY_KEY } from 'client/definitions'
 import META from 'client/meta'
 
 export const DEFAULT_TITLE = 'NebulaKit | React UI System'
 
 export const DEFAULT_DESCRIPTION =
-  'React UI system built on composition and prop inheritance, with strict rules governing component appearance and behavior. Designed to reduce UI entropy and keep interfaces consistent and maintainable as products grow over time.'
+  'React UI system designed to minimize interface development effort, letting you focus on application logic while keeping products consistent, maintainable and resistant to entropy.'
 
 export const getHtmlMetaData = (path: string): { title: string; description: string } => {
-  let title, description
-
   try {
-    let params = path
+    const params = path
       .split('?')[0]
       .split('/')
       .filter(p => p)
 
     if (!params.length) throw new Error()
 
-    const isComponentPage = ['core', 'pro'].includes(params[0])
+    const isLibraryPage = params[0] === 'library'
+    const itemLabel = isLibraryPage ? LIBRARY_ITEM_LABEL_BY_KEY[params[2]] : undefined
 
-    if (isComponentPage) {
-      const componentName = pascalCase(params[2])
-      params[2] = params[2].replace('-', ' ')
-      description = META[componentName][componentName].overview.title
-    } else {
-      description = DEFAULT_DESCRIPTION
-    }
+    const description =
+      itemLabel && META[itemLabel]?.[itemLabel]
+        ? META[itemLabel][itemLabel].overview.title
+        : DEFAULT_DESCRIPTION
 
-    params = params.map(p => capitalCase(p))
-    if (isComponentPage) {
-      params[2] = params[2].replace(' ', '')
-    }
+    const titleParams = params.map((p, i) => (i === 2 && itemLabel ? itemLabel : capitalCase(p)))
+    const title = ['NebulaKit', ...titleParams].join(' | ')
 
-    title = ['NebulaKit', ...params].join(' | ')
+    return { title, description }
   } catch {
     return { title: DEFAULT_TITLE, description: DEFAULT_DESCRIPTION }
   }
-
-  return { title, description }
 }
 
 export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: string) => {
@@ -50,7 +43,10 @@ export const getFinalIndexHtml = (indexHtml: string, appHtml: string, url: strin
     .replace('<!-- og:title -->', `<meta property="og:title" content="${title}" />`)
     .replace('<!-- og:description -->', `<meta name="og:description" content="${description}" />`)
     .replace('<!-- twitter:title -->', `<meta property="twitter:title" content="${title}" />`)
-    .replace('<!-- twitter:description -->', `<meta name="twitter:description" content="${description}" />`)
+    .replace(
+      '<!-- twitter:description -->',
+      `<meta name="twitter:description" content="${description}" />`
+    )
     .replace(
       '</head>',
       `<script async src="https://plausible.io/js/script.js" data-domain="${process.env.PLAUSIBLE_DOMAIN}"></script></head>`

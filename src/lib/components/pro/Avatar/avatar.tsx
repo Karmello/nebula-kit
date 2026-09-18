@@ -1,0 +1,147 @@
+import { useLayoutEffect, useRef, useState } from 'react'
+
+import { Box } from 'lib/components/core/Box'
+import { Image } from 'lib/components/core/Image'
+import { Loader } from 'lib/components/core/Loader'
+import { Text } from 'lib/components/core/Text'
+
+import {
+  AVATAR_SCALE_MAP,
+  DEFAULT_AVATAR_OBJECT_FIT,
+  DEFAULT_AVATAR_OBJECT_POSITION,
+  DEFAULT_AVATAR_SCALE,
+  DEFAULT_AVATAR_SHAPE,
+  LOADER_DELAY,
+  MIN_LOADER_VISIBLE_TIME,
+} from './constants'
+import { AvatarProps } from './types'
+
+export const Avatar = ({
+  // Image
+  elemAttrs,
+  elemRef,
+  src,
+  alt,
+  title,
+  loading,
+  decoding,
+  fetchPriority,
+  crossOrigin,
+  referrerPolicy,
+  objectFit = DEFAULT_AVATAR_OBJECT_FIT,
+  objectPosition = DEFAULT_AVATAR_OBJECT_POSITION,
+  // own
+  scale = DEFAULT_AVATAR_SCALE,
+  shape = DEFAULT_AVATAR_SHAPE,
+  initials,
+}: AvatarProps) => {
+  const [fetchStatus, setFetchStatus] = useState<'pending' | 'success' | 'error' | null>(null)
+  const [showLoader, setShowLoader] = useState<boolean>(false)
+
+  const imgRef = useRef<HTMLImageElement | null>(null)
+  const delayTimerRef = useRef<number | null>(null)
+  const hideTimerRef = useRef<number | null>(null)
+  const loaderShownAtRef = useRef<number | null>(null)
+
+  useLayoutEffect(() => {
+    if (delayTimerRef.current) clearTimeout(delayTimerRef.current)
+    if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+
+    loaderShownAtRef.current = null
+
+    if (!src) {
+      setFetchStatus(null)
+      return
+    }
+
+    setFetchStatus('pending')
+
+    // cached image fast-path
+    queueMicrotask(() => {
+      const img = imgRef.current
+      if (img && img.complete && img.naturalWidth > 0) {
+        resolveImage('success')
+      }
+    })
+
+    delayTimerRef.current = window.setTimeout(() => {
+      loaderShownAtRef.current = Date.now()
+      setShowLoader(true)
+    }, LOADER_DELAY)
+
+    return () => {
+      if (delayTimerRef.current) clearTimeout(delayTimerRef.current)
+      if (hideTimerRef.current) clearTimeout(hideTimerRef.current)
+    }
+  }, [src])
+
+  const resolveImage = (status: 'success' | 'error') => {
+    setFetchStatus(status)
+
+    if (delayTimerRef.current) {
+      clearTimeout(delayTimerRef.current)
+      delayTimerRef.current = null
+    }
+
+    if (!loaderShownAtRef.current) {
+      setShowLoader(false)
+      return
+    }
+
+    const elapsed = Date.now() - loaderShownAtRef.current
+    const remaining = MIN_LOADER_VISIBLE_TIME - elapsed
+
+    if (remaining <= 0) {
+      setShowLoader(false)
+    } else {
+      hideTimerRef.current = window.setTimeout(() => {
+        setShowLoader(false)
+      }, remaining)
+    }
+  }
+
+  return (
+    <Box
+      elemAttrs={elemAttrs}
+      elemRef={elemRef}
+      drawable
+      bgMode="filled"
+      intent="tertiary"
+      color="gray"
+      blockSize={AVATAR_SCALE_MAP[scale].side}
+      inlineSize={AVATAR_SCALE_MAP[scale].side}
+      borderRadius={shape === 'round' ? '50%' : undefined}
+      position="relative"
+      overflow="hidden"
+    >
+      {fetchStatus !== 'error' ? (
+        <Image
+          elemRef={imgRef}
+          src={src}
+          alt={alt}
+          title={title}
+          loading={loading}
+          decoding={decoding}
+          fetchPriority={fetchPriority}
+          crossOrigin={crossOrigin}
+          referrerPolicy={referrerPolicy}
+          objectFit={objectFit}
+          objectPosition={objectPosition}
+          onLoad={() => resolveImage('success')}
+          onError={() => resolveImage('error')}
+        />
+      ) : null}
+      {showLoader ? (
+        <Loader centered active={showLoader} color="blue" />
+      ) : initials && fetchStatus !== 'pending' && fetchStatus !== 'success' ? (
+        <Box position="absolute" top="50%" left="50%" transform="translate(-50%, -50%)">
+          <Text fontSize={AVATAR_SCALE_MAP[scale].fontSize} intent="primary" color="blue" bold>
+            {initials.trim().slice(0, 2).toUpperCase()}
+          </Text>
+        </Box>
+      ) : null}
+    </Box>
+  )
+}
+
+Avatar.displayName = 'Avatar'

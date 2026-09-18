@@ -1,13 +1,28 @@
-import { test, expect } from '@playwright/experimental-ct-react'
+import { expect, test } from '@playwright/experimental-ct-react'
 
-import { Box } from 'lib/components'
+import { Box, StylingIsland } from 'lib/components'
 
 test('Local brand overrides global brand', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" brand="green" blockSize="100px">
-        Child
-      </Box>
+    <Box
+      elemAttrs={{ id: 'parent' }}
+      drawable
+      bgMode="filled"
+      intent="primary"
+      blockSize="200px"
+      padding="16px"
+    >
+      <StylingIsland brand="green">
+        <Box
+          elemAttrs={{ id: 'child' }}
+          drawable
+          bgMode="filled"
+          intent="primary"
+          blockSize="100px"
+        >
+          Child
+        </Box>
+      </StylingIsland>
     </Box>,
     {
       hooksConfig: {
@@ -31,8 +46,8 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
       childColor: child.dataset.nebBoxColor,
 
       // tokens
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--color-base').trim(),
+      childMain: childStyles.getPropertyValue('--color-base').trim(),
 
       // projection
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -60,11 +75,26 @@ test('Local brand overrides global brand', async ({ mount, page }) => {
 
 test('Child Box inherits brand when no local brand is set', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'parent' }} drawable variant="solid" intent="primary" brand="green" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'child' }} drawable variant="solid" intent="primary" blockSize="100px">
-        Child
+    <StylingIsland brand="green">
+      <Box
+        elemAttrs={{ id: 'parent' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        blockSize="200px"
+        padding="16px"
+      >
+        <Box
+          elemAttrs={{ id: 'child' }}
+          drawable
+          bgMode="filled"
+          intent="primary"
+          blockSize="100px"
+        >
+          Child
+        </Box>
       </Box>
-    </Box>
+    </StylingIsland>
   )
 
   const result = await page.evaluate(() => {
@@ -80,8 +110,8 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
       childColor: child.dataset.nebBoxColor,
 
       // token layer
-      parentMain: parentStyles.getPropertyValue('--main-l').trim(),
-      childMain: childStyles.getPropertyValue('--main-l').trim(),
+      parentMain: parentStyles.getPropertyValue('--color-base').trim(),
+      childMain: childStyles.getPropertyValue('--color-base').trim(),
 
       // projection layer
       parentBg: parentStyles.getPropertyValue('--bg').trim(),
@@ -106,11 +136,28 @@ test('Child Box inherits brand when no local brand is set', async ({ mount, page
 
 test('Brand survives theme islands (light → dark → light)', async ({ mount, page }) => {
   await mount(
-    <Box tagAttrs={{ id: 'dark-parent' }} drawable variant="solid" intent="primary" theme="dark" blockSize="200px" padding="16px">
-      <Box tagAttrs={{ id: 'light-child' }} drawable variant="solid" intent="primary" theme="light" blockSize="100px">
-        Child
+    <StylingIsland theme="dark">
+      <Box
+        elemAttrs={{ id: 'dark-parent' }}
+        drawable
+        bgMode="filled"
+        intent="primary"
+        blockSize="200px"
+        padding="16px"
+      >
+        <StylingIsland theme="light">
+          <Box
+            elemAttrs={{ id: 'light-child' }}
+            drawable
+            bgMode="filled"
+            intent="primary"
+            blockSize="100px"
+          >
+            Child
+          </Box>
+        </StylingIsland>
       </Box>
-    </Box>,
+    </StylingIsland>,
     {
       hooksConfig: {
         brand: 'green',
@@ -134,8 +181,8 @@ test('Brand survives theme islands (light → dark → light)', async ({ mount, 
       darkTheme: dark.dataset.nebBoxTheme,
       lightTheme: light.dataset.nebBoxTheme,
 
-      darkMain: darkStyles.getPropertyValue('--main-l').trim(),
-      lightMain: lightStyles.getPropertyValue('--main-l').trim(),
+      darkMain: darkStyles.getPropertyValue('--color-base').trim(),
+      lightMain: lightStyles.getPropertyValue('--color-base').trim(),
 
       darkBg: darkStyles.getPropertyValue('--bg').trim(),
       lightBg: lightStyles.getPropertyValue('--bg').trim(),

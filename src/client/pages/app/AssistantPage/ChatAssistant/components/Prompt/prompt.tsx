@@ -7,7 +7,7 @@ import { PROMPT_DEFAULT_ROWS, PROMPT_MAX_LENGTH, PROMPT_PLACEHOLDER } from '../.
 export const Prompt = (props: TextareaProps & { focusAnchorRef: RefObject<HTMLDivElement> }) => {
   return (
     <>
-      <Box tagRef={props.focusAnchorRef} tagAttrs={{ tabIndex: -1 }} />
+      <Box elemRef={props.focusAnchorRef} elemAttrs={{ tabIndex: -1 }} />
       <Textarea
         rows={PROMPT_DEFAULT_ROWS}
         resize="none"

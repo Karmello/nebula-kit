@@ -1,27 +1,14 @@
-import { ComponentMeta } from 'client/definitions'
-import { Switch, SwitchProps } from 'lib/components'
+import { Switch } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const SWITCH_EXAMPLES_META: ComponentMeta<SwitchProps>['examples'] = [
+export const SWITCH_EXAMPLES: DocExample[] = [
   {
-    jsx: <Switch />,
-    skip: true,
+    description: 'Basic usage.',
+    jsx: <Switch intent="secondary" color="blue" />,
+    isOverviewSnippet: true,
   },
   {
-    description: 'Default Switch.',
-    jsx: <Switch />,
-  },
-  {
-    description: 'Switch turned on by default.',
-    jsx: <Switch defaultChecked />,
-  },
-  {
-    description: 'Switch with custom size.',
-    jsx: <Switch size="lg" />,
-  },
-  {
-    description: 'Disabled Switch.',
-    jsx: <Switch disabled />,
+    description: 'Disabled switch.',
+    jsx: <Switch checked disabled intent="secondary" color="blue" />,
   },
 ]
-
-export { SWITCH_EXAMPLES_META }

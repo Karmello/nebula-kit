@@ -1,0 +1,143 @@
+import { Box } from 'lib/components/core/Box'
+import { Reveal } from 'lib/components/core/Reveal'
+import { Spacer } from 'lib/components/core/Spacer'
+import { StylingIsland } from 'lib/components/core/StylingIsland'
+import { Text } from 'lib/components/core/Text'
+import { Title } from 'lib/components/core/Title'
+import { Markup } from 'lib/components/pro/Markup'
+import { Switch } from 'lib/components/pro/Switch'
+import { NEB_LENGTH } from 'lib/constants'
+import { useCurrentTheme } from 'lib/hooks'
+import { CodeSnippet } from 'client/components/reusable/CodeSnippet'
+import { DocMeta, LIBRARY_ITEM_LABEL_BY_KEY } from 'client/definitions'
+import { convertElemToString } from 'client/helpers'
+import meta from 'client/meta'
+import { useAppStore, useLibraryPageStore } from 'client/store'
+
+const SingleExample = (
+  props: DocMeta<unknown>['examples'][number] & { hideExamplesThemeToggle: boolean }
+) => {
+  const {
+    description,
+    jsx,
+    code,
+    noSandBox,
+    noCode,
+    sandBoxWithNoPadding,
+    hideExamplesThemeToggle,
+  } = props
+
+  const theme = useCurrentTheme()
+  const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
+
+  return (
+    <>
+      {description && !noSandBox ? (
+        <Title iconName="arrow-down">
+          <Markup>
+            <Text bold>{description}</Text>
+          </Markup>
+        </Title>
+      ) : null}
+      <Spacer blockSize={NEB_LENGTH.px_008} />
+      {!noSandBox ? (
+        <>
+          <Box
+            drawable
+            borderMode="filled"
+            intent="tertiary"
+            elemAttrs={{ style: { borderStyle: 'dashed' } }}
+          >
+            <StylingIsland
+              theme={
+                !hideExamplesThemeToggle
+                  ? flipGlobalThemeOnExamples
+                    ? 'global-flipped'
+                    : theme
+                  : undefined
+              }
+            >
+              <Box
+                drawable
+                bgMode="filled"
+                intent="neutral"
+                padding={sandBoxWithNoPadding ? '0px' : { base: '20px', lg: '40px' }}
+                borderRadius={NEB_LENGTH.px_000}
+              >
+                {jsx}
+              </Box>
+            </StylingIsland>
+          </Box>
+          <Spacer blockSize={NEB_LENGTH.px_008} />
+        </>
+      ) : null}
+      {!noCode ? (
+        <>
+          {!noSandBox ? (
+            <Reveal label="Code" intent="tertiary">
+              <CodeSnippet
+                lang="tsx"
+                code={code || convertElemToString(jsx)}
+                borderRadius={false}
+                fullBg
+              />
+            </Reveal>
+          ) : (
+            <CodeSnippet
+              lang="tsx"
+              code={code || convertElemToString(jsx)}
+              description={description}
+              boldDescription
+              descriptionIcon
+            />
+          )}
+        </>
+      ) : null}
+      <Spacer blockSize={NEB_LENGTH.px_064} />
+    </>
+  )
+}
+
+export const LibraryExamplesPage = () => {
+  const flipGlobalThemeOnExamples = useAppStore(state => state.flipGlobalThemeOnExamples)
+  const setFlipGlobalThemeOnExamples = useAppStore(state => state.setFlipGlobalThemeOnExamples)
+
+  const libraryPageItemKey = useLibraryPageStore(state => state.itemKey)
+
+  const itemLabel = LIBRARY_ITEM_LABEL_BY_KEY[libraryPageItemKey] || ''
+
+  if (!meta[itemLabel]) return null
+
+  const hideExamplesThemeToggle = meta[itemLabel][itemLabel].hideExamplesThemeToggle
+
+  return (
+    <Box maxInlineSize="55rem">
+      {!hideExamplesThemeToggle ? (
+        <>
+          <Box display="flex" alignItems="center" columnGap={NEB_LENGTH.px_016}>
+            <Switch
+              scale="xs"
+              checked={flipGlobalThemeOnExamples}
+              onChange={setFlipGlobalThemeOnExamples}
+            />
+            <Text bold typography="small">
+              Use flipped theme
+            </Text>
+          </Box>
+          <Spacer blockSize={NEB_LENGTH.px_048} />
+        </>
+      ) : null}
+      <Box display="flex" flexDirection="column" alignItems="stretch">
+        {Object.keys(meta[itemLabel] || []).map(key => {
+          return (meta[itemLabel][key].examples || []).map((example, i) => (
+            <SingleExample
+              key={`${key}_${i}`}
+              {...example}
+              hideExamplesThemeToggle={hideExamplesThemeToggle}
+            />
+          ))
+        })}
+      </Box>
+    </Box>
+  )
+}

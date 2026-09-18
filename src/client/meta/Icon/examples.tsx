@@ -1,9 +1,9 @@
-import { ComponentMeta } from 'client/definitions'
-import { Icon, IconProps } from 'lib/components'
-
 import { Footprints } from 'lucide-react'
 
-const ICON_EXAMPLES_META: ComponentMeta<IconProps>['examples'] = [
+import { Icon } from 'lib/components/core/Icon/icon'
+import { type DocExample } from 'client/definitions'
+
+export const ICON_EXAMPLES: DocExample[] = [
   {
     description: 'Default icon.',
     jsx: <Icon name="search" />,
@@ -29,8 +29,6 @@ import { Footprints } from 'lucide-react'
   },
   {
     description: 'Icon with custom size.',
-    jsx: <Icon name="search" size="xl" />,
+    jsx: <Icon name="search" size="64px" />,
   },
 ]
-
-export { ICON_EXAMPLES_META }

@@ -1,15 +1,32 @@
-import { useState } from 'react'
+import { Controller, FormProvider, useForm } from 'react-hook-form'
 import { useLocation } from 'react-router'
 
+import {
+  Box,
+  Button,
+  HorizontalRule,
+  Input,
+  Link,
+  NEB_LENGTH,
+  PasswordInput,
+  Spacer,
+  Text,
+  Title,
+  useSnackbar,
+} from 'lib/components'
 import { useRecoverPassword, useRecoverPasswordConfirm, UseRecoverPasswordRes } from 'client/api'
-import { useAppStore } from 'client/store'
-import { useNavigateTo } from 'client/hooks'
 import { PageKey } from 'client/definitions'
-import { Box, Button, Divider, Flex, Form, Input, Link, Section, Spacer, useSnackbar } from 'lib/components'
+import { useNavigateTo } from 'client/hooks'
+import { useAppStore } from 'client/store'
+
+const EMAIL_REGEX = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
+type RecoveryFormValues = {
+  email?: string
+  newPassword?: string
+}
 
 export const RecoveryPage = () => {
-  const [hidePassword, setHidePassword] = useState<boolean>(true)
-
   const user = useAppStore(state => state.user)
   const { search } = useLocation()
   const navigateTo = useNavigateTo()
@@ -21,87 +38,156 @@ export const RecoveryPage = () => {
   const params = new URLSearchParams(search)
   const token = params.get('token')
 
+  const form = useForm<RecoveryFormValues>()
+
+  const onResponse = (res: UseRecoverPasswordRes) => {
+    if (res.ok && res.data.message) {
+      show({ status: 'info', content: res.data.message })
+      if (token) {
+        navigateTo(PageKey.authLogin)
+      }
+    }
+  }
+
+  const handleSubmit = form.handleSubmit(async ({ email, newPassword }) => {
+    const res = !token
+      ? await recoverPassword.sendRequest({ email })
+      : await recoverPasswordConfirm.sendRequest({ newPassword, token })
+
+    if (res.ok) form.reset()
+    onResponse(res)
+  })
+
+  const { isSubmitting } = form.formState
+
   if (user) {
     return null
   }
 
   return (
-    <Box padding={{ base: 'md', lg: 'xl' }}>
+    <Box padding={{ base: NEB_LENGTH.px_024, lg: NEB_LENGTH.px_048 }}>
       <Box inlineSize="400px" maxInlineSize="100%" margin="0 auto">
-        <Section size="lg" heading="Password recovery" iconName="key-round">
-          <Form<{ email?: string; newPassword?: string }>
-            onValidSubmission={async ({ email, newPassword }) => {
-              if (!token) {
-                return await recoverPassword.sendRequest({ email })
-              } else {
-                return await recoverPasswordConfirm.sendRequest({ newPassword, token })
-              }
-            }}
-            onResponse={(res: UseRecoverPasswordRes) => {
-              if (res.ok && res.data.message) {
-                show({ status: 'info', content: res.data.message })
-                if (token) {
-                  navigateTo(PageKey.authLogin)
-                }
-              }
-            }}
-            minLoadingTime={500}
-            resetOnSuccess
-          >
-            <Form.Fields>
-              {!token ? (
-                <Form.Field name="email" label="Email" required email minLength={5} maxLength={254}>
-                  <Input tagAttrs={{ autoComplete: 'off' }} placeholder="Enter email address" />
-                </Form.Field>
-              ) : (
-                <Form.Field name="newPassword" label="New password" required minLength={8} maxLength={128}>
-                  <Input
-                    tagAttrs={{
-                      type: hidePassword ? 'password' : 'text',
-                      autoComplete: 'off',
-                    }}
-                    placeholder="Enter password"
-                    endAffix={props => (
-                      <Button
-                        {...props}
-                        tagAttrs={{
-                          onClick: () => setHidePassword(!hidePassword),
+        <Title typography="h4" iconName="key-round">
+          Password recovery
+        </Title>
+        <HorizontalRule marginTop={NEB_LENGTH.px_004} marginBottom={NEB_LENGTH.px_012} />
+        <FormProvider {...form}>
+          <Box elemTag="form" elemAttrs={{ onSubmit: handleSubmit }}>
+            {!token ? (
+              <Controller
+                name="email"
+                control={form.control}
+                rules={{
+                  required: 'is required',
+                  minLength: { value: 5, message: 'is too short' },
+                  maxLength: { value: 254, message: 'is too long' },
+                  validate: {
+                    email: value => EMAIL_REGEX.test(value) || 'has wrong format',
+                  },
+                }}
+                render={({ field, fieldState }) => {
+                  const labelErrPart = fieldState.error?.message
+                    ? ` - ${fieldState.error.message}`
+                    : ''
+
+                  return (
+                    <>
+                      <Text
+                        color="red"
+                        intent={labelErrPart ? 'primary' : 'neutral'}
+                      >{`Email${labelErrPart}`}</Text>
+                      <Spacer blockSize={NEB_LENGTH.px_004} />
+                      <Input
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={e => {
+                          const trimmed = e.target.value.trim()
+                          if (trimmed !== e.target.value) field.onChange(trimmed)
+                          field.onBlur()
                         }}
-                        iconName={hidePassword ? 'eye-off' : 'eye'}
+                        disabled={isSubmitting}
+                        elemAttrs={{ autoComplete: 'off' }}
+                        placeholder="Enter email address"
                       />
-                    )}
-                  />
-                </Form.Field>
-              )}
-            </Form.Fields>
-            <Form.Actions>
-              <Form.ActionButton type="submit" flex={{ base: '1', lg: '0' }}>
-                {!token ? 'Recover' : 'Update'}
-              </Form.ActionButton>
-            </Form.Actions>
-          </Form>
-          <Spacer blockSize="lg" />
-          <Divider />
-          <Spacer blockSize="sm" />
-          <Flex justifyContent="center">
-            <Link
-              href={PageKey.authLogin}
-              onClick={() => {
-                navigateTo(PageKey.authLogin)
-              }}
+                    </>
+                  )
+                }}
+              />
+            ) : (
+              <Controller
+                name="newPassword"
+                control={form.control}
+                rules={{
+                  required: 'is required',
+                  minLength: { value: 8, message: 'is too short' },
+                  maxLength: { value: 128, message: 'is too long' },
+                }}
+                render={({ field, fieldState }) => {
+                  const labelErrPart = fieldState.error?.message
+                    ? ` - ${fieldState.error.message}`
+                    : ''
+
+                  return (
+                    <>
+                      <Text
+                        color="red"
+                        intent={labelErrPart ? 'primary' : 'neutral'}
+                      >{`New password${labelErrPart}`}</Text>
+                      <Spacer blockSize={NEB_LENGTH.px_004} />
+                      <PasswordInput
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={e => {
+                          const trimmed = e.target.value.trim()
+                          if (trimmed !== e.target.value) field.onChange(trimmed)
+                          field.onBlur()
+                        }}
+                        disabled={isSubmitting}
+                        placeholder="Enter password"
+                        autoComplete="off"
+                      />
+                    </>
+                  )
+                }}
+              />
+            )}
+            <Spacer blockSize={NEB_LENGTH.px_016} />
+            <Box display="flex">
+              <Box flex={{ base: '1', lg: '0' }}>
+                <Button
+                  elemAttrs={{ type: 'submit' }}
+                  fullWidth
+                  color="blue"
+                  intent="primary"
+                  loading={isSubmitting}
+                >
+                  {!token ? 'Recover' : 'Update'}
+                </Button>
+              </Box>
+            </Box>
+          </Box>
+        </FormProvider>
+        <Spacer blockSize={NEB_LENGTH.px_048} />
+        <HorizontalRule />
+        <Spacer blockSize={NEB_LENGTH.px_016} />
+        <Box display="flex" justifyContent="center">
+          <Link
+            href={PageKey.authLogin}
+            onClick={() => {
+              navigateTo(PageKey.authLogin)
+            }}
+          >
+            <Button
+              variant="ghost"
+              color="blue"
+              intent="primary"
+              iconName="arrow-left"
+              disabled={recoverPassword.isMakingRequest || recoverPasswordConfirm.isMakingRequest}
             >
-              <Button
-                variant="ghost"
-                color="blue"
-                intent="primary"
-                iconName="arrow-left"
-                disabled={recoverPassword.isMakingRequest || recoverPasswordConfirm.isMakingRequest}
-              >
-                Back
-              </Button>
-            </Link>
-          </Flex>
-        </Section>
+              Back
+            </Button>
+          </Link>
+        </Box>
       </Box>
     </Box>
   )

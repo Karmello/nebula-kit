@@ -1,0 +1,26 @@
+import { RespValue } from 'lib/types'
+import { DocMeta } from 'client/definitions'
+
+export type PropValue = RespValue<string | number | boolean>
+
+export type Prop = {
+  options: string[]
+  defaultValue: PropValue
+  isResponsive: boolean
+  value: PropValue
+}
+
+export type Props = Record<string, Prop>
+
+export type State = {
+  displayProps: boolean
+  activeComponent: string
+  components: Record<
+    string,
+    {
+      bundle: DocMeta<unknown>['overview']['bundle']
+      props: Props
+      activeProp: string
+    }
+  >
+}

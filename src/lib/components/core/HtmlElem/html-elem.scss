@@ -1,0 +1,10 @@
+code.neb-html-elem {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace !important;
+  line-height: 1;
+}
+
+a.neb-html-elem,
+button.neb-html-elem,
+[role='button'] {
+  -webkit-tap-highlight-color: transparent;
+}

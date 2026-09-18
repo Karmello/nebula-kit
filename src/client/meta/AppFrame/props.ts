@@ -1,24 +1,27 @@
-import { ComponentMeta } from 'client/definitions'
-import { AppFrameProps } from 'lib/components'
+import type { AppFrameProps } from 'lib/components/core/AppFrame/types'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-
-const APP_FRAME_PROPS_META: ComponentMeta<AppFrameProps>['props'] = {
+export const APP_FRAME_PROPS: Record<keyof AppFrameProps, DocProp> = {
   children: {
-    ...HTML_TAG_PROPS_META.children,
-    isRequired: true,
     options: ['AppFrame.Header', 'AppFrame.Main', 'AppFrame.Footer'],
+    isRequired: true,
     description: 'AppFrame.Footer is optional, the rest is required.',
   },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // layout
   stickyHeader: {
     options: ['boolean'],
     defaultValue: 'false',
     isRequired: false,
     isResponsive: false,
     description: 'Keeps the header fixed at the top of the viewport.',
+    group: 'layout',
   },
 }
-
-export { APP_FRAME_PROPS_META }

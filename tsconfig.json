@@ -15,7 +15,9 @@
     "outDir": "dist",
     "paths": {
       "client/*": ["src/client/*"],
-      "lib/*": ["src/lib/*"]
+      "lib/*": ["src/lib/*"],
+      "@nebula-kit/core": ["src/lib/components/core"],
+      "@nebula-kit/pro": ["src/lib/components/pro"]
     }
   },
   "include": ["src/**/*"]

@@ -1,3 +1,3 @@
 export * from './app'
-export * from './component'
+export * from './library'
 export * from './routes'

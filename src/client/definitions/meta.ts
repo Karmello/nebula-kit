@@ -2,7 +2,7 @@ import { JSX } from 'react'
 
 import { ReleaseVersion } from './release'
 
-type Overview = {
+export type DocOverview = {
   name?: string
   bundle: 'core' | 'pro'
   title: string
@@ -10,7 +10,7 @@ type Overview = {
   features?: string[]
   guidelines?: string[]
   composedOf?: string[]
-  topLevelTags?: readonly string[]
+  rendersAs?: readonly string[]
   slots?: string[]
   hooks?: string[]
   readMoreLink?: {
@@ -19,31 +19,39 @@ type Overview = {
   }
 }
 
-export type Prop = {
+export type DocProp = {
   options: readonly string[]
   defaultValue?: string
   isRequired?: boolean
   isResponsive?: boolean
   description?: string
   link?: boolean
+  group?: string
 }
 
-type Example = {
+export type DocExample = {
+  // Live element rendered in the sandbox preview; also the fallback source for the code snippet when `code` is not set.
   jsx?: JSX.Element
+  // Source code shown in the code snippet; falls back to a stringified `jsx` when omitted.
   code?: string
+  // Caption shown above the sandbox, or folded into the code snippet's own heading when `noSandBox` is set.
   description?: string
+  // Hides the live sandbox preview, showing only the code snippet.
   noSandBox?: boolean
+  // Hides the code snippet, showing only the live sandbox preview.
   noCode?: boolean
+  // Removes the sandbox's inner padding so the preview renders edge-to-edge.
   sandBoxWithNoPadding?: boolean
-  skip?: boolean
+  // Marks this example as the one shown on the component's Overview page.
+  isOverviewSnippet?: boolean
 }
 
-type Changelog = Partial<Record<ReleaseVersion, string[]>>
+export type DocChangelog = Partial<Record<ReleaseVersion, string[]>>
 
-export type ComponentMeta<PropsType> = {
-  overview: Overview
-  props?: Record<keyof PropsType, Prop>
-  examples?: Example[]
-  changelog?: Changelog
+export type DocMeta<PropsType> = {
+  overview: DocOverview
+  props?: Record<keyof PropsType, DocProp>
+  examples?: DocExample[]
+  changelog?: DocChangelog
   hideExamplesThemeToggle?: boolean
 }

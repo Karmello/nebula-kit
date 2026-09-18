@@ -1,22 +1,22 @@
 import { useLayoutEffect, useState } from 'react'
 
-import { Theme } from 'lib/definitions'
+import type { NebkitProviderTheme } from 'lib/components/core/NebkitProvider/types'
 
-const getTheme = (): Theme => {
+const getTheme = (): NebkitProviderTheme => {
   if (typeof document === 'undefined') {
     return 'light'
   }
-  return document.documentElement.getAttribute('data-theme') as Theme
+  return document.documentElement.getAttribute('data-theme') as NebkitProviderTheme
 }
 
-export const useCurrentTheme = (): Theme => {
-  const [theme, setTheme] = useState<Theme>(getTheme)
+export const useCurrentTheme = (): NebkitProviderTheme => {
+  const [theme, setTheme] = useState<NebkitProviderTheme>(getTheme)
 
   useLayoutEffect(() => {
     if (typeof document === 'undefined') return
 
     const observer = new MutationObserver(() => {
-      const next = document.documentElement.getAttribute('data-theme') as Theme
+      const next = document.documentElement.getAttribute('data-theme') as NebkitProviderTheme
       setTheme(prev => (prev === next ? prev : next))
     })
 

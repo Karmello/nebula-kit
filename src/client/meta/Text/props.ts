@@ -1,76 +1,110 @@
-import { ComponentMeta, DOCS_CSS_LABEL } from 'client/definitions'
-
+import { BOX_COLORS, BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
   DEFAULT_TEXT_TYPOGRAPHY,
   TEXT_SPACE,
   TEXT_TYPOGRAPHY,
   TEXT_WORD_BREAK,
-  TextProps,
-} from 'lib/components/core/base/Text/definitions'
+} from 'lib/components/core/Text/constants'
+import { CSS_TEXT_ALIGN } from 'lib/constants'
+import { TextProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-
-const TEXT_PROPS_META: ComponentMeta<TextProps>['props'] = {
+export const TEXT_PROPS: Record<keyof TextProps, DocProp> = {
+  children: {
+    options: ['ReactNode'],
+    isRequired: true,
+    description: 'Content rendered.',
+  },
+  elemTag: {
+    options: ['HTML tag'],
+    defaultValue: 'p',
+    description: 'The HTML tag to be rendered.',
+  },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  // surface
+  intent: {
+    options: BOX_INTENTS,
+    description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // typography
+  typography: {
+    options: TEXT_TYPOGRAPHY,
+    defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
+    description: 'Applies a predefined typography style from the design system.',
+    group: 'typography',
+  },
+  fontSize: {
+    options: ['string'],
+    description: 'Sets the fontSize value, bypassing typography.',
+    group: 'typography',
+  },
+  lineHeight: {
+    options: ['string'],
+    description: 'Sets the lineHeight value, bypassing typography.',
+    group: 'typography',
+  },
+  // formatting
   bold: {
     options: ['boolean'],
     description: 'Toggles bold styling.',
+    group: 'formatting',
   },
-  children: {
-    ...HTML_TAG_PROPS_META.children,
-    isRequired: true,
+  italic: {
+    options: ['boolean'],
+    description: 'Toggles italic styling.',
+    group: 'formatting',
+  },
+  underline: {
+    options: ['boolean'],
+    description: 'Toggles underlined styling.',
+    group: 'formatting',
+  },
+  // overflow
+  noWrap: {
+    options: ['boolean'],
+    description: 'Prevents the text from wrapping onto multiple lines.',
+    group: 'overflow',
+  },
+  truncate: {
+    options: ['boolean'],
+    description: 'Shortens overflowing text to a single line with an ellipsis.',
+    group: 'overflow',
   },
   clampLines: {
     options: ['number'],
     description: 'Limits text to a set number of lines and truncates the rest with an ellipsis.',
+    group: 'overflow',
   },
-  color: BOX_PROPS_META.color,
-  fontSize: {
-    options: [DOCS_CSS_LABEL],
-    description: 'Sets the fontSize value, bypassing typography.',
+  wordBreak: {
+    options: TEXT_WORD_BREAK,
+    description: 'Controls how words break and wrap when text overflows its container.',
+    group: 'overflow',
   },
-  intent: BOX_PROPS_META.intent,
-  italic: {
-    options: ['boolean'],
-    description: 'Toggles italic styling.',
-  },
-  lineHeight: {
-    options: [DOCS_CSS_LABEL],
-    description: 'Sets the lineHeight value, bypassing typography.',
-  },
-  noWrap: {
-    options: ['boolean'],
-    description: 'Prevents the text from wrapping onto multiple lines.',
+  // layout
+  textAlign: {
+    options: CSS_TEXT_ALIGN,
+    isResponsive: true,
+    description: 'Text alignment within the component.',
+    link: true,
+    group: 'layout',
   },
   space: {
     options: TEXT_SPACE,
     description:
       'Controls the insertion of non-breaking spaces before and/or after the text content. Useful when composing multiple inline Text elements.',
-  },
-  tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    defaultValue: 'p',
-  },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
-  textAlign: BOX_PROPS_META.textAlign,
-  truncate: {
-    options: ['boolean'],
-    description: 'Shortens overflowing text to a single line with an ellipsis.',
-  },
-  typography: {
-    options: TEXT_TYPOGRAPHY,
-    defaultValue: DEFAULT_TEXT_TYPOGRAPHY,
-    description: 'Applies a predefined typography style from the design system.',
-  },
-  underline: {
-    options: ['boolean'],
-    description: 'Toggles underlined styling.',
-  },
-  wordBreak: {
-    options: TEXT_WORD_BREAK,
-    description: 'Controls how words break and wrap when text overflows its container.',
+    group: 'layout',
   },
 }
-
-export { TEXT_PROPS_META }

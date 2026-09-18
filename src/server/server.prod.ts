@@ -1,15 +1,16 @@
-import fs from 'node:fs'
-import path from 'node:path'
-import { fileURLToPath } from 'url'
+import { createElement } from 'react'
 import express from 'express'
 import getPort from 'get-port'
-import { createElement } from 'react'
-import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
+import { fileURLToPath } from 'url'
+import fs from 'node:fs'
+import path from 'node:path'
 
-import { HydrationGate, NebkitProvider, Snackbar } from 'src/lib/components'
-import { App } from 'src/client/components'
+import { Client } from 'client/components/app/Client/client'
+import { PAGE_IMPORTS } from 'client/components/app/RootPage/root-page'
+
 import { getFinalIndexHtml } from './helpers'
+import { renderAppToString } from './helpers/render-app-to-string'
 
 const __filename = fileURLToPath(import.meta.url)
 const __dirname = path.dirname(__filename)
@@ -26,18 +27,10 @@ app.get('/captain-nebula.webp', (req, res) => {
 app.use(express.static(path.join(__dirname, '../client')))
 app.use(express.static(buildDir, { index: false }))
 
-app.get(/.*/, (req, res) => {
+app.get(/.*/, async (req, res) => {
   try {
-    const appHtml = renderToString(
-      createElement(
-        StaticRouter,
-        { location: req.originalUrl },
-        createElement(
-          HydrationGate,
-          null,
-          createElement(NebkitProvider, null, createElement(Snackbar, { closeOnOutsideClick: true } as any, createElement(App)))
-        )
-      )
+    const appHtml = await renderAppToString(
+      createElement(StaticRouter, { location: req.originalUrl }, createElement(Client))
     )
 
     res
@@ -51,6 +44,10 @@ app.get(/.*/, (req, res) => {
 })
 
 const port = process.env.PORT || (await getPort({ port: 5175 }))
+
+// Warms the module cache for every lazily-loaded page so the first real
+// request for each page doesn't pay for a cold dynamic import.
+await Promise.all(PAGE_IMPORTS.map(importPage => importPage()))
 
 app.listen(Number(port), '0.0.0.0', () => {
   console.log(`▶ SSR prod server at http://localhost:${port}`)

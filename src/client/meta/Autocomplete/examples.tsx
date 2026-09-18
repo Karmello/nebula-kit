@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Autocomplete, AutocompleteProps } from 'lib/components'
+import { Autocomplete } from 'lib/index.pro'
+import { type DocExample } from 'client/definitions'
 
-const AUTOCOMPLETE_EXAMPLES_META: ComponentMeta<AutocompleteProps>['examples'] = [
+export const AUTOCOMPLETE_EXAMPLES: DocExample[] = [
   {
     description: 'Autocomplete used in uncontrolled mode.',
     jsx: (
@@ -25,5 +25,3 @@ const AUTOCOMPLETE_EXAMPLES_META: ComponentMeta<AutocompleteProps>['examples'] =
     ),
   },
 ]
-
-export { AUTOCOMPLETE_EXAMPLES_META }

@@ -1,96 +1,153 @@
-import { ComponentMeta } from 'client/definitions'
-
+import { BOX_COLORS, BOX_INTENTS, BOX_SURFACE_DEPTHS } from 'lib/components/core/Box/constants'
 import {
-  ButtonProps,
-  BUTTON_SIZES,
-  BUTTON_TAGS,
   BUTTON_ALIGNS,
-  DEFAULT_BUTTON_INTENT,
-  DEFAULT_BUTTON_SIZE,
-  DEFAULT_BUTTON_VARIANT,
-  DEFAULT_BUTTON_RIPPLE,
-  DEFAULT_BUTTON_INTERACTIVE,
+  BUTTON_ICON_PLACEMENTS,
+  BUTTON_TAGS,
+  BUTTON_VARIANTS,
   DEFAULT_BUTTON_ALIGN,
-} from 'lib/components/core/controls/Button/definitions'
+  DEFAULT_BUTTON_ICON_PLACEMENT,
+  DEFAULT_BUTTON_INTENT,
+  DEFAULT_BUTTON_RIPPLE,
+  DEFAULT_BUTTON_VARIANT,
+} from 'lib/components/core/Button/constants'
+import { DEFAULT_TSHIRT_SIZE, TSHIRT_SIZES } from 'lib/constants'
+import { ButtonProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-import { TEXT_PROPS_META } from '../Text/props'
-import { WITH_ICON_PROPS_META } from '../WithIcon/props'
-
-const BUTTON_PROPS_META: ComponentMeta<ButtonProps>['props'] = {
+export const BUTTON_PROPS: Record<keyof ButtonProps, DocProp> = {
+  children: {
+    options: ['ReactNode'],
+    isRequired: true,
+    description: 'Label rendered.',
+  },
+  elemTag: {
+    options: BUTTON_TAGS,
+    defaultValue: 'button',
+    description: 'The HTML tag to be rendered.',
+  },
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
+  },
+  onClick: {
+    options: ['e => void'],
+    description: 'Click event handler for the button element.',
+  },
+  // surface
+  variant: {
+    options: BUTTON_VARIANTS,
+    description: 'Visual style variant.',
+    defaultValue: String(DEFAULT_BUTTON_VARIANT),
+    group: 'surface',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    description: "Color tone applied to the component's main color.",
+    defaultValue: String(DEFAULT_BUTTON_INTENT),
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  surfaceDepth: {
+    options: BOX_SURFACE_DEPTHS,
+    description:
+      "Selects which depth tier the component's surface color is drawn from - base or raised - each with its own per-intent lightness and interaction states.",
+    group: 'surface',
+  },
+  // interaction
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  selected: {
+    options: ['boolean'],
+    description:
+      'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
+    group: 'interaction',
+  },
+  loading: {
+    options: ['boolean'],
+    description: 'Activates the loading state, shows a spinner and prevents interaction.',
+    group: 'interaction',
+  },
+  ripple: {
+    options: ['boolean'],
+    description: 'Toggles the ripple effect on pointer interaction.',
+    defaultValue: String(DEFAULT_BUTTON_RIPPLE),
+    group: 'interaction',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_TSHIRT_SIZE,
+    description:
+      'Controls overall proportions adjusting blockSize, horizontal padding and fontSize to keep content balanced.',
+    group: 'size',
+  },
+  fullWidth: {
+    options: ['boolean'],
+    isResponsive: true,
+    description: 'Expands the button to match the full width of its container.',
+    group: 'size',
+  },
+  inlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Logical width.',
+    link: true,
+    group: 'size',
+  },
+  minInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Minimum logical width.',
+    link: true,
+    group: 'size',
+  },
+  maxInlineSize: {
+    options: ['string'],
+    isResponsive: true,
+    description: 'Maximum logical width.',
+    link: true,
+    group: 'size',
+  },
+  // layout
   align: {
     options: BUTTON_ALIGNS,
     defaultValue: String(DEFAULT_BUTTON_ALIGN),
     isResponsive: true,
     description: 'Controls how inner content is arranged within the container.',
+    group: 'layout',
   },
-  bold: TEXT_PROPS_META.bold,
-  children: {
-    ...HTML_TAG_PROPS_META.children,
-    description: 'Label rendered.',
-  },
-  color: BOX_PROPS_META.color,
-  customSvgIcon: WITH_ICON_PROPS_META.customSvgIcon,
-  description: {
-    options: ['string'],
-    description: 'Secondary text displayed below the main label. Works with xl size only.',
-  },
-  disabled: BOX_PROPS_META.disabled,
-  elevated: BOX_PROPS_META.elevated,
-  fullWidth: {
+  // formatting
+  bold: {
     options: ['boolean'],
-    isResponsive: true,
-    description: 'Expands the button to match the full width of its container.',
+    description: 'Toggles bold styling.',
+    group: 'formatting',
   },
-  iconAngle: WITH_ICON_PROPS_META.iconAngle,
-  iconName: WITH_ICON_PROPS_META.iconName,
-  iconPlacement: WITH_ICON_PROPS_META.iconPlacement,
-  inlineSize: BOX_PROPS_META.inlineSize,
-  intent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: String(DEFAULT_BUTTON_INTENT),
+  // icon
+  iconName: {
+    options: ['IconName'],
+    description: 'Name of the icon to render.',
+    group: 'icon',
   },
-  interactive: {
-    ...BOX_PROPS_META.interactive,
-    defaultValue: String(DEFAULT_BUTTON_INTERACTIVE),
+  customSvgIcon: {
+    options: ['ReactNode'],
+    description: 'Custom SVG icon rendered when not using name prop.',
+    group: 'icon',
   },
-  loading: {
-    options: ['boolean'],
-    description: 'Activates the loading state, shows a spinner and prevents interaction.',
-  },
-  maxInlineSize: BOX_PROPS_META.maxInlineSize,
-  minInlineSize: BOX_PROPS_META.minInlineSize,
-  onClick: {
-    options: ['e => void'],
-    description: 'Click event handler for the button element.',
-  },
-  ripple: {
-    options: ['boolean'],
-    defaultValue: String(DEFAULT_BUTTON_RIPPLE),
-    description: 'Toggles the ripple effect on pointer interaction.',
-  },
-  selected: {
-    options: ['boolean'],
-    description: 'Applies the selected visual behavior to the component, keeping it in a persistent highlighted state.',
-  },
-  size: {
-    options: Object.values(BUTTON_SIZES),
-    defaultValue: DEFAULT_BUTTON_SIZE,
-    description:
-      'Controls overall proportions - adjusting blockSize, horizontal padding and fontSize to keep content balanced at each size.',
-  },
-  tag: {
-    ...HTML_TAG_PROPS_META.tag,
-    options: BUTTON_TAGS as unknown as string[],
-    defaultValue: 'button',
-  },
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
-  variant: {
-    ...BOX_PROPS_META.variant,
-    defaultValue: String(DEFAULT_BUTTON_VARIANT),
+  iconPlacement: {
+    options: BUTTON_ICON_PLACEMENTS,
+    defaultValue: DEFAULT_BUTTON_ICON_PLACEMENT,
+    description: 'Icon placement relative to label.',
+    group: 'icon',
   },
 }
-
-export { BUTTON_PROPS_META }

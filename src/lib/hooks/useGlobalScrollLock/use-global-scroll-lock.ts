@@ -4,31 +4,35 @@ export const useGlobalScrollLock = () => {
   const lockCountRef = useRef(0)
 
   const lock = useCallback(() => {
+    if (typeof document === 'undefined') return
+
     const html = document.documentElement
+    const body = document.body
 
     if (lockCountRef.current === 0) {
-      // measure BEFORE locking
       const scrollbarWidth = window.innerWidth - html.clientWidth
 
-      html.style.paddingRight = `${scrollbarWidth}px`
-      html.style.overflow = 'hidden'
+      if (scrollbarWidth > 0) {
+        body.style.paddingRight = `${scrollbarWidth}px`
+      }
+
+      body.style.overflow = 'hidden'
     }
 
     lockCountRef.current += 1
   }, [])
 
   const unlock = useCallback(() => {
-    if (lockCountRef.current === 0) {
-      return
-    }
+    if (typeof document === 'undefined') return
+    if (lockCountRef.current === 0) return
+
+    const body = document.body
 
     lockCountRef.current -= 1
 
     if (lockCountRef.current === 0) {
-      const html = document.documentElement
-
-      html.style.overflow = ''
-      html.style.paddingRight = ''
+      body.style.overflow = ''
+      body.style.paddingRight = ''
     }
   }, [])
 

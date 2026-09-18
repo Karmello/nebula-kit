@@ -1,37 +1,68 @@
-import { ComponentMeta } from 'client/definitions'
-import { SwitchProps } from 'lib/components'
-import { DEFAULT_SWITCH_INTENT, DEFAULT_SWITCH_SIZE, SWITCH_INTENTS } from 'lib/components/pro/form-elements/Switch'
+import { BOX_COLORS } from 'lib/components/core/Box/constants'
+import {
+  DEFAULT_SWITCH_INTENT,
+  DEFAULT_SWITCH_RIPPLE,
+  DEFAULT_SWITCH_SCALE,
+  SWITCH_INTENTS,
+} from 'lib/components/pro/Switch/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
+import { SwitchProps } from 'lib/index.pro'
+import type { DocProp } from 'client/definitions'
 
-import { BOX_PROPS_META } from '../Box/props'
-import { BUTTON_PROPS_META } from '../Button/props'
-
-const SWITCH_PROPS_META: ComponentMeta<SwitchProps>['props'] = {
+export const SWITCH_PROPS: Record<keyof SwitchProps, DocProp> = {
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the native input element.',
+  },
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the native input element.',
+  },
+  // value
   checked: {
     options: ['boolean'],
     description: 'Controls the checked state in controlled mode.',
+    group: 'value',
   },
-  color: BOX_PROPS_META.color,
   defaultChecked: {
     options: ['boolean'],
     description: 'Sets the initial checked state for uncontrolled usage.',
-  },
-  disabled: BOX_PROPS_META.disabled,
-  intent: {
-    ...BOX_PROPS_META.intent,
-    options: SWITCH_INTENTS,
-    defaultValue: String(DEFAULT_SWITCH_INTENT),
+    group: 'value',
   },
   onChange: {
     options: ['(checked: boolean) => void'],
     description: 'Called when the checked state changes. Receives the new checked value.',
+    group: 'value',
   },
-  size: {
-    ...BUTTON_PROPS_META.size,
-    defaultValue: DEFAULT_SWITCH_SIZE,
+  // surface
+  intent: {
+    options: SWITCH_INTENTS,
+    defaultValue: String(DEFAULT_SWITCH_INTENT),
+    description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  color: {
+    options: BOX_COLORS,
+    description: 'Color applied to the component.',
+    group: 'surface',
+  },
+  // interaction
+  disabled: {
+    options: ['boolean'],
+    description: 'Disables the component and its interactions.',
+    group: 'interaction',
+  },
+  ripple: {
+    options: ['boolean'],
+    defaultValue: String(DEFAULT_SWITCH_RIPPLE),
+    description: 'Toggles the ripple effect on pointer interaction.',
+    group: 'interaction',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_SWITCH_SCALE,
     description: 'Controls overall proportions.',
+    group: 'size',
   },
-  tagAttrs: BOX_PROPS_META.tagAttrs,
-  tagRef: BOX_PROPS_META.tagRef,
 }
-
-export { SWITCH_PROPS_META }

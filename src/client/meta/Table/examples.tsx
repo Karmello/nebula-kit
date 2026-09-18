@@ -1,7 +1,7 @@
-import { ComponentMeta } from 'client/definitions'
-import { Table, TableProps } from 'lib/components'
+import { Table } from 'lib/index.core'
+import { type DocExample } from 'client/definitions'
 
-const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
+export const TABLE_EXAMPLES: DocExample[] = [
   {
     jsx: (
       <Table>
@@ -12,7 +12,7 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
         </Table.Body>
       </Table>
     ),
-    skip: true,
+    isOverviewSnippet: true,
   },
   {
     description: 'Default Table displaying only data rows.',
@@ -223,5 +223,3 @@ const TABLE_EXAMPLES_META: ComponentMeta<TableProps>['examples'] = [
     ),
   },
 ]
-
-export { TABLE_EXAMPLES_META }

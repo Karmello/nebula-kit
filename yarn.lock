@@ -1179,6 +1179,58 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@floating-ui/core@npm:^1.7.5":
+  version: 1.7.5
+  resolution: "@floating-ui/core@npm:1.7.5"
+  dependencies:
+    "@floating-ui/utils": "npm:^0.2.11"
+  checksum: 10c0/f9c52205e198b231d63a387b09c659aab08c46a1899e0b0bbe147b8b4f048b546f15ba17cb5d2a471da9534f1883d979425e13e5c4ceee67be63e4b0abd4db5d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/dom@npm:^1.7.6":
+  version: 1.7.6
+  resolution: "@floating-ui/dom@npm:1.7.6"
+  dependencies:
+    "@floating-ui/core": "npm:^1.7.5"
+    "@floating-ui/utils": "npm:^0.2.11"
+  checksum: 10c0/5c098e0d7b58c9bc769f276cca1766994c2c9c70c92d091a61bba8b3e9be53c011e0a79a8457fc2fb2f3d91697a26eb52e0a4962ef936dc963b45f58613c212f
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react-dom@npm:^2.1.8":
+  version: 2.1.8
+  resolution: "@floating-ui/react-dom@npm:2.1.8"
+  dependencies:
+    "@floating-ui/dom": "npm:^1.7.6"
+  peerDependencies:
+    react: ">=16.8.0"
+    react-dom: ">=16.8.0"
+  checksum: 10c0/26260ca4bb23b57c73b824062505abf977a008ce6e0463bdacca74f7e49853c4cd1d2bbf1a77c6caa17fa37dfffda2c6c4cd07a8737ebd7474aaff7818401d75
+  languageName: node
+  linkType: hard
+
+"@floating-ui/react@npm:^0.27.19":
+  version: 0.27.19
+  resolution: "@floating-ui/react@npm:0.27.19"
+  dependencies:
+    "@floating-ui/react-dom": "npm:^2.1.8"
+    "@floating-ui/utils": "npm:^0.2.11"
+    tabbable: "npm:^6.0.0"
+  peerDependencies:
+    react: ">=17.0.0"
+    react-dom: ">=17.0.0"
+  checksum: 10c0/2a2cdfd3e67e0606833b63f922ad2a9037974f22b944e1cb8c0991b4c40450f8413d69745c0bbf4646e5ba283747f60d2fdc9a8d289b68b24448e59d81a3a96d
+  languageName: node
+  linkType: hard
+
+"@floating-ui/utils@npm:^0.2.11":
+  version: 0.2.11
+  resolution: "@floating-ui/utils@npm:0.2.11"
+  checksum: 10c0/f4bcea1559bdbb721ecc8e8ead423ac58d6a5b6e70b602cf0810ba6ad4ed1c77211b207faa88b278a9042f0c743133de08a203ed6741c1b6443423332884d5b3
+  languageName: node
+  linkType: hard
+
 "@hiogawa/vite-plugin-error-overlay@npm:^0.0.1":
   version: 0.0.1
   resolution: "@hiogawa/vite-plugin-error-overlay@npm:0.0.1"
@@ -1306,23 +1358,22 @@ __metadata:
   resolution: "@nebula-kit/core@workspace:."
   dependencies:
     "@eslint/js": "npm:^9.35.0"
+    "@floating-ui/react": "npm:^0.27.19"
     "@hiogawa/vite-plugin-error-overlay": "npm:^0.0.1"
     "@playwright/experimental-ct-react": "npm:^1.55.0"
     "@playwright/test": "npm:^1.55.0"
-    "@shikijs/core": "npm:^3.12.0"
-    "@shikijs/engine-javascript": "npm:^3.12.0"
     "@shikijs/langs": "npm:^3.12.0"
     "@shikijs/themes": "npm:^3.12.0"
     "@testing-library/dom": "npm:^10.4.1"
     "@testing-library/jest-dom": "npm:^6.8.0"
     "@testing-library/react": "npm:^16.3.0"
-    "@testing-library/react-hooks": "npm:^8.0.1"
     "@testing-library/user-event": "npm:^14.6.1"
     "@types/express": "npm:^5.0.3"
     "@types/lodash-es": "npm:^4.17.12"
     "@types/node": "npm:^24.5.1"
     "@types/react": "npm:^19.0.0"
     "@types/react-dom": "npm:^19.0.0"
+    "@types/react-is": "npm:^19"
     "@typescript-eslint/eslint-plugin": "npm:^8.44.0"
     "@typescript-eslint/parser": "npm:^8.44.0"
     "@vitejs/plugin-react-swc": "npm:^4.1.0"
@@ -1333,6 +1384,7 @@ __metadata:
     eslint-config-prettier: "npm:^10.1.8"
     eslint-plugin-react: "npm:^7.37.5"
     eslint-plugin-react-hooks: "npm:^5.2.0"
+    eslint-plugin-simple-import-sort: "npm:^13.0.0"
     express: "npm:^5.1.0"
     get-port: "npm:^7.1.0"
     husky: "npm:^9.1.7"
@@ -1352,7 +1404,6 @@ __metadata:
     remark-gfm: "npm:^4.0.1"
     rimraf: "npm:^6.0.1"
     shiki: "npm:^3.12.0"
-    ts-morph: "npm:^27.0.2"
     tsd: "npm:^0.33.0"
     tsup: "npm:^8.5.0"
     tsx: "npm:^4.21.0"
@@ -2061,7 +2112,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/core@npm:3.12.0, @shikijs/core@npm:^3.12.0":
+"@shikijs/core@npm:3.12.0":
   version: 3.12.0
   resolution: "@shikijs/core@npm:3.12.0"
   dependencies:
@@ -2073,7 +2124,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@shikijs/engine-javascript@npm:3.12.0, @shikijs/engine-javascript@npm:^3.12.0":
+"@shikijs/engine-javascript@npm:3.12.0":
   version: 3.12.0
   resolution: "@shikijs/engine-javascript@npm:3.12.0"
   dependencies:
@@ -2298,28 +2349,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@testing-library/react-hooks@npm:^8.0.1":
-  version: 8.0.1
-  resolution: "@testing-library/react-hooks@npm:8.0.1"
-  dependencies:
-    "@babel/runtime": "npm:^7.12.5"
-    react-error-boundary: "npm:^3.1.0"
-  peerDependencies:
-    "@types/react": ^16.9.0 || ^17.0.0
-    react: ^16.9.0 || ^17.0.0
-    react-dom: ^16.9.0 || ^17.0.0
-    react-test-renderer: ^16.9.0 || ^17.0.0
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-    react-dom:
-      optional: true
-    react-test-renderer:
-      optional: true
-  checksum: 10c0/83bef2d4c437b84143213b5275ef00ef14e5bcd344f9ded12b162d253dc3c799138ead4428026b9c725e5a38dbebf611f2898aa43f3e43432bcaccbd7bf413e5
-  languageName: node
-  linkType: hard
-
 "@testing-library/react@npm:^16.3.0":
   version: 16.3.0
   resolution: "@testing-library/react@npm:16.3.0"
@@ -2381,17 +2410,6 @@ __metadata:
     "@ts-graphviz/ast": "npm:^2.0.7"
     "@ts-graphviz/common": "npm:^2.1.5"
   checksum: 10c0/39dd723a4760d8ac4a5865c44003b7509b02a30505c52fa02aa7475f6ec235b1f4026e0c422717ace15b4bb8b9a8d634e8b3bbc7e064dd8fcaff9fc9cf8747d1
-  languageName: node
-  linkType: hard
-
-"@ts-morph/common@npm:~0.28.1":
-  version: 0.28.1
-  resolution: "@ts-morph/common@npm:0.28.1"
-  dependencies:
-    minimatch: "npm:^10.0.1"
-    path-browserify: "npm:^1.0.1"
-    tinyglobby: "npm:^0.2.14"
-  checksum: 10c0/d51276d840997e0f8f83e04f8b1689135bb12588a7ddbed575f87848d5737eeae31e242685d6449de27573e8ed30892157fea643393cb875e175f2711200bc50
   languageName: node
   linkType: hard
 
@@ -2657,6 +2675,24 @@ __metadata:
   peerDependencies:
     "@types/react": ^19.0.0
   checksum: 10c0/8db5751c1567552fe4e1ece9f5823b682f2994ec8d30ed34ba0ef984e3c8ace1435f8be93d02f55c350147e78ac8c4dbcd8ed2c3b6a60f575bc5374f588c51c9
+  languageName: node
+  linkType: hard
+
+"@types/react-is@npm:^19":
+  version: 19.3.0
+  resolution: "@types/react-is@npm:19.3.0"
+  dependencies:
+    "@types/react": "npm:*"
+  checksum: 10c0/57391be255f8af062eed4c538d77f053a6479f5011cc68ac0c6fb75e5bec7a31b9e6e92ba58bfd069d928a8c400908c869574c8a6e88e0f6266057ef59c13adb
+  languageName: node
+  linkType: hard
+
+"@types/react@npm:*":
+  version: 19.3.0
+  resolution: "@types/react@npm:19.3.0"
+  dependencies:
+    csstype: "npm:^3.2.2"
+  checksum: 10c0/fbcabf303f935ca9f36ed2dcf81751cf84744098c5a683c8a62a0fa7edd31714b48d5c46b12fd0014f7f2dfe4d9ec6de428a850748eec719a70294e51029551b
   languageName: node
   linkType: hard
 
@@ -3736,13 +3772,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"code-block-writer@npm:^13.0.3":
-  version: 13.0.3
-  resolution: "code-block-writer@npm:13.0.3"
-  checksum: 10c0/87db97b37583f71cfd7eced8bf3f0a0a0ca53af912751a734372b36c08cd27f3e8a4878ec05591c0cd9ae11bea8add1423e132d660edd86aab952656dd41fd66
-  languageName: node
-  linkType: hard
-
 "color-convert@npm:^2.0.1":
   version: 2.0.1
   resolution: "color-convert@npm:2.0.1"
@@ -3902,6 +3931,13 @@ __metadata:
   version: 3.1.3
   resolution: "csstype@npm:3.1.3"
   checksum: 10c0/80c089d6f7e0c5b2bd83cf0539ab41474198579584fa10d86d0cafe0642202343cbc119e076a0b1aece191989477081415d66c9fefbf3c957fc2fc4b7009f248
+  languageName: node
+  linkType: hard
+
+"csstype@npm:^3.2.2":
+  version: 3.2.3
+  resolution: "csstype@npm:3.2.3"
+  checksum: 10c0/cd29c51e70fa822f1cecd8641a1445bed7063697469d35633b516e60fe8c1bde04b08f6c5b6022136bb669b64c63d4173af54864510fbb4ee23281801841a3ce
   languageName: node
   linkType: hard
 
@@ -4962,6 +4998,15 @@ __metadata:
   peerDependencies:
     eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
   checksum: 10c0/c850bfd556291d4d9234f5ca38db1436924a1013627c8ab1853f77cac73ec19b020e861e6c7b783436a48b6ffcdfba4547598235a37ad4611b6739f65fd8ad57
+  languageName: node
+  linkType: hard
+
+"eslint-plugin-simple-import-sort@npm:^13.0.0":
+  version: 13.0.0
+  resolution: "eslint-plugin-simple-import-sort@npm:13.0.0"
+  peerDependencies:
+    eslint: ">=5.0.0"
+  checksum: 10c0/f561f3483c1c18dfa2705326d38d62c62d4aeb5947ed6d1f028299c5dc668586b5ef144926e68fe187b3a937ee0159738dcbca8c286fe56f489de52fd8f9e678
   languageName: node
   linkType: hard
 
@@ -7467,15 +7512,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"minimatch@npm:^10.0.1":
-  version: 10.1.1
-  resolution: "minimatch@npm:10.1.1"
-  dependencies:
-    "@isaacs/brace-expansion": "npm:^5.0.0"
-  checksum: 10c0/c85d44821c71973d636091fddbfbffe62370f5ee3caf0241c5b60c18cd289e916200acb2361b7e987558cd06896d153e25d505db9fc1e43e6b4b6752e2702902
-  languageName: node
-  linkType: hard
-
 "minimatch@npm:^10.0.3":
   version: 10.0.3
   resolution: "minimatch@npm:10.0.3"
@@ -8072,13 +8108,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"path-browserify@npm:^1.0.1":
-  version: 1.0.1
-  resolution: "path-browserify@npm:1.0.1"
-  checksum: 10c0/8b8c3fd5c66bd340272180590ae4ff139769e9ab79522e2eb82e3d571a89b8117c04147f65ad066dccfb42fcad902e5b7d794b3d35e0fd840491a8ddbedf8c66
-  languageName: node
-  linkType: hard
-
 "path-exists@npm:^4.0.0":
   version: 4.0.0
   resolution: "path-exists@npm:4.0.0"
@@ -8521,17 +8550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-error-boundary@npm:^3.1.0":
-  version: 3.1.4
-  resolution: "react-error-boundary@npm:3.1.4"
-  dependencies:
-    "@babel/runtime": "npm:^7.12.5"
-  peerDependencies:
-    react: ">=16.13.1"
-  checksum: 10c0/f977ca61823e43de2381d53dd7aa8b4d79ff6a984c9afdc88dc44f9973b99de7fd382d2f0f91f2688e24bb987c0185bf45d0b004f22afaaab0f990a830253bfb
-  languageName: node
-  linkType: hard
-
 "react-hook-form@npm:7.66.0":
   version: 7.66.0
   resolution: "react-hook-form@npm:7.66.0"
@@ -8563,9 +8581,9 @@ __metadata:
   linkType: hard
 
 "react-is@npm:^19.1.1":
-  version: 19.1.1
-  resolution: "react-is@npm:19.1.1"
-  checksum: 10c0/3dba763fcd69835ae263dcd6727d7ffcc44c1d616f04b7329e67aefdc66a567af4f8dcecdd29454c7a707c968aa1eb85083a83fb616f01675ef25e71cf082f97
+  version: 19.3.0
+  resolution: "react-is@npm:19.3.0"
+  checksum: 10c0/99b16fc1009222ec0bbe05286566c865908430778ea6ba90dd418c7a11594c6cbb8db58432735b9203e3c6463e3eef5a399df1317ee2d75fd96b3a88cfaa662e
   languageName: node
   linkType: hard
 
@@ -10000,6 +10018,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"tabbable@npm:^6.0.0":
+  version: 6.4.0
+  resolution: "tabbable@npm:6.4.0"
+  checksum: 10c0/d931427f4a96b801fd8801ba296a702119e06f70ad262fed8abc5271225c9f1ca51b89fdec4fb2f22e1d35acb3d2881db0a17cedc758272e9ecb540d00299d76
+  languageName: node
+  linkType: hard
+
 "tapable@npm:^2.3.3":
   version: 2.3.3
   resolution: "tapable@npm:2.3.3"
@@ -10227,16 +10252,6 @@ __metadata:
   version: 0.1.13
   resolution: "ts-interface-checker@npm:0.1.13"
   checksum: 10c0/232509f1b84192d07b81d1e9b9677088e590ac1303436da1e92b296e9be8e31ea042e3e1fd3d29b1742ad2c959e95afe30f63117b8f1bc3a3850070a5142fea7
-  languageName: node
-  linkType: hard
-
-"ts-morph@npm:^27.0.2":
-  version: 27.0.2
-  resolution: "ts-morph@npm:27.0.2"
-  dependencies:
-    "@ts-morph/common": "npm:~0.28.1"
-    code-block-writer: "npm:^13.0.3"
-  checksum: 10c0/224715cc6d97b8ff5afd3986f9629f912a0ebd83eaecbdca91c35cf10a98f607c663f666e7ea5e6afab00563d00dc80fa7a13552cc7f1cef735261c3217d0863
   languageName: node
   linkType: hard
 

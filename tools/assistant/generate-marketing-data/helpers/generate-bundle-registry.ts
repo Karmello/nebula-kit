@@ -1,4 +1,4 @@
-import { CORE_DATA, PRO_DATA } from '../../../../src/client/pages/app/ComponentsBundlePage/definitions'
+import { CORE_DATA, PRO_DATA } from '../../../../src/client/pages/app/LibraryBundlePage/definitions'
 
 export const generateBundleRegistry = () => {
   const lines: string[] = []

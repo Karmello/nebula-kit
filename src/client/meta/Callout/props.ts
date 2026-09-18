@@ -1,51 +1,67 @@
-import { ComponentMeta } from 'client/definitions'
-
+import { BOX_INTENTS } from 'lib/components/core/Box/constants'
 import {
-  DEFAULT_CALLOUT_STATUS,
-  DEFAULT_CALLOUT_VARIANT,
-  DEFAULT_CALLOUT_SIZE,
   CALLOUT_STATUSES,
   CALLOUT_VARIANTS,
-  CALLOUT_SIZES,
-  CalloutProps,
   DEFAULT_CALLOUT_INTENT,
-} from 'lib/components/core/feedback/Callout'
+  DEFAULT_CALLOUT_SCALE,
+  DEFAULT_CALLOUT_STATUS,
+  DEFAULT_CALLOUT_VARIANT,
+} from 'lib/components/core/Callout/constants'
+import { TSHIRT_SIZES } from 'lib/constants'
+import { CalloutProps } from 'lib/index.core'
+import type { DocProp } from 'client/definitions'
 
-import { HTML_TAG_PROPS_META } from '../HtmlTag/props'
-import { BOX_PROPS_META } from '../Box/props'
-
-const CALLOUT_PROPS_META: ComponentMeta<CalloutProps>['props'] = {
-  content: {
-    options: ['string'],
-    isRequired: true,
-    description: 'A text string displayed as the main body of the Callout.',
+export const CALLOUT_PROPS: Record<keyof CalloutProps, DocProp> = {
+  elemTag: {
+    options: ['HTML tag'],
+    defaultValue: 'div',
+    description: 'The HTML tag to be rendered.',
   },
-  heading: {
-    description: 'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
-    options: ['string'],
+  elemRef: {
+    options: ['RefObject'],
+    description: 'Reference to the element.',
   },
-  intent: {
-    ...BOX_PROPS_META.intent,
-    defaultValue: String(DEFAULT_CALLOUT_INTENT),
+  elemAttrs: {
+    options: ['HTML tag attributes'],
+    description: 'Additional HTML attributes applied to the element.',
   },
-  size: {
-    options: CALLOUT_SIZES,
-    defaultValue: DEFAULT_CALLOUT_SIZE,
-    description: 'Controls overall proportions - adjusting heading size and spacings.',
-  },
+  // content
   status: {
     options: CALLOUT_STATUSES,
     defaultValue: DEFAULT_CALLOUT_STATUS,
     description: 'Defines the type of message being communicated.',
+    group: 'content',
   },
-  tag: HTML_TAG_PROPS_META.tag,
-  tagAttrs: HTML_TAG_PROPS_META.tagAttrs,
-  tagRef: HTML_TAG_PROPS_META.tagRef,
+  heading: {
+    description:
+      'Text displayed as the title of the Callout. Overrides the default heading associated with the selected status.',
+    options: ['string'],
+    group: 'content',
+  },
+  content: {
+    options: ['string'],
+    isRequired: true,
+    description: 'A text string displayed as the main body of the Callout.',
+    group: 'content',
+  },
+  // surface
   variant: {
-    ...BOX_PROPS_META.variant,
     options: Object.values(CALLOUT_VARIANTS),
-    defaultValue: DEFAULT_CALLOUT_VARIANT,
+    defaultValue: String(DEFAULT_CALLOUT_VARIANT),
+    description: 'Visual style variant.',
+    group: 'surface',
+  },
+  intent: {
+    options: BOX_INTENTS,
+    defaultValue: String(DEFAULT_CALLOUT_INTENT),
+    description: "Color tone applied to the component's main color.",
+    group: 'surface',
+  },
+  // size
+  scale: {
+    options: TSHIRT_SIZES,
+    defaultValue: DEFAULT_CALLOUT_SCALE,
+    description: 'Controls overall proportions - adjusting heading size and spacings.',
+    group: 'size',
   },
 }
-
-export { CALLOUT_PROPS_META }
